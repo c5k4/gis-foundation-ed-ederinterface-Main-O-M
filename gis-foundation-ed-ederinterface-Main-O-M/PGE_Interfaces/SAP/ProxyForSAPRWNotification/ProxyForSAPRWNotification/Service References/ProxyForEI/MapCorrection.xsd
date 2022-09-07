@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://xmlns.pge.com/Electric/MapCorrection" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.pge.com/Electric/MapCorrection" version="1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="MapCorrection" type="tns:MapCorrectionType" />
+  <xs:complexType name="MapCorrectionType">
+    <xs:sequence>
+      <xs:element name="createMapCorrectionRequest" type="tns:tMapDataReq" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MapCorrectionResponse" type="tns:MapCorrectionResponseType" />
+  <xs:complexType name="MapCorrectionResponseType">
+    <xs:sequence>
+      <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##other" processContents="lax">
+        <xs:annotation>
+          <xs:documentation>Service specific objects are to be defined</xs:documentation>
+        </xs:annotation>
+      </xs:any>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tMapDataReq">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="MapCorrectionHeader" type="tns:tMapDataHeader" />
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="MapCorrectionDetail" type="tns:tMapDataDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tMapDataHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" ref="tns:MapNumber" />
+      <xs:element minOccurs="0" maxOccurs="1" ref="tns:Substation" />
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:Feeder" />
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:TransactionDateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:OperationsArea" />
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:Department" />
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:ServiceDeliveryMethod" />
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:CorrectionCategory" />
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:UserID" />
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:FunctionalLocation" />
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:Division" />
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:MainWorkCenter" />
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:NumberOfCorrection" />
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:UniqueNotificationID" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MapNumber" nillable="true" type="tns:tMapNumber" />
+  <xs:simpleType name="tMapNumber">
+    <xs:restriction base="xs:integer" />
+  </xs:simpleType>
+  <xs:element name="Substation" nillable="true" type="tns:tSubstation" />
+  <xs:simpleType name="tSubstation">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="Feeder" type="tns:tFeeder" />
+  <xs:simpleType name="tFeeder">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="TransactionDateTime" type="tns:tTransactionDateTime">
+    <xs:annotation>
+      <xs:documentation>Current date and time</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:simpleType name="tTransactionDateTime">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="OperationsArea" type="tns:tOperationsArea" />
+  <xs:simpleType name="tOperationsArea">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="Department" type="tns:tDepartment" />
+  <xs:simpleType name="tDepartment">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="ServiceDeliveryMethod" type="tns:tServiceDeliveryMethod" />
+  <xs:simpleType name="tServiceDeliveryMethod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UnderGround" />
+      <xs:enumeration value="OverHead" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CorrectionCategory" type="tns:tCorrectionCategory" />
+  <xs:simpleType name="tCorrectionCategory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ED" />
+      <xs:enumeration value="LAND" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserID" type="tns:tUserID" />
+  <xs:simpleType name="tUserID">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="FunctionalLocation" type="tns:tFunctionalLocation" />
+  <xs:simpleType name="tFunctionalLocation">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="Division" type="tns:tDivision" />
+  <xs:simpleType name="tDivision">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="MainWorkCenter" type="tns:tMainWorkCenter" />
+  <xs:simpleType name="tMainWorkCenter">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="NumberOfCorrection" type="tns:tNumberOfCorrection" />
+  <xs:simpleType name="tNumberOfCorrection">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="UniqueNotificationID" type="tns:tUniqueNotificationID" />
+  <xs:simpleType name="tUniqueNotificationID">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:complexType name="tMapDataDetail">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:LocationID" />
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:LocationDescription" />
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:CorrectionType" />
+      <xs:element minOccurs="0" maxOccurs="1" ref="tns:Comments" />
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:Latitude" />
+      <xs:element minOccurs="1" maxOccurs="1" ref="tns:Longitude" />
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="Attachment" type="tns:tAttachment" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UpdatedAttachmentList" type="tns:tMapDataAttachmentList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tMapDataAttachmentList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="tns:SftpReferenceName" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="tns:ReferenceName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SftpReferenceName" nillable="true" type="tns:tSftpReferenceName" />
+  <xs:simpleType name="tSftpReferenceName">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="ReferenceName" nillable="true" type="tns:tReferenceName" />
+  <xs:simpleType name="tReferenceName">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:complexType name="tAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" ref="tns:Name" />
+      <xs:element minOccurs="0" maxOccurs="1" ref="tns:Data" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Name" nillable="true" type="tns:tName" />
+  <xs:simpleType name="tName">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="Data" nillable="true" type="tns:tData" />
+  <xs:simpleType name="tData">
+    <xs:restriction xmlns:xmime="xmime" xmime:expectedContentTypes="*/*" base="xs:base64Binary" />
+  </xs:simpleType>
+  <xs:element name="LocationID" type="tns:tLocationID" />
+  <xs:simpleType name="tLocationID">
+    <xs:restriction base="xs:integer" />
+  </xs:simpleType>
+  <xs:element name="LocationDescription" type="tns:tLocationDescription" />
+  <xs:simpleType name="tLocationDescription">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="CorrectionType" type="tns:tCorrectionType" />
+  <xs:simpleType name="tCorrectionType">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="Comments" nillable="true" type="tns:tComments" />
+  <xs:simpleType name="tComments">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="Latitude" type="tns:tLatitude" />
+  <xs:simpleType name="tLatitude">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="Longitude" type="tns:tLongitude" />
+  <xs:simpleType name="tLongitude">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+</xs:schema>

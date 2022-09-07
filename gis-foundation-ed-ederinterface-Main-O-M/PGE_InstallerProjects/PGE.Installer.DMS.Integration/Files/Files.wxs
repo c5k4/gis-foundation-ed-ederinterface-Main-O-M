@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <?define ClientName='PGE'?>
+  <?define Directory='DMS'?>
+  <?define ActionKey="DMSIntegration"?>
+  <!--Delivery team does not want this in the GAC-->
+  <!--<?define Filename='PGE.Interface.Integration.DMS'?>
+  <?define FilenameUpper='TELVENT.PGE.ED.INTEGRATION.DMS'?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>-->
+
+  <?include ..\..\Externals\Wix_Templates\ESRIRegAsm10.wxi?>
+</Wix>

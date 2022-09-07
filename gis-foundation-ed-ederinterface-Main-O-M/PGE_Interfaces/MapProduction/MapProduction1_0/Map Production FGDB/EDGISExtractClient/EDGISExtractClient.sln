@@ -1,0 +1,87 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDGISExtract", "EDGISExtract.csproj", "{71FC0D3A-67F2-4DF5-9740-A8830FD00F51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDGISExtractMapTools", "..\EDGISExtractMapTools\EDGISExtractMapTools\EDGISExtractMapTools.csproj", "{07D3A865-E008-463D-8C50-F3AC0946F848}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Telvent.PGE.ED.Desktop\\Telvent.PGE.ED.Desktop.csproj
+		SccProjectName1 = Telvent.PGE.ED.Desktop
+		SccLocalPath1 = Telvent.PGE.ED.Desktop
+		SccProjectUniqueName2 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.ArcFM\\Telvent.Delivery.ArcFM.csproj
+		SccProjectTopLevelParentUniqueName2 = Telvent.PGE.ED.Desktop.sln
+		SccProjectName2 = ../../externals/telvent.delivery/Telvent.Delivery.ArcFM
+		SccLocalPath2 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.ArcFM
+		SccProjectUniqueName3 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.Framework\\Telvent.Delivery.Framework.csproj
+		SccProjectTopLevelParentUniqueName3 = Telvent.PGE.ED.Desktop.sln
+		SccProjectName3 = ../../externals/telvent.delivery/Telvent.Delivery.Framework
+		SccLocalPath3 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.Framework
+		SccProjectUniqueName4 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.System\\Telvent.Delivery.Systems.csproj
+		SccProjectTopLevelParentUniqueName4 = Telvent.PGE.ED.Desktop.sln
+		SccProjectName4 = ../../externals/telvent.delivery/Telvent.Delivery.System
+		SccLocalPath4 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.System
+		SccProjectUniqueName5 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.UI\\Telvent.Delivery.UI.csproj
+		SccProjectTopLevelParentUniqueName5 = Telvent.PGE.ED.Desktop.sln
+		SccProjectName5 = ../../externals/telvent.delivery/Telvent.Delivery.UI
+		SccLocalPath5 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.UI
+		SccProjectUniqueName6 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.Diagnostics\\Telvent.Delivery.Diagnostics.csproj
+		SccProjectTopLevelParentUniqueName6 = Telvent.PGE.ED.Desktop.sln
+		SccProjectName6 = ../../externals/telvent.delivery/Telvent.Delivery.Diagnostics
+		SccLocalPath6 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.Diagnostics
+		SccProjectUniqueName7 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.ProcessManager\\Telvent.Delivery.Process.csproj
+		SccProjectTopLevelParentUniqueName7 = Telvent.PGE.ED.Desktop.sln
+		SccProjectName7 = ../../externals/telvent.delivery/Telvent.Delivery.ProcessManager
+		SccLocalPath7 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.ProcessManager
+		SccProjectUniqueName8 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.SessionManager\\Telvent.Delivery.SessionManager.csproj
+		SccProjectTopLevelParentUniqueName8 = Telvent.PGE.ED.Desktop.sln
+		SccProjectName8 = ../../externals/telvent.delivery/Telvent.Delivery.SessionManager
+		SccLocalPath8 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.SessionManager
+		SccProjectUniqueName9 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.Geodatabase\\Telvent.Delivery.Geodatabase.csproj
+		SccProjectTopLevelParentUniqueName9 = Telvent.PGE.ED.Desktop.sln
+		SccProjectName9 = ../../externals/telvent.delivery/Telvent.Delivery.Geodatabase
+		SccLocalPath9 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.Geodatabase
+		SccProjectUniqueName10 = Telvent.PGE.LoginEncrpytor\\Telvent.PGE.LoginEncrpytor.csproj
+		SccProjectName10 = Telvent.PGE.LoginEncrpytor
+		SccLocalPath10 = Telvent.PGE.LoginEncrpytor
+		SccProjectUniqueName11 = IBM.PGE.ED.Desktop.Tests\\IBM.PGE.ED.Desktop.Tests.csproj
+		SccProjectName11 = IBM.PGE.ED.Desktop.Tests
+		SccLocalPath11 = IBM.PGE.ED.Desktop.Tests
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		KF_Debug|Any CPU = KF_Debug|Any CPU
+		KF_Debug|x86 = KF_Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71FC0D3A-67F2-4DF5-9740-A8830FD00F51}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{71FC0D3A-67F2-4DF5-9740-A8830FD00F51}.Debug|x86.ActiveCfg = Debug|x86
+		{71FC0D3A-67F2-4DF5-9740-A8830FD00F51}.Debug|x86.Build.0 = Debug|x86
+		{71FC0D3A-67F2-4DF5-9740-A8830FD00F51}.KF_Debug|Any CPU.ActiveCfg = Debug|x86
+		{71FC0D3A-67F2-4DF5-9740-A8830FD00F51}.KF_Debug|x86.ActiveCfg = Debug|x86
+		{71FC0D3A-67F2-4DF5-9740-A8830FD00F51}.KF_Debug|x86.Build.0 = Debug|x86
+		{71FC0D3A-67F2-4DF5-9740-A8830FD00F51}.Release|Any CPU.ActiveCfg = Release|x86
+		{71FC0D3A-67F2-4DF5-9740-A8830FD00F51}.Release|x86.ActiveCfg = Release|x86
+		{71FC0D3A-67F2-4DF5-9740-A8830FD00F51}.Release|x86.Build.0 = Release|x86
+		{07D3A865-E008-463D-8C50-F3AC0946F848}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{07D3A865-E008-463D-8C50-F3AC0946F848}.Debug|x86.ActiveCfg = Debug|x86
+		{07D3A865-E008-463D-8C50-F3AC0946F848}.Debug|x86.Build.0 = Debug|x86
+		{07D3A865-E008-463D-8C50-F3AC0946F848}.KF_Debug|Any CPU.ActiveCfg = Debug|x86
+		{07D3A865-E008-463D-8C50-F3AC0946F848}.KF_Debug|x86.ActiveCfg = Debug|x86
+		{07D3A865-E008-463D-8C50-F3AC0946F848}.KF_Debug|x86.Build.0 = Debug|x86
+		{07D3A865-E008-463D-8C50-F3AC0946F848}.Release|Any CPU.ActiveCfg = Release|x86
+		{07D3A865-E008-463D-8C50-F3AC0946F848}.Release|x86.ActiveCfg = Release|x86
+		{07D3A865-E008-463D-8C50-F3AC0946F848}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

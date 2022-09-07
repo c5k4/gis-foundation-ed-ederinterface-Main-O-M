@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PGE.PopulateCircuitIDInstaller", "PGE.Installer.PopulateCircuitID\PGE.Installer.PopulateCircuitID.vdproj", "{AB00B153-0EEA-4E09-9E78-2B438031D40C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.Interface.PopulateCircuitID", "PGE.Interfaces.PopulateCircuitID\PGE.Interface.PopulateCircuitID.csproj", "{8EAEBC10-0EE2-4958-9A7B-DDEBEA05B1F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB00B153-0EEA-4E09-9E78-2B438031D40C}.Debug|x86.ActiveCfg = Debug
+		{AB00B153-0EEA-4E09-9E78-2B438031D40C}.Debug|x86.Build.0 = Debug
+		{AB00B153-0EEA-4E09-9E78-2B438031D40C}.Release|x86.ActiveCfg = Release
+		{AB00B153-0EEA-4E09-9E78-2B438031D40C}.Release|x86.Build.0 = Release
+		{8EAEBC10-0EE2-4958-9A7B-DDEBEA05B1F9}.Debug|x86.ActiveCfg = Debug|x86
+		{8EAEBC10-0EE2-4958-9A7B-DDEBEA05B1F9}.Debug|x86.Build.0 = Debug|x86
+		{8EAEBC10-0EE2-4958-9A7B-DDEBEA05B1F9}.Release|x86.ActiveCfg = Release|x86
+		{8EAEBC10-0EE2-4958-9A7B-DDEBEA05B1F9}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4BAB580-7C85-416B-A21C-F8956DB6A385}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccProjectUniqueName0 = PGE.Installer.PopulateCircuitID\\PGE.Installer.PopulateCircuitID.vdproj
+		SccProjectName0 = PGE.Installer.PopulateCircuitID
+		SccLocalPath0 = PGE.Installer.PopulateCircuitID
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = PGE.Interfaces.PopulateCircuitID\\PGE.Interface.PopulateCircuitID.csproj
+		SccProjectName2 = PGE.Interfaces.PopulateCircuitID
+		SccLocalPath2 = PGE.Interfaces.PopulateCircuitID
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <databaseconfig>
+    <OracleConnectionSting>EDGIS@EDER</OracleConnectionSting>
+    <geodatabasesettings>
+      <version>SDE.DEFAULT</version>
+    </geodatabasesettings>
+  </databaseconfig>
+  <settings>
+    <setting name="TableOwner" value="EDGIS"/>
+    <setting name="UseLandscape" value="TRUE" />
+    <setting name="subtype" value="1" />
+    <setting name="numberexporters" value="5" />
+    <setting name="MxdLocation" value="\\rcnas01-smb\edgisrearch-fs01\Release\PSPSMapProduction\Docs\MXD\QA" />
+    <setting name="PDFLocation" value="C:\temp\PSPSMapProduction\PDF" />
+    <setting name="PDFDPI" value="300" />
+    <setting name="ExportPDF" value="TRUE" />
+    <setting name="IncludeAttributes" value="false" />
+    <setting name="RunExport" value="TRUE" />
+    <setting name="PSPSMapRowsTableName" value="EDGIS.PGE_PSPSMAPROWS"/>
+    <setting name="ConductorFeatureClassName" value="EDGIS.PriOHConductor"/>
+    <setting name="EDERSDEConnectionFile" value="EDGIS@EDER"/>
+
+    <!--<setting name="EDERSDEConnectionFile" value="\\rcshare03-nas2\geomartprd1-fs01\data\Databaseconnection\ED\lob_source_sde_eder.sde"/>-->
+    <setting name="DefinitionQuery" value=""/>
+    <setting name="PythonExePath" value="C:\Python27\ArcGIS10.2\python.exe"/>
+  </settings>
+</config>

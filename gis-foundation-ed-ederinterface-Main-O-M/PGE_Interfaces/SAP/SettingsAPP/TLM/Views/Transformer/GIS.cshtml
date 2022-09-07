@@ -1,0 +1,54 @@
+﻿@using TLM.Common;
+@model TLM.Models.GIS
+@using (Html.BeginForm())
+{
+    <div class="header">
+        @ViewBag.Title
+
+        <script language="javascript">
+            function printDoc() {
+                var divBottom = document.getElementById("divHistory");
+                divBottom.setAttribute("style", "overflow-x:visible !important;overflow:auto;height:auto; ");
+                window.print();
+                divBottom.removeAttribute("style");
+            }
+        </script>
+        <div class="utility-nav">
+            <img src="/Content/Images/print.png" style="border: 0px solid #000;" onclick="javascript:printDoc();" />
+        </div>
+    </div>
+    <div class="GIS-Attr">
+        <div class="innerdiv">
+            <div class="Table">
+                <div class="Top-Row">
+                    @if (Model.GISAttributes.Count > 0)
+                    {
+                        <div class="Row">
+                            <div class="display-label">
+                                @Html.DisplayFor(m => m.GISAttributes[0].DisplayName)
+                            </div>
+                            <div class="display-field">
+                                <label style="text-align: left">@Html.DisplayFor(m => m.GISAttributes[0].ValueDescription)</label>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div id="divHistory" class="Bottom-Rows">
+                    @for (int i = 1; i < Model.GISAttributes.Count; i++)
+                    {
+                                 
+                        <div class="Row">
+                            <div class="display-label">
+                                @Html.DisplayFor(m => m.GISAttributes[i].DisplayName)
+                            </div>
+                            <div class="display-field">
+                                <label style="text-align: left">@Html.DisplayFor(m => m.GISAttributes[i].ValueDescription)</label>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    
+}

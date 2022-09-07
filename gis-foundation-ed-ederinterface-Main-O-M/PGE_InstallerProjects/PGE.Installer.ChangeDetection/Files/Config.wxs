@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <DirectoryRef Id="CHANGEDETECTION">
+      <!--Configuration Files below-->
+      <Component Id="ConfigFiles1" Guid="537058A3-2553-4722-8B96-DC84ED6D8401" Permanent="yes" NeverOverwrite="yes">
+        <File Id="EDER.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\EDER.config"/>
+      </Component>
+      <Component Id="ConfigFiles2" Guid="537058A3-2553-4722-8B96-DC84ED6D8402" Permanent="yes" NeverOverwrite="yes">
+        <File Id="EderToWipEtl.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\EderToWipEtl.config"/>
+      </Component>
+      <Component Id="ConfigFiles3" Guid="537058A3-2553-4722-8B96-DC84ED6D8403" Permanent="yes" NeverOverwrite="yes">
+        <File Id="FdiToEderEtl.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\FdiToEderEtl.config"/>
+      </Component>
+      <Component Id="ConfigFiles4" Guid="537058A3-2553-4722-8B96-DC84ED6D8404" Permanent="yes" NeverOverwrite="yes">
+        <File Id="Landbase.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\Landbase.config"/>
+      </Component>
+      <Component Id="ConfigFiles5" Guid="537058A3-2553-4722-8B96-DC84ED6D8405" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PgedataToTlmEtl.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\PgedataToTlmEtl.config"/>
+      </Component>
+      <Component Id="ConfigFiles6" Guid="537058A3-2553-4722-8B96-DC84ED6D8406" Permanent="yes" NeverOverwrite="yes">
+        <File Id="Schematics.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\Schematics.config"/>
+      </Component>
+      <Component Id="ConfigFiles7" Guid="537058A3-2553-4722-8B96-DC84ED6D8407" Permanent="yes" NeverOverwrite="yes">
+        <File Id="SchematicsGUIDTotalETL.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\SchematicsGUIDTotalETL.config"/>
+      </Component>
+      <Component Id="ConfigFiles8" Guid="537058A3-2553-4722-8B96-DC84ED6D8408" Permanent="yes" NeverOverwrite="yes">
+        <File Id="Settings.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\Settings.config"/>
+      </Component>
+      <Component Id="ConfigFiles9" Guid="537058A3-2553-4722-8B96-DC84ED6D8409" Permanent="yes" NeverOverwrite="yes">
+        <File Id="SettingsDeltasToEderEtl.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\SettingsDeltasToEderEtl.config"/>
+      </Component>
+      <Component Id="ConfigFiles10" Guid="537058A3-2553-4722-8B96-DC84ED6D8410" Permanent="yes" NeverOverwrite="yes">
+        <File Id="SettingsETL.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\SettingsETL.config"/>
+      </Component>
+      <Component Id="ConfigFiles11" Guid="537058A3-2553-4722-8B96-DC84ED6D8411" Permanent="yes" NeverOverwrite="yes">
+        <File Id="TLM.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\TLM.config"/>
+      </Component>
+      <Component Id="ConfigFiles12" Guid="537058A3-2553-4722-8B96-DC84ED6D8412" Permanent="yes" NeverOverwrite="yes">
+        <File Id="TlmToEderEtl.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\TlmToEderEtl.config"/>
+      </Component>
+      <Component Id="ConfigFiles13" Guid="537058A3-2553-4722-8B96-DC84ED6D8413" Permanent="yes" NeverOverwrite="yes">
+        <File Id="WIP.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\WIP.config"/>
+      </Component>
+      <Component Id="ConfigFiles14" Guid="537058A3-2553-4722-8B96-DC84ED6D8414" Permanent="yes" NeverOverwrite="yes">
+        <File Id="StreetlightConflationEtl.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\StreetlightConflationEtl.config"/>
+      </Component>
+      <Component Id="ConfigFiles15" Guid="537058A3-2553-4722-8B96-DC84ED6D8415" Permanent="yes" NeverOverwrite="yes">
+        <File Id="Streetlights.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\Streetlights.config"/>
+      </Component>
+      <Component Id="ConfigFiles16" Guid="537058A3-2553-4722-8B96-DC84ED6D8416" Permanent="yes" NeverOverwrite="yes">
+        <File Id="StreetlightsCcbToGisEtl.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\StreetlightsCcbToGisEtl.config"/>
+      </Component>
+      <Component Id="ConfigFiles17" Guid="537058A3-2553-4722-8B96-DC84ED6D8417" Permanent="yes" NeverOverwrite="yes">
+        <File Id="StreetlightsInvToGisEtl.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\StreetlightsInvToGisEtl.config"/>
+      </Component>
+      <Component Id="ConfigFiles18" Guid="537058A3-2553-4722-8B96-DC84ED6D8418" Permanent="yes" NeverOverwrite="yes">
+        <File Id="StreetlightConflationEtl.app.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\StreetlightConflationEtl.app.config"/>
+      </Component>
+      <Component Id="ConfigFiles19" Guid="537058A3-2553-4722-8B96-DC84ED6D8419" Permanent="yes" NeverOverwrite="yes">
+        <File Id="StreetlightInvToGisEtl.app.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\StreetlightInvToGisEtl.app.config"/>
+      </Component>
+      <Component Id="ConfigFiles20" Guid="537058A3-2553-4722-8B96-DC84ED6D8420" Permanent="yes" NeverOverwrite="yes">
+        <File Id="StreetlightsCcbToGisEtl.app.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\StreetlightsCcbToGisEtl.app.config"/>
+      </Component>
+      <Component Id="ConfigFiles21" Guid="537058A3-2553-4722-8B96-DC84ED6D8421" Permanent="yes" NeverOverwrite="yes">
+        <File Id="StreetlightChangeSubscriber.app.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\StreetlightChangeSubscriber.app.config"/>
+      </Component>
+      <Component Id="ConfigFiles22" Guid="537058A3-2553-4722-8B96-DC84ED6D8422" Permanent="yes" NeverOverwrite="yes">
+        <File Id="ROBC.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ROBC.config"/>
+      </Component>
+      <Component Id="ConfigFiles23" Guid="537058A3-2553-4722-8B96-DC84ED6D8423" Permanent="yes" NeverOverwrite="yes">
+		<File Id="ADMS_CD.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ADMS_CD.config"/>
+	  </Component>
+      <Component Id="ChangeDetectionApplication" Guid="BCAA9111-D883-4C14-8B84-E446CCE217C5">
+		  <File Id="Castle.Components.Binder.dll" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\Castle.Components.Binder.dll"/>
+		  <File Id="Castle.Core.dll" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\Castle.Core.dll"/>
+		  <File Id="Castle.DynamicProxy2.dll" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\Castle.DynamicProxy2.dll"/>
+		  <File Id="Castle.Facilities.Logging.dll" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\Castle.Facilities.Logging.dll"/>
+		  <File Id="Castle.Facilities.WcfIntegration.dll" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\Castle.Facilities.WcfIntegration.dll"/>
+		  <File Id="Castle.MicroKernel.dll" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\Castle.MicroKernel.dll"/>
+		  <File Id="Castle.Services.Logging.Log4netIntegration.dll" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\Castle.Services.Logging.Log4netIntegration.dll"/>
+		  <File Id="Castle.Windsor.dll" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\Castle.Windsor.dll"/>
+		  <File Id="PGE.Common.ChangesManager.dll" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\PGE.Common.ChangesManager.dll"/>
+		  <File Id="CommandFlags.dll" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\CommandFlags.dll"/>
+		  <File Id="PGE.BatchApplication.ChangeDetection.ETL.dll" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\PGE.BatchApplication.ChangeDetection.ETL.dll"/>
+		  <File Id="PGE.Common.ChangesManagerShared.dll" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\PGE.Common.ChangesManagerShared.dll"/>
+		  <File Id="PGE.BatchApplication.ChangeSubscribers.dll" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\PGE.BatchApplication.ChangeSubscribers.dll"/>
+		  <File Id="PGE.BatchApplication.ChangeDetection.exe" Source="..\..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\PGE.BatchApplication.ChangeDetection.exe"/>
+		  <File Id="PGEEncryptText.exe" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\PGEEncryptText.exe"/>
+		  <File Id="EDG_ChangeDetection_ADMS.bat" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\EDG_ChangeDetection_ADMS.bat"/>
+		  <File Id="ADMS_CD_ED_INT_DATA_RETENTION.bat" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ADMS_CD_ED_INT_DATA_RETENTION.bat"/>
+		  <File Id="PGE_INT_DATA_RTNTN_FILE.sql" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\PGE_INT_DATA_RTNTN_FILE.sql"/>
+		  <!-- Batch files -->
+        <File Id="InitializeCd.bat" Source="..\..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\InitializeCd.bat"/>
+        <File Id="RunMultipleCd.bat" Source="..\..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\RunMultipleCd.bat"/>
+      </Component>
+
+    </DirectoryRef>
+
+    <DirectoryRef Id="CHANGEDECTIONDOCS">
+      <Component Id="ChangeDetectionDocumentation" Guid="20062392-5960-4A45-A0BA-B68D2DC4E89D">
+        <File Id="ChangeDetectionRunBook.doc" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\Documentation\Change Detection Run Book.doc"/>
+        <File Id="ChangeDetectionUserGuide.docx" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\Documentation\Change Detection User Guide.docx"/>
+      </Component>
+    </DirectoryRef>
+    
+    <DirectoryRef Id="CHANGEDECTIONPYTHON">
+      <Component Id="ChangeDetectionPython" Guid="8AF27940-7FF6-4B10-80F4-4E8E1BB432BF">
+        <File Id="ChangeDetectionappend.py" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\Python Files\append.py"/>
+        <File Id="ChangeDetectionedLoggerTool.py" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\Python Files\edLoggerTool.py"/>
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="LoggingConfiguration">
+      <Component Id="LoggingFiles1" Guid="A37AB783-2249-42EA-857D-FC7022C6FC01" Permanent="yes">
+        <File Id="ChangeDetection.log4net.EDER.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.EDER.config"/>
+      </Component>
+      <Component Id="LoggingFiles2" Guid="A37AB783-2249-42EA-857D-FC7022C6FC02" Permanent="yes">
+        <File Id="ChangeDetection.log4net.EderToWipEtl.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.EderToWipEtl.config"/>
+      </Component>
+      <Component Id="LoggingFiles3" Guid="A37AB783-2249-42EA-857D-FC7022C6FC03" Permanent="yes">
+        <File Id="ChangeDetection.log4net.FdiToEderEtl.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.FdiToEderEtl.config"/>
+      </Component>
+      <Component Id="LoggingFiles4" Guid="A37AB783-2249-42EA-857D-FC7022C6FC04" Permanent="yes">
+        <File Id="ChangeDetection.log4net.PgedataToTlmEtl.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.PgedataToTlmEtl.config"/>
+      </Component>
+      <Component Id="LoggingFiles5" Guid="A37AB783-2249-42EA-857D-FC7022C6FC05" Permanent="yes">
+        <File Id="ChangeDetection.log4net.Landbase.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.Landbase.config"/>
+      </Component>
+      <Component Id="LoggingFiles6" Guid="A37AB783-2249-42EA-857D-FC7022C6FC06" Permanent="yes">
+        <File Id="ChangeDetection.log4net.Schematics.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.Schematics.config"/>
+      </Component>
+      <Component Id="LoggingFiles7" Guid="A37AB783-2249-42EA-857D-FC7022C6FC07" Permanent="yes">
+        <File Id="ChangeDetection.log4net.SchematicsGUIDTotalETL.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.SchematicsGUIDTotalETL.config"/>
+      </Component>
+      <Component Id="LoggingFiles8" Guid="A37AB783-2249-42EA-857D-FC7022C6FC08" Permanent="yes">
+        <File Id="ChangeDetection.log4net.Settings.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.Settings.config"/>
+      </Component>
+      <Component Id="LoggingFiles9" Guid="A37AB783-2249-42EA-857D-FC7022C6FC09" Permanent="yes">
+        <File Id="ChangeDetection.log4net.SettingsDeltasToEderEtl.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.SettingsDeltasToEderEtl.config"/>
+      </Component>
+      <Component Id="LoggingFiles10" Guid="A37AB783-2249-42EA-857D-FC7022C6FC10" Permanent="yes">
+        <File Id="ChangeDetection.log4net.SettingsETL.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.SettingsETL.config"/>
+      </Component>
+      <Component Id="LoggingFiles11" Guid="A37AB783-2249-42EA-857D-FC7022C6FC11" Permanent="yes">
+        <File Id="ChangeDetection.log4net.Tlm.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.Tlm.config"/>
+      </Component>
+      <Component Id="LoggingFiles12" Guid="A37AB783-2249-42EA-857D-FC7022C6FC12" Permanent="yes">
+        <File Id="ChangeDetection.log4net.TlmToEderEtl.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.TlmToEderEtl.config"/>
+      </Component>
+      <Component Id="LoggingFiles13" Guid="A37AB783-2249-42EA-857D-FC7022C6FC13" Permanent="yes">
+        <File Id="ChangeDetection.log4net.WIP.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.WIP.config"/>
+      </Component>
+      <Component Id="LoggingFiles14" Guid="A37AB783-2249-42EA-857D-FC7022C6FC14" Permanent="yes">
+        <File Id="ChangeDetectionDefault.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetectionDefault.log4net.config"/>
+      </Component>
+      <Component Id="LoggingFiles15" Guid="A37AB783-2249-42EA-857D-FC7022C6FC15" Permanent="yes">
+        <File Id="ChangeDetection.log4net.StreetlightConflationEtl.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.StreetlightConflationEtl.config"/>
+      </Component>
+      <Component Id="LoggingFiles16" Guid="A37AB783-2249-42EA-857D-FC7022C6FC16" Permanent="yes">
+        <File Id="ChangeDetection.log4net.Streetlights.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.Streetlights.config"/>
+      </Component>
+      <Component Id="LoggingFiles17" Guid="A37AB783-2249-42EA-857D-FC7022C6FC17" Permanent="yes">
+        <File Id="ChangeDetection.log4net.StreetlightsCcbToGisEtl.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.StreetlightsCcbToGisEtl.config"/>
+      </Component>
+      <Component Id="LoggingFiles18" Guid="A37AB783-2249-42EA-857D-FC7022C6FC18" Permanent="yes">
+        <File Id="ChangeDetection.log4net.StreetlightsInvToGisEtl.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.StreetlightsInvToGisEtl.config"/>
+      </Component>
+      <Component Id="LoggingFiles19" Guid="A37AB783-2249-42EA-857D-FC7022C6FC19" Permanent="yes">
+        <File Id="ChangeDetection.log4net.ROBC.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.ROBC.config"/>
+      </Component>
+	  <Component Id="LoggingFiles20" Guid="A37AB783-2249-42EA-857D-FC7022C6FC20" Permanent="yes">
+		<File Id="ChangeDetection.log4net.ADMS_CD.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ChangeDetection\ChangeDetection.log4net.ADMS_CD.config"/>
+	  </Component>
+    </DirectoryRef>
+
+  </Fragment>
+</Wix>

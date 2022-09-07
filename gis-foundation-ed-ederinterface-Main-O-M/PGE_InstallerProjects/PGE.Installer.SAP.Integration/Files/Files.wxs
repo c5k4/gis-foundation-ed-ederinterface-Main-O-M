@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?define ClientName='PGE'?>
+  <?define Directory='COMMON'?>
+  
+
+  <?define Filename='PGE.Common.Delivery.Framework'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.FRAMEWORK'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Filename='PGE.Common.Delivery.Systems'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.SYSTEMS'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Filename='PGE.Common.Delivery.Geodatabase'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.GEODATABASE'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Directory='COMMON'?>
+  <?define Filename='PGE.Common.ChangeDetectionAPI'?>
+  <?define FilenameUpper='PGE.COMMON.CHANGEDETECTIONAPI'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+  
+  <?define Directory='COMMON'?>
+  <?define Filename='PGE.Common.Delivery.Diagnostics'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.DIAGNOSTICS'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Directory='SAPAssetSynch'?>
+  <?define ActionKey="SAPIntegration"?>
+  
+  <?define Filename='PGE.Interfaces.SAP'?>
+  <?define FilenameUpper='PGE.INTERFACES.SAP'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\"?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+  
+  <?define Filename='PGE.Interfaces.SAP.GDBM'?>
+  <?define FilenameUpper='PGE.INTERFACES.SAP.GDBM'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\"?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  
+  <!--<?include InstallAssembly10WithoutGAC.wxi?>-->
+
+  <?include ..\..\Externals\Wix_Templates\ESRIRegAsm10.wxi?>
+</Wix>

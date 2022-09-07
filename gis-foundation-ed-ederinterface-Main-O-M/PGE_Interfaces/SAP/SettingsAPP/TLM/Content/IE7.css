@@ -1,0 +1,49 @@
+﻿div.tr-peak-info-detail span.display-label, div.tr-peak-info-detail span.display-field-left, div.tr-peak-info-detail span.display-field-right, div.customer-tr-detail span.custtype-label, span.winter-detail, span.summer-detail
+{
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+}
+div.customer-tr-detail span.winter-qty-label, div.customer-tr-detail span.winter-kva-label, div.customer-tr-detail span.summer-qty-label, div.customer-tr-detail span.summer-kva-label, div.customer-tr-detail span.winter-qty-field, div.customer-tr-detail span.winter-kva-field, div.customer-tr-detail span.summer-qty-field, div.customer-tr-detail span.summer-kva-field
+{
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+}
+div.row1 div.display-field
+{
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+}
+div.row2 div, div.row2 input, div.row3 *
+{
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+}
+.SubCellLeft, .SubCellRight
+{
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+}
+.print
+{
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+}
+div.GIS-Attr div.display-label
+{
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+ 
+}
+div.GIS-Attr div.display-field
+{
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+}

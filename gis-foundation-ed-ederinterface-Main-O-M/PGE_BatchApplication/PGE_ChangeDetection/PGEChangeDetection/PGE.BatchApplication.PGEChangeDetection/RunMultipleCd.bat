@@ -1,0 +1,1 @@
+for /l %%x in (1, 1, 100) do PGEChangeDetection.exe -c SettingsDeltasToEderEtl.config

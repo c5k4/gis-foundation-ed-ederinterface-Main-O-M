@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="ArcFMSilverlight.SAPRWControl"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:esriSymbols="clr-namespace:ESRI.ArcGIS.Client.Symbols;assembly=ESRI.ArcGIS.Client"
+    xmlns:converters="clr-namespace:ESRI.ArcGIS.Client.Toolkit.ValueConverters;assembly=ESRI.ArcGIS.Client.Toolkit"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    xmlns:local="clr-namespace:ArcFMSilverlight"
+    mc:Ignorable="d">
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.Resources>
+            <esri:LineSymbol x:Name="SelectionSymbol"  Color="Yellow" Width="2" />
+            <esri:LineSymbol x:Name="ArrowSymbol"  Color="Red" Width="2" />
+            <esri:LineSymbol x:Key="SelectLineSymbol" x:Name="esritest">
+                <esri:LineSymbol.ControlTemplate>
+                    <ControlTemplate>
+                        <Path x:Name="Element"
+									Stroke="Black"
+									StrokeStartLineCap="Round"
+									StrokeThickness="4"
+									StrokeLineJoin="Round"
+									StrokeEndLineCap="Round">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="SelectionStates">
+                                    <!--By specifying an empty Unselected state,
+											unselecting the graphic will instantly set the
+											values back to their original value without any animation.
+											Set a storyboard if you want a smooth transition 
+											back (see SelectFillSymbol template) -->
+                                    <VisualState x:Name="Unselected" />
+                                    <VisualState x:Name="Selected">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Element" 
+														Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
+														To="Yellow"  Duration="00:00:00.25" />
+                                            <DoubleAnimation Storyboard.TargetName="Element"
+														Storyboard.TargetProperty="StrokeThickness"
+														To="10"  Duration="00:00:00.25" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Path>
+                    </ControlTemplate>
+                </esri:LineSymbol.ControlTemplate>
+            </esri:LineSymbol>
+            <!--<extendedSymbols:ExtendedLineSymbol x:Name="ExtLineSymbol" Fill="Black" Width="2" >
+                <extendedSymbols:ExtendedLineSymbol.GeometryTransformer>
+                    <extendedSymbols:ArrowPatternTransformer AtEnd="True">
+                        
+                    </extendedSymbols:ArrowPatternTransformer>
+                </extendedSymbols:ExtendedLineSymbol.GeometryTransformer>
+            </extendedSymbols:ExtendedLineSymbol>
+            
+            <extendedSymbols:ExtendedLineSymbol x:Name="HighineSymbol" Fill="Yellow" Color="Yellow" Width="2">
+                <extendedSymbols:ExtendedLineSymbol.GeometryTransformer>
+                    <extendedSymbols:ArrowPatternTransformer AtEnd="True">
+                         
+                    </extendedSymbols:ArrowPatternTransformer>
+                </extendedSymbols:ExtendedLineSymbol.GeometryTransformer>
+            </extendedSymbols:ExtendedLineSymbol>-->
+            
+        </Grid.Resources>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Row="0">
+            <ToggleButton Name="MapNotificationToggleButton"
+                      Margin="1"
+                      Padding="1"
+                      Style="{StaticResource RibbonToggleButton}"
+                      IsChecked="{Binding IsActive, Mode=TwoWay}"
+                      ToolTipService.ToolTip="Create Map Notification" >
+                <Image x:Name="ImageSource" Width="16"
+                   Height="16"
+                   Source="/Images/map_notification.png" />
+            </ToggleButton>
+
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1">            
+            
+            <ToggleButton Name="DrawArrowLineToggleButton"
+                      Margin="1"
+                      Padding="1"
+                      Style="{StaticResource RibbonToggleButton}"
+                      IsChecked="{Binding IsActive, Mode=TwoWay}"
+                      ToolTipService.ToolTip="Draw Arrow Symbols" Click="DrawArrowLineToggleButton_Click">
+                <Image Width="16"
+                   Height="16"
+                   Source="/Images/drawline.png" />
+            </ToggleButton>
+
+            <ToggleButton Name="SelectGraphicToggleButton"
+                      Margin="1"
+                      Padding="1"
+                      Style="{StaticResource RibbonToggleButton}"
+                      IsChecked="{Binding IsActive, Mode=TwoWay}"
+                      ToolTipService.ToolTip="Select Graphics" Click="SelectGraphicToggleButton_Click">
+                <Image Width="16"
+                   Height="16"
+                   Source="/Images/selectfeatures.png"/>
+            </ToggleButton>
+
+            <Button x:Name="DeleteGraphicButton" Grid.Column="1" Width="Auto"
+					Style="{StaticResource RibbonButton}"					
+					ToolTipService.ToolTip="Delete Selected graphics" Click="DeleteGraphicButton_Click">
+                <Image Width="16"
+					Height="16"
+					Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/deleteFeature.png"
+					Stretch="None"/>
+            </Button>
+            
+        </StackPanel>
+    </Grid>
+
+</UserControl>

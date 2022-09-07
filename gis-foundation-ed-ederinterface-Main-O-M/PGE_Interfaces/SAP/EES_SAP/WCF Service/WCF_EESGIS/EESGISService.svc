@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WCF_EESGIS.Service1" CodeBehind="EESGISService.svc.cs" %>

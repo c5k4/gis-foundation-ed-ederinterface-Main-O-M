@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ArcFMSilverlight.Web.Services.WCFPONSService" CodeBehind="WCFPONSService.svc.cs" %>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OperationGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OperationGroup>
+    <Property name="Name" type="System.String">Underground Facility Manager</Property>
+    <Property name="Description" type="System.String">Underground Facility Manager</Property>
+    <Operation type="PGE.Desktop.EDER.UFM.Operations.SetButterflyFilter, PGE.Desktop.EDER, version=10.8.1.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7">
+      <Property name="ShowInOperationsTree" type="System.Boolean">true</Property>
+      <OperationUI type="PGE.Desktop.EDER.UFM.Operations.SetButterflyFilterControl, PGE.Desktop.EDER, version=10.8.1.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7"/>
+    </Operation>
+    <Operation type="Miner.Framework.Diagrams.Underground.CreateDiagramOperation, Miner.Framework.Engine, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+      <Property name="ShowInOperationsTree" type="System.Boolean">true</Property>
+      <Operation type="Miner.Framework.Diagrams.Underground.ConfigureAndCreateDiagramOperation, Miner.Framework.Engine, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+        <Property name="ShowInOperationsTree" type="System.Boolean">true</Property>
+        <OperationUI type="Miner.Desktop.Diagrams.Underground.ConfigureAndCreateDiagram, Miner.Desktop, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc"/>
+      </Operation>
+    </Operation>
+    <Operation type="Miner.Framework.Diagrams.Underground.CreateDuctBankOperation, Miner.Framework.Engine, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+      <Property name="ShowInOperationsTree" type="System.Boolean">true</Property>
+      <Operation type="Miner.Framework.Diagrams.Underground.ConfigureAndCreateDuctBankOperation, Miner.Framework.Engine, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+        <Property name="ShowInOperationsTree" type="System.Boolean">true</Property>
+        <OperationUI type="Miner.Desktop.Diagrams.Underground.ConfigureAndCreateDuctBank, Miner.Desktop, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc"/>
+      </Operation>
+      <Operation type="Miner.Framework.Diagrams.Underground.CreateOppositeDuctBankOperation, Miner.Framework.Engine, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+        <Property name="ShowInOperationsTree" type="System.Boolean">true</Property>
+        <OperationUI type="Miner.Desktop.Diagrams.Underground.CreateOppositeDuctBank, Miner.Desktop, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc"/>
+      </Operation>
+      <Operation type="Miner.Framework.Diagrams.Underground.CreateDuctBankFromFavoriteOperation, Miner.Framework.Engine, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+        <Property name="ShowInOperationsTree" type="System.Boolean">true</Property>
+        <OperationUI type="Miner.Desktop.Diagrams.Underground.DuctBankFavorites, Miner.Desktop, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc"/>
+      </Operation>
+      <Operation type="Miner.Framework.Diagrams.Underground.CreateDuctBankFromConduitOperation, Miner.Framework.Engine, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+        <Property name="ShowInOperationsTree" type="System.Boolean">true</Property>
+        <OperationUI type="Miner.Desktop.Diagrams.Underground.CreateDuctBanksFromConduit, Miner.Desktop, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc"/>
+      </Operation>
+    </Operation>
+    <Operation type="Miner.Framework.Diagrams.Underground.EditConduitCrossSectionOperation, Miner.Framework.Engine, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+      <Property name="ShowInOperationsTree" type="System.Boolean">true</Property>
+      <OperationUI type="Miner.Desktop.Diagrams.Underground.EditDuctBankUI, Miner.Desktop, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc"/>
+    </Operation>
+    <Operation type="Miner.Framework.Diagrams.Underground.SaveCompositeFavoriteOperation, Miner.Framework.Engine, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+      <Property name="ShowInOperationsTree" type="System.Boolean">true</Property>
+      <OperationUI type="Miner.Desktop.Diagrams.Underground.SaveCompositeFavoritesUI, Miner.Desktop, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc"/>
+    </Operation>
+    <Operation type="Miner.Framework.Diagrams.Underground.CreateAnnotationOperation, Miner.Framework.Engine, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+      <Property name="ShowInOperationsTree" type="System.Boolean">true</Property>
+      <OperationUI type="Miner.Desktop.Diagrams.Underground.CreateAnnotation, Miner.Desktop, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc"/>
+    </Operation>
+    <Operation type="PGE.Desktop.EDER.UFM.Operations.CreateButterflyAnno, PGE.Desktop.EDER, version=10.8.1.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7">
+      <Property name="ShowInOperationsTree" type="System.Boolean">true</Property>
+      <OperationUI type="PGE.Desktop.EDER.UFM.Operations.CreateButterflyAnnoControl, PGE.Desktop.EDER, version=10.8.1.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7"/>
+    </Operation>
+    <Operation type="Miner.Framework.Diagrams.Underground.ConduitRelateOperation, Miner.Framework.Engine, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+      <Property name="ShowInOperationsTree" type="System.Boolean">true</Property>
+      <Operation type="Miner.Framework.Diagrams.Underground.ConduitToDuctBankRelateOperation, Miner.Framework.Engine, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+        <Property name="ShowInOperationsTree" type="System.Boolean">true</Property>
+        <OperationUI type="Miner.Desktop.Diagrams.Underground.ConduitToDuctBankRelate, Miner.Desktop, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc"/>
+      </Operation>
+    </Operation>
+    <Operation type="Miner.Framework.Diagrams.Underground.ConductorRelateOperation, Miner.Framework.Engine, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+      <Property name="ShowInOperationsTree" type="System.Boolean">true</Property>
+      <Operation type="Miner.Framework.Diagrams.Underground.ConductorToDuctRelateOperation, Miner.Framework.Engine, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+        <Property name="ShowInOperationsTree" type="System.Boolean">true</Property>
+        <OperationUI type="Miner.Desktop.Diagrams.Underground.ConductorToDuctRelate, Miner.Desktop, version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc"/>
+      </Operation>
+    </Operation>
+  </OperationGroup>
+</OperationGroups>

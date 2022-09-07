@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{465BC557-6105-43D3-B330-3A82E87F7DDC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PGE.BatchApplication.FAISessionProcessor</RootNamespace>
+    <AssemblyName>PGE.BatchApplication.FAISessionProcessor</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoDatabaseDistributed, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL" />
+    <Reference Include="Miner.Interop.Framework, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Interop.FrameworkUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Interop.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Interop.Process, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Interop.Process.Session, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Interop.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Process, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL" />
+    <Reference Include="Miner.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL" />
+    <Reference Include="Oracle.DataAccess">
+      <HintPath>..\..\..\..\..\app\client\product\19.0.0\client_1\ODP.NET\bin\4\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="PGE_DBPasswordManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=820abe4faa45686d, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Miner and Miner\PG&amp;E Custom Components\PGE.PasswordMgmt\PGE_DBPasswordManagement.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FAIProcessor.cs" />
+    <Compile Include="SessionManager\MinerSession.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <Content Include="PGE.BatchApplication.FAISessionProcessor.exe.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PGE.BatchApplication.FAISessionProcessor.log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PGE.FAISessionProcessor.Processing.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.ArcFM\PGE.Common.Delivery.ArcFM.csproj">
+      <Project>{36519D54-E65E-4974-8DA5-1931F1BBB692}</Project>
+      <Name>PGE.Common.Delivery.ArcFM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Diagnostics\PGE.Common.Delivery.Diagnostics.csproj">
+      <Project>{1d019976-ffe6-41a2-ab9c-6241696edb8e}</Project>
+      <Name>PGE.Common.Delivery.Diagnostics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Framework\PGE.Common.Delivery.Framework.csproj">
+      <Project>{f36c0849-bf86-4632-aed8-dcc7c4827f86}</Project>
+      <Name>PGE.Common.Delivery.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Geodatabase\PGE.Common.Delivery.Geodatabase.csproj">
+      <Project>{472c594a-cd61-48e0-b814-8144cb1506fc}</Project>
+      <Name>PGE.Common.Delivery.Geodatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER\PGE.Desktop.EDER.csproj">
+      <Project>{b614bae2-18e6-44cf-a130-ddd682cd3d47}</Project>
+      <Name>PGE.Desktop.EDER</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,117 @@
+
+SQL*Loader: Release 19.0.0.0.0 - Production on Sun Feb 27 23:37:05 2022
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   D:\edgisdbmaint\load_cdxdata.ctl
+Data File:      \\rcnas01-smb\edgisrearch-fs01\Streetlight\data_from_rss\SL-3679.csv
+  Bad File:     D:\edgisdbmaint\SL-3679.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Bind array:     250 rows, maximum of 1048576 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table PGEDATA.SLCDX_DATA, loaded from every logical record.
+Insert option in effect for this table: TRUNCATE
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+OFFICE                              FIRST     *   ,  O(") CHARACTER            
+PERSON_NAME                          NEXT     *   ,  O(") CHARACTER            
+ACCOUNT_NUMBER                       NEXT     *   ,  O(") CHARACTER            
+BADGE_NUMBER                         NEXT     *   ,  O(") CHARACTER            
+FIXTURE_CODE                         NEXT     *   ,  O(") CHARACTER            
+STATUS                               NEXT     *   ,  O(") CHARACTER            
+STATUS_FLAG                          NEXT     *   ,  O(") CHARACTER            
+RECEIVE_DATE                         NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "to_DATE(:Receive_Date, 'ddmmyy')"
+RETIRE_DATE                          NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "to_DATE(:Retire_Date, 'ddmmyy')"
+INSTALL_DATE                         NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "to_DATE(:Install_Date, 'ddmmyy')"
+REMOVAL_DATE                         NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "to_DATE(:Removal_Date, 'ddmmyy')"
+CHANGE_OF_PARTY_DATE                 NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "to_DATE(:Change_of_Party_Date, 'ddmmyy')"
+DESCRIPTIVE_ADDRESS                  NEXT     *   ,  O(") CHARACTER            
+MAP_NUMBER                           NEXT     *   ,  O(") CHARACTER            
+RATE_SCHEDULE                        NEXT     *   ,  O(") CHARACTER            
+ITEM_TYPE_CODE                       NEXT     *   ,  O(") CHARACTER            
+OPERATING_SCHEDULE                   NEXT     *   ,  O(") CHARACTER            
+SERVICE                              NEXT     *   ,  O(") CHARACTER            
+FIXTURE_MANUFACTURER                 NEXT     *   ,  O(") CHARACTER            
+POLE_TYPE                            NEXT     *   ,  O(") CHARACTER            
+POLE_LENGTH                          NEXT     *   ,  O(") CHARACTER            
+SUSPENSION                           NEXT     *   ,  O(") CHARACTER            
+POLE_USE                             NEXT     *   ,  O(") CHARACTER            
+SP_ID                                NEXT     *   ,  O(") CHARACTER            
+SA_ID                                NEXT     *   ,  O(") CHARACTER            
+PREM_ID                              NEXT     *   ,  O(") CHARACTER            
+TOT_CODE                             NEXT     *   ,  O(") CHARACTER            
+TOT_TERR_DESC                        NEXT     *   ,  O(") CHARACTER            
+INVENTORY_DATE                       NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "to_DATE(:Inventory_Date, 'ddmmyy')"
+INVENTORIED_BY                       NEXT     *   ,  O(") CHARACTER            
+SP_ITEM_HIST                         NEXT     *   ,  O(") CHARACTER            
+UNIQUE_SP_ID                         NEXT     *   ,  O(") CHARACTER            
+GIS_ID                               NEXT     *   ,  O(") CHARACTER            
+BALLAST_CH_DT                        NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "to_DATE(:BALLAST_CH_DT, 'ddmmyy')"
+LAMP_CH_DT                           NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "to_DATE(:LAMP_CH_DT, 'ddmmyy')"
+LINE_SHARE_SW                        NEXT     *   ,  O(") CHARACTER            
+LITE_SIZE                            NEXT     *   ,  O(") CHARACTER            
+LITE_TYPE                            NEXT     *   ,  O(") CHARACTER            
+LUMN_CH_DT                           NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "to_DATE(:LUMN_CH_DT, 'ddmmyy')"
+PCELL_CH_DT                          NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "to_DATE(:PCELL_CH_DT, 'ddmmyy')"
+PCELL                                NEXT     *   ,  O(") CHARACTER            
+POLE_CH_DT                           NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "to_DATE(:POLE_CH_DT, 'ddmmyy')"
+POLE_PT_DT                           NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "to_DATE(:POLE_PT_DT, 'ddmmyy')"
+STRT_CH_DT                           NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "to_DATE(:STRT_CH_DT, 'ddmmyy')"
+LITESIZE_TYPE                        NEXT     *   ,  O(") CHARACTER            
+LITETYPE_TYPE                        NEXT     *   ,  O(") CHARACTER            
+HALFHRADJ_TYPE                       NEXT     *   ,  O(") CHARACTER            
+MAIL_ADDR1                           NEXT     *   ,  O(") CHARACTER            
+MAIL_ADDR2                           NEXT     *   ,  O(") CHARACTER            
+MAIL_CITY                            NEXT     *   ,  O(") CHARACTER            
+MAIL_STATE                           NEXT     *   ,  O(") CHARACTER            
+MAIL_ZIP                             NEXT     *   ,  O(") CHARACTER            
+
+value used for ROWS parameter changed from 250 to 78
+Record 20: Rejected - Error on table PGEDATA.SLCDX_DATA, column RETIRE_DATE.
+ORA-01847: day of month must be between 1 and last day of month
+
+
+Table PGEDATA.SLCDX_DATA:
+  19 Rows successfully loaded.
+  1 Row not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                1046448 bytes(78 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:            20
+Total logical records rejected:         1
+Total logical records discarded:        0
+
+Run began on Sun Feb 27 23:37:05 2022
+Run ended on Sun Feb 27 23:37:07 2022
+
+Elapsed time was:     00:00:02.14
+CPU time was:         00:00:00.11

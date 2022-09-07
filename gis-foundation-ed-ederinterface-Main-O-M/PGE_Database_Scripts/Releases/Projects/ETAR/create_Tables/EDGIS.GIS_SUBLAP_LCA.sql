@@ -1,0 +1,36 @@
+--------------------------------------------------------
+--  File created - Monday-January-06-2020   
+--------------------------------------------------------
+DROP TABLE "EDGIS"."GIS_SUBLAP_LCA";
+--------------------------------------------------------
+--  DDL for Table GIS_SUBLAP_LCA
+--------------------------------------------------------
+
+  CREATE TABLE "EDGIS"."GIS_SUBLAP_LCA" 
+   (	"UDC_ID" VARCHAR2(255 BYTE), 
+	"LAP_ID" VARCHAR2(255 BYTE), 
+	"LCA_NAME" VARCHAR2(255 BYTE), 
+	"START_DATE" DATE, 
+	"END_DATE" DATE, 
+	"CREATE_DATE" DATE, 
+	"CREATED_BY" VARCHAR2(255 BYTE), 
+	"UPDATE_DATE" DATE, 
+	"UPDATED_BY" VARCHAR2(255 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "EDGIS" ;
+--------------------------------------------------------
+--  Constraints for Table GIS_SUBLAP_LCA
+--------------------------------------------------------
+
+  ALTER TABLE "EDGIS"."GIS_SUBLAP_LCA" MODIFY ("LAP_ID" NOT NULL ENABLE);
+  ALTER TABLE "EDGIS"."GIS_SUBLAP_LCA" MODIFY ("CREATE_DATE" NOT NULL ENABLE);
+
+ 
+Prompt Grants on TABLE EDGIS.GIS_SUBLAP_LCA TO SDE_VIEWER to SDE_VIEWER;
+GRANT SELECT ON EDGIS.GIS_SUBLAP_LCA TO SDE_VIEWER;
+/

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.Interfaces.StreetlightGIS_Job", "StreetlightGIS_Job\PGE.Interfaces.StreetlightGIS_Job.csproj", "{1C262153-9B38-4FFA-983F-76D3B3CD4AE1}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PGE.Installer.StreetlightGIS_Job", "PGE.Installer.StreelightGIS_Job\PGE.Installer.Streetlight_Job.vdproj", "{99353F4B-15B3-487F-9F7D-D565F2F5D390}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C262153-9B38-4FFA-983F-76D3B3CD4AE1}.Debug|x86.ActiveCfg = Debug|x86
+		{1C262153-9B38-4FFA-983F-76D3B3CD4AE1}.Debug|x86.Build.0 = Debug|x86
+		{1C262153-9B38-4FFA-983F-76D3B3CD4AE1}.Release|x86.ActiveCfg = Release|x86
+		{1C262153-9B38-4FFA-983F-76D3B3CD4AE1}.Release|x86.Build.0 = Release|x86
+		{99353F4B-15B3-487F-9F7D-D565F2F5D390}.Debug|x86.ActiveCfg = Debug
+		{99353F4B-15B3-487F-9F7D-D565F2F5D390}.Debug|x86.Build.0 = Debug
+		{99353F4B-15B3-487F-9F7D-D565F2F5D390}.Release|x86.ActiveCfg = Release
+		{99353F4B-15B3-487F-9F7D-D565F2F5D390}.Release|x86.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F99C567-8764-4FCD-94B5-F0BEEE5A20DF}
+	EndGlobalSection
+EndGlobal

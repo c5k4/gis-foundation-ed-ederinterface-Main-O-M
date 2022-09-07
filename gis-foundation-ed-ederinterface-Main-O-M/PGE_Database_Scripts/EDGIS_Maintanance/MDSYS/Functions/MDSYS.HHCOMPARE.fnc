@@ -1,0 +1,22 @@
+Prompt drop Function HHCOMPARE;
+DROP FUNCTION MDSYS.HHCOMPARE
+/
+
+Prompt Function HHCOMPARE;
+--
+-- HHCOMPARE  (Function) 
+--
+CREATE OR REPLACE FUNCTION MDSYS.hhcompare (hh1 IN RAW, hh2 IN RAW)
+    RETURN BINARY_INTEGER IS
+begin
+ return md.hhcompare(hh1,hh2);
+end;
+/
+
+
+Prompt Synonym HHCOMPARE;
+--
+-- HHCOMPARE  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM HHCOMPARE FOR MDSYS.HHCOMPARE
+/

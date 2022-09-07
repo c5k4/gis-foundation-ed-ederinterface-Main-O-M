@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D5DF34A-E73F-4D10-8EE5-6B750F3A064D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PGE.BatchApplication.ROBCService</RootNamespace>
+    <AssemblyName>PGE.BatchApplication.ROBCService</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PGE_DBPasswordManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=820abe4faa45686d, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Miner and Miner\PG&amp;E Custom Components\PGE.PasswordMgmt\PGE_DBPasswordManagement.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Util.cs" />
+    <Compile Include="Services\CircuitService.cs" />
+    <Compile Include="Models\CircuitSourceModel.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Models\PCPListModel.cs" />
+    <Compile Include="Models\PCPModel.cs" />
+    <Compile Include="Models\ROBCModel.cs" />
+    <Compile Include="IMessageBoxService.cs" />
+    <Compile Include="Services\CoreService.cs" />
+    <Compile Include="Services\PCPManagementService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ROBCManagementService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Diagnostics\PGE.Common.Delivery.Diagnostics.csproj">
+      <Project>{1d019976-ffe6-41a2-ab9c-6241696edb8e}</Project>
+      <Name>PGE.Common.Delivery.Diagnostics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj">
+      <Project>{40246c50-f005-483f-8306-7f80a561a4fa}</Project>
+      <Name>PGE.BatchApplication.ROBC_API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

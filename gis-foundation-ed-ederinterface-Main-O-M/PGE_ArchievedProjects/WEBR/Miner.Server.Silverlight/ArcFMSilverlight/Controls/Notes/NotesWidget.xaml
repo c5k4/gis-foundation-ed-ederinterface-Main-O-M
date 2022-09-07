@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="ArcFMSilverlight.NotesWidget"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:esriSymbols="clr-namespace:ESRI.ArcGIS.Client.Symbols;assembly=ESRI.ArcGIS.Client"
+    xmlns:converters="clr-namespace:ESRI.ArcGIS.Client.Toolkit.ValueConverters;assembly=ESRI.ArcGIS.Client.Toolkit"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    xmlns:local="clr-namespace:ArcFMSilverlight"
+    mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.Resources>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal"  Grid.Row="0">
+
+            <CheckBox x:Name="ToggleNotes"
+                 Content="View Notes"
+			    IsChecked="False"
+                Checked="NotesLayerVisibleToggleButton_Checked"
+                Unchecked="NotesLayerVisibleToggleButton_Unchecked"
+                ToolTipService.ToolTip="Notes Layer On/Off" 
+			    Margin="4 2 4 2" />
+
+
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+
+
+            <ToggleButton Name="NotesCreate"
+                      Margin="1"
+                      Padding="1"
+                      Style="{StaticResource RibbonToggleButton}"
+                      ToolTipService.ToolTip="Click on Map to create Notes" Click="Create_Click">
+                <Image Width="16"
+                   Height="16"
+                   Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/attributes.png"/>
+            </ToggleButton>
+
+            <ToggleButton Name="NotesEdit"
+                      Margin="1"
+                      Padding="1"
+                      Style="{StaticResource RibbonToggleButton}"
+                      ToolTipService.ToolTip="Select Notes on Map to edit" Click="Edit_Click">
+                <Image Width="16"
+                   Height="16"
+                   Source="/Images/selectfeatures.png"/>
+            </ToggleButton>
+
+            <ToggleButton Name="NotesDelete"
+                      Margin="1"
+                      Padding="1"
+                      Style="{StaticResource RibbonToggleButton}"
+                      ToolTipService.ToolTip="Select Notes on Map to delete" Click="Delete_Click">
+                <Image Width="16"
+                   Height="16"
+                   Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/deleteFeature.png"/>
+            </ToggleButton>
+
+            <Button x:Name="NotesClear"
+							Command="{Binding ClearSelection}"
+							HorizontalContentAlignment="Left"
+							Style="{StaticResource RibbonButton}"
+                            IsEnabled="false"
+							ToolTipService.ToolTip="Clear Notes highlights on Map" Click="Clear_Click">
+                <Image Margin="2 0"
+							    Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/Clear.png"
+							    Stretch="None" />
+            </Button>
+
+        </StackPanel>
+    </Grid>
+
+</UserControl>
+
+      
+          

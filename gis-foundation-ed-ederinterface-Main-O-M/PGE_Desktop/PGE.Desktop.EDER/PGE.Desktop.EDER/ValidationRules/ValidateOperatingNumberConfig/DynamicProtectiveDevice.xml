@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<SymbolNumberRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FeatureClass Name="DynamicProtectiveDevice">
+  <Rule BeginsWith="" EndsWith="0" MinLength="4" MaxLength="7" Required="1">
+    <Or>
+      <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+      <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+      <Attribute FieldName="SubtypeCD"><Value>8</Value></Attribute>
+    </Or>
+  </Rule>
+  <Rule BeginsWith="" EndsWith="2" MinLength="0" MaxLength="7" Required="2">
+    <And>
+      <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+    </And>
+  </Rule>
+</FeatureClass>
+</SymbolNumberRules>

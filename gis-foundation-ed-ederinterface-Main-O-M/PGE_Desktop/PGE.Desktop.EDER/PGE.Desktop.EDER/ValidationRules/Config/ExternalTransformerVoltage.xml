@@ -1,0 +1,10 @@
+﻿<DomainMappings>
+  <DomainMapping name="Transformer Volatge">
+    <Domain name="SquareRoot3Voltage">
+      <add fromValue="4.16 kV" toValue="2.4 kV"/>
+      <add fromValue="12.0 kV" toValue="7.2 kV"/>
+      <add fromValue="21 kV" toValue="12.0 kV"/>
+      <add fromValue="{default}" toValue=""/>
+    </Domain>
+  </DomainMapping>
+</DomainMappings>

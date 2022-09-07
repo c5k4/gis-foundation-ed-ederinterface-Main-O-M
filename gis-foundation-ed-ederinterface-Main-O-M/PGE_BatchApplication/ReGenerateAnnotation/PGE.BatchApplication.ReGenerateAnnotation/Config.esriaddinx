@@ -1,0 +1,20 @@
+﻿<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>ReGenerate PriUGConductor Labeltext</Name>
+  <AddInID>{e2c8dcbd-5757-4fda-ac81-7337cb1d6873}</AddInID>
+  <Description>Tool to fire only the labeltext AU associated with the top most layer in the MXD.</Description>
+  <Version>1.0</Version>
+  <Image>Images\PGE.BatchApplication.ReGeneratePriUGAnnotation.png</Image>
+  <Author>Robert Rader</Author>
+  <Company>Rader Logic LLC</Company>
+  <Date>10/7/2015</Date>
+  <Targets>
+    <Target name="Desktop" version="10.2" />
+  </Targets>
+  <AddIn language="CLR" library="PGE.BatchApplication.ReGeneratePriUGAnnotation.dll" namespace="PGE.BatchApplication.ReGeneratePriUGAnnotation">
+    <ArcMap>
+      <Commands>
+        <Button id="Regenerate_PriUGAnno_LabelText" class="PGE.BatchApplication.ReGeneratePriUGAnnotation" message="ReGenerate PriUG LabelText and Annotation" caption="ReGenerate PriUG LabelText and Annotation" tip="Change LabelText in the PriUG Conductor layer updating Annotation" category="DLM-AddIns" image="Images\PGE.BatchApplication.ReGeneratePriUGAnnotation.png" />
+      </Commands>
+    </ArcMap>
+  </AddIn>
+</ESRI.Configuration>

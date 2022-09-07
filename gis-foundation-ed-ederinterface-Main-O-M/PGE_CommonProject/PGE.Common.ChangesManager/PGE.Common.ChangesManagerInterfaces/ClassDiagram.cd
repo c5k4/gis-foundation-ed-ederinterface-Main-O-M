@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.ChangesManagerShared.ChangeDictionariesList" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAMAAAAAAAAAAAIACAAgAAIAwAAIAAAAAAAgAAAIA=</HashCode>
+      <FileName>ChangeDictionariesList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.ChangesManagerShared.ChangeDictionary" Collapsed="true">
+    <Position X="8.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAIAAgEAgCAEAAAGDBgABBAIABQACAAADAEAAAAAAAA=</HashCode>
+      <FileName>ChangeDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.ChangesManagerShared.ChangeRow" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAQ=</HashCode>
+      <FileName>ChangeRow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.ChangesManagerShared.ChangeTable" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACAAAAAAAAECEDAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>ChangeTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.ChangesManagerShared.ErrorCodeException" Collapsed="true">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>ErrorCodeException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.ChangesManagerShared.Extensions" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAIACAIAAAAAAAAAAABgAAAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.ChangesManagerShared.SDEWorkspaceConnection" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAhAAAACAAAAAAAAIAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>SDEWorkspaceConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.ChangesManagerShared.Utilities.AOHelper" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAAAAAAAAAAAEAAAAAgEAAIAEACAAAACAAAAAAAAA=</HashCode>
+      <FileName>Utilities\AOHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Collections.ObjectModel.Collection&lt;T&gt;" Collapsed="true">
+    <Position X="8.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;" Collapsed="true">
+    <Position X="11.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Collections.ObjectModel.KeyedCollection&lt;TKey, TItem&gt;" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Exception" Collapsed="true">
+    <Position X="12" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="PGE.ChangesManagerShared.Interfaces.IChangeDetector" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIACAAAAgAAAAAAAAAAAAAkAAAAA=</HashCode>
+      <FileName>Interfaces\IChangeDetector.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PGE.ChangesManagerShared.Interfaces.IChangeSubscriber" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IChangeSubscriber.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="PGE.ChangesManagerShared.ChangeWorkspace" Collapsed="true">
+    <Position X="2.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAQAAAAAAAAACCAAAA=</HashCode>
+      <FileName>ChangeDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.ChangesManagerShared.FilterResultType" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABACCAAAAABBAACAAAAAAAAAAAAAAQAAAAAAAQEAAIQ=</HashCode>
+      <FileName>ChangeTable.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.ChangesManagerShared.ChangeRowTypes" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAgAAAAAAAwAAAAAAAAAAAAAAAAAEBACA=</HashCode>
+      <FileName>ChangeTable.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.ChangesManagerShared.ErrorCode" Collapsed="true">
+    <Position X="4" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABgQARAAAEAoAAAACAAAAAAAAACAMBAAAAAAAI=</HashCode>
+      <FileName>ErrorCodeException.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

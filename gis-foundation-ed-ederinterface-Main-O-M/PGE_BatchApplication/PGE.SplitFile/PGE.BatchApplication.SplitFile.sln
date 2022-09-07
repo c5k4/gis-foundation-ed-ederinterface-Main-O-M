@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.BatchApplication.SplitFile", "PGE.BatchApplication.SplitFile.csproj", "{E1F121AD-4AB7-4641-B029-C98074950791}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1F121AD-4AB7-4641-B029-C98074950791}.Debug|x86.ActiveCfg = Debug|x86
+		{E1F121AD-4AB7-4641-B029-C98074950791}.Debug|x86.Build.0 = Debug|x86
+		{E1F121AD-4AB7-4641-B029-C98074950791}.Release|x86.ActiveCfg = Release|x86
+		{E1F121AD-4AB7-4641-B029-C98074950791}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16BD875C-8261-40B5-AB7D-101FC86D8C82}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccProjectUniqueName0 = PGE.BatchApplication.SplitFile.csproj
+		SccLocalPath0 = .
+		SccLocalPath1 = .
+	EndGlobalSection
+EndGlobal

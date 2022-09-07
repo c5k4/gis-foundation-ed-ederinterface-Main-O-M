@@ -1,0 +1,72 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit"
+	xmlns:esri="http://schemas.esri.com/arcgis/client/2009" 
+    xmlns:local="clr-namespace:ArcFMSilverlight.PageTemplates"
+	x:Class="ArcFMSilverlight.PageTemplates.SDGE_11x17_L"
+    Width="1632" Height="1056" UseLayoutRounding="true">
+    <UserControl.Resources>
+        <ResourceDictionary Source="/ArcFMSilverlight.PageTemplates;component/Themes/Generic.xaml" />
+    </UserControl.Resources>
+    <Border Margin="0,10,0,0" BorderThickness="2" BorderBrush="Black">
+            <Border Margin="-2,-12,-2,-2" BorderThickness="1" BorderBrush="Black">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.9*"/>
+                    <ColumnDefinition Width="0.089*"/>
+                    <ColumnDefinition Width="0.011*"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="Black" BorderThickness="1">
+                    <esri:Map x:Name="TemplateMap" Background="White" IsLogoVisible="False" 
+                              Layers="{Binding Layers}" Style="{StaticResource MapTickMap2}" Margin="0,0,-1,-1"/>
+                </Border>
+                <Grid Grid.Column="1" x:Name="InfoGrid" Background="White" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".1*"/>
+                        <RowDefinition Height=".05*"/>
+                        <RowDefinition Height=".35*"/>
+                        <RowDefinition Height=".4*"/>
+                        <RowDefinition Height=".1*"/>
+                    </Grid.RowDefinitions>
+                    <Image Margin="10 20 10 20" Source="/ArcFMSilverlight.PageTemplates;component/Images/NorthArrow.png" />
+                    <esri:ScaleLine x:Name="TemplateScaleBar" Grid.Row="1" Margin="10 0 0 0" MapUnit="Feet"
+                                Map="{Binding ElementName=TemplateMap}" />
+                    
+                    <toolkit:LayoutTransformer Grid.Row="2">
+                        <local:MapInformation x:Name="TemplateMapInformation"/>
+                        <toolkit:LayoutTransformer.LayoutTransform>
+                            <RotateTransform Angle="270"/>
+                        </toolkit:LayoutTransformer.LayoutTransform>
+                    </toolkit:LayoutTransformer>
+                    <toolkit:LayoutTransformer Grid.Row="3">
+                        <local:Disclaimer x:Name="TemplateMapDisclaimer" FontSize="9.7" />
+                        <toolkit:LayoutTransformer.LayoutTransform>
+                            <RotateTransform Angle="270"/>
+                        </toolkit:LayoutTransformer.LayoutTransform>
+                    </toolkit:LayoutTransformer>
+                    
+                    <Image Grid.Row="4" Source="/ArcFMSilverlight.PageTemplates;component/Images/TelventLogo.jpg" />
+                </Grid>
+
+                <Grid x:Name="SDGE_MapInfoPopupGrid" Background="White" Visibility="Collapsed" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:MapInformation x:Name="SDGE_MapInfoPopup" FontSize="25" Grid.Column="0" Width="500"/>
+                    <Button x:Name="SDGE_MapInfoPopupCloseButton" HorizontalAlignment="Right" Grid.Column="1" VerticalAlignment="Top" FontSize="20" Content="X" IsEnabled="True" Click="SDGE_MapInfoPopupCloseButton_Click"/>
+                </Grid>
+                
+                <Grid x:Name="SDGE_DisclaimerPopupGrid" Background="White" Visibility="Collapsed" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:Disclaimer x:Name="SDGE_DisclaimerPopup" FontSize="25" Grid.Column="0" Width="800"/>
+                    <Button x:Name="SDGE_DisclaimerPopupCloseButton" Click="SDGE_DisclaimerPopupCloseButton_Click" HorizontalAlignment="Right" IsEnabled="True" Grid.Column="1" VerticalAlignment="Top" FontSize="15" Content="X"/>
+                </Grid>
+            </Grid>
+        </Border>
+    </Border>
+</UserControl>

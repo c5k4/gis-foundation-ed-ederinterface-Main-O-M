@@ -1,0 +1,70 @@
+Prompt drop View SDO_TOPO_TRANSACT_DATA$;
+DROP VIEW MDSYS.SDO_TOPO_TRANSACT_DATA$
+/
+
+/* Formatted on 6/27/2019 02:51:52 PM (QP5 v5.313) */
+PROMPT View SDO_TOPO_TRANSACT_DATA$;
+--
+-- SDO_TOPO_TRANSACT_DATA$  (View)
+--
+
+CREATE OR REPLACE FORCE VIEW MDSYS.SDO_TOPO_TRANSACT_DATA$
+(
+    TOPOLOGY_ID,
+    TOPO_ID,
+    TOPO_TYPE,
+    TOPO_OP,
+    PARENT_ID
+)
+AS
+    SELECT TOPOLOGY_ID,
+           TOPO_ID,
+           TOPO_TYPE,
+           TOPO_OP,
+           PARENT_ID
+      FROM SDO_TOPO_TRANSACT_DATA
+/
+
+
+Prompt Trigger SDO_TOPO_TRIG_INS1;
+--
+-- SDO_TOPO_TRIG_INS1  (Trigger) 
+--
+CREATE OR REPLACE TRIGGER MDSYS.SDO_TOPO_TRIG_INS1
+INSTEAD OF INSERT ON MDSYS.SDO_TOPO_TRANSACT_DATA$ 
+REFERENCING NEW AS n
+FOR EACH ROW
+declare
+  user_name varchar2(32);
+  topo_name varchar2(32);
+  tname varchar2(100);
+begin
+
+
+
+
+
+
+
+
+
+
+   INSERT INTO SDO_TOPO_TRANSACT_DATA
+      values(SDO_TOPO_TRANSACT_SUBSEQ.nextval, :n.topology_id, :n.topo_id,
+                :n.topo_type, :n.topo_op, :n.parent_id);
+
+end;
+/
+
+
+Prompt Synonym SDO_TOPO_TRANSACT_DATA$;
+--
+-- SDO_TOPO_TRANSACT_DATA$  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM SDO_TOPO_TRANSACT_DATA$ FOR MDSYS.SDO_TOPO_TRANSACT_DATA$
+/
+
+
+Prompt Grants on VIEW SDO_TOPO_TRANSACT_DATA$ TO PUBLIC to PUBLIC;
+GRANT INSERT, SELECT ON MDSYS.SDO_TOPO_TRANSACT_DATA$ TO PUBLIC
+/

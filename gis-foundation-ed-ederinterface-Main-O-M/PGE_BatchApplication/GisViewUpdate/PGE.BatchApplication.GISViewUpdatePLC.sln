@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "GisViewUpdateInstaller", "PGE.Installer.GisViewUpdate\GisViewUpdateInstaller.vdproj", "{8ABEBCB6-0A3C-451A-B0B6-CDC0C3ABEDE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.BatchApplication.GISViewUpdatePLC", "PGE.BatchApplication.GISViewUpdatePLC\PGE.BatchApplication.GISViewUpdatePLC.csproj", "{E19377A3-1966-4FF3-B111-25F8A3FFE111}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8ABEBCB6-0A3C-451A-B0B6-CDC0C3ABEDE9}.Debug|x86.ActiveCfg = Debug
+		{8ABEBCB6-0A3C-451A-B0B6-CDC0C3ABEDE9}.Debug|x86.Build.0 = Debug
+		{8ABEBCB6-0A3C-451A-B0B6-CDC0C3ABEDE9}.Release|x86.ActiveCfg = Release
+		{8ABEBCB6-0A3C-451A-B0B6-CDC0C3ABEDE9}.Release|x86.Build.0 = Release
+		{E19377A3-1966-4FF3-B111-25F8A3FFE111}.Debug|x86.ActiveCfg = Debug|x86
+		{E19377A3-1966-4FF3-B111-25F8A3FFE111}.Debug|x86.Build.0 = Debug|x86
+		{E19377A3-1966-4FF3-B111-25F8A3FFE111}.Release|x86.ActiveCfg = Release|x86
+		{E19377A3-1966-4FF3-B111-25F8A3FFE111}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D3D4B3C4-30CB-415D-9D5E-9941D45A2A26}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PGE.Installer.GisViewUpdate\\GisViewUpdateInstaller.vdproj
+		SccProjectName1 = PGE.Installer.GisViewUpdate
+		SccLocalPath1 = PGE.Installer.GisViewUpdate
+		SccProjectUniqueName2 = PGE.BatchApplication.GISViewUpdatePLC\\PGE.BatchApplication.GISViewUpdatePLC.csproj
+		SccProjectName2 = PGE.BatchApplication.GISViewUpdatePLC
+		SccLocalPath2 = PGE.BatchApplication.GISViewUpdatePLC
+	EndGlobalSection
+EndGlobal

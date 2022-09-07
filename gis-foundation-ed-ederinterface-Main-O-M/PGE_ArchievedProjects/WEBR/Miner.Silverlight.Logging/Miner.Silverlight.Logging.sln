@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miner.Silverlight.Logging", "Miner.Silverlight.Logging\Miner.Silverlight.Logging.csproj", "{DC3B31C6-65F3-4DC5-9D2A-97184B63F6F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miner.Silverlight.Logging.Client", "Miner.Silverlight.Logging.Client\Miner.Silverlight.Logging.Client.csproj", "{C40CF21E-357E-491F-A95A-F3B2586F3F2C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Miner.Silverlight.Logging.Services", "Miner.Silverlight.Logging.Services", "{3D7643B1-3A4E-49C5-BCCE-7A23B1D949C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miner.Silverlight.Logging.Services.Web", "Miner.Silverlight.Logging.Services.Web\Miner.Silverlight.Logging.Services.Web.csproj", "{AC2555A3-9897-4C51-9F1B-2E7578945068}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miner.Silverlight.Logging.Services", "Miner.Silverlight.Logging.Services\Miner.Silverlight.Logging.Services.csproj", "{DCC7E9B6-5A80-444D-A9AF-D689A91265BF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AC2555A3-9897-4C51-9F1B-2E7578945068} = {AC2555A3-9897-4C51-9F1B-2E7578945068}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC3B31C6-65F3-4DC5-9D2A-97184B63F6F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC3B31C6-65F3-4DC5-9D2A-97184B63F6F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC3B31C6-65F3-4DC5-9D2A-97184B63F6F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC3B31C6-65F3-4DC5-9D2A-97184B63F6F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C40CF21E-357E-491F-A95A-F3B2586F3F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C40CF21E-357E-491F-A95A-F3B2586F3F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C40CF21E-357E-491F-A95A-F3B2586F3F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C40CF21E-357E-491F-A95A-F3B2586F3F2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC2555A3-9897-4C51-9F1B-2E7578945068}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC2555A3-9897-4C51-9F1B-2E7578945068}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC2555A3-9897-4C51-9F1B-2E7578945068}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC2555A3-9897-4C51-9F1B-2E7578945068}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCC7E9B6-5A80-444D-A9AF-D689A91265BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC7E9B6-5A80-444D-A9AF-D689A91265BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCC7E9B6-5A80-444D-A9AF-D689A91265BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCC7E9B6-5A80-444D-A9AF-D689A91265BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AC2555A3-9897-4C51-9F1B-2E7578945068} = {3D7643B1-3A4E-49C5-BCCE-7A23B1D949C6}
+		{DCC7E9B6-5A80-444D-A9AF-D689A91265BF} = {3D7643B1-3A4E-49C5-BCCE-7A23B1D949C6}
+	EndGlobalSection
+EndGlobal

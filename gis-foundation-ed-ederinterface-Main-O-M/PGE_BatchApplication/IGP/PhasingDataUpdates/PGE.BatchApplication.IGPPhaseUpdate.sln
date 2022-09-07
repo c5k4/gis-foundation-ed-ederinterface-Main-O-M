@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.BatchApplication.IGPPhaseUpdate", "EDGISPhasingAnalysisUpdates\PGE.BatchApplication.IGPPhaseUpdate.csproj", "{90E7D9F8-9F90-45F5-95A8-973A054E00E2}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PGE.Installer.IGPPhaseUpdate", "PGE_IGPPhaseUpdateInstaller\PGE_IGPPhaseUpdateInstaller.vdproj", "{8732C80E-9C27-4B99-BB22-3506FE2C3953}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90E7D9F8-9F90-45F5-95A8-973A054E00E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90E7D9F8-9F90-45F5-95A8-973A054E00E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90E7D9F8-9F90-45F5-95A8-973A054E00E2}.Debug|x86.ActiveCfg = Debug|x86
+		{90E7D9F8-9F90-45F5-95A8-973A054E00E2}.Debug|x86.Build.0 = Debug|x86
+		{90E7D9F8-9F90-45F5-95A8-973A054E00E2}.Release|Any CPU.ActiveCfg = Release|x86
+		{90E7D9F8-9F90-45F5-95A8-973A054E00E2}.Release|Any CPU.Build.0 = Release|x86
+		{90E7D9F8-9F90-45F5-95A8-973A054E00E2}.Release|x86.ActiveCfg = Release|x86
+		{90E7D9F8-9F90-45F5-95A8-973A054E00E2}.Release|x86.Build.0 = Release|x86
+		{8732C80E-9C27-4B99-BB22-3506FE2C3953}.Debug|Any CPU.ActiveCfg = Debug
+		{8732C80E-9C27-4B99-BB22-3506FE2C3953}.Debug|Any CPU.Build.0 = Debug
+		{8732C80E-9C27-4B99-BB22-3506FE2C3953}.Debug|x86.ActiveCfg = Debug
+		{8732C80E-9C27-4B99-BB22-3506FE2C3953}.Debug|x86.Build.0 = Debug
+		{8732C80E-9C27-4B99-BB22-3506FE2C3953}.Release|Any CPU.ActiveCfg = Release
+		{8732C80E-9C27-4B99-BB22-3506FE2C3953}.Release|Any CPU.Build.0 = Release
+		{8732C80E-9C27-4B99-BB22-3506FE2C3953}.Release|x86.ActiveCfg = Release
+		{8732C80E-9C27-4B99-BB22-3506FE2C3953}.Release|x86.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CEDB1DCA-4FA1-4BBD-8DF7-16EB47B99BAE}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccProjectUniqueName0 = PGE_IGPPhaseUpdateInstaller\\PGE_IGPPhaseUpdateInstaller.vdproj
+		SccProjectName0 = PGE_IGPPhaseUpdateInstaller
+		SccLocalPath0 = PGE_IGPPhaseUpdateInstaller
+		SccProjectUniqueName1 = EDGISPhasingAnalysisUpdates\\PGE.BatchApplication.IGPPhaseUpdate.csproj
+		SccProjectName1 = EDGISPhasingAnalysisUpdates
+		SccLocalPath1 = EDGISPhasingAnalysisUpdates
+		SccLocalPath2 = .
+	EndGlobalSection
+EndGlobal

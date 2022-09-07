@@ -1,0 +1,23 @@
+################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/slnx.sqlite-journal
+/.vs/slnx.sqlite-journal
+*.sqlite-journal
+.*
+!.gitignore
+*.sqlite*
+*.vspscc
+*.vssscc
+obj
+OBJ
+bin
+Debug
+x86
+Release
+Output
+ReleaseAssemblies
+Installers
+*.bak
+/PGE_BatchApplication/PGE_ChangeDetection/PGEChangeDetection/packages

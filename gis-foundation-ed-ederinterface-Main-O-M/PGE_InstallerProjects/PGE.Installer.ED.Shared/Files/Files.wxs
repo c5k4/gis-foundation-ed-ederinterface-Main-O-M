@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <DirectoryRef Id="LoggingConfiguration">
+      <Component Id="DefaultLogFile" Guid="91F4C9D2-4A9B-437B-A0FD-774323265F50" Permanent="yes" >
+        <File Id="Default.log4net.config" Source="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\Default.log4net.config"/>
+      </Component>
+    </DirectoryRef>
+	</Fragment>
+</Wix>

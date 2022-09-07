@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{88643BCC-372B-43E7-B703-EEADD17CD4BF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PGE.BatchApplication.DLMTools</RootNamespace>
+    <AssemblyName>PGE.BatchApplication.DLMTools</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>true</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\DLMTools.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\DLMTools.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.ADF.Local, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ArcMapUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.CartoUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Editor, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Framework, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Miner.Framework.Engine, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL" />
+    <Reference Include="Miner.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Miner.Interop.Framework, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Interop.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\AlignAnnoCommand.cs" />
+    <Compile Include="Commands\AnnoStackingValidation\AnnoLeaderGraphics.cs" />
+    <Compile Include="Commands\AnnoStackingValidation\AsvTool.cs" />
+    <Compile Include="Commands\AnnoStackingValidation\frmAnnoLeaderGraphics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Commands\AnnoStackingValidation\frmAnnoLeaderGraphics.Designer.cs">
+      <DependentUpon>frmAnnoLeaderGraphics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\AnnotationComposite\AnnotationCompositeToolbar.cs" />
+    <Compile Include="Commands\AnnotationComposite\BaseCALMTool.cs" />
+    <Compile Include="Commands\AnnotationComposite\CALMClickTool.cs" />
+    <Compile Include="Commands\AnnotationComposite\CALMSelectionTool.cs" />
+    <Compile Include="Commands\AnnotationComposite\CALMSettingsTool.cs" />
+    <Compile Include="Commands\AnnotationComposite\CALMToolbarComposite.cs" />
+    <Compile Include="Commands\AnnotationComposite\DeviceGroupAnnoReplacement.cs" />
+    <Compile Include="Commands\AnnotationComposite\UI\CALMSettingsUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Commands\AnnotationComposite\UI\CALMSettingsUC.designer.cs">
+      <DependentUpon>CALMSettingsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\AnnotationComposite\UI\CALMToolbarUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Commands\AnnotationComposite\UI\CALMToolbarUC.designer.cs">
+      <DependentUpon>CALMToolbarUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\AnnotationComposite\ReplaceAnnotation.cs" />
+    <Compile Include="Commands\ConduitHighlight\ConduitHighlight.cs" />
+    <Compile Include="Commands\ConduitHighlight\ConduitHighlightBtn.cs" />
+    <Compile Include="Commands\MirrorDucts\clsGraphics.cs" />
+    <Compile Include="Commands\MirrorDucts\clsMain.cs" />
+    <Compile Include="Commands\MirrorDucts\cmdExecuteScript.cs" />
+    <Compile Include="Commands\PgeUpdateDucts.cs" />
+    <Compile Include="Commands\RotateAnnotation180.cs" />
+    <Compile Include="Commands\SwapAnnotationPositions.cs" />
+    <Compile Include="Installer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Installer.Designer.cs">
+      <DependentUpon>Installer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Annotation\AnnotationFacade.cs" />
+    <Compile Include="Utility\Annotation\CALMConfig.cs" />
+    <Compile Include="Utility\AuDisabler.cs" />
+    <Compile Include="Utility\Extensions.cs" />
+    <Compile Include="Utility\FieldManager.cs" />
+    <Compile Include="Utility\Logs\Log4NetFileHelper.cs" />
+    <Compile Include="Utility\Logs\LogSettings.cs" />
+    <Compile Include="Utility\ModelNameFacade.cs" />
+    <Compile Include="Utility\ModelNames.cs" />
+    <Compile Include="Utility\RelationshipManager.cs" />
+    <Compile Include="Utility\SchemaInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Commands\AnnoStackingValidation\frmAnnoLeaderGraphics.resx">
+      <DependentUpon>frmAnnoLeaderGraphics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Commands\Cursors\ReplaceAnnotation.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Commands\AnnotationComposite\UI\CALMSettingsUC.resx">
+      <DependentUpon>CALMSettingsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Commands\AnnotationComposite\UI\CALMToolbarUC.resx">
+      <DependentUpon>CALMToolbarUC.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Bitmaps\AlignAnno.bmp" />
+    <EmbeddedResource Include="Bitmaps\CALM.bmp" />
+    <EmbeddedResource Include="Bitmaps\CALMSelection.bmp" />
+    <EmbeddedResource Include="Bitmaps\CALMSettings.bmp" />
+    <EmbeddedResource Include="Bitmaps\cmdExecuteScript.bmp" />
+    <EmbeddedResource Include="Bitmaps\DeviceGroupAnno.bmp" />
+    <EmbeddedResource Include="Bitmaps\PgeUpdateDucts.bmp" />
+    <EmbeddedResource Include="Bitmaps\ReplaceAnnotation.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Bitmaps\ConduitHighlightBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Bitmaps\AnnoStackingValidation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Bitmaps\RotateAnnotation180.bmp" />
+    <EmbeddedResource Include="Bitmaps\SwapAnnotationPositions.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Framework\PGE.Common.Delivery.Framework.csproj">
+      <Project>{f36c0849-bf86-4632-aed8-dcc7c4827f86}</Project>
+      <Name>PGE.Common.Delivery.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>regx /u "$(TargetPath)"
+regx /r /c /s /d "$(TargetPath)"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

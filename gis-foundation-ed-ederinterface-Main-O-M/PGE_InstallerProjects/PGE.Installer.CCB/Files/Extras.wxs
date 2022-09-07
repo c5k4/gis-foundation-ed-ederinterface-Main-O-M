@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--PGE.MapProduction.Integration-->
+  <Fragment>
+    <ComponentGroup Id="Extras">
+
+      <Component Id="PGE.Interfaces.CCBtoGISInterface.exe" Directory="CCB" Guid="6B9C890B-3640-4A7F-9626-B46F40FBE115" >
+        <File Id="PGE.Interfaces.CCBtoGISInterface.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\CCB\PGE.Interfaces.CCBtoGISInterface.exe"/>
+      </Component>      
+      <Component Id="PGE.Interfaces.CCBtoGISInterface.exe.config" Directory="CCB" Guid="0274201D-E6BB-4C6B-8526-66E838C213C2" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.Interfaces.CCBtoGISInterface.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\CCB\PGE.Interfaces.CCBtoGISInterface.exe.config"/>
+      </Component>      
+	  <Component Id="PGE.Interfaces.CCBtoGISInterface.log4net.config" Directory="LoggingConfiguration" Guid="08F9B32E-0930-4860-A405-405CED3CB966" Permanent="yes" NeverOverwrite="yes">
+      <File Id="PGE.Interfaces.CCBtoGISInterface.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\CCB\PGE.Interfaces.CCBtoGISInterface.log4net.config"/>
+    </Component>
+      <Component Id="PGE.Common.ChangesManagerShared.dll" Directory="CCB" Guid="8A397195-99EF-415D-AB41-890D6EE1DEAB" >
+        <File Id="PGE.Common.ChangesManagerShared.dll" Source="..\..\..\..\..\PGE_ProjectOutput\CCB\PGE.Common.ChangesManagerShared.dll"/>
+      </Component>
+      <Component Id="ClosedXML.dll" Directory="CCB" Guid="F2ED371B-37EA-443D-B638-C555B2F7328B" >
+        <File Id="ClosedXML.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\CCB\ClosedXML.dll"/>
+      </Component>
+
+      <Component Id="ClosedXML.XML" Directory="CCB" Guid="12E0694C-1B4E-4A3C-B8FC-325A0CDF8DD1" >
+        <File Id="ClosedXML.XML" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\CCB\ClosedXML.XML"/>
+      </Component>
+      <Component Id="DocumentFormat.OpenXml.dll" Directory="CCB" Guid="FFF3EAC7-0A54-4F2E-B739-D2E5D0705030" >
+        <File Id="DocumentFormat.OpenXml.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\CCB\DocumentFormat.OpenXml.dll"/>
+      </Component>
+
+      <Component Id="DocumentFormat.OpenXml.xml" Directory="CCB" Guid="BB6949E2-55E5-4330-952E-B47C755973D2" >
+        <File Id="DocumentFormat.OpenXml.xml" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\CCB\DocumentFormat.OpenXml.xml"/>
+      </Component>
+
+    </ComponentGroup>
+    
+  </Fragment>
+</Wix>

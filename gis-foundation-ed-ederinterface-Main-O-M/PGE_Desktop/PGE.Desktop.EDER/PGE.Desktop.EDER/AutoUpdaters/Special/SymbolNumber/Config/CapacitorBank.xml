@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<SymbolNumberRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<FeatureClass>
+
+	<Rule SymbolNumber="2">
+		<And>
+			<Or>
+				<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+				<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+			</Or>
+			<Attribute FieldName="SUPERVISORYCONTROL"><Value>N</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="COMPLEXDEVICEIDC"><Value>N</Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="101">
+		<And>
+			<Or>
+				<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+				<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+			</Or>
+			<Attribute FieldName="SUPERVISORYCONTROL"><Value>Y</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="COMPLEXDEVICEIDC"><Value>Y</Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="3">
+		<And>
+			<Or>
+				<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+				<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+			</Or>
+			<Attribute FieldName="SUPERVISORYCONTROL"><Value>N</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="COMPLEXDEVICEIDC"><Value>Y</Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="4">
+		<And>
+			<Or>
+				<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+				<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+			</Or>
+			<Attribute FieldName="SUPERVISORYCONTROL"><Value>Y</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="COMPLEXDEVICEIDC"><Value>N</Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="5">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+			<Attribute FieldName="SUPERVISORYCONTROL"><Value>Y</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>0</Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="6">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+			<Attribute FieldName="SUPERVISORYCONTROL"><Value>Y</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+	
+  </FeatureClass>
+</SymbolNumberRules>

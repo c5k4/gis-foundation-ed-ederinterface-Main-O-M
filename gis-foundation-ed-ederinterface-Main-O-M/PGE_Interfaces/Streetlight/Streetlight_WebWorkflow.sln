@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Streetlight_WebWorkflow", "Streetlight_WebWorkflow\", "{248EBE88-1217-4831-AC17-64BC8130E654}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/Streetlight_WebWorkflow"
+		Debug.AspNetCompiler.PhysicalPath = "C:\Sarwjit\Streetlight\Code\Streetlight\Streetlight_WebWorkflow\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Streetlight_WebWorkflow\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Streetlight_WebWorkflow"
+		Release.AspNetCompiler.PhysicalPath = "C:\Sarwjit\Streetlight\Code\Streetlight\Streetlight_WebWorkflow\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Streetlight_WebWorkflow\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50226"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{248EBE88-1217-4831-AC17-64BC8130E654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{248EBE88-1217-4831-AC17-64BC8130E654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

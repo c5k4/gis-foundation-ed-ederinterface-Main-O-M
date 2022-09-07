@@ -1,0 +1,15 @@
+1 Publication EDSUBPUB EDSCHMPUB EDPUB
+2. Schematic
+	Database: EDSCHMPUB
+	Schema: webr, Database: EDPUB
+	Schema: webr, Database: landbase
+	Schema: lbgis_ro
+3. Schematic_50
+	Database: EDPUB
+	Schema: webr
+4. UFM_50 -EDPUB
+
+5. Substations
+	Database: EDSUBPUB
+	Schema: webr, Database: EDPUB
+	Schema: webr

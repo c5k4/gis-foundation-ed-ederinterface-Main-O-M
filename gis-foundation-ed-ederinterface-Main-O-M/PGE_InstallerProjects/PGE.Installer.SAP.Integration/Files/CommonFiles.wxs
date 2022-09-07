@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	
+    <?define ClientName='PGE'?>
+    <?define Directory='PGE'?>
+    <?define ActionKey="SAPIntegrationCommon"?>
+
+
+
+    <?define Filename='Telvent.PGE.Framework'?>
+    <?define FilenameUpper='TELVENT.PGE.FRAMEWORK'?>
+    <?define DoNotCOMRegister?>
+    <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+</Wix>

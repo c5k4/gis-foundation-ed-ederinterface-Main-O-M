@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="PageTemplates.Schematic_MapName_18x24P"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+	xmlns:local="clr-namespace:PageTemplates"
+	Width="1728" Height="2304" UseLayoutRounding="True">
+    <UserControl.Resources>
+        <ResourceDictionary Source="/PageTemplates;component/Themes/Generic.xaml" />
+    </UserControl.Resources>
+
+    <Border Margin="10" BorderBrush="Black" BorderThickness="1">
+        <Grid Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".92*"/>
+                <RowDefinition Height=".08*"/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="40,40,40,20">
+                <esri:Map x:Name="TemplateMap" Background="White" IsLogoVisible="False" Layers="{Binding Layers}" Style="{StaticResource MapTickMap2}" />
+            </Border>
+            <Grid Background="White" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".25*"/>
+                    <ColumnDefinition Width=".15*"/>
+                    <ColumnDefinition Width=".20*"/>
+                    <ColumnDefinition Width=".25*"/>
+                    <ColumnDefinition Width=".15*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Map location and creation date -->
+                <StackPanel Orientation="Vertical" Grid.Column="0" Margin="40,0,0,40">
+                    <TextBlock FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center" FontSize="17" HorizontalAlignment="Center" Text="PACIFIC GAS &amp; ELECTRIC COMPANY" Margin="0,5,0,20"/>
+                    <TextBlock x:Name="txtBlkCounty" Text="[County]" Margin="10,0,0,0"/>
+                    <TextBlock x:Name="txtBlkDivision" Text="[Division]" Margin="10,0,0,0"/>
+                    <TextBlock x:Name="txtBlkDateCreated" Text="{Binding PrintedOn}" Margin="10,0,0,0"/>
+                </StackPanel>
+
+                <!-- Map Thumbnail -->
+                <Border Grid.Column="1" BorderThickness="1" BorderBrush="Black" Margin="10,10,10,40">
+                    <!--Image  Source="http://localhost:54225/proxy.ashx?http%3a%2f%2fvm-pgeweb101%2farcgis%2frest%2fservices%2fData%2fPGE_CircuitMap%2fMapServer%2finfo%2fthumbnail" Width="140" /-->
+                </Border>
+
+                <!-- Map Type, Scale, and North Arrow -->
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="2" Margin="0,0,0,40">
+                    <TextBlock x:Name="txtblkMapTitle" Text="{Binding MapTitle}" TextWrapping="Wrap" TextAlignment="Center" FontWeight="Bold" FontSize="17" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                    <Image Source="/PageTemplates;component/Images/NorthArrow.png"  HorizontalAlignment="Center" Width="35" Margin="0,0,5,0"/>
+                    <TextBlock x:Name="txtblkScale" HorizontalAlignment="Center" Margin="0,5,0,5" Text="Scale" />
+                    <esri:ScaleLine x:Name="TemplateScaleBar" HorizontalAlignment="Center" Map="{Binding ElementName=TemplateMap}" />
+                </StackPanel>
+
+                <!-- Disclaimer -->
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="3" Margin="10,10,10,40">
+                    <local:Disclaimer HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                </Border>
+
+                <!-- Map Number -->
+                <TextBlock x:Name="txtBlkGridNumber" TextWrapping="Wrap" TextAlignment="Center" Grid.Column="4" Text="[MapNumber]" FontWeight="Bold" FontSize="17" HorizontalAlignment="Center" Margin="0,5,40,40"/>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

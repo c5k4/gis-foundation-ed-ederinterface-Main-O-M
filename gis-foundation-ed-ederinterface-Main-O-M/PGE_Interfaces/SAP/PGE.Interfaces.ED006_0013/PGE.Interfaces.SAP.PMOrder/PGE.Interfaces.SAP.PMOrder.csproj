@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4196254A-CA4A-4D10-BBF2-A2BBA43BF41F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PGE.Interfaces.SAP.PMOrder</RootNamespace>
+    <AssemblyName>PGE.Interfaces.SAP.PMOrder</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>PGE.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\PMOrderSolutionInfo.cs">
+      <Link>Properties\PMOrderSolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="SAPPMOrder.log4net.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="PGE.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Diagnostics\PGE.Common.Delivery.Diagnostics.csproj">
+      <Project>{1d019976-ffe6-41a2-ab9c-6241696edb8e}</Project>
+      <Name>PGE.Common.Delivery.Diagnostics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Framework\PGE.Common.Delivery.Framework.csproj">
+      <Project>{f36c0849-bf86-4632-aed8-dcc7c4827f86}</Project>
+      <Name>PGE.Common.Delivery.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PGE.Interfaces.Integration.Framework\PGE.Interfaces.Integration.Framework.csproj">
+      <Project>{ef202b69-f091-4b28-b23b-81cff42c1dc3}</Project>
+      <Name>PGE.Interfaces.Integration.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PGE.Interfaces.SAP.WOSynchronization\PGE.Interfaces.SAP.WOSynchronization.csproj">
+      <Project>{a59380f4-4999-4fc1-b42b-dbac753a9a40}</Project>
+      <Name>PGE.Interfaces.SAP.WOSynchronization</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

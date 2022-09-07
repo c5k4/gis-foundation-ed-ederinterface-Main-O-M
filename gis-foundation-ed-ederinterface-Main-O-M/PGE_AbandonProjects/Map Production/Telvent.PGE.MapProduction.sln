@@ -1,0 +1,218 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telvent.PGE.MapProduction.Processor", "Telvent.PGE.MapProduction.Processor\Telvent.PGE.MapProduction.Processor.csproj", "{5DB781D0-207D-44C4-8CE7-C1F7A50DF781}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telvent.PGE.MapProduction", "Telvent.PGE.MapProduction\Telvent.PGE.MapProduction.csproj", "{8AC990D4-5A99-4387-9514-A00466DB6448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telvent.PGE.MapProduction.Exporter", "Telvent.PGE.MapProduction.Exporter\Telvent.PGE.MapProduction.Exporter.csproj", "{7E837B3B-2BF7-4FDE-8654-E78FCC8D3B04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1E7CCCA8-DC07-4292-A92C-8B4EB74ACB1F}"
+	ProjectSection(SolutionItems) = preProject
+		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "externals", "externals", "{A50555A6-4B21-47C0-8E9F-88244DA2010E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telvent.Delivery.ArcFM", "..\..\externals\telvent.delivery\Telvent.Delivery.ArcFM\Telvent.Delivery.ArcFM.csproj", "{D51259A8-4142-4C43-A95C-6C1FCBF88A73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telvent.Delivery.Diagnostics", "..\..\externals\telvent.delivery\Telvent.Delivery.Diagnostics\Telvent.Delivery.Diagnostics.csproj", "{F1D566A4-A80B-44D5-AC34-F4859D068A13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telvent.Delivery.Framework", "..\..\externals\telvent.delivery\Telvent.Delivery.Framework\Telvent.Delivery.Framework.csproj", "{F83A2262-39CF-4AF1-91B4-6BF243568F30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telvent.Delivery.Geodatabase", "..\..\externals\telvent.delivery\Telvent.Delivery.Geodatabase\Telvent.Delivery.Geodatabase.csproj", "{C5D5C40D-F0DA-4455-9E1D-86F8A9C57C2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telvent.Delivery.Process", "..\..\externals\telvent.delivery\Telvent.Delivery.ProcessManager\Telvent.Delivery.Process.csproj", "{50D5B168-0D42-40D3-970F-00B5E0D6D7BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telvent.Delivery.SessionManager", "..\..\externals\telvent.delivery\Telvent.Delivery.SessionManager\Telvent.Delivery.SessionManager.csproj", "{086A1CDD-E760-4503-AFF3-1C3F7F113106}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telvent.Delivery.Systems", "..\..\externals\telvent.delivery\Telvent.Delivery.System\Telvent.Delivery.Systems.csproj", "{BB2F3F97-87F6-434A-8618-C4016F020B3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telvent.Delivery.UI", "..\..\externals\telvent.delivery\Telvent.Delivery.UI\Telvent.Delivery.UI.csproj", "{9C7B8625-11EA-477E-937C-0FD928F1F6F6}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Telvent.PGE.MapProduction.Processor\\Telvent.PGE.MapProduction.Processor.csproj
+		SccProjectName1 = Telvent.PGE.MapProduction.Processor
+		SccLocalPath1 = Telvent.PGE.MapProduction.Processor
+		SccProjectUniqueName2 = Telvent.PGE.MapProduction\\Telvent.PGE.MapProduction.csproj
+		SccProjectName2 = Telvent.PGE.MapProduction
+		SccLocalPath2 = Telvent.PGE.MapProduction
+		SccProjectUniqueName3 = Telvent.PGE.MapProduction.Exporter\\Telvent.PGE.MapProduction.Exporter.csproj
+		SccProjectName3 = Telvent.PGE.MapProduction.Exporter
+		SccLocalPath3 = Telvent.PGE.MapProduction.Exporter
+		SccProjectUniqueName4 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.ArcFM\\Telvent.Delivery.ArcFM.csproj
+		SccProjectTopLevelParentUniqueName4 = Telvent.PGE.MapProduction.sln
+		SccProjectName4 = ../../externals/telvent.delivery/Telvent.Delivery.ArcFM
+		SccLocalPath4 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.ArcFM
+		SccProjectUniqueName5 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.Diagnostics\\Telvent.Delivery.Diagnostics.csproj
+		SccProjectTopLevelParentUniqueName5 = Telvent.PGE.MapProduction.sln
+		SccProjectName5 = ../../externals/telvent.delivery/Telvent.Delivery.Diagnostics
+		SccLocalPath5 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.Diagnostics
+		SccProjectUniqueName6 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.Framework\\Telvent.Delivery.Framework.csproj
+		SccProjectTopLevelParentUniqueName6 = Telvent.PGE.MapProduction.sln
+		SccProjectName6 = ../../externals/telvent.delivery/Telvent.Delivery.Framework
+		SccLocalPath6 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.Framework
+		SccProjectUniqueName7 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.Geodatabase\\Telvent.Delivery.Geodatabase.csproj
+		SccProjectTopLevelParentUniqueName7 = Telvent.PGE.MapProduction.sln
+		SccProjectName7 = ../../externals/telvent.delivery/Telvent.Delivery.Geodatabase
+		SccLocalPath7 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.Geodatabase
+		SccProjectUniqueName8 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.ProcessManager\\Telvent.Delivery.Process.csproj
+		SccProjectTopLevelParentUniqueName8 = Telvent.PGE.MapProduction.sln
+		SccProjectName8 = ../../externals/telvent.delivery/Telvent.Delivery.ProcessManager
+		SccLocalPath8 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.ProcessManager
+		SccProjectUniqueName9 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.SessionManager\\Telvent.Delivery.SessionManager.csproj
+		SccProjectTopLevelParentUniqueName9 = Telvent.PGE.MapProduction.sln
+		SccProjectName9 = ../../externals/telvent.delivery/Telvent.Delivery.SessionManager
+		SccLocalPath9 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.SessionManager
+		SccProjectUniqueName10 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.System\\Telvent.Delivery.Systems.csproj
+		SccProjectTopLevelParentUniqueName10 = Telvent.PGE.MapProduction.sln
+		SccProjectName10 = ../../externals/telvent.delivery/Telvent.Delivery.System
+		SccLocalPath10 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.System
+		SccProjectUniqueName11 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.UI\\Telvent.Delivery.UI.csproj
+		SccProjectTopLevelParentUniqueName11 = Telvent.PGE.MapProduction.sln
+		SccProjectName11 = ../../externals/telvent.delivery/Telvent.Delivery.UI
+		SccLocalPath11 = ..\\..\\externals\\telvent.delivery\\Telvent.Delivery.UI
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DB781D0-207D-44C4-8CE7-C1F7A50DF781}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{5DB781D0-207D-44C4-8CE7-C1F7A50DF781}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{5DB781D0-207D-44C4-8CE7-C1F7A50DF781}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{5DB781D0-207D-44C4-8CE7-C1F7A50DF781}.Debug|x86.ActiveCfg = Debug|x86
+		{5DB781D0-207D-44C4-8CE7-C1F7A50DF781}.Debug|x86.Build.0 = Debug|x86
+		{5DB781D0-207D-44C4-8CE7-C1F7A50DF781}.Release|Any CPU.ActiveCfg = Release|x86
+		{5DB781D0-207D-44C4-8CE7-C1F7A50DF781}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{5DB781D0-207D-44C4-8CE7-C1F7A50DF781}.Release|Mixed Platforms.Build.0 = Release|x86
+		{5DB781D0-207D-44C4-8CE7-C1F7A50DF781}.Release|x86.ActiveCfg = Release|x86
+		{5DB781D0-207D-44C4-8CE7-C1F7A50DF781}.Release|x86.Build.0 = Release|x86
+		{8AC990D4-5A99-4387-9514-A00466DB6448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC990D4-5A99-4387-9514-A00466DB6448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC990D4-5A99-4387-9514-A00466DB6448}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{8AC990D4-5A99-4387-9514-A00466DB6448}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{8AC990D4-5A99-4387-9514-A00466DB6448}.Debug|x86.ActiveCfg = Debug|x86
+		{8AC990D4-5A99-4387-9514-A00466DB6448}.Debug|x86.Build.0 = Debug|x86
+		{8AC990D4-5A99-4387-9514-A00466DB6448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC990D4-5A99-4387-9514-A00466DB6448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AC990D4-5A99-4387-9514-A00466DB6448}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{8AC990D4-5A99-4387-9514-A00466DB6448}.Release|Mixed Platforms.Build.0 = Release|x86
+		{8AC990D4-5A99-4387-9514-A00466DB6448}.Release|x86.ActiveCfg = Release|x86
+		{8AC990D4-5A99-4387-9514-A00466DB6448}.Release|x86.Build.0 = Release|x86
+		{7E837B3B-2BF7-4FDE-8654-E78FCC8D3B04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E837B3B-2BF7-4FDE-8654-E78FCC8D3B04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E837B3B-2BF7-4FDE-8654-E78FCC8D3B04}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{7E837B3B-2BF7-4FDE-8654-E78FCC8D3B04}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{7E837B3B-2BF7-4FDE-8654-E78FCC8D3B04}.Debug|x86.ActiveCfg = Debug|x86
+		{7E837B3B-2BF7-4FDE-8654-E78FCC8D3B04}.Debug|x86.Build.0 = Debug|x86
+		{7E837B3B-2BF7-4FDE-8654-E78FCC8D3B04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E837B3B-2BF7-4FDE-8654-E78FCC8D3B04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E837B3B-2BF7-4FDE-8654-E78FCC8D3B04}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{7E837B3B-2BF7-4FDE-8654-E78FCC8D3B04}.Release|Mixed Platforms.Build.0 = Release|x86
+		{7E837B3B-2BF7-4FDE-8654-E78FCC8D3B04}.Release|x86.ActiveCfg = Release|x86
+		{7E837B3B-2BF7-4FDE-8654-E78FCC8D3B04}.Release|x86.Build.0 = Release|x86
+		{D51259A8-4142-4C43-A95C-6C1FCBF88A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D51259A8-4142-4C43-A95C-6C1FCBF88A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D51259A8-4142-4C43-A95C-6C1FCBF88A73}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{D51259A8-4142-4C43-A95C-6C1FCBF88A73}.Debug|x86.ActiveCfg = Debug|x86
+		{D51259A8-4142-4C43-A95C-6C1FCBF88A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D51259A8-4142-4C43-A95C-6C1FCBF88A73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D51259A8-4142-4C43-A95C-6C1FCBF88A73}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{D51259A8-4142-4C43-A95C-6C1FCBF88A73}.Release|Mixed Platforms.Build.0 = Release|x86
+		{D51259A8-4142-4C43-A95C-6C1FCBF88A73}.Release|x86.ActiveCfg = Release|x86
+		{D51259A8-4142-4C43-A95C-6C1FCBF88A73}.Release|x86.Build.0 = Release|x86
+		{F1D566A4-A80B-44D5-AC34-F4859D068A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1D566A4-A80B-44D5-AC34-F4859D068A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1D566A4-A80B-44D5-AC34-F4859D068A13}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{F1D566A4-A80B-44D5-AC34-F4859D068A13}.Debug|x86.ActiveCfg = Debug|x86
+		{F1D566A4-A80B-44D5-AC34-F4859D068A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1D566A4-A80B-44D5-AC34-F4859D068A13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1D566A4-A80B-44D5-AC34-F4859D068A13}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{F1D566A4-A80B-44D5-AC34-F4859D068A13}.Release|Mixed Platforms.Build.0 = Release|x86
+		{F1D566A4-A80B-44D5-AC34-F4859D068A13}.Release|x86.ActiveCfg = Release|x86
+		{F1D566A4-A80B-44D5-AC34-F4859D068A13}.Release|x86.Build.0 = Release|x86
+		{F83A2262-39CF-4AF1-91B4-6BF243568F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83A2262-39CF-4AF1-91B4-6BF243568F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83A2262-39CF-4AF1-91B4-6BF243568F30}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{F83A2262-39CF-4AF1-91B4-6BF243568F30}.Debug|x86.ActiveCfg = Debug|x86
+		{F83A2262-39CF-4AF1-91B4-6BF243568F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F83A2262-39CF-4AF1-91B4-6BF243568F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F83A2262-39CF-4AF1-91B4-6BF243568F30}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{F83A2262-39CF-4AF1-91B4-6BF243568F30}.Release|Mixed Platforms.Build.0 = Release|x86
+		{F83A2262-39CF-4AF1-91B4-6BF243568F30}.Release|x86.ActiveCfg = Release|x86
+		{F83A2262-39CF-4AF1-91B4-6BF243568F30}.Release|x86.Build.0 = Release|x86
+		{C5D5C40D-F0DA-4455-9E1D-86F8A9C57C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D5C40D-F0DA-4455-9E1D-86F8A9C57C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D5C40D-F0DA-4455-9E1D-86F8A9C57C2B}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{C5D5C40D-F0DA-4455-9E1D-86F8A9C57C2B}.Debug|x86.ActiveCfg = Debug|x86
+		{C5D5C40D-F0DA-4455-9E1D-86F8A9C57C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D5C40D-F0DA-4455-9E1D-86F8A9C57C2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5D5C40D-F0DA-4455-9E1D-86F8A9C57C2B}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{C5D5C40D-F0DA-4455-9E1D-86F8A9C57C2B}.Release|Mixed Platforms.Build.0 = Release|x86
+		{C5D5C40D-F0DA-4455-9E1D-86F8A9C57C2B}.Release|x86.ActiveCfg = Release|x86
+		{C5D5C40D-F0DA-4455-9E1D-86F8A9C57C2B}.Release|x86.Build.0 = Release|x86
+		{50D5B168-0D42-40D3-970F-00B5E0D6D7BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50D5B168-0D42-40D3-970F-00B5E0D6D7BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50D5B168-0D42-40D3-970F-00B5E0D6D7BD}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{50D5B168-0D42-40D3-970F-00B5E0D6D7BD}.Debug|x86.ActiveCfg = Debug|x86
+		{50D5B168-0D42-40D3-970F-00B5E0D6D7BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50D5B168-0D42-40D3-970F-00B5E0D6D7BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50D5B168-0D42-40D3-970F-00B5E0D6D7BD}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{50D5B168-0D42-40D3-970F-00B5E0D6D7BD}.Release|Mixed Platforms.Build.0 = Release|x86
+		{50D5B168-0D42-40D3-970F-00B5E0D6D7BD}.Release|x86.ActiveCfg = Release|x86
+		{50D5B168-0D42-40D3-970F-00B5E0D6D7BD}.Release|x86.Build.0 = Release|x86
+		{086A1CDD-E760-4503-AFF3-1C3F7F113106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086A1CDD-E760-4503-AFF3-1C3F7F113106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086A1CDD-E760-4503-AFF3-1C3F7F113106}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{086A1CDD-E760-4503-AFF3-1C3F7F113106}.Debug|x86.ActiveCfg = Debug|x86
+		{086A1CDD-E760-4503-AFF3-1C3F7F113106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086A1CDD-E760-4503-AFF3-1C3F7F113106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{086A1CDD-E760-4503-AFF3-1C3F7F113106}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{086A1CDD-E760-4503-AFF3-1C3F7F113106}.Release|Mixed Platforms.Build.0 = Release|x86
+		{086A1CDD-E760-4503-AFF3-1C3F7F113106}.Release|x86.ActiveCfg = Release|x86
+		{086A1CDD-E760-4503-AFF3-1C3F7F113106}.Release|x86.Build.0 = Release|x86
+		{BB2F3F97-87F6-434A-8618-C4016F020B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB2F3F97-87F6-434A-8618-C4016F020B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB2F3F97-87F6-434A-8618-C4016F020B3F}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{BB2F3F97-87F6-434A-8618-C4016F020B3F}.Debug|x86.ActiveCfg = Debug|x86
+		{BB2F3F97-87F6-434A-8618-C4016F020B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB2F3F97-87F6-434A-8618-C4016F020B3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB2F3F97-87F6-434A-8618-C4016F020B3F}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{BB2F3F97-87F6-434A-8618-C4016F020B3F}.Release|Mixed Platforms.Build.0 = Release|x86
+		{BB2F3F97-87F6-434A-8618-C4016F020B3F}.Release|x86.ActiveCfg = Release|x86
+		{BB2F3F97-87F6-434A-8618-C4016F020B3F}.Release|x86.Build.0 = Release|x86
+		{9C7B8625-11EA-477E-937C-0FD928F1F6F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C7B8625-11EA-477E-937C-0FD928F1F6F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C7B8625-11EA-477E-937C-0FD928F1F6F6}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{9C7B8625-11EA-477E-937C-0FD928F1F6F6}.Debug|x86.ActiveCfg = Debug|x86
+		{9C7B8625-11EA-477E-937C-0FD928F1F6F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C7B8625-11EA-477E-937C-0FD928F1F6F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C7B8625-11EA-477E-937C-0FD928F1F6F6}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{9C7B8625-11EA-477E-937C-0FD928F1F6F6}.Release|Mixed Platforms.Build.0 = Release|x86
+		{9C7B8625-11EA-477E-937C-0FD928F1F6F6}.Release|x86.ActiveCfg = Release|x86
+		{9C7B8625-11EA-477E-937C-0FD928F1F6F6}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D51259A8-4142-4C43-A95C-6C1FCBF88A73} = {A50555A6-4B21-47C0-8E9F-88244DA2010E}
+		{F1D566A4-A80B-44D5-AC34-F4859D068A13} = {A50555A6-4B21-47C0-8E9F-88244DA2010E}
+		{F83A2262-39CF-4AF1-91B4-6BF243568F30} = {A50555A6-4B21-47C0-8E9F-88244DA2010E}
+		{C5D5C40D-F0DA-4455-9E1D-86F8A9C57C2B} = {A50555A6-4B21-47C0-8E9F-88244DA2010E}
+		{50D5B168-0D42-40D3-970F-00B5E0D6D7BD} = {A50555A6-4B21-47C0-8E9F-88244DA2010E}
+		{086A1CDD-E760-4503-AFF3-1C3F7F113106} = {A50555A6-4B21-47C0-8E9F-88244DA2010E}
+		{BB2F3F97-87F6-434A-8618-C4016F020B3F} = {A50555A6-4B21-47C0-8E9F-88244DA2010E}
+		{9C7B8625-11EA-477E-937C-0FD928F1F6F6} = {A50555A6-4B21-47C0-8E9F-88244DA2010E}
+	EndGlobalSection
+EndGlobal

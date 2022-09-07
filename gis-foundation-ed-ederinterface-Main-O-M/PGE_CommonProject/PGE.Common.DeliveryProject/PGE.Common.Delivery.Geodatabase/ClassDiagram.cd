@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.Common.Delivery.Geodatabase.ChangeDetection.DifferenceDictionary" Collapsed="true">
+    <Position X="3.25" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>MAIAAAEAAAAkAAAADBgABAAAAAQACAAADAEAAAAAAAA=</HashCode>
+      <FileName>ChangeDetection\DifferenceDictionary.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CommonAncestorWorkspace" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Geodatabase.ChangeDetection.DifferenceManager" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAgAAIgBCAAIAUBQJACAAgAAKAAEAKAQAhzAKgEEQAA=</HashCode>
+      <FileName>ChangeDetection\DifferenceManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.Geodatabase.ChangeDetection.DiffTable" Collapsed="true">
+    <Position X="6.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACAAAAAAAAECABAAAAAAAAAAAAAAAAAAAAQBAAAA=</HashCode>
+      <FileName>ChangeDetection\DiffTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Geodatabase.ChangeDetection.FilterDifferenceManager" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAgSgAAACAMAQAAAaAQAAJQAAIoACBRAAAIAhBAAYI=</HashCode>
+      <FileName>ChangeDetection\FilterDifferenceManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.Geodatabase.GDBFacade" Collapsed="true">
+    <Position X="9.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACEAAQAAABAgCAABAAEAAAAQAAAAAAAAEAAAAACQAA=</HashCode>
+      <FileName>GDBFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Geodatabase.QueryBuilder" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACABAAAAACAAAIAAAAQAAQBCAAoIAAAAAABAAIAAI=</HashCode>
+      <FileName>QueryBuilder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_BuildClass" />
+      <Field Name="_SqlSyntax" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Geodatabase.SqlSyntax" Collapsed="true">
+    <Position X="1.75" Y="4.5" Width="1.5" />
+    <AssociationLine Name="Workspace" Type="ESRI.ArcGIS.Geodatabase.IWorkspace">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.836" Y="0.54" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAIBAAAAAAGAAAAAAACAAAAAAQQAAAAAAgAA=</HashCode>
+      <FileName>SqlSyntax.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Workspace" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Geodatabase.VersionDiffD8List" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>VersionDiffD8List.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.Geodatabase.VersionDifferenceProcessor" Collapsed="true">
+    <Position X="1.5" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAEIAAAAABJAAAAAAAEAAAIKAAAAAAAACALIRAAAA=</HashCode>
+      <FileName>VersionDifferenceProcessor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_deletesList" />
+      <Field Name="_logger" />
+      <Field Name="_sourceWorkspace" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Geodatabase.VersionFacade" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQACAAAAAIgAAIAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>VersionFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Collections.ObjectModel.KeyedCollection&lt;TKey, TItem&gt;" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;" Collapsed="true">
+    <Position X="3.25" Y="2" Width="2.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Miner.Interop.D8ListClass" Collapsed="true">
+    <Position X="11.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Struct Name="PGE.Common.Delivery.Geodatabase.ChangeDetection.DiffRow" Collapsed="true">
+    <Position X="7" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAQ=</HashCode>
+      <FileName>ChangeDetection\DiffTable.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="PGE.Common.Delivery.Geodatabase.ChangeDetection.IDifferenceManager" Collapsed="true">
+    <Position X="0.75" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BAgAAAABAAAAAABAIACAAAAAAAAAAAAAAgAAAgAAAAA=</HashCode>
+      <FileName>ChangeDetection\IDifferenceManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CommonAncestorVersion" />
+      <Property Name="Inserts" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="PGE.Common.Delivery.Geodatabase.ChangeDetection.IFilterDifferenceManager" Collapsed="true">
+    <Position X="9.25" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAgCAAAACAAAAAAAYAAAAAAAAAAAABAAAAIAhBAAII=</HashCode>
+      <FileName>ChangeDetection\IFilterDifferenceManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PGE.Common.Delivery.Geodatabase.IVersionDiff" Collapsed="true">
+    <Position X="9.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IVersionDiff.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IWorkspace" Collapsed="true">
+    <Position X="1" Y="3" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IObjectClass" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IVersion" Collapsed="true">
+    <Position X="1" Y="8.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Miner.Interop.ID8List" Collapsed="true">
+    <Position X="4.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="log4net.ILog" Collapsed="true">
+    <Position X="4.75" Y="5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="PGE.Common.Delivery.Geodatabase.ChangeDetection.DifferenceDictionaryWorkspace" Collapsed="true">
+    <Position X="6.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAQAAAAAAAAACCAAAA=</HashCode>
+      <FileName>ChangeDetection\DifferenceDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Common.Delivery.Geodatabase.ChangeDetection.FilterResultType" Collapsed="true">
+    <Position X="8.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABACCAAAAABBAACAAAAAAAAAAAAAAQAAAAAAAQEAAIQ=</HashCode>
+      <FileName>ChangeDetection\DiffTable.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Common.Delivery.Geodatabase.ChangeDetection.RowTypes" Collapsed="true">
+    <Position X="6.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAgAAAAAAAwAAAAAAAAAAAAAAAAAEBACA=</HashCode>
+      <FileName>ChangeDetection\DiffTable.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Common.Delivery.Geodatabase.ChangeDetection.FilterType" Collapsed="true">
+    <Position X="3.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAACAAAAAABAACAAAAAQAAAAAAAgQAAAAAAAgEAAII=</HashCode>
+      <FileName>ChangeDetection\FilterDifferenceManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Common.Delivery.Geodatabase.ArithmeticOperator" Collapsed="true">
+    <Position X="3.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAQAAAAAAEAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>QueryBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Common.Delivery.Geodatabase.ComparisonOperator" Collapsed="true">
+    <Position X="5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAACAAAAAAAAAAAgIBAAAAAAAAAAAAAAAAAAAQJACA=</HashCode>
+      <FileName>QueryBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Common.Delivery.Geodatabase.LogicalOperator" Collapsed="true">
+    <Position X="5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>QueryBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Common.Delivery.Geodatabase.SearchPattern" Collapsed="true">
+    <Position X="8.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAA=</HashCode>
+      <FileName>QueryBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Common.Delivery.Geodatabase.TextFormatting" Collapsed="true">
+    <Position X="5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAIAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>QueryBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Common.Delivery.Geodatabase.SpatialDataEngine" Collapsed="true">
+    <Position X="3.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAACAAAEAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>SqlSyntax.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

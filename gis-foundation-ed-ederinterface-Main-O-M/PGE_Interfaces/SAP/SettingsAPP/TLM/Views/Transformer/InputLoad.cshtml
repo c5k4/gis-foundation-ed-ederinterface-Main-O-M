@@ -1,0 +1,320 @@
+﻿@using TLM.Common;
+@model TLM.Models.TransformerPeak
+@{
+    ViewBag.Title = ViewData["PageTitle"];
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        var Total = '@Model.TotalUnits';
+        var SmrUnDet = '@Model.SummerLoadUndetermined';
+        var WntrUnDet = '@Model.WinterLoadUndetermined';
+
+        if ((SmrUnDet == null || SmrUnDet == '') || (WntrUnDet == null || WntrUnDet == '')) {
+
+            if (Total <= 1) {
+                $(".multiunit-note").css("display", "none");
+                $(".TrfBankTypesRow").css("display","none");
+            }
+        }
+        else {
+            $(".multiunit-note").css("display", "none");
+        }
+        if (Total == 3) {
+            $(".SubCell").addClass("ThreeCells");
+        }
+        if (Total == 2) {
+            $(".SubCell").addClass("TwoCells");
+
+        }
+        if (Total == 1) {
+            $(".SubCell").addClass("OneCell");
+
+        }
+        $("div.SubCell:last-child").css("border-right", "0px solid #000");
+        $("div.SubCell:empty").html("&nbsp;");
+    });
+</script>
+<style type="text/css">
+    
+</style>
+<div class="header">
+    @ViewData["PageTitle"]<div class="utility-nav">
+        <img src="/Content/Images/print.png" style="border: 0px solid #000;" onclick="javascript:window.print();" /></div>
+</div>
+<div class="trf-load">
+  @if(TML.Common.Constants.Warningmsg=="1")
+{
+  <div class="WarningDisplayMessage">
+ @TML.Common.Constants.Warningmsgtext
+</div>
+   
+}
+<br />
+    <div class="innerdiv">
+        <h5 class="errormsg">@Html.Raw(ViewData["ErrorMessage"])</h5>
+        <h5 class="infomsg">@Html.Raw(ViewData["InfoMessage"])</h5>
+        <h3 class="trf-title">
+ 
+
+            Transformer CGC# - @Model.CGCId
+        </h3>
+
+        <h5 class="errormsg">@Html.Raw(ViewData["Warning"])</h5>
+        @if (Model != null)
+        {
+            <div class="TrfPeakIntro">
+                <div class="Table">
+                    <div class="Row">
+                        <div class="Cell">
+                            <div>
+                                @Html.DisplayNameFor(model => model.WinterLoadStatus) = @Html.Raw(HttpUtility.HtmlDecode(Model.WinterLoadStatus))</div>
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="Cell">
+                            <div>@Html.DisplayNameFor(model => model.SummerLoadStatus) = @Html.Raw(HttpUtility.HtmlDecode(Model.SummerLoadStatus))</div>
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="Cell">
+                            <div>@Html.DisplayNameFor(model => model.SecondaryVoltageDesc) = @Html.DisplayFor(model => model.SecondaryVoltageDesc)</div>
+                        </div>
+                    </div>
+                     @if (Model.TrfInfoByCustType != null)
+                     {
+                    <div class="Row">
+                        <div class="Cell">
+                            <div>@Html.DisplayNameFor(model => model.NameplateKVA) = @Html.DisplayFor(model => model.NameplateKVA)</div>
+                        </div>
+                    </div>
+                     }
+                    <div class="Row">
+                        <div class="Cell">
+                            <div>@Html.DisplayNameFor(model => model.LoadFactor) = @Html.DisplayFor(model => model.LoadFactor)</div>
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="Cell">
+                            <div>@Html.DisplayNameFor(model => model.ClimateZoneCD) = @Html.DisplayFor(model => model.ClimateZoneCD)</div>
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="Cell">
+                            <div>@Html.DisplayNameFor(model => model.DataStartDate) = @Html.DisplayFor(model => model.DataStartDate)
+                                <span class="info-text">(SM and Legacy data is aligned by calendar month)</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="TrfPeakDetail">
+                <div class="Table">
+                    <div class="Title">
+                    </div>
+                    <div class="Heading">
+                        <div class="Cell">
+                        </div>
+                        <div class="Cell">
+                            <div>
+                                Winter</div>
+                        </div>
+                        <div class="Cell">
+                            <div>
+                                Summer</div>
+                        </div>
+                    </div>
+                    <div class="Row TrfBankTypesRow">
+                        <div class="TitleCell">
+                            <div>@Html.DisplayNameFor(model => model.TransformerBankType)</div>
+                        </div>
+                        <div class="Cell MultiBankCell">
+                            @foreach (var BankType in Model.WinterBankTypes ?? new string[0])
+                            {
+                           
+                                <div class="SubCell">
+                                    <label>@BankType</label>
+                                </div>
+                            }
+                        </div>
+                        <div class="Cell MultiBankCell">
+                            @foreach (var BankType in Model.SummerBankTypes ?? new string[0])
+                            {
+                           
+                                <div class="SubCell">
+                                    <label>@BankType</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="TitleCell">
+                            <div>@Html.DisplayNameFor(model => model.WinterPeakDate)</div>
+                        </div>
+                        <div class="Cell MultiBankCell">
+                            @foreach (var PeakMonth in Model.WinterPeakMonths ?? new DateTime?[0])
+                            {
+                           
+                                <div class="SubCell">
+                                    <label>@string.Format("{0:MMM-yyyy}", PeakMonth)</label>
+                                </div>
+                            }
+                        </div>
+                        <div class="Cell MultiBankCell">
+                            @foreach (var PeakMonth in Model.SummerPeakMonths ?? new DateTime?[0])
+                            {
+                           
+                                <div class="SubCell">
+                                    <label>@string.Format("{0:MMM-yyyy}", PeakMonth)</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="TitleCell">
+                            <div>@Html.DisplayNameFor(model => model.WinterNameplateKVA)</div>
+                        </div>
+                        <div class="Cell MultiBankCell">
+                            @foreach (var NPKVA in Model.WinterNamePlateKVAs ?? new decimal?[0])
+                            {
+                                <div class="SubCell">
+                                    <label>@string.Format("{0:n1}", NPKVA)</label>
+                                </div>
+                            }
+                        </div>
+                        <div class="Cell MultiBankCell">
+                            @foreach (var NPKVA in Model.SummerNamePlateKVAs ?? new decimal?[0])
+                            {
+                                <div class="SubCell">
+                                    <label>@string.Format("{0:n1}", NPKVA)</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="TitleCell">
+                            <div>@Html.DisplayNameFor(model => model.WinterCalcCap)</div>
+                        </div>
+                        <div class="Cell">
+                            @foreach (var CalcCap in Model.WinterCalcCaps ?? new decimal?[0])
+                            {
+                                <div class="SubCell">
+                                    <label>@string.Format("{0:n1}", CalcCap)</label>
+                                </div>
+                            }
+                        </div>
+                        <div class="Cell">
+                            @foreach (var CalcCap in Model.SummerCalcCaps ?? new decimal?[0])
+                            {
+                                <div class="SubCell">
+                                    <label>@string.Format("{0:n1}", CalcCap)</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="TitleCell">
+                            <div>@Html.DisplayNameFor(model => model.WinterKVAPeak)<div class="multiunit-note"
+                                style="display: inline">
+                                *</div>
+                            </div>
+                        </div>
+                        <div class="Cell">
+                            @foreach (var KVAPeak in Model.WinterKVAPeaks ?? new decimal?[0])
+                            {
+                                <div class="SubCell">
+                                    <label>@string.Format("{0:n1}", KVAPeak)</label>
+                                </div>
+                            }
+                        </div>
+                        <div class="Cell">
+                            @foreach (var KVAPeak in Model.SummerKVAPeaks ?? new decimal?[0])
+                            {
+                                <div class="SubCell">
+                                    <label>@string.Format("{0:n1}", KVAPeak)</label>
+                                </div>
+                            }
+                        </div>
+                        @*<div class="Cell">
+                            <div>
+                                <span class='negSign'></span>@Html.DisplayFor(model => model.WinterKVAPeak)</div>
+                        </div>
+                        <div class="Cell">
+                            <div>
+                                <span class='negSign'></span>@Html.DisplayFor(model => model.SummerKVAPeak)</div>
+                        </div>*@
+                    </div>
+                    <div class="Row">
+                        <div class="TitleCell">
+                            <div>@Html.DisplayNameFor(model => model.WinterPercLoading)</div>
+                        </div>
+                        <div class="Cell">
+                            @foreach (var PercLoad in Model.WinterPercLoadings ?? new string[0])
+                            {
+                                <div class="SubCell">
+                                    <label>@string.Format("{0:n1}", PercLoad)</label>
+                                </div>
+                            }
+                        </div>
+                        <div class="Cell">
+                            @foreach (var PercLoad in Model.SummerPercLoadings ?? new string[0])
+                            {
+                                <div class="SubCell">
+                                    <label>@string.Format("{0:n1}", PercLoad)</label>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="TitleCell">
+                            <div>@Html.DisplayNameFor(model => model.WinterSMCustToTotalCust)</div>
+                        </div>
+                        <div class="Cell">
+                            <div>@Html.DisplayFor(model => model.WinterSMCustToTotalCust)</div>
+                        </div>
+                        <div class="Cell">
+                            <div>@Html.DisplayFor(model => model.SummerSMCustToTotalCust)</div>
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="TitleCell">
+                            <div>@Html.DisplayNameFor(model => model.WinterCustomersRatio)</div>
+                        </div>
+                        <div class="Cell">
+                            <div>@Html.DisplayFor(model => model.WinterCustomersRatio)</div>
+                        </div>
+                        <div class="Cell">
+                            <div>@Html.DisplayFor(model => model.SummerCustomersRatio)</div>
+                        </div>
+                    </div>
+                    <div class="Heading">
+                        <div class="TitleCell">
+                            <div>
+                                @Html.DisplayNameFor(model => model.TrfInfoByCustType[0].CustomerType)</div>
+                        </div>
+                        <div class="Cell">
+                            <div class="SubCellLeft">
+                                @Html.DisplayNameFor(model => model.TrfInfoByCustType[0].WinterQty)</div>
+                            <div class="SubCellRight">
+                                @Html.DisplayNameFor(model => model.TrfInfoByCustType[0].WinterKVA)</div>
+                        </div>
+                        <div class="Cell">
+                            <div class="SubCellLeft">
+                                @Html.DisplayNameFor(model => model.TrfInfoByCustType[0].SummerQty)</div>
+                            <div class="SubCellRight">
+                                @Html.DisplayNameFor(model => model.TrfInfoByCustType[0].SummerKVA)</div>
+                        </div>
+                    </div>
+                    @if (Model.TrfInfoByCustType != null)
+                    {
+                        @Html.DisplayFor(x => x.TrfInfoByCustType)
+                    }
+                </div>
+            </div>
+        }
+        <div class="winter-code-desc">@Model.WinterCodeDescription</div>
+        <div class="summer-code-desc">@Model.SummerCodeDescription</div>
+        <div class="multiunit-note">
+            *Based on Table 9-11 of the Electric Design Manual. For calculation purposes,
+            when CC&B has no data, all domestic customers and unmetered services are assumed to be
+              single phase loads and all others are assumed to be three phase loads.</div>
+    </div>
+</div>

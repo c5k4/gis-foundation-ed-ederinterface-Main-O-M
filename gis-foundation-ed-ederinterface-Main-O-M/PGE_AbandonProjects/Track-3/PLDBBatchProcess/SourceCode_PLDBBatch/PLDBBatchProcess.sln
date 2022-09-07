@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLDBBatchProcess", "PLDBBatchProcess\PLDBBatchProcess.csproj", "{697EA7CF-5D56-4922-BC0B-2EEE6F3EFB2B}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PLDBBatchProcessSetup", "PLDBBatchProcessSetup\PLDBBatchProcessSetup.vdproj", "{C0BE7F8D-0C18-4D8E-B4FE-83D17E867CE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{697EA7CF-5D56-4922-BC0B-2EEE6F3EFB2B}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{697EA7CF-5D56-4922-BC0B-2EEE6F3EFB2B}.Debug|Any CPU.Build.0 = Debug|x86
+		{697EA7CF-5D56-4922-BC0B-2EEE6F3EFB2B}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{697EA7CF-5D56-4922-BC0B-2EEE6F3EFB2B}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{697EA7CF-5D56-4922-BC0B-2EEE6F3EFB2B}.Debug|x86.ActiveCfg = Debug|x86
+		{697EA7CF-5D56-4922-BC0B-2EEE6F3EFB2B}.Debug|x86.Build.0 = Debug|x86
+		{697EA7CF-5D56-4922-BC0B-2EEE6F3EFB2B}.Release|Any CPU.ActiveCfg = Release|x86
+		{697EA7CF-5D56-4922-BC0B-2EEE6F3EFB2B}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{697EA7CF-5D56-4922-BC0B-2EEE6F3EFB2B}.Release|Mixed Platforms.Build.0 = Release|x86
+		{697EA7CF-5D56-4922-BC0B-2EEE6F3EFB2B}.Release|x86.ActiveCfg = Release|x86
+		{697EA7CF-5D56-4922-BC0B-2EEE6F3EFB2B}.Release|x86.Build.0 = Release|x86
+		{C0BE7F8D-0C18-4D8E-B4FE-83D17E867CE4}.Debug|Any CPU.ActiveCfg = Debug
+		{C0BE7F8D-0C18-4D8E-B4FE-83D17E867CE4}.Debug|Any CPU.Build.0 = Debug
+		{C0BE7F8D-0C18-4D8E-B4FE-83D17E867CE4}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{C0BE7F8D-0C18-4D8E-B4FE-83D17E867CE4}.Debug|Mixed Platforms.Build.0 = Debug
+		{C0BE7F8D-0C18-4D8E-B4FE-83D17E867CE4}.Debug|x86.ActiveCfg = Debug
+		{C0BE7F8D-0C18-4D8E-B4FE-83D17E867CE4}.Debug|x86.Build.0 = Debug
+		{C0BE7F8D-0C18-4D8E-B4FE-83D17E867CE4}.Release|Any CPU.ActiveCfg = Release
+		{C0BE7F8D-0C18-4D8E-B4FE-83D17E867CE4}.Release|Any CPU.Build.0 = Release
+		{C0BE7F8D-0C18-4D8E-B4FE-83D17E867CE4}.Release|Mixed Platforms.ActiveCfg = Release
+		{C0BE7F8D-0C18-4D8E-B4FE-83D17E867CE4}.Release|Mixed Platforms.Build.0 = Release
+		{C0BE7F8D-0C18-4D8E-B4FE-83D17E867CE4}.Release|x86.ActiveCfg = Release
+		{C0BE7F8D-0C18-4D8E-B4FE-83D17E867CE4}.Release|x86.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {579512FF-0258-4C68-BBFC-A7D32CD22C41}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PLDBBatchProcess\\PLDBBatchProcess.csproj
+		SccProjectName1 = PLDBBatchProcess
+		SccLocalPath1 = PLDBBatchProcess
+		SccProjectUniqueName2 = PLDBBatchProcessSetup\\PLDBBatchProcessSetup.vdproj
+		SccProjectName2 = PLDBBatchProcessSetup
+		SccLocalPath2 = PLDBBatchProcessSetup
+	EndGlobalSection
+EndGlobal

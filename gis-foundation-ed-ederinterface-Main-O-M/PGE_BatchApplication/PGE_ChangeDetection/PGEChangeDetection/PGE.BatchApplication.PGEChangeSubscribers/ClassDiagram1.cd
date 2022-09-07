@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.BatchApplication.ChangeSubscribers.DistinctAttributeChangeSubscriber" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>ABQAABIAACCAQJAAAAAAAFQAIAAIAAAAAAAUAQABQAA=</HashCode>
+      <FileName>DistinctAttributeChangeSubscriber.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.BatchApplication.ChangeSubscribers.SettingsChangeSubscriber" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAgAAACQAAAAAQAAAIGAAIAAAAAAAAAEEAAAAAoA=</HashCode>
+      <FileName>SettingsChangeSubscriber.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PGE.BatchApplication.ChangeSubscribers.TlmChangeSubscriber" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACUgAAAAQABAAEAAIAAAAAAABAEAAAAQAII=</HashCode>
+      <FileName>TlmChangeSubscriber.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PGE.BatchApplication.ChangeSubscribers.MaintenancePlatChangeSubscriber" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAQABAIABCABACBASAIIAACEIAABAAAQEAAAAAAAQBA=</HashCode>
+      <FileName>MaintenancePlatChangeSubscriber.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PGE.BatchApplication.ChangeSubscribers.UnifiedGridChangeSubscriber" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAACAAAAAACAAAAAAAIAAAAAAAAAAAAAAAARA=</HashCode>
+      <FileName>UnifiedGridChangeSubscriber.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PGE.BatchApplication.ChangeSubscribers.SchematicsChangeSubscriber" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQgCgIAICQCAAAQRAAAIAAAIAAAAAAAIgEAAAAiAAA=</HashCode>
+      <FileName>SchematicsChangeSubscriber.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.BatchApplication.ChangeSubscribers.VersionDeletedFeature" Collapsed="true">
+    <Position X="5" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAgBAAAAAAAAAAAAAAAAAABAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>SchematicsChangeSubscriber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.ChangeSubscribers.Schematics.ChangeSetFeatureWriter" Collapsed="true">
+    <Position X="7.75" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAIIAAQAAAgBBKAAASAAAAIgAgAACAACEAAEAAAAE=</HashCode>
+      <FileName>Schematics\ChangeSetFeatureWriter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.ChangeSubscribers.Schematics.SchematicsPostedSession" Collapsed="true">
+    <Position X="5" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AIAwARFowKCGjFJEAAAAEgAIIDAAIBAFSEGE4ZYIACE=</HashCode>
+      <FileName>Schematics\SchematicsPostedSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.ChangeSubscribers.Schematics.SchematicsTablesReader" Collapsed="true">
+    <Position X="7.75" Y="4" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEICgAAAQAABAAAGAAIAIAAAAAAAAAAAAAIgA=</HashCode>
+      <FileName>Schematics\SchematicsTablesReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.ChangeSubscribers.Tlm.TlmDatabase" Collapsed="true">
+    <Position X="5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAiAAAAAAAAAQAAAAIAAQAEAAAAAABAAAAAA=</HashCode>
+      <FileName>Tlm\TlmDatabase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.ChangeSubscribers.Settings.SettingsDatabase" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAiACAAAAAAAAAAAAIAAQAEAAAAAABAAAAAA=</HashCode>
+      <FileName>Settings\SettingsDatabase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.ChangeSubscribers.Settings.SettingsChangeManager" Collapsed="true">
+    <Position X="5" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAEIACEAQCAEBAAAAAAAIBgGYAIAAYUZAJIAMFI=</HashCode>
+      <FileName>Settings\SettingsChangeManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

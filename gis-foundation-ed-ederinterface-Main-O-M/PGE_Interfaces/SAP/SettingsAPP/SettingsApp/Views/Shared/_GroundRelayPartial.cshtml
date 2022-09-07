@@ -1,0 +1,71 @@
+﻿@using SettingsApp.Common;
+@model SettingsApp.Models.RelayModel
+<script type="text/javascript" src="/Scripts/SettingsApp.js"></script>
+ <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 420px; height: 290px; table-layout:fixed">
+    <tr>
+        <td class="sectionHeader" colspan="2">
+            Backup Ground Relay
+                @Html.HiddenFor(model => model.ID)
+                @Html.HiddenFor(model => model.ProtectionId)
+        </td>
+    </tr>
+@*                                                <tr>
+        <td>@Html.LabelForRequired(model => model.RelayType)
+        </td>
+        <td>@Html.DropDownListFor(model => model.RelayType, Model.GrdBkRelayTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.RelayType)
+        </td>
+    </tr>*@
+        <tr>
+        <td>@Html.LabelForRequired(model => model.RelayType)
+        </td>
+        <td>@Html.TextBoxFor(model => model.RelayType, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.RelayType)
+            @*@Html.HiddenFor(model => model.RelayType)*@
+        </td>
+    </tr>
+@*                                                <tr>
+        <td style="width: 185px">@Html.LabelForRequired(model => model.CurveType)
+        </td>
+        <td>@Html.DropDownListFor(model => model.CurveType, Model.GrdBkCurveTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.CurveType)
+        </td>
+    </tr>*@
+    <tr>
+        <td>@Html.LabelForRequired(model => model.CurveType)
+        </td>
+        <td>@Html.TextBoxFor(model => model.CurveType, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.CurveType)
+               @* @Html.HiddenFor(model => model.CurveType)*@
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelForRequired(model => model.MinAmpsTrip)
+        </td>
+        <td>@Html.TextBoxFor(model => model.MinAmpsTrip, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.MinAmpsTrip)
+               @* @Html.HiddenFor(model => model.MinAmpsTrip)*@
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelForRequired(model => model.LeverSettings)
+        </td>
+        <td>@Html.TextBoxFor(model => model.LeverSettings, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.LeverSettings)
+               @* @Html.HiddenFor(model => model.LeverSettings)*@
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelForRequired(model => model.InstTrip)
+        </td>
+        <td>@Html.TextBoxFor(model => model.InstTrip, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.InstTrip)
+               @* @Html.HiddenFor(model => model.InstTrip)*@
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"><br />
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"><br />
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"><br />
+        </td>
+    </tr>
+</table>

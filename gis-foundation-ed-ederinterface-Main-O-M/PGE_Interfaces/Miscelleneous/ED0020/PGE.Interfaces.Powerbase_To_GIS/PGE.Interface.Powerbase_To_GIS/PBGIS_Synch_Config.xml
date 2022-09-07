@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- In below mapping either don't keep any subtype code for generic mapping or keep all the subtype codes in seperate tags for a feature class -->
+
+<Mappings>
+
+  <FeatureClass PBFeatureClassName="EDGIS.CapacitorBank" GISFeatureClassName="EDGIS.CapacitorBank" Subtype="" GLOBALIDColumnName="GLOBALID">
+    <Fields>
+      <Field PBFieldName="SUPERVISORYCONTROL" GISFieldName="SUPERVISORYCONTROL"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="SWITCHMODEIDC" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="OPERATINGAS" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="MULTIFUNCTIONALIDC" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="DEVICETYPE" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="FLISRAUTOMATIONDEVICEIDC" GISFieldName="EDGIS.SCADA.FLISRAUTOMATIONDEVICEIDC"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="CONTROLLERSERIALNUMBER" GISFieldName="EDGIS.CONTROLLER.SERIALNUMBER"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="CONTROLLERTYPE" GISFieldName="EDGIS.CONTROLLER.CONTROLLERTYPE"> </Field>
+    </Fields>        
+  </FeatureClass>
+
+  <FeatureClass PBFeatureClassName="EDGIS.VoltageRegulatorUnit" GISFeatureClassName="EDGIS.VoltageRegulatorUnit" Subtype="" GLOBALIDColumnName="GLOBALID">  
+    <Fields>
+      <Field PBFieldName="SUPERVISORYCONTROL" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="SWITCHMODEIDC" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="OPERATINGAS" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="MULTIFUNCTIONALIDC" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="DEVICETYPE" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="FLISRAUTOMATIONDEVICEIDC" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="CONTROLLERSERIALNUMBER" GISFieldName="EDGIS.CONTROLLER.SERIALNUMBER"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="CONTROLLERTYPE" GISFieldName="EDGIS.CONTROLLER.CONTROLLERTYPE"> </Field>
+    </Fields>
+  </FeatureClass>
+
+  <FeatureClass PBFeatureClassName="EDGIS.VoltageRegulatorUnit" GISFeatureClassName="EDGIS.VoltageRegulator" Subtype="" GLOBALIDColumnName="PARENTDEVICEGUID">
+    <Fields>
+      <Field PBFieldName="SUPERVISORYCONTROL" GISFieldName="SUPERVISORYCONTROLIDC"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="SWITCHMODEIDC" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="OPERATINGAS" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="MULTIFUNCTIONALIDC" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="DEVICETYPE" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="FLISRAUTOMATIONDEVICEIDC" GISFieldName="EDGIS.SCADA.FLISRAUTOMATIONDEVICEIDC"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="CONTROLLERSERIALNUMBER" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="CONTROLLERTYPE" GISFieldName=""> </Field>
+    </Fields>
+  </FeatureClass>
+
+  <!--GISFeatureClassName - EDGIS.DynamicProtectiveDevice , Subtype Code - 2	Subtye Description - Interrupter-->
+  <FeatureClass PBFeatureClassName="EDGIS.DynamicProtectiveDevice" GISFeatureClassName="EDGIS.DynamicProtectiveDevice" Subtype="2" GLOBALIDColumnName="GLOBALID">  
+    <Fields>
+      <Field PBFieldName="SUPERVISORYCONTROL" GISFieldName="SUPERVISORYCONTROL"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="SWITCHMODEIDC" GISFieldName="SWITCHMODEIDC"> </Field> <!--SWITCHMODEIDC is Only for Interrupter-->
+    </Fields>
+    <Fields>
+      <Field PBFieldName="OPERATINGAS" GISFieldName=""> </Field>  <!--OPERATINGAS is Only for Recloser-->
+    </Fields>
+    <Fields>
+      <Field PBFieldName="MULTIFUNCTIONALIDC" GISFieldName=""> </Field> <!--MULTIFUNCTIONALIDC is Only for Recloser-->
+    </Fields>
+    <Fields>
+      <Field PBFieldName="DEVICETYPE" GISFieldName=""> </Field>  <!--DEVICETYPE is Only for Sectionalizer-->
+    </Fields>
+    <Fields>
+      <Field PBFieldName="FLISRAUTOMATIONDEVICEIDC" GISFieldName="EDGIS.SCADA.FLISRAUTOMATIONDEVICEIDC"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="CONTROLLERSERIALNUMBER" GISFieldName="EDGIS.CONTROLLER.SERIALNUMBER"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="CONTROLLERTYPE" GISFieldName="EDGIS.CONTROLLER.CONTROLLERTYPE"> </Field>
+    </Fields>
+  </FeatureClass>
+
+  <!--GISFeatureClassName - EDGIS.DynamicProtectiveDevice , Subtype Code - 3	Subtye Description - Recloser-->
+  <FeatureClass PBFeatureClassName="EDGIS.DynamicProtectiveDevice" GISFeatureClassName="EDGIS.DynamicProtectiveDevice" Subtype="3" GLOBALIDColumnName="GLOBALID">    
+    <Fields>
+      <Field PBFieldName="SUPERVISORYCONTROL" GISFieldName="SUPERVISORYCONTROL"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="SWITCHMODEIDC" GISFieldName=""> </Field> <!--SWITCHMODEIDC is Only for Interrupter-->
+    </Fields>
+    <Fields>
+      <Field PBFieldName="OPERATINGAS" GISFieldName="OPERATINGAS"> </Field> <!--OPERATINGAS is Only for Recloser-->
+    </Fields>
+    <Fields>
+      <Field PBFieldName="MULTIFUNCTIONALIDC" GISFieldName="MULTIFUNCTIONALIDC"> </Field> <!--MULTIFUNCTIONALIDC is Only for Recloser-->
+    </Fields>
+    <Fields>
+      <Field PBFieldName="DEVICETYPE" GISFieldName=""> </Field>  <!--DEVICETYPE is Only for Sectionalizer-->
+    </Fields>
+    <Fields>
+      <Field PBFieldName="FLISRAUTOMATIONDEVICEIDC" GISFieldName="EDGIS.SCADA.FLISRAUTOMATIONDEVICEIDC"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="CONTROLLERSERIALNUMBER" GISFieldName="EDGIS.CONTROLLER.SERIALNUMBER"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="CONTROLLERTYPE" GISFieldName="EDGIS.CONTROLLER.CONTROLLERTYPE"> </Field>
+    </Fields>
+  </FeatureClass>
+
+  <!--GISFeatureClassName - EDGIS.DynamicProtectiveDevice , Subtype Code - 8	Subtye Description - Sectionalizer-->
+  <FeatureClass PBFeatureClassName="EDGIS.DynamicProtectiveDevice" GISFeatureClassName="EDGIS.DynamicProtectiveDevice" Subtype="8" GLOBALIDColumnName="GLOBALID">  
+    <Fields>
+      <Field PBFieldName="SUPERVISORYCONTROL" GISFieldName="SUPERVISORYCONTROL"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="SWITCHMODEIDC" GISFieldName=""> </Field> <!--SWITCHMODEIDC is Only for Interrupter-->
+    </Fields>
+    <Fields>
+      <Field PBFieldName="OPERATINGAS" GISFieldName=""> </Field> <!--OPERATINGAS is Only for Recloser-->
+    </Fields>
+    <Fields>
+      <Field PBFieldName="MULTIFUNCTIONALIDC" GISFieldName=""> </Field>  <!--MULTIFUNCTIONALIDC is Only for Recloser-->
+    </Fields>
+    <Fields>
+      <Field PBFieldName="DEVICETYPE" GISFieldName="DEVICETYPE"> </Field> <!--DEVICETYPE is Only for Sectionalizer-->
+    </Fields>
+    <Fields>
+      <Field PBFieldName="FLISRAUTOMATIONDEVICEIDC" GISFieldName="EDGIS.SCADA.FLISRAUTOMATIONDEVICEIDC"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="CONTROLLERSERIALNUMBER" GISFieldName="EDGIS.CONTROLLER.SERIALNUMBER"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="CONTROLLERTYPE" GISFieldName="EDGIS.CONTROLLER.CONTROLLERTYPE"> </Field>
+    </Fields>
+  </FeatureClass>
+
+  <FeatureClass PBFeatureClassName="EDGIS.Switch" GISFeatureClassName="EDGIS.Switch" Subtype="" GLOBALIDColumnName="GLOBALID">  
+    <Fields>
+      <Field PBFieldName="SUPERVISORYCONTROL" GISFieldName="SUPERVISORYCONTROL"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="SWITCHMODEIDC" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="OPERATINGAS" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="MULTIFUNCTIONALIDC" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="DEVICETYPE" GISFieldName=""> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="FLISRAUTOMATIONDEVICEIDC" GISFieldName="EDGIS.SCADA.FLISRAUTOMATIONDEVICEIDC"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="CONTROLLERSERIALNUMBER" GISFieldName="EDGIS.CONTROLLER.SERIALNUMBER"> </Field>
+    </Fields>
+    <Fields>
+      <Field PBFieldName="CONTROLLERTYPE" GISFieldName="EDGIS.CONTROLLER.CONTROLLERTYPE"> </Field>
+    </Fields>
+  </FeatureClass>
+    
+</Mappings>

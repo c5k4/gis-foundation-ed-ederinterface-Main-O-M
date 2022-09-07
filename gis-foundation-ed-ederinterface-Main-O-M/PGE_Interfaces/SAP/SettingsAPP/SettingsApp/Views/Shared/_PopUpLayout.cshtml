@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Settings Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+
+    <script type="text/javascript">
+  function printDoc() {
+                
+                    window.print();
+            }
+
+            </script>
+</head>
+<body>
+    <div id="body">
+        <section class="content-wrapper main-contentPopUp clear-fix">
+        <div style="position: relative; top: 50px; padding-left: 800px">
+                    <img alt="Print" src="/Images/print.png" style="border: 0px solid #000;" onclick="javascript:printDoc();" />
+                </div>
+                @RenderBody()
+            </section>
+    </div>
+    
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,336 @@
+﻿@using SettingsApp.Common;
+@model SettingsApp.Models.ProtectionModel
+<style type="text/css">
+    .desc-text-area
+    {
+        width: 320px;
+        height: 50px;
+    }
+    .admin-checkbox
+    {
+        display: none;
+    }
+</style>
+<script>
+    function resizeIframe(obj) {
+        obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+        obj.style.width = obj.contentWindow.document.body.scrollwidth + 'px';
+    }
+</script>
+<script type="text/javascript" src="/Scripts/SettingsApp.js"></script>
+@if ((SettingsApp.Models.GenerationSettingsModel)ViewBag.CurrentGeneration != null)
+{
+    var superuser = Session["SuperuserOn"] != null ? (bool)Session["SuperuserOn"] : false;
+    var CurrentGeneration = (SettingsApp.Models.GenerationSettingsModel)ViewBag.CurrentGeneration;
+    var CurrentProtection = Model as SettingsApp.Models.ProtectionModel;
+     <table cellpadding="0" cellspacing="0" width="90%">
+        <tr>
+            <td style="padding: 0px">
+                <div class="float-left">
+                    <nav>
+                        <ul id="menu">
+                            <li class="@ViewBag.Generation">@Html.ActionLink("Generation", "Generation", "Generation", new { generationId = CurrentProtection.ParentID.ToString()}, null)</li>
+                                 @if (CurrentGeneration.ListOfProtection != null && CurrentGeneration.ListOfProtection.Count > 0)
+                                 {
+                                     for (int i = 0; i <= CurrentGeneration.ListOfProtection.Count - 1; i++)
+                                     {
+                                         int ActiveProtectionIndex = CurrentGeneration.ListOfProtection.FindIndex(x => x.ID == CurrentProtection.ID);
+                                         string protectionName = "Protection " + (i + 1).ToString();
+                                         var protection = CurrentGeneration.ListOfProtection[i];
+                                         TempData["protectionID"] = protection.ID;
+                                         string url = "/Generation/Protection?parentType=Generation&parentID=" + protection.ID.ToString();
+                                         if (ActiveProtectionIndex == i)
+                                         {
+                                          <li class="selected"> <a href=@url> @protectionName  </a> 
+    @*                                        @Html.ActionLink(protectionName, "IndexByID", "Protection", new { parentType = "Generation", ID = TempData[protectionName] }, null)*@
+                                          </li>
+                                         }
+                                         else
+                                         {
+                                          <li> <a href=@url> @protectionName  </a> 
+    @*                                        @Html.ActionLink(protectionName, "IndexByID", "Protection", new { parentType = "Generation", ID = TempData[protectionName] }, null)*@
+                                          </li>
+                                         }
+                                     }
+                                     if (superuser)
+                                     {
+                                         string url = "/Generation/AddNewProtection?parentType=Generation&generationID=" + CurrentGeneration.ID;
+                                        <li style="display: inline;list-style: none;padding: 0px 5px 0px 5px;text-align: center;background-color: #FFFF00;color: #ffffff;"> <a  style="background: none;text-decoration: none; color: #000000;" href=@url> New </a></li>
+                                     }
+                                 }
+                        </ul>
+                    </nav>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="header" style="padding-top: 15px; padding-bosttom: 0px; padding-left: 10px" width="80%">
+                @ViewBag.Title
+            </td>
+            <td class="header" style="padding-top: 15px; padding-bosttom: 0px; padding-left: 10px" width="20%">
+                @if (Model.Generators == null || Model.Generators.Count == 0)
+                {
+                    <input type="button" id="btnDelete" value="Delete" onclick="this.form.action = '/@ViewBag.ControllerName/DeleteProtection?protectionId=@ViewBag.ProtectionId'; this.form.submit();"
+                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                }
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: right; padding-right: 10px">
+                <input type="button" id="btnProActivate" value="@Session["SuperUserButtonText"]" onclick="this.form.action='/@ViewBag.ControllerName/ToggleSuperUser?type=Protection&ID=@Model.ID.ToString()';this.form.submit();"
+                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="background-color: #ffffff; padding: 10px;">
+                @if (ViewBag.ShowPageError == true)
+                {
+                    <label id="lableDeviceValidationError" runat="server" style="color: Red; text-align: center;">
+                        There are error(s), please check below.
+                    </label>
+                }
+                @if (ViewBag.ShowSaveSucessful == true)
+                {
+                    <label id="lableDeviceSaveSucess" runat="server" style="color: Green; text-align: center;">
+                        Device saved successfully.
+                    </label>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="2" style="background-color: #ffffff; padding: 10px">
+                <table cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f2f2">
+                    <tr>
+                        <td colspan="2">
+                            <table cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f2f2">
+                                <tr>
+                                    <td >@Html.LabelForRequired(model => model.ExportkW)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ExportkW, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 250, @class = "form-control" })
+@*                                        @Html.HiddenFor(model => model.ExportkW)
+                                        @Html.HiddenFor(model => model.ID)
+                                        @Html.HiddenFor(model => model.ParentID)
+                                        @Html.HiddenFor(model => model.ParentType)*@
+                                    </td>
+                                </tr>
+            @*                    <tr>
+                                    <td>@Html.LabelForRequired(model => model.ProtectionType)
+                                    </td>
+                                    <td>@Html.DropDownListFor(model => model.ProtectionType, Model.ProtectionTypeList,ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 250, @class = "form-control" })@Html.ValidationMessageFor(model => model.ProtectionType)
+                                    </td>
+                                </tr>*@
+                                <tr>
+                                    <td style="width: 185px">@Html.LabelForRequired(model => model.ProtectionType)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ProtectionType, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 250, @class = "form-control" })@Html.ValidationMessageFor(model => model.ProtectionType)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 185px">@Html.LabelForRequired(model => model.Notes)
+                                    </td>
+                                    <td>@Html.TextAreaFor(model => model.Notes, 5, 15, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 250, @class = "form-control" })@Html.ValidationMessageFor(model => model.Notes)
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    @if (Model.ProtectionType == "FUSE")
+                    {
+                        <tr>
+                          <td colspan="2" style="padding-right: 0px">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td class="sectionHeader" colspan="2">
+                                        Fuse
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.FuseType)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.FuseType, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.FuseType)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.FuseSize)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.FuseSize, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.FuseSize)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.Manufacturer)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.Manufacturer, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Manufacturer)
+                                    </td>
+                                </tr>
+                            </table>
+                          </td>
+                        </tr>
+                    }
+                    @if (Model.ProtectionType == System.Configuration.ConfigurationManager.AppSettings["PROTECTION_Type_RECL"])
+                    {
+                        <tr>
+                          <td colspan="2" style="padding-right: 0px">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td class="sectionHeader" colspan="2">
+                                        Recloser
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.Manufacturer)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.Manufacturer, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Manufacturer)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.PhaseMinAmpsTrip)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.PhaseMinAmpsTrip, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PhaseMinAmpsTrip)
+                                        @Html.HiddenFor(model => model.PhaseMinAmpsTrip)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.PhaseSlowCurve)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.PhaseSlowCurve, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PhaseSlowCurve)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.PhaseFastCurve)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.PhaseFastCurve, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PhaseFastCurve)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.PhaseTimeDial)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.PhaseTimeDial, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PhaseTimeDial)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.PhaseInst)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.PhaseInst, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PhaseInst)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.GroundMinAmpsTrip)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.GroundMinAmpsTrip, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GroundMinAmpsTrip)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.GroundSlowCurve)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.GroundSlowCurve, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GroundSlowCurve)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.GroundFastCurve)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.GroundFastCurve, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GroundFastCurve)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.GroundTimeDial)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.GroundTimeDial, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GroundTimeDial)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.GroundInst)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.GroundInst, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GroundInst)
+                                    </td>
+                                </tr>
+                            </table>
+                          </td>
+                        </tr>
+                    }
+                    @if (Model.ProtectionType == System.Configuration.ConfigurationManager.AppSettings["PROTECTION_Type_RELY"])
+                    {
+                        <tr style="height:190">
+                          <td align="center" colspan="1">
+                             @if (Model.Relays != null && Model.Relays.Count > 0)
+                             {
+                                 ViewBag.CurrentRelays = Model.Relays;
+                                 Html.RenderAction("Relays", "Generation", new { protectionId = Model.ID.ToString() });}
+                             }
+                            </td>
+                         </tr>
+                    }
+                    <tr>
+                        <td colspan="2" style="padding-right: 0px">
+                           <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                    <tr>
+                                        <td class="sectionHeader" colspan="2">
+                                            Generators
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"> <br />
+                                        </td>
+                                    </tr>
+                                    @if (Model.Generators != null && Model.Generators.Count > 0)
+                                    {
+
+                                        string url = "/Generation/Generator?sapEquipmentID=" + Model.Generators[0].SapEquipmentID.ToString();
+                                        <tr>
+                                            <td colspan="2">
+                                            <iframe src=@url width="100%" onload="resizeIframe(this)" scrolling="yes" seamless="seamless"
+                                            frameborder="0"></iframe>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td colspan="2"><br /></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><br /></td>
+                                        </tr>
+                                    }
+                                    else if (superuser)
+                                    {
+
+                                        string url = "/Generation/AddNewGenerator?protectionID=" + Model.ID.ToString();                                        
+                                        <tr>
+                                            <td style="padding: 0px">
+                                                <div class="float-left">
+                                                    <nav>
+                                                        <ul id="menu">
+                                                            <li class="selected"><a href=@url> New </a> </li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td style="padding: 0px">
+                                                No Generators
+                                            </td>
+                                        </tr>
+                                    }
+
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: right; padding-right: 10px">
+                            <input type="button" value="Cancel" onclick="this.form.action='/@ViewBag.ControllerName/IndexByID/@ViewBag.ProtectionParentType/@ViewBag.ProtectionId';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+@*                            <input type="button" value="Save" id="Save" onclick="this.form.action='/@ViewBag.ControllerName/SaveProtection';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />*@
+
+                            <input type="button" value="Save" id="Save" onclick="PostDetails()"; 
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+}

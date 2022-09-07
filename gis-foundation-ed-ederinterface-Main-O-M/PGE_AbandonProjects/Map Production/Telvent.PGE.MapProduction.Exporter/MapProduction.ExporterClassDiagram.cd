@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Telvent.PGE.MapProduction.Export.PGEExportData">
+    <Position X="4.5" Y="1.25" Width="3.25" />
+    <NestedTypes>
+      <Struct Name="Telvent.PGE.MapProduction.Export.PGEExportData.MapOfficeOutputLookupDefinition" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Export\PGEExportData.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="Telvent.PGE.MapProduction.Export.PGEExportData.CoordinateMxdLookupDefintion" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Export\PGEExportData.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="Telvent.PGE.MapProduction.Export.PGEExportData.MapCoordLookupOtherFieldDefintion" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Export\PGEExportData.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AIAJAAAAACAIIIgQCAQAQAAAJQAIWAAESgAAAASAAAE=</HashCode>
+      <FileName>Export\PGEExportData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_dataManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Telvent.PGE.MapProduction.Export.PGEExporter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgABAAAAAAAAAAAABQAAoCAAACAAAEAAAAgAAAA=</HashCode>
+      <FileName>Export\PGEExporter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Telvent.PGE.MapProduction.Export.PGEGeoProcess">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACIAhAAABIAAAGAACQAcACQACAAACAEAAAAAAQA=</HashCode>
+      <FileName>Export\PGEGeoProcess.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="GP" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Telvent.PGE.MapProduction.Export.PGEMapProcess" Collapsed="true">
+    <Position X="10" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAySIIjAhBhIAEBGAgGWAZIAaAYQAVCAkBAAAAIQA=</HashCode>
+      <FileName>Export\PGEMapProcess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Telvent.PGE.MapProduction.Exporter.Program" Collapsed="true">
+    <Position X="8.25" Y="2" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Telvent.PGE.MapProduction.Exporter.Program.ExitCodes" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Program.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAIAAAABACAAIABACAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Telvent.PGE.MapProduction.IMPDBDataManager" Collapsed="true">
+    <Position X="2.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geoprocessing.IGeoProcessor" Collapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

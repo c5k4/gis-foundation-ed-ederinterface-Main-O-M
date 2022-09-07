@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.Interfaces.SAP.GDBM.ActionHandlers.CleanSAPErrorsActionHandler">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ActionHandlers\CleanSAPErrorsActionHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.SAP.GDBM.ActionHandlers.DataCollector">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ActionHandlers\DataCollector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.SAP.GDBM.ActionHandlers.DataPersistor">
+    <Position X="0.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ActionHandlers\DataPersistor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.SAP.GDBM.ActionHandlers.NamespaceDoc">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ActionHandlers\NamespaceDoc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

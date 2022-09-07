@@ -1,0 +1,42 @@
+﻿@model List<SettingsApp.Models.RelayModel>
+@using (Html.BeginForm("Relays", "Generation"))
+{
+    @Html.ValidationSummary(true)
+    if (Model != null && Model.Count > 0)
+    {
+        var ActivePrimaryPhaseRelay = Model.FirstOrDefault(x => x.RelayType == "PP");
+        var ActivePrimaryGroundRelay = Model.FirstOrDefault(x => x.RelayType == "PG");
+        var ActiveBackupPhaseRelay = Model.FirstOrDefault(x => x.RelayType == "BP");
+        var ActiveBackupGroundRelay = Model.FirstOrDefault(x => x.RelayType == "BG");
+        <table>
+            <tr>
+                <td align="center" colspan="1">
+                    @if (ActivePrimaryGroundRelay != null)
+                    {
+                        Html.RenderPartial("~/Views/Shared/_PhaseRelayPartial.cshtml", ActivePrimaryPhaseRelay);
+                    }
+                </td>
+                <td align="center" colspan="1">
+                    @if (ActivePrimaryGroundRelay != null)
+                    {
+                        Html.RenderPartial("~/Views/Shared/_GroundRelayPartial.cshtml", ActivePrimaryGroundRelay);
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="1">
+                    @if (ActiveBackupPhaseRelay != null)
+                    {
+                        Html.RenderPartial("~/Views/Shared/_PhaseRelayPartial.cshtml", ActiveBackupPhaseRelay);
+                    }
+                </td>
+                <td align="center" colspan="1">
+                    @if (ActivePrimaryGroundRelay != null)
+                    {
+                        Html.RenderPartial("~/Views/Shared/_GroundRelayPartial.cshtml", ActiveBackupGroundRelay);
+                    }
+                </td>
+            </tr>
+        </table>  
+    }
+}

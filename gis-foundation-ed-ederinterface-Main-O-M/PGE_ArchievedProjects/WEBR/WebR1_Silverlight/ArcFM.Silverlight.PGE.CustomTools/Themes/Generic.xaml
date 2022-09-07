@@ -1,0 +1,9 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/client/2007"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ArcFM.Silverlight.PGE.CustomTools;component/UserControls/ZoomToScale/Themes/Generic.xaml" />
+        <ResourceDictionary Source="/ArcFM.Silverlight.PGE.CustomTools;component/UserControls/GeographicSearchFilter/Themes/Generic.xaml" />
+      <ResourceDictionary Source="/ArcFM.Silverlight.PGE.CustomTools;component/UserControls/StoredViewControl/Themes/Generic.xaml" />
+    </ResourceDictionary.MergedDictionaries>  
+  
+</ResourceDictionary>

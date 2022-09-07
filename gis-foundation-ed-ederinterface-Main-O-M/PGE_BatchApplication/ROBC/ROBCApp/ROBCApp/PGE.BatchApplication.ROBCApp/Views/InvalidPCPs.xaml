@@ -1,0 +1,192 @@
+﻿<Page x:Class="PGE.BatchApplication.ROBCApp.InvalidPCPs"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+    Title="Invalid PCPs" Background="Transparent">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderThickness="0,0,0,1" Margin="0">
+            <TextBlock Style="{StaticResource HeaderTextStyle}">List of Invalid PCPs</TextBlock>
+        </Border>
+        <DockPanel Grid.Row="1">
+            <Border Style="{StaticResource NonTitleBorderStyle}" Margin="0,0,0,10">
+                <TextBlock Name="BlkInstruction" TextWrapping="Wrap"
+                       Text="These are invalid PCPs that cannot have an ROBC assigned."
+                   Grid.Row="1" Margin="8" Padding="3"/>
+            </Border>
+            <Button Content="{Binding LoadButtonContent}" Command="{Binding RefreshCommand}" Width="100" Height="30" Style="{StaticResource OperationButtonStyle}" ></Button>
+        </DockPanel>
+
+        <!--Sorting="InvalidPCPDataGrid_Sorting"-->
+        <DataGrid Grid.Row="2" Width="700" ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle}"
+      AutoGenerateColumns="False" 
+      IsReadOnly="True"
+      ItemsSource="{Binding InvalidPCPList, NotifyOnTargetUpdated=True}"
+      TargetUpdated="InvalidPCPDataGrid_TargetUpdated"
+      Loaded="InvalidPCPDataGrid_Loaded" Margin="10" 
+                  HorizontalAlignment="Left" FontFamily="Calibri" FontSize="12">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                  Header="Device Type"
+                  Binding="{Binding DeviceType}"
+                  Width="*" >
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Device Type" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                  Header="Operating #"
+                  Binding="{Binding OperatingNo}"
+                  Width="*" >
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Operating #" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                  Header="Circuit Id"
+                  Binding="{Binding CircuitId}"
+                  Width="*"
+                  SortDirection="Ascending" >
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Circuit Id" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+          Header="Feeder Name"
+          Binding="{Binding FeederName}"
+          Width="*">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Feeder Name" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+          Header="Established ROBC"
+          Binding="{Binding EstablishedRobcDesc}"
+          Width="*">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Est. ROBC" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+          Header="Established SubBlock"
+          Binding="{Binding EstablishedSubBlockDesc}"
+          Width="*">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Est. SubBlock" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+          Header="Calculated Date"
+          Binding="{Binding LastCheckDate}"
+          Width="*">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Calc. Date" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel
+      Margin="4"
+      Grid.Row="3"
+      Orientation="Horizontal"
+      HorizontalAlignment="Center">
+            <Button        
+        Margin="4,0"
+        Content="&lt;&lt;"
+        Command="{Binding FirstCommand}" CommandParameter="INVALID_PCP"/>
+            <Button
+        Margin="4,0"
+        Content="&lt;"
+        Command="{Binding PreviousCommand}" CommandParameter="INVALID_PCP"/>
+            <StackPanel
+        VerticalAlignment="Center"
+        Orientation="Horizontal">
+                <TextBlock
+          Text="{Binding Start}"/>
+                <TextBlock
+          Text=" to "/>
+                <TextBlock
+          Text="{Binding End}"/>
+                <TextBlock
+          Text=" of "/>
+                <TextBlock
+          Text="{Binding TotalItems}"/>
+            </StackPanel>
+            <Button
+        Margin="4,0"
+        Content="&gt;"
+        Command="{Binding NextCommand}" CommandParameter="INVALID_PCP"/>
+            <Button
+        Margin="4,0"
+        Content="&gt;&gt;"
+        Command="{Binding LastCommand}" CommandParameter="INVALID_PCP"/>
+        </StackPanel>
+    </Grid>
+</Page>

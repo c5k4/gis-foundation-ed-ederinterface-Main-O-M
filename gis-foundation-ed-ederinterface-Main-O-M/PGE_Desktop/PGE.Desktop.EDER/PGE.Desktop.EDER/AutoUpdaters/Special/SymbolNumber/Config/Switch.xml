@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<SymbolNumberRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<FeatureClass>
+	<Rule SymbolNumber="18">
+		<And>
+		<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+		<Attribute FieldName="COMPLEXDEVICEIDC"><Value>N</Value></Attribute>
+		</And>
+	</Rule>
+	<Rule SymbolNumber="20">
+		<And>
+		<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+		<Attribute FieldName="COMPLEXDEVICEIDC"><Value>Y</Value></Attribute>
+		</And>
+	</Rule>
+	<Rule SymbolNumber="22">
+		<And>
+		<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+		<Attribute FieldName="SUPERVISORYCONTROL"><Value>N</Value></Attribute>
+		<Attribute FieldName="ATTACHMENTTYPE"><Value>7</Value></Attribute>
+		</And>
+	</Rule>	
+	<Rule SymbolNumber="23">
+		<And>
+		<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+		<Attribute FieldName="SUPERVISORYCONTROL"><Value>Y</Value></Attribute>
+		<Attribute FieldName="ATTACHMENTTYPE"><Value>7</Value></Attribute>
+		</And>
+	</Rule>	
+	<Rule SymbolNumber="24">
+		<And>
+		<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+		<Attribute FieldName="SUPERVISORYCONTROL"><Value>N</Value></Attribute>
+		<Attribute FieldName="ATTACHMENTTYPE"><Value>3</Value></Attribute>
+		</And>
+	</Rule>	
+	<Rule SymbolNumber="25">
+		<And>
+		<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+		<Attribute FieldName="SUPERVISORYCONTROL"><Value>N</Value></Attribute>
+		<Attribute FieldName="ATTACHMENTTYPE"><Value>4</Value><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+	<Rule SymbolNumber="26">
+		<And>
+		<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+		<Attribute FieldName="SUPERVISORYCONTROL"><Value>Y</Value></Attribute>
+		<Attribute FieldName="ATTACHMENTTYPE"><Value>1</Value></Attribute>
+		</And>
+	</Rule>
+	<Rule SymbolNumber="27">
+		<And>
+		<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+		<Attribute FieldName="SUPERVISORYCONTROL"><Value>Y</Value></Attribute>
+		<Attribute FieldName="ATTACHMENTTYPE"><Value>6</Value></Attribute>
+		</And>
+	</Rule>
+	<Rule SymbolNumber="28">
+		<And>
+		<Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+		<Attribute FieldName="COMPLEXDEVICEIDC"><Value>N</Value></Attribute>
+		</And>
+	</Rule>
+	<Rule SymbolNumber="29">
+		<And>
+		<Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+		<Attribute FieldName="COMPLEXDEVICEIDC"><Value>Y</Value></Attribute>
+		</And>
+	</Rule>
+	<Rule SymbolNumber="30">
+		<And>
+		<Attribute FieldName="SubtypeCD"><Value>4</Value><Value>5</Value></Attribute>
+		<Attribute FieldName="SUPERVISORYCONTROL"><Value>N</Value></Attribute>
+		<Attribute FieldName="COMPLEXDEVICEIDC"><Value>N</Value></Attribute>
+		</And>
+	</Rule>
+	<Rule SymbolNumber="99">
+		<And>
+		<Attribute FieldName="SubtypeCD"><Value>4</Value><Value>5</Value></Attribute>
+		<Attribute FieldName="SUPERVISORYCONTROL"><Value>Y</Value></Attribute>
+		<Attribute FieldName="COMPLEXDEVICEIDC"><Value>N</Value></Attribute>
+		</And>
+	</Rule>
+	<Rule SymbolNumber="100">
+		<And>
+		<Attribute FieldName="SubtypeCD"><Value>4</Value><Value>5</Value></Attribute>
+		<Attribute FieldName="SUPERVISORYCONTROL"><Value>Y</Value></Attribute>
+		<Attribute FieldName="COMPLEXDEVICEIDC"><Value>Y</Value></Attribute>
+		</And>
+	</Rule>
+	<Rule SymbolNumber="31">
+		<And>
+		<Attribute FieldName="SubtypeCD"><Value>4</Value><Value>5</Value></Attribute>
+		<Attribute FieldName="SUPERVISORYCONTROL"><Value>N</Value></Attribute>
+		<Attribute FieldName="COMPLEXDEVICEIDC"><Value>Y</Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="33">
+		<And>
+		<Attribute FieldName="SubtypeCD"><Value>6</Value></Attribute>
+		<Attribute FieldName="SUPERVISORYCONTROL"><Value>Y</Value></Attribute>
+		<Attribute FieldName="COMPLEXDEVICEIDC"><Value>Y</Value></Attribute>
+		</And>
+	</Rule>
+	
+</FeatureClass>
+</SymbolNumberRules>

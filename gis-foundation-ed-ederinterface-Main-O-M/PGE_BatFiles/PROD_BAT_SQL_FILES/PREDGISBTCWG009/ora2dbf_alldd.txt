@@ -1,0 +1,73 @@
+ OBJECTID              
+ OFFICE                
+ PERSON_NAME           	   PERSONNAME
+ ACCOUNT_NUMBER        	   ACCTNUM
+ BADGE_NUMBER          	   BADGENUM
+ FIXTURE_CODE          	   FX_CODE
+ STATUS                
+ STATUS_FLAG           	   STATUSFLAG
+ RECEIVE_DATE          	   REC_DATE
+ RETIRE_DATE           	   RET_DATE
+ INSTALL_DATE          	   INS_DATE
+ REMOVAL_DATE          	   REM_DATE
+ CHANGE_OF_PARTY_DATE  	   COP_DATE
+ DESCRIPTIVE_ADDRESS       DESC_ADDR
+ MAP_NUMBER                MAPNUMBER
+ RATE_SCHEDULE             RATE_SCHED
+ ITEM_TYPE_CODE            ITEM_CODE
+ OPERATING_SCHEDULE        OP_SCHED
+ SERVICE               
+ FIXTURE_MANUFACTURER      FX_MAN
+ POLE_TYPE             
+ POLE_LENGTH               POLE_LGTH  
+ SUSPENSION            
+ POLE_USE              
+ SP_ID                 
+ SA_ID                 
+ PREM_ID               
+ TOT_CODE              
+ TOT_TERR_DESC             TOT_TERR 
+ INVENTORY_DATE            INV_DATE
+ INVENTORIED_BY            INV_BY
+ SP_ITEM_HIST              SPITEMHIST
+ UNIQUE_SP_ID              UNIQUESPID
+ GIS_ID                
+ BALLAST_CH_DT             BLCH_DATE
+ LAMP_CH_DT                LMCH_DATE
+ LINE_SHARE_SW             LINESHARE
+ LITE_SIZE             
+ LITE_TYPE             
+ LUMN_CH_DT                LUCH_DATE
+ PCELL_CH_DT               PCCH_DATE
+ PCELL                 
+ POLE_CH_DT                POCH_DATE
+ POLE_PT_DT                PTCH_DATE
+ STRT_CH_DT            
+ LITESIZE_TYPE             LITESIZE
+ LITETYPE_TYPE             LITETYPE
+ HALFHRADJ_TYPE            HALFHRADJ
+ MAIL_ADDR1            
+ MAIL_ADDR2            
+ MAIL_CITY             
+ MAIL_STATE                MAILSTATE
+ MAIL_ZIP              
+ NEWBADGE              
+ FMETRICOM             
+ FREVENUE              
+ FAR1                  
+ FAR2                  
+ FAR3                  
+ FAROTHER              
+ MAINTNOTE             
+ FAPPLIANCE1           	    FAPPL1
+ FAPPLIANCE2           	    FAPPL2
+ FAPPLIANCE3           	    FAPPL3
+ FAPPLIANCE4           	    FAPPL4
+ FAPPLIANCE5           	    FAPPL5
+ METER                      METERED 
+ PAINTPOLE             
+ TRANSACTION_          	    TRNSACTION
+ FAR4                  
+ FAR5                       
+ Latitude
+ Longitude

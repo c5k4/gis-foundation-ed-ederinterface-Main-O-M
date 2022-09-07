@@ -1,0 +1,61 @@
+﻿@using TLM.Common;
+@model TLM.Models.TransformerLoadHistory
+@{
+    ViewBag.Title = "Transformer Loading History";
+}
+
+@{AjaxOptions options = new AjaxOptions();
+  options.HttpMethod = "POST";
+  options.OnBegin = "OnBegin";
+  options.OnComplete = "OnComplete";
+  options.OnFailure = "OnFailure";
+  options.OnSuccess = "OnSuccess";
+  options.LoadingElementId = "divProgress";
+  options.LoadingElementDuration = 800;
+  options.UpdateTargetId = "load-history";
+  options.InsertionMode = InsertionMode.Replace;
+}
+<div class="header">
+    @ViewBag.Title
+    <div class="utility-nav">
+        @Html.ActionLink("Export to CSV", "Export", "Transformer", new { TransformerId = Model.TransformerId }, new { @class = "csv-link" })
+        <img src="/Content/Images/print.png" class="print-img" style="border: 0px solid #000;"
+            onclick="javascript:window.print();" />
+    </div>
+</div>
+@if(TML.Common.Constants.Warningmsg=="1")
+{
+<div class="WarningDisplayMessage">
+@ViewBag.Remark
+</div>
+}
+@using (Ajax.BeginForm(options))
+{
+    @Html.ValidationSummary(true)
+    <div id="divProgress" class="transparent1">
+        <div id="loadingcontent">
+            <p id="loadingspinner">
+                <span class="loading-text"></span>
+                <img src='/Content/images/progress-bar.gif' />
+            </p>
+        </div>
+    </div>
+    @Html.Partial("_History")
+}
+<!--[if IE 8]>
+    <style type="text/css">
+    .transparent {
+    background:#000 !important;
+    color:#fff;
+    filter:progid:DXImageTransform.Microsoft.gradient(StartColorStr='#80000000', EndColorStr='#80000000') !important;
+    zoom: 1 !important;
+    }
+    .loading-text:after
+    {
+    content:"Processing...";
+    }
+    </style>
+    <![endif]-->
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@ 

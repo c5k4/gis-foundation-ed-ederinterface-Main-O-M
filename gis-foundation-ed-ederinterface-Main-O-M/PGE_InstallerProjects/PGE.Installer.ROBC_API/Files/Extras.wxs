@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--PGE.MapProduction.Integration-->
+  <Fragment>
+    <ComponentGroup Id="Extras">
+
+      <Component Id="PGE.Interfaces.CCBtoGISInterface.exe" Directory="CCB" Guid="6B9C890B-3640-4A7F-9626-B46F40FBE115" >
+        <File Id="PGE.Interfaces.CCBtoGISInterface.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\CCB\PGE.Interfaces.CCBtoGISInterface.exe"/>
+      </Component>      
+      <Component Id="PGE.Interfaces.CCBtoGISInterface.exe.config" Directory="CCB" Guid="0274201D-E6BB-4C6B-8526-66E838C213C2" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.Interfaces.CCBtoGISInterface.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\CCB\PGE.Interfaces.CCBtoGISInterface.exe.config"/>
+      </Component>      
+	  <Component Id="CCBtoGISInterface.log4net.config" Directory="LoggingConfiguration" Guid="08F9B32E-0930-4860-A405-405CED3CB966" Permanent="yes" NeverOverwrite="yes">
+        <File Id="CCBtoGISInterface.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\CCB\CCBtoGISInterface.log4net.config"/>
+      </Component>
+      <Component Id="PGE.Common.ChangesManager.dll" Directory="CCB" Guid="8A397195-99EF-415D-AB41-890D6EE1DEAB" >
+        <File Id="PGE.Common.ChangesManagerShared.dll" Source="..\..\..\..\..\PGE_ProjectOutput\CCB\PGE.Common.ChangesManagerShared.dll"/>
+      </Component>
+      
+    </ComponentGroup>
+    
+  </Fragment>
+</Wix>

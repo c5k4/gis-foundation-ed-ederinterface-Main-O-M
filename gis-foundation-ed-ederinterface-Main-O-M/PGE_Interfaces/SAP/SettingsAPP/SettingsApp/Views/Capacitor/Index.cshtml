@@ -1,0 +1,1655 @@
+﻿@using SettingsApp.Common;
+@model SettingsApp.Models.CapacitorModel
+@using (Html.BeginForm("Index", "Capacitor"))
+{
+    @Html.ValidationSummary(true)
+
+      
+   <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" temp_href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.8.3.js" temp_src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js" temp_src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    
+      <script type="text/javascript">
+        $(document).ready(function () {
+
+            // debugger;
+
+            var selectedText1 = $("#Sch1_ControlStrategyID").find("option:selected").val();
+            if (selectedText1 == "3") {
+
+
+
+                $("#TRSch1_ControlStrategyID").show();
+
+            }
+            else {
+                // alert(selectedText);
+                $("#TRSch1_ControlStrategyID").css("display", "none");
+
+
+            }
+
+            //2
+            var selectedText2 = $("#Sch2_ControlStrategyID").find("option:selected").val();
+            if (selectedText2 == "3") {
+
+
+
+                $("#TRSch2_ControlStrategyID").show();
+
+            }
+            else {
+                // alert(selectedText);
+                $("#TRSch2_ControlStrategyID").css("display", "none");
+
+
+            }
+
+            //3
+
+            var selectedText3 = $("#Sch3_ControlStrategyID").find("option:selected").val();
+            if (selectedText3 == "3") {
+
+
+
+                $("#TRSch3_ControlStrategyID").show();
+
+            }
+            else {
+                // alert(selectedText);
+                $("#TRSch3_ControlStrategyID").css("display", "none");
+
+
+            }
+            //4
+
+            var selectedText4 = $("#Sch4_ControlStrategyID").find("option:selected").val();
+            if (selectedText4 == "3") {
+
+
+
+                $("#TRSch4_ControlStrategyID").show();
+
+            }
+            else {
+                // alert(selectedText);
+                $("#TRSch4_ControlStrategyID").css("display", "none");
+
+
+            }
+        });
+
+
+        function OnSession1Change() {
+          //  debugger;
+            var selectedText = $("#Sch1_ControlStrategyID").find("option:selected").val();
+            if (selectedText == "3") {
+
+
+
+                $("#TRSch1_ControlStrategyID").show();
+
+            }
+            else {
+                // alert(selectedText);
+                $("#TRSch1_ControlStrategyID").css("display", "none");
+
+
+            }
+        }
+        function OnChangeSession2() {
+           // debugger;
+            var selectedText = $("#Sch2_ControlStrategyID").find("option:selected").val();
+            if (selectedText == "3") {
+
+
+
+                $("#TRSch2_ControlStrategyID").show();
+
+            }
+            else {
+                // alert(selectedText);
+                $("#TRSch2_ControlStrategyID").css("display", "none");
+
+
+            }
+        }
+
+        //3
+
+        function OnChangeSession3() {
+            // debugger;
+            var selectedText = $("#Sch3_ControlStrategyID").find("option:selected").val();
+            if (selectedText == "3") {
+
+
+
+                $("#TRSch3_ControlStrategyID").show();
+
+            }
+            else {
+                // alert(selectedText);
+                $("#TRSch3_ControlStrategyID").css("display", "none");
+
+
+            }
+        }
+
+
+        function OnChangeSession4() {
+            // debugger;
+            var selectedText = $("#Sch4_ControlStrategyID").find("option:selected").val();
+            if (selectedText == "3") {
+
+
+
+                $("#TRSch4_ControlStrategyID").show();
+
+            }
+            else {
+                // alert(selectedText);
+                $("#TRSch4_ControlStrategyID").css("display", "none");
+
+
+            }
+        }
+      </script>
+    <table cellpadding="0" cellspacing="0" width="90%">
+        <tr>
+            <td style="padding: 0px">
+                <div class="float-left">
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("GIS", "GIS", "Capacitor", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                            <li class="@ViewBag.CurrentClass">@Html.ActionLink("Current Settings", "Index", "Capacitor", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                            <li class="@ViewBag.FutureClass">@Html.ActionLink("Future Settings", "Future", "Capacitor", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                            <li>@Html.ActionLink("Settings Files", "Files", "Capacitor", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                            <li>@Html.ActionLink("History", "History", "Capacitor", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                        </ul>
+                    </nav>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="header" style="padding-top: 15px; padding-bottom: 0px; padding-left: 10px">
+                 @if (ViewBag.layerType == "P")
+               {
+                    <label id="lablelayertype" runat="server" style="color: Red; font-size:16; text-align: Left;">
+                       @ViewBag.Title 
+                    </label>
+                     
+                   
+               }
+               else
+               {
+                @ViewBag.Title 
+               }
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color: #ffffff; padding: 10px;">
+                @if (ViewBag.ShowPageError == true)
+                {
+                    <label id="lableDeviceValidationError" runat="server" style="color: Red; text-align: center;">
+                        There are error(s), please check below.
+                    </label>
+                }
+                @if (ViewBag.ShowSaveSucessful == true)
+                {
+                    <label id="lableDeviceSaveSucess" runat="server" style="color: Green; text-align: center;">
+                        Device saved successfully.
+                    </label>
+                }
+            </td>
+        </tr>
+          @if (ViewBag.PageMode == "CURRENT")
+          {
+                        <tr>
+                            <td colspan="2" style="text-align: right; padding-right: 10px">
+                                <input type="button" value="Copy current to future settings" onclick="this.form.action='/@ViewBag.ControllerName/CopyToFuture/@ViewBag.GlobalID/@ViewBag.LayerName';this.form.submit();" 
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                            </td>
+                        </tr>
+          }
+        <tr>
+            <td style="background-color: #ffffff; padding: 10px">
+                <table cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f2f2">
+                    @if (Model.FieldsToDisplay.Contains("OPERATING_NUM"))
+                    {<tr>
+                        <td>@Html.LabelForRequired(model => model.OperatingNumber)
+                        </td>
+                        <td>@Html.TextBox("optNum", (string)ViewBag.OperatingNum, (object)new { disabled = "disabled" })
+                        </td>
+                    </tr>}
+@*@if (Model.FieldsToDisplay.Contains("DEVICE_ID"))
+                    {<tr>
+                        <td>@Html.LabelForRequired(model => model.DeviceID)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.DeviceID, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.DeviceID)
+                        </td>
+                    </tr>}*@
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.ControlType)
+                        </td>
+                        <td>@Html.DropDownListFor(model => model.ControlType, Model.ControlTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.ControlType)
+                        </td>
+                    </tr>
+                    @if (Model.FieldsToDisplay.Contains("CONTROLLER_UNIT_MODEL"))
+                    {<tr>
+                        <td>@Html.LabelForRequired(model => model.ControllerUnitModel)
+                        </td>
+                        <td>@Html.DropDownListFor(model => model.ControllerUnitModel, Model.ControllerUnitModelList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ControllerUnitModel)
+                        </td>
+                    </tr>}
+                    @if (Model.FieldsToDisplay.Contains("VOLT_VAR_TEAM_MEMBER"))
+                    {<tr>
+                        <td>@Html.LabelForRequired(model => model.VoltVarTeamMember)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.VoltVarTeamMember, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 1 })@Html.ValidationMessageFor(model => model.VoltVarTeamMember)
+                        </td>
+                    </tr>}
+                    @if (Model.FieldsToDisplay.Contains("CONTROL_SERIAL_NUM"))
+                    {<tr>
+                        <td>@Html.LabelForRequired(model => model.ControllerSerialNum)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.ControllerSerialNum, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 18 })@Html.ValidationMessageFor(model => model.ControllerSerialNum)
+                        </td>
+                    </tr>}
+@* @if (Model.FieldsToDisplay.Contains("OK_TO_BYPASS"))
+                    {<tr>
+                        <td>@Html.LabelForRequired(model => model.OkToBypass)
+                        </td>
+                        <td>@Html.DropDownListFor(model => model.OkToBypass, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 1 })@Html.ValidationMessageFor(model => model.OkToBypass)
+                        </td>
+                    </tr>}*@
+                    @if (Model.FieldsToDisplay.Contains("FIRMWARE_VERSION"))
+                    {<tr>
+                        <td>@Html.LabelForRequired(model => model.FirmwareVersion)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.FirmwareVersion, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 12 })@Html.ValidationMessageFor(model => model.FirmwareVersion)
+                        </td>
+                    </tr>}
+                    @if (Model.FieldsToDisplay.Contains("SOFTWARE_VERSION"))
+                    {<tr>
+                        <td>@Html.LabelForRequired(model => model.SoftwareVersion)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.SoftwareVersion, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 12 })@Html.ValidationMessageFor(model => model.SoftwareVersion)
+                        </td>
+                    </tr>}
+@*@if (Model.FieldsToDisplay.Contains("ENGINEERING_DOCUMENT"))
+                    {<tr>
+                        <td>@Html.LabelForRequired(model => model.EngineeringDocument)
+                        </td>
+                        <td>@Html.DropDownListFor(model => model.EngineeringDocument, Model.EngineeringDocumentList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.EngineeringDocument)
+                        </td>
+                    </tr>}*@
+                    @if (Model.FieldsToDisplay.Contains("SPECIAL_CONDITIONS"))
+                    {<tr>
+                        <td>@Html.LabelForRequired(model => model.SpecialConditions)
+                        </td>
+                        <td>@Html.TextAreaFor(model => model.SpecialConditions, 5, 15, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 250, @class = "form-control" })@Html.ValidationMessageFor(model => model.SpecialConditions)
+                        </td>
+                    </tr>}
+                    <tr>
+                        <td colspan="2" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    @if (Model.FieldsToDisplay.Contains("SWITCH_POSITION"))
+                                    {
+                                        <td>@Html.LabelForRequired(model => model.SwitchPosition)
+                                        </td>
+                                        <td>@Html.DropDownListFor(model => model.SwitchPosition, Model.SwitchPositionList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SwitchPosition)
+                                        </td>
+                                    }
+                                    else
+                                    { <td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                    @if (Model.FieldsToDisplay.Contains("MAXCYCLES"))
+                                    {<td>@Html.LabelForRequired(model => model.MaxCycles)
+                                    </td>
+                                        <td>@Html.TextBoxFor(model => model.MaxCycles, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.MaxCycles)
+                                        </td>}
+                                    else
+                                    { <td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                </tr>
+                                <tr>
+                               @* INC000004165708 start *@
+                                    @*@if (Model.FieldsToDisplay.Contains("PREFERED_BANK_POSITION"))
+                                    {<td>@Html.LabelForRequired(model => model.MinSwitchVolt)
+                                    </td>
+                                        <td>@Html.DropDownListFor(model => model.MinSwitchVolt, Model.BankPositionList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.MinSwitchVolt)
+                                        </td>}
+                                    else
+                                    { <td>
+                                    </td>
+                                        <td>
+                                        </td>}*@
+                                        @if (Model.FieldsToDisplay.Contains("EST_VOLTAGE_CHANGE"))
+                                        {<td>@Html.LabelForRequired(model => model.ESTVoltageChangeTime)
+                                    </td>
+                                        <td>@Html.TextBoxFor(model => model.ESTVoltageChangeTime, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ESTVoltageChangeTime)
+                                        </td>}
+                                        else
+                                        { <td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                    @if (Model.FieldsToDisplay.Contains("MIN_SW_VOLTAGE"))
+                                    {<td>@Html.LabelForRequired(model => model.MinSwitchVolt)
+                                    </td>
+                                        <td>@Html.TextBoxFor(model => model.MinSwitchVolt, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.MinSwitchVolt)
+                                        </td>}
+                                    else
+                                    { <td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                </tr>
+                                <tr>
+                                    @if (Model.FieldsToDisplay.Contains("EST_BANK_VOLTAGE_RISE"))
+                                    {<td>@Html.LabelForRequired(model => model.EstBankVoltageRise)
+                                    </td>
+                                        <td>@Html.TextBoxFor(model => model.EstBankVoltageRise, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.EstBankVoltageRise)
+                                        </td>}
+                                    else
+                                    { <td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                    @if (Model.FieldsToDisplay.Contains("PULSE_TIME"))
+                                    {<td>@Html.LabelForRequired(model => model.PulseTime)
+                                    </td>
+                                        <td>@Html.TextBoxFor(model => model.PulseTime, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PulseTime)
+                                        </td>}
+                                    else
+                                    { <td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                </tr>
+                                <tr>
+                                    @if (Model.FieldsToDisplay.Contains("HIGH_VOLTAGE_OVERRIDE_SETPOINT"))
+                                    {<td>@Html.LabelForRequired(model => model.HighVoltageOverrideSetPoint)
+                                    </td>
+                                        <td>@Html.TextBoxFor(model => model.HighVoltageOverrideSetPoint, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.HighVoltageOverrideSetPoint)
+                                        </td>}
+                                    else
+                                    { <td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                    @if (Model.FieldsToDisplay.Contains("EST_BANK_VOLTAGE_RISE"))
+                                    {
+                                        <td>@Html.LabelForRequired(model => model.VoltageChangeTime)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.VoltageChangeTime, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.VoltageChangeTime)
+                                        </td>}
+                                    else
+                                    { <td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                </tr>
+                                <tr>
+                                    @if (Model.FieldsToDisplay.Contains("LOW_VOLTAGE_OVERRIDE_SETPOINT"))
+                                    {<td>@Html.LabelForRequired(model => model.LowVoltageOverrideSetPoint)
+                                    </td>
+                                        <td>@Html.TextBoxFor(model => model.LowVoltageOverrideSetPoint, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.LowVoltageOverrideSetPoint)
+                                        </td>}
+                                    else
+                                    {<td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                    @if (Model.FieldsToDisplay.Contains("VOLTAGE_OVERRIDE_TIME"))
+                                    {
+                                        <td>@Html.LabelForRequired(model => model.VoltageOverrideTime)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.VoltageOverrideTime, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.VoltageOverrideTime)
+                                        </td>}
+                                    else
+                                    { <td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                </tr>
+                                <tr>
+                                     @if (Model.FieldsToDisplay.Contains("AUTO_BVR_CALC"))
+                                     {<td>@Html.LabelForRequired(model => model.AutoBvrCalc)
+                                    </td>
+                                        <td>@Html.DropDownListFor(model => model.AutoBvrCalc, Model.AutoBvrCalcList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.AutoBvrCalc)
+                                        </td>}
+                                     else
+                                     {<td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                    @if (Model.FieldsToDisplay.Contains("TEMPERATURE_CHANGE_TIME"))
+                                    {<td>@Html.LabelForRequired(model => model.TempChangeTime)
+                                    </td>
+                                        <td>@Html.TextBoxFor(model => model.TempChangeTime, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.TempChangeTime)
+                                        </td>}
+                                    else
+                                    {<td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                </tr>
+                                <tr>
+                                    @if (Model.FieldsToDisplay.Contains("TEMPERATURE_OVERRIDE"))
+                                    {<td>@Html.LabelForRequired(model => model.TempOverride)
+                                    </td>
+                                        <td>@Html.DropDownListFor(model => model.TempOverride, Model.TempOverrideList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.TempOverride)
+                                        </td>}
+                                    else
+                                    {<td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                    @if (Model.FieldsToDisplay.Contains("DATA_LOGGING_INTERVAL"))
+                                    {<td>@Html.LabelForRequired(model => model.LogInterval)
+                                    </td>
+                                        <td>@Html.DropDownListFor(model => model.LogInterval, Model.LogIntervalList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.LogInterval)
+                                        </td>}
+                                    else
+                                    {<td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                </tr>
+                                <tr>
+                                    @* INC000004112585 start*@
+                                    @if (Model.FieldsToDisplay.Contains("SEASON_OFF"))
+                                    {<td>@Html.LabelForRequired(model => model.SeasonOff)
+                                    </td>
+                                        <td>@Html.DropDownListFor(model => model.SeasonOff, Model.SeasonOffList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SeasonOff)
+                                        </td>}
+                                    else
+                                    {<td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                 @*   INC000004112585 end*@
+                                    @if (Model.FieldsToDisplay.Contains("DAYLIGHT_SAVINGS_TIME"))
+                                    {<td>@Html.LabelForRequired(model => model.DaylightTime)
+                                    </td>
+                                        <td>@Html.DropDownListFor(model => model.DaylightTime, Model.DaylightTimeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.DaylightTime)
+                                        </td>}
+                                    else
+                                    {<td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                </tr>
+                                <tr>
+                                     <td>
+                                    </td>
+                                        <td>
+                                        </td>
+                                    @if (Model.FieldsToDisplay.Contains("TIME_DELAY"))
+                                    {
+                                        <td>@Html.LabelForRequired(model => model.Delay)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.Delay, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Delay)
+                                        </td>}
+                                    else
+                                    {<td>
+                                    </td>
+                                        <td>
+                                        </td>}
+                                </tr>
+                                @*INC000004165708 end*@
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr class="multicolumn200">
+                                    <td colspan="2">
+                                        <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                            <tr>
+                                                <td colspan="2" class="sectionHeader">
+                                                    Season 1
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.Sch1_ScheduleUnitType)
+                                                </td>
+                                                <td>@Html.DropDownListFor(model => model.Sch1_ScheduleUnitType, Model.Sch1_ScheduleUnitTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_ScheduleUnitType)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.Sch1_ControlStrategy)
+                                                </td>
+                                                <td>@Html.DropDownListFor(model => model.Sch1_ControlStrategy, Model.Sch1_ControlStrategyList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = "OnSession1Change();", @id = "Sch1_ControlStrategyID" })@Html.ValidationMessageFor(model => model.Sch1_ControlStrategy)  @* INC000004165708*@
+                                                </td>
+                                            </tr>
+                                         @*   INC000004165708 start*@
+                                         @if (ViewBag.PageMode == "FUTURE")
+                                         {
+                                           <tr id="TRSch1_ControlStrategyID">
+                                                <td>@Html.LabelForRequired(model => model.Sch1BankPosition)
+                                                </td>
+                                                <td>@Html.DropDownListFor(model => model.Sch1BankPosition, Model.Sch1BankPositionList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1BankPosition)
+                                                </td>
+                                                </tr> 
+                                             
+                                         }
+                                         else
+                                         { 
+                                             
+                              
+                                              if (Model.Sch1_ControlStrategy == "3")
+                                            {
+                                                <tr id="TRSch1_ControlStrategyID1">
+                                                <td>@Html.LabelForRequired(model => model.Sch1BankPosition)
+                                                </td>
+                                                <td>@Html.DropDownListFor(model => model.Sch1BankPosition, Model.Sch1BankPositionList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1BankPosition)
+                                                </td>
+                                                </tr> 
+                                            }
+                                         }
+                                          @*  INC000004165708 start*@
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.Sch1_StartDate)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.Sch1_StartDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepickerNoYear" })@Html.ValidationMessageFor(model => model.Sch1_StartDate)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.Sch1_EndDate)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.Sch1_EndDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepickerNoYear" })@Html.ValidationMessageFor(model => model.Sch1_EndDate)
+                                                </td>
+                                            </tr>
+                                              @*INC000004165778 start*@
+                                            <tr class="text_width_80px">   
+                                              <td colspan="2">
+                                                <table>
+                                                 <tr>
+                                                      <td>
+                                                     <table cellpadding="0" cellspacing="0"  style="border: 1px solid #000000; width:100%">
+                                                        <tr>
+                                                                <td colspan="2" class="sectionHeader">
+                                                                    Schedule 1
+                                                                </td>
+                                                         </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.Sch1_TimeOn)
+                                                             </td>
+                                                            <td>@Html.TextBoxFor(model => model.Sch1_TimeOn, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_TimeOn)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                             <td>@Html.LabelForRequired(model => model.Sch1_TimeOff)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.Sch1_TimeOff, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_TimeOff)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                             <td>@Html.LabelForRequired(model => model.Sch1_MonThur)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch1_MonThur, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_MonThur)
+                                                            </td>
+                                                         </tr>
+                                                        <tr>
+                                                             <td>@Html.LabelForRequired(model => model.Sch1_Weekdays)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch1_Weekdays, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_Weekdays)
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td>@Html.LabelForRequired(model => model.Sch1_FriSun)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch1_FriSun, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_FriSun)
+                                                            </td>
+                                                         </tr>
+                                                        <tr>
+                                                        <td>@Html.LabelForRequired(model => model.Sch1_Saturday)
+                                                        </td>
+                                                        <td>@Html.DropDownListFor(model => model.Sch1_Saturday, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_Saturday)
+                                                        </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.Sch1_Sunday)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch1_Sunday, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_Sunday)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.Sch1_Holidays)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch1_Holidays, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_Holidays)
+                                                            </td>
+                                                        </tr>
+                                                     </table>
+                                                     </td>
+                                                      <td>
+                                                       <table cellpadding="0" cellspacing="0"  style="border: 1px solid #000000; width: 100%">
+                                                       <tr>
+                                                                <td colspan="2" class="sectionHeader">
+                                                                    Schedule 2
+                                                                </td>
+                                                             </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.Sch1_TimeOn2)
+                                                             </td>
+                                                            <td>@Html.TextBoxFor(model => model.Sch1_TimeOn2, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_TimeOn2)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                             <td>@Html.LabelForRequired(model => model.Sch1_TimeOff2)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.Sch1_TimeOff2, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_TimeOff2)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                             <td>@Html.LabelForRequired(model => model.Sch1_MonThur2)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch1_MonThur2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_MonThur2)
+                                                            </td>
+                                                         </tr>
+                                                        <tr>
+                                                             <td>@Html.LabelForRequired(model => model.Sch1_Weekdays2)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch1_Weekdays2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_Weekdays2)
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td>@Html.LabelForRequired(model => model.Sch1_FriSun2)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch1_FriSun2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_FriSun2)
+                                                            </td>
+                                                         </tr>
+                                                        <tr>
+                                                        <td>@Html.LabelForRequired(model => model.Sch1_Saturday2)
+                                                        </td>
+                                                        <td>@Html.DropDownListFor(model => model.Sch1_Saturday2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_Saturday2)
+                                                        </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.Sch1_Sunday2)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch1_Sunday2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_Sunday2)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.Sch1_Holidays2)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch1_Holidays2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_Holidays2)
+                                                            </td>
+                                                        </tr>
+                                                     </table>
+                                                    </td>
+                                                 </tr>
+                                                </table> 
+                                               </td>                                                                                     
+                                            </tr>
+                                            @* INC000004165778 end*@
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.Sch1_LowVoltageSetPoint)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.Sch1_LowVoltageSetPoint, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_LowVoltageSetPoint)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.Sch1_HighVoltageSetPoint)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.Sch1_HighVoltageSetPoint, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_HighVoltageSetPoint)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.Sch1_TempSetPointOn)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.Sch1_TempSetPointOn, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_TempSetPointOn)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.Sch1_TempSetPointOff)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.Sch1_TempSetPointOff, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_TempSetPointOff)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.Sch1_KvarSetPointOn)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.Sch1_KvarSetPointOn, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_KvarSetPointOn)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.Sch1_KvarSetPointOff)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.Sch1_KvarSetPointOff, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch1_KvarSetPointOff)
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    @if (Model.ControlType != null && (Model.ControlType.Contains("MS") || Model.ControlType.Contains("EN") || Model.ControlType.Contains("BECK") || Model.ControlType.Contains("SC")))
+                                    {
+                                        <td colspan="2">
+                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                <tr>
+                                                    <td colspan="2" class="sectionHeader">
+                                                        Season 2
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_ScheduleUnitType)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Sch2_ScheduleUnitType, Model.Sch2_ScheduleUnitTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_ScheduleUnitType)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_ControlStrategy)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Sch2_ControlStrategy, Model.Sch2_ControlStrategyList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = "OnChangeSession2();",@id="Sch2_ControlStrategyID" })@Html.ValidationMessageFor(model => model.Sch2_ControlStrategy)   @*INC000004165708*@
+                                                    </td>
+                                                </tr>
+                                                 @*   INC000004165708 start*@
+                                                   @if (ViewBag.PageMode == "FUTURE")
+                                                   {
+                                                    <tr id="TRSch2_ControlStrategyID">
+                                                <td>@Html.LabelForRequired(model => model.Sch2BankPosition)
+                                                </td>
+                                                <td>@Html.DropDownListFor(model => model.Sch2BankPosition, Model.Sch2BankPositionList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2BankPosition)
+                                                </td>
+                                                </tr> 
+                                                   }
+                                                   else
+                                                   {
+                                                       if (Model.Sch2_ControlStrategy == "3")
+                                                       {
+                                                <tr>
+                                                <td>@Html.LabelForRequired(model => model.Sch2BankPosition)
+                                                </td>
+                                                <td>@Html.DropDownListFor(model => model.Sch2BankPosition, Model.Sch2BankPositionList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2BankPosition)
+                                                </td>
+                                                </tr> 
+                                                       }
+                                                   }
+                                          @*  INC000004165708 start*@
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_StartDate)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch2_StartDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepickerNoYear" })@Html.ValidationMessageFor(model => model.Sch2_StartDate)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_EndDate)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch2_EndDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepickerNoYear" })@Html.ValidationMessageFor(model => model.Sch2_EndDate)
+                                                    </td>
+                                                </tr>
+                                                  @*INC000004165778 START*@
+                                               <tr class="text_width_80px">    
+                                                <td colspan="2">
+                                                  <table>
+                                                    <tr>
+                                                      <td>
+                                                        <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                    <tr>
+                                                            <td colspan="2" class="sectionHeader">
+                                                                Schedule 1
+                                                            </td>
+                                                     </tr>
+                                                    <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_TimeOn)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch2_TimeOn, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_TimeOn)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_TimeOff)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch2_TimeOff, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_TimeOff)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                         <td>@Html.LabelForRequired(model => model.Sch2_MonThur)
+                                                        </td>
+                                                        <td>@Html.DropDownListFor(model => model.Sch2_MonThur, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_MonThur)
+                                                        </td>
+                                                     </tr>
+                                                    <tr>
+                                                         <td>@Html.LabelForRequired(model => model.Sch2_Weekdays)
+                                                        </td>
+                                                        <td>@Html.DropDownListFor(model => model.Sch2_Weekdays, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_Weekdays)
+                                                        </td>
+                                                     </tr>
+                                                     <tr>
+                                                         <td>@Html.LabelForRequired(model => model.Sch2_FriSun)
+                                                        </td>
+                                                        <td>@Html.DropDownListFor(model => model.Sch2_FriSun, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_FriSun)
+                                                        </td>
+                                                     </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_Saturday)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Sch2_Saturday, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_Saturday)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_Sunday)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Sch2_Sunday, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_Sunday)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_Holidays)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Sch2_Holidays, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_Holidays)
+                                                    </td>
+                                                </tr>
+                                                    </table>
+                                                     </td>
+                                                      <td>
+                                                       <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                    <tr>
+                                                            <td colspan="2" class="sectionHeader">
+                                                                Schedule 2
+                                                            </td>
+                                                     </tr>
+                                                    <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_TimeOn2)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch2_TimeOn2, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_TimeOn2)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_TimeOff2)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch2_TimeOff2, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_TimeOff2)
+                                                    </td>
+                                                </tr>
+                                                  <tr>
+                                                         <td>@Html.LabelForRequired(model => model.Sch2_MonThur2)
+                                                        </td>
+                                                        <td>@Html.DropDownListFor(model => model.Sch2_MonThur2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_MonThur2)
+                                                        </td>
+                                                     </tr>
+                                                    <tr>
+                                                         <td>@Html.LabelForRequired(model => model.Sch2_Weekdays2)
+                                                        </td>
+                                                        <td>@Html.DropDownListFor(model => model.Sch2_Weekdays2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_Weekdays2)
+                                                        </td>
+                                                     </tr>
+                                                     <tr>
+                                                         <td>@Html.LabelForRequired(model => model.Sch2_FriSun2)
+                                                        </td>
+                                                        <td>@Html.DropDownListFor(model => model.Sch2_FriSun2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_FriSun2)
+                                                        </td>
+                                                     </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_Saturday2)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Sch2_Saturday2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_Saturday2)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_Sunday2)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Sch2_Sunday2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_Sunday2)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_Holidays2)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Sch2_Holidays2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_Holidays2)
+                                                    </td>
+                                                </tr>
+                                                    </table>
+                                                    </td>
+                                                   </tr>
+                                                </table>
+                                                </td>
+                                               </tr>
+                                               @* INC000004165778 END*@
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_LowVoltageSetPoint)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch2_LowVoltageSetPoint, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_LowVoltageSetPoint)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_HighVoltageSetPoint)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch2_HighVoltageSetPoint, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_HighVoltageSetPoint)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_TempSetPointOn)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch2_TempSetPointOn, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_TempSetPointOn)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_TempSetPointOff)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch2_TempSetPointOff, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_TempSetPointOff)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_KvarSetPointOn)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch2_KvarSetPointOn, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_KvarSetPointOn)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch2_KvarSetPointOff)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch2_KvarSetPointOff, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch2_KvarSetPointOff)
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    }
+                                </tr>
+                                <tr class="multicolumn200">
+                                    @if (Model.ControlType != null && (Model.ControlType.Contains("MS") || Model.ControlType.Contains("BECK") || Model.ControlType.Contains("SC")))
+                                    {
+                                        <td colspan="2">
+                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                <tr>
+                                                    <td colspan="2" class="sectionHeader">
+                                                        Season 3
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch3_ScheduleUnitType)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Sch3_ScheduleUnitType, Model.Sch3_ScheduleUnitTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_ScheduleUnitType)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch3_ControlStrategy)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Sch3_ControlStrategy, Model.Sch3_ControlStrategyList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = "OnChangeSession3();",@id="Sch3_ControlStrategyID" })@Html.ValidationMessageFor(model => model.Sch3_ControlStrategy)   @*INC000004165708*@
+                                                    </td>
+                                                </tr>
+                                                 @*   INC000004165708 start*@
+                                                   @if (ViewBag.PageMode == "FUTURE")
+                                                   {
+                                                   <tr id="TRSch3_ControlStrategy">
+                                                    <td>@Html.LabelForRequired(model => model.Sch3BankPosition)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Sch3BankPosition, Model.Sch3BankPositionList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3BankPosition)
+                                                    </td>
+                                                    </tr> 
+                                                   }
+                                                   else
+                                                   {
+                                                       if (Model.Sch3_ControlStrategy == "3")
+                                                       {
+                                                    <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch3BankPosition)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Sch3BankPosition, Model.Sch3BankPositionList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3BankPosition)
+                                                    </td>
+                                                    </tr> 
+                                                       }
+                                                   }
+                                              @*  INC000004165708 start*@
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch3_StartDate)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch3_StartDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepickerNoYear" })@Html.ValidationMessageFor(model => model.Sch3_StartDate)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch3_EndDate)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch3_EndDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepickerNoYear" })@Html.ValidationMessageFor(model => model.Sch3_EndDate)
+                                                    </td>
+                                                </tr>
+                                                
+                                               @*INC000004165778 START*@
+                                                <tr class="text_width_80px">    
+                                                <td colspan="2">
+                                                  <table>
+                                                    <tr>
+                                                        <td>
+                                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                                  <tr>
+                                                                    <td colspan="2" class="sectionHeader">
+                                                                        Schedule 1
+                                                                    </td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                    <td>@Html.LabelForRequired(model => model.Sch3_TimeOn)
+                                                                    </td>
+                                                                    <td>@Html.TextBoxFor(model => model.Sch3_TimeOn, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_TimeOn)
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>@Html.LabelForRequired(model => model.Sch3_TimeOff)
+                                                                    </td>
+                                                                    <td>@Html.TextBoxFor(model => model.Sch3_TimeOff, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_TimeOff)
+                                                                    </td>
+                                                                </tr>
+                                                                 <tr>
+                                                                     <td>@Html.LabelForRequired(model => model.Sch3_MonThur)
+                                                                    </td>
+                                                                    <td>@Html.DropDownListFor(model => model.Sch3_MonThur, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_MonThur)
+                                                                    </td>
+                                                                 </tr>
+                                                                <tr>
+                                                                     <td>@Html.LabelForRequired(model => model.Sch3_Weekdays)
+                                                                    </td>
+                                                                    <td>@Html.DropDownListFor(model => model.Sch3_Weekdays, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_Weekdays)
+                                                                    </td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                     <td>@Html.LabelForRequired(model => model.Sch3_FriSun)
+                                                                    </td>
+                                                                    <td>@Html.DropDownListFor(model => model.Sch3_FriSun, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_FriSun)
+                                                                    </td>
+                                                                 </tr>
+                                                                <tr>
+                                                                    <td>@Html.LabelForRequired(model => model.Sch3_Saturday)
+                                                                    </td>
+                                                                    <td>@Html.DropDownListFor(model => model.Sch3_Saturday, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_Saturday)
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>@Html.LabelForRequired(model => model.Sch3_Sunday)
+                                                                    </td>
+                                                                    <td>@Html.DropDownListFor(model => model.Sch3_Sunday, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_Sunday)
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>@Html.LabelForRequired(model => model.Sch3_Holidays)
+                                                                    </td>
+                                                                    <td>@Html.DropDownListFor(model => model.Sch3_Holidays, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_Holidays)
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td>
+                                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                                 <tr>
+                                                                    <td colspan="2" class="sectionHeader">
+                                                                        Schedule 2
+                                                                    </td>
+                                                                 </tr>
+                                                                <tr>
+                                                                    <td>@Html.LabelForRequired(model => model.Sch3_TimeOn2)
+                                                                    </td>
+                                                                    <td>@Html.TextBoxFor(model => model.Sch3_TimeOn2, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_TimeOn2)
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>@Html.LabelForRequired(model => model.Sch3_TimeOff2)
+                                                                    </td>
+                                                                    <td>@Html.TextBoxFor(model => model.Sch3_TimeOff2, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_TimeOff2)
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                     <td>@Html.LabelForRequired(model => model.Sch3_MonThur2)
+                                                                    </td>
+                                                                    <td>@Html.DropDownListFor(model => model.Sch3_MonThur2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_MonThur2)
+                                                                    </td>
+                                                                 </tr>
+                                                                <tr>
+                                                                     <td>@Html.LabelForRequired(model => model.Sch3_Weekdays2)
+                                                                    </td>
+                                                                    <td>@Html.DropDownListFor(model => model.Sch3_Weekdays2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_Weekdays2)
+                                                                    </td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                     <td>@Html.LabelForRequired(model => model.Sch3_FriSun2)
+                                                                    </td>
+                                                                    <td>@Html.DropDownListFor(model => model.Sch3_FriSun2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_FriSun2)
+                                                                    </td>
+                                                                 </tr>
+                                                                <tr>
+                                                                    <td>@Html.LabelForRequired(model => model.Sch3_Saturday2)
+                                                                    </td>
+                                                                    <td>@Html.DropDownListFor(model => model.Sch3_Saturday2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_Saturday2)
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>@Html.LabelForRequired(model => model.Sch3_Sunday2)
+                                                                    </td>
+                                                                    <td>@Html.DropDownListFor(model => model.Sch3_Sunday2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_Sunday2)
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>@Html.LabelForRequired(model => model.Sch3_Holidays2)
+                                                                    </td>
+                                                                    <td>@Html.DropDownListFor(model => model.Sch3_Holidays2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_Holidays2)
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                  </table>
+                                                  </td>
+                                                </tr>
+                                               @*INC000004165778 end*@
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch3_LowVoltageSetPoint)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch3_LowVoltageSetPoint, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_LowVoltageSetPoint)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch3_HighVoltageSetPoint)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch3_HighVoltageSetPoint, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_HighVoltageSetPoint)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch3_TempSetPointOn)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch3_TempSetPointOn, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_TempSetPointOn)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch3_TempSetPointOff)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch3_TempSetPointOff, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_TempSetPointOff)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch3_KvarSetPointOn)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch3_KvarSetPointOn, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_KvarSetPointOn)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch3_KvarSetPointOff)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch3_KvarSetPointOff, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch3_KvarSetPointOff)
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    }
+                                    @if (Model.ControlType != null && (Model.ControlType.Contains("MS") || Model.ControlType.Contains("BECK") || Model.ControlType.Contains("SC")))
+                                    {
+                                        <td colspan="2">
+                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                <tr>
+                                                    <td colspan="2" class="sectionHeader">
+                                                        Season 4
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch4_ScheduleUnitType)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Sch4_ScheduleUnitType, Model.Sch4_ScheduleUnitTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_ScheduleUnitType)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch4_ControlStrategy)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Sch4_ControlStrategy, Model.Sch4_ControlStrategyList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = "OnChangeSession4();", @id = "Sch4_ControlStrategyID" })@Html.ValidationMessageFor(model => model.Sch4_ControlStrategy)  @*INC000004165708*@
+                                                    </td>
+                                                </tr>
+                                                     @*   INC000004165708 start*@
+                                                       @if (ViewBag.PageMode == "FUTURE")
+                                                       { 
+                                                           
+                                                            <tr id="TRSch4_ControlStrategy">
+                                                    <td>@Html.LabelForRequired(model => model.Sch4BankPosition)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Sch4BankPosition, Model.Sch4BankPositionList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4BankPosition)
+                                                    </td>
+                                                    </tr> 
+                                                       }
+                                                       else
+                                                       {
+                                                           if (Model.Sch4_ControlStrategy == "3")
+                                                           {
+                                                    <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch4BankPosition)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Sch4BankPosition, Model.Sch4BankPositionList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4BankPosition)
+                                                    </td>
+                                                    </tr> 
+                                                           }
+                                                       }
+                                              @*  INC000004165708 start*@
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch4_StartDate)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch4_StartDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepickerNoYear" })@Html.ValidationMessageFor(model => model.Sch4_StartDate)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch4_EndDate)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch4_EndDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepickerNoYear" })@Html.ValidationMessageFor(model => model.Sch4_EndDate)
+                                                    </td>
+                                                </tr>
+                                                @*INC000004165778 START*@
+                                                <tr class="text_width_80px">    
+                                                <td colspan="2">
+                                                  <table>
+                                                    <tr>
+                                                       <td>
+                                                    <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                         <tr>
+                                                            <td colspan="2" class="sectionHeader">
+                                                                Schedule 1
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td>@Html.LabelForRequired(model => model.Sch4_TimeOn)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.Sch4_TimeOn, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_TimeOn)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.Sch4_TimeOff)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.Sch4_TimeOff, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_TimeOff)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                             <td>@Html.LabelForRequired(model => model.Sch4_MonThur)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch4_MonThur, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_MonThur)
+                                                            </td>
+                                                         </tr>
+                                                        <tr>
+                                                             <td>@Html.LabelForRequired(model => model.Sch4_Weekdays)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch4_Weekdays, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_Weekdays)
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td>@Html.LabelForRequired(model => model.Sch4_FriSun)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch4_FriSun, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_FriSun)
+                                                            </td>
+                                                         </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.Sch4_Saturday)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch4_Saturday, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_Saturday)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.Sch4_Sunday)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch4_Sunday, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_Sunday)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.Sch4_Holidays)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch4_Holidays, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_Holidays)
+                                                            </td>
+                                                        </tr>
+                                                            </table>
+                                                    </td>
+                                                       <td>
+                                                    <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                        <tr>
+                                                            <td colspan="2" class="sectionHeader">
+                                                                Schedule 2
+                                                            </td>
+                                                         </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.Sch4_TimeOn2)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.Sch4_TimeOn2, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_TimeOn2)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.Sch4_TimeOff2)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.Sch4_TimeOff2, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_TimeOff2)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                             <td>@Html.LabelForRequired(model => model.Sch4_MonThur2)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch4_MonThur2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_MonThur2)
+                                                            </td>
+                                                         </tr>
+                                                        <tr>
+                                                             <td>@Html.LabelForRequired(model => model.Sch4_Weekdays2)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch4_Weekdays2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_Weekdays2)
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td>@Html.LabelForRequired(model => model.Sch4_FriSun2)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch4_FriSun2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_FriSun2)
+                                                            </td>
+                                                         </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.Sch4_Saturday2)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch4_Saturday2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_Saturday2)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.Sch4_Sunday2)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch4_Sunday2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_Sunday2)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.Sch4_Holidays2)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.Sch4_Holidays2, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_Holidays2)
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                    </tr>
+                                                  </table>
+                                                 </td>
+                                               </tr>
+                                               @*INC000004165778 end*@
+                                               
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch4_LowVoltageSetPoint)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch4_LowVoltageSetPoint, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_LowVoltageSetPoint)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch4_HighVoltageSetPoint)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch4_HighVoltageSetPoint, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_HighVoltageSetPoint)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch4_TempSetPointOn)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch4_TempSetPointOn, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_TempSetPointOn)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch4_TempSetPointOff)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch4_TempSetPointOff, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_TempSetPointOff)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch4_KvarSetPointOn)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch4_KvarSetPointOn, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_KvarSetPointOn)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.Sch4_KvarSetPointOff)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Sch4_KvarSetPointOff, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Sch4_KvarSetPointOff)
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    }
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelForRequired(model => model.EngineeringComments)
+                        </td>
+                        <td>@Html.TextAreaFor(model => model.EngineeringComments, 5, 15, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 250, @class = "form-control" })@Html.ValidationMessageFor(model => model.EngineeringComments)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr class="multicolumn200">
+                                    <td colspan="4">
+                                        <table cellpadding="0" cellspacing="0" style="border: 0px solid #000000; width: 100%">
+                                            <tr>
+                                                <td colspan="4" class="sectionHeader">
+                                                    SCADA
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                @if (Model.FieldsToDisplay.Contains("SCADA"))
+                                                {
+                                                    <td>@Html.LabelForRequired(model => model.Scada)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.Scada, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 1 })@Html.ValidationMessageFor(model => model.Scada)
+                                                    </td>
+                                                }
+@*@if (Model.FieldsToDisplay.Contains("RTU_EXISTS"))
+                                                {*@
+                                                <td>@Html.LabelForRequired(model => model.RTUExists)
+                                                </td>
+                                                <td>@Html.DropDownListFor(model => model.RTUExists, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 1 })@Html.ValidationMessageFor(model => model.RTUExists)
+                                                </td>
+                                                @*}*@
+                                            </tr>
+                                            <tr>
+                                                @if (Model.FieldsToDisplay.Contains("SCADA_TYPE"))
+                                                {
+                                                    <td>@Html.LabelForRequired(model => model.ScadaType)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.ScadaType, Model.ScadaTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ScadaType)
+                                                    </td>
+                                                }
+@* @if (Model.FieldsToDisplay.Contains("RTU_MANF_CD"))
+                                                {*@
+                                                <td>@Html.LabelForRequired(model => model.RTUManufacture)
+                                                </td>
+                                                <td>@Html.DropDownListFor(model => model.RTUManufacture, Model.RTUManufactureList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.RTUManufacture)
+                                                </td>
+                                                @* }*@
+                                            </tr>
+                                            <tr>
+                                                @if (Model.FieldsToDisplay.Contains("MASTER_STATION"))
+                                                {
+                                                    <td>@Html.LabelForRequired(model => model.MasterStation)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.MasterStation, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 4 })@Html.ValidationMessageFor(model => model.MasterStation)
+                                                    </td>
+                                                
+                                                }
+@* @if (Model.FieldsToDisplay.Contains("RTU_MODEL_NUM"))
+                                                {*@
+                                                <td>@Html.LabelForRequired(model => model.RTUModelNumber)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.RTUModelNumber, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 25 })@Html.ValidationMessageFor(model => model.RTUModelNumber)
+                                                </td>
+                                                @*}*@
+                                            </tr>
+                                            <tr>
+                                                @if (Model.FieldsToDisplay.Contains("BAUD_RATE"))
+                                                {
+                                                    <td>@Html.LabelForRequired(model => model.BaudRate)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.BaudRate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.BaudRate)
+                                                    </td>
+                                                }
+@* @if (Model.FieldsToDisplay.Contains("RTU_SERIAL_NUM"))
+                                                {*@
+                                                <td>@Html.LabelForRequired(model => model.RTUSerialNumber)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.RTUSerialNumber, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 25 })@Html.ValidationMessageFor(model => model.RTUSerialNumber)
+                                                </td>
+                                                @*}*@
+                                            </tr>
+                                            <tr>
+                                                @if (Model.FieldsToDisplay.Contains("TRANSMIT_ENABLE_DELAY"))
+                                                {
+                                                    <td>@Html.LabelForRequired(model => model.TransmitEnableDelay)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.TransmitEnableDelay, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.TransmitEnableDelay)
+                                                    </td>
+                                                }
+@*@if (Model.FieldsToDisplay.Contains("RTU_SOFTWARE_VERSION"))
+                                                {*@
+                                                <td>@Html.LabelForRequired(model => model.RTUSoftwareVersion)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.RTUSoftwareVersion, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 25 })@Html.ValidationMessageFor(model => model.RTUSoftwareVersion)
+                                                </td>
+                                                @*}*@
+                                            </tr>
+                                            <tr>
+                                                @if (Model.FieldsToDisplay.Contains("TRANSMIT_DISABLE_DELAY"))
+                                                {
+                                                    <td>@Html.LabelForRequired(model => model.TransmitDisableDelay)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.TransmitDisableDelay, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.TransmitDisableDelay)
+                                                    </td>
+                                                }
+@*@if (Model.FieldsToDisplay.Contains("RTU_FIRMWARE_VERSION"))
+                                                {*@
+                                                <td>@Html.LabelForRequired(model => model.RTUFirmwareVersion)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.RTUFirmwareVersion, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 25 })@Html.ValidationMessageFor(model => model.RTUFirmwareVersion)
+                                                </td>
+                                                @*}*@
+                                            </tr>
+                                            <tr>
+                                                @if (Model.FieldsToDisplay.Contains("REPEATER"))
+                                                {
+                                                    <td>@Html.LabelForRequired(model => model.Repeater)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.Repeater, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 25 })@Html.ValidationMessageFor(model => model.Repeater)
+                                                    </td>
+                                                }
+                                                @if (Model.FieldsToDisplay.Contains("RTU_ADDRESS"))
+                                                {
+                                                    <td>@Html.LabelForRequired(model => model.RtuAddress)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.RtuAddress, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 25 })@Html.ValidationMessageFor(model => model.RtuAddress)
+                                                    </td>
+                                                }
+                                            </tr>
+                                            @if (Model.FieldsToDisplay.Contains("RADIO_MANF_CD"))
+                                            {<tr>
+                                                <td>@Html.LabelForRequired(model => model.ScadaRadioManufacturer)
+                                                </td>
+                                                <td>@Html.DropDownListFor(model => model.ScadaRadioManufacturer, Model.ScadaRadioManufacturerList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ScadaRadioManufacturer)
+                                                </td>
+                                            </tr>}
+                                            @if (Model.FieldsToDisplay.Contains("RADIO_MODEL_NUM"))
+                                            {<tr>
+                                                <td>@Html.LabelForRequired(model => model.ScadaRadioModelNum)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.ScadaRadioModelNum, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 25 })@Html.ValidationMessageFor(model => model.ScadaRadioModelNum)
+                                                </td>
+                                            </tr>}
+                                            @if (Model.FieldsToDisplay.Contains("RADIO_SERIAL_NUM"))
+                                            {<tr>
+                                                <td>@Html.LabelForRequired(model => model.ScadaRadioSerialNum)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.ScadaRadioSerialNum, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 25 })@Html.ValidationMessageFor(model => model.ScadaRadioSerialNum)
+                                                </td>
+                                            </tr>}
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="padding-right: 0px;">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 97.5%;margin-left:10px;">
+                                <tr>
+                                    <td colspan="2" class="sectionHeader">
+                                        FLISR
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.FLISREngineeringComments)
+                                    </td>
+                                    <td>@Html.TextAreaFor(model => model.FLISREngineeringComments, 5, 15, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 250, @class = "form-control" })@Html.ValidationMessageFor(model => model.FLISREngineeringComments)
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    @if (Model.FieldsToDisplay.Contains("DATE_MODIFIED"))
+                    {<tr>
+                        <td>@Html.LabelForRequired(model => model.DateModified)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.DateModified, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @readonly = "true" })@Html.ValidationMessageFor(model => model.DateModified)
+                        </td>
+                    </tr>}
+@*@if (Model.FieldsToDisplay.Contains("NOTES"))
+                    {<tr>
+                        <td>@Html.LabelForRequired(model => model.Notes)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.Notes, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 240 })@Html.ValidationMessageFor(model => model.Notes)
+                        </td>
+                    </tr>}*@
+                    @if (Model.FieldsToDisplay.Contains("PREPARED_BY"))
+                    {<tr>
+                        <td>@Html.LabelForRequired(model => model.PreparedBy)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PreparedBy, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 60 })@Html.ValidationMessageFor(model => model.PreparedBy)
+                        </td>
+                    </tr>}
+                    @if (Model.FieldsToDisplay.Contains("EFFECTIVE_DT"))
+                    {<tr>
+                        <td>@Html.LabelForRequired(model => model.EffectiveDate)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.EffectiveDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepicker" })@Html.ValidationMessageFor(model => model.EffectiveDate)
+                        </td>
+                    </tr>}
+                    @if (Model.FieldsToDisplay.Contains("PEER_REVIEW_BY"))
+                    {<tr>
+                        <td>@Html.LabelForRequired(model => model.PeerReviewer)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PeerReviewer, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 60 })@Html.ValidationMessageFor(model => model.PeerReviewer)
+                        </td>
+                    </tr>}
+                    @if (Model.FieldsToDisplay.Contains("PEER_REVIEW_DT"))
+                    {<tr>
+                        <td>@Html.LabelForRequired(model => model.PeerReviewerDate)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PeerReviewerDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepicker" })@Html.ValidationMessageFor(model => model.PeerReviewerDate)
+                        </td>
+                    </tr>}
+                    @if (ViewBag.PageMode == "FUTURE")
+                    {
+                        <tr>
+                            <td class="lable">
+                                <label>
+                                    Release</label>
+                            </td>
+                            <td>
+                                @Html.CheckBoxFor(model => model.Release, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })
+                            </td>
+                        </tr>
+                    }
+                    @if (ViewBag.PageMode == "CURRENT")
+                    {
+                        <tr>
+                             <td colspan="2" style="text-align: right; padding-right: 10px">
+                                <input type="button" value="Copy current to future settings" onclick="this.form.action='/@ViewBag.ControllerName/CopyToFuture/@ViewBag.GlobalID/@ViewBag.LayerName?layerType=@ViewBag.layerType';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                            </td>
+                        </tr>
+                    }
+                    @if (ViewBag.PageMode == "FUTURE")
+                    {
+                        <tr>
+                            <td colspan="2" style="text-align: right; padding-right: 10px">
+                                <input type="button" value="Cancel" onclick="this.form.action='/@ViewBag.ControllerName/Future/@ViewBag.GlobalID/@ViewBag.LayerName?layerType=@ViewBag.layerType';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                <input type="button" value="Save" onclick="this.form.action='/@ViewBag.ControllerName/SaveFuture/@ViewBag.GlobalID/@ViewBag.LayerName?layerType=@ViewBag.layerType';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                            </td>
+                        </tr>
+                    }
+                    @if (ViewBag.PageMode == "HISTORY")
+                    {
+                    }
+                </table>
+            </td>
+        </tr>
+    </table>
+}

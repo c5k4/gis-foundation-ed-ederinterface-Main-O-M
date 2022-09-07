@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9642FE66-57BD-4BCA-B403-7B95DE781704}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PGE.Common.Delivery.Process</RootNamespace>
+    <AssemblyName>PGE.Common.Delivery.Process</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>http://localhost/Telvent.Delivery.ProcessManager/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>PGE.snk</AssemblyOriginatorKeyFile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\PGE.Common.Delivery.Process.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\Output\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <RegisterForComInterop>true</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\Output\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NoBuild|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\NoBuild\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\Telvent.Delivery.Process.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NoBuild|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\NoBuild\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PGE_EDER_JENKINS|AnyCPU'">
+    <OutputPath>bin\PGE_EDER_JENKINS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PGE_EDER_JENKINS|x86'">
+    <OutputPath>bin\x86\PGE_EDER_JENKINS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Framework, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\PGE_ExternalLibraries\log4net\Older_Version\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Miner.Interop.Framework, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.Interop.FrameworkUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.Interop.GeoDatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.Interop.Process, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.Interop.Process.Session, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.Interop.Process.Workflow, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.Process, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>4.8</RequiredTargetFramework>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="BaseClasses\BasePxControl.cs" />
+    <Compile Include="BaseClasses\BasePxDeleter.cs" />
+    <Compile Include="BaseClasses\BasePxFilter.cs" />
+    <Compile Include="BaseClasses\BasePxSubtask.cs" />
+    <Compile Include="BaseClasses\BasePxTreeTool.cs" />
+    <Compile Include="BaseClasses\BaseSessionSubtask.cs" />
+    <Compile Include="BaseClasses\BaseWMSSubtask.cs" />
+    <Compile Include="BaseClasses\BaseVersionDifferenceSubtask.cs" />
+    <Compile Include="BaseClasses\BaseDesktopVersionDifferenceSubtask.cs" />
+    <Compile Include="DesktopWindow.cs" />
+    <Compile Include="Forms\AssignSession.cs" />
+    <Compile Include="Forms\ChooseUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChooseUser.designer.cs">
+      <DependentUpon>ChooseUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MoveSessions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MoveSessions.designer.cs">
+      <DependentUpon>MoveSessions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PxDB.cs" />
+    <Compile Include="PxFacade.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PxNodeChannel.cs" />
+    <Compile Include="PxUser.cs" />
+    <Compile Include="ReferenceDictionary.cs" />
+    <Compile Include="BaseClasses\BaseChangeOwnerByRole.cs" />
+    <Compile Include="Subtasks\DoesUserHaveRole.cs" />
+    <Compile Include="Subtasks\IsNodeInState.cs" />
+    <Compile Include="Subtasks\IsUserTheOwner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\ChooseUser.resx">
+      <DependentUpon>ChooseUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MoveSessions.resx">
+      <DependentUpon>MoveSessions.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Icons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="PGE.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PGE.Common.Delivery.ArcFM\PGE.Common.Delivery.ArcFM.csproj">
+      <Project>{36519d54-e65e-4974-8da5-1931f1bbb692}</Project>
+      <Name>PGE.Common.Delivery.ArcFM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PGE.Common.Delivery.Diagnostics\PGE.Common.Delivery.Diagnostics.csproj">
+      <Project>{1d019976-ffe6-41a2-ab9c-6241696edb8e}</Project>
+      <Name>PGE.Common.Delivery.Diagnostics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PGE.Common.Delivery.Geodatabase\PGE.Common.Delivery.Geodatabase.csproj">
+      <Project>{472c594a-cd61-48e0-b814-8144cb1506fc}</Project>
+      <Name>PGE.Common.Delivery.Geodatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PGE.Common.Delivery.System\PGE.Common.Delivery.Systems.csproj">
+      <Project>{bb4e7878-3b0a-4bb4-a34c-61b4630684ba}</Project>
+      <Name>PGE.Common.Delivery.Systems</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PGE.Common.Delivery.UI\PGE.Common.Delivery.UI.csproj">
+      <Project>{4cf40d10-2919-4c21-a8b0-d370e777d409}</Project>
+      <Name>PGE.Common.Delivery.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>RegX.exe "$(TargetPath)" /u /s
+RegX.exe "$(TargetPath)" /r /c /s /d</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,653 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CAPACITOR">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ABB_INT_ID" type="xs:long" minOccurs="0" />
+              <xs:element name="ANNO_POS_1" type="xs:short" minOccurs="0" />
+              <xs:element name="ANNO_POS_2" type="xs:short" minOccurs="0" />
+              <xs:element name="BITS" type="xs:long" minOccurs="0" />
+              <xs:element name="CAFPOS" type="xs:long" minOccurs="0" />
+              <xs:element name="CAID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CANAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CA_KEY" type="xs:long" minOccurs="0" />
+              <xs:element name="CS_KEY" type="xs:short" minOccurs="0" />
+              <xs:element name="DESCRIPTIVE_LOC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DT_KEY" type="xs:long" minOccurs="0" />
+              <xs:element name="NO_KEY" type="xs:long" minOccurs="0" />
+              <xs:element name="PH3PRES" type="xs:short" minOccurs="0" />
+              <xs:element name="RATING_1" type="xs:double" minOccurs="0" />
+              <xs:element name="RATING_2" type="xs:double" minOccurs="0" />
+              <xs:element name="RATING_3" type="xs:double" minOccurs="0" />
+              <xs:element name="RATING_4" type="xs:double" minOccurs="0" />
+              <xs:element name="SCADA_BITS" type="xs:int" minOccurs="0" />
+              <xs:element name="STATE" type="xs:short" minOccurs="0" />
+              <xs:element name="STATUS" type="xs:short" minOccurs="0" />
+              <xs:element name="SWTYPE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SYM_POS_1" type="xs:short" minOccurs="0" />
+              <xs:element name="SYM_POS_2" type="xs:short" minOccurs="0" />
+              <xs:element name="TAG" type="xs:long" minOccurs="0" />
+              <xs:element name="UPDATE_ERROR" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DEVICE">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ABB_INT_ID" type="xs:long" minOccurs="0" />
+              <xs:element name="ANNOPOS_1" type="xs:short" minOccurs="0" />
+              <xs:element name="ANNOPOS_2" type="xs:short" minOccurs="0" />
+              <xs:element name="ATO_KEY" type="xs:long" minOccurs="0" />
+              <xs:element name="BREAKAMPS" type="xs:float" minOccurs="0" />
+              <xs:element name="BYPASS_STATUS" type="xs:short" minOccurs="0" />
+              <xs:element name="CADOPS_CONTROL" type="xs:short" minOccurs="0" />
+              <xs:element name="COILRATE" type="xs:float" minOccurs="0" />
+              <xs:element name="CONSTIMEF" type="xs:float" minOccurs="0" />
+              <xs:element name="CONSTIMES" type="xs:float" minOccurs="0" />
+              <xs:element name="CONTROLLED" type="xs:long" minOccurs="0" />
+              <xs:element name="CS_KEY" type="xs:short" minOccurs="0" />
+              <xs:element name="CURRENTCTA" type="xs:double" minOccurs="0" />
+              <xs:element name="CURRENTCTB" type="xs:double" minOccurs="0" />
+              <xs:element name="CURRENTCTC" type="xs:double" minOccurs="0" />
+              <xs:element name="CURTRANTAP" type="xs:float" minOccurs="0" />
+              <xs:element name="C_TRANSF" type="xs:float" minOccurs="0" />
+              <xs:element name="DDISTRICT" type="xs:long" minOccurs="0" />
+              <xs:element name="DESCRIPTIVE_LOC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DETAIL_VIEW_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DEVCAT" type="xs:short" minOccurs="0" />
+              <xs:element name="DEVICESIZE" type="xs:double" minOccurs="0" />
+              <xs:element name="DFPOS" type="xs:long" minOccurs="0" />
+              <xs:element name="DID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DT_KEY" type="xs:long" minOccurs="0" />
+              <xs:element name="FASTCURV" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FAULT_DISTANCE" type="xs:double" minOccurs="0" />
+              <xs:element name="FUZESIZE" type="xs:float" minOccurs="0" />
+              <xs:element name="INSTALL_DEVSIZE" type="xs:double" minOccurs="0" />
+              <xs:element name="INSTTRIP" type="xs:float" minOccurs="0" />
+              <xs:element name="INTERLOCK_NO" type="xs:int" minOccurs="0" />
+              <xs:element name="LABEL_SEP" type="xs:short" minOccurs="0" />
+              <xs:element name="LINE_END" type="xs:short" minOccurs="0" />
+              <xs:element name="LI_KEY" type="xs:long" minOccurs="0" />
+              <xs:element name="LOCKACT" type="xs:int" minOccurs="0" />
+              <xs:element name="LOCKMUL" type="xs:int" minOccurs="0" />
+              <xs:element name="LTH_1" type="xs:int" minOccurs="0" />
+              <xs:element name="LTH_2" type="xs:int" minOccurs="0" />
+              <xs:element name="MAXBANDWA" type="xs:double" minOccurs="0" />
+              <xs:element name="MAXBANDWB" type="xs:double" minOccurs="0" />
+              <xs:element name="MAXBANDWC" type="xs:double" minOccurs="0" />
+              <xs:element name="MAXLOADBA" type="xs:double" minOccurs="0" />
+              <xs:element name="MAXLOADBB" type="xs:double" minOccurs="0" />
+              <xs:element name="MAXLOADBC" type="xs:double" minOccurs="0" />
+              <xs:element name="MINBANDWA" type="xs:double" minOccurs="0" />
+              <xs:element name="MINBANDWB" type="xs:double" minOccurs="0" />
+              <xs:element name="MINBANDWC" type="xs:double" minOccurs="0" />
+              <xs:element name="MINIRSPF" type="xs:short" minOccurs="0" />
+              <xs:element name="MINIRSPS" type="xs:short" minOccurs="0" />
+              <xs:element name="MINLOADBA" type="xs:double" minOccurs="0" />
+              <xs:element name="MINLOADBB" type="xs:double" minOccurs="0" />
+              <xs:element name="MINLOADBC" type="xs:double" minOccurs="0" />
+              <xs:element name="MSPOS" type="xs:int" minOccurs="0" />
+              <xs:element name="MULTVALF" type="xs:float" minOccurs="0" />
+              <xs:element name="MULTVALS" type="xs:float" minOccurs="0" />
+              <xs:element name="NORM_STATE" type="xs:int" minOccurs="0" />
+              <xs:element name="PHASE" type="xs:short" minOccurs="0" />
+              <xs:element name="PHASE_GROUND" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="POTENTPTA" type="xs:double" minOccurs="0" />
+              <xs:element name="POTENTPTB" type="xs:double" minOccurs="0" />
+              <xs:element name="POTENTPTC" type="xs:double" minOccurs="0" />
+              <xs:element name="PREFERRED" type="xs:short" minOccurs="0" />
+              <xs:element name="QFASTTRIPS" type="xs:short" minOccurs="0" />
+              <xs:element name="QSLOWTRIPS" type="xs:short" minOccurs="0" />
+              <xs:element name="RECBREAKT" type="xs:int" minOccurs="0" />
+              <xs:element name="RECLTIM1" type="xs:short" minOccurs="0" />
+              <xs:element name="RECLTIM2" type="xs:short" minOccurs="0" />
+              <xs:element name="RECLTIM3" type="xs:short" minOccurs="0" />
+              <xs:element name="REQVOLTS" type="xs:double" minOccurs="0" />
+              <xs:element name="REQVOLTS_L" type="xs:float" minOccurs="0" />
+              <xs:element name="RESETTIME" type="xs:short" minOccurs="0" />
+              <xs:element name="RSETTINGA" type="xs:double" minOccurs="0" />
+              <xs:element name="RSETTINGB" type="xs:double" minOccurs="0" />
+              <xs:element name="RSETTINGC" type="xs:double" minOccurs="0" />
+              <xs:element name="SA_KEY" type="xs:int" minOccurs="0" />
+              <xs:element name="SCADA_BITS" type="xs:int" minOccurs="0" />
+              <xs:element name="SCADA_CONTROL" type="xs:short" minOccurs="0" />
+              <xs:element name="SCADA_CONTROL_OVERRIDE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SCADA_STATE" type="xs:short" minOccurs="0" />
+              <xs:element name="SCADA_TAG_OVERRIDE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SC_KEY" type="xs:int" minOccurs="0" />
+              <xs:element name="SENSING_PHASE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SLOPE" type="xs:int" minOccurs="0" />
+              <xs:element name="SLOWCURV" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SS_KEY" type="xs:int" minOccurs="0" />
+              <xs:element name="STATE" type="xs:short" minOccurs="0" />
+              <xs:element name="STATUS" type="xs:int" minOccurs="0" />
+              <xs:element name="SW_OPER" type="xs:short" minOccurs="0" />
+              <xs:element name="TAG" type="xs:long" minOccurs="0" />
+              <xs:element name="TAPSIDE" type="xs:short" minOccurs="0" />
+              <xs:element name="TAP_1" type="xs:short" minOccurs="0" />
+              <xs:element name="TAP_2" type="xs:short" minOccurs="0" />
+              <xs:element name="TAP_3" type="xs:short" minOccurs="0" />
+              <xs:element name="TAP_4" type="xs:short" minOccurs="0" />
+              <xs:element name="TIMEDIAL" type="xs:float" minOccurs="0" />
+              <xs:element name="TRACSH" type="xs:int" minOccurs="0" />
+              <xs:element name="TRANSRATIO" type="xs:short" minOccurs="0" />
+              <xs:element name="TRMUOMT" type="xs:int" minOccurs="0" />
+              <xs:element name="TRTRTID" type="xs:int" minOccurs="0" />
+              <xs:element name="XD_1" type="xs:long" minOccurs="0" />
+              <xs:element name="XD_2" type="xs:long" minOccurs="0" />
+              <xs:element name="XSETTINGA" type="xs:double" minOccurs="0" />
+              <xs:element name="XSETTINGB" type="xs:double" minOccurs="0" />
+              <xs:element name="XSETTINGC" type="xs:double" minOccurs="0" />
+              <xs:element name="YD_1" type="xs:long" minOccurs="0" />
+              <xs:element name="YD_2" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LINE">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ABB_INT_ID" type="xs:long" minOccurs="0" />
+              <xs:element name="ANNOPOS_1" type="xs:short" minOccurs="0" />
+              <xs:element name="ANNOPOS_2" type="xs:short" minOccurs="0" />
+              <xs:element name="BITS" type="xs:long" minOccurs="0" />
+              <xs:element name="BUS_BAR" type="xs:short" minOccurs="0" />
+              <xs:element name="COLOR" type="xs:short" minOccurs="0" />
+              <xs:element name="CS_KEY" type="xs:short" minOccurs="0" />
+              <xs:element name="ELECTRICAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FPOS" type="xs:long" />
+              <xs:element name="GOFFSET_1" type="xs:short" minOccurs="0" />
+              <xs:element name="GOFFSET_2" type="xs:short" minOccurs="0" />
+              <xs:element name="ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LENGTH" type="xs:double" minOccurs="0" />
+              <xs:element name="LINE_TYPE" type="xs:long" minOccurs="0" />
+              <xs:element name="NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NO_KEY_1" type="xs:long" minOccurs="0" />
+              <xs:element name="NO_KEY_2" type="xs:long" minOccurs="0" />
+              <xs:element name="OFFSET_1" type="xs:short" minOccurs="0" />
+              <xs:element name="OFFSET_2" type="xs:short" minOccurs="0" />
+              <xs:element name="PA_KEY_1" type="xs:long" minOccurs="0" />
+              <xs:element name="PA_KEY_2" type="xs:long" minOccurs="0" />
+              <xs:element name="PHASE_PERM" type="xs:short" minOccurs="0" />
+              <xs:element name="PHASE_PRESENT" type="xs:short" minOccurs="0" />
+              <xs:element name="STATE" type="xs:short" minOccurs="0" />
+              <xs:element name="SUB_AREA" type="xs:short" minOccurs="0" />
+              <xs:element name="SWITCHABLE" type="xs:short" minOccurs="0" />
+              <xs:element name="TAG" type="xs:long" minOccurs="0" />
+              <xs:element name="UPDATE_ERROR" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LOAD">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ABB_INT_ID" type="xs:long" minOccurs="0" />
+              <xs:element name="ANNOPOS_1" type="xs:short" minOccurs="0" />
+              <xs:element name="ANNOPOS_2" type="xs:short" minOccurs="0" />
+              <xs:element name="BILLED_1" type="xs:double" minOccurs="0" />
+              <xs:element name="BILLED_2" type="xs:double" minOccurs="0" />
+              <xs:element name="BILLED_3" type="xs:double" minOccurs="0" />
+              <xs:element name="BILLED_4" type="xs:double" minOccurs="0" />
+              <xs:element name="BITS" type="xs:short" minOccurs="0" />
+              <xs:element name="CONNECT_AMP" type="xs:short" minOccurs="0" />
+              <xs:element name="COUNTPRIORITY" type="xs:int" minOccurs="0" />
+              <xs:element name="CS_KEY" type="xs:short" minOccurs="0" />
+              <xs:element name="CUSTNO_1" type="xs:double" minOccurs="0" />
+              <xs:element name="CUSTNO_2" type="xs:double" minOccurs="0" />
+              <xs:element name="CUSTNO_3" type="xs:double" minOccurs="0" />
+              <xs:element name="CUSTNO_4" type="xs:double" minOccurs="0" />
+              <xs:element name="DESCRIPTIVE_LOC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DISTRICT" type="xs:long" minOccurs="0" />
+              <xs:element name="INSTALL_RATING_1" type="xs:double" minOccurs="0" />
+              <xs:element name="INSTALL_RATING_2" type="xs:double" minOccurs="0" />
+              <xs:element name="INSTALL_RATING_3" type="xs:double" minOccurs="0" />
+              <xs:element name="INSTALL_RATING_4" type="xs:double" minOccurs="0" />
+              <xs:element name="LABEL_SEP" type="xs:short" minOccurs="0" />
+              <xs:element name="LITE_FACTOR" type="xs:short" minOccurs="0" />
+              <xs:element name="LITE_UTIL_FACTOR" type="xs:float" minOccurs="0" />
+              <xs:element name="LOFPOS" type="xs:long" minOccurs="0" />
+              <xs:element name="LOID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LONAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOTYPE" type="xs:short" minOccurs="0" />
+              <xs:element name="NO_KEY" type="xs:long" minOccurs="0" />
+              <xs:element name="NUM1" type="xs:long" minOccurs="0" />
+              <xs:element name="PEAK_UTIL_FACTOR" type="xs:float" minOccurs="0" />
+              <xs:element name="PFACT_1" type="xs:double" minOccurs="0" />
+              <xs:element name="PFACT_2" type="xs:double" minOccurs="0" />
+              <xs:element name="PFACT_3" type="xs:double" minOccurs="0" />
+              <xs:element name="PFACT_4" type="xs:double" minOccurs="0" />
+              <xs:element name="PHASE" type="xs:short" minOccurs="0" />
+              <xs:element name="RATING_1" type="xs:double" minOccurs="0" />
+              <xs:element name="RATING_2" type="xs:double" minOccurs="0" />
+              <xs:element name="RATING_3" type="xs:double" minOccurs="0" />
+              <xs:element name="RATING_4" type="xs:double" minOccurs="0" />
+              <xs:element name="SCADA_BITS" type="xs:int" minOccurs="0" />
+              <xs:element name="SG_KEY" type="xs:int" minOccurs="0" />
+              <xs:element name="STATE" type="xs:short" minOccurs="0" />
+              <xs:element name="STATUS" type="xs:short" minOccurs="0" />
+              <xs:element name="SWTYPE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SYM_POS_1" type="xs:short" minOccurs="0" />
+              <xs:element name="SYM_POS_2" type="xs:short" minOccurs="0" />
+              <xs:element name="TAG" type="xs:long" minOccurs="0" />
+              <xs:element name="TAP_1" type="xs:short" minOccurs="0" />
+              <xs:element name="TAP_2" type="xs:short" minOccurs="0" />
+              <xs:element name="TAP_3" type="xs:short" minOccurs="0" />
+              <xs:element name="TAP_4" type="xs:short" minOccurs="0" />
+              <xs:element name="TT_KEY" type="xs:long" minOccurs="0" />
+              <xs:element name="UPDATE_ERROR" type="xs:short" minOccurs="0" />
+              <xs:element name="VOLT_BUS_COLOR" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="NODE">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ABB_INT_ID" type="xs:long" minOccurs="0" />
+              <xs:element name="BUS_ANG_1" type="xs:short" minOccurs="0" />
+              <xs:element name="BUS_ANG_2" type="xs:short" minOccurs="0" />
+              <xs:element name="BUS_BAR" type="xs:short" minOccurs="0" />
+              <xs:element name="BUS_LTH" type="xs:short" minOccurs="0" />
+              <xs:element name="BUS_LTH_2" type="xs:short" minOccurs="0" />
+              <xs:element name="CON_TYPE" type="xs:short" minOccurs="0" />
+              <xs:element name="CS_KEY" type="xs:short" minOccurs="0" />
+              <xs:element name="DISTRICT" type="xs:long" minOccurs="0" />
+              <xs:element name="ELECTRICAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GPOS_1" type="xs:short" minOccurs="0" />
+              <xs:element name="GPOS_2" type="xs:short" minOccurs="0" />
+              <xs:element name="LABEL_SEP" type="xs:short" minOccurs="0" />
+              <xs:element name="MAXCAPACITOR" type="xs:double" minOccurs="0" />
+              <xs:element name="MINCAPACITOR" type="xs:double" minOccurs="0" />
+              <xs:element name="NANNOPOS_1" type="xs:short" minOccurs="0" />
+              <xs:element name="NANNOPOS_2" type="xs:short" minOccurs="0" />
+              <xs:element name="NBITS" type="xs:int" minOccurs="0" />
+              <xs:element name="NFPOS" type="xs:long" />
+              <xs:element name="NID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PFMINLAGGING" type="xs:float" minOccurs="0" />
+              <xs:element name="PFMINLEADING" type="xs:float" minOccurs="0" />
+              <xs:element name="REM1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REM2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REM3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SECONDARY" type="xs:short" minOccurs="0" />
+              <xs:element name="SG_KEY_1" type="xs:short" minOccurs="0" />
+              <xs:element name="STATE" type="xs:short" minOccurs="0" />
+              <xs:element name="SUB_AREA" type="xs:short" minOccurs="0" />
+              <xs:element name="SUB_ID" type="xs:long" minOccurs="0" />
+              <xs:element name="TAG" type="xs:long" minOccurs="0" />
+              <xs:element name="UPDATE_ERROR" type="xs:short" minOccurs="0" />
+              <xs:element name="VARIANTS_1" type="xs:short" minOccurs="0" />
+              <xs:element name="VARIANTS_2" type="xs:short" minOccurs="0" />
+              <xs:element name="VLEVEL" type="xs:short" minOccurs="0" />
+              <xs:element name="VMAXPU" type="xs:float" minOccurs="0" />
+              <xs:element name="VMINPU" type="xs:float" minOccurs="0" />
+              <xs:element name="WNN" type="xs:int" minOccurs="0" />
+              <xs:element name="XN_1" type="xs:long" minOccurs="0" />
+              <xs:element name="XN_2" type="xs:long" minOccurs="0" />
+              <xs:element name="YN_1" type="xs:long" minOccurs="0" />
+              <xs:element name="YN_2" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PATH">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CS_KEY" type="xs:short" minOccurs="0" />
+              <xs:element name="NEXTP" type="xs:long" minOccurs="0" />
+              <xs:element name="PAFPOS" type="xs:long" />
+              <xs:element name="SUB_AREA" type="xs:short" minOccurs="0" />
+              <xs:element name="XDIFF" type="xs:long" minOccurs="0" />
+              <xs:element name="YDIFF" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SITE">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ABB_INT_ID" type="xs:long" minOccurs="0" />
+              <xs:element name="ADDRESS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ANNOPOS_1" type="xs:short" minOccurs="0" />
+              <xs:element name="ANNOPOS_2" type="xs:short" minOccurs="0" />
+              <xs:element name="CS_KEY" type="xs:short" minOccurs="0" />
+              <xs:element name="GSITEH" type="xs:long" minOccurs="0" />
+              <xs:element name="GSITEW" type="xs:long" minOccurs="0" />
+              <xs:element name="GSITE_ANG" type="xs:short" minOccurs="0" />
+              <xs:element name="GXSITE" type="xs:long" minOccurs="0" />
+              <xs:element name="GYSITE" type="xs:long" minOccurs="0" />
+              <xs:element name="LB_FILE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NO_KEY" type="xs:long" minOccurs="0" />
+              <xs:element name="REAL_SITE_KEY" type="xs:long" minOccurs="0" />
+              <xs:element name="SG_KEY" type="xs:int" minOccurs="0" />
+              <xs:element name="SG_KEY_FP" type="xs:int" minOccurs="0" />
+              <xs:element name="SIFPOS" type="xs:long" minOccurs="0" />
+              <xs:element name="SIID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SINAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SITEH" type="xs:long" minOccurs="0" />
+              <xs:element name="SITEW" type="xs:long" minOccurs="0" />
+              <xs:element name="SSITE_ANG" type="xs:short" minOccurs="0" />
+              <xs:element name="STATE" type="xs:short" minOccurs="0" />
+              <xs:element name="TYPE" type="xs:short" minOccurs="0" />
+              <xs:element name="UPDATE_ERROR" type="xs:short" minOccurs="0" />
+              <xs:element name="USERCOMMENT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="XSITE" type="xs:long" minOccurs="0" />
+              <xs:element name="YSITE" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SOURCE">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ABB_INT_ID" type="xs:long" minOccurs="0" />
+              <xs:element name="ANNOPOS_1" type="xs:short" minOccurs="0" />
+              <xs:element name="ANNOPOS_2" type="xs:short" minOccurs="0" />
+              <xs:element name="CAP_APPL_ANAL" type="xs:short" minOccurs="0" />
+              <xs:element name="CS_KEY" type="xs:short" minOccurs="0" />
+              <xs:element name="DISTRICT" type="xs:long" minOccurs="0" />
+              <xs:element name="EMERGCAP" type="xs:float" minOccurs="0" />
+              <xs:element name="KVARGEN" type="xs:double" minOccurs="0" />
+              <xs:element name="KVAROUT_1" type="xs:double" minOccurs="0" />
+              <xs:element name="KVAROUT_2" type="xs:double" minOccurs="0" />
+              <xs:element name="KVAROUT_3" type="xs:double" minOccurs="0" />
+              <xs:element name="KVAROUT_4" type="xs:double" minOccurs="0" />
+              <xs:element name="KWGEN" type="xs:double" minOccurs="0" />
+              <xs:element name="KWLOSS" type="xs:double" minOccurs="0" />
+              <xs:element name="KWOUT_1" type="xs:double" minOccurs="0" />
+              <xs:element name="KWOUT_2" type="xs:double" minOccurs="0" />
+              <xs:element name="KWOUT_3" type="xs:double" minOccurs="0" />
+              <xs:element name="KWOUT_4" type="xs:double" minOccurs="0" />
+              <xs:element name="MAXCAP" type="xs:double" minOccurs="0" />
+              <xs:element name="MAXKVAR" type="xs:double" minOccurs="0" />
+              <xs:element name="MAX_OVERLOAD" type="xs:double" minOccurs="0" />
+              <xs:element name="MAX_PERCENT_DROP" type="xs:double" minOccurs="0" />
+              <xs:element name="MINKVAR" type="xs:double" minOccurs="0" />
+              <xs:element name="MO_START_ANAL" type="xs:short" minOccurs="0" />
+              <xs:element name="NEGSEQX" type="xs:float" minOccurs="0" />
+              <xs:element name="NET_LF_ANAL" type="xs:short" minOccurs="0" />
+              <xs:element name="NOMPHANG" type="xs:float" minOccurs="0" />
+              <xs:element name="NOMPHANG_A" type="xs:float" minOccurs="0" />
+              <xs:element name="NOMPHANG_B" type="xs:float" minOccurs="0" />
+              <xs:element name="NOMPHANG_C" type="xs:float" minOccurs="0" />
+              <xs:element name="NOMPHANG_L" type="xs:float" minOccurs="0" />
+              <xs:element name="NOMPHANG_L_A" type="xs:float" minOccurs="0" />
+              <xs:element name="NOMPHANG_L_B" type="xs:float" minOccurs="0" />
+              <xs:element name="NOMPHANG_L_C" type="xs:float" minOccurs="0" />
+              <xs:element name="NO_KEY" type="xs:long" minOccurs="0" />
+              <xs:element name="O_CAP_APPL_ANAL" type="xs:short" minOccurs="0" />
+              <xs:element name="O_MO_START_ANAL" type="xs:short" minOccurs="0" />
+              <xs:element name="O_NET_LF_ANAL" type="xs:short" minOccurs="0" />
+              <xs:element name="O_PROD_DEV_ANAL" type="xs:short" minOccurs="0" />
+              <xs:element name="O_SHORT_CIR_ANAL" type="xs:short" minOccurs="0" />
+              <xs:element name="O_SING_PHA_ANAL" type="xs:short" minOccurs="0" />
+              <xs:element name="O_THREE_PHA_ANAL" type="xs:short" minOccurs="0" />
+              <xs:element name="POSSEQR" type="xs:double" minOccurs="0" />
+              <xs:element name="POSSEQX" type="xs:double" minOccurs="0" />
+              <xs:element name="PROD_DEV_ANAL" type="xs:short" minOccurs="0" />
+              <xs:element name="RATIO_PI" type="xs:float" minOccurs="0" />
+              <xs:element name="RATIO_PR" type="xs:float" minOccurs="0" />
+              <xs:element name="RATIO_QI" type="xs:float" minOccurs="0" />
+              <xs:element name="RATIO_QR" type="xs:float" minOccurs="0" />
+              <xs:element name="SCADA_BITS" type="xs:int" minOccurs="0" />
+              <xs:element name="SCOLIND" type="xs:short" minOccurs="0" />
+              <xs:element name="SG_KEY" type="xs:int" minOccurs="0" />
+              <xs:element name="SHORT_CIR_ANAL" type="xs:short" minOccurs="0" />
+              <xs:element name="SING_PHA_ANAL" type="xs:short" minOccurs="0" />
+              <xs:element name="SOFPOS" type="xs:long" minOccurs="0" />
+              <xs:element name="SOID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SONAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STATE" type="xs:short" minOccurs="0" />
+              <xs:element name="STATUS" type="xs:short" minOccurs="0" />
+              <xs:element name="STYPE" type="xs:short" minOccurs="0" />
+              <xs:element name="SUBTRAX" type="xs:float" minOccurs="0" />
+              <xs:element name="SVPU_A" type="xs:float" minOccurs="0" />
+              <xs:element name="SVPU_B" type="xs:float" minOccurs="0" />
+              <xs:element name="SVPU_C" type="xs:float" minOccurs="0" />
+              <xs:element name="SVPU_L_A" type="xs:float" minOccurs="0" />
+              <xs:element name="SVPU_L_B" type="xs:float" minOccurs="0" />
+              <xs:element name="SVPU_L_C" type="xs:float" minOccurs="0" />
+              <xs:element name="SVPU_L_T" type="xs:float" minOccurs="0" />
+              <xs:element name="SVPU_T" type="xs:float" minOccurs="0" />
+              <xs:element name="SYM_POS_1" type="xs:short" minOccurs="0" />
+              <xs:element name="SYM_POS_2" type="xs:short" minOccurs="0" />
+              <xs:element name="TAG" type="xs:long" minOccurs="0" />
+              <xs:element name="THREE_PHA_ANAL" type="xs:short" minOccurs="0" />
+              <xs:element name="TRANSIX" type="xs:float" minOccurs="0" />
+              <xs:element name="UPDATE_ERROR" type="xs:short" minOccurs="0" />
+              <xs:element name="UPSTREAM_LINE" type="xs:long" minOccurs="0" />
+              <xs:element name="USAGE" type="xs:short" minOccurs="0" />
+              <xs:element name="VLEVEL" type="xs:short" minOccurs="0" />
+              <xs:element name="VOLT_COMP" type="xs:float" minOccurs="0" />
+              <xs:element name="ZEROSEQR" type="xs:double" minOccurs="0" />
+              <xs:element name="ZEROSEQX" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//CAPACITOR" />
+      <xs:field xpath="CAID" />
+    </xs:unique>
+    <xs:unique name="DEVICE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//DEVICE" />
+      <xs:field xpath="DID" />
+    </xs:unique>
+    <xs:unique name="LINE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//LINE" />
+      <xs:field xpath="ID" />
+    </xs:unique>
+    <xs:unique name="LOAD_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//LOAD" />
+      <xs:field xpath="LOID" />
+    </xs:unique>
+    <xs:unique name="NODE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//NODE" />
+      <xs:field xpath="NID" />
+    </xs:unique>
+    <xs:unique name="PATH_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//PATH" />
+      <xs:field xpath="PAFPOS" />
+    </xs:unique>
+    <xs:unique name="SITE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//SITE" />
+      <xs:field xpath="SIID" />
+    </xs:unique>
+    <xs:unique name="SOURCE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//SOURCE" />
+      <xs:field xpath="SOID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

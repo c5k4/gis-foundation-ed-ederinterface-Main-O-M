@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--PGE.MapProduction.Integration-->
+  <Fragment>
+    <ComponentGroup Id="Extras">
+
+      <Component Id="PGE.Interfaces.SettingsEmailNotification.exe" Directory="SETTINGSNOTIFICATION" Guid="20F48D7B-8435-4B3F-A328-21B0EC4B2EF1" >
+        <File Id="PGE.Interfaces.SettingsEmailNotification.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SettingsNotification\PGE.Interfaces.SettingsEmailNotification.exe"/>
+      </Component>      
+      <Component Id="PGE.Interfaces.SettingsEmailNotification.exe.config" Directory="SETTINGSNOTIFICATION" Guid="0879E28C-38BA-4B77-8883-FC7B666CCCEB" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.Interfaces.SettingsEmailNotification.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SettingsNotification\PGE.Interfaces.SettingsEmailNotification.exe.config"/>
+      </Component>      
+	  <Component Id="PGE.Interfaces.SettingsEmailNotification.log4net.config" Directory="LoggingConfiguration" Guid="B8A220B7-C0CC-4D6E-8B6E-423E1ED1930B" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.Interfaces.SettingsEmailNotification.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SettingsNotification\PGE.Interfaces.SettingsEmailNotification.log4net.config"/>
+      </Component>
+    </ComponentGroup>
+    
+  </Fragment>
+</Wix>

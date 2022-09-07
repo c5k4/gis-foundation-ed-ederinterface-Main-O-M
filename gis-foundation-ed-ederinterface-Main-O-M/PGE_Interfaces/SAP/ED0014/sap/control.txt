@@ -1,0 +1,31 @@
+------------------------------------------------------------
+-- SQL-Loader Basic Control File
+------------------------------------------------------------
+options (skip=0)
+load data
+  infile			'sap.csv'
+  truncate into table pgedata.sap_notificationheader_stg
+  fields terminated by ","
+  TRAILING NULLCOLS
+  (	NOTIFICATIONNUM, 
+	NOTIFICATIONTYPE, 
+	NOTIFICATIONSTATUS, 
+	DESCRIPTION, 
+	SAPEQUIPMENTID, 
+	GUID, 
+	EQUIPMENTTYPE, 
+	FUNCTIONALLOCATION, 
+	WORKTYPECATEGORY, 
+	WORKTYPECODE, 
+	NOTIFICATIONCREATION DATE "YYYYMMDD", 
+	NOTIFICATIONDATE DATE "YYYYMMDD", 
+	COMPLETIONDATE DATE "YYYYMMDD" nullif COMPLETIONDATE = '00000000', 
+	DUEDATE DATE "YYYYMMDD", 
+	PRIORITY, 
+	PMORDERNUM, 
+	MAT, 
+	FACILITY, 
+	PROBLEMSHORTTEXT, 
+	CAUSETEXT, 
+	ACTIVITY
+)	

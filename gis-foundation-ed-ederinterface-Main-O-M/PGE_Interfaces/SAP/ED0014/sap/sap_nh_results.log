@@ -1,0 +1,70 @@
+
+SQL*Loader: Release 11.2.0.1.0 - Production on Wed May 27 14:45:17 2015
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   control.txt
+Data File:      sap.csv
+  Bad File:     sap.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 0
+Errors allowed: 50
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table PGEDATA.SAP_NOTIFICATIONHEADER_STG, loaded from every logical record.
+Insert option in effect for this table: TRUNCATE
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+NOTIFICATIONNUM                     FIRST     *   ,       CHARACTER            
+NOTIFICATIONTYPE                     NEXT     *   ,       CHARACTER            
+NOTIFICATIONSTATUS                   NEXT     *   ,       CHARACTER            
+DESCRIPTION                          NEXT     *   ,       CHARACTER            
+SAPEQUIPMENTID                       NEXT     *   ,       CHARACTER            
+GUID                                 NEXT     *   ,       CHARACTER            
+EQUIPMENTTYPE                        NEXT     *   ,       CHARACTER            
+FUNCTIONALLOCATION                   NEXT     *   ,       CHARACTER            
+WORKTYPECATEGORY                     NEXT     *   ,       CHARACTER            
+WORKTYPECODE                         NEXT     *   ,       CHARACTER            
+NOTIFICATIONCREATION                 NEXT     *   ,       DATE YYYYMMDD        
+NOTIFICATIONDATE                     NEXT     *   ,       DATE YYYYMMDD        
+COMPLETIONDATE                       NEXT     *   ,       DATE YYYYMMDD        
+    NULL if COMPLETIONDATE = 0X3030303030303030(character '00000000')
+DUEDATE                              NEXT     *   ,       DATE YYYYMMDD        
+PRIORITY                             NEXT     *   ,       CHARACTER            
+PMORDERNUM                           NEXT     *   ,       CHARACTER            
+MAT                                  NEXT     *   ,       CHARACTER            
+FACILITY                             NEXT     *   ,       CHARACTER            
+PROBLEMSHORTTEXT                     NEXT     *   ,       CHARACTER            
+CAUSETEXT                            NEXT     *   ,       CHARACTER            
+ACTIVITY                             NEXT     *   ,       CHARACTER            
+
+value used for ROWS parameter changed from 64 to 47
+
+Table PGEDATA.SAP_NOTIFICATIONHEADER_STG:
+  41 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 254646 bytes(47 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          0
+Total logical records read:            41
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Wed May 27 14:45:17 2015
+Run ended on Wed May 27 14:45:17 2015
+
+Elapsed time was:     00:00:00.37
+CPU time was:         00:00:00.11

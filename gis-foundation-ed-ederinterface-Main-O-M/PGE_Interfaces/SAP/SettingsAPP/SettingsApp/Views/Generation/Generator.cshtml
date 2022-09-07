@@ -1,0 +1,15 @@
+﻿@model SettingsApp.Models.GeneratorModel
+<style type="text/css">
+    td.print-for-trf
+    {
+        display: none;
+    }
+</style>
+@using (Html.BeginForm("Generator", "Generation"))
+{
+    @Html.ValidationSummary(true)
+    Html.RenderPartial("~/Views/Shared/_GeneratorPartial.cshtml");    
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

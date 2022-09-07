@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<voltageconfig>
+  <!--Primary Operating Voltage Drop Configurations, all primary circuit operating voltage values must have a configured voltage drop value-->
+  <voltagedrop name="Primary Voltage">
+    <voltage circuitvoltagecode="0" circuitvoltagedescription="480V" voltagedropcode="10" voltagedropdescription="277V"/>
+    <voltage circuitvoltagecode="1" circuitvoltagedescription="2.4kV" voltagedropcode="11" voltagedropdescription="1.38kV"/>
+    <voltage circuitvoltagecode="2" circuitvoltagedescription="4.16kV" voltagedropcode="1" voltagedropdescription="2.4kV"/>
+    <voltage circuitvoltagecode="3" circuitvoltagedescription="4.8kV" voltagedropcode="12" voltagedropdescription="2.77kV"/>
+    <voltage circuitvoltagecode="4" circuitvoltagedescription="7.2kV" voltagedropcode="2" voltagedropdescription="4.16kV"/>
+    <voltage circuitvoltagecode="5" circuitvoltagedescription="12kV" voltagedropcode="35" voltagedropdescription="6.9kV"/>
+    <voltage circuitvoltagecode="13" circuitvoltagedescription="12.47kV" voltagedropcode="4" voltagedropdescription="7.2kV"/>
+    <voltage circuitvoltagecode="6" circuitvoltagedescription="17kV" voltagedropcode="-1" voltagedropdescription="None"/>
+    <voltage circuitvoltagecode="8" circuitvoltagedescription="21kV" voltagedropcode="5" voltagedropdescription="12kV"/>
+    <voltage circuitvoltagecode="85" circuitvoltagedescription="34.5kV" voltagedropcode="65" voltagedropdescription="19.9kV"/>
+    <voltage circuitvoltagecode="9" circuitvoltagedescription="44kV" voltagedropcode="14" voltagedropdescription="25.4kV"/>
+  </voltagedrop>
+</voltageconfig>

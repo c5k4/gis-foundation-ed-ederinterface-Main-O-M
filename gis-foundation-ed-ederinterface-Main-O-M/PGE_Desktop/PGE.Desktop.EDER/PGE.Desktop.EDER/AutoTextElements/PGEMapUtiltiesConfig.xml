@@ -1,0 +1,9 @@
+﻿<?xml version="1.0"?>
+<ATE name="Hashing">
+  <Add Name="BufferBorderColorRGB" Value="0,0,0"/>
+  <Add Name="BufferFillColorRGB" Value="255,255,255"/>
+  <Add Name="BufferBorderWidth" Value="1"/>
+  <Add Name="BufferFillStyle" Value="0"/>
+  <!--0=Solid,2 = Horizontal,3=Vertical,4=ForwardDiagonal,5=BackwardDiagonal,6=Cross,7=Diagonalcross -->
+  <Add Name="BufferTransperancy" Value="25"/>
+</ATE>

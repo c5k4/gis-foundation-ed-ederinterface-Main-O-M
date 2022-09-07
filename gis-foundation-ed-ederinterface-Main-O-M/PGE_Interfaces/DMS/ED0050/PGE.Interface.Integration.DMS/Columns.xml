@@ -1,0 +1,951 @@
+﻿<ColumnMapping>
+  <DMSTable name="DMSSTAGING.LINE">
+    <GISTable id="PrimaryOH">
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="CEDSALINESECTIONID" DMSfield="CEDSALINESECTIONID"/>
+      <add GISfield="OPERATINGVOLTAGE" DMSfield="OPERATING_VOLTAGE" Domain="Primary Voltage"/>
+      <add GISfield="MEASUREDLENGTH" DMSfield="LENGTH"/>
+      <add GISfield="PHASINGVERIFIEDSTATUS" DMSfield="PHASING_VERIFIED" Domain="VerifiedPhasingStatus"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="REPLACEGUID" DMSfield="REPLACE_GUID"/>
+      <add GISfield="MAINLINEIDC" DMSfield="MAIN_LINE_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="NEUTRALIDC" DMSfield="NEUTRAL_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="SERVICEIDC" DMSfield="SERVICE_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="CUSTOMEROWNED" DMSfield="CUSTOMER_OWNED_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="CONSTRUCTIONTYPE" DMSfield="CONSTRUCTIONTYPE" Domain="Construction Type - OH"/>
+      <add GISfield="COASTALIDC" DMSfield="COASTAL_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+    </GISTable>
+    <GISTable id="PrimaryUG">
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="CEDSALINESECTIONID" DMSfield="CEDSALINESECTIONID"/>
+      <add GISfield="OPERATINGVOLTAGE" DMSfield="OPERATING_VOLTAGE" Domain="Primary Voltage"/>
+      <add GISfield="PHASINGVERIFIEDSTATUS" DMSfield="PHASING_VERIFIED" Domain="VerifiedPhasingStatus"/>
+      <add GISfield="MEASUREDLENGTH" DMSfield="LENGTH"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="REPLACEGUID" DMSfield="REPLACE_GUID"/>
+      <add GISfield="MAINLINEIDC" DMSfield="MAIN_LINE_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="NEUTRALIDC" DMSfield="NEUTRAL_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="SERVICEIDC" DMSfield="SERVICE_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="CUSTOMEROWNED" DMSfield="CUSTOMER_OWNED_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="CONSTRUCTIONTYPE" DMSfield="CONSTRUCTIONTYPE" Domain="Construction Type - UG"/>
+      <add GISfield="COASTALIDC" DMSfield="COASTAL_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="CABLECOUNT" DMSfield="CABLE_COUNT" />
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+    </GISTable>
+    <GISTable id="DistBusBar">
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="CEDSALINESECTIONID" DMSfield="CEDSALINESECTIONID"/>
+      <add GISfield="OPERATINGVOLTAGE" DMSfield="OPERATING_VOLTAGE" Domain="Primary Voltage"/>
+      <add GISfield="PHASINGVERIFIEDSTATUS" DMSfield="PHASING_VERIFIED" Domain="VerifiedPhasingStatus"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+    </GISTable>
+    <GISTable id="SUBPrimaryOH">
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="NOMINALVOLTAGE" DMSfield="OPERATING_VOLTAGE"/>
+      <add GISfield="MEASUREDLENGTH" DMSfield="LENGTH"/>
+      <add GISfield="SUBSTATIONID" DMSfield="FDR_SUB_ID"/>
+      <add GISfield="METALCLADIDC" DMSfield="METAL_CLAD_IDC"/>
+      <add GISfield="CONDUCTORSPERPHASE" DMSfield="CONDUCTORS_PER_PHASE"/>
+      <add GISfield="CONSTRUCTIONTYPE" DMSfield="CONSTRUCTIONTYPE" Domain="SUB OH Line Construction Code"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+    </GISTable>
+    <GISTable id="SUBPrimaryUG">
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="NOMINALVOLTAGE" DMSfield="OPERATING_VOLTAGE"/>
+      <add GISfield="MEASUREDLENGTH" DMSfield="LENGTH"/>
+      <add GISfield="SUBSTATIONID" DMSfield="FDR_SUB_ID"/>
+      <add GISfield="METALCLADIDC" DMSfield="METAL_CLAD_IDC"/>
+      <add GISfield="CONDUCTORSPERPHASE" DMSfield="CONDUCTORS_PER_PHASE"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+    </GISTable>
+    <GISTable id="SUBBusBar">
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="NOMINALVOLTAGE" DMSfield="OPERATING_VOLTAGE"/>
+      <add GISfield="MEASUREDLENGTH" DMSfield="LENGTH"/>
+      <add GISfield="SUBSTATIONID" DMSfield="FDR_SUB_ID"/>
+      <add GISfield="MATERIAL" DMSfield="MATERIAL" Domain="SUB Bus Bar Material"/>
+      <add GISfield="BUSSIZE" DMSfield="CONDUCTOR_SIZE"/>
+      <add GISfield="BUSBARUSAGE" DMSfield="BUSBAR_USAGE" Domain="SUB Bus Bar Usage"/>
+      <add GISfield="BUSBARSHAPE" DMSfield="BUSBAR_SHAPE" Domain="SUB Bus Bar Shape"/>
+      <add GISfield="BUSNUMBER" DMSfield="BUSBAR_NUMBER"/>
+      <add GISfield="BUSSECTION" DMSfield="BUSBAR_SECTION"/>
+      <add GISfield="METALCLADIDC" DMSfield="METAL_CLAD_IDC"/>
+      <add GISfield="CONDUCTORSPERPHASE" DMSfield="CONDUCTORS_PER_PHASE"/>
+    </GISTable>
+  </DMSTable>
+  <DMSTable name="DMSSTAGING.LOAD">
+    <GISTable id="Transformer">
+      <add GISfield="LOCDESC" DMSfield="DESCRIPTIVE_LOC" Replace="\r\n, ;"/>
+      <add GISfield="UNITCOUNT" DMSfield="UNIT_COUNT"/>
+      <add GISfield="INSTALLATIONTYPE" DMSfield="INSTALLATION_TYPE" Domain="Installation Type"/>
+      <add GISfield="INTERRUPTERIDC" DMSfield="INTERRUPTER_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="AUTOIDC" DMSfield="AUTO_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="OPERATINGVOLTAGE" DMSfield="OPERATING_VOLTAGE" Domain="Primary Voltage"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="VAULT" DMSfield="VAULT"/>
+	    <add GISfield="COASTALIDC" DMSfield="COASTAL_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <add GISfield="NUMBEROFPHASES" DMSfield="PHASES"/>
+      <add GISfield="LIVEFRONTIDC" DMSfield="LIVE_FRONT_IDC" Domain="Multiple"/>
+      <add GISfield="LOADBREAK" DMSfield="LOAD_BREAK_IDC" Domain="Load Break"/>
+      <add GISfield="SPOTIDC" DMSfield="SPOT_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="STABILIZINGBANKIDC" DMSfield="STABLIZING_BANK_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="GROUNDEDIDC" DMSfield="GROUNDED_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="HIGHSIDEVOLTAGE" DMSfield="HIGH_SIDE_VOLTAGE" Domain="Yes No Indicator"/>
+      <add GISfield="LOWSIDEVOLTAGE" DMSfield="LOW_SIDE_VOLTAGE" Domain="Yes No Indicator"/>
+      <add GISfield="CUSTOMEROWNED" DMSfield="CUSTOMER_OWNED_IDC" Domain="Yes No Indicator"/>
+      <!--<add GISfield="TNUM" DMSfield="TNUM"/>-->
+      <add GISfield="NUMBEROFPHASES" DMSfield="PHASES"/>
+      <add GISfield="CEDSASTRUCTUREID" DMSfield="CEDSA_STRUCTURE_ID" />
+      <add GISfield="CEDSADEVICEID" DMSfield="CEDSA_DEVICE_ID" />
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="GEMSCIRCUITMAPNUM" DMSfield="GEMS_CIRCUIT_MAP" />
+      <add GISfield="GEMSDISTMAPNUM" DMSfield="GEMS_DIST_MAP"/>
+      <add GISfield="PHASINGVERIFIEDSTATUS" DMSfield="PHASING_VERIFIED" Domain="VerifiedPhasingStatus"/>
+      <add GISfield="REPLACEGUID" DMSfield="REPLACE_GUID"/>
+      <add GISfield="SUBWAYIDC" DMSfield="SUBWAY_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="STRUCTUREGUID" DMSfield="STRUCTURE_GUID"/>
+      <add GISfield="DISTRIBUTEDGENERATIONIDC" DMSfield="DIST_GEN_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="STRUCTURECONVID" DMSfield="STRUCTURE_CONV_ID"/>
+      <add GISfield="LOWSIDEVOLTAGE" DMSfield="LOW_SIDE_VOLTAGE" Domain="Secondary Voltage"/>
+    </GISTable>
+    <GISTable id="PrimaryMeter">	  
+      <add GISfield="RATEDKVA" DMSfield="RATING_1"/>
+      <add GISfield="RATEDKVA" DMSfield="RATING_2"/>
+	    <add GISfield="RATEDKVA" DMSfield="RATING_3"/>
+      <add GISfield="RATEDKVA" DMSfield="RATING_4"/>
+      <add GISfield="LOCATIONDESC" DMSfield="DESCRIPTIVE_LOC"/>
+      <add GISfield="OPERATINGVOLTAGE" DMSfield="OPERATING_VOLTAGE" Domain="Primary Voltage"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="VAULT" DMSfield="VAULT"/>
+      <add GISfield="MANUFACTURER" DMSfield="MANUFACTURER"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>      
+      <add GISfield="YEARMANUFACTURED" DMSfield="MANUFACTURED_DATE"/>
+      <add GISfield="SERIALNUMBER" DMSfield="SERIAL_NO"/>
+      <add GISfield="TNUM" DMSfield="TNUM"/>
+      <add GISfield="GENERATOR" DMSfield="GENERATOR_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="NAMEOFGENERATOR" DMSfield="GENERATOR_NAME"/>
+      <add GISfield="GENERATORTYPE" DMSfield="GENERATOR_TYPE"/>
+      <add GISfield="CUSTOMEROWNED" DMSfield="CUSTOMER_OWNED_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="KW" DMSfield="GENERATOR_KW"/>
+      <add GISfield="SECONDARYVOLTAGE" DMSfield="LOW_SIDE_VOLTAGE" Domain="Secondary Voltage"/>
+      <add GISfield="CEDSADEVICEID" DMSfield="CEDSA_DEVICE_ID" />
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="GEMSCIRCUITMAPNUM" DMSfield="GEMS_CIRCUIT_MAP" />
+      <add GISfield="GEMSDISTMAPNUM" DMSfield="GEMS_DIST_MAP"/>
+      <add GISfield="PHASINGVERIFIEDSTATUS" DMSfield="PHASING_VERIFIED" Domain="VerifiedPhasingStatus"/>
+      <add GISfield="REPLACEGUID" DMSfield="REPLACE_GUID"/>
+      <add GISfield="STRUCTUREGUID" DMSfield="STRUCTURE_GUID"/>
+      <add GISfield="STRUCTURECONVID" DMSfield="STRUCTURE_CONV_ID"/>
+    </GISTable>
+    <GISTable id="SUBStationTransformer">    
+      <add GISfield="RATEDKVA" DMSfield="RATING_1"/>
+      <add GISfield="SUBSTATIONID" DMSfield="FDR_SUB_ID"/>
+      <add GISfield="NUMBEROFUNITS" DMSfield="UNIT_COUNT"/>
+      <add GISfield="INTERRUPTERIDC" DMSfield="INTERRUPTER_IDC"/>
+      <add GISfield="AUTOIDC" DMSfield="AUTO_IDC"/>
+      <!--<add GISfield="OPERATINGVOLTAGE" DMSfield="OPERATING_VOLTAGE"/>-->
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="SCADAIDC" DMSfield="SUPERVISORY_CONTROL_IDC"/>
+      <add GISfield="RACKEDININD" DMSfield="RACKEDIN_IDC"/>
+      <add GISfield="HIGHSIDEVOLTAGE" DMSfield="HIGH_SIDE_VOLTAGE"/>
+      <!--<add GISfield="LOWSIDEVOLTAGE" DMSfield="LOW_SIDE_VOLTAGE"/>-->
+    </GISTable>
+  </DMSTable>
+  <DMSTable name="DMSSTAGING.CAPACITOR">
+    <GISTable id="Capacitor">
+      <add GISfield="OPERATINGNUMBER" DMSfield="CANAME"/>
+	    <add GISfield="LOCDESC" DMSfield="DESCRIPTIVE_LOC" Replace="\r\n, ;"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="SUPERVISORYCONTROL" DMSfield="SUPERVISORY_CONTROL_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="INSTALLATIONTYPE" DMSfield="INSTALLATION_TYPE" Domain="Installation Type"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="CEDSADEVICEID" DMSfield="CEDSADEVICEID"/>
+      <add GISfield="COMPLEXDEVICEIDC" DMSfield="COMPLEX_DEVICE_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="SERIESIMPEDIENCE" DMSfield="SERIES_IMPEDENCE"/>
+      <add GISfield="UNITCOUNT" DMSfield="UNIT_COUNT"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <add GISfield="MANUFACTURER" DMSfield="MANUFACTURER"/>
+      <add GISfield="YEARMANUFACTURED" DMSfield="MANUFACTURED_DATE"/>
+      <add GISfield="SERIALNUMBER" DMSfield="SERIAL_NO"/>
+      <add GISfield="NUMBEROFPHASES" DMSfield="PHASES"/>
+      <add GISfield="OPERATINGVOLTAGE" DMSfield="OPERATING_VOLTAGE" Domain="Primary Voltage"/>
+      <add GISfield="SWITCHEDWITHVARSENSORIDC" DMSfield="SWITCHED_SENSOR_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="CUSTOMEROWNED" DMSfield="CUSTOMER_OWNED_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="REPLACEGUID" DMSfield="REPLACE_GUID" />
+      <add GISfield="STRUCTUREGUID" DMSfield="STRUCTURE_GUID" />
+      <add GISfield="GEMSCIRCUITMAPNUM" DMSfield="GEMS_CIRCUIT_MAP" />
+      <add GISfield="GEMSDISTMAPNUM" DMSfield="GEMS_DIST_MAP"/>
+    </GISTable>
+    <GISTable id="SUBCapacitor">
+      <add GISfield="OPERATINGNUMBER" DMSfield="CANAME"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="FUNCTIONALLOCATION" DMSfield="DESCRIPTIVE_LOC"/>
+      <add GISfield="SCADAIDC" DMSfield="SUPERVISORY_CONTROL_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="SUBSTATIONID" DMSfield="FDR_SUB_ID"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="CONTROLTYPE" DMSfield="CONTROLLER_TYPE" Domain="Multiple"/>
+      <add GISfield="SERIESIMPEDIENCE" DMSfield="SERIES_IMPEDENCE"/>
+      <add GISfield="SWITCHTYPE" DMSfield="SWITCH_TYPE" Domain="Multiple"/>
+      <add GISfield="SWITCHPOSITION" DMSfield="SWITCH_POSITION" Domain="Multiple"/>
+      <add GISfield="FUSED" DMSfield="FUSED" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="SEASONOFF" DMSfield="SEASON" Domain="SUB Season"/>
+      <add GISfield="GANGOPERATEDIDC" DMSfield="GANG_OPERATED_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="UNITCOUNT" DMSfield="UNIT_COUNT"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <add GISfield="ONLINESTATUS" DMSfield="ONLINE_STATUS"  Domain="SUB Yes/No Indicator"/>
+      <add GISfield="OPERATINGNUMBER2" DMSfield="OPERATING_NUMBER2" Domain="District Name"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+    </GISTable>
+  </DMSTable>
+  <DMSTable name="DMSSTAGING.SOURCE">
+    <GISTable id="StitchPoint">
+      <add GISfield="LOCDESC" DMSfield="DESCRIPTIVE_LOC" Replace="\r\n, ;"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <!--<add GISfield="CEDSADEVICEID" DMSfield="CEDSADEVICEID"/>-->
+    </GISTable>
+
+    <!-- Changes for ENOS to SAP migration - DMS .. Start-->
+
+    <!--<GISTable id="PrimaryGen">
+	    <add GISfield="OWNERNAME" DMSfield="SONAME"/>
+	    <add GISfield="KW" DMSfield="KWGEN"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="CEDSADEVICEID" DMSfield="CEDSADEVICEID"/>
+      <add GISfield="GENERATORTYPE" DMSfield="GENERATOR_TYPE"/>
+      <add GISfield="CUSTOMEROWNED" DMSfield="CUSTOMER_OWNED_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="POWERFACTOR" DMSfield="POWER_FACTOR"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="LOCATIONDESC" DMSfield="DESCRIPTIVE_LOC"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      </GISTable>-->
+
+    <!-- Changes for ENOS to SAP migration - DMS .. End-->
+
+    <!-- Changes for ENOS to SAP migration - DMS  added for additional fields from related featureclasses for source record for Service Location -->
+
+    <GISTable id="ServiceLocation">
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="LOCATIONDESC" DMSfield="DESCRIPTIVE_LOC"/>
+    </GISTable>
+
+    <GISTable id="ServicePoint">
+      <add GISfield="SERVICEPOINTID" DMSfield="SERVICE_POINT"/>
+    </GISTable>
+
+    <GISTable id="GenerationInfo">
+      <add GISfield="PROJECTNAME" DMSfield="SONAME"/>
+      <add GISfield="PROJECTNAME" DMSfield="GENERATOR_NAME"/>
+      <add GISfield="GENTYPE" DMSfield="GENERATOR_TYPE"/>
+      <add GISfield="GLOBALID" DMSfield="GENERATION_GUID"/>
+      <add GISfield="EFFRATINGMACHKW" DMSfield="RATING_KW"/>
+      <add GISfield="EFFRATINGINVKW" DMSfield="RATING_KW_INV"/>
+    </GISTable>
+
+    <GISTable id="PrimaryMeter">
+      <add GISfield="OPERATINGVOLTAGE" DMSfield="NOMINAL_VOLTAGE"/>
+    </GISTable>
+
+    <GISTable id="Transformer">
+      <add GISfield="OPERATINGVOLTAGE" DMSfield="NOMINAL_VOLTAGE"/>
+    </GISTable>
+
+    <!-- Changes for ENOS to SAP migration - DMS .. End-->
+    
+    
+    <GISTable id="SUBStitchPoint">
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="SUBSTATIONNAME" DMSfield="SUBSTATION_NAME"/>
+      <add GISfield="POTHEADIDC" DMSfield="POT_HEAD_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="SCADAIDC" DMSfield="SUPERVISORY_CONTROL_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="STITCHPOINTID" DMSfield="STITCH_POINT_ID"/>
+    </GISTable>
+  </DMSTable>
+  <DMSTable name="DMSSTAGING.DEVICE">
+    <GISTable id="DynamicProtectiveDevice">
+      <add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="INSTALLATIONTYPE" DMSfield="INSTALLATION_TYPE" Domain="Installation Type"/>
+      <add GISfield="DEVICETYPE" DMSfield="DEVICE_TYPE" Domain="Dyn Protect Device Type"/>
+      <add GISfield="SUPERVISORYCONTROL" DMSfield="SUPERVISORY_CONTROL_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="SECTIONALIZERCUTOUT" DMSfield="SECTIONALIZER_CUTOUT_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="COMPLEXDEVICEIDC" DMSfield="COMPLEX_DEVICE_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="OPERATINGVOLTAGE" DMSfield="OPERATING_VOLTAGE" Domain="Primary Voltage"/>
+      <add GISfield="POTENTIAL" DMSfield="DIRECTION" Domain="Device Potential"/>
+      <add GISfield="TIESWITCHIDC" DMSfield="TIE_SWITCH_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="AUTOTRANSFERIDC" DMSfield="ATO_IDC"/>
+      <add GISfield="GANGOPERATED" DMSfield="GANG_OPERATED_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="BYPASSSWITCH" DMSfield="BYPASS_SWITCH_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="NORMALPOSITION_A" DMSfield="NORMAL_POSITION_A" Domain="Normal Status"/>
+      <add GISfield="NORMALPOSITION_B" DMSfield="NORMAL_POSITION_B" Domain="Normal Status"/>
+      <add GISfield="NORMALPOSITION_C" DMSfield="NORMAL_POSITION_C" Domain="Normal Status"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="CEDSADEVICEID" DMSfield="CEDSADEVICEID"/>
+      <add GISfield="VAULT" DMSfield="VAULT"/>
+	    <add GISfield="COASTALIDC" DMSfield="COASTAL_IDC" Domain="Yes No Indicator"/>
+	    <add GISfield="CCRATING" DMSfield="DEVICESIZE"/>
+      <add GISfield="LOCDESC" DMSfield="DESCRIPTIVE_LOC" Replace="\r\n, ;"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <add GISfield="MANUFACTURER" DMSfield="MANUFACTURER"/>
+      <add GISfield="YEARMANUFACTURED" DMSfield="MANUFACTURED_DATE"/>
+      <add GISfield="SERIALNUMBER" DMSfield="SERIAL_NO"/>
+      <add GISfield="AREASERVED" DMSfield="AREA_SERVED"/>
+      <add GISfield="BYPASSPLANS" DMSfield="BYPASS_PLANS"/>
+      <add GISfield="FLIPFLOP" DMSfield="FLIP_FLOP" Domain="Yes No Indicator"/>
+      <add GISfield="LOCKOUTNUM" DMSfield="LOCKOUT_NO"/>
+      <add GISfield="NUMBEROFPHASES" DMSfield="PHASES"/>
+      <add GISfield="OKTOBYPASS" DMSfield="BYPASS_OK" Domain="Yes No Indicator"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="REPLACEGUID" DMSfield="REPLACE_GUID" />
+      <add GISfield="STRUCTUREGUID" DMSfield="STRUCTURE_GUID" />
+      <add GISfield="GEMSCIRCUITMAPNUM" DMSfield="GEMS_CIRCUIT_MAP" />
+      <add GISfield="GEMSDISTMAPNUM" DMSfield="GEMS_DIST_MAP"/>
+      <add GISfield="PHASINGVERIFIEDSTATUS" DMSfield="PHASING_VERIFIED" Domain="VerifiedPhasingStatus"/>
+      <add GISfield="CUSTOMEROWNED" DMSfield="CUSTOMER_OWNED_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="MULTIFUNCTIONALIDC" DMSfield="MULTI_FUNCTIONAL_IDC" />
+      <add GISfield="OPERATINGAS" DMSfield="OPERATING_AS" Domain="OperatingAs"/>
+      <add GISfield="RECLOSEBLOCKIDC" DMSfield="RECLOSE_BLOCKING_IDC" />
+    </GISTable>
+    <GISTable id="FaultIndicator">
+      <add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>
+	    <add GISfield="LOCDESC" DMSfield="DESCRIPTIVE_LOC" Replace="\r\n, ;"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="INSTALLATIONTYPE" DMSfield="INSTALLATION_TYPE" Domain="Installation Type"/>
+      <add GISfield="COMPLEXDEVICEIDC" DMSfield="COMPLEX_DEVICE_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="OPERATINGVOLTAGE" DMSfield="OPERATING_VOLTAGE"  Domain="Primary Voltage"/>
+      <!--<add GISfield="UNITCOUNT" DMSfield="UNIT_COUNT"/>-->
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="CEDSADEVICEID" DMSfield="CEDSADEVICEID"/>
+      <add GISfield="VAULT" DMSfield="VAULT"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <!--<add GISfield="MANUFACTURER" DMSfield="MANUFACTURER"/>-->
+      <add GISfield="YEARMANUFACTURED" DMSfield="MANUFACTURED_DATE"/>
+      <add GISfield="SERIALNUMBER" DMSfield="SERIAL_NO"/>
+      <add GISfield="NUMBEROFPHASES" DMSfield="PHASES"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="GEMSCIRCUITMAPNUM" DMSfield="GEMS_CIRCUIT_MAP" />
+      <add GISfield="GEMSDISTMAPNUM" DMSfield="GEMS_DIST_MAP"/>
+      <add GISfield="PHASINGVERIFIEDSTATUS" DMSfield="PHASING_VERIFIED" Domain="VerifiedPhasingStatus"/>
+      <add GISfield="LOCDESC" DMSfield="DESCRIPTIVE_LOC" Replace="\r\n, ;"/>
+    </GISTable>
+    <GISTable id="Fuse">
+      <add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>
+      <add GISfield="LINKRATING" DMSfield="DEVICESIZE"/>
+      <add GISfield="LOCDESC" DMSfield="DESCRIPTIVE_LOC" Replace="\r\n, ;"/> 
+	    <add GISfield="LINKRATING" DMSfield="FUZESIZE"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="INSTALLATIONTYPE" DMSfield="INSTALLATION_TYPE" Domain="Installation Type"/> 	  
+      <add GISfield="LINKTYPE" DMSfield="LINK_TYPE" Domain="Fuse Link Type"/>
+      <add GISfield="COMPLEXDEVICEIDC" DMSfield="COMPLEX_DEVICE_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="OPERATINGVOLTAGE" DMSfield="OPERATING_VOLTAGE"  Domain="Primary Voltage"/>      
+      <add GISfield="NUMBERFUSESPERPHASE" DMSfield="FUSES_PER_PHASE"/>
+      <add GISfield="BYPASSSWITCH" DMSfield="BYPASS_SWITCH_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="NORMALPOSITION_A" DMSfield="NORMAL_POSITION_A" Domain="Normal Status"/>
+      <add GISfield="NORMALPOSITION_B" DMSfield="NORMAL_POSITION_B" Domain="Normal Status"/>
+      <add GISfield="NORMALPOSITION_C" DMSfield="NORMAL_POSITION_C" Domain="Normal Status"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="CEDSADEVICEID" DMSfield="CEDSADEVICEID"/>
+      <add GISfield="VAULT" DMSfield="VAULT"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <add GISfield="MANUFACTURER" DMSfield="MANUFACTURER"/>
+      <add GISfield="YEARMANUFACTURED" DMSfield="MANUFACTURED_DATE"/>
+      <add GISfield="SERIALNUMBER" DMSfield="SERIAL_NO"/>
+      <add GISfield="NUMBEROFPHASES" DMSfield="PHASES"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="REPLACEGUID" DMSfield="REPLACE_GUID" />
+      <add GISfield="STRUCTUREGUID" DMSfield="STRUCTURE_GUID" />
+      <add GISfield="GEMSCIRCUITMAPNUM" DMSfield="GEMS_CIRCUIT_MAP" />
+      <add GISfield="GEMSDISTMAPNUM" DMSfield="GEMS_DIST_MAP"/>
+      <add GISfield="PHASINGVERIFIEDSTATUS" DMSfield="PHASING_VERIFIED" Domain="VerifiedPhasingStatus"/>
+      <add GISfield="CUSTOMEROWNED" DMSfield="CUSTOMER_OWNED_IDC" Domain="Yes No Indicator"/>
+    </GISTable>
+    <GISTable id="OpenPoint">
+      <add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>
+	    <add GISfield="LOCDESC" DMSfield="DESCRIPTIVE_LOC" Replace="\r\n, ;"/> 
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="INSTALLATIONTYPE" DMSfield="INSTALLATION_TYPE" Domain="Installation Type"/>
+      <add GISfield="COMPLEXDEVICEIDC" DMSfield="COMPLEX_DEVICE_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="OPERATINGVOLTAGE" DMSfield="OPERATING_VOLTAGE" Domain="Primary Voltage"/>
+      <add GISfield="RATEDAMPS" DMSfield="RATED_AMPS" Domain="Multiple"/>
+      <add GISfield="NORMALPOSITION_A" DMSfield="NORMAL_POSITION_A" Domain="Normal Status"/>
+      <add GISfield="NORMALPOSITION_B" DMSfield="NORMAL_POSITION_B" Domain="Normal Status"/>
+      <add GISfield="NORMALPOSITION_C" DMSfield="NORMAL_POSITION_C" Domain="Normal Status"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="CEDSADEVICEID" DMSfield="CEDSADEVICEID"/>
+      <add GISfield="VAULT" DMSfield="VAULT"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <add GISfield="MANUFACTURER" DMSfield="MANUFACTURER"/>
+      <add GISfield="YEARMANUFACTURED" DMSfield="MANUFACTURED_DATE"/>
+      <add GISfield="SERIALNUMBER" DMSfield="SERIAL_NO"/>
+      <add GISfield="NUMBEROFPHASES" DMSfield="PHASES"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="REPLACEGUID" DMSfield="REPLACE_GUID" />
+      <add GISfield="STRUCTUREGUID" DMSfield="STRUCTURE_GUID" />
+      <add GISfield="GEMSCIRCUITMAPNUM" DMSfield="GEMS_CIRCUIT_MAP" />
+      <add GISfield="GEMSDISTMAPNUM" DMSfield="GEMS_DIST_MAP"/>
+      <add GISfield="PHASINGVERIFIEDSTATUS" DMSfield="PHASING_VERIFIED" Domain="VerifiedPhasingStatus"/>
+      <add GISfield="CUSTOMEROWNED" DMSfield="CUSTOMER_OWNED_IDC" Domain="Yes No Indicator"/>
+    </GISTable>
+    <GISTable id="StepDown">
+      <add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>
+	    <add GISfield="LOCDESC" DMSfield="DESCRIPTIVE_LOC" Replace="\r\n, ;"/> 
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="INSTALLATIONTYPE" DMSfield="INSTALLATION_TYPE" Domain="Installation Type"/>
+      <add GISfield="COMPLEXDEVICEIDC" DMSfield="COMPLEX_DEVICE_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="RATEDKVA" DMSfield="RATED_KVA"/>
+      <add GISfield="OPERATINGVOLTAGE" DMSfield="OPERATING_VOLTAGE" Domain="Primary Voltage"/>
+      <add GISfield="OUTPUTVOLTAGE" DMSfield="OUTPUT_VOLTAGE" Domain="Primary Voltage"/>
+      <add GISfield="UNITCOUNT" DMSfield="UNIT_COUNT"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="CEDSADEVICEID" DMSfield="CEDSADEVICEID"/>
+      <add GISfield="VAULT" DMSfield="VAULT"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <!--<add GISfield="MANUFACTURER" DMSfield="MANUFACTURER"/>
+      <add GISfield="YEARMANUFACTURED" DMSfield="MANUFACTURED_DATE"/>
+      <add GISfield="SERIALNUMBER" DMSfield="SERIAL_NO"/>-->
+      <add GISfield="NUMBEROFPHASES" DMSfield="PHASES"/>
+      <add GISfield="CONNECTIONCODE" DMSfield="CONNECTION_CODE"  Domain="Connection Code"/>
+      <add GISfield="STEPUPIDC" DMSfield="STEP_UP_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="REPLACEGUID" DMSfield="REPLACE_GUID" />
+      <add GISfield="STRUCTUREGUID" DMSfield="STRUCTURE_GUID" />
+      <add GISfield="GEMSCIRCUITMAPNUM" DMSfield="GEMS_CIRCUIT_MAP" />
+      <add GISfield="GEMSDISTMAPNUM" DMSfield="GEMS_DIST_MAP"/>
+      <add GISfield="PHASINGVERIFIEDSTATUS" DMSfield="PHASING_VERIFIED" Domain="VerifiedPhasingStatus"/>
+      <add GISfield="CUSTOMEROWNED" DMSfield="CUSTOMER_OWNED_IDC" Domain="Yes No Indicator"/>
+    </GISTable>
+    <GISTable id="Switch">
+      <add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>
+	    <add GISfield="CCRATING" DMSfield="DEVICESIZE"/>
+      <add GISfield="LOCDESC" DMSfield="DESCRIPTIVE_LOC" Replace="\r\n, ;"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="INSTALLATIONTYPE" DMSfield="INSTALLATION_TYPE" Domain="Installation Type"/>
+      <add GISfield="SUPERVISORYCONTROL" DMSfield="SUPERVISORY_CONTROL_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="SWITCHTYPE" DMSfield="SWITCH_TYPE" Domain="Switch Type"/>
+      <add GISfield="SECTIONALIZINGFEATURE" DMSfield="SECTIONALIZING_FEATURE" Domain="Sectionalizing Feature"/>
+      <add GISfield="ATTACHMENTTYPE" DMSfield="ATTACHMENT_TYPE" Domain="Switch Attachment Types"/>
+      <add GISfield="COMPLEXDEVICEIDC" DMSfield="COMPLEX_DEVICE_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="OPERATINGVOLTAGE" DMSfield="OPERATING_VOLTAGE"  Domain="Primary Voltage"/>
+      <add GISfield="TIESWITCHIDC" DMSfield="TIE_SWITCH_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="AUTOTRANSFERIDC" DMSfield="ATO_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="GANGOPERATED" DMSfield="GANG_OPERATED_IDC"/>
+      <add GISfield="NORMALPOSITION_A" DMSfield="NORMAL_POSITION_A" Domain="Normal Status"/>
+      <add GISfield="NORMALPOSITION_B" DMSfield="NORMAL_POSITION_B" Domain="Normal Status"/>
+      <add GISfield="NORMALPOSITION_C" DMSfield="NORMAL_POSITION_C" Domain="Normal Status"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="CEDSADEVICEID" DMSfield="CEDSADEVICEID"/>
+      <add GISfield="VAULT" DMSfield="VAULT"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <add GISfield="MANUFACTURER" DMSfield="MANUFACTURER"/>
+      <add GISfield="YEARMANUFACTURED" DMSfield="MANUFACTURED_DATE"/>
+      <add GISfield="SERIALNUMBER" DMSfield="SERIAL_NO"/>
+      <add GISfield="NUMBEROFPHASES" DMSfield="PHASES"/>
+      <add GISfield="CLASS" DMSfield="SWITCH_CLASS" Domain="Switch Class"/>
+      <add GISfield="PCMINTOCT" DMSfield="PC_MIN_TO_CT"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="REPLACEGUID" DMSfield="REPLACE_GUID" />
+      <add GISfield="STRUCTUREGUID" DMSfield="STRUCTURE_GUID" />
+      <add GISfield="GEMSCIRCUITMAPNUM" DMSfield="GEMS_CIRCUIT_MAP" />
+      <add GISfield="GEMSDISTMAPNUM" DMSfield="GEMS_DIST_MAP"/>
+      <add GISfield="PHASINGVERIFIEDSTATUS" DMSfield="PHASING_VERIFIED" Domain="VerifiedPhasingStatus"/>
+      <add GISfield="CUSTOMEROWNED" DMSfield="CUSTOMER_OWNED_IDC" Domain="Yes No Indicator"/>
+    </GISTable>
+    <GISTable id="VoltageRegulator">
+      <add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>
+	    <add GISfield="LOCDESC" DMSfield="DESCRIPTIVE_LOC" Replace="\r\n, ;"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="INSTALLATIONTYPE" DMSfield="INSTALLATION_TYPE" Domain="Installation Type"/>
+      <add GISfield="SUPERVISORYCONTROLIDC" DMSfield="SUPERVISORY_CONTROL_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="COMPLEXDEVICEIDC" DMSfield="COMPLEX_DEVICE_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="RATEDKVA" DMSfield="RATED_KVA"/>
+      <add GISfield="OPERATINGVOLTAGE" DMSfield="OPERATING_VOLTAGE"  Domain="Primary Voltage"/>
+      <add GISfield="RATEDAMPS" DMSfield="RATED_AMPS"/>
+      <add GISfield="POTENTIAL" DMSfield="DIRECTION" Domain="Device Potential"/>
+      <add GISfield="UNITCOUNT" DMSfield="UNIT_COUNT"/>
+      <add GISfield="BYPASSSWITCH" DMSfield="BYPASS_SWITCH_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="CEDSADEVICEID" DMSfield="CEDSADEVICEID"/>
+      <add GISfield="AUTOBOOSTER" DMSfield="AUTO_BOOSTER_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="AUTOMANUAL" DMSfield="AUTO_MANUAL_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="VAULT" DMSfield="VAULT"/>
+      <add GISfield="BOOSTPERCENT" DMSfield="BOOST_PERCENT"/>
+      <add GISfield="BUCKPERCENT" DMSfield="BUCK_PERCENT"/>
+      <add GISfield="REVERSEPOWERFLOW" DMSfield="REVERSE_POWER_FLOW_IDC" Domain="Yes No Indicator"/>
+	    <add GISfield="COASTALIDC" DMSfield="COASTAL_IDC" Domain="Yes No Indicator"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <!--<add GISfield="MANUFACTURER" DMSfield="MANUFACTURER"/>
+      <add GISfield="YEARMANUFACTURED" DMSfield="MANUFACTURED_DATE"/>
+      <add GISfield="SERIALNUMBER" DMSfield="SERIAL_NO"/>-->
+      <add GISfield="NUMBEROFPHASES" DMSfield="PHASES"/>
+      <add GISfield="BYPASSPOSITION" DMSfield="BYPASS_POSITION" Domain="Normal Status"/>
+      <add GISfield="HIGHSIDECONFIGURATION" DMSfield="HIGH_SIDE_CONFIG" Domain="Volt Reg Bank High Side Config"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="REPLACEGUID" DMSfield="REPLACE_GUID" />
+      <add GISfield="STRUCTUREGUID" DMSfield="STRUCTURE_GUID" />
+      <add GISfield="GEMSCIRCUITMAPNUM" DMSfield="GEMS_CIRCUIT_MAP" />
+      <add GISfield="GEMSDISTMAPNUM" DMSfield="GEMS_DIST_MAP"/>
+      <add GISfield="PHASINGVERIFIEDSTATUS" DMSfield="PHASING_VERIFIED" Domain="VerifiedPhasingStatus"/>
+      <add GISfield="CUSTOMEROWNED" DMSfield="CUSTOMER_OWNED_IDC" Domain="Yes No Indicator"/>
+    </GISTable>
+    <GISTable id="SUBFuse">
+      <add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>
+      <add GISfield="FUSERATING" DMSfield="DEVICESIZE" Domain="XSUB Fuse Link Amps"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="SUBSTATIONID" DMSfield="FDR_SUB_ID"/>
+      <add GISfield="SCADAIDC" DMSfield="SUPERVISORY_CONTROL_IDC"/>
+      <add GISfield="FUSETYPE" DMSfield="LINK_TYPE"/>
+      <add GISfield="NOMINALVOLTAGE" DMSfield="OPERATING_VOLTAGE"/>
+      <add GISfield="GANGOPERATEDIDC" DMSfield="GANG_OPERATED_IDC"/>
+      <add GISfield="NORMALPOSITION_A" DMSfield="NORMAL_POSITION_A" Domain="Normal Status"/>
+      <add GISfield="NORMALPOSITION_B" DMSfield="NORMAL_POSITION_B" Domain="Normal Status"/>
+      <add GISfield="NORMALPOSITION_C" DMSfield="NORMAL_POSITION_C" Domain="Normal Status"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="HOTSTICKOPERABLEIDC" DMSfield="HOT_STICK_OPERABLE_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="RACKEDININD" DMSfield="RACKEDIN_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="RACKEDIDC" DMSfield="RACKED_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="METALCLADIDC" DMSfield="METAL_CLAD_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <add GISfield="MAXCONTINUOUSCURRENT" DMSfield="MAX_CONTINUOUS_CURRENT" Domain="SUB Continuous Current Rating"/>
+      <add GISfield="MAXINTERRUPTINGCURRENT" DMSfield="MAXINTERRUPTING_CURRENT" Domain="SUB Interrupting Current Rating"/>
+      <add GISfield="HYPERLINK" DMSfield="HYPER_LINK"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="OPERATINGNUMBER2" DMSfield="OPERATING_NUMBER2"/>
+    </GISTable>
+    <GISTable id="SUBInterruptingDevice">
+      <add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>
+      <add GISfield="CCRATING" DMSfield="DEVICESIZE"/>
+      <add GISfield="SCADAIDC" DMSfield="SUPERVISORY_CONTROL_IDC"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="FUNCTIONALLOCATION" DMSfield="DESCRIPTIVE_LOC"/>
+      <add GISfield="SUBSTATIONID" DMSfield="FDR_SUB_ID"/>
+      <add GISfield="NOMINALVOLTAGE" DMSfield="OPERATING_VOLTAGE"/>
+      <add GISfield="CCRATING" DMSfield="RATED_AMPS"/>
+      <add GISfield="AUTOTRANSFERIDC" DMSfield="ATO_IDC"/>
+      <add GISfield="GANGOPERATEDIDC" DMSfield="GANG_OPERATED_IDC"/>
+      <add GISfield="NORMALPOSITION_A" DMSfield="NORMAL_POSITION_A" Domain="Normal Status"/>
+      <add GISfield="NORMALPOSITION_B" DMSfield="NORMAL_POSITION_B" Domain="Normal Status"/>
+      <add GISfield="NORMALPOSITION_C" DMSfield="NORMAL_POSITION_C" Domain="Normal Status"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="RACKEDININD" DMSfield="RACKEDIN_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="METALCLADIDC" DMSfield="METAL_CLAD_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="OPERATINGMECHANISM" DMSfield="OPERATING_MECHANISM"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <add GISfield="MAXCONTINUOUSCURRENT" DMSfield="MAX_CONTINUOUS_CURRENT" Domain="SUB Continuous Current Rating"/>
+      <add GISfield="MAXINTERRUPTINGCURRENT" DMSfield="MAXINTERRUPTING_CURRENT" Domain="SUB Interrupting Current Rating"/>
+      <add GISfield="INTERRUPTINGMECHANISM" DMSfield="INTERRUPTING_MECHANISM" Domain="SUB Interrupting Mechanism Type"/>
+      <add GISfield="INTERRUPTINGMEDIUM" DMSfield="INTERRUPTING_MEDIUM" Domain="SUB Interrupting Medium Type"/>
+      <add GISfield="FUTUREIDC" DMSfield="FUTURE_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="HYPERLINK" DMSfield="HYPER_LINK"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="OPERATINGNUMBER2" DMSfield="OPERATING_NUMBER2"/>
+      <add GISfield="CEDSADEVICEID" DMSfield="CEDSADEVICEID"/>
+      <add GISfield="FLISRIDC" DMSfield="FLISR_IDC"/>
+      <add GISfield="MULTIFUNCTIONALIDC" DMSfield="MULTI_FUNCTIONAL_IDC"/>
+      <add GISfield="OPERATINGASDEVICE" DMSfield="OPERATING_AS" Domain="SUB Operating As Device"/>
+      <add GISfield="RECLOSEBLOCKINGIDC" DMSfield="RECLOSE_BLOCKING_IDC"/>
+      <add GISfield="RECLOSINGCAPABILITYIDC" DMSfield="RECLOSING_CAPABILITY_IDC"/>
+    </GISTable>
+    <GISTable id="SUBReactor">
+      <add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>
+      <add GISfield="CCRATING" DMSfield="DEVICESIZE"/>
+      <add GISfield="FUNCTIONALLOCATION" DMSfield="DESCRIPTIVE_LOC"/>
+      <add GISfield="SCADAIDC" DMSfield="SUPERVISORY_CONTROL_IDC"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="SUBSTATIONID" DMSfield="FDR_SUB_ID"/>
+      <add GISfield="NOMINALVOLTAGE" DMSfield="OPERATING_VOLTAGE"/>
+      <add GISfield="CCRATING" DMSfield="RATED_AMPS"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <add GISfield="MAXCONTINUOUSCURRENT" DMSfield="MAX_CONTINUOUS_CURRENT" Domain="SUB Continuous Current Rating"/>
+      <!--<add GISfield="MAXINTERRUPTINGCURRENT" DMSfield="MAXINTERRUPTING_CURRENT" Domain="SUB Interrupting Current Rating"/>-->
+      <add GISfield="INDUCTANCEMH" DMSfield="INDUCTANCE"/>
+      <add GISfield="REACTANCEOHMS" DMSfield="REACTANCE_OHMS"/>
+      <add GISfield="HYPERLINK" DMSfield="HYPER_LINK"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="OPERATINGNUMBER2" DMSfield="OPERATING_NUMBER2"/>
+    </GISTable>
+    <GISTable id="SUBSwitch">
+      <add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>
+      <add GISfield="CCRATING" DMSfield="DEVICESIZE"/>
+      <add GISfield="FUNCTIONALLOCATION" DMSfield="DESCRIPTIVE_LOC"/>
+      <add GISfield="SCADAIDC" DMSfield="SUPERVISORY_CONTROL_IDC"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="SUBSTATIONID" DMSfield="FDR_SUB_ID"/>
+      <add GISfield="SWITCHTYPE" DMSfield="SWITCH_TYPE"/>
+      <add GISfield="ATTACHMENTTYPE" DMSfield="ATTACHMENT_TYPE"/>
+      <add GISfield="NOMINALVOLTAGE" DMSfield="OPERATING_VOLTAGE"/>
+      <add GISfield="CCRATING" DMSfield="RATED_AMPS"/>
+      <add GISfield="GANGOPERATEDIDC" DMSfield="GANG_OPERATED_IDC"/>
+      <add GISfield="NORMALPOSITION_A" DMSfield="NORMAL_POSITION_A" Domain="SUB Normal Status"/>
+      <add GISfield="NORMALPOSITION_B" DMSfield="NORMAL_POSITION_B" Domain="SUB Normal Status"/>
+      <add GISfield="NORMALPOSITION_C" DMSfield="NORMAL_POSITION_C" Domain="SUB Normal Status"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <!--<add GISfield="HOTSTICKOPERABLEIDC" DMSfield="HOT_STICK_OPERABLE_IDC" Domain="SUB Yes/No Indicator"/>-->
+      <!--<add GISfield="RACKEDININD" DMSfield="RACKEDIN_IDC" Domain="SUB Yes/No Indicator"/>-->
+      <add GISfield="METALCLADIDC" DMSfield="METAL_CLAD_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="OPERATINGMECHANISM" DMSfield="OPERATING_MECHANISM"/>
+      <!--<add GISfield="OPERATIONTYPE" DMSfield="OPERATING_TYPE"/>-->
+      <add GISfield="SWITCHUSE" DMSfield="SWITCH_USE" Domain="SUB Switch Use"/>
+      <add GISfield="INTERLOCKINGIDC" DMSfield="INTERLOCK_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <add GISfield="MAXCONTINUOUSCURRENT" DMSfield="MAX_CONTINUOUS_CURRENT" Domain="SUB Continuous Current Rating"/>
+      <add GISfield="MAXINTERRUPTINGCURRENT" DMSfield="MAXINTERRUPTING_CURRENT" Domain="SUB Interrupting Current Rating"/>
+      <add GISfield="INTERRUPTINGMEDIUM" DMSfield="INTERRUPTING_MEDIUM" Domain="SUB Interrupting Medium Type"/>
+      <add GISfield="HYPERLINK" DMSfield="HYPER_LINK"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="OPERATINGNUMBER2" DMSfield="OPERATING_NUMBER2"/>
+      <add GISfield="CONSTRUCTIONSTYLE" DMSfield="ATTACHMENT_TYPE" Domain ="SUB Switch Construction Style"/>
+      <add GISfield="FLISRIDC" DMSfield="FLISR_IDC"/>
+      <add GISfield="MULTIFUNCTIONALIDC" DMSfield="MULTI_FUNCTIONAL_IDC"/>
+      <add GISfield="OPERATINGASDEVICE" DMSfield="OPERATING_AS" Domain="SUB Operating As Device"/>
+      <add GISfield="RECLOSEBLOCKINGIDC" DMSfield="RECLOSE_BLOCKING_IDC"/>
+      <add GISfield="RECLOSINGCAPABILITYIDC" DMSfield="RECLOSING_CAPABILITY_IDC"/>
+    </GISTable>
+    <GISTable id="SUBTransformer">
+      <add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>
+      <add GISfield="FUNCTIONALLOCATION" DMSfield="DESCRIPTIVE_LOC"/>
+      <add GISfield="SCADAIDC" DMSfield="SUPERVISORY_CONTROL_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="SUBSTATIONID" DMSfield="FDR_SUB_ID"/>
+      <add GISfield="NUMBEROFUNITS" DMSfield="UNIT_COUNT"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="HIGHSIDEVOLTAGE" DMSfield="HIGH_SIDE_VOLTAGE" />
+      <add GISfield="LOWSIDELLVOLTAGE" DMSfield="LOW_SIDE_VOLTAGE" />
+      <add GISfield="TERTIARYVOLTAGE" DMSfield="TERTIARY_VOLTAGE" />
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <add GISfield="HIGHSIDECONFIGURATION" DMSfield="HIGH_SIDE_CONFIG" Domain="SUB Transformer Config"/>
+      <add GISfield="AUTOTRANSFORMERBANKIDC" DMSfield="AUTO_TX_BANK_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="LOWSIDECONFIGURATION" DMSfield="LOW_SIDE_CONFIG" Domain="SUB Transformer Config"/>
+      <add GISfield="LTCIDC" DMSfield="LTC_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="SPAREUNITAVAILABILITYIDC" DMSfield="SPARE_AVAILABILITY_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="TEMPERATURERISE" DMSfield="TEMPERATURE_RISE" Domain="SUB Transformer Temperature Rise"/>
+      <add GISfield="TERTIARYCONFIGURATION" DMSfield="TERTIARY_CONFIG" Domain="SUB Transformer Config"/>
+      <add GISfield="TERTIARYIDC" DMSfield="TERTIARY_IDC"  Domain="SUB Yes/No Indicator"/>
+      <add GISfield="TERTIARYMVAPERCENT" DMSfield="TERTIARY_MVA_PERCENT"/>
+      <add GISfield="TERTIARYMVARATING" DMSfield="TERTIARY_MVA" Domain="SUB Transformer MVA Rating"/>
+      <add GISfield="HYPERLINK" DMSfield="HYPER_LINK"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="OPERATINGNUMBER2" DMSfield="OPERATING_NUMBER2"/>
+      <add GISfield="METALCLADIDC" DMSfield="METAL_CLAD_IDC" Domain="SUB Yes/No Indicator"/>
+    </GISTable>
+    <GISTable id="SUBVoltageRegulator">
+      <add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>
+      <add GISfield="FUNCTIONALLOCATION" DMSfield="DESCRIPTIVE_LOC"/>
+      <add GISfield="SCADAIDC" DMSfield="SUPERVISORY_CONTROL_IDC"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="SUBSTATIONID" DMSfield="FDR_SUB_ID"/>
+      <add GISfield="RATEDMVA" DMSfield="RATED_KVA"/>
+      <add GISfield="NOMINALVOLTAGE" DMSfield="OPERATING_VOLTAGE"/>
+      <add GISfield="RATEDAMPS" DMSfield="RATED_AMPS"/>
+      <add GISfield="GANGOPERATEDIDC" DMSfield="GANG_OPERATED_IDC"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <add GISfield="HIGHSIDECONFIGURATION" DMSfield="HIGH_SIDE_CONFIG" Domain="SUB Transformer Config"/>
+      <add GISfield="REGULATORTYPE" DMSfield="REGULATOR_TYPE" Domain="SUB RegulatorType"/>
+      <add GISfield="PTRATIO" DMSfield="PT_RATIO"/>
+      <add GISfield="HYPERLINK" DMSfield="HYPER_LINK"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="OPERATINGNUMBER2" DMSfield="OPERATING_NUMBER2"/>
+      <add GISfield="METALCLADIDC" DMSfield="METAL_CLAD_IDC" Domain="SUB Yes/No Indicator"/>
+    </GISTable>
+    <GISTable id="SUBMTU">
+      <add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>
+      <add GISfield="RATEDKVA" DMSfield="RATED_KVA"/>
+      <add GISfield="COMMENTS" DMSfield="COMMENTS" Replace="\r\n, ;"/>
+      <add GISfield="ZIP" DMSfield="ZIP"/>
+      <add GISfield="CITY" DMSfield="CITY"/>
+      <add GISfield="AUTOIDC" DMSfield="AUTO_MANUAL_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="SCADAIDC" DMSfield="SUPERVISORY_CONTROL_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="SUBSTATIONID" DMSfield="FDR_SUB_ID"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <add GISfield="HIGHSIDECONFIGURATION" DMSfield="HIGH_SIDE_CONFIG" Domain="SUB Station Trans High Side Config"/>
+      <add GISfield="HYPERLINK" DMSfield="HYPER_LINK"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="OPERATINGNUMBER2" DMSfield="OPERATING_NUMBER2"/>
+    </GISTable>
+    <GISTable id="SUBLink">
+      <add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>
+      <add GISfield="SCADAIDC" DMSfield="SUPERVISORY_CONTROL_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="SUBSTATIONID" DMSfield="FDR_SUB_ID"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <add GISfield="HYPERLINK" DMSfield="HYPER_LINK"/>
+      <add GISfield="NORMALPOSITION_A" DMSfield="NORMAL_POSITION_A" Domain="SUB Normal Status"/>
+      <add GISfield="NORMALPOSITION_B" DMSfield="NORMAL_POSITION_B" Domain="SUB Normal Status"/>
+      <add GISfield="NORMALPOSITION_C" DMSfield="NORMAL_POSITION_C" Domain="SUB Normal Status"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="OPERATINGNUMBER2" DMSfield="OPERATING_NUMBER2"/>
+      <add GISfield="METALCLADIDC" DMSfield="METAL_CLAD_IDC" Domain="SUB Yes/No Indicator"/>
+    </GISTable>
+    <GISTable id="SUBPotentialTransformer">
+      <add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>
+      <add GISfield="FUNCTIONALLOCATION" DMSfield="DESCRIPTIVE_LOC"/>
+      <add GISfield="SCADAIDC" DMSfield="SUPERVISORY_CONTROL_IDC" Domain="SUB Yes/No Indicator"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="SUBSTATIONID" DMSfield="FDR_SUB_ID"/>
+      <add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>
+      <add GISfield="CONNECTEDRATIO" DMSfield="CONNECTED_RATIO"/>
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="OPERATINGNUMBER2" DMSfield="OPERATING_NUMBER2"/>
+      <add GISfield="METALCLADIDC" DMSfield="METAL_CLAD_IDC" Domain="SUB Yes/No Indicator"/>
+    </GISTable>
+    <GISTable id="SUBExtraWinding">
+      <!--<add GISfield="OPERATINGNUMBER" DMSfield="DNAME"/>-->
+      <!--<add GISfield="SCADAIDC" DMSfield="SUPERVISORY_CONTROL_IDC" Domain="SUB Yes/No Indicator"/>-->
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+      <add GISfield="SUBSTATIONID" DMSfield="FDR_SUB_ID"/>
+      <!--<add GISfield="INSTALLATIONDATE" DMSfield="INSTALLATION_DATE" DateFormat="yyyyMMdd"/>
+      <add GISfield="INSTALLJOBNUMBER" DMSfield="INST_JOB_NO"/>
+      <add GISfield="INSTALLJOBPREFIX" DMSfield="INST_JOB_PREFIX"/>
+      <add GISfield="INSTALLJOBYEAR" DMSfield="INST_JOB_YEAR"/>-->
+      <add GISfield="HIGHSIDECONFIGURATION" DMSfield="HIGH_SIDE_CONFIG" Domain="SUB Transformer Config"/>
+      <add GISfield="LOWSIDECONFIGURATION" DMSfield="LOW_SIDE_CONFIG" Domain="SUB Transformer Config"/>
+      <!--<add GISfield="TERTIARYCONFIGURATION" DMSfield="TERTIARY_CONFIG" Domain="SUB Transformer Config"/>-->
+      <add GISfield="TERTIARYIDC" DMSfield="TERTIARY_IDC"  Domain="SUB Yes/No Indicator"/>
+      <add GISfield="TERTIARYMVAPERCENT" DMSfield="TERTIARY_MVA_PERCENT"/>
+      <add GISfield="TERTIARYMVARATING" DMSfield="TERTIARY_MVA" Domain="SUB Transformer MVA Rating"/>
+      <!--<add GISfield="HYPERLINK" DMSfield="HYPER_LINK"/>-->
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+    </GISTable>
+  </DMSTable>
+  <DMSTable name="DMSSTAGING.NODE">
+    <GISTable id="Capacitor">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="DCRectifier">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="DynamicProtectiveDevice">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="StitchPoint">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="FaultInd">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="Fuse">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="OpenPoint">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <!-- Changes for ENOS to SAP migration - DMS Start ... -->
+    <!--<GISTable id="PrimaryGen">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>-->
+
+    <GISTable id="ServiceLocation">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+
+    <!-- Changes for ENOS to SAP migration - DMS End ... -->
+    <GISTable id="PrimaryMeter">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SmartMeterNetworkDevice">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="StepDown">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="Switch">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="Transformer">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="VoltageRegulator">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="Tie">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SUBCapacitor">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SUBStitchPoint">
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SUBExtraWinding">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SUBFuse">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SUBLink">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SUBInterruptingDevice">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SUBMTU">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SUBReactor">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SUBRiser">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SUBSwitch">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SUBTie">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SUBTransformer">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SUBVoltageRegulator">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SUBStationTransformer">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SUBLightningArrestor">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+    <GISTable id="SUBPotentialTransformer">
+      <add GISfield="DISTRICT" DMSfield="DISTRICT" Domain="SUB District Name"/>
+      <add GISfield="LOCALOFFICEID" DMSfield="LOCAL_OFFICE"/>
+    </GISTable>
+  </DMSTable>
+</ColumnMapping>

@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{33061D40-5D79-494D-8E35-67F25E4BC7FD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PGEElecCleanup</RootNamespace>
+    <AssemblyName>PGEElecCleanup</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <StartupObject>
+    </StartupObject>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>http://localhost/SempraElecCleanup/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="ESRI.ArcGIS.ADF.Connection.Local, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86" />
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Catalog, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.CatalogUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Framework, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessing, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Schematic, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Miner.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Miner.Interop.Desktop, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Interop.Framework, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Interop.FrameworkUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Interop.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Interop.msxml2, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Interop.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>4.8</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>4.8</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telvent.Delivery.ArcFM, Version=10.0.3.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telvent.Delivery.Diagnostics">
+    </Reference>
+    <Reference Include="Telvent.Delivery.Framework, Version=10.0.3.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telvent.Delivery.Geodatabase, Version=10.0.3.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telvent.Delivery.Process, Version=10.0.3.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telvent.Delivery.SessionManager, Version=10.0.3.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telvent.Delivery.Systems, Version=10.0.3.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telvent.Delivery.UI, Version=10.0.3.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telvent.PGE.ED.Desktop, Version=10.0.3.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EnableAnno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnableAnno.Designer.cs">
+      <DependentUpon>EnableAnno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmComplexDeviceIndicatorChk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmComplexDeviceIndicatorChk.Designer.cs">
+      <DependentUpon>frmComplexDeviceIndicatorChk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCreateDefaultJointOwnerToAnchor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreateDefaultJointOwnerToAnchor.Designer.cs">
+      <DependentUpon>frmCreateDefaultJointOwnerToAnchor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCreateMissingUgInfoRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreateMissingUgInfoRecords.Designer.cs">
+      <DependentUpon>frmCreateMissingUgInfoRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustAgreementNumber_PosUpd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustAgreementNumber_PosUpd.Designer.cs">
+      <DependentUpon>frmCustAgreementNumber_PosUpd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeleteAnno_bypassSwitches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeleteAnno_bypassSwitches.Designer.cs">
+      <DependentUpon>frmDeleteAnno_bypassSwitches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSecondaryRiserMovement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSecondaryRiserMovement.designer.cs">
+      <DependentUpon>frmSecondaryRiserMovement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmupdLocalofficeid_servicelocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmupdLocalofficeid_servicelocation.Designer.cs">
+      <DependentUpon>frmupdLocalofficeid_servicelocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmValidateConduitAnnoPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmValidateConduitAnnoPosition.Designer.cs">
+      <DependentUpon>frmValidateConduitAnnoPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmValidate_devices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmValidate_devices.Designer.cs">
+      <DependentUpon>frmValidate_devices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateMissingInfoRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateMissingInfoRecords.Designer.cs">
+      <DependentUpon>GenerateMissingInfoRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCreateSpecialConditions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreateSpecialConditions.Designer.cs">
+      <DependentUpon>frmCreateSpecialConditions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clsAnnotation.cs" />
+    <Compile Include="clsConnectionProperties.cs" />
+    <Compile Include="clsGeoDBconnections.cs" />
+    <Compile Include="clsGFMSGlobalFunctions.cs" />
+    <Compile Include="clsGlobalFunctions.cs" />
+    <Compile Include="clsMMGlobalFunction.cs" />
+    <Compile Include="clsTestWorkSpace.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="frmClenupTasks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClenupTasks.Designer.cs">
+      <DependentUpon>frmClenupTasks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGenerateVoltageRegUnits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenerateVoltageRegUnits.Designer.cs">
+      <DependentUpon>frmGenerateVoltageRegUnits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRebuildDuctdefinition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRebuildDuctdefinition.Designer.cs">
+      <DependentUpon>frmRebuildDuctdefinition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSpatialDatabaseConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSpatialDatabaseConnection.designer.cs">
+      <DependentUpon>frmSpatialDatabaseConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTrans_DoenstreamPhaseChk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTrans_DoenstreamPhaseChk.Designer.cs">
+      <DependentUpon>frmTrans_DoenstreamPhaseChk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmValElbowOperatingNum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmValElbowOperatingNum.Designer.cs">
+      <DependentUpon>FrmValElbowOperatingNum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateController.Designer.cs">
+      <DependentUpon>GenerateController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LicenseCheckout.cs" />
+    <Compile Include="Logs.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelatedStructureSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatedStructureSearch.Designer.cs">
+      <DependentUpon>RelatedStructureSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceLocationPhaseDesignationComparison.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceLocationPhaseDesignationComparison.Designer.cs">
+      <DependentUpon>ServiceLocationPhaseDesignationComparison.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updateLocalOfficeid_device.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateLocalOfficeid_device.Designer.cs">
+      <DependentUpon>updateLocalOfficeid_device.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updPolygonAttributes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updPolygonAttributes.Designer.cs">
+      <DependentUpon>updPolygonAttributes.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EnableAnno.resx">
+      <DependentUpon>EnableAnno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmComplexDeviceIndicatorChk.resx">
+      <DependentUpon>frmComplexDeviceIndicatorChk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCreateDefaultJointOwnerToAnchor.resx">
+      <DependentUpon>frmCreateDefaultJointOwnerToAnchor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCreateMissingUgInfoRecords.resx">
+      <DependentUpon>frmCreateMissingUgInfoRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustAgreementNumber_PosUpd.resx">
+      <DependentUpon>frmCustAgreementNumber_PosUpd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeleteAnno_bypassSwitches.resx">
+      <DependentUpon>frmDeleteAnno_bypassSwitches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSecondaryRiserMovement.resx">
+      <DependentUpon>frmSecondaryRiserMovement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmupdLocalofficeid_servicelocation.resx">
+      <DependentUpon>frmupdLocalofficeid_servicelocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmValidateConduitAnnoPosition.resx">
+      <DependentUpon>frmValidateConduitAnnoPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmValidate_devices.resx">
+      <DependentUpon>frmValidate_devices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateMissingInfoRecords.resx">
+      <DependentUpon>GenerateMissingInfoRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCreateSpecialConditions.resx">
+      <DependentUpon>frmCreateSpecialConditions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClenupTasks.resx">
+      <DependentUpon>frmClenupTasks.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGenerateVoltageRegUnits.resx">
+      <DependentUpon>frmGenerateVoltageRegUnits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRebuildDuctdefinition.resx">
+      <DependentUpon>frmRebuildDuctdefinition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSpatialDatabaseConnection.resx">
+      <DependentUpon>frmSpatialDatabaseConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTrans_DoenstreamPhaseChk.resx">
+      <DependentUpon>frmTrans_DoenstreamPhaseChk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmValElbowOperatingNum.resx">
+      <DependentUpon>FrmValElbowOperatingNum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateController.resx">
+      <DependentUpon>GenerateController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RelatedStructureSearch.resx">
+      <DependentUpon>RelatedStructureSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceLocationPhaseDesignationComparison.resx">
+      <DependentUpon>ServiceLocationPhaseDesignationComparison.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateLocalOfficeid_device.resx">
+      <DependentUpon>updateLocalOfficeid_device.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updPolygonAttributes.resx">
+      <DependentUpon>updPolygonAttributes.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\63.bmp" />
+    <Content Include="Resources\63.JPG" />
+    <Content Include="Resources\63.png" />
+    <Content Include="Resources\73.JPG" />
+    <Content Include="Resources\mainBg.jpg" />
+    <Content Include="Resources\menuBg.png" />
+    <Content Include="Resources\SempraLogo.png" />
+    <None Include="Resources\SempraLogo1.png" />
+    <Content Include="Resources\tabHeader.png" />
+    <Content Include="Resources\tabHeaderTile.png" />
+    <Content Include="Resources\Task#64.bmp" />
+    <Content Include="Resources\Task#66.bmp" />
+    <Content Include="Resources\Task#73.bmp" />
+    <Content Include="Resources\Task12.bmp" />
+    <Content Include="Resources\Task40.bmp" />
+    <Content Include="Resources\Task41.bmp" />
+    <Content Include="Resources\Task49.bmp" />
+    <Content Include="Resources\Task55.bmp" />
+    <Content Include="Resources\task63.bmp" />
+    <Content Include="Resources\task64.bmp" />
+    <Content Include="Resources\task66.bmp" />
+    <Content Include="Resources\task68-1.bmp" />
+    <Content Include="Resources\task68_2.bmp" />
+    <Content Include="Resources\task73.bmp" />
+    <Content Include="Resources\Task74.bmp" />
+    <Content Include="Resources\transparent.png" />
+    <Content Include="Resources\transparentBg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="obj\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

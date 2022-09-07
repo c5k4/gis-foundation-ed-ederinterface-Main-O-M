@@ -1,0 +1,157 @@
+﻿@model SettingsApp.Models.SpecialLoadModel
+<style type="text/css">
+    .desc-text-area
+    {
+        width: 320px;
+        height: 50px;
+    }
+    .admin-checkbox
+    {
+        display: none;
+    }
+</style>
+<script type="text/javascript" src="/Scripts/SettingsApp.js"></script>
+<table class="special-load" cellpadding="0" cellspacing="0" width="90%">
+    <tr>
+        <td style="padding: 0px">
+            <div class="float-left">
+                <ul id="menu">
+                    <li>@Html.ActionLink("GIS", "GIS", (string)ViewBag.ControllerName, new { globalID = ViewBag.GlobalID, ObjectId = ViewBag.ObjectId, LayerName = ViewBag.LayerName }, null)</li>
+                    @if (((string)ViewBag.ControllerName).ToUpper() == "PRIMARYMETER")
+                    {
+                         //ENOS2EDGIS start
+                        @*<li>@Html.ActionLink("Current Settings", "Index", (string)ViewBag.ControllerName, new { globalID = ViewBag.GlobalID, ObjectId = ViewBag.ObjectId, layerName = ViewBag.LayerName }, null)</li>
+                        <li>@Html.ActionLink("Future Settings", "Future", (string)ViewBag.ControllerName, new { globalID = ViewBag.GlobalID, ObjectId = ViewBag.ObjectId, layerName = ViewBag.LayerName }, null)</li>*@
+                        <li class="@ViewBag.Protection">@Html.ActionLink("Primary Protection", "Index", "PrimaryMeter", new { globalID = ViewBag.GlobalID, ObjectId = ViewBag.ObjectId, layerName = ViewBag.LayerName }, null)</li>
+                        //ENOS2EDGIS end
+                        <li>@Html.ActionLink("Settings Files", "Files", (string)ViewBag.ControllerName, new { globalID = ViewBag.GlobalID, ObjectId = ViewBag.ObjectId, layerName = ViewBag.LayerName }, null)</li>
+                    }
+                    <li class="selected">@Html.ActionLink("Special Load", "SpecialLoad", (string)ViewBag.ControllerName, new { globalID = ViewBag.GlobalID, ObjectId = ViewBag.ObjectId, LayerName = ViewBag.LayerName }, null)</li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="header" style="padding-top: 0px; padding-bottom: 0px; padding-left: 10px">
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td align="left">
+                        @ViewBag.Title
+                    </td>
+                    <td class="print-for-trf" align="right" style="padding-right: 5px;">
+                        <img class="print-icon" src="/Images/print.png" style="border: 0px solid #000;" onclick="javascript:window.print();" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td style="background-color: #ffffff;">
+            @if (ViewBag.ShowPageError == true)
+            {
+                <label id="lableDeviceValidationError" runat="server" style="color: Red; text-align: center;">
+                    There are error(s), please check below.
+                </label>
+                <label id="labelErrorMessages" runat="server" style="color: Red; text-align: left;
+                    margin: 10px;">@ViewBag.ErrorMessages</label>
+            }
+            @if ((TempData["ShowAddSuccessful"] != null ? (bool)TempData["ShowAddSuccessful"] : false) == true)
+            {
+                <label id="lableDeviceSaveSucess" runat="server" style="color: Green; text-align: center;
+                    margin: 10px;">
+                    Device saved successfully.
+                </label>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td style="background-color: #ffffff; padding: 0px 10px 10px 10px;">
+            <table style="width: 100%; background-color: #f2f2f2">
+                @if (!string.IsNullOrEmpty(Model.CGCId))
+                {
+                    <tr>
+                        <td colspan="4" style="text-align: center;">
+                            <h3 style="text-align: center; font-weight: bold;">
+                                @Html.DisplayNameFor(model => model.CGCId)@Html.TextBoxFor(model => model.CGCId, new { @readonly = "readonly", @class = "readonly-box", onfocus = "this.blur();" })
+                            </h3>
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <td>@Html.LabelFor(model => model.Description)
+                    </td>
+                    <td colspan="3">
+                        @Html.TextAreaFor(model => model.Description, !Model.IsAdmin ? (object)new { disabled = "disabled", @class = "desc-text-area", maxlength = 128, tabindex = "1" } : new { @class = "desc-text-area", maxlength = 128, tabindex = "1" })
+                        @Html.ValidationMessageFor(model => model.Description)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.SummerKW)
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.SummerKW, !Model.IsAdmin ? (object)new { disabled = "disabled", maxlength = 7, @class = "neg-int-no", tabindex = "2" } : new { maxlength = 7, @class = "neg-int-no", tabindex = "2" })
+                        @Html.ValidationMessageFor(model => model.SummerKW)
+                    </td>
+                    <td>@Html.LabelFor(model => model.SummerKVAR)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.SummerKVAR, !Model.IsAdmin ? (object)new { disabled = "disabled", maxlength = 7, @class = "neg-int-no", tabindex = "3" } : new { maxlength = 7, @class = "neg-int-no", tabindex = "3" })
+                        @Html.ValidationMessageFor(model => model.SummerKVAR)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.WinterKW)
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.WinterKW, !Model.IsAdmin ? (object)new { disabled = "disabled", maxlength = 7, @class = "neg-int-no", tabindex = "4" } : new { maxlength = 7, @class = "neg-int-no", tabindex = "4" })
+                        @Html.ValidationMessageFor(model => model.WinterKW)
+                    </td>
+                    <td>@Html.LabelFor(model => model.WinterKVAR)
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.WinterKVAR, !Model.IsAdmin ? (object)new { disabled = "disabled", maxlength = 7, @class = "neg-int-no", tabindex = "5" } : new { maxlength = 7, @class = "neg-int-no", tabindex = "5" })
+                        @Html.ValidationMessageFor(model => model.WinterKVAR)
+                    </td>
+                </tr>
+                <tr class="timestamp">
+                    <td>
+                        @Html.LabelFor(model => model.CreatedDate)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.CreatedDate, new { @readonly = "readonly", @class = "readonly-box", style = "font-style:italic;", onfocus = "this.blur();" })
+                    </td>
+                    <td>
+                        @Html.LabelFor(model => model.CreatedByUser)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.CreatedByUser, new { @readonly = "readonly", @class = "readonly-box", style = "font-style:italic;", onfocus = "this.blur();" })
+                    </td>
+                </tr>
+                <tr class="timestamp">
+                    <td>@Html.LabelFor(model => model.ModifiedDate)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.ModifiedDate, new { @readonly = "readonly", @class = "readonly-box", style = "font-style:italic;", onfocus = "this.blur();" })
+                    </td>
+                    <td>
+                        @Html.LabelFor(model => model.ModifiedByUser)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.ModifiedByUser, new { @readonly = "readonly", @class = "readonly-box", style = "font-style:italic;", onfocus = "this.blur();" })
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: right; padding-right: 10px">
+                        <input type="button" value="Cancel" onclick="this.form.action='/@ViewBag.ControllerName/SpecialLoad?globalid=@ViewBag.GlobalId&ObjectId=@ViewBag.ObjectId&LayerName=@ViewBag.LayerName';this.form.submit();"
+                                    @(Model.IsAdmin ? Html.Raw("") : Html.Raw("disabled='disabled'")) , tabindex="6"/>
+                        <input type="button" value="Save" onclick="this.form.action='/@ViewBag.ControllerName/SaveSpecialLoad?globalid=@ViewBag.GlobalId&ObjectId=@ViewBag.ObjectId&LayerName=@ViewBag.LayerName';this.form.submit();"
+                                    @(Model.IsAdmin ? Html.Raw("") : Html.Raw("disabled='disabled'")) , tabindex="7"/>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<span class="hidden-fields">
+    @Html.CheckBoxFor(model => model.IsAdmin, new { @class = "admin-checkbox" })
+</span>

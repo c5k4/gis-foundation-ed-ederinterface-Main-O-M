@@ -1,0 +1,292 @@
+﻿@model TLM.Models.TransformerLoadHistory
+<style type="text/css">
+    a.csv-link
+    {
+        background: url(../../Content/Images/Csv.png) no-repeat top left;
+        display: inline-block;
+        text-indent: -9999px; /* hides the link text */
+        float: left;
+        width: 16px;
+    }
+    img.print-img
+    {
+        display: inline-block;
+    }
+    
+    
+</style>
+<script type="text/javascript" src="~/Scripts/TLMHistory.js"></script>
+<script type="text/javascript">
+    function OnComplete() {
+        $("#SelectedMonth").val('@Model.SelectedMonth');
+        if ($("#ShowRecOrGen option:selected").text() == "Generation") {
+            $("span.neg-sign").addClass("show-neg-sign");
+        }
+
+        if ($("#ShowRecOrGen option:selected").text() == "Delivered") {
+            $("span.neg-sign").removeClass("show-neg-sign");
+        }
+        SetHiddenStartMonthFromStartMonth();
+        SetMonthPicker();
+        SetHistoryUI();
+        SetRetrieveDataButtonClick();
+
+        //ME Q2 2020
+        //SetPreviousMonthBtnClick();
+        //SetNextMonthBtnClick();
+        EnableDisablePrevMonth();
+        EnableDisableNextMonth();
+    }
+    function OnSuccess() { }
+    function OnFailure(xhr, status, error) { $("body").html(xhr.responseText); }
+    function CheckIfDatePresent(elementId) {
+        var txtVal = document.getElementById(elementId).value;
+        var filter = new RegExp("(0[123456789]|10|11|12)([/])([1-2][0-9][0-9][0-9])");
+        if (!filter.test(txtVal)) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    function OnBegin() {
+//        $('#divProgress').fadeIn('slow');
+//        $('#divProgress').css("opacity", "0.8");
+    }
+
+    function GetGenOrRecData() {
+        var success = function (results) {
+            var earliestDate = new Date(parseInt(results.EarliestLoadDate.substr(6)));
+            var latestDate = new Date(parseInt(results.LatestLoadDate.substr(6)));
+            var startMonth = results.StartMonth;
+            $("#EarliestLoadDate").val(earliestDate);
+            $("#LatestDate").val(latestDate);
+            $("#StartMonth").val(startMonth);
+            $("#DataStartDate").val(results.DataStartDate);
+            SetHiddenStartMonthFromStartMonth();
+            EnableDisablePrevMonth();
+            EnableDisableNextMonth();
+
+        };
+        var failure = function (jqXHR, textStatus) {
+            $("h5.infomsg").val("Error while retrieving date information!");
+        };
+        var GlobalId = '@ViewData["GlobalId"]';
+        $.ajax({ url: "/transformer/GetRecOrGenData?GlobalId=" + GlobalId + "&GenOrRec=" + $("#ShowRecOrGen option:selected").text(), type: 'POST',
+            dataType: 'json',
+            success: success,
+            error: failure
+        });
+    }    
+</script>
+<div id="load-history" class="load-history">
+    <div class="innerdiv">
+        <h5 class="errormsg">@Html.Raw(Model.ErrorMessage)</h5>
+        <h5 class="infomsg">@Html.Raw(Model.InfoMessage)</h5>
+        <h3 class="trf-title">
+            Transformer CGC# - @Model.TransformerCGC</h3>
+            <div class="top">
+                <div class="left">
+                    <span class="display-label">
+                            @Html.DisplayNameFor(model => model.DataStartDate) from : </span><span class="display-field">
+                            @Html.TextBoxFor(model => model.DataStartDate, new Dictionary<string, object>() { { "readonly", "true" }, { "class", "readonlybox" } }) </span>
+                            <span class="display-label">to :</span> 
+                            <span class="display-field">   
+                                @* @Model.LatestLoadDate.Value.ToString("MM/yyyy")*@  
+                               
+                                    @*<input type="text" disabled="disabled" class="readonlybox" value= @Session["HeaderDisplayLatestDate"].ToString() />     *@           
+                                    @Html.TextBoxFor(model => model.DataLastDate, new Dictionary<string, object>() { { "readonly", "true" }, { "class", "readonlybox" } })                                       
+                                
+                            </span>
+                </div>
+                <div class="row2">
+                    <div class="display-field">
+                        @Html.DropDownListFor(model => model.ShowRecOrGen, new SelectList(Model.GenerationFilters), new { onchange = "GetGenOrRecData();" })
+                    </div>
+                    <div class="display-label">
+                    <input type="button" id="PreviousMonthBtnId" />  @*ME Q2 2020*@
+                        @Html.DisplayNameFor(model => model.StartMonth):
+                    </div>
+                    <div class="display-field">
+                        @Html.TextBoxFor(model => model.StartMonth, new Dictionary<string, object>() { { "readonly", "true" }, { "class", "readonlybox" } })
+                        <input type="hidden" disabled="disabled" id="StartMonthHid" />
+                        <input type="button" id="NextMonthBtnId"  />   @*ME Q2 2020*@
+                    </div>
+                    <div class="display-label">
+                        @Html.DisplayNameFor(model => model.SelectedMonth):
+                    </div>
+                    <div class="display-field">
+                        @Html.DropDownListFor(model => model.SelectedMonth, new SelectList(Model.Months))
+                    </div>
+                    <div class="retrieve-data-action">
+                        <input type="submit" value="Retrieve Data" id="RetrieveData" />
+                        @Html.HiddenFor(model => model.EarliestLoadDate)
+                        @Html.HiddenFor(model => model.LatestLoadDate)
+                        @Html.HiddenFor(model => model.TransformerId)
+                        @Html.HiddenFor(model => model.SearchFromDate)
+                        @Html.HiddenFor(model => model.SearchToDate)
+                        @Html.HiddenFor(model => model.TransformerId)
+                        @Html.HiddenFor(model => model.TransformerCGC)
+                    </div>
+                </div>
+            </div>
+            
+            <div id="divResult">
+                <div class="center-top">
+                    <div class="row3">
+                        <div class="display-label">
+                            @Html.DisplayNameFor(model => model.PeakKVADemand):
+                        </div>
+                        <div class="display-field">
+                            <span class="neg-sign">@Html.DisplayFor(model => model.PeakKVADemand)</span>
+                        </div>
+                        <div class="display-label">
+                            @Html.DisplayNameFor(model => model.DatePeaked):
+                        </div>
+                        <div class="display-field">
+                        @if (Model.IsAllMetersLegacy)
+                        {
+                            <span>@string.Format("{0:MM/yyyy}", Model.DatePeaked)</span>
+                        }
+                        else
+                        {
+                            <span>@string.Format("{0:MM/dd/yyyy hh:mm tt}", Model.DatePeaked)</span>
+                        }
+                        </div>
+                     
+                    </div>
+                </div>
+                <div class="DataDisplayMessage">
+                    @Model.DataDisplayMessage
+                </div>
+                <div class="center-bottom">
+                    <div class="row4">
+                        <div class="headingratio">
+                            @Html.DisplayNameFor(model => model.MeterRatios)
+                        </div>
+                        <div class="meter-ratios-detail">
+                            <table border="1" style="border-style: solid;">
+                                <tr>
+                                    @if (Model != null)
+                                    {
+                                        if (Model.MeterRatios != null)
+                                        {
+
+                                            foreach (var item in Model.MeterRatios)
+                                            {
+                                        <td>
+                                            <div class="meter-ratio-month">@item.Item1</div>
+                                            <div class="meter-ratio-value @item.Item3">@item.Item2</div>
+                                        </td>
+                                            }
+
+                                        }
+                                    }
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="row5">
+                        <div class="headingspinfo">
+                            @Html.DisplayNameFor(model => model.ServicePointInfo)
+                        </div>
+                        <div class="service-pt-info-detail">
+                            <table border="1">
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ServicePointInfo[0].DisplayOrder)
+                                    </th>
+                                    @*<th>
+                                Row#
+                            </th>
+                            <th>
+                                Trf Hist Id
+                            </th>*@
+                                    <th class="connected">
+                                        @Html.DisplayNameFor(model => model.ServicePointInfo[0].IsConnected)
+                                    </th>
+                                    <th class="sm">
+                                        @Html.DisplayNameFor(model => model.ServicePointInfo[0].IsSmartMeter)
+                                    </th>
+                                    <th class="svcpointid">
+                                        @Html.DisplayNameFor(model => model.ServicePointInfo[0].ServicePointId)
+                                    </th>
+                                    <th class="meterno">
+                                        @Html.DisplayNameFor(model => model.ServicePointInfo[0].MeterNumber)
+                                    </th>
+                                    <th class="peaktimestamp">
+                                        @Html.DisplayNameFor(model => model.ServicePointInfo[0].PeakTimestamp)
+                                    </th>
+                                    <th class="peakkva">
+                                        @Html.DisplayNameFor(model => model.ServicePointInfo[0].PeakKVA)
+                                    </th>
+                                    <th class="kvatrfpeak">
+                                        @Html.DisplayNameFor(model => model.ServicePointInfo[0].KVATrfPeak)
+                                    </th>
+                                    <th class="interval">
+                                        @Html.DisplayNameFor(model => model.ServicePointInfo[0].Interval)
+                                    </th>
+                                    <th class="custtype">
+                                        @Html.DisplayNameFor(model => model.ServicePointInfo[0].CustomerType)
+                                    </th>
+                                    <th class="address">
+                                        @Html.DisplayNameFor(model => model.ServicePointInfo[0].Address)
+                                    </th>
+                                </tr>
+                                @if (Model != null)
+                                {
+                                    if (Model.ServicePointInfo != null)
+                                    {
+                                        foreach (var item in Model.ServicePointInfo)
+                                        {
+                                    <tr>
+                                        <td>@item.DisplayOrder
+                                        </td>
+                                        @*<td>@item.ServicePointRowNumber
+                                </td>
+                                <td>@item.TransformerHistoryId
+                                </td>*@
+                                        <td class="connected">
+                                            @item.IsConnected
+                                        </td>
+                                        <td class="sm">
+                                            @item.IsSmartMeter
+                                        </td>
+                                        <td class="svcpointid">
+                                            @item.ServicePointId
+                                        </td>
+                                        <td class="meterno">
+                                            @item.MeterNumber
+                                        </td>
+                                        <td class="peaktimestamp">
+                                            @string.Format("{0:MM/dd/yyyy hh:mm tt}", @item.PeakTimestamp)
+                                        </td>
+                                        <td class="number peakkva">
+                                            <span class="neg-sign">@string.Format("{0} {1}", string.Format("{0:n1}", item.PeakKVA), (item.IsEstimated == "E" ? "E" : string.Empty))</span>
+                                        </td>
+                                        <td class="number kvatrfpeak">
+                                            <span class="neg-sign">@string.Format("{0} {1}", string.Format("{0:n1}", item.KVATrfPeak), (item.IsEstimated == "E" ? "E" : string.Empty))</span>
+                                        </td>
+                                        <td class="number interval">
+                                            @item.Interval
+                                        </td>
+                                        <td class="custtype">
+                                            @item.CustomerType
+                                        </td>
+                                        <td class="address">
+                                            @item.Address
+                                        </td>
+                                    </tr>    
+                                        }
+                                    }
+                                }
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+    </div>
+</div>

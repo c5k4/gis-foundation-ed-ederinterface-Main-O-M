@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.BatchApplication.PLDBBatchProcess", "PGE.BatchApplication.PLDBBatchProcess\PGE.BatchApplication.PLDBBatchProcess.csproj", "{968AA6F8-EC00-41E6-94E7-19F29DFCB8CB}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PGE.Installer.PLDBBatchProcess", "PGE.Installer.PLDBBatchProcess\PGE.Installer.PLDBBatchProcess.vdproj", "{F9ECB7E1-0A5F-4ACB-95F2-64E9B0470D1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{968AA6F8-EC00-41E6-94E7-19F29DFCB8CB}.Debug|x86.ActiveCfg = Debug|x86
+		{968AA6F8-EC00-41E6-94E7-19F29DFCB8CB}.Debug|x86.Build.0 = Debug|x86
+		{968AA6F8-EC00-41E6-94E7-19F29DFCB8CB}.Release|x86.ActiveCfg = Release|x86
+		{968AA6F8-EC00-41E6-94E7-19F29DFCB8CB}.Release|x86.Build.0 = Release|x86
+		{F9ECB7E1-0A5F-4ACB-95F2-64E9B0470D1C}.Debug|x86.ActiveCfg = Debug
+		{F9ECB7E1-0A5F-4ACB-95F2-64E9B0470D1C}.Debug|x86.Build.0 = Debug
+		{F9ECB7E1-0A5F-4ACB-95F2-64E9B0470D1C}.Release|x86.ActiveCfg = Release
+		{F9ECB7E1-0A5F-4ACB-95F2-64E9B0470D1C}.Release|x86.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {173D4C0A-A4ED-4B5C-8195-C5B2BC879D10}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccProjectUniqueName0 = PGE.Installer.PLDBBatchProcess\\PGE.Installer.PLDBBatchProcess.vdproj
+		SccProjectName0 = PGE.Installer.PLDBBatchProcess
+		SccLocalPath0 = PGE.Installer.PLDBBatchProcess
+		SccProjectUniqueName1 = PGE.BatchApplication.PLDBBatchProcess\\PGE.BatchApplication.PLDBBatchProcess.csproj
+		SccProjectName1 = PGE.BatchApplication.PLDBBatchProcess
+		SccLocalPath1 = PGE.BatchApplication.PLDBBatchProcess
+		SccLocalPath2 = .
+	EndGlobalSection
+EndGlobal

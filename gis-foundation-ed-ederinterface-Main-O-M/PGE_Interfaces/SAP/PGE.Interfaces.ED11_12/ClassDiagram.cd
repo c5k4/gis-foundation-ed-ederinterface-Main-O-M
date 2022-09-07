@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.Interfaces.ED11_12.Common">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <Members>
+      <Field Name="_reg" Hidden="true" />
+      <Field Name="ArcFMLicense" Hidden="true" />
+      <Field Name="EsriExtensions" Hidden="true" />
+      <Field Name="EsriLicense" Hidden="true" />
+      <Field Name="Password" Hidden="true" />
+      <Field Name="SDEConnectionFile" Hidden="true" />
+      <Field Name="SessionManagerConnectionString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>EAIAAAAAAQAAAAAIAAAAAABAAAAAAAACBAEAAAAAABA=</HashCode>
+      <FileName>Common.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.ED11_12.Program">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <Members>
+      <Field Name="_log" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Enum Name="PGE.Interfaces.ED11_12.Program.ExitCodes">
+        <TypeIdentifier>
+          <NewMemberFileName>Program.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.ED11_12.PTTProcessor">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <Members>
+      <Field Name="_log" Hidden="true" />
+      <Field Name="_supportStructureFC" Hidden="true" />
+      <Field Name="_supportStructureStagingFC" Hidden="true" />
+      <Method Name="CreateMinerSession" Hidden="true" />
+      <Property Name="DefaultWorkspace" Hidden="true" />
+      <Property Name="ErrorLoggingPath" Hidden="true" />
+      <Property Name="ErrorLoggingWriter" Hidden="true" />
+      <Field Name="FCSupportStructure" Hidden="true" />
+      <Field Name="FCSupportStructureStaging" Hidden="true" />
+      <Method Name="FindPole" Hidden="true" />
+      <Method Name="GetDomainValue" Hidden="true" />
+      <Method Name="GetStructure" Hidden="true" />
+      <Field Name="GhostPoleSearchBuffer" Hidden="true" />
+      <Field Name="GlobalIDFieldName" Hidden="true" />
+      <Property Name="InputFile" Hidden="true" />
+      <Method Name="LogTransactionError" Hidden="true" />
+      <Property Name="MinerSession" Hidden="true" />
+      <Method Name="ProcessDelete" Hidden="true" />
+      <Method Name="ProcessDeleteElement" Hidden="true" />
+      <Method Name="ProcessInsert" Hidden="true" />
+      <Method Name="ProcessInsertElement" Hidden="true" />
+      <Method Name="ProcessReplace" Hidden="true" />
+      <Method Name="ProcessReplaceElement" Hidden="true" />
+      <Method Name="ProcessTransaction" Hidden="true" />
+      <Method Name="ProcessUpdate" Hidden="true" />
+      <Method Name="ProcessUpdateElement" Hidden="true" />
+      <Method Name="ProcessXml" Hidden="true" />
+      <Method Name="ProjectLatLongPoint" Hidden="true" />
+      <Method Name="PTTProcessor" Hidden="true" />
+      <Property Name="PTTTransactions" Hidden="true" />
+      <Field Name="ReplaceGuidFieldName" Hidden="true" />
+      <Field Name="SAPEquipIDFieldName" Hidden="true" />
+      <Property Name="Session" Hidden="true" />
+      <Field Name="SessionName" Hidden="true" />
+      <Method Name="SetAttributes" Hidden="true" />
+      <Field Name="StatusFieldName" Hidden="true" />
+      <Property Name="SupportStructure" Hidden="true" />
+      <Property Name="SupportStructureStaging" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AMIICAguAAkgBUAAAAAgAAFABAAAiQkgAIBFAAQAwgI=</HashCode>
+      <FileName>PTTProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.ED11_12.PTTTransaction">
+    <Position X="7.5" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAABAAAAQAAAAAAAAA=</HashCode>
+      <FileName>PTTTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.ED11_12.Pole">
+    <Position X="3" Y="0.5" Width="1.75" />
+    <Members>
+      <Field Name="_guid" Hidden="true" />
+      <Field Name="_originalTransaction" Hidden="true" />
+      <Field Name="_projectID" Hidden="true" />
+      <Field Name="_SAPEquipID" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAEAABEAJAAAAAABAAABAAAAAAAAAAAgAA=</HashCode>
+      <FileName>PTTTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.ED11_12.PoleInsert">
+    <Position X="2.25" Y="3" Width="1.5" />
+    <Members>
+      <Field Name="_latitude" Hidden="true" />
+      <Field Name="_longitude" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAIAIAAQAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>PTTTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.ED11_12.PoleDelete">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PTTTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.ED11_12.PoleReplace">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PTTTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.ED11_12.PoleUpdate">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAQAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PTTTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.ED11_12.SAPToGISMappings">
+    <Position X="7.5" Y="4" Width="2" />
+    <Members>
+      <Field Name="_log" Hidden="true" />
+      <Method Name="Initialize" Hidden="true" />
+      <Method Name="InitializeDomainMapping" Hidden="true" />
+      <Method Name="InitializeFieldMapping" Hidden="true" />
+      <Field Name="Instance" Hidden="true" />
+      <Field Name="SAPToGISDomainMap" Hidden="true" />
+      <Field Name="SAPToGISFieldMap" Hidden="true" />
+      <Method Name="SAPToGISMappings" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAFAAAAAABAAUAAAAAAAAAAACBAAAAAQAAAAAAAAAg=</HashCode>
+      <FileName>SAPToGISMappings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.ED11_12.SessionManager.MinerSession">
+    <Position X="6.75" Y="5.5" Width="2.25" />
+    <Members>
+      <Field Name="_childVersionWorkspace" Hidden="true" />
+      <Field Name="_logger" Hidden="true" />
+      <Field Name="_mmAppInit" Hidden="true" />
+      <Field Name="_mmSession" Hidden="true" />
+      <Field Name="_pxApplication" Hidden="true" />
+      <Field Name="_sessionVersion" Hidden="true" />
+      <Field Name="_sessionVersionName" Hidden="true" />
+      <Method Name="ConnectToSessionManager" Hidden="true" />
+      <Method Name="CreateMMSessionVersionInternal" Hidden="true" />
+      <Field Name="DefaultVersionWorkspace" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="GetExistingSessionId" Hidden="true" />
+      <Method Name="MinerSession" Hidden="true" />
+      <Property Name="MMSession" Hidden="true" />
+      <Property Name="PxApplication" Hidden="true" />
+      <Property Name="ReuseSession" Hidden="true" />
+      <Method Name="SessionIsLocked" Hidden="true" />
+      <Field Name="SessionManagerOleDbConnection" Hidden="true" />
+      <Property Name="SessionName" Hidden="true" />
+      <Method Name="SetNodeState" Hidden="true" />
+      <Method Name="TryGetExistingSession" Hidden="true" />
+      <Property Name="UnlockSession" Hidden="true" />
+      <Property Name="Version" Hidden="true" />
+      <Property Name="Workspace" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>YAAQADAgAGJAAQABoBAAASQEIAAAAAAIAAABIAAAAAA=</HashCode>
+      <FileName>SessionManager\MinerSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="PGE.Interfaces.ED11_12.TransactionType">
+    <Position X="4.75" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>PTTTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Interfaces.ED11_12.TransactionStatus">
+    <Position X="0.5" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>PTTTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Interfaces.ED11_12.TransactionErrorType">
+    <Position X="2.5" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAACgAAAAAAAAAAAAAAiAAAgAAQIQACAAAABA=</HashCode>
+      <FileName>PTTTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

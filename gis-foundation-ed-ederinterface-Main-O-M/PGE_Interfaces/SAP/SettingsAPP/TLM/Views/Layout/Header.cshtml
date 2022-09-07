@@ -1,0 +1,28 @@
+﻿@model TLM.Models.HeaderViewModel
+@{
+    Layout = "";  
+}
+<ul id="menu">
+    @if (ViewBag.isTransformer != null && !ViewBag.isTransformer)
+    {
+
+    }
+    else
+    {
+         <li class="gis-li">@Html.ActionLink("GIS", "GIS", "Transformer", new { GlobalId = ViewBag.GlobalId }, null)</li>
+    }
+    <li class="loading-li">@Html.ActionLink("Transformer Loading", "InputLoad", "Transformer", new { GlobalId = ViewBag.GlobalId }, null)</li>
+    @if (ViewBag.IsGenTabVisible != null && ViewBag.IsGenTabVisible == true)
+    {
+        <li class="generation-li">@Html.ActionLink("Generation on Transformer", "OutputLoad", "Transformer", new { GlobalId = ViewBag.GlobalId }, null)</li>
+    }
+    <li class="history-li">@Html.ActionLink("Transformer Loading History", "History", "Transformer", new { GlobalId = ViewBag.GlobalId }, null)</li>
+     @if (ViewBag.isTransformer != null && !ViewBag.isTransformer)
+     {
+         <li class="specialload-li">@Html.ActionLink("Primary Meter Settings", "SpecialLoad", "Transformer", new { GlobalId = ViewBag.GlobalId }, null)</li>
+     }
+     else
+     {
+         <li class="specialload-li">@Html.ActionLink("Special Load", "SpecialLoad", "Transformer", new { GlobalId = ViewBag.GlobalId }, null)</li>   
+     }
+</ul>

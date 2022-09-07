@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--PGE.Interfaces.MapProduction.Integration-->
+  <Fragment>
+    <ComponentGroup Id="MAPExtra">
+
+      <Component Id="PGE.Interfaces.MapProduction.Processor.exe" Directory="MAPProduction20" Guid="8A2A148F-29C2-44AC-8D30-78D6F7D17D6D" >
+        <File Id="PGE.Interfaces.MapProductionAutomation.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction20\PGE.Interfaces.MapProductionAutomation.exe"/>
+      </Component>
+      <Component Id="PGE.Interfaces.MapProduction.Processor.exe.config" Directory="MAPProduction20" Guid="7B8E80D0-C62A-4460-84A7-8A979EC4DD7A" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.Interfaces.MapProduction.Processor.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction20\PGE.Interfaces.MapProductionAutomation.exe.config"/>
+      </Component>
+      <Component Id="PGE.Interfaces.MapProductionAutomation.Schematics.exe.config" Directory="MAPProduction20" Guid="19121A5F-CE36-41DC-BA61-91E0E4FDFFFA" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.Interfaces.MapProductionAutomation.Schematics.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction20\PGE.Interfaces.MapProductionAutomation.Schematics.exe.config"/>
+      </Component>
+      <Component Id="PGE.Interfaces.MapProduction2.0.log4net.config" Directory="LoggingConfiguration" Guid="1C62DBA4-1F64-4758-8A6F-C3A43CF63A86" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.Interfaces.MapProduction2.0.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction20\PGE.Interfaces.MapProduction2.0.log4net.config"/>
+      </Component>
+
+    </ComponentGroup>
+
+
+  </Fragment>
+</Wix>

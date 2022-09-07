@@ -1,0 +1,81 @@
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by XMLSPY 5 Professional Ed., Installed Multi + SMP for 10 users (Miner & Miner Engineering) -->
+<!--This is a preliminery structur design for Field Information Manager(FIMObjects)-->
+<!--darlene 10.23.07 
+      If you add to RelationshipClass, you might also need to change RelationshipClass.dtd.  I added AliasName and also 
+      needed to change FimObject.dtd-->
+<!--Helpful comments:
+    Element:	? optional zero or one, + mandatory one or more, 
+		* optional zero or more, (none) mandatory one and only one.
+    Attributes:
+-->
+<!ELEMENT FIMTOPLEVEL (FEATURECLASS*, RELATIONSHIPCLASS*)>
+<!ATTLIST FIMTOPLEVEL
+	ProgID CDATA "mmGeoDatabase.MMConfigTopLevel"
+>
+<!ELEMENT FEATURECLASS (IEPROGID, OBJECT?, FEATURENAME, PRIMARYDISPLAYFIELD?, HASCUSTOMRELATIONSHIPSPLITPOLICY?, CUSTOMRELATIONSHIPSPLITPOLICY?, CANEDITWITHPROJECTION?, FEEDERMANAGER2DISPLAYFIELD?, (SUBTYPE*, AUTOVALUE*)*)>
+<!ATTLIST FEATURECLASS
+	ProgID CDATA "mmGeoDatabase.MMFeatureClass"
+>
+<!ELEMENT IEPROGID (#PCDATA)>
+<!ELEMENT OBJECT EMPTY>
+<!ELEMENT FEATURENAME (#PCDATA)>
+<!ELEMENT PRIMARYDISPLAYFIELD (#PCDATA)>
+<!ELEMENT HASCUSTOMRELATIONSHIPSPLITPOLICY (#PCDATA)>
+<!ELEMENT CUSTOMRELATIONSHIPSPLITPOLICY (#PCDATA)>
+<!ELEMENT CANEDITWITHPROJECTION (#PCDATA)>
+<!ELEMENT FEEDERMANAGER2DISPLAYFIELD (#PCDATA)>
+<!ELEMENT SUBTYPE (SUBTYPECODE?, EDITTASKID?, EDITTASKNAME?, QAINITIALIZED?, (FIELD+ | CUSTOMSETTING* | SIMPLESETTING* | AUTOVALUE* | SIMPLEVARIANT*)*)>
+<!ATTLIST SUBTYPE
+	ProgID CDATA "mmGeoDatabase.MMSubtype"
+>
+<!ELEMENT SUBTYPECODE (#PCDATA)>
+<!ELEMENT QAINITIALIZED (#PCDATA)>
+<!ELEMENT EDITTASKID (#PCDATA)>
+<!ELEMENT EDITTASKNAME (#PCDATA)>
+<!ELEMENT FIELD (FIELDNAME?, FIELDALIAS?, FIELDINDEX?, (CUSTOMSETTING* | SIMPLESETTING* | AUTOVALUE*)*)>
+<!ATTLIST FIELD
+	ProgID CDATA "mmGeoDatabase.MMField"
+>
+<!ELEMENT FIELDNAME (#PCDATA)>
+<!ELEMENT FIELDALIAS (#PCDATA)>
+<!ELEMENT FIELDINDEX (#PCDATA)>
+<!ELEMENT CUSTOMSETTING (SETTINGGENID?, CUSTOMSETTINGNAME?, DISPLAYORDER?, SETTINGVALUE?)>
+<!ATTLIST CUSTOMSETTING
+	ProgID CDATA "mmGeoDatabase.MMCustomSetting"
+	SETTINGTYPE (mmFSVisible | mmFSEditable | mmFSAllowNulls | mmFSCUDefined | mmFSClearOnCreate | mmSSPostable | mmSSValidateRelatedObject | mmSSNWValidateRelatedObj | mmFSAllowMassAttributeUpdate | mmSSSplitOnFeature | none) "none"
+>
+<!ELEMENT SETTINGGENID (#PCDATA)>
+<!ELEMENT CUSTOMSETTINGNAME (#PCDATA)>
+<!ELEMENT DISPLAYORDER (#PCDATA)>
+<!ELEMENT SETTINGVALUE (#PCDATA)>
+<!ELEMENT SIMPLESETTING (DISPLAYORDER?, SETTINGVALUE?)>
+<!ATTLIST SIMPLESETTING
+	ProgID CDATA "mmGeoDatabase.MMSimpleSetting"
+	SETTINGTYPE (mmFSVisible | mmFSEditable | mmFSAllowNulls | mmFSCUDefined | mmFSClearOnCreate | mmSSPostable | mmSSValidateRelatedObject | mmSSNWValidateRelatedObj | mmFSAllowMassAttributeUpdate | mmSSSplitOnFeature | none) "none"
+>
+<!ELEMENT AUTOVALUE (AUTOGENID?, AUTOVALUENAME?, AVDISPLAYORDER?, AVEDMTABLENAME?, AVEDMTABLESUBTYPE?, AVEDMFIELDNAME?, AVEDMPROPERTYTYPE?)>
+<!ATTLIST AUTOVALUE
+	ProgID CDATA "mmGeoDatabase.MMAutoValue"
+	EDITEVENT (mmEventFeatureCreate | mmEventFeatureUpdate | mmEventFeatureDelete | mmEventMobileImportFeatureCreate | mmEventMobileImportFeatureUpdate | mmEventMobileImportFeatureDelete | mmEventFeatureSplit | mmEventRelatedObjectChanged | mmEventRelatedObjectMoved | mmEventRelatedObjectRotated | mmEventNetworkFeatureConnect | mmEventNetworkFeatureDisconnect | mmEventEditMetadata | mmEventAbandon | mmEventCustomEditor | mmEventBeforeFeatureSplit | mmEventAfterFeatureSplit | mmEventValidationRule | mmEventNetworkValidationRule | mmEventCustomFieldEditorInPlace | mmEventCustomFieldEditorTab | mmEventCustomFieldEditorForm | mmEventCustomFieldEditor | mmEventFieldValidationRule | mmEventRelationshipCreated | mmEventRelationshipUpdated | mmEventRelationshipDeleted | mmEventExtendedDataDefinitionTable | mmEventEDMPropertyType | mmEventDisplayNameObject | none) "none"
+	EDITORTYPE CDATA #IMPLIED
+>
+<!ELEMENT AUTOGENID (#PCDATA)>
+<!ELEMENT AUTOVALUENAME (#PCDATA)>
+<!ELEMENT AVDISPLAYORDER (#PCDATA)>
+<!ELEMENT AVEDMTABLENAME (#PCDATA)>
+<!ELEMENT AVEDMTABLESUBTYPE (#PCDATA)>
+<!ELEMENT AVEDMFIELDNAME (#PCDATA)>
+<!ELEMENT AVEDMPROPERTYTYPE (#PCDATA)>
+<!ELEMENT SIMPLEVARIANT (VARIANTPROPTYPE?, VARIANTPROPVALUE?)>
+<!ATTLIST SIMPLEVARIANT
+	ProgID CDATA "mmGeoDatabase.MMSimpleVariant"
+>
+<!ELEMENT VARIANTPROPTYPE (#PCDATA)>
+<!ELEMENT VARIANTPROPVALUE (#PCDATA)>
+<!ELEMENT RELATIONSHIPCLASS (IEPROGID, NAME, HASAUTOUPDATER, ALIASNAME?, (AUTOVALUE* | SIMPLESETTING*)*)>
+<!ATTLIST RELATIONSHIPCLASS
+	ProgID CDATA "mmGeoDatabase.MMRelationshipClass"
+>
+<!ELEMENT NAME (#PCDATA)>
+<!ELEMENT HASAUTOUPDATER (#PCDATA)>
+<!ELEMENT ALIASNAME (#PCDATA)>

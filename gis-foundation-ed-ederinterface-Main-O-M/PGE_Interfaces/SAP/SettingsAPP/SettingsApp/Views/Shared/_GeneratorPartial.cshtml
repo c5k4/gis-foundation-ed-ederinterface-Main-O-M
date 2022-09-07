@@ -1,0 +1,373 @@
+﻿@using SettingsApp.Common;
+@model SettingsApp.Models.GeneratorModel
+<script type="text/javascript" src="/Scripts/SettingsApp.js"></script>
+@if ((SettingsApp.Models.ProtectionModel)ViewBag.CurrentProtection != null)
+{
+    var superuser = Session["SuperuserOn"] != null ? (bool)Session["SuperuserOn"] : false;
+    var CurrentProtection = (SettingsApp.Models.ProtectionModel)ViewBag.CurrentProtection;
+    var CurrentGenerator = Model as SettingsApp.Models.GeneratorModel;
+     <table cellpadding="0" cellspacing="0" style="border: 0px solid #000000; width: 100%">
+        <tr>
+            <td style="padding: 0px" colspan="2">
+                <div class="float-left">
+                    <nav>
+                        <ul id="menu">
+                            @for (int i = 0; i <= CurrentProtection.Generators.Count - 1; i++)
+                            {
+                                int ActiveGeneratorIndex = CurrentProtection.Generators.FindIndex(x=> x.SapEquipmentID == CurrentGenerator.SapEquipmentID);
+                                string generatorName = "Generator " + (i + 1).ToString();
+                                var generator = CurrentProtection.Generators[i];
+                                string url = "/Generation/Generator?sapEquipmentID=" + generator.SapEquipmentID.ToString();
+                                if (ActiveGeneratorIndex == i)
+                                {
+                                    <li class="selected"><a href=@url> @generatorName  </a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="@ViewBag.Generator"><a href=@url> @generatorName  </a>
+                                    </li>
+                                }
+                            }
+                                @if (superuser)
+                                {
+
+                                    string url = "/Generation/AddNewGenerator";
+                                    <li style="display: inline;list-style: none;padding: 0px 5px 0px 5px;text-align: center;background-color: #FFFF00;color: #000000;"> <a  style="background: none;text-decoration: none; color: #000000;" href=@url> New </a></li>
+                                }
+                        </ul>
+                    </nav>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="header" style="padding-top: 15px; padding-bosttom: 0px; padding-left: 10px">
+                @ViewBag.GeneratorTitle
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="background-color: #ffffff; padding: 10px;">
+                @if (ViewBag.ShowPageError == true)
+                {
+                    <label id="lableDeviceValidationErrorGen" runat="server" style="color: Red; text-align: center;">
+                        There are error(s), please check below.
+                    </label>
+                }
+                @if (ViewBag.ShowSaveSucessful == true)
+                {
+                    <label id="lableDeviceSaveSucessGen" runat="server" style="color: Green; text-align: center;">
+                        Device saved successfully.
+                    </label>
+                }
+            </td>
+        </tr>
+        <tr >
+        <td align="center" colspan="2">
+            <table cellpadding="0"  cellspacing="0" style="margin:auto;background-color: #f2f2f2;border:0px solid #000; width:100%;">
+                <tr>
+                    <td>@Html.LabelForRequired(model => model.SapQueueNumber)
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.SapQueueNumber, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => CurrentGenerator.SapQueueNumber)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelForRequired(model => model.SapEgiNotification)
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.SapEgiNotification, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SapEgiNotification)
+                    </td>
+                </tr>
+@*                <tr>
+                    <td>@Html.LabelForRequired(model => model.ProgramType)
+                    </td>
+                    <td>@Html.DropDownListFor(model => model.ProgramType,Model.ProgratmTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ProgramType)
+                    </td>
+                </tr>*@
+                <tr>
+                    <td>@Html.LabelForRequired(model => model.ProgramType)
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.ProgramType, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ProgramType)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelForRequired(model => model.EffectiveRatingkW)
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.EffectiveRatingkW, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.EffectiveRatingkW)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelForRequired(model => model.NameplateRating)
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.NameplateRating, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.NameplateRating)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelForRequired(model => model.EffectiveRatingkVa)
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.EffectiveRatingkVa, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.EffectiveRatingkVa)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelForRequired(model => model.RatedVolatge)
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.RatedVolatge, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.RatedVolatge)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelForRequired(model => model.PowerFactor)
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.PowerFactor, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PowerFactor)
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelForRequired(model => model.NumberOfPhases)
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.NumberOfPhases, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.NumberOfPhases)
+                    </td>
+                </tr>
+@*                <tr>
+                    <td>@Html.LabelForRequired(model => model.ConnectionCD)
+                    </td>
+                    <td>@Html.DropDownListFor(model => model.ConnectionCD, Model.ConnectionTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ConnectionCD)
+                    </td>
+                </tr>*@
+                <tr>
+                    <td>@Html.LabelForRequired(model => model.ConnectionCD)
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.ConnectionCD, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ConnectionCD)
+                    </td>
+                </tr>
+@*                <tr>
+                    <td>@Html.LabelForRequired(model => model.StatusCD)
+                    </td>
+                    <td>@Html.DropDownListFor(model => model.StatusCD, Model.StatusList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.StatusCD)
+                    </td>
+                </tr>*@
+                <tr>
+                    <td>@Html.LabelForRequired(model => model.StatusCD)
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.StatusCD, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.StatusCD)
+                    </td>
+                </tr>
+@*                <tr>
+                    <td>@Html.LabelForRequired(model => model.GenTechCd)
+                    </td>
+                    <td>@Html.DropDownListFor(model => model.GenTechCd, Model.GenerationList,ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GenTechCd)
+                    </td>
+                </tr>*@
+                    <tr>
+                    <td>@Html.LabelForRequired(model => model.GenTechCd)
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.GenTechCd, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GenTechCd)
+                    </td>
+                </tr>
+@*                <tr>
+                    <td>@Html.LabelForRequired(model => model.PowerSource)
+                    </td>
+                    <td>@Html.DropDownListFor(model => model.PowerSource, Model.PowerSourceList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PowerSource)
+                    </td>
+                </tr>*@
+                <tr>
+                    <td>@Html.LabelForRequired(model => model.PowerSource)
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.PowerSource, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PowerSource)
+                    </td>
+                </tr>
+                @if (Model.GenTechCd == "IN")
+                {
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.UL1741Cerification)
+                        </td>
+                        <td>@Html.CheckBoxFor(model => model.UL1741Cerification, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.UL1741Cerification)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.UL1741SaCerification)
+                        </td>
+                        <td>@Html.CheckBoxFor(model => model.UL1741SaCerification, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.UL1741SaCerification)
+                        </td>
+                    </tr>
+@*                    <tr>
+                        <td>@Html.LabelForRequired(model => model.ModeOfInverter)
+                        </td>
+                        <td>@Html.DropDownListFor(model => model.ModeOfInverter, Model.ModeOfInverterList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ModeOfInverter)
+                        </td>
+                    </tr>*@
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.ModeOfInverter)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.ModeOfInverter, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ModeOfInverter)
+                        </td>
+                    </tr>
+@*                    <tr>
+                        <td>@Html.LabelForRequired(model => model.ControlCD)
+                        </td>
+                        <td>@Html.DropDownListFor(model => model.ControlCD, Model.ControlList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ControlCD)
+                        </td>
+                    </tr>*@
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.ControlCD)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.ControlCD, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ControlCD)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.Manufacturer)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.Manufacturer, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Manufacturer)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.Model)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.Model, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Model)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.Quantity)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.Quantity, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Quantity)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.InverterEfficiency)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.InverterEfficiency, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.InverterEfficiency)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.SapEquipmentID)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.SapEquipmentID, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SapEquipmentID)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.PTODate)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PTODate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PTODate)
+                        </td>
+                    </tr>
+                }
+                @if (Model.GenTechCd == "SG" || Model.GenTechCd == "IG")
+                {
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.Manufacturer)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.Manufacturer, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Manufacturer)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.Model)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.Model, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Model)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.Quantity)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.Quantity, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Quantity)
+                        </td>
+                    </tr>
+                        <tr>
+                        <td>@Html.LabelForRequired(model => model.SSReactance)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.SSReactance, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SSReactance)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.SSResistance)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.SSResistance, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SSResistance)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.TransReactance)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.TransReactance, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.TransReactance)
+                        </td>
+                    </tr>                   
+                        <tr>
+                        <td>@Html.LabelForRequired(model => model.TransResistance)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.TransResistance, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.TransResistance)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.SubTransReactance)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.SubTransReactance, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SubTransReactance)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.SubTransResistance)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.SubTransResistance, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SubTransResistance)
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.NegativeReactance)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.NegativeReactance, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.NegativeReactance)
+                        </td>
+                    </tr>                   
+                        <tr>
+                        <td>@Html.LabelForRequired(model => model.NegativeResistance)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.NegativeResistance, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.NegativeResistance)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.ZeroReactance)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.ZeroReactance, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ZeroReactance)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.ZeroResistance)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.ZeroResistance, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ZeroResistance)
+                        </td>
+                    </tr>                                   
+                        <tr>
+                        <td>@Html.LabelForRequired(model => model.GroundReactance)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.GroundReactance, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GroundReactance)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.GroundResistance)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.GroundResistance, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GroundResistance)
+                        </td>
+                    </tr>  
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.ControlCD)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.ControlCD, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ControlCD)
+                        </td>
+                    </tr>
+                    <tr>
+                        </tr>
+                    
+                }
+                <tr>
+                    <td>@Html.LabelForRequired(model => model.Notes)
+                    </td>
+                    <td>@Html.TextAreaFor(model => model.Notes, 5, 15, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 250, @class = "form-control" })@Html.ValidationMessageFor(model => model.Notes)
+                    </td>
+                </tr>
+
+                @if (Model.GenTechCd == "IN" && Model.Equipments.Count > 0)
+                {
+                    ViewBag.CurrentGenerator = Model as SettingsApp.Models.GeneratorModel;
+                    <tr>
+                    <td colspan="2" align="center">
+                          @{Html.Action("Equipment", "Generation", new { sapEquipmentID = Model.Equipments[0].SAPEquipmentID.ToString() });
+                            }
+                    </td>
+                    </tr>
+                }
+        </table>
+        </td>
+    </tr>
+     </table>
+}

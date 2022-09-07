@@ -1,0 +1,49 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+	x:Class="ArcFMSilverlight.PageTemplates.MapInformation"
+    Margin="5">
+
+    <UserControl.Resources>
+        <Style x:Key="TextBorder" TargetType="Border">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="#FFFFFFFF"/>
+            <Setter Property="CornerRadius" Value="1"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                        <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                        <GradientStop Color="#FF718597" Offset="0.375"/>
+                        <GradientStop Color="#FF617584" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <sdk:Label Content="Map Title:"/>
+        <sdk:Label Content="Map Type:" Grid.Row="1"/>
+        <sdk:Label Content="Printed By:" Grid.Row="2"/>
+        <sdk:Label Content="Printed Date:" Grid.Row="3"/>
+        <TextBox x:Name="MapTitleText" Text="{Binding MapTitle, Mode=TwoWay}" Grid.Column="1" VerticalContentAlignment="Center"/>
+        <TextBox  x:Name="MapTypeText" Text="{Binding MapType, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="PrintedByText" Text="{Binding PrintedBy, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center" />
+        <Border Grid.Row="3" Grid.Column="1" Style="{StaticResource TextBorder}" >
+            <TextBlock Text="{Binding PrintedOn}" VerticalAlignment="Center" />
+        </Border>
+    </Grid>
+</UserControl>

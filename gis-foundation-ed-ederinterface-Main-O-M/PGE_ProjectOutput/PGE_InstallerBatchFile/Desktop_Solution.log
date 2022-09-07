@@ -1,0 +1,207 @@
+Microsoft (R) Build Engine version 4.8.3761.0
+[Microsoft .NET Framework, version 4.0.30319.42000]
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Building the projects in this solution one at a time. To enable parallel build, please add the "/m" switch.
+Build started 7/5/2022 3:13:05 AM.
+Project "D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER.sln" on node 1 (Build target(s)).
+ValidateSolutionConfiguration:
+  Building solution configuration "Release|x86".
+ValidateProjects:
+  The project "PGE.Desktop.EDER.Tests" is not selected for building in solution configuration "Release|x86".
+Project "D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER.sln" (1) is building "D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER\PGE.Desktop.EDER.csproj" (2) on node 1 (default targets).
+Project file contains ToolsVersion="12.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+Project "D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER\PGE.Desktop.EDER.csproj" (2) is building "D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj" (3) on node 1 (default targets).
+Project file contains ToolsVersion="12.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+  C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Csc.exe /noconfig /nowarn:1701,1702 /nostdlib+ /platform:x86 /errorreport:prompt /define:TRACE /highentropyva+ /reference:"C:\Program Files (x86)\ArcGIS\DeveloperKit10.8\DotNet\ESRI.ArcGIS.DataSourcesGDB.dll" /reference:"C:\Program Files (x86)\ArcGIS\DeveloperKit10.8\DotNet\ESRI.ArcGIS.Geodatabase.dll" /reference:"C:\Program Files (x86)\ArcGIS\DeveloperKit10.8\DotNet\ESRI.ArcGIS.Geometry.dll" /reference:"C:\Program Files (x86)\ArcGIS\DeveloperKit10.8\DotNet\ESRI.ArcGIS.NetworkAnalysis.dll" /reference:"C:\Program Files (x86)\ArcGIS\DeveloperKit10.8\DotNet\ESRI.ArcGIS.System.dll" /reference:"C:\Program Files (x86)\ArcGIS\DeveloperKit10.8\DotNet\ESRI.ArcGIS.Version.dll" /reference:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.Framework.dll" /reference:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.Geodatabase.dll" /reference:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.Interop.Controls.dll" /reference:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.Interop.Desktop.dll" /reference:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.Interop.Framework.dll" /reference:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.Interop.Geodatabase.dll" /reference:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.Interop.Process.Session.dll" /reference:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.Interop.System.dll" /reference:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\mscorlib.dll" /reference:C:\Windows\assembly\GAC_32\Oracle.DataAccess\4.122.19.1__89b483f429c47342\Oracle.DataAccess.dll /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Data.DataSetExtensions.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Data.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.Linq.dll" /debug:pdbonly /filealign:512 /keyfile:PGE.snk /optimize+ /out:obj\x86\Release\PGE.BatchApplication.ROBC_API.dll /subsystemversion:6.00 /target:library /utf8output DatabaseRecords\CircuitSourceRecord.cs DatabaseRecords\BaseRecord.cs DatabaseRecords\DPDRecord.cs DatabaseRecords\PCPRecord.cs DatabaseRecords\SwitchRecord.cs LicenseInitializer.cs LicenseInitializer.designer.cs OracleConnectionControl.cs Properties\AssemblyInfo.cs DatabaseRecords\ROBCRecord.cs ROBCManager.cs "C:\Users\mmaeadmin\AppData\Local\Temp\7\.NETFramework,Version=v4.8.AssemblyAttributes.cs"
+ROBCManager.cs(465,30): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(522,30): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(579,30): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(1007,30): warning CS0168: The variable 'ex' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(1290,34): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(1383,34): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(1506,34): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(1583,34): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(1667,34): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(1849,34): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(2052,34): warning CS0168: The variable 'e' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(2259,30): warning CS0168: The variable 'ex' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(2396,30): warning CS0168: The variable 'ex' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(2509,34): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(3318,30): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(3776,21): warning CS0252: Possible unintended reference comparison; to get a value comparison, cast the left hand side to type 'string' [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(3827,21): warning CS0252: Possible unintended reference comparison; to get a value comparison, cast the left hand side to type 'string' [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(3858,21): warning CS0252: Possible unintended reference comparison; to get a value comparison, cast the left hand side to type 'string' [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(4262,30): warning CS0168: The variable 'ex' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(5082,34): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(5152,30): warning CS0168: The variable 'ex' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(5226,30): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+ROBCManager.cs(5334,32): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Microsoft.Common.targets(1114,5): warning MSB3088: Could not read state file "obj\PGE.BatchApplication.ROBC_API.csproj.UnmanagedRegistration.cache". Unable to find assembly 'Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'. [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+CopyFilesToOutputDirectory:
+  Copying file from "obj\x86\Release\PGE.BatchApplication.ROBC_API.dll" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\PGE.BatchApplication.ROBC_API.dll".
+  PGE.BatchApplication.ROBC_API -> D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\Desktop\PGE.BatchApplication.ROBC_API.dll
+  Copying file from "obj\x86\Release\PGE.BatchApplication.ROBC_API.pdb" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\PGE.BatchApplication.ROBC_API.pdb".
+IncrementalClean:
+  Deleting file "D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\obj\x86\Release\PGE.BatchApplication.ROBC_API.csproj.AssemblyReference.cache".
+  Deleting file "D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\obj\x86\Release\PGE.BatchApplication.ROBC_API.csproj.CoreCompileInputs.cache".
+Done Building Project "D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj" (default targets).
+Project "D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER\PGE.Desktop.EDER.csproj" (2) is building "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.ChangeDetectionAPI\PGE.Common.ChangeDetectionAPI\PGE.Common.ChangeDetectionAPI.csproj" (4) on node 1 (default targets).
+Project file contains ToolsVersion="15.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+  C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Csc.exe /noconfig /nowarn:1701,1702 /langversion:7.3 /nostdlib+ /platform:x86 /errorreport:prompt /define:TRACE /highentropyva+ /reference:"C:\Program Files (x86)\ArcGIS\DeveloperKit10.8\DotNet\ESRI.ArcGIS.Geodatabase.dll" /reference:"C:\Program Files (x86)\ArcGIS\DeveloperKit10.8\DotNet\ESRI.ArcGIS.Geometry.dll" /reference:"C:\Program Files (x86)\ArcGIS\DeveloperKit10.8\DotNet\ESRI.ArcGIS.System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\Microsoft.CSharp.dll" /reference:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.Geodatabase.dll" /reference:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.Interop.Geodatabase.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\mscorlib.dll" /reference:C:\Windows\assembly\GAC_32\Oracle.DataAccess\4.122.19.1__89b483f429c47342\Oracle.DataAccess.dll /reference:C:\Windows\Microsoft.Net\assembly\GAC_32\PGE_DBPasswordManagement\v4.0_1.0.0.0__820abe4faa45686d\PGE_DBPasswordManagement.exe /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Data.DataSetExtensions.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Data.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Net.Http.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.Linq.dll" /debug:pdbonly /filealign:512 /keyfile:PGE.snk /optimize+ /out:obj\x86\Release\PGE.Common.ChangeDetectionAPI.dll /subsystemversion:6.00 /target:library /utf8output DatabaseClasses\DBHelper.cs Properties\AssemblyInfo.cs UtilityClass\ChangedFeatures.cs CDVersionManager.cs "C:\Users\mmaeadmin\AppData\Local\Temp\7\.NETFramework,Version=v4.8.AssemblyAttributes.cs"
+CSC : error CS1617: Invalid option '7.3' for /langversion; must be ISO-1, ISO-2, 3, 4, 5 or Default [D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.ChangeDetectionAPI\PGE.Common.ChangeDetectionAPI\PGE.Common.ChangeDetectionAPI.csproj]
+Done Building Project "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.ChangeDetectionAPI\PGE.Common.ChangeDetectionAPI\PGE.Common.ChangeDetectionAPI.csproj" (default targets) -- FAILED.
+Project "D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER\PGE.Desktop.EDER.csproj" (2) is building "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.ArcFM\PGE.Common.Delivery.ArcFM.csproj" (5) on node 1 (default targets).
+Project "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.ArcFM\PGE.Common.Delivery.ArcFM.csproj" (5) is building "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Diagnostics\PGE.Common.Delivery.Diagnostics.csproj" (6) on node 1 (default targets).
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+_CopyOutOfDateSourceItemsToOutputDirectoryAlways:
+  Copying file from "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Diagnostics\Default.log4net.config" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\Default.log4net.config".
+_CopyAppConfigFile:
+Skipping target "_CopyAppConfigFile" because all output files are up-to-date with respect to the input files.
+CopyFilesToOutputDirectory:
+  Copying file from "obj\x86\Release\PGE.Common.Delivery.Diagnostics.dll" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.Diagnostics.dll".
+  PGE.Common.Delivery.Diagnostics -> D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.Diagnostics.dll
+  Copying file from "obj\x86\Release\PGE.Common.Delivery.Diagnostics.pdb" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.Diagnostics.pdb".
+Done Building Project "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Diagnostics\PGE.Common.Delivery.Diagnostics.csproj" (default targets).
+Project "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.ArcFM\PGE.Common.Delivery.ArcFM.csproj" (5) is building "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Framework\PGE.Common.Delivery.Framework.csproj" (7) on node 1 (default targets).
+CoreResGen:
+  No resources are out of date with respect to their source files. Skipping resource generation.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+_CopyOutOfDateSourceItemsToOutputDirectoryAlways:
+  Copying file from "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Diagnostics\Default.log4net.config" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\Default.log4net.config".
+_CopyAppConfigFile:
+Skipping target "_CopyAppConfigFile" because all output files are up-to-date with respect to the input files.
+CopyFilesToOutputDirectory:
+  Copying file from "obj\x86\Release\PGE.Common.Delivery.Framework.dll" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.Framework.dll".
+  PGE.Common.Delivery.Framework -> D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.Framework.dll
+  Copying file from "obj\x86\Release\PGE.Common.Delivery.Framework.pdb" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.Framework.pdb".
+Done Building Project "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Framework\PGE.Common.Delivery.Framework.csproj" (default targets).
+Project "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.ArcFM\PGE.Common.Delivery.ArcFM.csproj" (5) is building "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.System\PGE.Common.Delivery.Systems.csproj" (8) on node 1 (default targets).
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+_CopyOutOfDateSourceItemsToOutputDirectoryAlways:
+  Copying file from "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Diagnostics\Default.log4net.config" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\Default.log4net.config".
+CopyFilesToOutputDirectory:
+  Copying file from "obj\x86\Release\PGE.Common.Delivery.Systems.dll" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.Systems.dll".
+  PGE.Common.Delivery.Systems -> D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.Systems.dll
+  Copying file from "obj\x86\Release\PGE.Common.Delivery.Systems.pdb" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.Systems.pdb".
+Done Building Project "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.System\PGE.Common.Delivery.Systems.csproj" (default targets).
+CoreResGen:
+  No resources are out of date with respect to their source files. Skipping resource generation.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+CopyFilesToOutputDirectory:
+  Copying file from "obj\x86\Release\PGE.Common.Delivery.ArcFM.dll" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.ArcFM.dll".
+  PGE.Common.Delivery.ArcFM -> D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.ArcFM.dll
+  Copying file from "obj\x86\Release\PGE.Common.Delivery.ArcFM.pdb" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.ArcFM.pdb".
+Done Building Project "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.ArcFM\PGE.Common.Delivery.ArcFM.csproj" (default targets).
+Project "D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER\PGE.Desktop.EDER.csproj" (2) is building "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.UI\PGE.Common.Delivery.UI.csproj" (9) on node 1 (default targets).
+CoreResGen:
+  No resources are out of date with respect to their source files. Skipping resource generation.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+_CopyOutOfDateSourceItemsToOutputDirectoryAlways:
+  Copying file from "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Diagnostics\Default.log4net.config" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\Default.log4net.config".
+CopyFilesToOutputDirectory:
+  Copying file from "obj\x86\Release\PGE.Common.Delivery.UI.dll" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.UI.dll".
+  PGE.Common.Delivery.UI -> D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.UI.dll
+  Copying file from "obj\x86\Release\PGE.Common.Delivery.UI.pdb" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.UI.pdb".
+Done Building Project "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.UI\PGE.Common.Delivery.UI.csproj" (default targets).
+Done Building Project "D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER\PGE.Desktop.EDER.csproj" (default targets) -- FAILED.
+Project "D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER.sln" (1) is building "D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.LoginEncrpytor\PGE.Desktop.LoginEncrpytor.csproj" (13) on node 1 (default targets).
+Project file contains ToolsVersion="12.0". This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion="4.0". For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Microsoft.Common.targets(2318,5): warning MSB3088: Could not read state file "obj\x86\Release\PGE.Desktop.LoginEncrpytor.csproj.GenerateResource.Cache". Unable to find assembly 'Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'. [D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.LoginEncrpytor\PGE.Desktop.LoginEncrpytor.csproj]
+  "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\resgen.exe" /useSourcePath /r:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.Framework.Engine.dll" /r:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.Geodatabase.Engine.dll" /r:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.Interop.System.dll" /r:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.System.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\mscorlib.dll" /r:D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.Framework.dll /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Core.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Data.DataSetExtensions.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Deployment.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Drawing.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Windows.Forms.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.Linq.dll" /compile Encryptor.resx,obj\x86\Release\PGE.Desktop.LoginEncrpytor.Encryptor.resources Properties\Resources.resx,obj\x86\Release\PGE.Desktop.LoginEncrpytor.Properties.Resources.resources
+  Processing resource file "Encryptor.resx" into "obj\x86\Release\PGE.Desktop.LoginEncrpytor.Encryptor.resources".
+  Processing resource file "Properties\Resources.resx" into "obj\x86\Release\PGE.Desktop.LoginEncrpytor.Properties.Resources.resources".
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+  C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Csc.exe /noconfig /nowarn:1701,1702 /nostdlib+ /platform:x86 /errorreport:prompt /warn:4 /define:TRACE /highentropyva+ /reference:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.Framework.Engine.dll" /reference:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.Geodatabase.Engine.dll" /reference:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.Interop.System.dll" /reference:"D:\Program Files (x86)\Miner and Miner\ArcFM Solution\DotNet\Miner.System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\mscorlib.dll" /reference:D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\Desktop\PGE.Common.Delivery.Framework.dll /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Data.DataSetExtensions.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Data.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Deployment.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Drawing.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Windows.Forms.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.Linq.dll" /debug:pdbonly /filealign:512 /keyfile:PGE.snk /optimize+ /out:obj\x86\Release\PGE.Desktop.LoginEncrpytor.exe /subsystemversion:6.00 /resource:obj\x86\Release\PGE.Desktop.LoginEncrpytor.Encryptor.resources /resource:obj\x86\Release\PGE.Desktop.LoginEncrpytor.Properties.Resources.resources /target:winexe /utf8output ..\SharedAssemblyInfo.cs Encryptor.cs Encryptor.Designer.cs MMRegistrySettings.cs Program.cs Properties\AssemblyInfo.cs Properties\Resources.Designer.cs Properties\Settings.Designer.cs "C:\Users\mmaeadmin\AppData\Local\Temp\7\.NETFramework,Version=v4.8.AssemblyAttributes.cs"
+_CopyOutOfDateSourceItemsToOutputDirectoryAlways:
+  Copying file from "D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Diagnostics\Default.log4net.config" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\Default.log4net.config".
+_CopyAppConfigFile:
+Skipping target "_CopyAppConfigFile" because all output files are up-to-date with respect to the input files.
+CopyFilesToOutputDirectory:
+  Copying file from "obj\x86\Release\PGE.Desktop.LoginEncrpytor.exe" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\PGE.Desktop.LoginEncrpytor.exe".
+  PGE.Desktop.LoginEncrpytor -> D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\Desktop\PGE.Desktop.LoginEncrpytor.exe
+  Copying file from "obj\x86\Release\PGE.Desktop.LoginEncrpytor.pdb" to "D:\OPS\Muneer\EDER_SourceCode\PGE_ProjectOutput\PGE_InstallerBatchFile\..\..\PGE_ProjectOutput\Desktop\PGE.Desktop.LoginEncrpytor.pdb".
+IncrementalClean:
+  Deleting file "D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.LoginEncrpytor\obj\x86\Release\PGE.Desktop.LoginEncrpytor.csproj.AssemblyReference.cache".
+  Deleting file "D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.LoginEncrpytor\obj\x86\Release\PGE.Desktop.LoginEncrpytor.csproj.CoreCompileInputs.cache".
+  Deleting file "D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.LoginEncrpytor\obj\x86\Release\PGE.Desktop.LoginEncrpytor.csproj.CopyComplete".
+Done Building Project "D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.LoginEncrpytor\PGE.Desktop.LoginEncrpytor.csproj" (default targets).
+Done Building Project "D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER.sln" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+"D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER.sln" (Build target) (1) ->
+"D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER\PGE.Desktop.EDER.csproj" (default target) (2) ->
+"D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj" (default target) (3) ->
+(CoreCompile target) -> 
+  ROBCManager.cs(465,30): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(522,30): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(579,30): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(1007,30): warning CS0168: The variable 'ex' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(1290,34): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(1383,34): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(1506,34): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(1583,34): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(1667,34): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(1849,34): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(2052,34): warning CS0168: The variable 'e' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(2259,30): warning CS0168: The variable 'ex' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(2396,30): warning CS0168: The variable 'ex' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(2509,34): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(3318,30): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(3776,21): warning CS0252: Possible unintended reference comparison; to get a value comparison, cast the left hand side to type 'string' [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(3827,21): warning CS0252: Possible unintended reference comparison; to get a value comparison, cast the left hand side to type 'string' [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(3858,21): warning CS0252: Possible unintended reference comparison; to get a value comparison, cast the left hand side to type 'string' [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(4262,30): warning CS0168: The variable 'ex' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(5082,34): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(5152,30): warning CS0168: The variable 'ex' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(5226,30): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+  ROBCManager.cs(5334,32): warning CS0168: The variable 'EX' is declared but never used [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+
+
+"D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER.sln" (Build target) (1) ->
+"D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER\PGE.Desktop.EDER.csproj" (default target) (2) ->
+"D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj" (default target) (3) ->
+(UnmanagedUnregistration target) -> 
+  C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Microsoft.Common.targets(1114,5): warning MSB3088: Could not read state file "obj\PGE.BatchApplication.ROBC_API.csproj.UnmanagedRegistration.cache". Unable to find assembly 'Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'. [D:\OPS\Muneer\EDER_SourceCode\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj]
+
+
+"D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER.sln" (Build target) (1) ->
+"D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.LoginEncrpytor\PGE.Desktop.LoginEncrpytor.csproj" (default target) (13) ->
+(CoreResGen target) -> 
+  C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Microsoft.Common.targets(2318,5): warning MSB3088: Could not read state file "obj\x86\Release\PGE.Desktop.LoginEncrpytor.csproj.GenerateResource.Cache". Unable to find assembly 'Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'. [D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.LoginEncrpytor\PGE.Desktop.LoginEncrpytor.csproj]
+
+
+"D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER.sln" (Build target) (1) ->
+"D:\OPS\Muneer\EDER_SourceCode\PGE_Desktop\PGE.Desktop.EDER\PGE.Desktop.EDER\PGE.Desktop.EDER.csproj" (default target) (2) ->
+"D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.ChangeDetectionAPI\PGE.Common.ChangeDetectionAPI\PGE.Common.ChangeDetectionAPI.csproj" (default target) (4) ->
+(CoreCompile target) -> 
+  CSC : error CS1617: Invalid option '7.3' for /langversion; must be ISO-1, ISO-2, 3, 4, 5 or Default [D:\OPS\Muneer\EDER_SourceCode\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.ChangeDetectionAPI\PGE.Common.ChangeDetectionAPI\PGE.Common.ChangeDetectionAPI.csproj]
+
+    25 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:08.85

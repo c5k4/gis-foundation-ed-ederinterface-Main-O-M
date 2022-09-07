@@ -1,0 +1,73 @@
+Create EI Tables
+================
+
+Prerequisites
+-------------
+
+Default Geometry storage in ArcSDE is ST_GEOMETRY on target instance.
+Verify this by opening sqlplus in the target WIP database and executing:
+
+select config_string from  "SDE"."DBTUNE" WHERE keyword ='DEFAULTS' AND parameter_name = 'GEOMETRY_STORAGE';
+Result should be: (CLOB) ST_GEOMETRY 
+
+
+arcpy.ChangePrivileges_management("'Database Connections/webr@wip.sde/WEBR.PGE_TRANSFORMER_STAGING';'Database Connections/webr@wip.sde/WEBR.PGE_TRANSFORMER'","gis_i","GRANT","GRANT")
+
+
+Outage Transformer View
+-----------------------
+arcpy.CreateDatabaseView_management("Database Connections/edgis@eder.sde","ZPGEVW_TRANSFORMER_OUTAGE","SELECT OBJECTID,GLOBALID,CGC12,SHAPE FROM edgis.zz_mv_transformer")
+arcpy.ChangePrivileges_management("'Database Connections/edgis@eder.sde/EDGIS.ZPGEVW_TRANSFORMER_OUTAGE'","gis_i","GRANT","#")
+
+Crew Location
+-------------
+1) In ArcCatalog copy PGE_CREWLOCATION from WIP_EI.gdb into target WIP database
+1a) In Properties dialog for PGE_CREWLOCATION > General tab > Geometry Properties > Storage, ensure that ST_Geometry is the type and note down the SRID
+2) Log into SqlPlus on target database as webr user
+3) select registration_id from sde.table_registry where table_name='PGE_CREWLOCATION';
+Note the registration id number
+4) Open crew_location_trigger.sql in a text editor
+5) Replace the value 46 (on line 7) with the value you recorded in step 3
+5a) Replace the value 3 (on line 8) with the value you recorded in step 1a
+6) Save file
+7) Paste the file into sql plus to execute. Ensure there are no errors.
+8) In ArcCatalog, open the target database as webr user
+9) Right-click PGE_CREWLOCATION and grant Select and Edit(insert/update/delete) to gis_i user
+
+Validation steps
+----------------
+a) Log into SqlPlus on target database as gis_i user
+b) execute the following sql
+INSERT INTO webr.pge_crewlocation(tech_id, last_updated, latitude, longitude) values ('P1PC',sysdate,35.656861,-120.511658);
+c) ensure no errors (i.e. 1 row inserted)
+
+
+Outage Transformers
+-------------------
+1) Copy PGE_OUTAGETRANSFORMER from WIP_EI.gdb into target WIP database
+2) Log into SqlPlus on target database as webr user
+2a) Execute create_outage_notification.sql
+3) select registration_id from sde.table_registry where table_name='PGE_OUTAGETRANSFORMER';
+Note the registration id number
+4) Open crew_location_trigger.sql in a text editor
+5) Replace the value 46 (on line 7) with the value you recorded in step 3
+6) Save file
+7) Paste the file into sql plus to execute. Ensure there are no errors.
+8) Run create_outagexfmr_view.sql
+
+) In ArcCatalog, open the target database as webr user
+) Right-click PGE_CREWLOCATION and grant Select and Edit(insert/update/delete) to gis_i user
+
+
+Create Outage SPVW
+Update Outage SPVW
+
+Run Change Detection to populate Transformers
+Create Spatial Index in ArcCatalog
+
+Create OutageNotification
+Copy Index SQL
+Drop Index
+Remove carriage return
+
+http://support.esri.com/fr/knowledgebase/techarticles/detail/34290

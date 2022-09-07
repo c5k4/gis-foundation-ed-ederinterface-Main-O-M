@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.Interface.Integration.DMS.CADOPS" Collapsed="true">
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAQQAAAAAAABAQBAIAAAAQAIgAAAAAAA=</HashCode>
+      <FileName>CADOPS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.EdgeProcessor" Collapsed="true">
+    <Position X="27.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAACAAQACAABAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>EdgeProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.JunctionProcessor" Collapsed="true">
+    <Position X="18.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>mAAAABEAFEEAAAQwIAECAgAAAAEAABLAAAIIAAAAIDI=</HashCode>
+      <FileName>JunctionProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.NAStandalone" Collapsed="true">
+    <Position X="25.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAEAAQAABAIUACAAAAQBAAEAAgUBBAIIAAABAAAA=</HashCode>
+      <FileName>NAStandalone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.PolygonProcessor" Collapsed="true">
+    <Position X="29.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAEAAkAAAAAAAAAEACAAABAAAAgQAAAAAAA=</HashCode>
+      <FileName>PolygonProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.SchematicExtractor" Collapsed="true">
+    <Position X="25.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAUIAAAQAAAAAAAAAAAAAZAgAAAAABBA=</HashCode>
+      <FileName>SchematicExtractor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Utilities" Collapsed="true">
+    <Position X="24" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACEBAAAgAQACEIEQAAQTAAgABAIEAACgASQBACAg=</HashCode>
+      <FileName>Utilities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Common.CoincidentNode" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAQAgAQAgABAAAAAAAAAAIBAAAAAAAAAYAA=</HashCode>
+      <FileName>Common\CoincidentNode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Common.Configuration" Collapsed="true">
+    <Position X="29.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAG0gAgAAoCgEIAAAgAmACAAABQABEABAwCAIIAUAA=</HashCode>
+      <FileName>Common\Configuration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Common.ExtractorMessage" Collapsed="true">
+    <Position X="18.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQEAAGICAAEAAAAAAABAEkAAAAAABACAAIAM=</HashCode>
+      <FileName>Common\ExtractorMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Common.FCID" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KLIgQRFCIdBFQNIYGCIljCTghxAAwABQQFXoCAFQbAQ=</HashCode>
+      <FileName>Common\FCID.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Common.LicenseInitializer" Collapsed="true">
+    <Position X="20.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAIAnBEgAAAE2AAABAAAihACAAACqAQAAEKCAAAAAA=</HashCode>
+      <FileName>Common\LicenseInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Common.Oracle" Collapsed="true">
+    <Position X="27.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAQAUAAAAAEAAAAAABAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Common\Oracle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Common.RelID" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CDIAAAAAAAAEAFAQCAAABAQAAAAAAAAAAAAgAABQIAA=</HashCode>
+      <FileName>Common\RelID.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Common.SiteCoordinates" Collapsed="true">
+    <Position X="27.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEABgABAAAAABBCACAAEACAAAAABAEAIAAAAMBYEA=</HashCode>
+      <FileName>Common\SiteCoordinates.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Common.StaticSites" Collapsed="true">
+    <Position X="18.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAABAAAAQCAAAAAAAAAAAAAABAAQAAAAAAAAAA=</HashCode>
+      <FileName>Common\StaticSites.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Common.SiteSize" Collapsed="true">
+    <Position X="29.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABACAAAAAAAAAAEAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\StaticSites.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Common.Subtypes" Collapsed="true">
+    <Position X="29.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAICAAQEAAAAAAEAAAAAAQEAAEASAAAASg=</HashCode>
+      <FileName>Common\Subtypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Framework.DomainManager" Collapsed="true">
+    <Position X="24" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAEAAAAIABAgQAAAAAAAAAAAAAAAACEQEACAAAAAAA=</HashCode>
+      <FileName>Common\DomainManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Framework.Exceptions.InvalidConfigurationException" Collapsed="true">
+    <Position X="29.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\InvalidConfigurationException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Framework.Exceptions.InvalidDataException" Collapsed="true">
+    <Position X="31" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\InvalidDataException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Diagnostics.Log4NetLogger" Collapsed="true">
+    <Position X="22.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAABAAbAAAAgAQAAAYCAAAAEAAAAAAEAEEAA=</HashCode>
+      <FileName>Common\Log4NetLogger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.Capacitor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\Capacitor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.DistrBusBar" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\DistrBusBar.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.DPD" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\DPD.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.FeatureValues" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCIAAAAAQAgEABAQCAAABAQAAAAAAAAAAAAgIABQIAA=</HashCode>
+      <FileName>Features\FeatureValues.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.PrimaryGen" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\PrimaryGen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.PrimaryMeter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\PrimaryMeter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.PrimaryOH" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\PrimaryOH.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.PrimaryUG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\PrimaryUG.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.StitchPoint" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\StitchPoint.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.SubBusBar" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\Substation\SubBusBar.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.SubOH" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\Substation\SubOH.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.SubStitchPoint" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\Substation\SubStitchPoint.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.SUBTransformer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\Substation\SUBTransformer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.SubUG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\Substation\SubUG.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.SUBVoltageRegulator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\Substation\SUBVoltageRegulator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.Switch" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\Switch.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.Transformer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\Transformer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Features.VoltageRegulator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\VoltageRegulator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Manager.CircuitFinder" Collapsed="true">
+    <Position X="22.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFAAAACwAAICAgAAAAAAAAACIAAAAAAAQAgAAAAAAgA=</HashCode>
+      <FileName>Manager\CircuitFinder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Manager.ControlRecord" Collapsed="true">
+    <Position X="31" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAEDAAAAIACQASAAAARAAAAAIAAoMIAEAAAAACAAAAA=</HashCode>
+      <FileName>Manager\ControlRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Manager.ControlTable" Collapsed="true">
+    <Position X="18.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QgAAAABAAAAAAAAAQAAAAABAAABAAYQAAAAQAAAAAAA=</HashCode>
+      <FileName>Manager\ControlTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Manager.DataChecks" Collapsed="true">
+    <Position X="20.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAEAAAQAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Manager\DataChecks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Manager.SQLCheck" Collapsed="true">
+    <Position X="31" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAABAAAAAAIAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Manager\DataChecks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Manager.ExtractorManager" Collapsed="true">
+    <Position X="31" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAECCAAIIAggAAAAAAIABEAQAhQAhAAABABAA=</HashCode>
+      <FileName>Manager\ExtractorManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Processors.BaseProcessor">
+    <Position X="8" Y="6.5" Width="1.5" />
+    <AssociationLine Name="_curFeederInfo" Type="Miner.Geodatabase.Integration.Electric.FeederInfo" FixedToPoint="true">
+      <Path>
+        <Point X="8.75" Y="9.594" />
+        <Point X="8.75" Y="13.302" />
+        <Point X="11.75" Y="13.302" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAkAhAAEAAABAAFAAAAAAAQAAAAAAAIA=</HashCode>
+      <FileName>Processors\BaseProcessor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_curFeederInfo" />
+      <Property Name="CurFeederInfo" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Processors.Capacitor">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Processors\Capacitor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Processors.ColumnMapper" Collapsed="true">
+    <Position X="27.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAABAAAAQAAAAAAAAAAAAAAABAAQAACCAAAAAA=</HashCode>
+      <FileName>Processors\ColumnMapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Processors.ColumnMap" Collapsed="true">
+    <Position X="25.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAIAAAAAAAAAAAAAAIAAAEgACIAAAAAAAAAAEADA=</HashCode>
+      <FileName>Processors\ColumnMapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Processors.Device">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Processors\Device.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Processors.FeatureRemover" Collapsed="true">
+    <Position X="22.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAgAAAACBAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Processors\FeatureRemover.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Processors.Line">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAACAAEABAAAACAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Processors\Line.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Processors.Load">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Processors\Load.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Processors.Node">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAQAAEAEAAAAAAQAAACAgAAAACAIAYAIAAAAAA=</HashCode>
+      <FileName>Processors\Node.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Processors.Path">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Processors\Path.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Processors.Site">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAEAEAAACAAAAAAAFAIAAAIAAAAIAAAAAAA=</HashCode>
+      <FileName>Processors\Site.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Processors.Source">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Processors\Source.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Tracers.ESRITrace" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQCCIIAABAAAAAAAAAAAAABgQAAAAAAAAIAA=</HashCode>
+      <FileName>Tracers\ESRITrace.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Tracers.GenericExportScope" Collapsed="true">
+    <Position X="25.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAIACEEAAAABAAAAEAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Tracers\GenericExportScope.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Tracers.GenericNetworkExporter" Collapsed="true">
+    <Position X="27.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQQACAAAAABAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Tracers\GenericNetworkExporter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interface.Integration.DMS.Tracers.NADownstreamTrace" Collapsed="true">
+    <Position X="24" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEAAAAgAAAAAAAIAABAABAGAIggAABQBQAQAAABIAAA=</HashCode>
+      <FileName>Tracers\NADownstreamTrace.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Miner.Geodatabase.Integration.Electric.FeederInfo">
+    <Position X="11.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="PGE.Interface.Integration.DMS.Features.IFeatureValues" Collapsed="true">
+    <Position X="18.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Features\IFeatureValues.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="PGE.Interface.Integration.DMS.Common.extracttype" Collapsed="true">
+    <Position X="18.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAQAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\ExtractorMessage.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ReturnCode" Collapsed="true">
+    <Position X="20.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Common\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

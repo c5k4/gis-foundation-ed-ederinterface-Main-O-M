@@ -1,0 +1,396 @@
+﻿@using SettingsApp.Common;
+@model SettingsApp.Models.CircuitLoadModel
+<script type="text/javascript" src="~/Scripts/SettingsApp.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var noDataMsg = '@ViewBag.NoDataFoundMsg';
+        if (noDataMsg != '') {
+            $("input.add-new-item").attr("disabled", "disabled");
+        }
+    });
+</script>
+@using (Html.BeginForm("EngineeringInfo", "CircuitBreaker"))
+{
+    @Html.ValidationSummary(true)
+    <div class="eng-info">
+        <table cellpadding="0" cellspacing="0" style="width: 849px;">
+            <tr>
+                <td style="padding: 0px">
+                    <div class="float-left">
+                        <nav>
+                            <ul id="menu">
+                               @if (Security.IsInAdminGroup_CircuitLoad)
+                               {
+                            <li>@Html.ActionLink("GIS", "GIS", "CircuitBreaker", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName }, null)</li>
+                            <li>@Html.ActionLink("Current Settings", "Index", "CircuitBreaker", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName }, null)</li>
+                            <li>@Html.ActionLink("Future Settings", "Future", "CircuitBreaker", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName }, null)</li>
+                            <li>@Html.ActionLink("Settings Files", "Files", "CircuitBreaker", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName }, null)</li>
+                            <li>@Html.ActionLink("History", "History", "CircuitBreaker", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName }, null)</li>
+                            <li class="selected">@Html.ActionLink("Load", "EngineeringInfo", "CircuitBreaker", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName }, null)</li>
+                               }
+                               else
+                               {<li>@Html.ActionLink("GIS", "GIS", "CircuitBreaker", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName }, null)</li>
+                            <li>@Html.ActionLink("Current Settings", "Index", "CircuitBreaker", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName }, null)</li>
+                            <li>@Html.ActionLink("Future Settings", "Future", "CircuitBreaker", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName }, null)</li>
+                            <li>@Html.ActionLink("Settings Files", "Files", "CircuitBreaker", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName }, null)</li>
+                            <li>@Html.ActionLink("History", "History", "CircuitBreaker", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName }, null)</li> }
+                                    </ul>
+                     </nav>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="header" style="padding-top: 15px; padding-bottom: 0px; padding-left: 10px">
+                    @ViewBag.Title
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffffff; padding: 10px;">
+                    @if (ViewBag.ShowPageError == true)
+                    {
+                        <label id="lableDeviceValidationError" runat="server" style="color: Red; text-align: center;">
+                            There are error(s), please check below.
+                        </label>
+                    }
+                    @if ((TempData["ShowSaveSuccessful"] != null ? (bool)TempData["ShowSaveSuccessful"] : false) == true)
+                    {
+                        <label id="lableDeviceSaveSucess" runat="server" style="color: Green; text-align: center;">
+                            Load information updated successfully.
+                        </label>
+                    }
+                    @if ((TempData["ShowAddSuccessful"] != null ? (bool)TempData["ShowAddSuccessful"] : false) == true)
+                    {
+                        <label id="lableDeviceAddSucess" runat="server" style="color: Green; text-align: center;">
+                            Load information added successfully.
+                        </label>
+                    }
+                    @Html.HiddenFor(model => model.CircuitBreakerRowId)
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffffff; padding: 10px;">
+                    <table cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f2f2;">
+                        <tr>
+                            <td style="padding: 10px;">
+                                <table cellpadding="0" cellspacing="0" width="100%" style="border: 1px solid #000;">
+                                    <tr>
+                                        <td colspan="4">@Html.CheckBoxFor(model => model.DedicatedDGFeeder)
+                                            @Html.LabelFor(model => model.DedicatedDGFeeder, new { @class = "dist-fed-checkbox" })
+                                            @Html.ValidationMessageFor(model => model.DedicatedDGFeeder)
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding: 10px;">
+                                <table cellpadding="0" cellspacing="0" width="100%" style="border: 1px solid #000;">
+                                    <tr>
+                                        <td colspan="2" class="sectionHeader">
+                                            BANK LOADING
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0 20px;">
+                                            <table cellpadding="0" cellspacing="0" width="100%" style="border: 1px solid #000;">
+                                                <tr>
+                                                    <td colspan="2" align="center" class="sectionHeader">
+                                                        Summer
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <table cellpadding="0" cellspacing="0" width="100%" style="border: 0px solid #000;">
+                                                            <tr>
+                                                                <td>
+                                                                    @Html.LabelForRequired(model => model.SummerKVACapability)
+                                                                </td>
+                                                                <td>@Html.TextBoxFor(model => model.SummerKVACapability, new { @class = "int-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.SummerKVACapability)
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    @Html.LabelForRequired(model => model.SummerBaseFactor)
+                                                                </td>
+                                                                <td>@Html.TextBoxFor(model => model.SummerBaseFactor, new { @class = "decimal-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.SummerBaseFactor)
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    @Html.LabelForRequired(model => model.SummerProjectedKWLoad)
+                                                                </td>
+                                                                <td>@Html.TextBoxFor(model => model.SummerProjectedKWLoad, new { @class = "int-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.SummerProjectedKWLoad)
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    @Html.LabelForRequired(model => model.SummerMaxNormalVoltage)
+                                                                </td>
+                                                                <td>@Html.TextBoxFor(model => model.SummerMaxNormalVoltage, new { @class = "decimal-no", maxlength = 6 })@Html.ValidationMessageFor(model => model.SummerMaxNormalVoltage)
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <hr style="width: 108%;" />
+                                                        <table>
+                                                            <tr>
+                                                                <td>
+                                                                    @Html.LabelForRequired(model => model.SummerCapLimitation)
+                                                                </td>
+                                                                <td>@Html.TextAreaFor(model => model.SummerCapLimitation, 5, 1, new { @class = "season-area" })@Html.ValidationMessageFor(model => model.SummerCapLimitation)
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="0" width="100%" style="border: 1px solid #000;">
+                                                <tr>
+                                                    <td colspan="2" align="center" class="sectionHeader">
+                                                        Winter
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <table cellpadding="0" cellspacing="0" width="100%" style="border: 0px solid #000;">
+                                                            <tr>
+                                                                <td>
+                                                                    @Html.LabelForRequired(model => model.WinterKVACapability)
+                                                                </td>
+                                                                <td>@Html.TextBoxFor(model => model.WinterKVACapability, new { @class = "int-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.WinterKVACapability)
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    @Html.LabelForRequired(model => model.WinterBaseFactor)
+                                                                </td>
+                                                                <td>@Html.TextBoxFor(model => model.WinterBaseFactor, new { @class = "decimal-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.WinterBaseFactor)
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    @Html.LabelForRequired(model => model.WinterProjectedKWLoad)
+                                                                </td>
+                                                                <td>@Html.TextBoxFor(model => model.WinterProjectedKWLoad, new { @class = "int-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.WinterProjectedKWLoad)
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    @Html.LabelForRequired(model => model.WinterMaxNormalVoltage)
+                                                                </td>
+                                                                <td>@Html.TextBoxFor(model => model.WinterMaxNormalVoltage, new { @class = "decimal-no", maxlength = 6 })@Html.ValidationMessageFor(model => model.WinterMaxNormalVoltage)
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <hr style="width: 108%;" />
+                                                        <table>
+                                                            <tr>
+                                                                <td>
+                                                                    @Html.LabelForRequired(model => model.WinterCapLimitation)
+                                                                </td>
+                                                                <td>@Html.TextAreaFor(model => model.WinterCapLimitation, 5, 1, new { @class = "season-area" })@Html.ValidationMessageFor(model => model.WinterCapLimitation)
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" align="center">
+                                            <table class="months">
+                                                <tr>
+                                                    <td>
+                                                    </td>
+                                                    <td align="right" class="bank-load-heading">
+                                                        Month
+                                                    </td>
+                                                    <td class="bank-load-heading">
+                                                        Date of peak
+                                                        <br />
+                                                        (mm/dd/yyyy)
+                                                    </td>
+                                                    <td class="bank-load-heading">
+                                                        Time of peak
+                                                        <br />
+                                                        (0000-2359)
+                                                    </td>
+                                                    <td class="bank-load-heading">
+                                                        Total KW load
+                                                    </td>
+                                                </tr>
+                                                <tr >
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                     <td style="display: none;">
+                                                        @Html.TextBoxFor(model => model.NewLoadMonth, new { @class = "form-control newpeakdate" })
+                                                        @Html.ValidationMessageFor(model => model.NewLoadMonth)
+                                                    </td>
+                                                     <td style="display: none;">
+                                                        @Html.TextBoxFor(model => model.NewLoadTime, new { @class = "peaktime int-no", maxlength = 4 })
+                                                        @Html.ValidationMessageFor(model => model.NewLoadTime)
+                                                    </td>
+                                                      <td style="display: none;">
+                                                        @Html.TextBoxFor(model => model.NewLoadTotalKW, new { @class = "int-no", maxlength = 5 })
+                                                        @Html.ValidationMessageFor(model => model.NewLoadTotalKW)
+                                                    </td>
+                                                    <td style="display: none;">
+                                                        <input type="button" class="add-new-item" value="Add" onclick="this.form.action = '/@ViewBag.ControllerName/AddNewItem/@ViewBag.GlobalID/@ViewBag.LayerName'; this.form.submit();" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="5">
+                                                        <span style="color: Red; font-weight: bold;">@ViewBag.AddNewItemErrorMessage</span>
+                                                    </td>
+                                                </tr>
+                                                @if (Model.RecentMonthsData != null)
+                                                {
+                                                    if (Model.RecentMonthsData.Count > 0)
+                                                    {
+                                                        for (var i = 0; i <= Model.RecentMonthsData.Count - 1; i++)
+                                                        {
+                                                    <tr>
+                                                        <td>
+                                                            @Html.HiddenFor(model => model.RecentMonthsData[i].Id)
+                                                        </td>
+                                                        <td style="text-align: right;">
+                                                            @if (Model.RecentMonthsData[i].PeakDate != null)
+                                                            {
+                                                                if (Model.RecentMonthsData[i].PeakDate.HasValue)
+                                                                {
+                                                                    var val = Model.RecentMonthsData[i].PeakDate.Value;
+                                                                    var winterMonth = new string[] { "01", "02", "03", "11", "12" };
+                                                                    if (winterMonth.Contains(val.ToString("MM")))
+                                                                    {
+                                                                <span class="winter-month">@string.Format("{0:MMMMM}", val)</span>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                <span class="summer-month">@string.Format("{0:MMMMM}", val)</span>
+                                                                    }
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="NA-month">NA</span>
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            @Html.TextBoxFor(model => model.RecentMonthsData[i].PeakDate, new { Value = (Model.RecentMonthsData[i].PeakDate != null ? Model.RecentMonthsData[i].PeakDate.Value.ToString("MM/dd/yyyy") : string.Empty), @readonly = "readonly", @class = "form-control peakdate readonly-box-date" })
+                                                            @* @if (Model.RecentMonthsData[i].PeakDate != null)
+                                                            {
+                                                                if (Model.RecentMonthsData[i].PeakDate.HasValue)
+                                                                {
+                                                                    Html.TextBoxFor(model => model.RecentMonthsData[i].PeakDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { Value = Model.RecentMonthsData[i].PeakDate.Value.ToString("MM/dd/yyyy"), @class = "form-control datepicker" });
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                Html.TextBoxFor(model => model.RecentMonthsData[i].PeakDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepicker" });
+                                                            }*@
+                                                            @Html.ValidationMessageFor(model => model.RecentMonthsData[i].PeakDate)
+                                                        </td>
+                                                        <td>
+                                                            @Html.TextBoxFor(model => model.RecentMonthsData[i].PeakTime, new { @class = "peaktime int-no", maxlength = 4 })
+                                                            @Html.ValidationMessageFor(model => model.RecentMonthsData[i].PeakTime)
+                                                        </td>
+                                                        <td>
+                                                            @Html.TextBoxFor(model => model.RecentMonthsData[i].TotalKWLoad, new { @class = "int-no", maxlength = 5 })
+                                                            @Html.ValidationMessageFor(model => model.RecentMonthsData[i].TotalKWLoad)
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                        }
+                                                    }
+                                                }
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="last-update">
+                                            @Html.DisplayNameFor(model => model.SummerLastUpdated)@Html.TextBoxFor(model => model.SummerLastUpdated, new { @readonly = "readonly", @class = "readonly-box last-update", style = "width:100px;" })
+                                            <br />
+                                            @Html.DisplayNameFor(model => model.WinterLastUpdated)@Html.TextBoxFor(model => model.WinterLastUpdated, new { @readonly = "readonly", @class = "readonly-box last-update", style = "width:100px;" })
+                                        </td>
+                                        <td style="text-align: right; padding-right: 10px">
+                                            <input  type="button" value="Cancel" onclick="this.form.action='/@ViewBag.ControllerName/EngineeringInfo/@ViewBag.GlobalID/@ViewBag.LayerName';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                            <input type="button" value="Save" onclick="this.form.action='/@ViewBag.ControllerName/SaveLoadInfo/@ViewBag.GlobalID/@ViewBag.LayerName';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="text-align: right; padding-right: 10px;">
+                                            <span style="color: Red; font-weight: bold;">@ViewBag.SaveErrorMessage</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="sectionHeader">
+                                            Historical Data
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" align="center">
+                                            <table class="months">
+                                                <tr>
+                                                    <td colspan="2">
+                                                    </td>
+                                                    <td align="center" class="bank-load-heading">
+                                                        Date of peak
+                                                    </td>
+                                                    <td align="center" class="bank-load-heading">
+                                                        Time of peak
+                                                    </td>
+                                                    <td align="center" class="bank-load-heading">
+                                                        Total KW load
+                                                    </td>
+                                                </tr>
+                                                @if (Model.HistoricalMonthsData != null)
+                                                {
+                                                    if (Model.HistoricalMonthsData.Count > 0)
+                                                    {
+                                                        for (var i = 0; i <= Model.HistoricalMonthsData.Count - 1; i++)
+                                                        {
+                                                    <tr>
+                                                        <td colspan="2">
+                                                        </td>
+                                                        <td style="text-align: right;">
+                                                            @string.Format("{0:MM/dd/yy}", Model.HistoricalMonthsData[i].PeakDate)
+                                                            @Html.HiddenFor(model => model.HistoricalMonthsData[i].PeakDate)
+                                                            @Html.HiddenFor(model => model.HistoricalMonthsData[i].Id)
+                                                        </td>
+                                                        <td style="text-align: right;">
+                                                            @Html.DisplayFor(model => model.HistoricalMonthsData[i].PeakTime)
+                                                            @Html.HiddenFor(model => model.HistoricalMonthsData[i].PeakTime)
+                                                        </td>
+                                                        <td style="text-align: right;">
+                                                            @Html.DisplayFor(model => model.HistoricalMonthsData[i].TotalKWLoad)
+                                                            @Html.HiddenFor(model => model.HistoricalMonthsData[i].TotalKWLoad)
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                        }
+                                                    }
+                                                }
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+                 
+    
+}

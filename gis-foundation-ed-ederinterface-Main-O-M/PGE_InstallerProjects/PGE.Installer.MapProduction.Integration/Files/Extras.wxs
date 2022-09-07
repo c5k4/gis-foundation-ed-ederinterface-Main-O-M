@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--PGE.Interfaces.MapProduction.Integration-->
+  <Fragment>
+    <ComponentGroup Id="MAPExtra">
+
+      <Component Id="PGE.Interfaces.MapProduction.Processor.exe" Directory="MAPProduction" Guid="8A2A148F-29C2-44AC-8D30-78D6F7D17D6D" >
+        <File Id="PGE.Interfaces.MapProduction.Processor.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction\PGE.Interfaces.MapProduction.Processor.exe"/>
+      </Component>
+      <Component Id="PGE.Interfaces.GeodatabaseUtils.dll" Directory="MAPProduction" Guid="66BA77E3-5719-488D-935C-46F95F1F5283" >
+        <File Id="PGE.Interfaces.GeodatabaseUtils.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction\PGE.Interfaces.GeodatabaseUtils.dll"/>
+      </Component>
+      <Component Id="PGE.Interfaces.EDGISExtract.exe" Directory="MAPProduction" Guid="D7384AF6-576B-4B6E-8210-F652F043CA17" >
+        <File Id="PGE.Interfaces.EDGISExtract.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction\PGE.Interfaces.EDGISExtract.exe"/>
+      </Component>
+      <Component Id="PGE.Interfaces.EDGISExtract.Config.xml" Directory="MAPProduction" Guid="F5F4EBD2-548C-46E2-AEB1-CC6B98E95804" >
+        <File Id="PGE.Interfaces.EDGISExtract.Config.xml" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction\PGE.Interfaces.EDGISExtract.Config.xml"/>
+      </Component>
+      <Component Id="PGE.Interfaces.MapProduction.Processor.exe.config" Directory="MAPProduction" Guid="7B8E80D0-C62A-4460-84A7-8A979EC4DD7A" >
+        <File Id="PGE.Interfaces.MapProduction.Processor.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction\PGE.Interfaces.MapProduction.Processor.exe.config"/>
+      </Component>
+      
+      <Component Id="PGE.Interfaces.MapProduction.Exporter.exe" Directory="MAPProduction" Guid="1D250396-9D7A-48E5-B90A-872A599A83E3" >
+        <File Id="PGE.Interfaces.MapProduction.Exporter.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction\PGE.Interfaces.MapProduction.Exporter.exe"/>
+      </Component>
+
+      <Component Id="MapProduction_SQL" Directory="MapProductionSQL" Guid="3E5E9209-06BF-4814-8517-C48C2579A029" >
+        <File Id="MapProduction_SQL" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction\SQL\MapProduction SQL.sql"/>
+      </Component>
+      
+      <Component Id="PGE.Interfaces.MapProduction.xml" Directory="MAPProduction" Guid="401C944F-F99E-48E4-9347-DBF1BF9FE696" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.Interfaces.MapProduction.xml" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction\PGE.Interfaces.MapProduction.xml"/>
+      </Component>
+      
+      <!--
+      <Component Id="SwizzleLayers.exe" Directory="MAPProduction" Guid="82B9274D-5F7D-4366-B819-A2C8B06D6481" >
+        <File Id="SwizzleLayers.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction\SwizzleLayers.exe"/>
+      </Component>
+	    -->
+      
+	  <Component Id="pge.interfaces.mapproduction.log4net.config" Directory="LoggingConfiguration" Guid="B0FFC574-D444-4DED-B833-092DC8A24A98" Permanent="yes" NeverOverwrite="yes">
+        <File Id="pge.interfaces.mapproduction.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction\pge.interfaces.mapproduction.log4net.config"/>
+      </Component>
+
+
+      <!--Include Projection Files-->
+
+      <!--<Component Id="NAD 1927 StatePlane California V FIPS 0405.prj" Directory="MAPProduction" Guid="E8E2CA2F-EB5C-44B9-B08A-BE7D1367C0F4" Permanent="yes" NeverOverwrite="yes">
+        <File Id="NAD 1927 StatePlane California V FIPS 0405.prj" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction\NAD 1927 StatePlane California V FIPS 0405.prj"/>
+      </Component>
+      <Component Id="NAD 1927 StatePlane California IV FIPS 0404.prj" Directory="MAPProduction" Guid="5EEB0409-7DB5-4A73-9C95-E059F5FD4F21" Permanent="yes" NeverOverwrite="yes">
+        <File Id="NAD 1927 StatePlane California IV FIPS 0404.prj" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction\NAD 1927 StatePlane California IV FIPS 0404.prj"/>
+      </Component>
+      <Component Id="NAD 1927 StatePlane California III FIPS 0403.prj" Directory="MAPProduction" Guid="6B57A422-B450-4BEB-8568-E4C425207FE4" Permanent="yes" NeverOverwrite="yes">
+        <File Id="NAD 1927 StatePlane California III FIPS 0403.prj" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction\NAD 1927 StatePlane California III FIPS 0403.prj"/>
+      </Component>
+      <Component Id="NAD 1927 StatePlane California II FIPS 0402.prj" Directory="MAPProduction" Guid="E4AFD0B1-F59F-447E-B0F4-69D3646A3B38" Permanent="yes" NeverOverwrite="yes">
+        <File Id="NAD 1927 StatePlane California II FIPS 0402.prj" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction\NAD 1927 StatePlane California II FIPS 0402.prj"/>
+      </Component>
+      <Component Id="NAD 1927 StatePlane California I FIPS 0401.prj" Directory="MAPProduction" Guid="FFB2EBC9-B771-41A3-AFD1-8C2BF1A27FEA" Permanent="yes" NeverOverwrite="yes">
+        <File Id="NAD 1927 StatePlane California I FIPS 0401.prj" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\MapProduction\NAD 1927 StatePlane California I FIPS 0401.prj"/>
+      </Component>-->
+      
+    </ComponentGroup>
+
+
+  </Fragment>
+</Wix>

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;Chrome=1" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - TLM Application</title>
+   <link rel="stylesheet" href="~/Content/jquery-ui.css" />
+    <link rel="Stylesheet" href="~/Content/Site.css" />
+    <script src="~/Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery-ui-1.8.20.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+    @*<script src="~/Scripts/modernizr-2.5.3.js" type="text/javascript"></script>*@
+    <script src="~/Scripts/TLM.js" type="text/javascript"></script>
+    
+</head>
+<body id="body-main">
+    &nbsp;
+    <div id="body">
+        <div class="content-wrapper main-content clear-fix">
+            <nav>
+            @Html.Action("Header", "Layout")
+    </nav>
+            @RenderBody()
+        </div>
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

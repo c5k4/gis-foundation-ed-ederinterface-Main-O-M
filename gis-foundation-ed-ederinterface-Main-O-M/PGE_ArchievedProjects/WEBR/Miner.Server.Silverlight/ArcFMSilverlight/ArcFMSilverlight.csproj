@@ -1,0 +1,1014 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1F07076C-F114-4DB5-AE9E-7A332773FC0D}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArcFMSilverlight</RootNamespace>
+    <AssemblyName>ArcFMSilverlight</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>ArcFMSilverlight.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>ArcFMSilverlight.App</SilverlightAppEntry>
+    <TestPageFileName>ArcFMSilverlightTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>..\ArcFMSilverlight.Web\ArcFMSilverlight.Web.csproj</LinkedServerProject>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.Client, Version=10.1.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Behaviors, Version=10.1.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Bing, Version=10.1.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Portal, Version=10.1.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Printing, Version=10.1.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Toolkit, Version=10.1.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Toolkit.DataSources, Version=10.1.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.SilverlightViewer.Controls">
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="silverPDF, Version=1.2.1269.0, Culture=neutral, PublicKeyToken=9486e015da5174d6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="system, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Json, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Net, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.ServiceModel, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.ServiceModel.DomainServices.Client, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.ServiceModel.DomainServices.Client.Web, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web.Extensions, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows.Browser, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Navigation, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Theming.TelventGray, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationCacheManager.cs" />
+    <Compile Include="Behaviors\AttributeViewerResizeBehavior.cs" />
+    <Compile Include="Behaviors\DoubleToVisibilityConverter.cs" />
+    <Compile Include="Behaviors\ExpandElementOnMouseOverBehavior.cs" />
+    <Compile Include="Behaviors\ExpandOnDoubleClickBehavior.cs" />
+    <Compile Include="Behaviors\MaintainObservedElementWidthBehavior.cs" />
+    <Compile Include="Behaviors\Popup.cs" />
+    <Compile Include="Behaviors\PopupHorizontalAlignment.cs" />
+    <Compile Include="Behaviors\PopupOrientation.cs" />
+    <Compile Include="Behaviors\PopupOrientationCollection.cs" />
+    <Compile Include="Behaviors\PopupPlacement.cs" />
+    <Compile Include="Behaviors\PopupVerticalAlignment.cs" />
+    <Compile Include="Behaviors\PositionMapTip.cs" />
+    <Compile Include="Butterfly\ButterflyControl.xaml.cs">
+      <DependentUpon>ButterflyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Butterfly\ButterflyCustomButton.cs" />
+    <Compile Include="Butterfly\ButterflyTool.cs" />
+    <Compile Include="ConfigUtility.cs" />
+    <Compile Include="Controls\AddRemoveData\AddData.xaml.cs">
+      <DependentUpon>AddData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AddRemoveData\AddRemoveDataTool.cs" />
+    <Compile Include="Controls\AddRemoveData\RemoveData.xaml.cs">
+      <DependentUpon>RemoveData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CADExport\CADExportControl.xaml.cs">
+      <DependentUpon>CADExportControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CADExport\CADExportTool.cs" />
+    <Compile Include="Controls\CADExport\PngExport.cs" />
+    <Compile Include="Controls\CADExport\PNGPrintPreview.xaml.cs">
+      <DependentUpon>PNGPrintPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Coordinates\CoordinatesControl.cs" />
+    <Compile Include="Controls\CustomSearches\TransformerSearch.cs" />
+    <Compile Include="Controls\CustomSearches\PGESearchMM.cs" />
+    <Compile Include="Controls\CustomSearches\CustomCGCSearch.cs" />
+    <Compile Include="Controls\CustomSearches\CustomLatLongSearch.cs" />
+    <Compile Include="Controls\CustomSearches\PGESearch.cs" />
+    <Compile Include="Controls\Coordinates\Themes\Enums\Enumerations.cs" />
+    <Compile Include="Controls\DataGridContextMenu\DataGridContextMenu.cs" />
+    <Compile Include="Controls\DataGridContextMenu\PrintRowDetails.cs" />
+    <Compile Include="Controls\DelineationPrint\DelineationPrintControl.xaml.cs">
+      <DependentUpon>DelineationPrintControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DelineationPrint\DelineationPrintTool.cs" />
+    <Compile Include="Controls\DeviceSettings\DataGridCustomButtonManager.cs" />
+    <Compile Include="Controls\DeviceSettings\MoreInfoPseudoCustomButton.cs" />
+    <Compile Include="Controls\EnvironmentalInfo\EnvironmentalInfo.xaml.cs">
+      <DependentUpon>EnvironmentalInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Favorites\BookmarksControl.xaml.cs">
+      <DependentUpon>BookmarksControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Favorites\BookmarksModel.cs" />
+    <Compile Include="Controls\Favorites\FavoritesControl.xaml.cs">
+      <DependentUpon>FavoritesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Favorites\NewBookmarkWindow.xaml.cs">
+      <DependentUpon>NewBookmarkWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Favorites\FavoritesModel.cs" />
+    <Compile Include="Controls\Favorites\NewFavoriteWindow.xaml.cs">
+      <DependentUpon>NewFavoriteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Favorites\UserBookmarksControl.xaml.cs">
+      <DependentUpon>UserBookmarksControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Filter\FilterRibbonPanel.xaml.cs">
+      <DependentUpon>FilterRibbonPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GenerationOnFeeder\ENOSFEEDERTool.cs" />
+    <Compile Include="Controls\GenerationOnFeeder\FeederFromMap.xaml.cs">
+      <DependentUpon>FeederFromMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GenerationOnFeeder\FeederFromMapTool.cs" />
+    <Compile Include="Controls\GenerationOnFeeder\FEEDERToolPage.xaml.cs">
+      <DependentUpon>FEEDERToolPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GenerationOnFeeder\GenOnFeeder.cs" />
+    <Compile Include="Controls\GenerationOnFeeder\GenOnFeederCustomButton.cs" />
+    <Compile Include="Controls\GenerationOnFeeder\GetGenOnFeeder.cs" />
+    <Compile Include="Controls\GenerationOnTransformer\GenerationOnTransformer.xaml.cs">
+      <DependentUpon>GenerationOnTransformer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GenerationOnTransformer\GenOnTransformer.cs" />
+    <Compile Include="Controls\GenerationOnTransformer\GenOnTransformerTool.cs" />
+    <Compile Include="Controls\GenerationOnTransformer\GetGeneration.cs" />
+    <Compile Include="Controls\GenerationOnTransformer\ShowGenerationCustomButton.cs" />
+    <Compile Include="Controls\Generation\GenerationData.cs" />
+    <Compile Include="Controls\Generation\GenerationInfoWindow.xaml.cs">
+      <DependentUpon>GenerationInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IGP_ConductorInTrench\CIT_CustomButton.cs" />
+    <Compile Include="Controls\IGP_ConductorInTrench\Conductor_in_Trench.xaml.cs">
+      <DependentUpon>Conductor_in_Trench.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Jet\JetEquipmentModel.cs" />
+    <Compile Include="Controls\Jet\JetModel.cs" />
+    <Compile Include="Controls\Jet\JetRonTool.cs" />
+    <Compile Include="Controls\Jet\JobAssignWindow.xaml.cs">
+      <DependentUpon>JobAssignWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Jet\JetJobsManager.xaml.cs">
+      <DependentUpon>JetJobsManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Jet\JetJobsTool.cs" />
+    <Compile Include="Controls\Jet\JetToggle.xaml.cs">
+      <DependentUpon>JetToggle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Jet\JobEditWindow.xaml.cs">
+      <DependentUpon>JobEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Jet\JobReserveOperatingNumber.xaml.cs">
+      <DependentUpon>JobReserveOperatingNumber.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Jet\MyAutoCompleteBox.cs" />
+    <Compile Include="Controls\Legend\LegendToggle.xaml.cs">
+      <DependentUpon>LegendToggle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Legend\LegendControl.xaml.cs">
+      <DependentUpon>LegendControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Legend\LegendTool.cs" />
+    <Compile Include="Controls\Measure\MeasureControl.cs" />
+    <Compile Include="Controls\Notes\NotesAttributeEditor.xaml.cs">
+      <DependentUpon>NotesAttributeEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Notes\NotesWidget.xaml.cs">
+      <DependentUpon>NotesWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OutageHistory\OutageHistoryCustomButton.cs" />
+    <Compile Include="Controls\OutageHistory\OutageHistoryParametersWindow.xaml.cs">
+      <DependentUpon>OutageHistoryParametersWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PLC\GetZOrderData.cs" />
+    <Compile Include="Controls\PLC\NewPoleFromLATLONG.xaml.cs">
+      <DependentUpon>NewPoleFromLATLONG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PLC\OCalcWIPSelection.xaml.cs">
+      <DependentUpon>OCalcWIPSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PLC\PLCAttributeEditor.xaml.cs">
+      <DependentUpon>PLCAttributeEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PLC\PLCWidget.xaml.cs">
+      <DependentUpon>PLCWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PLC\PoleData.cs" />
+    <Compile Include="Controls\PLC\StartAnalysisResponse.cs" />
+    <Compile Include="Controls\PLC\ZOrderDataAttr.cs" />
+    <Compile Include="Controls\POL\CustomerPIIInfo.xaml.cs">
+      <DependentUpon>CustomerPIIInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\POL\POLContactInfo.cs" />
+    <Compile Include="Controls\PONS\IServicePons.cs" />
+    <Compile Include="Controls\PONS\PONSAdHocPrint.cs" />
+    <Compile Include="Controls\PONS\PONSDialog.xaml.cs">
+      <DependentUpon>PONSDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PONS\PONSDialogTool.cs" />
+    <Compile Include="Controls\PONS\Ponsservicelayercall.cs" />
+    <Compile Include="Controls\PONS\Searchdata.xaml.cs">
+      <DependentUpon>Searchdata.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RibbonPanel\RibbonPanel.cs" />
+    <Compile Include="Controls\DeviceSettings\DeviceSettings.cs" />
+    <Compile Include="Controls\SAPRWNotification\MapLocations.cs" />
+    <Compile Include="Controls\SAPRWNotification\NotificationDetail.cs" />
+    <Compile Include="Controls\SAPRWNotification\NotificationLocation.cs" />
+    <Compile Include="Controls\SAPRWNotification\SAPNotificationControl.xaml.cs">
+      <DependentUpon>SAPNotificationControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\SAPRWNotification\SAPNotificationTool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\SAPRWNotification\SAPRWControl.xaml.cs">
+      <DependentUpon>SAPRWControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SAPRWNotification\SaprwNotification.cs" />
+    <Compile Include="Controls\Schematics\SchematicsRibbonPanel.xaml.cs">
+      <DependentUpon>SchematicsRibbonPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShowRolloverInfo\MapTipPopup.cs" />
+    <Compile Include="Controls\ShowRolloverInfo\ShowDetailsMenu.cs" />
+    <Compile Include="Controls\ShowRolloverInfo\ShowRolloverInfo.cs" />
+    <Compile Include="Controls\StandardMapPrint\StandardMapPrintTool.cs" />
+    <Compile Include="Controls\StandardMapPrint\StandardPrintPage.xaml.cs">
+      <DependentUpon>StandardPrintPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextCallout\TextCallout.cs" />
+    <Compile Include="Controls\TLM\Tlm.cs" />
+    <Compile Include="Controls\Tracing\LoadingInformation\LoadingInformation.xaml.cs">
+      <DependentUpon>LoadingInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Tracing\PGE_Tracing_Control.xaml.cs">
+      <DependentUpon>PGE_Tracing_Control.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Tracing\TraceItem.cs" />
+    <Compile Include="Controls\Tracing\TracingHelper.cs" />
+    <Compile Include="Controls\Ufm\UfmPrintControl.xaml.cs">
+      <DependentUpon>UfmPrintControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ufm\UfmPrintTool.cs" />
+    <Compile Include="Controls\Ufm\PseudoGroupLayerFilter.cs" />
+    <Compile Include="Controls\Ufm\UfmRibbonPanel.xaml.cs">
+      <DependentUpon>UfmRibbonPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WIP\WIPAttributeEditor.xaml.cs">
+      <DependentUpon>WIPAttributeEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WIP\WIPEditorWidget.xaml.cs">
+      <DependentUpon>WIPEditorWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DelegateCommand.cs" />
+    <Compile Include="Generated_Code\ArcFMSilverlight.Web.g.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Extents.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueConverters\BooleanToVisibilityValueConverter.cs" />
+    <Compile Include="ValueConverters\CloneLayersValueConverter.cs" />
+    <Compile Include="ValueConverters\BrushEnumConverter.cs" />
+    <Compile Include="ValueConverters\LinearUnitEnumConverter.cs" />
+    <Compile Include="ValueConverters\TemplateGroupsToVisibilityValueConverter.cs" />
+    <Compile Include="ValueConverters\FindAncestorValueConverter.cs" />
+    <Compile Include="ValueConverters\LayerFilterValueConverter.cs" />
+    <Compile Include="ValueConverters\MeasureModeToBooleanValueConverter.cs" />
+    <Compile Include="ValueConverters\ScaleValueConverter.cs" />
+    <Compile Include="ViewModels\BasicMapToolsViewModel.cs" />
+    <Compile Include="ViewModels\MapInsetToolsViewModel.cs" />
+    <Compile Include="ViewModels\MapToolsViewModel.cs" />
+    <Compile Include="Views\MapInsetTools.xaml.cs">
+      <DependentUpon>MapInsetTools.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MapTools.xaml.cs">
+      <DependentUpon>MapTools.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WebmapPasswordPrompt.xaml.cs">
+      <DependentUpon>WebmapPasswordPrompt.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Butterfly\ButterflyControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\AddRemoveData\AddData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\AddRemoveData\RemoveData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CADExport\CADExportControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CADExport\PNGPrintPreview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Coordinates\Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DelineationPrint\DelineationPrintControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\EnvironmentalInfo\EnvironmentalInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Favorites\BookmarksControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Favorites\FavoritesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Favorites\NewBookmarkWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Favorites\NewFavoriteWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Favorites\UserBookmarksControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Filter\FilterRibbonPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\GenerationOnFeeder\FeederFromMap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\GenerationOnFeeder\FEEDERToolPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\GenerationOnTransformer\GenerationOnTransformer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Generation\GenerationInfoWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\IGP_ConductorInTrench\Conductor_in_Trench.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Jet\JobAssignWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Jet\JetJobsManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Jet\JetToggle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Jet\JobEditWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Jet\JobReserveOperatingNumber.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Legend\LegendToggle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Legend\LegendControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Measure\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Notes\NotesAttributeEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Notes\NotesWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\OutageHistory\OutageHistoryParametersWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PLC\NewPoleFromLATLONG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PLC\OCalcWIPSelection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PLC\PLCAttributeEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PLC\PLCWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\POL\CustomerPIIInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PONS\PONSDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PONS\Searchdata.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\RibbonPanel\Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SAPRWNotification\SAPNotificationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SAPRWNotification\SAPRWControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Schematics\SchematicsRibbonPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StandardMapPrint\StandardPrintPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TextCallout\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Tracing\LoadingInformation\LoadingInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Tracing\PGE_Tracing_Control.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Ufm\UfmPrintControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Ufm\UfmRibbonPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\WIP\WIPAttributeEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\WIP\WIPEditorWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MapInsetTools.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MapTools.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WebmapPasswordPrompt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controls\Tracing\WEBR Tracing Configuration.docx" />
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ArcFM Silverlight 2.4 Full Client Toolkit Code\Silverlight\Miner.Server.Client.Toolkit\Miner.Server.Client.Toolkit.csproj">
+      <Project>{FD30120F-2488-484B-A930-2B48DF6AD65F}</Project>
+      <Name>Miner.Server.Client.Toolkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ArcFM Silverlight 2.4 Full Client Toolkit Code\Silverlight\Miner.Server.Client\Miner.Server.Client.csproj">
+      <Project>{54FFCDE9-5C79-4891-949B-182AA9729D35}</Project>
+      <Name>Miner.Server.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Miner.Silverlight.Logging\Miner.Silverlight.Logging.Client\Miner.Silverlight.Logging.Client.csproj">
+      <Project>{3EBE4333-5AA5-406F-8E57-752CCF2DA2E6}</Project>
+      <Name>Miner.Silverlight.Logging.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WebR1_Silverlight\ArcFM.Silverlight.PGE.CustomTools\ArcFM.Silverlight.PGE.CustomTools.csproj">
+      <Project>{1F2F2213-72BB-4B7B-8ED1-76353C9EDA80}</Project>
+      <Name>ArcFM.Silverlight.PGE.CustomTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WebR1_Silverlight\PageTemplates\PageTemplates.csproj">
+      <Project>{F0FE1362-56EA-498D-8CD8-A0FD7605AFFE}</Project>
+      <Name>PageTemplates</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WebR1_Silverlight\PGnE.Printing\PGnE.Printing.csproj">
+      <Project>{CB87B09B-9F66-4F48-9F23-7BFFE047BC34}</Project>
+      <Name>PGnE.Printing</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\addlayer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\attach_doc.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\close.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ConduitTraceDownstream.png" />
+    <Content Include="Images\ConduitTraceUpstream.png" />
+    <Content Include="Images\create_bookmark.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\create_favorite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\delete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\delete_job.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\delete_row.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\add_to_selection.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\area.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\back_location.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\box_zoom_in.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\box_zoom_out.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Images\basemap.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\buffer_options.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\coordinfo_cursor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\coordinfo_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\_hover_over_identify.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Images\DrawLine.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\drawline_cursor.png" />
+    <Content Include="Images\edit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\ill-sc-new-print-opt4.png" />
+    <Resource Include="Images\ill-sc1-opt4.png" />
+    <Resource Include="Images\ill-sc2+3-opt4.png" />
+    <Resource Include="Images\ill-sc5-opt4.png" />
+    <Resource Include="Images\ill-sc6-opt4.png" />
+    <Resource Include="Images\ill-sc8-opt4.png" />
+    <Resource Include="Images\ill-sc9-opt4.png" />
+    <Resource Include="Images\ill_sc2_3_opt4.png" />
+    <Resource Include="Images\genFeeder.png" />
+    <Content Include="Images\jet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\mail.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\maximize.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\movePole.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\new_reserve.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\next.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ocalc.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ok.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\POL.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pole.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\poleNew.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pol_Final.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\previous.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\print.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\removelayer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\restore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\schem_filter_feeder_type.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\flag_cursor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\google_maps.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\hover_over_identify.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icon_xls.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\locate_map.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\manage_bookmarks.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\manage_favorites.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\map_notification.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\map_update.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pdf.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\satellite_map.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\selectfeatures.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\shareCurrentUrl.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\show_legend.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\status.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Tracing_Options.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\create_new_selection.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CrossHair.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\cursor_magnify.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\database_publish.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\cursor_measure.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\cursor_pan.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\cursor_zoom_in.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\cursor_zoom_out.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\distance.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\expand.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\export.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\forward_location.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\identify_cursor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Images\import.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\layers.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\locate.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\logo-pge.png" />
+    <Content Include="Images\magnifying_glass.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Maps-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\NavToPoint.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\overview.png" />
+    <Content Include="Images\page_template.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\pan.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Images\polygon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\radius.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\remove_from_selection.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\SaveExtent.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\schem_filter_circuit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\schem_filter_voltage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\search.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\select_from_selection.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\show_all.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\SilverlightViewer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Images\stored_views.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\unreserve.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\wip_on_off.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\word.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zip.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zoom_in.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zoom_out.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\zoom_to_extent.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\CADExport\Themes\" />
+    <Folder Include="Controls\SAPRWNotification\Theme\" />
+    <Folder Include="Controls\ShowRolloverInfo\Themes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

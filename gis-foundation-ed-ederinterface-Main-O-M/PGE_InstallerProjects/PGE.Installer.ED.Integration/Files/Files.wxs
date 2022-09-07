@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <DirectoryRef Id="CONFIG">
+      <Component Id="ConfigFiles" Guid="E6918767-9FA4-4CE2-A57E-B8F7C0975205" >
+        <File Id="Domains.xml" src="..\output\Assemblies\Config\Domains.xml"/>
+        <File Id="GISSAP_AssetSynch_Config.xml" src="..\output\Assemblies\Config\GISSAP_AssetSynch_Config.xml"/>
+        <File Id="SAPIntegrationConfig.xsd" src="..\output\Assemblies\Config\SAPIntegrationConfig.xsd"/>
+        <File Id="Telvent.PGE.SAP.dll.Config" src="..\output\Assemblies\Config\Telvent.PGE.SAP.dll.Config"/>
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="INTEGRATION">
+      <Component Id="BatchFiles" Guid="9618373D-EEDC-46F0-9716-14A9A15F5AA9" >
+        <File Id="Telvent.PGE.Batch.exe" src="..\output\Executables\Telvent.PGE.Batch.exe"/>
+        <File Id="Telvent.PGE.Batch.exe.config" src="..\output\Executables\Telvent.PGE.Batch.exe.config"/>
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="INTEGRATION">
+      <Component Id="TestApp" Guid="ED0A9AFF-2124-4BEA-B8E2-AEB1D7ED28E9" >
+        <File Id="Telvent.PGE.SAP.TestApp.exe" src="..\output\Executables\Telvent.PGE.SAP.TestApp.exe"/>
+        <File Id="Telvent.PGE.SAP.TestApp.exe.config" src="..\output\Executables\Telvent.PGE.SAP.TestApp.exe.config"/>
+      </Component>
+    </DirectoryRef>
+	</Fragment>
+</Wix>

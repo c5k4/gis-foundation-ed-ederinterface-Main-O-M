@@ -1,0 +1,28 @@
+<DIVISIONS>
+  <!--<add GISDivision ="SI" GISRegion ="R3-NO" SAPDivision="SI" MapOffice ="Auburn" MainWorkCenter="AUBURN" District ="20" FLOC ="ED.20"/>
+  <add GISDivision ="KE" GISRegion ="R4-CV" SAPDivision="KE" MapOffice ="Bakersfield" MainWorkCenter="BKRSFLD" District ="66" FLOC ="ED.66"/>
+  <add GISDivision ="NV-C" GISRegion ="R3-NO" SAPDivision="NV" MapOffice ="Chico" MainWorkCenter="CHICO" District ="16" FLOC ="ED.16"/>
+  <add GISDivision ="DI" GISRegion ="R3-NO" SAPDivision="NV" MapOffice ="Chico" MainWorkCenter="CHICO" District ="16" FLOC ="ED.16"/>-->
+  <add GISDivision = "SI"  GISRegion = "R3-NO" SAPDivision="SI" MapOffice = "Auburn" MainWorkCenter="AUBURN" District ="20" FLOC ="ED.20"/>
+  <add GISDivision = "KE"  GISRegion = "R4-CV" SAPDivision="KE" MapOffice = "Bakersfield" MainWorkCenter="BKRSFLD" District ="66" FLOC ="ED.66"/>
+  <add GISDivision = "NV-C"  GISRegion = "R3-NO" SAPDivision="NV" MapOffice = "Chico" MainWorkCenter="CHICO" District ="16" FLOC ="ED.16"/>
+  <add GISDivision = "DI"  GISRegion = "R1-BA" SAPDivision="DI" MapOffice = "Concord" MainWorkCenter="CONCORD" District ="30" FLOC ="ED.30"/>
+  <add GISDivision = "HU-E"  GISRegion = "R3-NO" SAPDivision="HB" MapOffice = "Eureka" MainWorkCenter="EUREKA" District ="36" FLOC ="ED.36"/>
+  <add GISDivision = "FR"  GISRegion = "R4-CV" SAPDivision="FR" MapOffice = "Fresno" MainWorkCenter="FRESNO" District ="70" FLOC ="ED.70"/>
+  <add GISDivision = "MI"  GISRegion = "R2-CC" SAPDivision="MI" MapOffice = "Hayward" MainWorkCenter="HAYWARD" District ="24" FLOC ="ED.24"/>
+  <add GISDivision = "YO"  GISRegion = "R4-CV" SAPDivision="YO" MapOffice = "Merced" MainWorkCenter="MERCED" District ="91" FLOC ="ED.91"/>
+  <add GISDivision = "EB"  GISRegion = "R1-BA" SAPDivision="EB" MapOffice = "Oakland" MainWorkCenter="OAKLAND" District ="26" FLOC ="ED.26"/>
+  <add GISDivision = "NV"  GISRegion = "R3-NO" SAPDivision="NV" MapOffice = "Redding" MainWorkCenter="REDDING" District ="87" FLOC ="ED.87"/>
+  <add GISDivision = "CC"  GISRegion = "R2-CC" SAPDivision="CC" MapOffice = "Salinas" MainWorkCenter="SALINAS" District ="76" FLOC ="ED.76"/>
+  <add GISDivision = "SF"  GISRegion = "R1-BA" SAPDivision="SF" MapOffice = "San Francisco" MainWorkCenter="SNFRAN" District ="60" FLOC ="ED.60"/>
+  <add GISDivision = "SJ"  GISRegion = "R2-CC" SAPDivision="SJ" MapOffice = "San Jose" MainWorkCenter="SNJOSE" District ="78" FLOC ="ED.78"/>
+  <add GISDivision = "LP"  GISRegion = "R2-CC" SAPDivision="LP" MapOffice = "San Luis Obispo" MainWorkCenter="SNLUISOB" District ="2" FLOC ="ED.02"/>
+  <add GISDivision = "NB"  GISRegion = "R1-BA" SAPDivision="NB" MapOffice = "San Rafael" MainWorkCenter="SNRAFAEL" District ="40" FLOC ="ED.40"/>
+  <add GISDivision = "ST"  GISRegion = "R4-CV" SAPDivision="ST" MapOffice = "Stockton" MainWorkCenter="STOCKTON" District ="93" FLOC ="ED.93"/>
+  <add GISDivision = "SO"  GISRegion = "R3-NO" SAPDivision="SO" MapOffice = "Santa Rosa" MainWorkCenter="STROSA" District ="44" FLOC ="ED.44"/>
+  <add GISDivision = "HU-U"  GISRegion = "R3-NO" SAPDivision="HB" MapOffice = "Ukiah" MainWorkCenter="UKIAH" District ="46" FLOC ="ED.46"/>
+  <add GISDivision = "SA"  GISRegion = "R3-NO" SAPDivision="SA" MapOffice = "Sacramento" MainWorkCenter="WOODLAND" District ="50" FLOC ="ED.50"/>
+  <add GISDivision = "PN"  GISRegion = "R2-CC" SAPDivision="PN" MapOffice = "San Carlos" MainWorkCenter="SNCARLOS" District ="58" FLOC ="ED.58"/>
+  <add GISDivision = "PN-C"  GISRegion = "R2-CC" SAPDivision="PN" MapOffice = "Colma" MainWorkCenter="COLMA" District ="56" FLOC ="ED.56"/>
+  <add GISDivision = "CC-C"  GISRegion = "R2-CC" SAPDivision="CC" MapOffice = "Santa Cruz" MainWorkCenter="SALINAS" District ="76" FLOC ="ED.76"/>
+  </DIVISIONS> 

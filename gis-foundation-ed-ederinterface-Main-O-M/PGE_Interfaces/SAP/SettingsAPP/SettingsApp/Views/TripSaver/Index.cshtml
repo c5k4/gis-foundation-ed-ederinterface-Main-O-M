@@ -1,0 +1,1475 @@
+﻿@using SettingsApp.Common;
+@model SettingsApp.Models.TripSaverModel
+@using (Html.BeginForm("Index", "TripSaver"))
+{
+    
+  
+    @Html.ValidationSummary(true)
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" temp_href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.8.3.js" temp_src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js" temp_src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    
+  <script type="text/javascript">
+      $(document).ready(function () {
+          $("#txtIniResetTime").tooltip({ track: true });
+          $("#txtIniCurrA").tooltip({ track: true });
+          $("#txtIniTime").tooltip({ track: true });
+          $("#txtIniMinTripA").tooltip({ track: true });
+          $("#txtIniTimeMultiplier").tooltip({ track: true });
+          $("#txtIniOpenIntervalTime").tooltip({ track: true });
+          $("#txtIniDefiniteTime3Time").tooltip({ track: true });
+          $("#txtIniDefiniteTime3CurrA").tooltip({ track: true });
+          $("#txtIniDefiniteTime2Time").tooltip({ track: true });
+          $("#txtIniDefiniteTime2Time").tooltip({ track: true });
+          $("#txtIniDefiniteTime1Time").tooltip({ track: true });
+          $("#txtIniDefiniteTime1CurrA").tooltip({ track: true });
+          //Test1
+
+          $("#txtTest1CurrA").tooltip({ track: true });
+          $("#txtTest1Time").tooltip({ track: true });
+          $("#txtTest1MinTripA").tooltip({ track: true });
+          $("#txtTest1TimeMultiplier").tooltip({ track: true });
+          $("#Test1ResetType").tooltip({ track: true });
+          $("#Test1OpenIntervalTime").tooltip({ track: true });
+          $("#txtTest1DefiniteTime3Time").tooltip({ track: true });
+          $("#txtTest1DefiniteTime3Chk").tooltip({ track: true });
+          $("#txtTest1DefiniteTime2Time").tooltip({ track: true });
+          $("#txtTest1DefiniteTime2Chk").tooltip({ track: true });
+          $("#txtTest1DefiniteTime2Time").tooltip({ track: true });
+          $("#txtTest1DefiniteTime2Chk").tooltip({ track: true });
+          $("#Test1LowcutoffCurrA").tooltip({ track: true });
+          $("#txtTest1ResetTime").tooltip({ track: true });
+          //Test2
+
+          $("#txtTest2CurrA").tooltip({ track: true });
+          $("#txtTest2Time").tooltip({ track: true });
+          $("#txtTest2MinTripA").tooltip({ track: true });
+          $("#txtTest2TimeMultiplier").tooltip({ track: true });
+          $("#txtTest2ResetType").tooltip({ track: true });
+          $("#txtTest2OpenIntervalTime").tooltip({ track: true });
+          $("#txtTest2DefiniteTime3Time").tooltip({ track: true });
+          $("#txtTest2DefiniteTime3Chk").tooltip({ track: true });
+          $("#txtTest2DefiniteTime2Time").tooltip({ track: true });
+          $("#txtTest2DefiniteTime2Chk").tooltip({ track: true });
+          $("#txtTest2DefiniteTime2Time").tooltip({ track: true });
+          $("#txtTest2DefiniteTime2Chk").tooltip({ track: true });
+          $("#Test2LowcutoffCurrA").tooltip({ track: true });
+          $("#txtTest2ResetTime").tooltip({ track: true });
+
+          //Test3
+
+          $("#txtTest3CurrA").tooltip({ track: true });
+          $("#txtTest3Time").tooltip({ track: true });
+          $("#txtTest3MinTripA").tooltip({ track: true });
+          $("#txtTest3TimeMultiplier").tooltip({ track: true });
+          $("#txtTest3ResetType").tooltip({ track: true });
+          $("#txtTest3OpenIntervalTime").tooltip({ track: true });
+          $("#txtTest3DefiniteTime3Time").tooltip({ track: true });
+          $("#txtTest3DefiniteTime3Chk").tooltip({ track: true });
+          $("#txtTest3DefiniteTime2Time").tooltip({ track: true });
+          $("#txtTest3DefiniteTime2Chk").tooltip({ track: true });
+          $("#txtTest3DefiniteTime2Time").tooltip({ track: true });
+          $("#txtTest3DefiniteTime2Chk").tooltip({ track: true });
+          $("#Test3LowcutoffCurrA").tooltip({ track: true });
+          $("#txtTest3ResetTime").tooltip({ track: true });
+
+          $("#txtSeqResetTime").tooltip({ track: true });
+          $("#lstSectModeList").tooltip({ track: true });
+          $("#txtSectModeStartingCur").tooltip({ track: true });
+          $("#txtSectModeResetTime").tooltip({ track: true });
+          $("#txtSectModeCounts").tooltip({ track: true });
+          $("#txtHighCurCutOffA").tooltip({ track: true });
+
+
+
+          //
+ // <script type="text/javascript">
+
+      $('#IniLowCutOffChk').change(
+
+           function (e) {
+              // code here to hide your text
+
+            var checked = $(this).attr('checked');
+             alert("s1");
+           if(checked)
+           {
+           alert("s");
+             // $('#divTest').show();
+               $('#IniLowcutoffCurrA').attr("disabled", false);
+           }
+
+           else
+           {
+            alert("b");
+               $('#IniLowcutoffCurrA').attr("disabled", true);
+           }
+         }
+ 
+   //
+
+ 
+
+      });
+</script>
+ 
+    <table cellpadding="0" cellspacing="0" width="90%">
+        <tr>
+            <td style="padding: 0px">
+                <div class="float-left">
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("GIS", "GIS", "TripSaver", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                            <li class="@ViewBag.CurrentClass">@Html.ActionLink("Current Settings", "Index", "TripSaver", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                            <li class="@ViewBag.FutureClass">@Html.ActionLink("Future Settings", "Future", "TripSaver", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                            <li>@Html.ActionLink("Settings Files", "Files", "TripSaver", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                            <li>@Html.ActionLink("History", "History", "TripSaver", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                        </ul>
+                    </nav>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="header" style="padding-top: 15px; padding-bottom: 0px; padding-left: 10px">
+                @ViewBag.Title
+            </td>
+        </tr>
+         <tr>
+            <td style="background-color: #ffffff; padding: 10px;">
+                @if (ViewBag.ShowPageError == true)
+                {
+                    <label id="lableDeviceValidationError" runat="server" style="color: Red; text-align: center;">
+                        There are error(s), please check below.
+                    </label>
+                }
+                @if (ViewBag.ShowSaveSucessful == true)
+                {
+                    <label id="lableDeviceSaveSucess" runat="server" style="color: Green; text-align: center;">
+                        Device saved successfully.
+                    </label>
+                }
+            </td>
+        </tr>
+         @if (ViewBag.PageMode == "CURRENT")
+                    {
+                        <tr>
+                            <td colspan="2" style="text-align: right; padding-right: 10px">
+                                <input type="button" value="Copy current to future settings" onclick="this.form.action='/@ViewBag.ControllerName/CopyToFuture/@ViewBag.GlobalID/@ViewBag.LayerName?layerType=@ViewBag.layerType';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                            </td>
+                        </tr>
+                    }
+        <tr>
+            <td style="background-color: #ffffff; padding: 10px">
+                <table cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f2f2" class="check_width_100px labelAlign_left select_width_165px">
+                @*---------------------------Initial Trip--------------------------------------------*@
+                    <tr>
+                        <td colspan="2" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td colspan="4" class="sectionHeader">
+                                        <b>Initial Trip</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="padding5px_left">@Html.LabelForRequired(model => model.IniEmulatedDevice)
+                                    </td>
+                                    @if (Model.IniEmulatedDevice == "MR")
+                                    { 
+                                        <td>@Html.LabelForRequired(model => model.IniInverseSegment)
+                                        </td>
+                                        <td>
+                                        </td>
+                                    }
+                                    else if (Model.IniEmulatedDevice == "FL")
+                                    {
+                                        <td>@Html.LabelForRequired(model => model.IniSpeed)
+                                        </td>
+                                        <td>@Html.LabelForRequired(model => model.IniAmpereRating)
+                                        </td>
+                                    }
+                                    else if (Model.IniEmulatedDevice == "HR")
+                                    {
+                                         <td>@Html.LabelForRequired(model => model.IniInverseSegment)
+                                         </td>
+                                        <td>@Html.LabelForRequired(model => model.IniCoilRating)
+                                        </td>  
+                                    }
+                                    else
+                                    {
+                                        <td></td>
+                                        <td></td>
+                                    }
+                                    <td>
+                                    </td>          
+                                </tr>
+                                <tr>
+                                
+                                    <td class="padding5px_left">@Html.DropDownListFor(model => model.IniEmulatedDevice, Model.IniEmulatedDeviceList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.IniEmulatedDevice)
+                                    </td>
+                                     @if (Model.IniEmulatedDevice == "MR")
+                                     {
+                                          <td>@Html.DropDownListFor(model => model.IniInverseSegment, Model.IniInverseSegmentList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.IniInverseSegment)
+                                    </td>
+                                         <td>
+                                         </td>
+                                     }
+                                     else if (Model.IniEmulatedDevice == "FL")
+                                     {
+                                          <td>@Html.DropDownListFor(model => model.IniSpeed, Model.IniSpeedList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.IniSpeed)
+                                    </td>
+                                          <td>@Html.DropDownListFor(model => model.IniAmpereRating, Model.IniAmpereRatingList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.IniSpeed)
+                                    </td>
+                                     }
+                                     else if (Model.IniEmulatedDevice == "HR")
+                                     {
+                                          <td>@Html.DropDownListFor(model => model.IniInverseSegment, Model.IniInverseSegmentList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.IniInverseSegment)
+                                    </td>
+                                          <td>@Html.DropDownListFor(model => model.IniCoilRating, Model.IniCoilRatingList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.IniCoilRating)
+                                    </td>
+                                     }
+                                     else
+                                     {
+                                          <td></td>
+                                          <td></td>
+                                     }
+                                    <td>
+                                                
+                                    </td>              
+                                </tr>
+                                
+                                @if (Model.IniEmulatedDevice == "MR" && Model.IniInverseSegment != null)
+                                {
+                                    <tr>
+                                         <td colspan="4"></td>
+                                    </tr>
+                                    <tr>
+                                        @if (Model.IniInverseSegment == "DT")
+                                        {
+                                            <td class="padding5px_left">@Html.LabelForRequired(model => model.IniCurrA)
+                                            </td>
+                                            <td>@Html.LabelForRequired(model => model.IniTime)
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td class = "padding5px_left">@Html.LabelForRequired(model => model.IniMinTripA)
+                                            </td>
+                                            <td>@Html.LabelForRequired(model => model.IniTimeMultiplier)
+                                            </td>
+                                        }
+                                        <td>@Html.LabelForRequired(model => model.IniResetType)
+                                        </td>
+                                        
+                                        <td>
+                                            @if (Model.IniResetType == "EM" && Model.IniInverseSegment == "DT")
+                                            {
+                                                 <label>Reset Time, s (I<sub>0A</sub>)
+                                                </label>                                               
+                                                
+                                            }
+                                            else if (Model.IniResetType == "EM" && Model.IniInverseSegment != "DT")
+                                            {
+                                                <label>Reset Time, s (TM<sub>1</sub>, I<sub>0A</sub>)
+                                                </label>
+                                            }
+                                            else
+                                            {
+                                              @Html.LabelForRequired(model => model.IniResetTime)
+                                            }
+                                        </td>
+                                    </tr>
+                                    <tr class="text_width_165px">
+                                        
+                                         @if (Model.IniInverseSegment == "DT")
+                                         {
+                                            <td class="padding5px_left">@Html.TextBoxFor(model => model.IniCurrA, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=200.)", @id = "txtIniCurrA" })@Html.ValidationMessageFor(model => model.IniCurrA)
+                                            </td>
+                                             
+                                           
+                                            <td>@Html.TextBoxFor(model => model.IniTime, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000 in sec.)", @id = "txtIniTime" })@Html.ValidationMessageFor(model => model.IniTime)
+                                            </td>
+                                         }
+                                         else
+                                         {
+                                             <td class="padding5px_left">@Html.TextBoxFor(model => model.IniMinTripA, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=200.)", @id = "txtIniMinTripA" })@Html.ValidationMessageFor(model => model.IniMinTripA)
+                                            </td>
+                                            <td>@Html.TextBoxFor(model => model.IniTimeMultiplier, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0.1 and Max Value=15 .)", @id = "txtIniTimeMultiplier" })@Html.ValidationMessageFor(model => model.IniTimeMultiplier)
+                                            </td>
+                                         }
+                                        <td>@Html.DropDownListFor(model => model.IniResetType, Model.IniResetTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.IniResetType)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.IniResetTime, (ViewBag.IsDisabled || Model.IniResetType == null) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000.)", @id = "txtIniResetTime" })@Html.ValidationMessageFor(model => model.IniResetTime)
+                                        </td>
+                                    </tr>
+                                }
+                                @if ((Model.IniEmulatedDevice == "MR" && Model.IniInverseSegment != null) || (Model.IniEmulatedDevice == "FL" && Model.IniSpeed != null && Model.IniAmpereRating != null))
+                                {
+                                    <tr>
+                                         <td colspan="4"></td>
+                                    </tr>
+                                    <tr class="text_width_110px">
+                                        <td colspan="4" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                <tr>
+                                                     <td colspan="5" class="sectionHeader">Advanced TCC Curve Setup</td>
+                                                </tr>
+                                                <tr class="padding_left20px">
+                                                    @if (Model.IniInverseSegment != "DT")
+                                                    {
+                                                     <td style="padding-left: 20px" >
+                                                         <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                            <tr>
+                                                                <td align="center" class="sectionHeader">
+                                                                      @Html.HiddenFor(model => model.IniLowcutoff)
+                                                                      
+                                                                   
+
+                                                                      @Html.CheckBoxFor(model => model.IniLowCutOffChk, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.IniLowChkPostbackScript })      
+                                                                   @*  @Html.CheckBoxFor(model => model.IniLowCutOffChk, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { id = "IniLowCutOffChk" }) *@                                                    
+                                                                     
+                                                                      Low Cutoff
+                                                                </td>
+                                                            </tr>
+                                                             <tr>
+                                                                <td class="padding5px_left">@Html.LabelForRequired(model => model.IniLowcutoffCurrA)</td>
+                                                            </tr>
+                                                             <tr>
+                                                                <td class="padding5px_left">
+                                                                    @Html.TextBoxFor(model => model.IniLowcutoffCurrA, (ViewBag.IsDisabled || !Model.IniLowCutOffChk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=400.)", @id = "txtIniLowcutoffCurrA" })@Html.ValidationMessageFor(model => model.IniLowcutoffCurrA)
+                                                                </td>
+                                                            </tr>
+                                                         </table>
+                                                     </td>
+                                                   
+
+                                                     <td colspan="2">
+                                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                                <tr>
+                                                                    <td align="center" colspan="2" class="sectionHeader">
+                                                                     @Html.HiddenFor(model => model.IniDefiniteTime1)
+
+                                                                        @Html.CheckBoxFor(model => model.IniDefiniteTime1Chk, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.IniDef1ChkPostbackScript })
+                                                                      
+                                                                        Definite Time 1
+                                                                    </td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td class="padding5px_left">@Html.LabelForRequired(model => model.IniDefiniteTime1CurrA)</td>
+                                                                    <td>@Html.LabelForRequired(model => model.IniDefiniteTime1Time)</td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td class="padding5px_left">
+                                                                         @Html.TextBoxFor(model => model.IniDefiniteTime1CurrA, (ViewBag.IsDisabled || !Model.IniDefiniteTime1Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=6300.)", @id = "txtIniDefiniteTime1CurrA" })@Html.ValidationMessageFor(model => model.IniDefiniteTime1CurrA)
+                                                                    </td>
+                                                                    <td>
+                                                                        @Html.TextBoxFor(model => model.IniDefiniteTime1Time, (ViewBag.IsDisabled || !Model.IniDefiniteTime1Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=1000.)", @id = "txtIniDefiniteTime1Time" })@Html.ValidationMessageFor(model => model.IniDefiniteTime1Time)
+                                                                    </td>
+                                                                </tr>
+                                                             </table>
+                                                     </td>
+                                                    }
+                                                     <td colspan="2">
+                                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                                <tr>
+                                                                    <td  align="center" colspan="2" class="sectionHeader">
+                                                                    @Html.HiddenFor(model => model.IniDefiniteTime2)
+                                                                         @Html.CheckBoxFor(model => model.IniDefiniteTime2Chk, (ViewBag.IsDisabled || (Model.IniInverseSegment != "DT" && !Model.IniDefiniteTime1Chk)) ? (object)new { disabled = "disabled" } : new { onchange = Model.IniDef2ChkPostbackScript })                                                           
+                                                                         Definite Time 2
+                                                                    </td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td class="padding5px_left">@Html.LabelForRequired(model => model.IniDefiniteTime2CurrA)</td>
+                                                                    <td>@Html.LabelForRequired(model => model.IniDefiniteTime2Time)</td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td class="padding5px_left">
+                                                                          @Html.TextBoxFor(model => model.IniDefiniteTime2CurrA, (ViewBag.IsDisabled || !Model.IniDefiniteTime2Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=6300.)", @id = "txtIniDefiniteTime2CurrA" })@Html.ValidationMessageFor(model => model.IniDefiniteTime2CurrA)
+                                                                    </td>
+                                                                    <td>  
+                                                                           @Html.TextBoxFor(model => model.IniDefiniteTime2Time, (ViewBag.IsDisabled || !Model.IniDefiniteTime2Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000.)", @id = "txtIniDefiniteTime2Time" })@Html.ValidationMessageFor(model => model.IniDefiniteTime2Time)
+                                                                    </td>
+                                                                </tr>
+                                                             </table>
+                                                     </td>
+
+                                                          @if (Model.IniInverseSegment == "DT")
+                                                          { 
+                                                            <td colspan="2">
+                                                                <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                                    <tr>
+                                                                        <td  align="center" colspan="2" class="sectionHeader">
+                                                                        @Html.HiddenFor(model => model.IniDefiniteTime3)
+                                                                             @Html.CheckBoxFor(model => model.IniDefiniteTime3Chk, (ViewBag.IsDisabled || !Model.IniDefiniteTime2Chk) ? (object)new { disabled = "disabled" } : new { onchange = Model.IniDef3ChkPostbackScript })                                                           
+                                                                             Definite Time 3
+                                                                        </td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td class="padding5px_left">@Html.LabelForRequired(model => model.IniDefiniteTime3CurrA)</td>
+                                                                        <td>@Html.LabelForRequired(model => model.IniDefiniteTime3Time)</td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td class="padding5px_left">
+                                                                              @Html.TextBoxFor(model => model.IniDefiniteTime3CurrA, (ViewBag.IsDisabled || !Model.IniDefiniteTime3Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=6300.)", @id = "txtIniDefiniteTime3CurrA" })@Html.ValidationMessageFor(model => model.IniDefiniteTime3CurrA)
+                                                                        </td>
+                                                                        <td>  
+                                                                               @Html.TextBoxFor(model => model.IniDefiniteTime3Time, (ViewBag.IsDisabled || !Model.IniDefiniteTime3Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000.)", @id = "txtIniDefiniteTime3Time" })@Html.ValidationMessageFor(model => model.IniDefiniteTime3Time)
+                                                                        </td>
+                                                                    </tr>
+                                                                 </table>
+                                                             </td>
+                                                             <td></td>                                                           
+                                                          }
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="5"></td>
+                                                </tr>
+                                             </table>
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </td>
+                    </tr>
+
+                   @* @if (Model.Test1EmulatedDevice != null)
+                    {*@
+                        <tr>
+                             <td colspan="2" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                               <table align="center">
+                                    <tr> 
+                                         <td>  
+                                               @Html.LabelForRequired(model => model.IniOpenIntervalTime)
+                                         </td>   
+                                         <td>  
+                                               @Html.TextBoxFor(model => model.IniOpenIntervalTime, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=.5 and Max Value=5.)", @id = "txtIniOpenIntervalTime" })@Html.ValidationMessageFor(model => model.IniOpenIntervalTime)
+                                         </td> 
+                                    </tr>
+                                </table>
+                             </td>
+                        </tr>
+                     
+                     @*---------------------------General--------------------------------------------*@
+                      <tr>
+                        <td colspan="2" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td colspan="2" class="sectionHeader">
+                                        <b>General</b>
+                                    </td>
+                                </tr>
+                                <tr class="labelAlign_right">
+                                    <td>@Html.LabelForRequired(model => model.OkToBypass)
+                                    </td>
+                                    <td>@Html.DropDownListFor(model => model.OkToBypass, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.OkToBypass)
+                                    </td>
+                                </tr>
+                                <tr class="labelAlign_right">
+                                    <td>@Html.LabelForRequired(model => model.BypassPlan)
+                                    </td>
+                                    <td>@Html.TextAreaFor(model => model.BypassPlan, 5, 15, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 500, @class = "form-control" })@Html.ValidationMessageFor(model => model.BypassPlan)
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                        
+                        @*---------------------------Test 1------------------------*@
+                            <tr>
+                        <td colspan="2" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td colspan="4" class="sectionHeader">
+                                        <b>Test 1</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="padding5px_left">@Html.LabelForRequired(model => model.Test1EmulatedDevice)
+                                    </td>
+                                    @if (Model.Test1EmulatedDevice == "MR")
+                                    { 
+                                        <td>@Html.LabelForRequired(model => model.Test1InverseSegment)
+                                        </td>
+                                        <td>
+                                        </td>
+                                    }
+                                    else if (Model.Test1EmulatedDevice == "FL")
+                                    {
+                                        <td>@Html.LabelForRequired(model => model.Test1Speed)
+                                        </td>
+                                        <td>@Html.LabelForRequired(model => model.Test1AmpereRating)
+                                        </td>
+                                    }
+                                    else if (Model.Test1EmulatedDevice == "HR")
+                                    {
+                                         <td>@Html.LabelForRequired(model => model.Test1InverseSegment)
+                                         </td>
+                                        <td>@Html.LabelForRequired(model => model.Test1CoilRating)
+                                        </td>  
+                                    }
+                                    else
+                                    {
+                                        <td></td>
+                                        <td></td>
+                                    }
+                                    <td  style="text-align: right; padding-right: 10px">
+                                    @if (ViewBag.PageMode == "FUTURE")
+                                    {
+                                    @*Copy button*@
+                                        <input type="button" value="Copy Initial Trip to Test 1" onclick="this.form.action='/@ViewBag.ControllerName/CopyInitialToTest1/@ViewBag.GlobalID/@ViewBag.LayerName?layerType=@ViewBag.layerType';this.form.submit();"
+                                                @((Security.IsInAdminGroup) ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                    }
+                                    </td>                        
+                                </tr>
+                                <tr>
+                                    <td class="padding5px_left">@Html.DropDownListFor(model => model.Test1EmulatedDevice, Model.Test1EmulatedDeviceList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test1EmulatedDevice)
+                                    </td>
+                                     @if (Model.Test1EmulatedDevice == "MR")
+                                     {
+                                          <td>@Html.DropDownListFor(model => model.Test1InverseSegment, Model.Test1InverseSegmentList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test1InverseSegment)
+                                    </td>
+                                         <td>
+                                         </td>
+                                     }
+                                     else if (Model.Test1EmulatedDevice == "FL")
+                                     {
+                                          <td>@Html.DropDownListFor(model => model.Test1Speed, Model.Test1SpeedList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test1Speed)
+                                    </td>
+                                          <td>@Html.DropDownListFor(model => model.Test1AmpereRating, Model.Test1AmpereRatingList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test1AmpereRating)
+                                    </td>
+                                     }
+                                     else if (Model.Test1EmulatedDevice == "HR")
+                                     {
+                                          <td>@Html.DropDownListFor(model => model.Test1InverseSegment, Model.Test1InverseSegmentList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test1InverseSegment)
+                                    </td>
+                                          <td>@Html.DropDownListFor(model => model.Test1CoilRating, Model.Test1CoilRatingList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test1CoilRating)
+                                    </td>
+                                     }
+                                     else
+                                     {
+                                          <td></td>
+                                          <td></td>
+                                     }
+                                     <td>
+                                     
+                                     </td>
+                                </tr>
+                                
+                                @if (Model.Test1EmulatedDevice == "MR" && Model.Test1InverseSegment != null)
+                                {
+                                    <tr>
+                                         <td colspan="4"></td>
+                                    </tr>
+                                    <tr>
+                                        @if (Model.Test1InverseSegment == "DT")
+                                        {
+                                            <td class="padding5px_left">@Html.LabelForRequired(model => model.Test1CurrA)
+                                            </td>
+                                            <td>@Html.LabelForRequired(model => model.Test1Time)
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td class="padding5px_left">@Html.LabelForRequired(model => model.Test1MinTripA)
+                                            </td>
+                                            <td>@Html.LabelForRequired(model => model.Test1TimeMultiplier)
+                                            </td>
+                                        }
+                                        <td>@Html.LabelForRequired(model => model.Test1ResetType)
+                                        </td>
+                                          <td>
+                                             @if (Model.Test1ResetType == "EM" && Model.Test1InverseSegment == "DT")
+                                             {
+                                                 <label>Reset Time, s (I<sub>0A</sub>)
+                                                </label>                                               
+                                                
+                                             }
+                                             else if (Model.Test1ResetType == "EM" && Model.Test1InverseSegment != "DT")
+                                             {
+                                                <label>Reset Time, s (TM<sub>1</sub>, I<sub>0A</sub>)
+                                                </label>
+                                             }
+                                             else
+                                             {
+                                              @Html.LabelForRequired(model => model.Test1ResetTime)
+                                             }
+                                        </td>
+                                    </tr>
+                                    <tr class="text_width_165px">
+                                     @if (Model.Test1InverseSegment == "DT")
+                                     {
+                                        <td class="padding5px_left">@Html.TextBoxFor(model => model.Test1CurrA, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=200.)", @id = "txtTest1CurrA" })@Html.ValidationMessageFor(model => model.Test1CurrA)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.Test1Time, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000.)", @id = "txtTest1Time" })@Html.ValidationMessageFor(model => model.Test1Time)
+                                        </td>
+                                     }
+                                     else
+                                     {
+                                         <td class="padding5px_left">@Html.TextBoxFor(model => model.Test1MinTripA, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=200.)", @id = "txtTest1MinTripA" })@Html.ValidationMessageFor(model => model.Test1MinTripA)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.Test1TimeMultiplier, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=.01 and Max Value=15.)", @id = "txtTest1TimeMultiplier" })@Html.ValidationMessageFor(model => model.Test1TimeMultiplier)
+                                        </td>
+                                     }
+                                        <td>@Html.DropDownListFor(model => model.Test1ResetType, Model.Test1ResetTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test1ResetType)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.Test1ResetTime, (ViewBag.IsDisabled || Model.Test1ResetType == null) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000.)", @id = "txtTest1ResetTime" })@Html.ValidationMessageFor(model => model.Test1ResetTime)
+                                        </td>
+                                    </tr>
+                                }
+                                @if ((Model.Test1EmulatedDevice == "MR" && Model.Test1InverseSegment != null) || (Model.Test1EmulatedDevice == "FL" && Model.Test1Speed != null && Model.Test1AmpereRating != null))
+                                {
+                                    <tr>
+                                         <td colspan="4"></td>
+                                    </tr>
+                                    <tr class="text_width_110px">
+                                        <td colspan="4" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                <tr>
+                                                     <td colspan="5" class="sectionHeader">Advanced TCC Curve Setup</td>
+                                                </tr>
+                                                <tr class="padding_left20px">
+                                                  @if (Model.Test1InverseSegment != "DT")
+                                                  {
+                                                     <td style="padding-left: 20px" >
+                                                         <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                            <tr>
+                                                                <td align="center" class="sectionHeader">
+                                                                @Html.HiddenFor(model => model.Test1Lowcutoff)
+                                                                      @Html.CheckBoxFor(model => model.Test1LowCutOffChk, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.Test1LowChkPostbackScript })                                                           
+                                                                      Low Cutoff
+                                                                </td>
+                                                            </tr>
+                                                             <tr>
+                                                                <td class="padding5px_left">@Html.LabelForRequired(model => model.Test1LowcutoffCurrA)</td>
+                                                            </tr>
+                                                             <tr>
+                                                                <td class="padding5px_left">
+                                                                    @Html.TextBoxFor(model => model.Test1LowcutoffCurrA, (ViewBag.IsDisabled || !Model.Test1LowCutOffChk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=400.)", @id = "Test1LowcutoffCurrA" })@Html.ValidationMessageFor(model => model.Test1LowcutoffCurrA)
+                                                                </td>
+                                                            </tr>
+                                                         </table>
+                                                     </td>
+
+                                                     <td colspan="2">
+                                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                                <tr>
+                                                                    <td align="center" colspan="2" class="sectionHeader">
+                                                                    @Html.HiddenFor(model => model.Test1DefiniteTime1)
+                                                                        @Html.CheckBoxFor(model => model.Test1DefiniteTime1Chk, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.Test1Def1ChkPostbackScript })
+                                                                        Definite Time 1
+                                                                    </td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td class="padding5px_left">@Html.LabelForRequired(model => model.Test1DefiniteTime1CurrA)</td>
+                                                                    <td>@Html.LabelForRequired(model => model.Test1DefiniteTime1Time)</td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td class="padding5px_left">
+                                                                         @Html.TextBoxFor(model => model.Test1DefiniteTime1CurrA, (ViewBag.IsDisabled || !Model.Test1DefiniteTime1Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=6300.)", @id = "txtTest1DefiniteTime1Chk" })@Html.ValidationMessageFor(model => model.Test1DefiniteTime1CurrA)
+                                                                    </td>
+                                                                    <td>
+                                                                        @Html.TextBoxFor(model => model.Test1DefiniteTime1Time, (ViewBag.IsDisabled || !Model.Test1DefiniteTime1Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000.)", @id = "txtTest1DefiniteTime1Chk" })@Html.ValidationMessageFor(model => model.Test1DefiniteTime1Time)
+                                                                    </td>
+                                                                </tr>
+                                                             </table>
+                                                     </td>
+                                                  }
+
+                                                     <td colspan="2">
+                                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                                <tr>
+                                                                    <td  align="center" colspan="2" class="sectionHeader">
+                                                                    @Html.HiddenFor(model => model.Test1DefiniteTime2)
+                                                                         @Html.CheckBoxFor(model => model.Test1DefiniteTime2Chk, (ViewBag.IsDisabled || (Model.Test1InverseSegment != "DT" && !Model.Test1DefiniteTime1Chk)) ? (object)new { disabled = "disabled" } : new { onchange = Model.Test1Def2ChkPostbackScript })                                                           
+                                                                         Definite Time 2
+                                                                    </td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td class="padding5px_left">@Html.LabelForRequired(model => model.Test1DefiniteTime2CurrA)</td>
+                                                                    <td>@Html.LabelForRequired(model => model.Test1DefiniteTime2Time)</td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td class="padding5px_left">
+                                                                          @Html.TextBoxFor(model => model.Test1DefiniteTime2CurrA, (ViewBag.IsDisabled || !Model.Test1DefiniteTime2Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=6300.)", @id = "txtTest1DefiniteTime2CurrA" })@Html.ValidationMessageFor(model => model.Test1DefiniteTime2CurrA)
+                                                                    </td>
+                                                                    <td>  
+                                                                           @Html.TextBoxFor(model => model.Test1DefiniteTime2Time, (ViewBag.IsDisabled || !Model.Test1DefiniteTime2Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000.)", @id = "txtTest1DefiniteTime2Time" })@Html.ValidationMessageFor(model => model.Test1DefiniteTime2Time)
+                                                                    </td>
+                                                                </tr>
+                                                             </table>
+                                                     </td>
+                                                       @if (Model.Test1InverseSegment == "DT")
+                                                       { 
+                                                            <td colspan="2">
+                                                                <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                                    <tr>
+                                                                        <td  align="center" colspan="2" class="sectionHeader">
+                                                                        @Html.HiddenFor(model => model.Test1DefiniteTime3)
+                                                                             @Html.CheckBoxFor(model => model.Test1DefiniteTime3Chk, (ViewBag.IsDisabled || !Model.Test1DefiniteTime2Chk) ? (object)new { disabled = "disabled" } : new { onchange = Model.Test1Def3ChkPostbackScript })                                                           
+                                                                             Definite Time 3
+                                                                        </td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td class="padding5px_left">@Html.LabelForRequired(model => model.Test1DefiniteTime3CurrA)</td>
+                                                                        <td>@Html.LabelForRequired(model => model.Test1DefiniteTime3Time)</td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td class="padding5px_left">
+                                                                              @Html.TextBoxFor(model => model.Test1DefiniteTime3CurrA, (ViewBag.IsDisabled || !Model.Test1DefiniteTime3Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=6300.)", @id = "txtTest1DefiniteTime3Chk" })@Html.ValidationMessageFor(model => model.Test1DefiniteTime3CurrA)
+                                                                        </td>
+                                                                        <td>  
+                                                                               @Html.TextBoxFor(model => model.Test1DefiniteTime3Time, (ViewBag.IsDisabled || !Model.Test1DefiniteTime3Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000 in secs.)", @id = "txtTest1DefiniteTime3Time" })@Html.ValidationMessageFor(model => model.Test1DefiniteTime3Time)
+                                                                        </td>
+                                                                    </tr>
+                                                                 </table>
+                                                             </td>
+                                                             <td></td>                                                           
+                                                       }
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="5"></td>
+                                                </tr>
+                                             </table>
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </td>
+                    </tr>
+                        
+                    @*}*@
+                    
+                 @*  @if (Model.Test2EmulatedDevice != null)
+                   {*@   
+                            <tr>
+                             <td colspan="2" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                               <table align="center">
+                                    <tr> 
+                                         <td>  
+                                               @Html.LabelForRequired(model => model.Test1OpenIntervalTime)
+                                         </td>   
+                                         <td>  
+                                               @Html.TextBoxFor(model => model.Test1OpenIntervalTime, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Time interval between Test1 and Test2 is Min Value=.5 and Max Value=5.)", @id = "Test1OpenIntervalTime" })@Html.ValidationMessageFor(model => model.Test1OpenIntervalTime)
+                                         </td> 
+                                    </tr>
+                                </table>
+                             </td>
+                        </tr>
+                            
+                     @*  //---------------------------Test 2------------------------*@
+                            <tr>
+                        <td colspan="2" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td colspan="4" class="sectionHeader">
+                                        <b>Test 2</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="padding5px_left">@Html.LabelForRequired(model => model.Test2EmulatedDevice)
+                                    </td>
+                                    @if (Model.Test2EmulatedDevice == "MR")
+                                    { 
+                                        <td>@Html.LabelForRequired(model => model.Test2InverseSegment)
+                                        </td>
+                                        <td>
+                                        </td>
+                                    }
+                                    else if (Model.Test2EmulatedDevice == "FL")
+                                    {
+                                        <td>@Html.LabelForRequired(model => model.Test2Speed)
+                                        </td>
+                                        <td>@Html.LabelForRequired(model => model.Test2AmpereRating)
+                                        </td>
+                                    }
+                                    else if (Model.Test2EmulatedDevice == "HR")
+                                    {
+                                         <td>@Html.LabelForRequired(model => model.Test2InverseSegment)
+                                         </td>
+                                        <td>@Html.LabelForRequired(model => model.Test2CoilRating)
+                                        </td>  
+                                    }
+                                    else
+                                    {
+                                        <td></td>
+                                        <td></td>
+                                    }
+                                    <td  style="text-align: right; padding-right: 10px">
+                                    @if (ViewBag.PageMode == "FUTURE")
+                                    {
+                                    @*Copy button*@
+                                        <input type="button" value="Copy Test 1 to Test 2" onclick="this.form.action='/@ViewBag.ControllerName/CopyTest1ToTest2/@ViewBag.GlobalID/@ViewBag.LayerName?layerType=@ViewBag.layerType';this.form.submit();"
+                                                @((Security.IsInAdminGroup) ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                    }
+                                    </td>   
+                                </tr>
+                                <tr>
+                                    <td class="padding5px_left">@Html.DropDownListFor(model => model.Test2EmulatedDevice, Model.Test2EmulatedDeviceList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test2EmulatedDevice)
+                                    </td>
+                                     @if (Model.Test2EmulatedDevice == "MR")
+                                     {
+                                          <td>@Html.DropDownListFor(model => model.Test2InverseSegment, Model.Test2InverseSegmentList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test2InverseSegment)
+                                    </td>
+                                         <td>
+                                         </td>
+                                     }
+                                     else if (Model.Test2EmulatedDevice == "FL")
+                                     {
+                                          <td>@Html.DropDownListFor(model => model.Test2Speed, Model.Test2SpeedList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test2Speed)
+                                    </td>
+                                          <td>@Html.DropDownListFor(model => model.Test2AmpereRating, Model.Test2AmpereRatingList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test2AmpereRating)
+                                    </td>
+                                     }
+                                     else if (Model.Test2EmulatedDevice == "HR")
+                                     {
+                                          <td>@Html.DropDownListFor(model => model.Test2InverseSegment, Model.Test2InverseSegmentList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test2InverseSegment)
+                                    </td>
+                                          <td>@Html.DropDownListFor(model => model.Test2CoilRating, Model.Test2CoilRatingList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test2CoilRating)
+                                    </td>
+                                     }
+                                     else
+                                     {
+                                          <td></td>
+                                          <td></td>
+                                     }
+                                     <td>
+                                     
+                                     </td>
+                                </tr>
+                                
+                                @if (Model.Test2EmulatedDevice == "MR" && Model.Test2InverseSegment != null)
+                                {
+                                    <tr>
+                                         <td colspan="4"></td>
+                                    </tr>
+                                    <tr>
+                                       @if (Model.Test2InverseSegment == "DT")
+                                       {
+                                         <td class="padding5px_left">@Html.LabelForRequired(model => model.Test2CurrA)
+                                        </td>
+                                        <td>@Html.LabelForRequired(model => model.Test2Time)
+                                        </td>
+                                       }
+                                       else
+                                       {
+                                        <td class="padding5px_left">@Html.LabelForRequired(model => model.Test2MinTripA)
+                                        </td>
+                                        <td>@Html.LabelForRequired(model => model.Test2TimeMultiplier)
+                                        </td>
+                                       }
+                                        <td>@Html.LabelForRequired(model => model.Test2ResetType)
+                                        </td>
+                                         <td>
+                                            @if (Model.Test2ResetType == "EM" && Model.Test2InverseSegment == "DT")
+                                            {
+                                                 <label>Reset Time, s (I<sub>0A</sub>)
+                                                </label>                                               
+                                                
+                                            }
+                                            else if (Model.Test2ResetType == "EM" && Model.Test2InverseSegment != "DT")
+                                            {
+                                                <label>Reset Time, s (TM<sub>1</sub>, I<sub>0A</sub>)
+                                                </label>
+                                            }
+                                            else
+                                            {
+                                              @Html.LabelForRequired(model => model.Test2ResetTime)
+                                            }
+                                        </td>
+                                    </tr>
+                                    <tr class="text_width_165px">
+                                     @if (Model.Test2InverseSegment == "DT")
+                                     {
+                                        <td class="padding5px_left">@Html.TextBoxFor(model => model.Test2CurrA, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=200.)", @id = "txtTest2CurrA" })@Html.ValidationMessageFor(model => model.Test2CurrA)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.Test2Time, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000 in secs.)", @id = "txtTest2Time" })@Html.ValidationMessageFor(model => model.Test2Time)
+                                        </td>   
+                                     }
+                                     else
+                                     {
+                                         <td class="padding5px_left">@Html.TextBoxFor(model => model.Test2MinTripA, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=200.)", @id = "txtTest2MinTripA" })@Html.ValidationMessageFor(model => model.Test2MinTripA)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.Test2TimeMultiplier, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000 in secs.)", @id = "txtTest2TimeMultiplier" })@Html.ValidationMessageFor(model => model.Test2TimeMultiplier)
+                                        </td>
+                                     }
+                                        <td>@Html.DropDownListFor(model => model.Test2ResetType, Model.Test2ResetTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test2ResetType)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.Test2ResetTime, (ViewBag.IsDisabled || Model.Test2ResetType == null) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000 in secs.)", @id = "txtTest2ResetTime" })@Html.ValidationMessageFor(model => model.Test2ResetTime)
+                                        </td>
+                                    </tr>
+                                }
+                                @if ((Model.Test2EmulatedDevice == "MR" && Model.Test2InverseSegment != null) || (Model.Test2EmulatedDevice == "FL" && Model.Test2Speed != null && Model.Test2AmpereRating != null))
+                                {
+                                    <tr>
+                                         <td colspan="4"></td>
+                                    </tr>
+                                    <tr class="text_width_110px">
+                                        <td colspan="4" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                <tr>
+                                                     <td colspan="5" class="sectionHeader">Advanced TCC Curve Setup</td>
+                                                </tr>
+                                                <tr class="padding_left20px">
+                                                    @if (Model.Test2InverseSegment != "DT")
+                                                    {
+                                                        <td style="padding-left: 20px" >
+                                                         <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                            <tr>
+                                                                <td align="center" class="sectionHeader">
+                                                                @Html.HiddenFor(model => model.Test2Lowcutoff)
+                                                                      @Html.CheckBoxFor(model => model.Test2LowCutOffChk, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.Test2LowChkPostbackScript })                                                           
+                                                                      Low Cutoff
+                                                                </td>
+                                                            </tr>
+                                                             <tr>
+                                                                <td class="padding5px_left">@Html.LabelForRequired(model => model.Test2LowcutoffCurrA)</td>
+                                                            </tr>
+                                                             <tr>
+                                                                <td class="padding5px_left">
+                                                                    @Html.TextBoxFor(model => model.Test2LowcutoffCurrA, (ViewBag.IsDisabled || !Model.Test2LowCutOffChk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=400.)", @id = "Test2LowcutoffCurrA" })@Html.ValidationMessageFor(model => model.Test2LowcutoffCurrA)
+                                                                </td>
+                                                            </tr>
+                                                         </table>
+                                                     </td>
+                                                 
+                                                        <td colspan="2">
+                                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                                <tr>
+                                                                    <td align="center" colspan="2" class="sectionHeader">
+                                                                    @Html.HiddenFor(model => model.Test2DefiniteTime1)
+                                                                        @Html.CheckBoxFor(model => model.Test2DefiniteTime1Chk, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.Test2Def1ChkPostbackScript })
+                                                                        Definite Time 1
+                                                                    </td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td class="padding5px_left">@Html.LabelForRequired(model => model.Test2DefiniteTime1CurrA)</td>
+                                                                    <td>@Html.LabelForRequired(model => model.Test2DefiniteTime1Time)</td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td class="padding5px_left">
+                                                                         @Html.TextBoxFor(model => model.Test2DefiniteTime1CurrA, (ViewBag.IsDisabled || !Model.Test2DefiniteTime1Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=6300.)", @id = "txtTest2DefiniteTime1Chk" })@Html.ValidationMessageFor(model => model.Test2DefiniteTime1CurrA)
+                                                                    </td>
+                                                                    <td>
+                                                                        @Html.TextBoxFor(model => model.Test2DefiniteTime1Time, (ViewBag.IsDisabled || !Model.Test2DefiniteTime1Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000.)", @id = "txtTest2DefiniteTime1Chk" })@Html.ValidationMessageFor(model => model.Test2DefiniteTime1Time)
+                                                                    </td>
+                                                                </tr>
+                                                             </table>
+                                                     </td>
+                                                    }
+
+                                                     <td colspan="2">
+                                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                                <tr>
+                                                                    <td  align="center" colspan="2" class="sectionHeader">
+                                                                    @Html.HiddenFor(model => model.Test2DefiniteTime2)
+                                                                         @Html.CheckBoxFor(model => model.Test2DefiniteTime2Chk, (ViewBag.IsDisabled || (Model.Test2InverseSegment != "DT" && !Model.Test1DefiniteTime1Chk)) ? (object)new { disabled = "disabled" } : new { onchange = Model.Test2Def2ChkPostbackScript })                                                           
+                                                                         Definite Time 2
+                                                                    </td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td class="padding5px_left">@Html.LabelForRequired(model => model.Test2DefiniteTime2CurrA)</td>
+                                                                    <td>@Html.LabelForRequired(model => model.Test2DefiniteTime2Time)</td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td class="padding5px_left">
+                                                                          @Html.TextBoxFor(model => model.Test2DefiniteTime2CurrA, (ViewBag.IsDisabled || !Model.Test2DefiniteTime2Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000.)", @id = "txtTest1DefiniteTime2Chk" })@Html.ValidationMessageFor(model => model.Test2DefiniteTime2CurrA)
+                                                                    </td>
+                                                                    <td>  
+                                                                           @Html.TextBoxFor(model => model.Test2DefiniteTime2Time, (ViewBag.IsDisabled || !Model.Test2DefiniteTime2Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=6300.)", @id = "txtTest1DefiniteTime2Chk" })@Html.ValidationMessageFor(model => model.Test2DefiniteTime2Time)
+                                                                    </td>
+                                                                </tr>
+                                                             </table>
+                                                     </td>
+
+                                                       @if (Model.Test2InverseSegment == "DT")
+                                                       { 
+                                                            <td colspan="2">
+                                                                <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                                    <tr>
+                                                                        <td  align="center" colspan="2" class="sectionHeader">
+                                                                        @Html.HiddenFor(model => model.Test2DefiniteTime3)
+                                                                             @Html.CheckBoxFor(model => model.Test2DefiniteTime3Chk, (ViewBag.IsDisabled || !Model.Test2DefiniteTime2Chk) ? (object)new { disabled = "disabled" } : new { onchange = Model.Test2Def3ChkPostbackScript })                                                           
+                                                                             Definite Time 3
+                                                                        </td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td class="padding5px_left">@Html.LabelForRequired(model => model.Test2DefiniteTime3CurrA)</td>
+                                                                        <td>@Html.LabelForRequired(model => model.Test2DefiniteTime3Time)</td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td class="padding5px_left">
+                                                                              @Html.TextBoxFor(model => model.Test2DefiniteTime3CurrA, (ViewBag.IsDisabled || !Model.Test2DefiniteTime3Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=6300.)", @id = "txtTest1DefiniteTime3Chk" })@Html.ValidationMessageFor(model => model.Test2DefiniteTime3CurrA)
+                                                                        </td>
+                                                                        <td>  
+                                                                               @Html.TextBoxFor(model => model.Test2DefiniteTime3Time, (ViewBag.IsDisabled || !Model.Test2DefiniteTime3Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000.)", @id = "txtTest1DefiniteTime3Chk" })@Html.ValidationMessageFor(model => model.Test2DefiniteTime3Time)
+                                                                        </td>
+                                                                    </tr>
+                                                                 </table>
+                                                             </td>
+                                                             <td></td>                                                           
+                                                       }
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="5"></td>
+                                                </tr>
+                                             </table>
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </td>
+                    </tr>
+                  @* }*@
+                   
+                @*   @if (Model.Test3EmulatedDevice != null)
+                   {  *@ 
+                            <tr>
+                             <td colspan="2" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                               <table align="center">
+                                    <tr> 
+                                         <td>  
+                                               @Html.LabelForRequired(model => model.Test2OpenIntervalTime)
+                                         </td>   
+                                         <td>  
+                                               @Html.TextBoxFor(model => model.Test2OpenIntervalTime, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=6300.)", @id = "txtTest2OpenIntervalTime" })@Html.ValidationMessageFor(model => model.Test2OpenIntervalTime)
+                                         </td> 
+                                    </tr>
+                                </table>
+                             </td>
+                        </tr>
+                            
+                     @*  //---------------------------Test 3------------------------*@
+                            <tr>
+                        <td colspan="2" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td colspan="4" class="sectionHeader">
+                                        <b>Test 3</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="padding5px_left">@Html.LabelForRequired(model => model.Test3EmulatedDevice)
+                                    </td>
+                                    @if (Model.Test3EmulatedDevice == "MR")
+                                    { 
+                                        <td>@Html.LabelForRequired(model => model.Test3InverseSegment)
+                                        </td>
+                                        <td>
+                                        </td>
+                                    }
+                                    else if (Model.Test3EmulatedDevice == "FL")
+                                    {
+                                        <td>@Html.LabelForRequired(model => model.Test3Speed)
+                                        </td>
+                                        <td>@Html.LabelForRequired(model => model.Test3AmpereRating)
+                                        </td>
+                                    }
+                                    else if (Model.Test3EmulatedDevice == "HR")
+                                    {
+                                         <td>@Html.LabelForRequired(model => model.Test3InverseSegment)
+                                         </td>
+                                        <td>@Html.LabelForRequired(model => model.Test3CoilRating)
+                                        </td>  
+                                    }
+                                    else
+                                    {
+                                        <td></td>
+                                        <td></td>
+                                    }
+                                    <td  style="text-align: right; padding-right: 10px">
+                                    @if (ViewBag.PageMode == "FUTURE")
+                                    {
+                                    @*Copy button*@
+                                        <input type="button" value="Copy Test 2 To Test 3" onclick="this.form.action='/@ViewBag.ControllerName/CopyTest2ToTest3/@ViewBag.GlobalID/@ViewBag.LayerName?layerType=@ViewBag.layerType';this.form.submit();"
+                                                @((Security.IsInAdminGroup) ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                    }
+                                    </td>                         
+                                </tr>
+                                <tr>
+                                    <td class="padding5px_left">@Html.DropDownListFor(model => model.Test3EmulatedDevice, Model.Test3EmulatedDeviceList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test3EmulatedDevice)
+                                    </td>
+                                     @if (Model.Test3EmulatedDevice == "MR")
+                                     {
+                                          <td>@Html.DropDownListFor(model => model.Test3InverseSegment, Model.Test3InverseSegmentList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test3InverseSegment)
+                                    </td>
+                                         <td>
+                                         </td>
+                                     }
+                                     else if (Model.Test3EmulatedDevice == "FL")
+                                     {
+                                          <td>@Html.DropDownListFor(model => model.Test3Speed, Model.Test3SpeedList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test3Speed)
+                                    </td>
+                                          <td>@Html.DropDownListFor(model => model.Test3AmpereRating, Model.Test3AmpereRatingList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test3AmpereRating)
+                                    </td>
+                                     }
+                                     else if (Model.Test3EmulatedDevice == "HR")
+                                     {
+                                          <td>@Html.DropDownListFor(model => model.Test3InverseSegment, Model.Test3InverseSegmentList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test3InverseSegment)
+                                    </td>
+                                          <td>@Html.DropDownListFor(model => model.Test3CoilRating, Model.Test3CoilRatingList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test3CoilRating)
+                                    </td>
+                                     }
+                                     else
+                                     {
+                                          <td></td>
+                                          <td></td>
+                                     }
+                                     <td>
+                                     
+                                     </td>
+                                </tr>
+                                
+                                @if (Model.Test3EmulatedDevice == "MR" && Model.Test3InverseSegment != null)
+                                {
+                                    <tr>
+                                         <td colspan="4"></td>
+                                    </tr>
+                                    <tr>
+                                      @if (Model.Test3InverseSegment == "DT")
+                                      {
+                                          <td class="padding5px_left">@Html.LabelForRequired(model => model.Test3CurrA)
+                                        </td>
+                                        <td>@Html.LabelForRequired(model => model.Test3Time)
+                                        </td>
+                                      }
+                                      else
+                                      {
+                                        <td class="padding5px_left">@Html.LabelForRequired(model => model.Test3MinTripA)
+                                        </td>
+                                        <td>@Html.LabelForRequired(model => model.Test3TimeMultiplier)
+                                        </td>
+                                      }
+                                        <td>@Html.LabelForRequired(model => model.Test3ResetType)
+                                        </td>
+                                         <td>
+                                            @if (Model.Test3ResetType == "EM" && Model.Test3InverseSegment == "DT")
+                                            {
+                                                 <label>Reset Time, s (I<sub>0A</sub>)
+                                                </label>                                               
+                                                
+                                            }
+                                            else if (Model.Test3ResetType == "EM" && Model.Test3InverseSegment != "DT")
+                                            {
+                                                <label>Reset Time, s (TM<sub>1</sub>, I<sub>0A</sub>)
+                                                </label>
+                                            }
+                                            else
+                                            {
+                                              @Html.LabelForRequired(model => model.Test3ResetTime)
+                                            }
+                                        </td>
+                                    </tr>
+                                    <tr class="text_width_165px">
+                                      @if (Model.Test3InverseSegment == "DT")
+                                      {
+                                        <td class="padding5px_left">@Html.TextBoxFor(model => model.Test3CurrA, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=6300.)", @id = "txtTest3CurrA" })@Html.ValidationMessageFor(model => model.Test3CurrA)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.Test3Time, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=6300.)", @id = "txtTest3Time" })@Html.ValidationMessageFor(model => model.Test3Time)
+                                        </td>
+                                      }
+                                      else
+                                      {
+                                          <td class="padding5px_left">@Html.TextBoxFor(model => model.Test3MinTripA, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=200.)", @id = "txtTest3MinTripA" })@Html.ValidationMessageFor(model => model.Test3MinTripA)
+                                            </td>
+                                            <td>@Html.TextBoxFor(model => model.Test3TimeMultiplier, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0.1 and Max Value=15.)", @id = "txtTest3TimeMultiplier" })@Html.ValidationMessageFor(model => model.Test3TimeMultiplier)
+                                            </td>
+                                      }
+                                        <td>@Html.DropDownListFor(model => model.Test3ResetType, Model.Test3ResetTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.Test3ResetType)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.Test3ResetTime, (ViewBag.IsDisabled || Model.Test3ResetType == null) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000 in secs.)", @id = "txtTest3ResetTime" })@Html.ValidationMessageFor(model => model.Test3ResetTime)
+                                        </td>
+                                    </tr>
+                                }
+                                @if ((Model.Test3EmulatedDevice == "MR" && Model.Test3InverseSegment != null) || (Model.Test3EmulatedDevice == "FL" && Model.Test3Speed != null && Model.Test3AmpereRating != null))
+                                {
+                                    <tr>
+                                         <td colspan="4"></td>
+                                    </tr>
+                                    <tr class="text_width_110px">
+                                        <td colspan="4" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                <tr>
+                                                     <td colspan="5" class="sectionHeader">Advanced TCC Curve Setup</td>
+                                                </tr>
+                                                <tr class="padding_left20px">
+                                                    @if (Model.Test3InverseSegment != "DT")
+                                                    {
+                                                     <td style="padding-left: 20px" >
+                                                         <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                            <tr>
+                                                                <td align="center" class="sectionHeader">
+                                                                @Html.HiddenFor(model => model.Test3Lowcutoff)
+                                                                      @Html.CheckBoxFor(model => model.Test3LowCutOffChk, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.Test3LowChkPostbackScript })                                                           
+                                                                      Low Cutoff
+                                                                </td>
+                                                            </tr>
+                                                             <tr>
+                                                                <td class="padding5px_left">@Html.LabelForRequired(model => model.Test3LowcutoffCurrA)</td>
+                                                            </tr>
+                                                             <tr>
+                                                                <td class="padding5px_left">
+                                                                    @Html.TextBoxFor(model => model.Test3LowcutoffCurrA, (ViewBag.IsDisabled || !Model.Test3LowCutOffChk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=400.)", @id = "txtTest3LowcutoffCurrA" })@Html.ValidationMessageFor(model => model.Test3LowcutoffCurrA)
+                                                                </td>
+                                                            </tr>
+                                                         </table>
+                                                     </td>
+
+                                                     <td colspan="2">
+                                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                                <tr>
+                                                                    <td align="center" colspan="2" class="sectionHeader">
+                                                                    @Html.HiddenFor(model => model.Test3DefiniteTime1)
+                                                                        @Html.CheckBoxFor(model => model.Test3DefiniteTime1Chk, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.Test3Def1ChkPostbackScript })
+                                                                        Definite Time 1
+                                                                    </td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td class="padding5px_left">@Html.LabelForRequired(model => model.Test3DefiniteTime1CurrA)</td>
+                                                                    <td>@Html.LabelForRequired(model => model.Test3DefiniteTime1Time)</td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td class="padding5px_left">
+                                                                         @Html.TextBoxFor(model => model.Test3DefiniteTime1CurrA, (ViewBag.IsDisabled || !Model.Test3DefiniteTime1Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=6300.)", @id = "txtTest3DefiniteTime1CurrA" })@Html.ValidationMessageFor(model => model.Test3DefiniteTime1CurrA)
+                                                                    </td>
+                                                                    <td>
+                                                                        @Html.TextBoxFor(model => model.Test3DefiniteTime1Time, (ViewBag.IsDisabled || !Model.Test3DefiniteTime1Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000 secs.)", @id = "txtTest3DefiniteTime1Time" })@Html.ValidationMessageFor(model => model.Test3DefiniteTime1Time)
+                                                                    </td>
+                                                                </tr>
+                                                             </table>
+                                                     </td>
+                                                    }
+
+                                                     <td colspan="2">
+                                                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                                <tr>
+                                                                    <td  align="center" colspan="2" class="sectionHeader">
+                                                                    @Html.HiddenFor(model => model.Test3DefiniteTime2)
+                                                                         @Html.CheckBoxFor(model => model.Test3DefiniteTime2Chk, (ViewBag.IsDisabled || (Model.Test3InverseSegment != "DT" && !Model.Test3DefiniteTime1Chk)) ? (object)new { disabled = "disabled" } : new { onchange = Model.Test3Def2ChkPostbackScript })                                                           
+                                                                         Definite Time 2
+                                                                    </td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td class="padding5px_left">@Html.LabelForRequired(model => model.Test3DefiniteTime2CurrA)</td>
+                                                                    <td>@Html.LabelForRequired(model => model.Test3DefiniteTime2Time)</td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td class="padding5px_left">
+                                                                          @Html.TextBoxFor(model => model.Test3DefiniteTime2CurrA, (ViewBag.IsDisabled || !Model.Test3DefiniteTime2Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=6300.)", @id = "txtTest3DefiniteTime2CurrA" })@Html.ValidationMessageFor(model => model.Test3DefiniteTime2CurrA)
+                                                                    </td>
+                                                                    <td>  
+                                                                           @Html.TextBoxFor(model => model.Test3DefiniteTime2Time, (ViewBag.IsDisabled || !Model.Test3DefiniteTime2Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000.)", @id = "txtTest3DefiniteTime2Time" })@Html.ValidationMessageFor(model => model.Test3DefiniteTime2Time)
+                                                                    </td>
+                                                                </tr>
+                                                             </table>
+                                                     </td>
+
+                                                      @if (Model.Test3InverseSegment == "DT")
+                                                      { 
+                                                            <td colspan="2">
+                                                                <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                                    <tr>
+                                                                        <td  align="center" colspan="2" class="sectionHeader">
+                                                                        @Html.HiddenFor(model => model.Test3DefiniteTime3)
+                                                                             @Html.CheckBoxFor(model => model.Test3DefiniteTime3Chk, (ViewBag.IsDisabled || !Model.Test3DefiniteTime2Chk) ? (object)new { disabled = "disabled" } : new { onchange = Model.Test3Def3ChkPostbackScript })                                                           
+                                                                             Definite Time 3
+                                                                        </td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td class="padding5px_left">@Html.LabelForRequired(model => model.Test3DefiniteTime3CurrA)</td>
+                                                                        <td>@Html.LabelForRequired(model => model.Test3DefiniteTime3Time)</td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td class="padding5px_left">
+                                                                              @Html.TextBoxFor(model => model.Test3DefiniteTime3CurrA, (ViewBag.IsDisabled || !Model.Test3DefiniteTime3Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=5 and Max Value=6300.)", @id = "txtTest3DefiniteTime3CurrA" })@Html.ValidationMessageFor(model => model.Test3DefiniteTime3CurrA)
+                                                                        </td>
+                                                                        <td>  
+                                                                               @Html.TextBoxFor(model => model.Test3DefiniteTime3Time, (ViewBag.IsDisabled || !Model.Test3DefiniteTime3Chk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0 and Max Value=1000.)", @id = "txtTest3DefiniteTime3Time" })@Html.ValidationMessageFor(model => model.Test3DefiniteTime3Time)
+                                                                        </td>
+                                                                    </tr>
+                                                                 </table>
+                                                             </td>
+                                                             <td></td>                                                           
+                                                      }
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="5"></td>
+                                                </tr>
+                                             </table>
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </td>
+                    </tr>
+                  @* }*@
+
+
+                       @* @if (Model.Test1EmulatedDevice != null)
+                        {*@
+                        <tr>
+                             <td colspan="2" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                               <table align="center">
+                                    <tr> 
+                                         <td>  
+                                               @Html.LabelForRequired(model => model.SeqResetTime)
+                                         </td>   
+                                         <td>  
+                                               @Html.TextBoxFor(model => model.SeqResetTime, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=0.5 and Max Value=1000.)", @id = "txtSeqResetTime" })@Html.ValidationMessageFor(model => model.SeqResetTime)
+                                         </td> 
+                                    </tr>
+                                </table>
+                             </td>
+                        </tr>
+                        
+                       @* } *@                         
+
+                    <tr>
+                      <td colspan="2" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                        <table align="center">
+                           <tr>
+                                    <td>
+                                     @Html.HiddenFor(model => model.HighCurCutOff)
+                                         @Html.CheckBoxFor(model => model.HighCurCutoffChk, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.HighCurCutoffPostbackScript }) 
+                                         @Html.LabelFor(model => model.HighCurCutOff, (object)new { @class = "float_right" })
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(model => model.HighCurCutOffA, (ViewBag.IsDisabled || !Model.HighCurCutoffChk) ? (object)new { disabled = "disabled" } : new { @title = "(Min Value=400 and Max Value=6300.)", @id = "txtHighCurCutOffA" })@Html.ValidationMessageFor(model => model.HighCurCutOffA)
+                                    </td>
+                                   @* @if (ViewBag.PageMode == "FUTURE")
+                                    {
+                                            <td> 
+                                                <input type="button" value="Add a Test" onclick="this.form.action='/@ViewBag.ControllerName/AddTest/@ViewBag.GlobalID/@ViewBag.LayerName';this.form.submit();"
+                                                        @((Security.IsInAdminGroup && ((Model.IniEmulatedDevice != null) || (Model.Test1Visible && Model.Test1EmulatedDevice != null) || (Model.Test2Visible || Model.Test2EmulatedDevice != null) || (Model.Test3Visible && Model.Test3EmulatedDevice != null))) ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                             </td>
+                                            <td>
+                                                 <input type="button" value="Remove Last Test" onclick="this.form.action='/@ViewBag.ControllerName/RemoveTest/@ViewBag.GlobalID/@ViewBag.LayerName';this.form.submit();"
+                                                        @((Security.IsInAdminGroup && (Model.Test1Visible || Model.Test2Visible || Model.Test3Visible)) ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                            </td>                                 
+                                    }*@
+                            </tr>
+                        </table>
+                      </td>
+                    </tr>
+
+                    @*--------------------------------------Sectionalizing Settings----------------------------------------*@
+                       <tr>
+                         <td colspan="2" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td colspan="3" class="sectionHeader">
+                                        <b>Sectionalizing Settings</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <table>
+                                            <tr>
+                                                <td class="padding5px_left">
+                                                    @Html.LabelForRequired(model => model.SectMode)
+                                                </td>
+                                                <td class="padding5px_left">
+                                                    @* @Html.DropDownListFor(model => model.SectMode, Model.SectModeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.SectModePostbackScript, @title = "(Select any mode from list)", @id = "lstSectModeList" })@Html.ValidationMessageFor(model => model.SectMode)*@
+                                                     @Html.DropDownListFor(model => model.SectMode, Model.SectModeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.SectModePostbackScript })@Html.ValidationMessageFor(model => model.SectMode)
+                                                </td>
+                                            </tr>
+                                        </table>                                          
+                                              
+                                   </td>
+                                </tr>
+                                <tr>
+                                    <td class="padding5px_left"> 
+                                        @Html.LabelForRequired(model => model.SectModeCounts)
+                                    </td>
+                                    <td> 
+                                        @Html.LabelForRequired(model => model.SectModeResetTime)
+                                    </td>
+                                    <td>
+                                        @Html.LabelForRequired(model => model.SectModeStartingCur)
+                                    </td>
+                                </tr>
+                                <tr class="text_width_165px">
+                                    <td class="padding5px_left">
+                                        @Html.TextBoxFor(model => model.SectModeCounts, (ViewBag.IsDisabled || Model.SectMode != "ENB") ? (object)new { disabled = "disabled" } : new { @title = "(Count Min Value =1 and Max Value=9)", @id = "txtSectModeCounts" })@Html.ValidationMessageFor(model => model.SectModeCounts)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(model => model.SectModeResetTime, (ViewBag.IsDisabled || Model.SectMode != "ENB") ? (object)new { disabled = "disabled" } : new { @title = "(Min Value =.5 and Max Value=1000)", @id = "txtSectModeResetTime" })@Html.ValidationMessageFor(model => model.SectModeResetTime)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(model => model.SectModeStartingCur, (ViewBag.IsDisabled || Model.SectMode != "ENB") ? (object)new { disabled = "disabled" } : new { @title = "(Min Value =400 and Max Value=6500)", @id = "txtSectModeStartingCur" })@Html.ValidationMessageFor(model => model.SectModeStartingCur)
+                                    </td>
+                                </tr>
+                              </table>
+                           </td>
+                        </tr>
+
+                    <tr class="labelAlign_right">
+                        <td style="width: 150px;">@Html.LabelForRequired(model => model.DateModified)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.DateModified, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @readonly = "true" })@Html.ValidationMessageFor(model => model.DateModified)
+                        </td>
+                    </tr>
+                    <tr class="labelAlign_right">
+                        <td>@Html.LabelForRequired(model => model.PreparedBy)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PreparedBy, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 60 })@Html.ValidationMessageFor(model => model.PreparedBy)
+                        </td>
+                    </tr>
+                    <tr class="labelAlign_right">
+                        <td>@Html.LabelForRequired(model => model.EffectiveDate)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.EffectiveDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepicker" })@Html.ValidationMessageFor(model => model.EffectiveDate)
+                        </td>
+                    </tr>
+                    <tr class="labelAlign_right">
+                        <td>@Html.LabelForRequired(model => model.PeerReviewer)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PeerReviewer, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 60 })@Html.ValidationMessageFor(model => model.PeerReviewer)
+                        </td>
+                    </tr>
+                    <tr class="labelAlign_right">
+                        <td>@Html.LabelForRequired(model => model.PeerReviewerDate)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PeerReviewerDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepicker" })@Html.ValidationMessageFor(model => model.PeerReviewerDate)
+                        </td>
+                    </tr>
+                    @if (ViewBag.PageMode == "FUTURE")
+                    {
+                        <tr class="labelAlign_right">
+                            <td class="lable">
+                                <label>
+                                    Release</label>
+                            </td>
+                            <td>
+                                @Html.CheckBoxFor(model => model.Release, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })
+                            </td>
+                        </tr>
+                    }
+                       
+                    @if (ViewBag.PageMode == "CURRENT")
+                    {
+                        <tr>
+                            <td colspan="2" style="text-align: right; padding-right: 10px">
+                                <input type="button" value="Copy current to future settings" onclick="this.form.action='/@ViewBag.ControllerName/@ViewBag.GlobalID/@ViewBag.LayerName?layerType=@ViewBag.layerType';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                            </td>
+                        </tr>
+                    }
+                    @if (ViewBag.PageMode == "FUTURE")
+                    {
+                        <tr>
+                            <td colspan="2" style="text-align: right; padding-right: 10px">
+                                <input type="button" value="Cancel" onclick="this.form.action='/@ViewBag.ControllerName/Future/@ViewBag.GlobalID/@ViewBag.LayerName?layerType=@ViewBag.layerType';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                <input type="button" value="Save" onclick="this.form.action='/@ViewBag.ControllerName/SaveFuture/@ViewBag.GlobalID/@ViewBag.LayerName?layerType=@ViewBag.layerType';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                            </td>
+                        </tr>
+                    }
+                </table>
+             </td>
+         </tr>
+
+        </table>
+}
+
+                                        

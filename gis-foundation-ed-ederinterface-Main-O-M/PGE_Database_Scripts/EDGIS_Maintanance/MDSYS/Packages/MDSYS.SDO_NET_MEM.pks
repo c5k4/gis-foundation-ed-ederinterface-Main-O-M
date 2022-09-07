@@ -1,0 +1,48 @@
+Prompt drop Package SDO_NET_MEM;
+DROP PACKAGE MDSYS.SDO_NET_MEM
+/
+
+Prompt Package SDO_NET_MEM;
+--
+-- SDO_NET_MEM  (Package) 
+--
+CREATE OR REPLACE PACKAGE MDSYS.SDO_NET_MEM wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+9
+1d2 164
+tL8K2LCe/Od1kGFV6UWEt3rtMJ8wg3n3AK5qfC9AWE7VSPbCokfwBOL6JrImzZcsZ5PYTcJp
+Y+j35m2pD9CkPtvFMJvt/noch7tLfrguDsU4rd7Z42ymEdLo4g4hCdOxPBbxveXbIHpOVpEL
+iMBk+vptggo4OqW7Udy7A+A/Nui2A6pdD6HDNrOIiE/pYHUbz7pOi28oMV/Q60a7aSBICMjX
+zlcuMHwaFiZlJb8fI2qcUJDIEgr86vLqEi6eUzjV8ZPd+5R+92QuEfjzTy9XZat4bT8RKEmc
+xLGvmpvQ0R8LymTB2S3HOpiYSzO3vuIsvHcIBWOw+eSnYhjKSdsKzk4YmCzlCyNs
+
+/
+
+
+Prompt Synonym SDO_NET_MEM;
+--
+-- SDO_NET_MEM  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM SDO_NET_MEM FOR MDSYS.SDO_NET_MEM
+/
+
+
+Prompt Grants on PACKAGE SDO_NET_MEM TO PUBLIC to PUBLIC;
+GRANT EXECUTE ON MDSYS.SDO_NET_MEM TO PUBLIC
+/

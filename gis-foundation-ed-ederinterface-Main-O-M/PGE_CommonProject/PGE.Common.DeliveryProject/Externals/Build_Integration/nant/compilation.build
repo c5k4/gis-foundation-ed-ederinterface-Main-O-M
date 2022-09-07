@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<project xmlns="http://nant.sf.net/release/0.85/nant.xsd" name="Sempra" default="doNothing" basedir=".">
+  <description>Sempra build file.</description>
+  <property name="svn.exe" value="${environment::get-variable('CollabnetSVN')}\svn.exe"/>
+  <property name="BaseDirectory" value="..\..\Desktop" overwrite="false" />
+  <property name="SolutionFile" value="Sempra.sln" overwrite="false"/>
+  <property name="Configuration" value="Release" overwrite="false"/>
+  <property name="Platform" value="x86" overwrite="false"/>
+  <property name="msBuild.exe" value="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe" />
+  <property name="SignAssembly" value="false" overwrite="false"/>
+  <property name="AssemblySearchPaths" value="{TargetFrameworkDirectory};{AssemblyFolders};{GAC};{RawFileName}" overwrite="false"/>
+  <property name="CCNetLabel" value="0" overwrite="false"/>
+  <property name="CCNetPrefix" value="1.0.0" overwrite="false"/>
+  <property name="CCNetMSBuildLogger" value="" overwrite="false"/>
+  <property name="BuildArguments" value="" overwrite="false"/>
+  <property name="Targets" value="/t:Rebuild" overwrite="false"/>
+  <property name="CopyLocal" value="false" overwrite="false"/>
+  
+  
+  <target name="setversions" description="Sets AssemblyInfo versions based on SVN revision number.">
+    <foreach item="File" property="filename">
+      <in>
+        <items basedir="${BaseDirectory}">
+          <include name="**\AssemblyInfo.cs"></include>
+          <include name="**\AssemblyInfo.vb"></include>
+        </items>
+      </in>
+      <do>
+        <property name="revision" value="0"/>
+        <property name="RevisionLocation" value="${string::replace(filename, 'AssemblyInfo.cs','')}"/>
+		<property name="RevisionLocation" value="${string::replace(RevisionLocation, 'AssemblyInfo.vb','')}"/>
+		<property name="RevisionLocation" value="${string::replace(RevisionLocation, '\Properties\','')}"/>
+		<echo message="Getting revision information for ${RevisionLocation} from subversion"/>
+		<echo message="Executing command: &quot;${svn.exe}&quot; log ${RevisionLocation} -l 1 --xml -rHEAD:1"/>
+		<exec commandline="log ${RevisionLocation} -l 1 --xml -rHEAD:1" program="${svn.exe}" output="${RevisionLocation}\_BuildIntegration_revision.xml"/>
+      </do>
+    </foreach>
+	
+	<foreach item="File" property="filename">
+		<in>
+        <items basedir="${BaseDirectory}">
+          <include name="**\AssemblyInfo.cs"></include>
+          <include name="**\AssemblyInfo.vb"></include>
+        </items>
+      </in>
+      <do>
+        <property name="revision" value="0"/>
+        <property name="RevisionLocation" value="${string::replace(filename, 'AssemblyInfo.cs','')}"/>
+		<property name="RevisionLocation" value="${string::replace(RevisionLocation, 'AssemblyInfo.vb','')}"/>
+		<property name="RevisionLocation" value="${string::replace(RevisionLocation, '\Properties\','')}"/>
+			
+			<echo message="Reading revision from temporary file and setting versions in ${filename}"/>
+			<xmlpeek property="revision" file="${RevisionLocation}\_BuildIntegration_revision.xml" xpath="/log/logentry/@revision"/>
+			<echo message="Updating AssemblyInfo with revision #${revision}"/>
+			<move file="${filename}" tofile="${filename}_versioned" >
+			  <filterchain>
+				<replacestring from='[assembly: AssemblyFileVersion("1.0.0.0")]' to='[assembly: AssemblyFileVersion("${CCNetPrefix}.${revision}")]'/>
+				<replacestring from='[assembly: AssemblyVersion("1.0.0.0")]' to='[assembly: AssemblyVersion("${CCNetPrefix}.0")]'/>
+				<replacestring from='[assembly: AssemblyFileVersionAttribute("1.0.0.0")]' to='[assembly: AssemblyFileVersionAttribute("${CCNetPrefix}.${revision}")]'/>
+				<replacestring from='[assembly: AssemblyVersionAttribute("1.0.0.0")]' to='[assembly: AssemblyVersionAttribute("${CCNetPrefix}.0")]'/>
+			  </filterchain>
+			</move>
+			<move file="${filename}_versioned" tofile="${filename}" >
+			</move>
+		 </do>
+    </foreach>
+  </target>
+
+
+  <target name="clean" description="remove all generated files">
+    <delete>
+      <fileset >
+        <include name="${BaseDirectory}\BuildIntegration\Installation\output\**" />
+      </fileset>
+    </delete>
+    <call target="revertSvnChanges"/>
+  </target>
+  
+  
+  <target name="build" description="Compiles Sempra.sln." >
+    <!--Does not work with VS2008 yet <solution failonerror="true"
+              solutionfile="..\..\Desktop\Sempra.sln"
+              configuration="$(configuration)"
+              platform="x86" 
+              outputdir=".\installation\output"
+              verbose="true">
+    </solution>-->
+    <exec program="${msBuild.exe}" failonerror="true">
+      <arg file="${BaseDirectory}\${SolutionFile}"/>
+      <arg line="${Targets}"/>
+      <arg line="/p:Configuration=&quot;${Configuration}&quot;"/>
+      <arg line="/p:platform=&quot;${Platform}&quot;"/>
+      <arg line="/p:SignAssembly=${SignAssembly}"/>
+      <arg line="/p:AssemblyOriginatorKeyfile=${environment::get-variable('KeyFile')}"/>
+      <arg line="/p:CopyLocal=${CopyLocal}"/>
+      <arg line="/p:RegisterForComInterop=false"/>
+      <arg line="/p:PostBuildEvent="/>
+      <arg line="/p:CCNetLabel=${CCNetPrefix}.${CCNetLabel}"/>
+      <arg line="/p:OutputPath=${BaseDirectory}\BuildIntegration\Installation\Output\Assemblies\"/>
+      <arg line="/p:AssemblySearchPaths=&quot;${AssemblySearchPaths}&quot;"/>
+      <arg line="/p:DebugSymbols=true"/>
+      <arg line="/p:DebugType=pdbonly"/>
+	  <arg line="/p:CustomAfterMicrosoftCommonTargets=${environment::get-variable('IntegrationPool')}\Build_Integration\MSBuild\SuppressBuildEvents.proj"/>
+      <arg line="${BuildArguments}"/>
+      <arg line='${CCNetMSBuildLogger}'/>
+    </exec>
+  </target>
+
+  <target name="installers" description="Compiles installation.sln." >
+    <!--Does not work with VS2008 yet <solution failonerror="true"
+              solutionfile="..\..\Desktop\Sempra.sln"
+              configuration="$(configuration)"
+              platform="x86" 
+              outputdir=".\installation\output"
+              verbose="true">
+    </solution>-->
+    <exec program="${msBuild.exe}"  failonerror="true">
+      <arg file="${BaseDirectory}\BuildIntegration\installation\installation.sln"/>
+      <arg line="/t:Rebuild"/>
+      <arg line="/p:Configuration=&quot;${Configuration}&quot;"/>
+      <arg line="/p:CCNetLabel=${CCNetPrefix}.${CCNetLabel}"/>
+      <arg line="/p:platform=x86"/>
+      <arg line='${CCNetMSBuildLogger}'/>
+    </exec>
+  </target>
+
+  <target name="revertSvnChanges" description="Reverts any file changes.">
+    <exec commandline="revert ${BaseDirectory} -R --non-interactive --trust-server-cert" program="${svn.exe}" failonerror="true"/>
+  </target>
+  
+    <target name="doNothing" description="Does Nothing.">
+  </target>
+</project>

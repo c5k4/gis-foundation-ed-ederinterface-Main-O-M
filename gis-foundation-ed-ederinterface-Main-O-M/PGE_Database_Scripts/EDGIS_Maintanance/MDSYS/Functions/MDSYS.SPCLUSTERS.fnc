@@ -1,0 +1,39 @@
+Prompt drop Function SPCLUSTERS;
+DROP FUNCTION MDSYS.SPCLUSTERS
+/
+
+Prompt Function SPCLUSTERS;
+--
+-- SPCLUSTERS  (Function) 
+--
+CREATE OR REPLACE FUNCTION MDSYS.SpClusters wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+110 10f
+Pvuost3VGMRMF/sVJ8DRJYJYFEgwg3lKmCcdNXTpVYMPa2U3bHDEJl2IMW9HER8ArF4ujdEC
+CIa1AIcGZ8rFu74GaExawBxEiom8IJwesTqbBlNiFFS9Imnr+zKCZ6vZmpFEtUyVCwxsR6Gy
+FPyn9ak9wK1qfzSlHUvkfIWgahbLHu6T7EO25U56CupPl5rCoj5kVWRda+EqBbDtkxwTJby1
+BEIHBD+PdD7DoTQCMrrQSUFNS2lAfKcABDxCIIZ7KqoPaPuolKJI
+
+/
+
+
+Prompt Grants on FUNCTION SPCLUSTERS TO PUBLIC to PUBLIC;
+GRANT EXECUTE ON MDSYS.SPCLUSTERS TO PUBLIC
+/

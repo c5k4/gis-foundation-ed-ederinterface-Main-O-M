@@ -1,0 +1,43 @@
+Prompt drop Package SDO_SEM_DOWNGRADE_UTL;
+DROP PACKAGE MDSYS.SDO_SEM_DOWNGRADE_UTL
+/
+
+Prompt Package SDO_SEM_DOWNGRADE_UTL;
+--
+-- SDO_SEM_DOWNGRADE_UTL  (Package) 
+--
+CREATE OR REPLACE PACKAGE MDSYS.sdo_sem_downgrade_utl wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+9
+237 168
+1tGaGLSohcjH4gGo2y5/YOZEpXEwgztKr/IdNXRAAP4+wGisB7mH/omQ+rnLpBenWehhsMp+
+CFFv2AYe2sUYrGPnQHbAzrWWmkbJ8B2vUiJ9UqpkTu5D7jMIyRkeTuukcKezk3xYWKwR3Nup
+3i2mVM903duzyNdZcGBl9jseoy407GlxwSZzp2LqT9bzHx1UjlazYN4e8RrFolJz3AB5hdaZ
+AURWgXXt3SeT7FnxrWcfjEl0zYgCiyieOM4Xvf1kat0RoWwn7SfFYe2eb40ha6i0yhPzvr7P
+hgi5tv6B5YBPETH5RmVs9FmXMV4H9NPDTEEZmm42bvyYcJA68Li8XtgWtDMGlMWD8EY=
+
+/
+
+
+Prompt Synonym SDO_SEM_DOWNGRADE_UTL;
+--
+-- SDO_SEM_DOWNGRADE_UTL  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM SDO_SEM_DOWNGRADE_UTL FOR MDSYS.SDO_SEM_DOWNGRADE_UTL
+/

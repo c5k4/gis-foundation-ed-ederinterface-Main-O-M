@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateAnnotation", "ValidateAnnotation\ValidateAnnotation.csproj", "{CD34FC52-A632-498F-8FA4-7D9278B87E15}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ValidateAnnotationInstaller", "ValidateAnnotationInstaller\ValidateAnnotationInstaller.vdproj", "{633CF77A-953A-4C53-A2B4-0CEBA37FAD20}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ValidateAnnotation\\ValidateAnnotation.csproj
+		SccProjectName1 = ValidateAnnotation
+		SccLocalPath1 = ValidateAnnotation
+		SccProjectUniqueName2 = ValidateAnnotationInstaller\\ValidateAnnotationInstaller.vdproj
+		SccProjectName2 = ValidateAnnotationInstaller
+		SccLocalPath2 = ValidateAnnotationInstaller
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD34FC52-A632-498F-8FA4-7D9278B87E15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD34FC52-A632-498F-8FA4-7D9278B87E15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD34FC52-A632-498F-8FA4-7D9278B87E15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD34FC52-A632-498F-8FA4-7D9278B87E15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{633CF77A-953A-4C53-A2B4-0CEBA37FAD20}.Debug|Any CPU.ActiveCfg = Debug
+		{633CF77A-953A-4C53-A2B4-0CEBA37FAD20}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

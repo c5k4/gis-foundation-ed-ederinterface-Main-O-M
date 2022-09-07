@@ -1,0 +1,30 @@
+ED Mapping 1:50
+===============
+03/09/2015 v1.0: Initial revision baselined for data model 9.3
+03/17/2015 v1.1: Updated for data model release 9.4
+03/27/2015 v1.2: TFS Fixes - see Release notes
+04/24/2015 v1.3: Synchronized with changes from block/primary/sec where applicable
+
+Block Map Duct View 1:50
+========================
+03/09/2015 v1.0: Initial revision baselined for data model 9.3
+03/25/2015 v1.1: Updated for data model release 9.4
+04/21/2015 v1.2: Review updates
+
+Primary View 1:50
+=====================
+10/16/2014 v1.0: Initial revision baselined for data model 9.0
+03/25/2015 v1.1: Updated for data model release 9.4 (and renamed from UFM Pri UG Duct View)
+04/14/2015 v1.2: Review updates
+
+Secondary View 1:50
+=====================
+10/16/2014 v1.0: Initial revision baselined for data model 9.0
+03/25/2015 v1.1: Updated for data model release 9.4 (and renamed from UFM Sec UG Duct View)
+04/22/2015 v1.2: Review updates
+
+DC View 1:50
+=====================
+10/16/2014 v1.0: Initial revision baselined for data model 9.0
+03/25/2015 v1.1: Updated for data model release 9.4 (and renamed from UFM DC Duct View)
+04/22/2015: Marked Obsolete

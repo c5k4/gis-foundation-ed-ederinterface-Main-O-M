@@ -1,0 +1,47 @@
+﻿<controls:ChildWindow xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"  x:Class="ArcFMSilverlight.Controls.Generation.GenerationInfoWindow"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+           Height="300" 
+           Title="Generators Related to Service Location" Width="582">
+    <Grid x:Name="LayoutRoot" Margin="2" Height="217" Width="557">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="557"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="TxtHeader" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" />
+        <StackPanel x:Name="LinksStackPanel" Grid.Row="2" Orientation="Vertical" Margin="0,0,0,-72">
+            <sdk:DataGrid x:Name="generationGrid" SelectionMode="Single"  HeadersVisibility="All"  ColumnWidth="Auto"  RowHeight="30" Height="130" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                IsReadOnly="True" LoadingRow="generationGrid_LoadingRow" CanUserResizeColumns="False" AutoGenerateColumns="False">
+                <sdk:DataGrid.Columns>
+                    <sdk:DataGridTextColumn Header="Object ID"
+                      Binding="{Binding ObjectID}"/>
+                    <sdk:DataGridTextColumn Header="Global ID"
+                      Binding="{Binding GlobalID}"/>
+                    <sdk:DataGridTextColumn Header="Gen Category"
+                      Binding="{Binding GenCategory}"/>
+                    <sdk:DataGridTextColumn Header="Project Name"
+                      Binding="{Binding ProjectName}"/>
+                    <sdk:DataGridTextColumn Header="Service Point ID"
+                      Binding="{Binding SPID}"/>
+                    <sdk:DataGridTextColumn Header="Address"
+                      Binding="{Binding Address}"/>
+                </sdk:DataGrid.Columns>
+                <toolkit:ContextMenuService.ContextMenu>
+                    <toolkit:ContextMenu>
+                        <toolkit:MenuItem Header="More Info..." Click="MenuItem_Click" />
+                    </toolkit:ContextMenu>
+                </toolkit:ContextMenuService.ContextMenu>
+            </sdk:DataGrid>
+        </StackPanel>
+        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Margin="0,12,79,0" />
+        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Grid.Row="4" Grid.Column="1" Height="25" HorizontalAlignment="Right" Margin="0,12,0,0"  />
+    </Grid>
+</controls:ChildWindow>

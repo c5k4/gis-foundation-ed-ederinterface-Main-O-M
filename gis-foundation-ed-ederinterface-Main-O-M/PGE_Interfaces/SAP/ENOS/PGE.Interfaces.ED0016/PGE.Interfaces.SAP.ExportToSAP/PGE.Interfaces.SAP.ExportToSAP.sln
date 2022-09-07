@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.Interfaces.SAP.ExportToSAP", "PGE.Interfaces.SAP.ExportToSAP\PGE.Interfaces.SAP.ExportToSAP.csproj", "{6328D570-D21A-4734-8C40-34851B71A4D5}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PGE.Installer.InterfacesExportToSAP", "PGE.Installer.ED16.ExportToSAP\PGE.Installer.ED16.ExportToSAP.vdproj", "{FF251225-5515-47D8-B614-B7C1E05F36DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6328D570-D21A-4734-8C40-34851B71A4D5}.Debug|x86.ActiveCfg = Debug|x86
+		{6328D570-D21A-4734-8C40-34851B71A4D5}.Debug|x86.Build.0 = Debug|x86
+		{6328D570-D21A-4734-8C40-34851B71A4D5}.Release|x86.ActiveCfg = Release|x86
+		{6328D570-D21A-4734-8C40-34851B71A4D5}.Release|x86.Build.0 = Release|x86
+		{FF251225-5515-47D8-B614-B7C1E05F36DE}.Debug|x86.ActiveCfg = Debug
+		{FF251225-5515-47D8-B614-B7C1E05F36DE}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD645009-D956-457A-9D05-D334D55A0F31}
+	EndGlobalSection
+EndGlobal

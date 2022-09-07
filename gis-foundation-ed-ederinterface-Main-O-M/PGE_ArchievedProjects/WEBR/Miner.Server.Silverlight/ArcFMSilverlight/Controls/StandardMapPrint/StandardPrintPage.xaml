@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="ArcFMSilverlight.StandardPrintPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    xmlns:local="clr-namespace:ArcFMSilverlight" 
+    xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    mc:Ignorable="d"
+    d:DesignHeight="325" d:DesignWidth="425" BorderBrush="#FFB70000">
+    <StackPanel Name="tabItem1" Height="315" Width="420" Visibility="Visible">
+        <Border BorderThickness="3" BorderBrush="#FF4EB81E" Height="314" Width="412" CornerRadius="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="70"/>
+
+
+                    <RowDefinition Height="23"/>
+                    <RowDefinition Height="122"/>
+                    <RowDefinition Height="13*" />
+                </Grid.RowDefinitions>
+
+
+                <ComboBox x:Name="comboTemplateSelection" Width="170" Height="24" Margin="6,53,230,73" />
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="2" Margin="0,22,0,0">
+                    <StackPanel Orientation="Vertical" Margin="0,0,10,0"></StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="0,0,10,0"></StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Right" Margin="0,84,0,0"></StackPanel>
+                <controlsToolkit:BusyIndicator x:Name="BusyIndicator" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       IsBusy="False"/>
+                <!--<Popup IsOpen="True" x:Name="PART_CircuitPopup_print" Margin="185,4,-185,10" Grid.RowSpan="2" Grid.Row="1">-->
+
+                    <sdk:AutoCompleteBox x:Name="PART_FilterAutoCompleteTextBlock" 
+                                         Margin="210,-50,-185,10" Padding="1"  
+                                         Width="180" Height="30" 
+                                        HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                        SelectionChanged="PART_AutoCompleteTextBlock_OnSelectionChanged"   
+                                        KeyDown="PART_AutoCompleteTextBlock_OnKeyDown"  
+                                        IsTextCompletionEnabled="False" Populating="PART_AutoCompleteTextBlock_OnPopulating"
+                                        ToolTipService.ToolTip="Enter Feeder Name to highlight/zoom" Grid.Row="2">
+                    </sdk:AutoCompleteBox>
+                <!--</Popup>-->
+
+                <TextBlock Text="Select Grid Layer:" Margin="10,0,236,54" Grid.Row="1" />
+                <ComboBox x:Name="comboGridLayerSelection" Width="170" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6,22,0,0" Grid.Row="1" />
+                <ComboBox x:Name="comboGridNumberSelection" Width=".1" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Margin="220,22,-50,0" Grid.Row="1" Visibility="Visible" />
+                <RadioButton TabIndex="0" Style="{StaticResource PONSRadioButton}" Height="20" Content="Select Polygon " x:Name="Rdpoly" IsChecked="False" Checked="RadioButton_StdPrintChecked" GroupName="RdPrint" Margin="210,82,-2,48" />
+                <RadioButton TabIndex="1" Style="{StaticResource PONSRadioButton}" Height="20" Content="Select Grid Number" x:Name="RdGrid" IsChecked="False" Checked="RadioButton_StdPrintChecked" GroupName="RdPrint" Margin="210,53,42,77" />
+                <RadioButton TabIndex="2" Style="{StaticResource PONSRadioButton}" Height="20" Content="Select Circuit " x:Name="Rdcircuit"  IsChecked="True" GroupName="RdPrint" Checked="RadioButton_StdPrintChecked" Margin="210,112,20,18" />
+                <Button x:Name="PrintStandardMapButton" IsEnabled="False" Content="Print Standard Map" Click="PrintStandardMapButton_Click" Width="140" Height="24" Margin="151,18,115,80" Grid.Row="3" />
+                <Button x:Name="CancelButton" Content="Close" Width="75" Height="24" Click="CancelButton_Click" Margin="305,18,26,80" Grid.Row="3" />
+                <TextBlock Text="Select Map Type:" Margin="10,33,306,93" />
+                <TextBlock Text="Select Page Size:" Margin="10,86,300,48" />
+                <TextBlock x:Name="GridID" Text="Enter Circuit Name:"  Margin="220,2,-50,47" Grid.Row="1"  />
+                <ComboBox x:Name="comboPageSize" Width="170" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6,108,0,0" />
+                <Border BorderThickness="3" BorderBrush="#FF65B81E" Height="5" Width="404" CornerRadius="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,17,0,1" Grid.Row="2"></Border>
+                <controlsToolkit:BusyIndicator x:Name="busyEmailIndicator" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       IsBusy="False"/>
+            </Grid>
+        </Border>
+    </StackPanel>
+</UserControl>

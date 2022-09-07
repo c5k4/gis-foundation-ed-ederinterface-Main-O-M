@@ -1,0 +1,157 @@
+﻿@using SettingsApp.Common;
+@using System.Collections.Generic;
+<!-- IEnumerable<SettingsApp.Models.CommentHistoryModel-->
+@model SettingsApp.Models.CommentHistoryModel
+<script type="text/javascript">
+
+    ShowHistoryDetails = function (globalID, layerID, ID) {
+        window.showModalDialog('/Recloser/HistoryDetails/' + globalID + '/' + layerID + '/' + ID, "WindowPopup", 'dialogWidth: 960px,dialogHeight:300px');
+    }
+
+    function DeleteConfirm() {
+        if (confirm("Are you sure want to delete"))
+            return true;
+        else
+            return false;
+    }
+
+</script>
+@using (Html.BeginForm("Index", "Recloser"))
+{
+    <table cellpadding="0" cellspacing="0" width="90%">
+        <tr>
+            <td style="padding: 0px">
+                <div class="float-left">
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("GIS", "GIS", "Recloser", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                            <li>@Html.ActionLink("Current Settings", "Index", "Recloser", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                            <li>@Html.ActionLink("Future Settings", "Future", "Recloser", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                            <li>@Html.ActionLink("Settings Files", "Files", "Recloser", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                            <li class="selected">@Html.ActionLink("History", "History", "Recloser", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                        </ul>
+                    </nav>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="header" style="padding-top:15px; padding-bottom:0px; padding-left:10px">
+               @if (ViewBag.layerType == "P")
+               {
+                    <label id="lablelayertype" runat="server" style="color: Red; font-size:16; text-align: Left;">
+                       @ViewBag.Title 
+                    </label>
+                     
+                   
+               }
+               else
+               {
+                @ViewBag.Title 
+               }
+            </td>
+        </tr>
+        <tr>
+           <td style="padding: 10px; background-color:#ffffff">
+                <table cellpadding="0" cellspacing="0" style="background-color:#f2f2f2; width: 100%">
+                    <tr>
+                        <td class="sectionHeader">
+                            Add Comments
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 5px">
+                            @Html.TextAreaFor(s => s.comments, new { style = "height:60px; width:100%" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-right: 20px; text-align: right">
+                            <input type="button" value="Add" onclick="this.form.action='/@ViewBag.ControllerName/AddComment/@ViewBag.GlobalID/@ViewBag.LayerName?layerType=@ViewBag.layerType';this.form.submit();"
+                                @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                        </td>
+                    </tr>
+                </table>
+                <div style="padding-top:20px"></div>
+                <table cellpadding="0" cellspacing="0" style="background-color:#f2f2f2; width: 100%">
+                    <tr>
+                        <td class="sectionHeader">
+                            History
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px">
+                            <div id="divHistory" style="height: 500px; overflow: scroll; overflow-x: hidden; width:100%">
+                                <table width="100%">
+                                    <tr class="GridHeader">
+                                        <td>
+                                            <label style="text-align: left; padding-left: 5px">
+                                                Entry Date</label>
+                                        </td>
+                                        <td>
+                                            <label style="text-align: left;">
+                                                Work Date</label>
+                                        </td>
+                                        <td>
+                                            <label style="text-align: left;">
+                                                Work Type</label>
+                                        </td>
+                                        <td>
+                                            <label style="text-align: left;">
+                                                User</label>
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                    </tr>
+                                    @foreach (var item in Model.CommentHistory)
+                                    {
+                                        <tr class="GridRow">
+                                            <td style="padding-left: 5px">
+                                                @Html.DisplayFor(s => item.EntryDate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(s => item.WorkDate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(s => item.WorkType)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(s => item.PerformedBy)
+                                            </td>
+                                            @if (item.DeviceHistoryTableName != null)
+                                            {
+                                                <td>
+                                                    <a href="#" onclick="ShowHistoryDetails('@ViewBag.GlobalID', '@ViewBag.LayerName', '@item.HistoryID');">
+                                                        View</a>
+                                                </td>
+                                            }
+                                            //else if(item.WorkType == "NOTE" && item.UserIsAdmin)
+                                            else if (item.WorkType == "NOTE")
+                                            {
+                                                <td>@Html.ActionLink("Delete", "DeleteComment", "Recloser", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType, ID = item.ID }, SettingsApp.Common.Security.IsInAdminGroup ? (object)new { onclick = " return DeleteConfirm()" } : (object)new { disabled = "disabled" })</td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                </td>
+                                            }
+                                        </tr>
+                                        <tr class="GridRow">
+                                            <td colspan="5" style="padding-left: 5px">
+                                                <b>Comments:</b> @Html.DisplayFor(s => item.Note)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5">
+                                                <hr />
+                                            </td>
+                                        </tr>
+                                    }
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+}

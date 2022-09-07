@@ -1,0 +1,28 @@
+﻿<controls:ChildWindow x:Class="ArcFMSilverlight.NewPoleFromLATLONG"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:esri="clr-namespace:ESRI.ArcGIS.Client.Toolkit;assembly=ESRI.ArcGIS.Client.Toolkit"
+           xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"           
+           Width="270" Height="160" 
+           Title="New Pole From LAT and LONG" Closing="NPoleLatLongClose_click">
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".8*" />
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <sdk:Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Latitude:"/>
+        <TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="latitideTxt" Width="155" Margin="10,5,0,5" IsEnabled="True"/>
+        <sdk:Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Longitude:"/>
+        <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="longitudeTxt" Width="155" Margin="10,5,0,5" IsEnabled="True" />
+        <Button Grid.Row="2" Grid.Column="1" x:Name="createBtn" Content="Create" Click="CreatePole_Click" Width="75" Height="23" HorizontalAlignment="Left" Margin="10,5,0,5"  />
+        <Button Grid.Row="2" Grid.Column="1" x:Name="CancelButton" Content="Cancel" Click="Cancel_Click" Width="75" Height="23" HorizontalAlignment="Left" Margin="90,5,0,5"  />
+    </Grid>
+</controls:ChildWindow>

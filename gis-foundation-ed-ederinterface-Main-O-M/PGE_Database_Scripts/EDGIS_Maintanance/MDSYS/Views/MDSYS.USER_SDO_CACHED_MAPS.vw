@@ -1,0 +1,46 @@
+Prompt drop View USER_SDO_CACHED_MAPS;
+DROP VIEW MDSYS.USER_SDO_CACHED_MAPS
+/
+
+/* Formatted on 6/27/2019 02:51:49 PM (QP5 v5.313) */
+PROMPT View USER_SDO_CACHED_MAPS;
+--
+-- USER_SDO_CACHED_MAPS  (View)
+--
+
+CREATE OR REPLACE FORCE VIEW MDSYS.USER_SDO_CACHED_MAPS
+(
+    NAME,
+    DESCRIPTION,
+    TILES_TABLE,
+    IS_ONLINE,
+    IS_INTERNAL,
+    DEFINITION,
+    BASE_MAP,
+    MAP_ADAPTER
+)
+AS
+    SELECT NAME,
+           DESCRIPTION,
+           tiles_table,
+           is_online,
+           is_internal,
+           DEFINITION,
+           base_map,
+           map_adapter
+      FROM mdsys.SDO_CACHED_MAPS_TABLE
+     WHERE sdo_owner = SYS_CONTEXT ('userenv', 'CURRENT_SCHEMA')
+/
+
+
+Prompt Synonym USER_SDO_CACHED_MAPS;
+--
+-- USER_SDO_CACHED_MAPS  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM USER_SDO_CACHED_MAPS FOR MDSYS.USER_SDO_CACHED_MAPS
+/
+
+
+Prompt Grants on VIEW USER_SDO_CACHED_MAPS TO PUBLIC to PUBLIC;
+GRANT DELETE, INSERT, SELECT, UPDATE ON MDSYS.USER_SDO_CACHED_MAPS TO PUBLIC
+/

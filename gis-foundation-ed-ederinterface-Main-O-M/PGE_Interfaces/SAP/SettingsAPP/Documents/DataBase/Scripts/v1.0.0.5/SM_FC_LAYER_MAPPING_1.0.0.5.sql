@@ -1,0 +1,35 @@
+spool SM_FC_LAYER_MAPPING_1.0.0.5.log
+
+UPDATE SM_FC_LAYER_MAPPING  SET
+FEATURE_CLASS_NAME ='EDGIS.SUBCapacitorBank'  WHERE FEATURE_CLASS_NAME ='EDGIS.SubCapacitorBank';
+
+
+UPDATE SM_FC_LAYER_MAPPING  SET
+FEATURE_CLASS_NAME ='EDGIS.SUBInterruptingDevice'  WHERE FEATURE_CLASS_NAME ='EDGIS.SubInterruptingDevice';
+
+
+Update edsett.SM_FC_LAYER_MAPPING  set Subtype = 1  Where FEATURE_CLASS_NAME = 'EDGIS.SUBSwitch';
+
+Update edsett.SM_FC_LAYER_MAPPING  set Subtype = 1  Where FEATURE_CLASS_NAME = 'EDGIS.SUBVoltageRegulator' ;
+
+
+INSERT INTO edsett.SM_FC_LAYER_MAPPING  (ID,FEATURE_CLASS_NAME, LAYER_NAME, SM_TABLE,SUBTYPE) 
+values( 39,'EDGIS.SUBVoltageRegulator','Sub Voltage Regulator','SM_REGULATOR',2);
+
+INSERT INTO edsett.SM_FC_LAYER_MAPPING  (ID,FEATURE_CLASS_NAME, LAYER_NAME, SM_TABLE,SUBTYPE) 
+values( 40,'EDGIS.SUBVoltageRegulator','Sub Voltage Regulator','SM_REGULATOR',3);
+
+                
+Update edsett.SM_FC_LAYER_MAPPING  set Subtype = 1  Where FEATURE_CLASS_NAME = 'EDGIS.VoltageRegulator';
+
+INSERT INTO edsett.SM_FC_LAYER_MAPPING  (ID,FEATURE_CLASS_NAME, LAYER_NAME, SM_TABLE,SUBTYPE) 
+values( 41,'EDGIS.VoltageRegulator','Voltage Regulator','SM_REGULATOR',2);
+
+INSERT INTO edsett.SM_FC_LAYER_MAPPING  (ID,FEATURE_CLASS_NAME, LAYER_NAME, SM_TABLE,SUBTYPE) 
+values( 42,'EDGIS.VoltageRegulator','Voltage Regulator','SM_REGULATOR',3);
+
+
+COMMIT;
+
+
+spool off

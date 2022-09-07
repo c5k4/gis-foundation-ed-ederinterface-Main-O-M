@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?define ClientName='PGE'?>
+  <?define Directory='COMMON'?>
+
+
+  <?define Filename='PGE.Common.Delivery.Framework'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.FRAMEWORK'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+  
+  <?define Filename='PGE.Common.Delivery.Systems'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.SYSTEMS'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Filename='PGE.Common.Delivery.Geodatabase'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.GEODATABASE'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Directory='COMMON'?>
+  <?define Filename='PGE.Common.Delivery.Diagnostics'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.DIAGNOSTICS'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+ 
+  <?define Directory='SAPPMOrdersynch'?>
+  <?define ActionKey="SAPPMOrder"?>
+
+  <?include ..\..\Externals\Wix_Templates\ESRIRegAsm10.wxi?>
+</Wix>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <?define ClientName='PGE'?>
+  <?define Directory='WEBRCONFIG'?>
+  <?define ActionKey="WEBRCONFIG"?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\WEBRCONFIG\"?>
+
+  <?define Directory='COMMON'?>
+  <?define Filename='PGE.Common.Delivery.Diagnostics'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.DIAGNOSTICS'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+  
+  <?include ..\..\Externals\Wix_Templates\ESRIRegAsm10.wxi?>
+</Wix>

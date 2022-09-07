@@ -1,0 +1,21 @@
+# FTP PlatView SAP Area Lookup file from SAP Server
+FT_SRC_HOST=RSS02
+FT_SRC_LOGIN=LOGIN.UNIX.BESERVER
+FT_SRC_FILE=/opt/brio/beserver/brioextracts/SL3679/SL-3679.csv
+FT_SRC_CODE=UC_CODE
+FT_DST_HOST=EDGISBTCPRD09
+FT_DST_LOGIN=LOGIN.WINDOWS.UC4PRDWIN
+FT_DST_FILE=\\rcedgis-nas01\rcedgis-nas02\Streetlight\data_from_rss\SL-3679.csv
+FT_DST_CODE=UC_CODE
+# Needed because * is used
+FT_WILDCARDS=N
+# A=Abort O=Overwrite E=append to End
+FT_EXISTING_DST_FILE=O
+FT_ERASE_SRC_FILE=N
+FT_INCLUDE_SUB_DIR=N
+# Will cause file transfer to END EMPTY without	errorif	nofile
+SOURCE_CHECK=N
+# T=Text B=Binary
+FT_FILE_TYPE=T
+# Transfer files in this FileTransfer one at a	time
+MAX_PARALLEL_TRANSFERS=1

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="SAPPMOrder">
+      <ComponentGroupRef Id="PGE.Common.Delivery.Framework.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.Diagnostics.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.Geodatabase.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.Systems.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.Framework.dll"/>
+      <!--<ComponentGroupRef Id="PGE.Interfaces.SAP.WOSynchronization.dll"/>-->
+      <ComponentGroupRef Id="PMOrderExtra"/>
+      <ComponentRef Id="RegistryEntries"/>
+      <ComponentRef Id="DefaultLogFile"/>
+      <!--><ComponentGroupRef Id="Config"/>-->
+    </ComponentGroup>
+  </Fragment>
+</Wix>
+

@@ -1,0 +1,1 @@
+The code was used to add new features to EDGIS.SmartMeterNetworkDevice. It was a one time activity. 

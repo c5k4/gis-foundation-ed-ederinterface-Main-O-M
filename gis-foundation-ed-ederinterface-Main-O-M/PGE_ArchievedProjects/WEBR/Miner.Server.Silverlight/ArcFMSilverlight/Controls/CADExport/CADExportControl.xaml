@@ -1,0 +1,154 @@
+﻿<UserControl x:Class="ArcFMSilverlight.CADExportControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    <StackPanel Name="stdwgPanel" HorizontalAlignment="Stretch" Height="260" Width="265">
+        <Grid VerticalAlignment="Stretch"  Name="grid1" HorizontalAlignment="Stretch" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="*" />
+                <!--***********************************31Oct2016 Start*******************************-->
+                <RowDefinition Height="31" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="31" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <!--***********************************31Oct2016 Ends*******************************-->
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <sdk:Label Grid.Row="0" Height="31" Name="lblSelectBy" Content="Select" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0" Width="90"  />
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Width="100" Margin="10,0,18,0" HorizontalAlignment="Left">
+                <Grid VerticalAlignment="Stretch"  HorizontalAlignment="Left" Name="grid2" Width="100">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <ToggleButton IsChecked="True" Height="23" HorizontalAlignment="Left" VerticalAlignment="Center"  Name="DrawExtent" Width="35" Grid.Column="0" Click="Extent_Click" ToolTipService.ToolTip="Select By Dragging Extent on Map">
+                        <Image Margin="0 0" HorizontalAlignment="Left"
+							Source="/Images/area.png"
+							Stretch="None" />
+                    </ToggleButton>
+                    <ToggleButton Height="23" IsChecked="False" HorizontalAlignment="Left" Name="DrawPolygon" VerticalAlignment="Center" Width="35" Grid.Column="1" Click="Polygon_Click" ToolTipService.ToolTip="Select By Drawing Polygon on Map">
+                        <Image Margin="0 0" HorizontalAlignment="Right"
+							Source="/Images/polygon.png"
+							Stretch="None" />
+                    </ToggleButton>
+
+                </Grid>
+
+            </StackPanel>
+            <sdk:Label Grid.Row="1" Height="28" Name="lblSendTo" Content="Send To" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0" Width="54"  />
+            <sdk:Label Content="File Name" Height="28" HorizontalAlignment="Right" Margin="0,0,5,0"  VerticalAlignment="Center" Name="lblFileName"  Width="59" Grid.Row="2" />
+            <!--***********************************31Oct2016 Start*******************************-->
+            <sdk:Label Content="Export Format" Height="28" Visibility="Collapsed" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center" Name="lblExportFormat" Width="90" Grid.Row="3" />
+
+            <sdk:Label Content="Map Type" Height="28" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center" Name="StoredDisplay" Width="90" Grid.Row="4" />
+            <sdk:Label Content="Scale" Height="28" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center" Name="label1" Width="90" Grid.Row="6" />
+
+            <sdk:Label Content="Export Layout" Height="28" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center" Name="lblExportLayout" Visibility="Collapsed"  Width="90" Grid.Row="7" />
+
+            <sdk:Label Content="Export Type" Height="28" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center" Name="lblWYSWYG" Visibility="Visible"  Width="90" Grid.Row="8" />
+            <sdk:Label Content="Circuit Ids" Height="28" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center" Name="lblCircuits" Visibility="Collapsed"  Width="90" Grid.Row="8" />
+            <sdk:Label Content="" Height="28" Margin="0,0,5,0" Visibility="Collapsed" HorizontalAlignment="Right" VerticalAlignment="Center" Name="lblFilterType" Width="90" Grid.Row="9" />
+            <sdk:Label Content="" Height="28"  Margin="10,0,50,0" Visibility="Collapsed" HorizontalAlignment="Left" VerticalAlignment="Center"  Name="lblFilterValue" Width="90" Grid.Row="9"  Grid.Column="1" />
+            <sdk:Label Content="Filter Type" Height="28" Margin="0,0,5,0" Visibility="Collapsed" HorizontalAlignment="Right" VerticalAlignment="Center" Name="lblSelectFilter" Width="90" Grid.Row="9" />
+            <sdk:Label Content="Voltage" Height="28" Margin="0,0,5,0" Visibility="Collapsed" HorizontalAlignment="Right" VerticalAlignment="Center" Name="lblSchematicFilterVoltage" Width="90" Grid.Row="9" />
+            <sdk:Label Content="Feeder Type" Height="28" Margin="0,0,5,0" Visibility="Collapsed" HorizontalAlignment="Right" VerticalAlignment="Center" Name="lblSchematicFilterFeeder" Width="90" Grid.Row="10" />
+            <!--<sdk:Label Content="Voltage" Height="28" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center" Name="lblVoltage" Visibility="Collapsed"  Width="90" Grid.Row="9" />
+            <sdk:Label Content="Feeder Type" Height="28" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center" Name="lblFeederType" Visibility="Collapsed"  Width="90" Grid.Row="10" />-->
+
+            <TextBox Grid.Column="1"  Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Name="txtSendTo" Width="110" IsEnabled="False" Margin="10,0,0,0" Height="26" />
+            <TextBox Height="26" HorizontalAlignment="Left" IsEnabled="True" Margin="10,0,0,0" Name="txtFileName" VerticalAlignment="Center" Width="110" Grid.Column="1" Grid.Row="2" />
+            <!--<ComboBox Grid.Column="1" Grid.Row="3" Height="23" HorizontalAlignment="Left" VerticalAlignment="Center" Name="cboSD" Width="110" Margin="10,0,0,0"></ComboBox>-->
+
+            <ComboBox Grid.Column="1" Grid.Row="3"  Height="23" Visibility="Collapsed" SelectionChanged="exportFormatCbox_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Center" Name="cboExportFormat"   Width="110" Margin="10,0,0,0">
+                <ComboBoxItem Content="DWG" IsSelected="True"/>
+                <ComboBoxItem Content="PNG"/>
+                <ComboBoxItem Content="DWG+PNG"/>
+            </ComboBox>
+
+            <sdk:Label Grid.Column="1" Grid.Row="4"  Content="ED" Height="28" HorizontalAlignment="left" Margin="10,0,50,0" VerticalAlignment="Center" Name="lblSD" Width="90" />
+
+            <ScrollViewer x:Name="mapTypeScroll"  Grid.Column="1" Grid.Row="5"  BorderThickness="0" Visibility="Collapsed" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <ListBox x:Name="mapTypeList" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <CheckBox Checked="MapTypeCheckBox_Checked" Unchecked="MapTypeCheckBox_Unchecked"
+                                IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="{Binding Content}" Tag="{Binding ID}" Foreground ="{Binding BrushObj}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+            <ComboBox Grid.Column="1" Grid.Row="6" Height="23" HorizontalAlignment="Left" VerticalAlignment="Center" Name="cboScale" Width="110" SelectionChanged="exportScaleCbox_SelectionChanged" Margin="10,0,0,0"></ComboBox>
+            <StackPanel Grid.Column="1" Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <ComboBox  Height="23" HorizontalAlignment="Left" VerticalAlignment="Center" Name="cboExportLayout" Visibility="Collapsed"  SelectionChanged="exportLayoutCbox_SelectionChanged" Width="110" Margin="10,0,0,0"
+                DisplayMemberPath="Value"
+                      SelectedValuePath="Key"/>
+                <!--***************Ed Phase 2 Warranty Changes Start*********************-->
+                <Button Name="printPreviewBtn" Width="35" Click="Printpreview_Click" Visibility="Collapsed">
+                    <Image Margin="0 0" HorizontalAlignment="Left"
+							Source="/Images/magnifying_glass.png"
+							Stretch="None" />
+                </Button>
+                
+            </StackPanel>
+            <!--***************Ed Phase 2 Warranty Changes End*********************-->
+            
+            <ComboBox Grid.Column="1" Grid.Row="8" Height="23" HorizontalAlignment="Left" VerticalAlignment="Center" Name="cboWYSWYG" Visibility="Visible"  Width="110" Margin="10,0,0,0">
+                <ComboBoxItem Content="Default" />
+                <ComboBoxItem Content="WYSWYG"/>
+            </ComboBox>
+            <ListBox Name="lstAll" Grid.Column="1" Grid.Row="8"  HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Collapsed" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"
+                            IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="{Binding Content}" Tag="{Binding ID}" Foreground ="{Binding BrushObj}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ListBox Name="lstCircuitIds" Grid.Column="1" Grid.Row="8" Height="80" Width="130" HorizontalAlignment="Left" Margin="0,30,0,0" Visibility="Collapsed">
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <CheckBox 
+                            IsChecked="{Binding IsSelected, Mode=TwoWay}" Content="{Binding Content}" Tag="{Binding ID}" Foreground ="{Binding BrushObj}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+           
+            <ComboBox Grid.Column="1" Grid.Row="9"  Height="23" Visibility="Collapsed" SelectionChanged="schematicVoltageFilterCbox_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Center" Name="cboSchematicVoltageFilter"   Width="110" Margin="10,0,0,0"
+                      DisplayMemberPath="Value"
+                      SelectedValuePath="Key"   
+                      />
+                
+            <ComboBox Grid.Column="1" Grid.Row="10"  Height="23" Visibility="Collapsed" SelectionChanged="schematicFeederFilterCbox_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Center" Name="cboSchematicFeederFilter"   Width="110" Margin="10,0,0,0"
+                       DisplayMemberPath="Value"
+                      SelectedValuePath="Key" 
+                      />
+               
+            <!--***********************************31Oct2016 Ends*******************************-->
+        </Grid>
+        <toolkit:Separator Name="separator1" HorizontalAlignment="Stretch" Height="14" Margin="0" />
+        <Button Name="Export" HorizontalAlignment="Center" Width="80" Content="Export" Click="Export_Click"></Button>
+    </StackPanel>
+</UserControl>

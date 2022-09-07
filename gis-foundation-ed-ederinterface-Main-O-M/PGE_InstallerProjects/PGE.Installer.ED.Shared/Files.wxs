@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <Component Id="Telvent.Delivery.Diagnostics.dll2ESRIBin" Directory="ESRIBin" SharedDllRefCount="yes" Guid="*" >
+      <File Id="Telvent.Delivery.Diagnostics.dll2" KeyPath="yes" Source="..\output\Assemblies\Telvent.Delivery.Diagnostics.dll"/>
+    </Component>
+    <Component Id="Telvent.Delivery.Diagnostics.dll2ArcFMBin" Directory="ArcFMBin" SharedDllRefCount="yes" Guid="*" >
+      <File Id="Telvent.Delivery.Diagnostics.dll3" KeyPath="yes" Source="..\output\Assemblies\Telvent.Delivery.Diagnostics.dll"/>
+    </Component>
+    
+    <Component Id="Telvent.PGE.Framework.dll2ArcFMBin" Directory="ArcFMBin" SharedDllRefCount="yes" Guid="*" >
+      <File Id="Telvent.PGE.Framework.dll2" KeyPath="yes" Source="..\output\Assemblies\Telvent.PGE.Framework.dll"/>
+    </Component>
+    <Component Id="pge.log4net.config2ArcFMBin" Directory="ArcFMBin"  SharedDllRefCount="yes" Guid="*" >
+      <File Id="pge.log4net.config2" KeyPath="yes" Source="..\output\Assemblies\pge.log4net.config"/>
+    </Component>
+	</Fragment>
+</Wix>

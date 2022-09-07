@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.BatchApplicationDelineationPrintService", "PGE.BatchApplication.DelineationPrintService\PGE.BatchApplicationDelineationPrintService.csproj", "{DEA06B2B-90B4-46E4-9EE2-64387E530C53}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DelineationPrintServiceSetup", "PGE.Installer.DelineationPrintService\DelineationPrintServiceSetup.vdproj", "{EA136329-F280-4D89-8E69-1EBB4983C351}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		QA|x86 = QA|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEA06B2B-90B4-46E4-9EE2-64387E530C53}.Debug|x86.ActiveCfg = Debug|x86
+		{DEA06B2B-90B4-46E4-9EE2-64387E530C53}.Debug|x86.Build.0 = Debug|x86
+		{DEA06B2B-90B4-46E4-9EE2-64387E530C53}.QA|x86.ActiveCfg = QA|x86
+		{DEA06B2B-90B4-46E4-9EE2-64387E530C53}.QA|x86.Build.0 = QA|x86
+		{DEA06B2B-90B4-46E4-9EE2-64387E530C53}.Release|x86.ActiveCfg = Release|x86
+		{DEA06B2B-90B4-46E4-9EE2-64387E530C53}.Release|x86.Build.0 = Release|x86
+		{EA136329-F280-4D89-8E69-1EBB4983C351}.Debug|x86.ActiveCfg = Debug
+		{EA136329-F280-4D89-8E69-1EBB4983C351}.Debug|x86.Build.0 = Debug
+		{EA136329-F280-4D89-8E69-1EBB4983C351}.QA|x86.ActiveCfg = Debug
+		{EA136329-F280-4D89-8E69-1EBB4983C351}.QA|x86.Build.0 = Debug
+		{EA136329-F280-4D89-8E69-1EBB4983C351}.Release|x86.ActiveCfg = Release
+		{EA136329-F280-4D89-8E69-1EBB4983C351}.Release|x86.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7523ECC-9588-4F29-A16B-06921CAC90A3}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PGE.BatchApplication.DelineationPrintService\\PGE.BatchApplicationDelineationPrintService.csproj
+		SccProjectName1 = PGE.BatchApplication.DelineationPrintService
+		SccLocalPath1 = PGE.BatchApplication.DelineationPrintService
+		SccProjectUniqueName2 = PGE.Installer.DelineationPrintService\\DelineationPrintServiceSetup.vdproj
+		SccProjectName2 = PGE.Installer.DelineationPrintService
+		SccLocalPath2 = PGE.Installer.DelineationPrintService
+	EndGlobalSection
+EndGlobal

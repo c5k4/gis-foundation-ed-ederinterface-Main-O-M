@@ -1,0 +1,114 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:esri="clr-namespace:ESRI.ArcGIS.Client;assembly=ESRI.ArcGIS.Client"
+    xmlns:Converters="clr-namespace:PageTemplates.Converters">
+
+    <ControlTemplate x:Key="MapTick" TargetType="esri:Map">
+        <Grid x:Name="RootElement" Background="Transparent">
+            <Grid.Resources>
+                <Converters:ExtentCenterPointValueConverter x:Key="CenterPointConverter" />
+                <Converters:RoundDoubleConverter x:Key="RoundConverter" />
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="{TemplateBinding Width}"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="{TemplateBinding Height}"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Popup x:Name="CenterPoint" IsOpen="True" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Margin="0" RenderTransformOrigin="0.5,0.5">
+                <Popup.RenderTransform>
+                    <CompositeTransform TranslateY="-25" TranslateX="-60"/>
+                </Popup.RenderTransform>
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock x:Name="CenterPointCoords" Height="25" Text="{Binding Path=Extent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource CenterPointConverter}}" Canvas.ZIndex="4" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Popup>
+            <Popup x:Name="UpperLeft" IsOpen="True" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" Margin="0" RenderTransformOrigin="0.5,0.5" Width="50" Height="50">
+                <Popup.RenderTransform>
+                    <CompositeTransform TranslateX="-50" TranslateY="-50"/>
+                </Popup.RenderTransform>
+                <StackPanel>
+                    <TextBlock x:Name="UpperLeftX"  Width="50" Height="25" Text="{Binding Path=Extent.XMax, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource RoundConverter}, ConverterParameter=2}" Canvas.ZIndex="5"/>
+                    <TextBlock x:Name="UpperLeftY"  Width="50" Height="25" Text="{Binding Path=Extent.YMin, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource RoundConverter}, ConverterParameter=2}" Canvas.ZIndex="5"/>
+                </StackPanel>
+            </Popup>
+            <Popup x:Name="LowerLeft" IsOpen="True" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="2" RenderTransformOrigin="0.5,0.5" Width="50" Height="50">
+                <Popup.RenderTransform>
+                    <CompositeTransform TranslateX="-50" TranslateY="50"/>
+                </Popup.RenderTransform>
+                <StackPanel>
+                    <TextBlock x:Name="LowerLeftX" Width="50" Height="25" Text="{Binding Path=Extent.XMin, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource RoundConverter}, ConverterParameter=2}"/>
+                    <TextBlock x:Name="LowerLeftY" Width="50" Height="25" Text="{Binding Path=Extent.YMin, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource RoundConverter}, ConverterParameter=2}"/>
+                </StackPanel>
+            </Popup>
+            <Popup x:Name="UpperRight" IsOpen="True" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="2" Grid.Row="0" RenderTransformOrigin="0.5,0.5" Width="50" Height="50">
+                <Popup.RenderTransform>
+                    <CompositeTransform TranslateX="50" TranslateY="-50"/>
+                </Popup.RenderTransform>
+                <StackPanel>
+                    <TextBlock x:Name="UpperRightX" Width="50" Height="25" Text="{Binding Path=Extent.XMax, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource RoundConverter}, ConverterParameter=2}"/>
+                    <TextBlock x:Name="UpperRightY" Width="50" Height="25" Text="{Binding Path=Extent.YMax, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource RoundConverter}, ConverterParameter=2}"/>
+                </StackPanel>
+            </Popup>
+            <Popup x:Name="LowerRight" IsOpen="True" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="2" Grid.Row="2" RenderTransformOrigin="0.5,0.5" Width="50" Height="50">
+                <Popup.RenderTransform>
+                    <CompositeTransform TranslateX="50" TranslateY="50"/>
+                </Popup.RenderTransform>
+                <StackPanel>
+                    <TextBlock x:Name="LowerRightX" Width="50" Height="25" Text="{Binding Path=Extent.XMin, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource RoundConverter}, ConverterParameter=2}"/>
+                    <TextBlock x:Name="LowerRightY" Width="50" Height="25" Text="{Binding Path=Extent.YMax, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource RoundConverter}, ConverterParameter=2}"/>
+                </StackPanel>
+            </Popup>
+            <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" 
+                                          VerticalAlignment="{TemplateBinding VerticalAlignment}" Margin="8" Grid.Column="1" Grid.Row="1" Canvas.ZIndex="0" />
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="MapTickMap1" TargetType="esri:Map">
+        <Setter Property="Template" Value="{StaticResource MapTick}" />
+    </Style>
+
+    <Style x:Key="MapTickMap2" TargetType="esri:Map">
+        <Setter Property="IsTabStop" Value="true"/>
+        <Setter Property="ZoomDuration" Value="0:0:.75"/>
+        <Setter Property="PanDuration" Value="0:0:.75"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="ZoomFactor" Value="2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="esri:Map">
+                    <Grid>
+                        <Grid.Resources>
+                            <Converters:ExtentCoordinateConverter x:Key="ExtentCoordinateConverter" />
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{TemplateBinding Width}"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Background="{TemplateBinding Background}" Grid.Row="0" Grid.RowSpan="3">
+                            <Grid x:Name="RootElement" Height="Auto" Width="Auto"/>
+                            <Rectangle x:Name="ZoomBox" Fill="#55FFFFFF" Stroke="Red" StrokeThickness="2" Visibility="Collapsed"/>
+                        </Grid>
+                        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Path=Extent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ExtentCoordinateConverter}, ConverterParameter=Center}" VerticalAlignment="Top"/>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Path=Extent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ExtentCoordinateConverter}, ConverterParameter=UpperLeft}" VerticalAlignment="Top"/>
+                        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding Path=Extent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ExtentCoordinateConverter}, ConverterParameter=UpperRight}" VerticalAlignment="Top"/>
+                        <TextBlock HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Path=Extent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ExtentCoordinateConverter}, ConverterParameter=LowerLeft}" VerticalAlignment="Bottom"/>
+                        <TextBlock HorizontalAlignment="Right" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Path=Extent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ExtentCoordinateConverter}, ConverterParameter=LowerRight}" VerticalAlignment="Bottom"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

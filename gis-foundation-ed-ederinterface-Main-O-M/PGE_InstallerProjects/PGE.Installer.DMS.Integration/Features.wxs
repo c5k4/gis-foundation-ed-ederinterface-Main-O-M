@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--PGE.DMS.Integration-->
+  <Fragment>
+    <ComponentGroup Id="DMSIntegration">
+      <!--Delivery team does not want this in the GAC-->
+      <!--<ComponentGroupRef Id="PGE.Interface.Integration.DMS.dll"/>-->
+      <ComponentGroupRef Id="DMSExtra"/>
+      <ComponentRef Id="RegistryEntries"/>
+      <ComponentRef Id="DefaultLogFile"/>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

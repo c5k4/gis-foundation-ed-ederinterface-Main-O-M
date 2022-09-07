@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://xmlns.pge.com/Electric/GetMapCorrection" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.pge.com/Electric/GetMapCorrection" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="GetMapCorrection" type="tns:GetMapCorrectionType" />
+  <xs:complexType name="GetMapCorrectionType">
+    <xs:sequence>
+      <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##other" processContents="lax">
+        <xs:annotation>
+          <xs:documentation>Objects related to Get operation are to be defined</xs:documentation>
+        </xs:annotation>
+      </xs:any>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

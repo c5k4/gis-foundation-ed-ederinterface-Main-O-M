@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGEElecCleanup", "PGEElecCleanup\PGEElecCleanup.csproj", "{33061D40-5D79-494D-8E35-67F25E4BC7FD}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PGEElecCleanup_Setup", "PGEElecCleanup_Setup\PGEElecCleanup_Setup.vdproj", "{9E674056-DCA1-4AB6-9EDA-90502DE415AA}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PGEElecCleanup\\PGEElecCleanup.csproj
+		SccProjectName1 = PGEElecCleanup
+		SccLocalPath1 = PGEElecCleanup
+		SccProjectUniqueName2 = PGEElecCleanup_Setup\\PGEElecCleanup_Setup.vdproj
+		SccProjectName2 = PGEElecCleanup_Setup
+		SccLocalPath2 = PGEElecCleanup_Setup
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33061D40-5D79-494D-8E35-67F25E4BC7FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33061D40-5D79-494D-8E35-67F25E4BC7FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33061D40-5D79-494D-8E35-67F25E4BC7FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33061D40-5D79-494D-8E35-67F25E4BC7FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E674056-DCA1-4AB6-9EDA-90502DE415AA}.Debug|Any CPU.ActiveCfg = Debug
+		{9E674056-DCA1-4AB6-9EDA-90502DE415AA}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

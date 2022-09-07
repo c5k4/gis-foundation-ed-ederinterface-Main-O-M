@@ -1,0 +1,29 @@
+Prompt drop Function OGC_POINTN;
+DROP FUNCTION MDSYS.OGC_POINTN
+/
+
+Prompt Function OGC_POINTN;
+--
+-- OGC_POINTN  (Function) 
+--
+CREATE OR REPLACE FUNCTION MDSYS.OGC_PointN(
+  c ST_Curve,
+  n Integer)
+    RETURN ST_Point IS
+BEGIN
+  RETURN c.ST_PointN(n);
+END OGC_PointN;
+/
+
+
+Prompt Synonym POINTN;
+--
+-- POINTN  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM POINTN FOR MDSYS.OGC_POINTN
+/
+
+
+Prompt Grants on FUNCTION OGC_POINTN TO PUBLIC to PUBLIC;
+GRANT EXECUTE ON MDSYS.OGC_POINTN TO PUBLIC
+/

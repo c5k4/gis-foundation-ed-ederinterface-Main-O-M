@@ -1,0 +1,100 @@
+<root>
+<PTTTransactionNewPole>
+	<SAPEquipID>12345678</SAPEquipID>
+	<GUID></GUID>
+	<Class>5</Class>
+	<Material>WOOD</Material>
+	<Height>45</Height>
+	<County>40</County>
+  <InstallationDate>01/01/1983</InstallationDate>
+	<Latitude>34.941571</Latitude>
+	<Longitude>-120.315025</Longitude>
+	<LocalOfficeID></LocalOfficeID>
+	<Division></Division>
+	<District></District>
+	<LocDesc2></LocDesc2>
+	<City></City>
+	<Zip></Zip>
+	<Barcode></Barcode>
+	<GemsMapOffice></GemsMapOffice>
+	<JPNumber></JPNumber>
+	<DistMap></DistMap>
+  <ProjectID>123</ProjectID>
+</PTTTransactionNewPole>
+<PTTTransactionDeletePole>
+	<SAPEquipID>101868647</SAPEquipID>
+	<GUID>{229A224A-E2B3-4139-9E71-7E4FB58DB742}</GUID>
+  <ProjectID>123</ProjectID>
+</PTTTransactionDeletePole>
+<PTTTransactionDeletePole>
+	<SAPEquipID>101918312</SAPEquipID>
+	<GUID>{B723A5E1-082D-47AC-966D-D17255F4EC6C}</GUID>
+  <ProjectID>123</ProjectID>
+</PTTTransactionDeletePole>
+<PTTTransactionDeletePole>
+	<SAPEquipID>103392316</SAPEquipID>
+	<GUID>{BC85CDD8-4FD2-4C90-909A-28549CA38E27}</GUID>
+  <ProjectID>123</ProjectID>
+</PTTTransactionDeletePole>
+<PTTTransactionUpdatePole>
+	<SAPEquipID>12345678</SAPEquipID>
+	<GUID>ABCDEF</GUID>
+	<AttributeName>Material</AttributeName>
+	<OldValue>WOOD</OldValue>
+	<NewValue>Through Bore</NewValue>
+  <ProjectID>123</ProjectID>
+</PTTTransactionUpdatePole>
+<PTTTransactionUpdatePole>
+  <SAPEquipID>103394178</SAPEquipID>
+  <GUID>{5E209661-BD1C-40ED-B923-4526921D4155}</GUID>
+  <AttributeName>Material</AttributeName>
+  <OldValue>WOOD</OldValue>
+  <NewValue>CNTR</NewValue>
+  <ProjectID>123</ProjectID>
+</PTTTransactionUpdatePole>
+<PTTTransactionUpdatePole>
+  <SAPEquipID>101918313</SAPEquipID>
+  <GUID>{1986E6FC-A429-4A43-B74D-9332162FB851}</GUID>
+  <AttributeName>Material</AttributeName>
+  <OldValue>FIBR</OldValue>
+  <NewValue>CNTR</NewValue>
+  <ProjectID>123</ProjectID>
+</PTTTransactionUpdatePole>
+<PTTTransactionUpdatePole>
+  <SAPEquipID>101918313</SAPEquipID>
+  <GUID>{1986E6FC-A429-4A43-B74D-9332162FB851}</GUID>
+  <AttributeName>InstallationDate</AttributeName>
+  <OldValue>01/01/1990</OldValue>
+  <NewValue>01/01/1991</NewValue>
+  <ProjectID>123</ProjectID>
+</PTTTransactionUpdatePole>
+<PTTTransactionReplacePole>
+  <PTTTransactionNewPole>
+    <SAPEquipID>44444444</SAPEquipID>
+    <GUID></GUID>
+    <Class>5</Class>
+    <Material>WOOD</Material>
+    <Height>45</Height>
+    <County>40</County>
+    <InstallationDate>01/01/2017</InstallationDate>
+    <Latitude>34.944444</Latitude>
+    <Longitude>-120.314444</Longitude>
+    <LocalOfficeID></LocalOfficeID>
+    <Division></Division>
+    <District></District>
+    <LocDesc2></LocDesc2>
+    <City></City>
+    <Zip></Zip>
+    <Barcode></Barcode>
+    <GemsMapOffice></GemsMapOffice>
+    <JPNumber></JPNumber>
+    <DistMap></DistMap>
+    <ProjectID>123</ProjectID>
+  </PTTTransactionNewPole>
+  <PTTTransactionDeletePole>
+	  <SAPEquipID>101868645</SAPEquipID>
+	  <GUID>{A14F2D3A-DE2E-49DB-9B3F-53C4D86DDAA5}</GUID>
+    <ProjectID>123</ProjectID>
+  </PTTTransactionDeletePole>
+</PTTTransactionReplacePole>
+</root>

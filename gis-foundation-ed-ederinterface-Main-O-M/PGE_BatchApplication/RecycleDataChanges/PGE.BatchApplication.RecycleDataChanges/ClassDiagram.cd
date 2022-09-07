@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.BatchApplication.RecycleDataChanges.Program" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAQAAAAAAAAAAgABAAAAAABIIAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_AOLicenseInitializer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.RecycleDataChanges.Recycler" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAQAAAAAACAAAAAAAAEAAAAAAAAAAAQIAAAAAA=</HashCode>
+      <FileName>Recycler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_versLoad" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.RecycleDataChanges.Utilities.LicenseInitializer" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAYAnBEgAAAE2AAABAIAigACAAACqAwAAEKCAAAAAA=</HashCode>
+      <FileName>Utilities\LicenseInitializer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_mmAppInit" />
+      <Field Name="m_AoInit" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.RecycleDataChanges.Utilities.ToolSettings" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <NestedTypes>
+      <Class Name="PGE.BatchApplication.RecycleDataChanges.Utilities.ToolSettings.ExecutionProperties" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Utilities\ToolSettings.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAgAAAAAAAAAAAAEAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\ToolSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Miner.Interop.IMMAppInitialize" Collapsed="true">
+    <Position X="5" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.esriSystem.IAoInitialize" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IVersion2" Collapsed="true">
+    <Position X="7" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.BatchApplication.TraceAllFeeders.Common.Common" Collapsed="true">
+    <Position X="1" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAIAQgQAEAAAAAAABAAAAIAAAAAAAAASgAAAQAIAA=</HashCode>
+      <FileName>Common\Common.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.TraceAllFeeders.Common.MailSlot" Collapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAABAQAFAAASAAAAAAAAAAQBAAAQECAAAAAA=</HashCode>
+      <FileName>Common\MailSlot.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mailHandle" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.TraceAllFeeders.Common.MailSlot_SecuritAttribs" Collapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Common\MailSlot.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="lpSecurityDescriptor" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.TraceAllFeeders.Common.SafeLocalMemHandle" Collapsed="true">
+    <Position X="3.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\MailSlot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.TraceAllFeeders.Common.SafeMailslotHandle" Collapsed="true">
+    <Position X="6.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\MailSlot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.TraceAllFeeders.LicenseInitializer" Collapsed="true">
+    <Position X="1.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAYAnBEgAAAE2AAABAIAigACAAACqAwAAEKCAAAAAA=</HashCode>
+      <FileName>LicenseInitializer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_mmAppInit" />
+      <Field Name="m_AoInit" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.TraceAllFeeders.Program" Collapsed="true">
+    <Position X="1" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAIAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_AOLicenseInitializer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.TraceAllFeeders.TraceFeeders.FeederTrace" Collapsed="true">
+    <Position X="5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgIAAgAAAAAAQAYAAAAAAA6AgAAAgAAQAAAABAAgA=</HashCode>
+      <FileName>TraceFeeders\FeederTrace.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="workspace" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.TraceAllFeeders.TraceFeeders.ReconcileAndPost" Collapsed="true">
+    <Position X="7" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAABAAAAAAYABAAAAASAgCAAAAAQAAAAQAAAA=</HashCode>
+      <FileName>TraceFeeders\ReconcileAndPost.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="RecAndPostMailSlot" />
+      <Field Name="sdeWorkspace" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.TraceAllFeeders.TraceFeeders.TraceAllFeedersSpawn" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAABAAgEAAQAICAgQAAgAAAcAAgAAAkAAUKMAAR4AAA=</HashCode>
+      <FileName>TraceFeeders\TraceAllFeedersSpawn.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="FinishedTracingMailSlot" />
+      <Field Name="workspace" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid" Collapsed="true">
+    <Position X="4.75" Y="4.25" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IWorkspace" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Miner.Interop.IMMAppInitialize" Collapsed="true">
+    <Position X="3.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.esriSystem.IAoInitialize" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

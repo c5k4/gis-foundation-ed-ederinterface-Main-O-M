@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--PGE.Interfaces.MapProduction.Integration-->
+  <Fragment>
+    <ComponentGroup Id="ED11_12Component">
+      <ComponentGroupRef Id="PGE.Common.Delivery.Framework.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.Systems.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.Diagnostics.dll"/>
+      <ComponentRef Id="RegistryEntries"/>
+      <ComponentRef Id="DefaultLogFile"/>
+      <ComponentGroupRef Id="Extras"/>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

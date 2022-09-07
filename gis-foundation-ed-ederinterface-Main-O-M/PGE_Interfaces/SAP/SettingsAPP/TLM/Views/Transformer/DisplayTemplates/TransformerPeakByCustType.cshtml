@@ -1,0 +1,21 @@
+﻿@model TLM.Models.TransformerPeakByCustType
+@{
+    ViewBag.Title = "TransformerPeakByCustType";
+}
+<div class="Row">
+    <div class="TitleCell">
+        <div>@Html.DisplayFor(model => model.CustomerType)</div>
+    </div>
+    <div class="Cell">
+        <div class="SubCellLeft">
+            &nbsp;@Html.DisplayFor(model => model.WinterQty)</div>
+        <div class="SubCellRight">
+            <span class="negSign"></span>@Html.DisplayFor(model => model.WinterKVA)</div>
+    </div>
+    <div class="Cell">
+        <div class="SubCellLeft">
+            &nbsp;@Html.DisplayFor(model => model.SummerQty)</div>
+        <div class="SubCellRight">
+            <span class='negSign'></span>@Html.DisplayFor(model => model.SummerKVA)</div>
+    </div>
+</div>

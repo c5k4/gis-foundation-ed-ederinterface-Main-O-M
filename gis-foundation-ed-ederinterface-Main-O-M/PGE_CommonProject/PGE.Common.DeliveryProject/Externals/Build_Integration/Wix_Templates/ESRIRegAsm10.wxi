@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <?ifndef ESRIRegAsmCAPath?>
+    <?define ESRIRegAsmCAPath="..\Externals\CustomActions\ESRIRegAsmCustomAction.CA.dll"?>
+    <?endif?>
+    <!--Define the register custom actions and include the custom action dll only once.-->
+    <?ifndef var.RegistCustomActionExists?>
+    <?define RegistCustomActionExists?>
+    <CustomAction Id="ESRIRegAsmInstall.SetProperty"
+          Property="ESRIRegAsmInstall"
+          Value="[ESRIREGASMLIST]"
+          Return='check'/>
+
+    <CustomAction Id="ESRIRegAsmInstall"
+                  BinaryKey="ESRIRegAsm"
+                  DllEntry="Install"
+                  Execute="deferred"
+                  Return="check"
+                  Impersonate="no"/>
+
+    <CustomAction Id="ESRIRegAsmUninstall.SetProperty"
+    Property="ESRIRegAsmUninstall"
+    Value="[ESRIREGASMLIST]"
+    Return='check'/>
+
+    <CustomAction Id="ESRIRegAsmUninstall"
+                  BinaryKey="ESRIRegAsm"
+                  DllEntry="Uninstall"
+                  Execute="deferred"
+                  Return="check"
+                  Impersonate="no"/>
+
+    <CustomAction Id="ESRIRegAsmInstallRollback.SetProperty"
+         Property="ESRIRegAsmInstallRollback"
+         Value="[ESRIREGASMLIST]"
+         Return='check'/>
+
+    <CustomAction Id="ESRIRegAsmInstallRollback"
+                  BinaryKey="ESRIRegAsm"
+                  DllEntry="Uninstall"
+                  Execute="rollback"
+                  Return="check"
+                  Impersonate="no"/>
+
+    <CustomAction Id="ESRIRegAsmUninstallRollback.SetProperty"
+     Property="ESRIRegAsmInstallRollback"
+     Value="[ESRIREGASMLIST]"
+     Return='check'/>
+
+    <CustomAction Id="ESRIRegAsmUninstallRollback"
+                  BinaryKey="ESRIRegAsm"
+                  DllEntry="Install"
+                  Execute="rollback"
+                  Return="check"
+                  Impersonate="no"/>
+
+    <InstallExecuteSequence>
+      <Custom Action="ESRIRegAsmInstallRollback.SetProperty" Before="ESRIRegAsmInstall">NOT REMOVE</Custom>
+      <Custom Action="ESRIRegAsmInstallRollback" After="ESRIRegAsmInstallRollback.SetProperty">NOT REMOVE</Custom>
+
+      <Custom Action="ESRIRegAsmUninstallRollback.SetProperty" Before="ESRIRegAsmUninstall"></Custom>
+      <Custom Action="ESRIRegAsmUninstallRollback" After="ESRIRegAsmUninstallRollback.SetProperty"></Custom>
+
+      <Custom Action="ESRIRegAsmInstall.SetProperty" Before="WriteRegistryValues">NOT REMOVE</Custom>
+      <Custom Action="ESRIRegAsmInstall" After="ESRIRegAsmInstall.SetProperty">NOT REMOVE</Custom>
+
+      <Custom Action="ESRIRegAsmUninstall.SetProperty" Before="RemoveFiles">REMOVE</Custom>
+      <Custom Action="ESRIRegAsmUninstall" After="ESRIRegAsmUninstall.SetProperty">REMOVE</Custom>
+    </InstallExecuteSequence>
+
+    <CustomActionRef Id="WixFailWhenDeferred" />
+    <!--Allows testing of rollback by failing the install before installfinalize pass in WIXFAILWHENDEFERRED=1 on msiexec command line-->
+    <!--Include the CustomAction dll-->
+    <Binary Id="ESRIRegAsm" SourceFile="$(var.ESRIRegAsmCAPath)"></Binary>
+    <?endif?>
+  </Fragment>
+</Include>

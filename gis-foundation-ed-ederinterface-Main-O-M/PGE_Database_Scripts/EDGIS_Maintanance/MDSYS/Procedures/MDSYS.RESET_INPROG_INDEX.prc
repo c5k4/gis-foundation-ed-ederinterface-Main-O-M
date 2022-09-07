@@ -1,0 +1,34 @@
+Prompt drop Procedure RESET_INPROG_INDEX;
+DROP PROCEDURE MDSYS.RESET_INPROG_INDEX
+/
+
+Prompt Procedure RESET_INPROG_INDEX;
+--
+-- RESET_INPROG_INDEX  (Procedure) 
+--
+CREATE OR REPLACE PROCEDURE MDSYS.reset_inprog_index wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+161 11b
+/y2Sk78OMa1Yuol28mrfzha8VeUwg43QmMvWfHTp2v7VVhvIdUWfwLaZZrM2WFDG2+HlBJIv
+AY9O/QKAKbRW99DNE25u8MqTZTWxNBO8JyxkuULH6lV0a6324Gmr3IVm6RmVus67FmIpCd56
+JXsbm3/lpkVU4PBYZIJ3ofS9NwQMMnBd1QSngJMtAVGXLRV4EOC4ZJi8EsSBLzAwK99EOKAy
+LRxdhUj/AMxnV3PPJ3JmGXxAk8PFNzxWyu+QtPVBc0XbnYfZPBhKCrM/Tvs1acNH
+
+/

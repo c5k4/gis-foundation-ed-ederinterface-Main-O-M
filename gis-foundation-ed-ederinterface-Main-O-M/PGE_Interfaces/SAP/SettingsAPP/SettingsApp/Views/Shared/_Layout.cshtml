@@ -1,0 +1,133 @@
+﻿@using SettingsApp.Common;
+@using System.Configuration;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+    <meta charset="UTF-8">
+
+    <title>@ViewBag.Title - Settings Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script type="text/javascript">
+
+        $.datepicker._gotoToday = function (id) {
+
+            var target = $(id);
+            var inst = this._getInst(target[0]);
+            var date = new Date();
+
+            inst.selectedDay = date.getDate();
+            inst.drawMonth = inst.selectedMonth = date.getMonth();
+            inst.drawYear = inst.selectedYear = date.getFullYear();
+
+            this._setDateDatepicker(target, date);
+            this._selectDate(id, this._getDateDatepicker(target));
+            this._notifyChange(inst);
+            this._adjustDate(target);
+
+        }
+
+        $(function () { // will trigger when the document is ready
+            $('.datepicker').datepicker({ minDate: 0, showButtonPanel: true, gotoCurrent: true, closeText: 'Clear',
+                onClose: function (dateText, inst) {
+                    if ($(window.event.srcElement).hasClass('ui-datepicker-close')) {
+                        document.getElementById(this.id).value = '';
+                    }
+                }
+            }); //Initialise any date pickers
+
+        });
+
+        $(function () {
+            var year = (new Date).getFullYear();
+            // will trigger when the document is ready
+            $('.datepickerNoYear').datepicker(
+            {
+
+                changeYear: false,
+                //minDate: new Date(year, 0, 1),
+                //maxDate: new Date(year, 11, 31),
+                showButtonPanel: true, gotoCurrent: true, closeText: 'Clear', dateFormat: 'dd MM',
+                onClose: function (dateText, inst) {
+                    if ($(window.event.srcElement).hasClass('ui-datepicker-close')) {
+                        document.getElementById(this.id).value = '';
+                    }
+                }
+
+            }); //Initialise any date pickers
+
+        });
+
+        $(document).ready(function () {
+            $('#Date').datepicker({
+                onSelect: function (dateText, inst) {
+                    //Get today's date at midnight
+                    //var today = new Date();
+                    //today = Date.parse(today.getMonth() + 1 + '/' + today.getDate() + '/' + today.getFullYear());
+                    //Get the selected date (also at midnight)
+                    //var selDate = Date.parse(dateText);
+
+                    //                    if (selDate < today) {
+                    //                        //If the selected date was before today, continue to show the datepicker
+                    //                        $('#Date').val('');
+                    //                        $(inst).datepicker('show');
+                    //                    }
+                }
+            });
+        });
+
+        
+            function printDoc() {
+                var divBottom = document.getElementById("divHistory");
+                if (divBottom != null) {
+                    divBottom.setAttribute("style", "overflow-x:visible !important;overflow:auto;height:auto; ");
+                    window.print();
+                    divBottom.setAttribute("style", "height: 400px; overflow: scroll; overflow-x: hidden;width: 100% ");
+                }
+                else
+                    window.print();
+            }
+    </script>
+</head>
+
+<body>
+    <div id="body">
+        <div class="content-wrapper main-content clear-fix" style="height: 100%">
+            @if (ConfigurationManager.AppSettings["ShowADInfoAtTop"] != null)
+            {
+                if (ConfigurationManager.AppSettings["ShowADInfoAtTop"].ToString() == "1")
+                {
+                    if (Constants.prefix.ToUpper() != "PROD")
+                    {
+                <div>
+                    [@Constants.prefix] - [@Security.CurrentUser] - [@Security.CurrentUserName] - [@DateTime.Now]</div>
+                    }
+                }
+            }
+            <div style="width: 960px">
+                <div class="print-div">
+                    <img alt="Print" src="/Images/print.png" style="border: 0px solid #000; cursor: pointer; cursor: hand;" onclick="javascript:printDoc();" />
+                </div>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    @* <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - Setting App</p>
+                </div>
+            </div>
+        </footer>*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

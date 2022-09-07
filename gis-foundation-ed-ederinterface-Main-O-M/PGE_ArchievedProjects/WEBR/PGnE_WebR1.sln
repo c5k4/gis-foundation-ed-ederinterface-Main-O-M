@@ -1,0 +1,164 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcFMSilverlight", "Miner.Server.Silverlight\ArcFMSilverlight\ArcFMSilverlight.csproj", "{1F07076C-F114-4DB5-AE9E-7A332773FC0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcFM.Silverlight.PGE.CustomTools", "WebR1_Silverlight\ArcFM.Silverlight.PGE.CustomTools\ArcFM.Silverlight.PGE.CustomTools.csproj", "{1F2F2213-72BB-4B7B-8ED1-76353C9EDA80}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DA8D7521-9594-42BD-8A02-711B4F88CC9E} = {DA8D7521-9594-42BD-8A02-711B4F88CC9E}
+		{DA8D7521-9594-42BD-8A02-711B4F88CC9E} = {DA8D7521-9594-42BD-8A02-711B4F88CC9E}
+		{DA8D7521-9594-42BD-8A02-711B4F88CC9E} = {DA8D7521-9594-42BD-8A02-711B4F88CC9E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageTemplates", "WebR1_Silverlight\PageTemplates\PageTemplates.csproj", "{F0FE1362-56EA-498D-8CD8-A0FD7605AFFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcFMSilverlight.PageTemplates", "Miner.Server.Silverlight\ArcFMSilverlight.PageTemplates\ArcFMSilverlight.PageTemplates.csproj", "{805B0E95-7C37-4EA9-9560-97A0C686B589}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcFMSilverlight.Web", "Miner.Server.Silverlight\ArcFMSilverlight.Web\ArcFMSilverlight.Web.csproj", "{DA8D7521-9594-42BD-8A02-711B4F88CC9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Theming.TelventGray", "Miner.Server.Silverlight\Theming.TelventGray\Theming.TelventGray.csproj", "{5D9BE929-0CCA-437D-BD58-DFB9C25DEA09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miner.Silverlight.Logging.Client", "Miner.Silverlight.Logging\Miner.Silverlight.Logging.Client\Miner.Silverlight.Logging.Client.csproj", "{3EBE4333-5AA5-406F-8E57-752CCF2DA2E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGnE.Printing", "WebR1_Silverlight\PGnE.Printing\PGnE.Printing.csproj", "{CB87B09B-9F66-4F48-9F23-7BFFE047BC34}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PGnE.WebR3.Installer", "PGnE.WebR1.Installer\PGnE.WebR1.Installer.vdproj", "{3185F70D-EC13-46BC-A8DA-17FD015F9406}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1F2F2213-72BB-4B7B-8ED1-76353C9EDA80} = {1F2F2213-72BB-4B7B-8ED1-76353C9EDA80}
+		{DA8D7521-9594-42BD-8A02-711B4F88CC9E} = {DA8D7521-9594-42BD-8A02-711B4F88CC9E}
+		{5D9BE929-0CCA-437D-BD58-DFB9C25DEA09} = {5D9BE929-0CCA-437D-BD58-DFB9C25DEA09}
+		{3EBE4333-5AA5-406F-8E57-752CCF2DA2E6} = {3EBE4333-5AA5-406F-8E57-752CCF2DA2E6}
+		{F0FE1362-56EA-498D-8CD8-A0FD7605AFFE} = {F0FE1362-56EA-498D-8CD8-A0FD7605AFFE}
+		{1F07076C-F114-4DB5-AE9E-7A332773FC0D} = {1F07076C-F114-4DB5-AE9E-7A332773FC0D}
+		{805B0E95-7C37-4EA9-9560-97A0C686B589} = {805B0E95-7C37-4EA9-9560-97A0C686B589}
+		{CB87B09B-9F66-4F48-9F23-7BFFE047BC34} = {CB87B09B-9F66-4F48-9F23-7BFFE047BC34}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miner.Server.Client", "ArcFM Silverlight 2.4 Full Client Toolkit Code\Silverlight\Miner.Server.Client\Miner.Server.Client.csproj", "{54FFCDE9-5C79-4891-949B-182AA9729D35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miner.Server.Client.Toolkit", "ArcFM Silverlight 2.4 Full Client Toolkit Code\Silverlight\Miner.Server.Client.Toolkit\Miner.Server.Client.Toolkit.csproj", "{FD30120F-2488-484B-A930-2B48DF6AD65F}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Miner.Server.Silverlight\\ArcFMSilverlight\\ArcFMSilverlight.csproj
+		SccProjectName1 = Miner.Server.Silverlight/ArcFMSilverlight
+		SccLocalPath1 = Miner.Server.Silverlight\\ArcFMSilverlight
+		SccProjectUniqueName2 = WebR1_Silverlight\\ArcFM.Silverlight.PGE.CustomTools\\ArcFM.Silverlight.PGE.CustomTools.csproj
+		SccProjectName2 = WebR1_Silverlight/ArcFM.Silverlight.PGE.CustomTools
+		SccLocalPath2 = WebR1_Silverlight\\ArcFM.Silverlight.PGE.CustomTools
+		SccProjectUniqueName3 = WebR1_Silverlight\\PageTemplates\\PageTemplates.csproj
+		SccProjectName3 = WebR1_Silverlight/PageTemplates
+		SccLocalPath3 = WebR1_Silverlight\\PageTemplates
+		SccProjectUniqueName4 = Miner.Server.Silverlight\\ArcFMSilverlight.PageTemplates\\ArcFMSilverlight.PageTemplates.csproj
+		SccProjectName4 = Miner.Server.Silverlight/ArcFMSilverlight.PageTemplates
+		SccLocalPath4 = Miner.Server.Silverlight\\ArcFMSilverlight.PageTemplates
+		SccProjectUniqueName5 = Miner.Server.Silverlight\\ArcFMSilverlight.Web\\ArcFMSilverlight.Web.csproj
+		SccProjectName5 = Miner.Server.Silverlight/ArcFMSilverlight.Web
+		SccLocalPath5 = Miner.Server.Silverlight\\ArcFMSilverlight.Web
+		SccProjectUniqueName6 = Miner.Server.Silverlight\\Theming.TelventGray\\Theming.TelventGray.csproj
+		SccProjectName6 = Miner.Server.Silverlight/Theming.TelventGray
+		SccLocalPath6 = Miner.Server.Silverlight\\Theming.TelventGray
+		SccProjectUniqueName7 = Miner.Silverlight.Logging\\Miner.Silverlight.Logging.Client\\Miner.Silverlight.Logging.Client.csproj
+		SccProjectName7 = Miner.Silverlight.Logging/Miner.Silverlight.Logging.Client
+		SccLocalPath7 = Miner.Silverlight.Logging\\Miner.Silverlight.Logging.Client
+		SccProjectUniqueName8 = WebR1_Silverlight\\PGnE.Printing\\PGnE.Printing.csproj
+		SccProjectName8 = WebR1_Silverlight/PGnE.Printing
+		SccLocalPath8 = WebR1_Silverlight\\PGnE.Printing
+		SccProjectUniqueName9 = PGnE.WebR1.Installer\\PGnE.WebR1.Installer.vdproj
+		SccProjectName9 = PGnE.WebR1.Installer
+		SccLocalPath9 = PGnE.WebR1.Installer
+		SccProjectUniqueName10 = ArcFM\u0020Silverlight\u00202.4\u0020Full\u0020Client\u0020Toolkit\u0020Code\\Silverlight\\Miner.Server.Client\\Miner.Server.Client.csproj
+		SccProjectName10 = ArcFM\u0020Silverlight\u00202.4\u0020Full\u0020Client\u0020Toolkit\u0020Code/Silverlight/Miner.Server.Client
+		SccLocalPath10 = ArcFM\u0020Silverlight\u00202.4\u0020Full\u0020Client\u0020Toolkit\u0020Code\\Silverlight\\Miner.Server.Client
+		SccProjectUniqueName11 = ArcFM\u0020Silverlight\u00202.4\u0020Full\u0020Client\u0020Toolkit\u0020Code\\Silverlight\\Miner.Server.Client.Toolkit\\Miner.Server.Client.Toolkit.csproj
+		SccProjectName11 = ArcFM\u0020Silverlight\u00202.4\u0020Full\u0020Client\u0020Toolkit\u0020Code/Silverlight/Miner.Server.Client.Toolkit
+		SccLocalPath11 = ArcFM\u0020Silverlight\u00202.4\u0020Full\u0020Client\u0020Toolkit\u0020Code\\Silverlight\\Miner.Server.Client.Toolkit
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F07076C-F114-4DB5-AE9E-7A332773FC0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F07076C-F114-4DB5-AE9E-7A332773FC0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F07076C-F114-4DB5-AE9E-7A332773FC0D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1F07076C-F114-4DB5-AE9E-7A332773FC0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F07076C-F114-4DB5-AE9E-7A332773FC0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F07076C-F114-4DB5-AE9E-7A332773FC0D}.Release|x86.ActiveCfg = Release|Any CPU
+		{1F2F2213-72BB-4B7B-8ED1-76353C9EDA80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F2F2213-72BB-4B7B-8ED1-76353C9EDA80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F2F2213-72BB-4B7B-8ED1-76353C9EDA80}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1F2F2213-72BB-4B7B-8ED1-76353C9EDA80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F2F2213-72BB-4B7B-8ED1-76353C9EDA80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F2F2213-72BB-4B7B-8ED1-76353C9EDA80}.Release|x86.ActiveCfg = Release|Any CPU
+		{F0FE1362-56EA-498D-8CD8-A0FD7605AFFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0FE1362-56EA-498D-8CD8-A0FD7605AFFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0FE1362-56EA-498D-8CD8-A0FD7605AFFE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F0FE1362-56EA-498D-8CD8-A0FD7605AFFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0FE1362-56EA-498D-8CD8-A0FD7605AFFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0FE1362-56EA-498D-8CD8-A0FD7605AFFE}.Release|x86.ActiveCfg = Release|Any CPU
+		{805B0E95-7C37-4EA9-9560-97A0C686B589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{805B0E95-7C37-4EA9-9560-97A0C686B589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{805B0E95-7C37-4EA9-9560-97A0C686B589}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{805B0E95-7C37-4EA9-9560-97A0C686B589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{805B0E95-7C37-4EA9-9560-97A0C686B589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{805B0E95-7C37-4EA9-9560-97A0C686B589}.Release|x86.ActiveCfg = Release|Any CPU
+		{DA8D7521-9594-42BD-8A02-711B4F88CC9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA8D7521-9594-42BD-8A02-711B4F88CC9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA8D7521-9594-42BD-8A02-711B4F88CC9E}.Debug|x86.ActiveCfg = Debug|x86
+		{DA8D7521-9594-42BD-8A02-711B4F88CC9E}.Debug|x86.Build.0 = Debug|x86
+		{DA8D7521-9594-42BD-8A02-711B4F88CC9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA8D7521-9594-42BD-8A02-711B4F88CC9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA8D7521-9594-42BD-8A02-711B4F88CC9E}.Release|x86.ActiveCfg = Release|x86
+		{DA8D7521-9594-42BD-8A02-711B4F88CC9E}.Release|x86.Build.0 = Release|x86
+		{5D9BE929-0CCA-437D-BD58-DFB9C25DEA09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D9BE929-0CCA-437D-BD58-DFB9C25DEA09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D9BE929-0CCA-437D-BD58-DFB9C25DEA09}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5D9BE929-0CCA-437D-BD58-DFB9C25DEA09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D9BE929-0CCA-437D-BD58-DFB9C25DEA09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D9BE929-0CCA-437D-BD58-DFB9C25DEA09}.Release|x86.ActiveCfg = Release|Any CPU
+		{3EBE4333-5AA5-406F-8E57-752CCF2DA2E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EBE4333-5AA5-406F-8E57-752CCF2DA2E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EBE4333-5AA5-406F-8E57-752CCF2DA2E6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3EBE4333-5AA5-406F-8E57-752CCF2DA2E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EBE4333-5AA5-406F-8E57-752CCF2DA2E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EBE4333-5AA5-406F-8E57-752CCF2DA2E6}.Release|x86.ActiveCfg = Release|Any CPU
+		{CB87B09B-9F66-4F48-9F23-7BFFE047BC34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB87B09B-9F66-4F48-9F23-7BFFE047BC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB87B09B-9F66-4F48-9F23-7BFFE047BC34}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CB87B09B-9F66-4F48-9F23-7BFFE047BC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB87B09B-9F66-4F48-9F23-7BFFE047BC34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB87B09B-9F66-4F48-9F23-7BFFE047BC34}.Release|x86.ActiveCfg = Release|Any CPU
+		{3185F70D-EC13-46BC-A8DA-17FD015F9406}.Debug|Any CPU.ActiveCfg = Debug
+		{3185F70D-EC13-46BC-A8DA-17FD015F9406}.Debug|x86.ActiveCfg = Debug
+		{3185F70D-EC13-46BC-A8DA-17FD015F9406}.Debug|x86.Build.0 = Debug
+		{3185F70D-EC13-46BC-A8DA-17FD015F9406}.Release|Any CPU.ActiveCfg = Release
+		{3185F70D-EC13-46BC-A8DA-17FD015F9406}.Release|x86.ActiveCfg = Release
+		{3185F70D-EC13-46BC-A8DA-17FD015F9406}.Release|x86.Build.0 = Release
+		{54FFCDE9-5C79-4891-949B-182AA9729D35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54FFCDE9-5C79-4891-949B-182AA9729D35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54FFCDE9-5C79-4891-949B-182AA9729D35}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{54FFCDE9-5C79-4891-949B-182AA9729D35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54FFCDE9-5C79-4891-949B-182AA9729D35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54FFCDE9-5C79-4891-949B-182AA9729D35}.Release|x86.ActiveCfg = Release|Any CPU
+		{FD30120F-2488-484B-A930-2B48DF6AD65F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD30120F-2488-484B-A930-2B48DF6AD65F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD30120F-2488-484B-A930-2B48DF6AD65F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FD30120F-2488-484B-A930-2B48DF6AD65F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD30120F-2488-484B-A930-2B48DF6AD65F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD30120F-2488-484B-A930-2B48DF6AD65F}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

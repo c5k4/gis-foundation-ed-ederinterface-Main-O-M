@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="ArcFMSilverlight.PLCWidget"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:esriSymbols="clr-namespace:ESRI.ArcGIS.Client.Symbols;assembly=ESRI.ArcGIS.Client"
+    xmlns:converters="clr-namespace:ESRI.ArcGIS.Client.Toolkit.ValueConverters;assembly=ESRI.ArcGIS.Client.Toolkit"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    xmlns:local="clr-namespace:ArcFMSilverlight"
+    mc:Ignorable="d"
+    >
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.Resources>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+
+
+
+
+            <ToggleButton Name="OpenOCalc"
+                      Margin="1"
+                      Padding="1"
+                      Style="{StaticResource RibbonToggleButton}"
+                      ToolTipService.ToolTip="Open pole in O-Calc" Click="OpenOclac_Click">
+                <Image Width="16"
+                   Height="16"
+                   Source="/Images/ocalc.png"/>
+            </ToggleButton>
+
+            <ToggleButton Name="SelectPole"
+                      Margin="1"
+                      Padding="1"
+                      Style="{StaticResource RibbonToggleButton}"
+                      ToolTipService.ToolTip="Select Poles on Map" Click="Select_Pole_Click">
+                <Image Width="16"
+                   Height="16"
+                   Source="/Images/selectfeatures.png"/>
+            </ToggleButton>
+            <ToggleButton Name="NewPole"
+                      Margin="1"
+                      Padding="1"
+                      Style="{StaticResource RibbonToggleButton}"
+                      ToolTipService.ToolTip="Click on Map to create Poles" Click="Create_NewPole_Click">
+                <Image Width="16"
+                   Height="16"
+                   Source="/Images/pin.png"/>
+            </ToggleButton>
+
+
+            <Button x:Name="CreatePoleMeasure"
+							Command="{Binding ClearSelection}"
+							HorizontalContentAlignment="Left"
+							Style="{StaticResource RibbonButton}"
+                          
+							ToolTipService.ToolTip="Create Pole after measure" Click="NewPoleMeasure_Click">
+                <Image Width="16"
+                   Height="16"
+                   Source="/Images/pole.png"/>
+            </Button>
+
+            <Button Name="CreatePoleLatLong"
+                      Margin="1"
+                      Padding="1"
+                     Command="{Binding ClearSelection}"
+							HorizontalContentAlignment="Left"
+							Style="{StaticResource RibbonButton}"
+                      ToolTipService.ToolTip="Create Pole From LAT LONG" Click="NewPoleLATLONG_Click">
+                <Image Width="16"
+                   Height="16"
+                   Source="/Images/poleNew.png"/>
+            </Button>
+            <ToggleButton Name="MovePole"
+                      Margin="1"
+                      Padding="1"
+                      Style="{StaticResource RibbonToggleButton}"
+                      ToolTipService.ToolTip="Move Proposed Pole" Click="Move_Pole_Click">
+                <Image Width="16"
+                   Height="16"
+                   Source="/Images/movePole.png"/>
+            </ToggleButton>
+            <ToggleButton Name="DeletePole"
+                      Margin="1"
+                      Padding="1"
+                      Style="{StaticResource RibbonToggleButton}"
+                      ToolTipService.ToolTip="Delete pole from design" Click="Delete_Pole_Click">
+                <Image Width="16"
+                   Height="16"
+                   Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/deleteFeature.png"/>
+            </ToggleButton>
+
+            <ToggleButton Name="ShowPLDStatus"
+                      Margin="1"
+                      Padding="1"
+                      Style="{StaticResource RibbonToggleButton}"
+                      ToolTipService.ToolTip="Display PLD Status" Click="Show_PLD_Status_Click">
+                <Image Width="16"
+                   Height="16"
+                   Source="/Images/status.png"/>
+            </ToggleButton>
+
+            <sdk:Label  Margin="1" VerticalAlignment="Center" HorizontalAlignment="Right" Content="PLDBID:"/>
+            <TextBox  Margin="1" Padding="1" VerticalAlignment="Center" KeyDown="pldbIDTxt_KeyDown" HorizontalAlignment="Left" Name="pldbIDTxt" Width="140"/>
+            <Button Margin="1" x:Name="pldbSearchBtn" Content="Pole Search" Click="pldbSearchBtn_Click" Width="80" Height="23" HorizontalAlignment="Left"  />
+            <CheckBox x:Name="TogglePLCInfoLayer"
+                 Content="ON/OFF PLCINFO"
+			    IsChecked="False"
+                Checked="PLCINFOLayerVisibleToggleButton_Checked"
+                Unchecked="PLCINFOLayerVisibleToggleButton_Unchecked"
+                ToolTipService.ToolTip="PLCINFO Layer On/Off" 
+			   Margin="5" />
+        </StackPanel>
+    </Grid>
+</UserControl>

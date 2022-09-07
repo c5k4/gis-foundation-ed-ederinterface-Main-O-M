@@ -1,0 +1,32 @@
+Prompt drop Function DART_COLOR_2_RGB;
+DROP FUNCTION CEDSADATA.DART_COLOR_2_RGB
+/
+
+Prompt Function DART_COLOR_2_RGB;
+--
+-- DART_COLOR_2_RGB  (Function) 
+--
+CREATE OR REPLACE FUNCTION CEDSADATA.dart_color_2_rgb (N IN NUMBER) RETURN VARCHAR2 IS
+  H  VARCHAR2(64) :='';
+  N2 INTEGER      := N;
+BEGIN
+  IF N < 1 THEN RETURN '000000'; END IF;
+  LOOP
+     SELECT RAWTOHEX(CHR(N2))||H
+     INTO   H
+     FROM   dual;
+ 
+     N2 := TRUNC(N2 / 256);
+     EXIT WHEN N2=0;
+  END LOOP;
+  H := LPAD(H, 6, '0');
+  H := SUBSTR(H,5,2)||SUBSTR(H,3,2)||SUBSTR(H,1,2);
+  RETURN H;
+EXCEPTION
+   WHEN OTHERS
+      THEN
+       RETURN '000000';
+END DART_color_2_Rgb;
+ 
+ 
+/

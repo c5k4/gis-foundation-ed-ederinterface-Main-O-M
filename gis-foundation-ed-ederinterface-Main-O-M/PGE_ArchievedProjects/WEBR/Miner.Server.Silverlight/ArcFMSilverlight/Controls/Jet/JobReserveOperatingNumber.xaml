@@ -1,0 +1,132 @@
+﻿<UserControl x:Class="ArcFMSilverlight.JobReserveOperatingNumber"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+    mc:Ignorable="d"
+    d:DesignHeight="320" d:DesignWidth="400"
+             KeyUp="JobReserveOperatingNumber_OnKeyUp"
+             >
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="grdOperatingNumberParts1" Height="60" VerticalAlignment="Top" Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55"></RowDefinition>
+                <RowDefinition Height="5"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                <TextBlock Text="Equipment Type" Margin="5" VerticalAlignment="Center"></TextBlock>
+                <ComboBox Name="cboEquipmentType"  MinWidth="160" Height="30"  VerticalAlignment="Center" Margin="5" SelectionChanged="CboEquipmentType_OnSelectionChanged"></ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="1">
+                <CheckBox Name="chkCustomerOwned" Margin="5">Customer Owned</CheckBox>
+                <CheckBox Name="chkLastLocation" Margin="5">Use Last Equipment Location</CheckBox>
+            </StackPanel>
+            <Rectangle Height="1" Fill="Black" VerticalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" />
+        </Grid>
+        <StackPanel Name="stpSaveContinue" Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Height="40" VerticalAlignment="Top" Margin="5" Visibility="Visible">
+            <toolkit:BusyIndicator IsBusy="False" Name="BusyIndicator">
+                <StackPanel Name="stpSaveContinueInternal" Orientation="Horizontal" HorizontalAlignment="Center" Height="40" VerticalAlignment="Center">
+                    <Button Name="SaveContinueButton" Style="{StaticResource JetButtonStyle}" MinWidth="120" Click="SaveContinueButton_OnClick" Margin="5">Save and Continue</Button>
+                    <Button Name="CancelButton" Style="{StaticResource JetButtonStyle}" Margin="5" MinWidth="70" Click="CancelButton2_OnClick" >Cancel</Button>
+                </StackPanel>
+            </toolkit:BusyIndicator>
+        </StackPanel>
+        <Grid Name="grdOperatingNumberParts2" Grid.Row="1" Visibility="Collapsed" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="35"></RowDefinition>
+                <RowDefinition Height="150"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Name="LblOperatingNumber" Text="Operating Number" Width="120" ></TextBlock>
+                    <TextBlock Name="TxtOperatingNumber" Text="123" ></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Name="LblCgc12" Text="CGC12" Width="120" ></TextBlock>
+                    <TextBlock Name="TxtCgc12" Text="123456789012" ></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" >
+                <TextBlock Text="Sketch Location" Style="{StaticResource JetTextBlockStyle}"></TextBlock>
+                <TextBox Name="TxtSketchLocation" Text="" MaxLength="4" ToolTipService.ToolTip="Enter Number 1-4 digits long"  Width="50" Style="{StaticResource JetTextBoxStyle}" TextChanged="TxtSketchLocation_OnTextChanged"  KeyDown="TxtSketchLocation_OnKeyDown" Background="LightYellow"></TextBox>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Margin="5" Grid.ColumnSpan="2" >
+                <TextBlock Text="Install Type" Margin="5"></TextBlock>
+                <ComboBox Name="cboInstallType" MinWidth="150" SelectionChanged="CboInstallType_OnSelectionChanged"></ComboBox>
+            </StackPanel>
+            <Border BorderThickness="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="1" BorderBrush="Black">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"></RowDefinition>
+                        <RowDefinition Height="35"></RowDefinition>
+                        <RowDefinition Height="35"></RowDefinition>
+                        <RowDefinition Height="35"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Button Name="SetMapLocationButton" Click="SetMapLocationButton_OnClick" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="2,2,10,2">
+                        <ToolTipService.ToolTip>
+                            <ToolTip Name="SetMapLocationToolTip">
+                                <ToolTip.Content>
+                                    <TextBlock Name="SetMapLocationTtTb" 
+                           Text="Click Set Location and then Click the Map" 
+                           TextWrapping="Wrap"/>
+                                </ToolTip.Content>
+                            </ToolTip>
+                        </ToolTipService.ToolTip>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                            <Image Source="/Images/locate_map.png" Style="{StaticResource JetButtonImageStyle}"/>
+                            <TextBlock Text="Set Location" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="ResetMapLocationButton" ToolTipService.ToolTip="Reset Latitude/Longitude/Address" Click="ResetMapLocationButton_OnClick" Margin="10,2,2,2" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Image Source="/Images/delete_row.png" Style="{StaticResource JetButtonImageStyle}"/>
+                            <TextBlock Text="Reset Location" TextAlignment="Center" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0">
+                        <TextBlock Style="{StaticResource JetTextBlockStyle}">Latitude</TextBlock>
+                        <TextBox Name="TxtLatitude" ToolTipService.ToolTip="Click Set Location and then Click Map" Background="LightYellow" Text="{Binding Path=DataContext.Latitude, ElementName=LayoutRoot, Mode=OneWay}" TextChanged="TxtLatitude_OnTextChanged" IsReadOnly="True" Style="{StaticResource JetTextBoxStyle}" Width="130"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="1">
+                        <TextBlock Style="{StaticResource JetTextBlockStyle}">Longitude</TextBlock>
+                        <TextBox Name="TxtLongitude" ToolTipService.ToolTip="Click Set Location and then Click Map" Background="LightYellow" Text="{Binding Path=Longitude, Mode=OneWay}" IsReadOnly="True" Style="{StaticResource JetTextBoxStyle}" Width="130" TextChanged="TxtLongitude_OnTextChanged"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2">
+                        <TextBlock Text="Address" Style="{StaticResource JetTextBlockStyle}"></TextBlock>
+                        <TextBox Background="LightYellow" Text="{Binding Path=DataContext.Address, ElementName=LayoutRoot}" Name="TxtAddress" ToolTipService.ToolTip="Either enter Address or use Set Map Location to populate" Style="{StaticResource JetTextBoxStyle}" MaxLength="128" MinWidth="300" TextChanged="TxtAddress_OnTextChanged"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="2">
+                        <TextBlock Text="City"  Style="{StaticResource JetTextBlockStyle}" ></TextBlock>
+                        <TextBox Background="LightYellow" Text="{Binding Path=City, Mode=OneWay}" ToolTipService.ToolTip="Either enter City or use Set Map Location to populate" Name="TxtCity" MaxLength="50" TextChanged="TxtCity_OnTextChanged" Style="{StaticResource JetTextBoxStyle}" MinWidth="160"></TextBox>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="3" Height="40" VerticalAlignment="Top" Margin="5" Grid.ColumnSpan="2">
+                <Button Name="OkButton" Style="{StaticResource JetButtonStyle}" Click="OkButton_OnClick"  MinWidth="70" Margin="0,0,10,0">OK</Button>
+                <Button Name="CancelButton2" Style="{StaticResource JetButtonStyle}" Click="CancelButton2_OnClick" MinWidth="70" Margin="10,0,0,0" >Cancel</Button>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</UserControl>

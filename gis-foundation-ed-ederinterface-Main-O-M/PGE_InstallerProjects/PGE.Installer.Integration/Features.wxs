@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="SAPIntegration">
+      <ComponentGroupRef Id="Telvent.Delivery.Framework.dll"/>
+      <ComponentGroupRef Id="Telvent.Delivery.Diagnostics.dll"/>
+      <ComponentGroupRef Id="Telvent.Delivery.Geodatabase.dll"/>
+      <ComponentGroupRef Id="Telvent.Delivery.Systems.dll"/>
+      <ComponentGroupRef Id="Telvent.PGE.Framework.dll"/>
+      <ComponentGroupRef Id="Telvent.PGE.SAP.PMOrder.dll"/>
+      <ComponentGroupRef Id="Telvent.PGE.SAP.WOSynchronization.dll"/>
+      <ComponentRef Id="ConfigFiles"/>
+      <!--<ComponentRef Id="RegistryEntries" />-->
+      <ComponentRef Id="Bin"/>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

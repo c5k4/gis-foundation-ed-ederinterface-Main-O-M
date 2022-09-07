@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--<xs:schema id="PLDINFO"
+    targetNamespace="http://tempuri.org/PLDINFO.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/PLDINFO.xsd"
+    xmlns:mstns="http://tempuri.org/PLDINFO.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+</xs:schema>-->
+<DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="0" ViewPortY="0" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
+  <Shapes>
+    <Shape ID="DesignTable:Table" ZOrder="1" X="70" Y="70" Height="334" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="330" />
+  </Shapes>
+  <Connectors />
+</DiagramLayout>

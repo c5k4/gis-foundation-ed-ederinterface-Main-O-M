@@ -1,0 +1,31 @@
+﻿Rebuild started...
+1>------ Rebuild All started: Project: DMSMail, Configuration: Release x86 ------
+1>D:\Ankit\DMSStatusMail\DBHelper.cs(31,34,31,36): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Ankit\DMSStatusMail\DBHelper.cs(98,34,98,36): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Ankit\DMSStatusMail\DBHelper.cs(119,34,119,36): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Ankit\DMSStatusMail\Program.cs(104,38,104,40): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Ankit\DMSStatusMail\Program.cs(136,38,136,40): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Ankit\DMSStatusMail\Program.cs(151,30,151,32): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Ankit\DMSStatusMail\Program.cs(27,20,27,31): warning CS0219: The variable 'Strmailbody' is assigned but its value is never used
+1>D:\Ankit\DMSStatusMail\DBHelper.cs(164,34,164,36): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Ankit\DMSStatusMail\DBHelper.cs(209,21,209,27): warning CS0162: Unreachable code detected
+1>D:\Ankit\DMSStatusMail\DBHelper.cs(205,34,205,36): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Ankit\DMSStatusMail\DBHelper.cs(241,34,241,36): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Ankit\DMSStatusMail\DBHelper.cs(276,34,276,36): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Ankit\DMSStatusMail\DBHelper.cs(308,34,308,36): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Ankit\DMSStatusMail\DBHelper.cs(339,34,339,36): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Ankit\DMSStatusMail\DBHelper.cs(368,34,368,36): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Ankit\DMSStatusMail\DBHelper.cs(395,34,395,36): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Ankit\DMSStatusMail\DBHelper.cs(420,34,420,36): warning CS0168: The variable 'ex' is declared but never used
+1>D:\Ankit\DMSStatusMail\DBHelper.cs(446,34,446,36): warning CS0168: The variable 'ex' is declared but never used
+1>  DMSMail -> D:\Ankit\DMSStatusMail\bin\Release\Version_report.exe
+------ Starting pre-build validation for project 'DMSMailSetup' ------ 
+------ Pre-build validation for project 'DMSMailSetup' completed ------
+2>------ Rebuild All started: Project: DMSMailSetup, Configuration: Release ------
+Building file 'D:\Ankit\DMSStatusMail\DMSReportSetup\DMSReportSetup.msi'...
+WARNING: The target version of the .NET Framework in the project does not match the .NET Framework launch condition version '.NET Framework 4.7.2'. Update the version of the .NET Framework launch condition to match the target version of the.NET Framework in the Advanced Compile Options Dialog Box (VB) or the Application Page (C#, F#).
+Packaging file 'Version_report.exe.config'...
+Packaging file 'PGE_DBPasswordManagement.exe'...
+Packaging file 'Oracle.DataAccess.dll'...
+Packaging file 'Version_report.exe'...
+========== Rebuild All: 2 succeeded, 0 failed, 0 skipped ==========

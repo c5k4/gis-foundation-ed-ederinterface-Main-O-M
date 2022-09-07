@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <?define ClientName='PGE'?>
+  <?define Directory='DESKTOPFOLDER'?>
+  <?define ActionKey="Desktop"?>
+
+  <?define Directory='COMMON'?>
+  <?define Filename='PGE.Common.Delivery.SessionManager'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.SESSIONMANAGER'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Directory='COMMON'?>
+  <?define Filename='PGE.Common.Delivery.Process'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.PROCESS'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Directory='COMMON'?>
+  <?define Filename='PGE.Common.Delivery.Framework'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.FRAMEWORK'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Directory='COMMON'?>
+  <?define Filename='PGE.Common.Delivery.Systems'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.SYSTEMS'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Directory='COMMON'?>
+  <?define Filename='PGE.Common.Delivery.ArcFM'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.ARCFM'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Directory='COMMON'?>
+  <?define Filename='PGE.Common.Delivery.Geodatabase'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.GEODATABASE'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Directory='COMMON'?>
+  <?define Filename='PGE.Common.Delivery.UI'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.UI'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Directory='COMMON'?>
+  <?define Filename='PGE.Common.Delivery.Diagnostics'?>
+  <?define FilenameUpper='PGE.COMMON.DELIVERY.DIAGNOSTICS'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Directory='COMMON'?>
+  <?define Filename='PGE.Common.ChangeDetectionAPI'?>
+  <?define FilenameUpper='PGE.COMMON.CHANGEDETECTIONAPI'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Common_Projects\"?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Directory='DESKTOPFOLDER'?>
+  <?define Filename='PGE.Desktop.EDER'?>
+  <?define FilenameUpper='PGE.DESKTOP.EDER'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Desktop\"?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Directory='DESKTOPFOLDER'?>
+  <?define Filename='PGE.BatchApplication.ROBC_API'?>
+  <?define FilenameUpper='PGE.BATCHAPPLICATION.ROBC_API'?>
+  <?define OutputPath="..\..\..\..\..\PGE_ProjectOutput\Desktop\"?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?include ..\..\Externals\Wix_Templates\ESRIRegAsm10.wxi?>
+</Wix>

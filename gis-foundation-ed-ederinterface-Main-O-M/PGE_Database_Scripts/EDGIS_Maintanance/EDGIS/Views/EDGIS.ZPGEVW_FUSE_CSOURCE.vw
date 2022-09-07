@@ -1,0 +1,122 @@
+Prompt drop View ZPGEVW_FUSE_CSOURCE;
+DROP VIEW EDGIS.ZPGEVW_FUSE_CSOURCE
+/
+
+/* Formatted on 6/27/2019 02:58:56 PM (QP5 v5.313) */
+PROMPT View ZPGEVW_FUSE_CSOURCE;
+--
+-- ZPGEVW_FUSE_CSOURCE  (View)
+--
+
+CREATE OR REPLACE FORCE VIEW EDGIS.ZPGEVW_FUSE_CSOURCE
+(
+    OBJECTID,
+    GLOBALID,
+    SUBTYPE,
+    CIRCUITID,
+    FEEDERNAME,
+    OPERATINGNUMBER,
+    NORMALPOSITION_A,
+    NORMALPOSITION_B,
+    NORMALPOSITION_C,
+    PARTNUMBER,
+    LABELTEXT,
+    SHAPE
+)
+AS
+    SELECT EDGIS.FUSE.OBJECTID,
+           EDGIS.FUSE.GLOBALID,
+           EDGIS.FUSE.SUBTYPECD,
+           EDGIS.FUSE.CIRCUITID,
+              EDGIS.CIRCUITSOURCE.SUBSTATIONNAME
+           || ' '
+           || SUBSTR (EDGIS.CIRCUITSOURCE.CIRCUITNAME, -4, 4),
+           EDGIS.FUSE.OPERATINGNUMBER,
+           EDGIS.FUSE.NORMALPOSITION_A,
+           EDGIS.FUSE.NORMALPOSITION_B,
+           EDGIS.FUSE.NORMALPOSITION_C,
+           EDGIS.FUSE.PARTNUMBER,
+              CASE EDGIS.FUSE.LINKRATING
+                  WHEN 1 THEN '1'
+                  WHEN 2 THEN '2'
+                  WHEN 3 THEN '3'
+                  WHEN 4 THEN '4'
+                  WHEN 5 THEN '5'
+                  WHEN 6 THEN '6'
+                  WHEN 7 THEN '7'
+                  WHEN 8 THEN '8'
+                  WHEN 9 THEN '9'
+                  WHEN 10 THEN '10'
+                  WHEN 12 THEN '12'
+                  WHEN 14 THEN '14'
+                  WHEN 15 THEN '15'
+                  WHEN 17 THEN '17'
+                  WHEN 18 THEN '18'
+                  WHEN 20 THEN '20'
+                  WHEN 24 THEN '24'
+                  WHEN 25 THEN '25'
+                  WHEN 29 THEN '29'
+                  WHEN 30 THEN '30'
+                  WHEN 35 THEN '35'
+                  WHEN 36 THEN '36'
+                  WHEN 40 THEN '40'
+                  WHEN 41 THEN '41'
+                  WHEN 44 THEN '44'
+                  WHEN 45 THEN '45'
+                  WHEN 50 THEN '50'
+                  WHEN 60 THEN '60'
+                  WHEN 63 THEN '63'
+                  WHEN 65 THEN '65'
+                  WHEN 67 THEN '67'
+                  WHEN 70 THEN '70'
+                  WHEN 75 THEN '75'
+                  WHEN 80 THEN '80'
+                  WHEN 85 THEN '85'
+              END
+           || CASE EDGIS.FUSE.LINKTYPE
+                  WHEN 1 THEN 'N'
+                  WHEN 2 THEN 'T'
+                  WHEN 3 THEN 'E'
+                  WHEN 4 THEN 'K'
+                  WHEN 5 THEN 'CL'
+                  WHEN 6 THEN 'FT'
+                  WHEN 7 THEN 'ELF'
+                  WHEN 8 THEN ''
+                  WHEN 9 THEN ''
+                  WHEN 10 THEN 'TRIP SAVER'
+              END,
+           EDGIS.FUSE.SHAPE
+      FROM EDGIS.FUSE, EDGIS.CIRCUITSOURCE
+     WHERE EDGIS.CIRCUITSOURCE.CIRCUITID = EDGIS.FUSE.CIRCUITID
+/
+
+
+Prompt Grants on VIEW ZPGEVW_FUSE_CSOURCE TO DAT_EDITOR to DAT_EDITOR;
+GRANT DELETE, INSERT, SELECT, UPDATE ON EDGIS.ZPGEVW_FUSE_CSOURCE TO DAT_EDITOR
+/
+
+Prompt Grants on VIEW ZPGEVW_FUSE_CSOURCE TO GISINTERFACE to GISINTERFACE;
+GRANT SELECT ON EDGIS.ZPGEVW_FUSE_CSOURCE TO GISINTERFACE
+/
+
+Prompt Grants on VIEW ZPGEVW_FUSE_CSOURCE TO GIS_INTERFACE to GIS_INTERFACE;
+GRANT DELETE, INSERT, SELECT, UPDATE ON EDGIS.ZPGEVW_FUSE_CSOURCE TO GIS_INTERFACE
+/
+
+Prompt Grants on VIEW ZPGEVW_FUSE_CSOURCE TO PUBLIC to PUBLIC;
+GRANT SELECT ON EDGIS.ZPGEVW_FUSE_CSOURCE TO PUBLIC
+/
+
+Prompt Grants on VIEW ZPGEVW_FUSE_CSOURCE TO SDE to SDE;
+GRANT SELECT ON EDGIS.ZPGEVW_FUSE_CSOURCE TO SDE WITH GRANT OPTION
+/
+GRANT DELETE, INSERT, REFERENCES, UPDATE, ON COMMIT REFRESH, QUERY REWRITE, DEBUG, FLASHBACK, MERGE VIEW ON EDGIS.ZPGEVW_FUSE_CSOURCE TO SDE
+/
+
+Prompt Grants on VIEW ZPGEVW_FUSE_CSOURCE TO SDE_EDITOR to SDE_EDITOR;
+GRANT DELETE, INSERT, SELECT, UPDATE ON EDGIS.ZPGEVW_FUSE_CSOURCE TO SDE_EDITOR
+/
+
+Prompt Grants on VIEW ZPGEVW_FUSE_CSOURCE TO SDE_VIEWER to SDE_VIEWER;
+GRANT SELECT ON EDGIS.ZPGEVW_FUSE_CSOURCE TO SDE_VIEWER
+/

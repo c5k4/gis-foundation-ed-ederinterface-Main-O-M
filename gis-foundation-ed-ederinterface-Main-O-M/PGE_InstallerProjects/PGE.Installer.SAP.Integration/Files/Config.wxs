@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <!--PGE.Interfaces.SAP.PMOrder-->
+    <DirectoryRef Id="Config">
+      <!--
+      <Component Id="ConfigFiles" Guid="08E712DF-0B5B-4582-A7D5-07A123ADB48F" >
+        <File Id="CapacitorBank.xml" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\AutoUpdaters\Special\SymbolNumber\Config\CapacitorBank.xml"/>
+        <File Id="DynamicProtectiveDevice.xml" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\AutoUpdaters\Special\SymbolNumber\Config\DynamicProtectiveDevice.xml"/>
+        <File Id="SupportStructure.xml" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\AutoUpdaters\Special\SymbolNumber\Config\SupportStructure.xml"/>
+        <File Id="Switch.xml" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\AutoUpdaters\Special\SymbolNumber\Config\Switch.xml"/>
+        <File Id="Transformer.xml" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\AutoUpdaters\Special\SymbolNumber\Config\Transformer.xml"/>
+        <File Id="VoltageRegulator.xml" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\AutoUpdaters\Special\SymbolNumber\Config\VoltageRegulator.xml"/>
+        <File Id="ExternalAttrConfig.xml" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\AutoUpdaters\Special\RegionalAttributesAU\Config\ExternalAttrConfig.xml"/>
+        <File Id="NeutralConductorConfig.xml" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\ConfigNeutralPhase\NeutralConductorConfig.xml"/>
+        <File Id="ExternalTransformerVoltage.xml" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\ValidationRules\Config\ExternalTransformerVoltage.xml"/>
+
+      </Component>
+    -->
+    </DirectoryRef>
+    <DirectoryRef Id="SCHEMAS">
+      <!--
+      <Component Id="Schemas" Guid="71B54FF1-213A-474B-90C0-FD21747DB780" >
+        <File Id="SymbolNumber.xsd" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\AutoUpdaters\Special\SymbolNumber\Schema\SymbolNumber.xsd"/>
+        <File Id="SymbolNumber.xss" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\AutoUpdaters\Special\SymbolNumber\Schema\SymbolNumber.xss"/>
+      </Component>
+-->
+    </DirectoryRef>
+    <DirectoryRef Id="ESRIBin">
+      <!--
+      <Component Id="Bin" Guid="C693CC83-8E2B-40E4-B29A-30FA76631692">
+        <File Id="telvent.custom.log4net.config" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\telvent.custom.log4net.config"/>
+      </Component>
+    -->
+    </DirectoryRef>
+  </Fragment>
+</Wix>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by XMLSPY 5 Professional Ed., Installed Multi + SMP for 10 users (Miner & Miner Engineering) -->
+<SystemMapper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\Ravi-Data\Ravi\Projects\PGE\Project\ED\Development\Integration\Code\IntegrationFramework\Telvent.PGE.SAP\XMLConfig\SAPIntegrationConfig.xsd">
+	<MapperType>String</MapperType>
+	<DomainXMLPath>String</DomainXMLPath>
+	<DataWriter>String</DataWriter>
+	<TrackedClasses>
+		<TrackedClass OutName="Pole" TransformerType="Telvent.PGE.SAP.RowTransformers.SAPStructureRowTransformer,Telvent.PGE.SAP" SourceClass="SupportStructure" Subtypes="1,2" SupportClasses="String">
+			<Fields>
+				<Field OutName="serialNumber" Sequence="1">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+						<FieldValueTransformer FieldName="test">String</FieldValueTransformer>
+					</FieldMapper>
+				</Field>
+				<Field OutName="String" Sequence="2">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.RelationshipFieldTransformer, Telvent.PGE.Framework">
+						<RelationshipFieldTransformer RelationshipName="DeviceGroup_Transformer">
+							<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+								<FieldValueTransformer FieldName="DeviceGroupNumber"/>
+							</FieldMapper>
+						</RelationshipFieldTransformer>
+					</FieldMapper>
+				</Field>
+				<Field OutName="String" Sequence="2">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.RelationshipFieldTransformer, Telvent.PGE.Framework">
+						<RelationshipFieldTransformer RelationshipName="DeviceGroup_Transformer">
+							<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.RelationshipFieldTransformer, Telvent.PGE.Framework">
+								<RelationshipFieldTransformer RelationshipName="SupportStructure_DeviceGroup">
+									<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+										<FieldValueTransformer FieldName="StructureNumber"/>
+									</FieldMapper>
+								</RelationshipFieldTransformer>
+							</FieldMapper>
+						</RelationshipFieldTransformer>
+					</FieldMapper>
+				</Field>
+			</Fields>
+			<Settings>
+				<Setting Name="String" Value="String"/>
+				<Setting Name="String" Value="String"/>
+			</Settings>
+		</TrackedClass>
+		<TrackedClass OutName="VoltageRegulatorUnit" TransformerType="Telvent.PGE.SAP.RowTransformers.SAPEquipmentRowTransformer,Telvent.PGE.SAP" SourceClass="String" Subtypes="4" SupportClasses="String" RelationshipName="Regulaor_RegulatorUnit">
+			<Fields>
+				<Field OutName="String" Sequence="1">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+						<FieldValueTransformer FieldName="String">String</FieldValueTransformer>
+					</FieldMapper>
+				</Field>
+				<Field OutName="String" Sequence="2">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+						<FieldValueTransformer FieldName="String">String</FieldValueTransformer>
+					</FieldMapper>
+				</Field>
+			</Fields>
+			<Settings>
+				<Setting Name="String" Value="String"/>
+				<Setting Name="String" Value="String"/>
+			</Settings>
+		</TrackedClass>
+		<TrackedClass SourceClass="VoltageRegulator" Subtypes="" OutName="VoltageRegulatorUnit" TransformerType="Telvent.PGE.SAP.RowTransformers.RelationshipRowTransformer,Telvent.PGE.SAP" RelationshipName="Regulaor_RegulatorUnit">
+			<Fields>
+				<Field OutName="serialNumber" Sequence="1">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+						<FieldValueTransformer FieldName="test">String</FieldValueTransformer>
+					</FieldMapper>
+				</Field>
+				<Field OutName="String" Sequence="2">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.RelationshipFieldTransformer, Telvent.PGE.Framework">
+						<RelationshipFieldTransformer RelationshipName="DeviceGroup_Transformer">
+							<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+								<FieldValueTransformer FieldName="DeviceGroupNumber"/>
+							</FieldMapper>
+						</RelationshipFieldTransformer>
+					</FieldMapper>
+				</Field>
+			</Fields>
+			<Settings>
+				<Setting Name="String" Value="String"/>
+				<Setting Name="String" Value="String"/>
+			</Settings>
+			<RelatedClass SourceClass="VoltageRegulatorUnit" Subtypes="" OutName="" TransformerType="Telvent.PGE.SAP.RowTransformers.RelationshipRowTransformer,Telvent.PGE.SAP">
+				<Fields>
+					<Field OutName="serialNumber" Sequence="1">
+						<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+							<FieldValueTransformer FieldName="test">String</FieldValueTransformer>
+						</FieldMapper>
+					</Field>
+					<Field OutName="String" Sequence="2">
+						<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.RelationshipFieldTransformer, Telvent.PGE.Framework">
+							<RelationshipFieldTransformer RelationshipName="DeviceGroup_Transformer">
+								<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+									<FieldValueTransformer FieldName="DeviceGroupNumber"/>
+								</FieldMapper>
+							</RelationshipFieldTransformer>
+						</FieldMapper>
+					</Field>
+				</Fields>
+				<Settings/>
+			</RelatedClass>
+		</TrackedClass>
+		<TrackedClass SourceClass="DeviceGroup" Subtypes="" OutName="should be ID/Record Type determined by the most inner SourceClass and WhereClause" TransformerType="Telvent.PGE.SAP.RowTransformers.RelationshipRowTransformer,Telvent.PGE.SAP" RelationshipName="DeviceGroup_Regulaor">
+			<Fields>
+				<Field OutName="serialNumber" Sequence="1">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+						<FieldValueTransformer FieldName="test">String</FieldValueTransformer>
+					</FieldMapper>
+				</Field>
+				<Field OutName="String" Sequence="2">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.RelationshipFieldTransformer, Telvent.PGE.Framework">
+						<RelationshipFieldTransformer RelationshipName="DeviceGroup_Transformer">
+							<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+								<FieldValueTransformer FieldName="DeviceGroupNumber"/>
+							</FieldMapper>
+						</RelationshipFieldTransformer>
+					</FieldMapper>
+				</Field>
+			</Fields>
+			<Settings>
+				<Setting Name="String" Value="String"/>
+				<Setting Name="String" Value="String"/>
+			</Settings>
+			<RelatedClass SourceClass="VoltageRegulator" Subtypes="" OutName="" TransformerType="Telvent.PGE.SAP.RowTransformers.RelationshipRowTransformer,Telvent.PGE.SAP" RelationshipName="Regulaor_RegulatorUnit">
+				<Fields>
+					<Field OutName="serialNumber" Sequence="1">
+						<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+							<FieldValueTransformer FieldName="test">String</FieldValueTransformer>
+						</FieldMapper>
+					</Field>
+					<Field OutName="String" Sequence="2">
+						<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.RelationshipFieldTransformer, Telvent.PGE.Framework">
+							<RelationshipFieldTransformer RelationshipName="DeviceGroup_Transformer">
+								<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+									<FieldValueTransformer FieldName="DeviceGroupNumber"/>
+								</FieldMapper>
+							</RelationshipFieldTransformer>
+						</FieldMapper>
+					</Field>
+				</Fields>
+				<RelatedClass SourceClass="VoltageRegulatorUnit" Subtypes="" OutName="" TransformerType="Telvent.PGE.SAP.RowTransformers.SAPEquipmentRowTransformer,Telvent.PGE.SAP">
+					<Fields>
+						<Field OutName="serialNumber" Sequence="1">
+							<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+								<FieldValueTransformer FieldName="test">String</FieldValueTransformer>
+							</FieldMapper>
+						</Field>
+						<Field OutName="String" Sequence="2">
+							<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.RelationshipFieldTransformer, Telvent.PGE.Framework">
+								<RelationshipFieldTransformer RelationshipName="DeviceGroup_Transformer">
+									<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+										<FieldValueTransformer FieldName="DeviceGroupNumber"/>
+									</FieldMapper>
+								</RelationshipFieldTransformer>
+							</FieldMapper>
+						</Field>
+					</Fields>
+					<Settings/>
+				</RelatedClass>
+			</RelatedClass>
+			<!--<RowMapper TransformerType="RelationshipRowTransformer">
+        <RelationshipRowTransformer RelationshipName="">
+          <Fields></Fields>
+          <RowMapper TransformerType="">
+            <SAPEquipmentRowTransformer>
+              <Fields></Fields>
+            </SAPEquipmentRowTransformer>
+          </RowMapper>
+        </RelationshipRowTransformer>
+      </RowMapper>-->
+		</TrackedClass>
+	</TrackedClasses>
+	<Settings>
+		<Setting Name="String" Value="String"/>
+		<Setting Name="String" Value="String"/>
+	</Settings>
+</SystemMapper>
+<!--<?xml version="1.0" encoding="utf-8" ?>
+<SAPGISIntegration>
+  <Configurations>
+    <Config name="xyc">
+      <appsettings></appsettings>
+    </Config>
+  </Configurations>
+  <SAPFeatureClassTransformers>
+    <SAPFeatureClassTransformer name="ArcFM.Transformer">
+      <SAPRowTransformers>
+        <SapRowTransformer subtype=""  type="">
+          <SAPFieldTransformers>
+            <SAPFieldTransformer type="" config="xyc" position="1">              
+            </SAPFieldTransformer>
+          </SAPFieldTransformers>
+        </SapRowTransformer>
+      </SAPRowTransformers>
+    </SAPFeatureClassTransformer>
+  </SAPFeatureClassTransformers>  
+</SAPGISIntegration>-->

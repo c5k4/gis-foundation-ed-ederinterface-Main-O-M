@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<LayoutData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layoutFormat="2" lockLayout="false" noSaveMdiWindows="false">
+	<MainWindow left="154" top="189" width="960" height="713" normalState="0" normalPrevious="0">
+		<CommandManager showFontNamesInFont="true">
+			<Commands>
+				<Command key="GesturesTool" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="Miner.FrameworkUI.Ink.Tools.GestureTool, Miner.FrameworkUI.Ink, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc" />
+						<Param type="System.String" value="GesturesTool" />
+					</CreateData>
+				</Command>
+				<Command key="InkTool" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="Miner.FrameworkUI.Ink.Tools.InkTool, Miner.FrameworkUI.Ink, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc" />
+						<Param type="System.String" value="InkTool" />
+					</CreateData>
+				</Command>
+				<Command key="ClearInkSketch" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="Miner.FrameworkUI.Ink.Commands.ClearInkSketchCommand, Miner.FrameworkUI.Ink, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc" />
+						<Param type="System.String" value="ClearInkSketch" />
+					</CreateData>
+				</Command>
+				<Command key="FinishInkSketch" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="Miner.FrameworkUI.Ink.Commands.FinishInkSketchCommand, Miner.FrameworkUI.Ink, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc" />
+						<Param type="System.String" value="FinishInkSketch" />
+					</CreateData>
+				</Command>
+			</Commands>
+			<CommandBars>
+				<CommandBar key="TabletToolBar" text="Tablet" type="Miner.FrameworkUI.Ink.CommandBars.TabletCommandBar, Miner.FrameworkUI.Ink, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc"	dockedRow="1" dockedColumn="0" dockedPosition="Top" targetPosition="0" floatingLocationX="0" floatingLocationY="0" floatingWidth="0" floatingHeight="0" visible="false">
+					<CommandItems>
+						<CommandItem key="GesturesTool" recentlyUsed="true" />
+						<CommandItem key="InkTool" recentlyUsed="true" />
+						<CommandItem key="ClearInkSketch" recentlyUsed="true" />
+						<CommandItem key="FinishInkSketch" recentlyUsed="true" />
+					</CommandItems>
+				</CommandBar>
+			</CommandBars>
+			<OptionSets>
+				<OptionSet key="tools">
+					<OptionItems>
+						<OptionItem key="GesturesTool" />
+						<OptionItem key="InkTool" />
+					</OptionItems>
+				</OptionSet>
+			</OptionSets>
+		</CommandManager>
+	</MainWindow>
+</LayoutData>

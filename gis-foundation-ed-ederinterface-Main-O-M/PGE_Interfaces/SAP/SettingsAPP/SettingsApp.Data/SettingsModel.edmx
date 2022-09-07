@@ -1,0 +1,639 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SettingsApp.Data.Store" Alias="Self" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SettingsAppDataStoreContainer">
+          <EntitySet Name="SM_SECTIONALIZER" EntityType="SettingsApp.Data.Store.SM_SECTIONALIZER" store:Type="Tables" Schema="EDSETT" />
+          <EntitySet Name="SM_SWITCH" EntityType="SettingsApp.Data.Store.SM_SWITCH" store:Type="Tables" Schema="EDSETT" />
+          <EntitySet Name="SM_SWITCH_REQUIRED" EntityType="SettingsApp.Data.Store.SM_SWITCH_REQUIRED" store:Type="Tables" Schema="EDSETT" />
+          <EntitySet Name="SM_TABLE_LOOKUP" EntityType="SettingsApp.Data.Store.SM_TABLE_LOOKUP" store:Type="Tables" Schema="EDSETT" />
+          <EntitySet Name="SM_TABLE_RANGE_VALUE" EntityType="SettingsApp.Data.Store.SM_TABLE_RANGE_VALUE" store:Type="Tables" Schema="EDSETT" />
+        </EntityContainer>
+        <EntityType Name="SM_SECTIONALIZER">
+          <Key>
+            <PropertyRef Name="GLOBAL_ID" />
+          </Key>
+          <Property Name="GLOBAL_ID" Type="char" Nullable="false" MaxLength="38" />
+          <Property Name="ROW_TYPE" Type="nvarchar2" MaxLength="2" />
+          <Property Name="FEATURE_CLASS_ID" Type="number" />
+          <Property Name="OPERATING_NUM" Type="nvarchar2" MaxLength="9" />
+          <Property Name="DEVICE_ID" Type="number" Precision="10" />
+          <Property Name="SECTIONALIZER_ID" Type="number" Precision="10" />
+          <Property Name="SECTIONALIZER_TYPE" Type="nvarchar2" MaxLength="4" />
+          <Property Name="CREATION_USER" Type="nvarchar2" MaxLength="60" />
+          <Property Name="DATE_MODIFIED" Type="date" />
+          <Property Name="SYS_TIMESTAMP" Type="timestamp" />
+          <Property Name="CREATED_DATE" Type="date" />
+          <Property Name="EFFECTIVE_DATE" Type="date" />
+          <Property Name="PEER_REVIEW_DATE" Type="date" />
+          <Property Name="PEER_REVIEW_BY" Type="nvarchar2" MaxLength="60" />
+          <Property Name="DIVISION" Type="nvarchar2" MaxLength="50" />
+          <Property Name="DISTRICT" Type="nvarchar2" MaxLength="50" />
+          <Property Name="NOTES" Type="nvarchar2" MaxLength="240" />
+          <Property Name="CONTROL_SERIAL_NUM" Type="nvarchar2" MaxLength="18" />
+          <Property Name="CONTROL_UNIT_TYPE" Type="nvarchar2" MaxLength="4" />
+          <Property Name="PROCESSED_FLAG" Type="nvarchar2" MaxLength="1" />
+          <Property Name="RELEASED_BY" Type="nvarchar2" MaxLength="60" />
+          <Property Name="RELEASED_FLAG" Type="nvarchar2" MaxLength="1" />
+          <Property Name="OK_TO_BYPASS" Type="nvarchar2" MaxLength="1" />
+          <Property Name="CONTROL_TYPE" Type="nvarchar2" MaxLength="4" />
+          <Property Name="SECT_TYPE" Type="nvarchar2" MaxLength="4" />
+          <Property Name="MIN_PC_TO_CT" Type="number" Precision="3" />
+          <Property Name="PHA_INRUSH_DURATION" Type="number" Precision="6" Scale="2" />
+          <Property Name="PHA_INRUSH_MULTIPLIER" Type="nvarchar2" MaxLength="4" />
+          <Property Name="PHA_INRUSH_TIME" Type="number" Precision="5" />
+          <Property Name="FIRST_RECLOSE_RESET_TIME" Type="number" Precision="3" />
+          <Property Name="REQUIRED_FAULT_CURRENT" Type="nvarchar2" MaxLength="4" />
+          <Property Name="MIN_GRD_TO_CT" Type="number" Precision="3" />
+          <Property Name="GRD_INRUSH_DURATION" Type="number" Precision="6" Scale="1" />
+          <Property Name="GRD_INRUSH_MULTIPLIER" Type="nvarchar2" MaxLength="4" />
+          <Property Name="GRD_INRUSH_TIME" Type="number" Precision="5" />
+          <Property Name="RESET" Type="number" Precision="3" Scale="1" />
+          <Property Name="VOLT_THRESHOLD" Type="number" Precision="3" Scale="1" />
+          <Property Name="LOCKOUT_NUM" Type="number" Precision="1" />
+          <Property Name="ONE_SHOT_LOCKOUT_NUM" Type="number" Precision="1" />
+          <Property Name="ONE_SHOT_LOCKOUT_TIME&#x9;" Type="number" Precision="2" />
+          <Property Name="FIRMWARE_VERSION" Type="nvarchar2" MaxLength="12" />
+          <Property Name="SOFTWARE_VERSION" Type="nvarchar2" MaxLength="12" />
+          <Property Name="ENGINEERING_DOCUMENT" Type="nvarchar2" MaxLength="4" />
+          <Property Name="SCADA" Type="nvarchar2" MaxLength="1" />
+          <Property Name="SCADA_TYPE" Type="nvarchar2" MaxLength="4" />
+          <Property Name="MASTER_STATION" Type="nvarchar2" MaxLength="4" />
+          <Property Name="BAUD_RATE" Type="number" Precision="5" />
+          <Property Name="TRANSMIT_ENABLE_DELAY" Type="number" Precision="5" />
+          <Property Name="TRANSMIT_DISABLE_DELAY" Type="number" Precision="5" />
+          <Property Name="RTU_ADDRESS" Type="nvarchar2" MaxLength="25" />
+          <Property Name="REPEATER" Type="nvarchar2" MaxLength="25" />
+          <Property Name="SPECIAL_CONDITIONS" Type="nvarchar2" MaxLength="250" />
+          <Property Name="RADIO_MANF_CD" Type="nvarchar2" MaxLength="4" />
+          <Property Name="RADIO_MODEL_NUM" Type="nvarchar2" MaxLength="25" />
+          <Property Name="RADIO_SERIAL_NUM" Type="nvarchar2" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="SM_SWITCH">
+          <Key>
+            <PropertyRef Name="GLOBAL_ID" />
+          </Key>
+          <Property Name="GLOBAL_ID" Type="char" Nullable="false" MaxLength="38" />
+          <Property Name="ROW_TYPE" Type="nvarchar2" MaxLength="2" />
+          <Property Name="FEATURE_CLASS_ID" Type="number" />
+          <Property Name="OPERATING_NUM" Type="nvarchar2" MaxLength="9" />
+          <Property Name="DEVICE_ID" Type="number" Precision="10" />
+          <Property Name="SWITCH_ID" Type="number" Precision="10" />
+          <Property Name="SWITCH_TYPE" Type="nvarchar2" MaxLength="4" />
+          <Property Name="CREATION_USER" Type="nvarchar2" MaxLength="60" />
+          <Property Name="DATE_MODIFIED" Type="date" />
+          <Property Name="SYS_TIMESTAMP" Type="timestamp" />
+          <Property Name="CREATED_DATE" Type="date" />
+          <Property Name="EFFECTIVE_DATE" Type="date" />
+          <Property Name="PEER_REVIEW_DATE" Type="date" />
+          <Property Name="PEER_REVIEW_BY" Type="nvarchar2" MaxLength="60" />
+          <Property Name="DIVISION" Type="nvarchar2" MaxLength="50" />
+          <Property Name="DISTRICT" Type="nvarchar2" MaxLength="50" />
+          <Property Name="NOTES" Type="nvarchar2" MaxLength="240" />
+          <Property Name="FIRMWARE_VERSION" Type="nvarchar2" MaxLength="20" />
+          <Property Name="SOFTWARE_VERSION" Type="nvarchar2" MaxLength="20" />
+          <Property Name="CONTROL_SERIAL_NUM" Type="nvarchar2" MaxLength="18" />
+          <Property Name="CONTROL_UNIT_TYPE" Type="nvarchar2" MaxLength="4" />
+          <Property Name="PROCESSED_FLAG" Type="nvarchar2" MaxLength="1" />
+          <Property Name="RELEASED_BY" Type="nvarchar2" MaxLength="60" />
+          <Property Name="RELEASE_FLAG" Type="nvarchar2" MaxLength="1" />
+          <Property Name="OK_TO_BYPASS_FLAG" Type="nvarchar2" MaxLength="1" />
+          <Property Name="SECTIONALIZING_FEATURE" Type="nvarchar2" MaxLength="4" />
+          <Property Name="ATS_CAPABLE_FLAG" Type="nvarchar2" MaxLength="4" />
+          <Property Name="ATS_FEATURE" Type="nvarchar2" MaxLength="1" />
+          <Property Name="PHASE_FAULT_CUR_LEVEL" Type="number" Precision="10" />
+          <Property Name="GRD_FAULT_CUR_LEVEL" Type="number" Precision="10" />
+          <Property Name="PHASE_FAULT_DURATION" Type="number" Precision="10" />
+          <Property Name="GRD_FAULT_DURATION" Type="number" Precision="10" />
+          <Property Name="PHASE_INRUSH_TIME" Type="number" Precision="10" />
+          <Property Name="GRD_INRUSH_TIME" Type="number" Precision="10" />
+          <Property Name="PHASE_INRUSH_MULT" Type="number" Precision="10" Scale="2" />
+          <Property Name="GRD_INRUSH_MULT" Type="number" Precision="10" Scale="2" />
+          <Property Name="SECT_RESET_TIME" Type="number" Precision="10" />
+          <Property Name="RECLOSE_RESET_TIME" Type="number" Precision="10" />
+          <Property Name="OC_TO_VOLT_TIME" Type="number" Precision="10" Scale="2" />
+          <Property Name="FAULT_CUR_LOSS" Type="number" Precision="10" />
+          <Property Name="RECL_COUNT_TO_TRIP" Type="number" Precision="10" />
+          <Property Name="SHOTS_REQ_LOCKOUT" Type="number" Precision="10" />
+          <Property Name="SHOTS_TO_LOCKOUT_TIME" Type="number" Precision="10" />
+          <Property Name="OVERC_SHOTS_TO_LO_OPER" Type="number" Precision="10" />
+          <Property Name="VOLT_LOSS_THRESH" Type="number" Precision="10" />
+          <Property Name="TIME_THRESH" Type="number" Precision="10" />
+          <Property Name="CURR_THRESH" Type="number" Precision="10" />
+          <Property Name="AUTO_RECLOSE_TIME" Type="number" Precision="10" />
+          <Property Name="ATS_PREFERRED_FEED" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ATS_ALTERNATE_FEED" Type="nvarchar2" MaxLength="50" />
+          <Property Name="SELECT_PREFERRED" Type="nvarchar2" MaxLength="4" />
+          <Property Name="UNBALANCE_DETECT_FLAG" Type="nvarchar2" MaxLength="4" />
+          <Property Name="SELECT_RETURN" Type="nvarchar2" MaxLength="4" />
+          <Property Name="SELECT_TRANSACTION" Type="nvarchar2" MaxLength="4" />
+          <Property Name="DWELL_TIMER" Type="nvarchar2" MaxLength="4" />
+          <Property Name="NORMALIZE_LEFT" Type="number" Precision="10" />
+          <Property Name="NORMALIZE_RIGHT" Type="number" Precision="10" />
+          <Property Name="SET_BASE_LEFT" Type="number" Precision="10" />
+          <Property Name="SET_BASE_RIGHT" Type="number" Precision="10" />
+          <Property Name="ACCESS_CODE" Type="nvarchar2" MaxLength="4" />
+          <Property Name="COMM_OBIT_RATE" Type="number" Precision="10" />
+          <Property Name="LOCHOUT_LEVEL" Type="number" Precision="10" />
+          <Property Name="LOSS_OF_SOURCE" Type="number" Precision="10" />
+          <Property Name="RETURN_TO_SOURCE" Type="number" Precision="10" />
+          <Property Name="OVERVOLT_DETECT_FLAG" Type="number" Precision="10" />
+          <Property Name="UNBALANCE_DETECT" Type="number" Precision="10" />
+          <Property Name="LOSS_OF_LEFT_SOURCE" Type="number" Precision="10" Scale="2" />
+          <Property Name="LOSS_OF_RIGHT_SOURCE" Type="number" Precision="10" Scale="2" />
+          <Property Name="LOCKOUT_RESET" Type="number" Precision="10" Scale="2" />
+          <Property Name="OC_LOCKOUT_PICKUP" Type="number" Precision="10" />
+          <Property Name="TRANSITION_DWELL" Type="number" Precision="10" Scale="2" />
+          <Property Name="WINDOW_BEGIN" Type="nvarchar2" MaxLength="5" />
+          <Property Name="WINDOW_LENGTH" Type="nvarchar2" MaxLength="5" />
+          <Property Name="FLISR_FLAG" Type="nvarchar2" MaxLength="4" />
+          <Property Name="SUMMER_LOAD_LIMIT" Type="number" Precision="10" />
+          <Property Name="WINTER_LOAD_LIMIT" Type="number" Precision="10" />
+          <Property Name="LIMITING_FACTOR" Type="nvarchar2" MaxLength="250" />
+          <Property Name="ENG_COMMENTS" Type="nvarchar2" MaxLength="250" />
+          <Property Name="OPERATING_MODE" Type="nvarchar2" MaxLength="4" />
+          <Property Name="ENG_DOCUMENT" Type="nvarchar2" MaxLength="4" />
+          <Property Name="SCADA_FLAG" Type="nvarchar2" MaxLength="1" />
+          <Property Name="SCADA_TYPE" Type="nvarchar2" MaxLength="4" />
+          <Property Name="MASTER_STATION" Type="nvarchar2" MaxLength="4" />
+          <Property Name="BAUD_RATE" Type="number" Precision="5" />
+          <Property Name="TRANSMIT_ENABLE_DELAY" Type="number" Precision="5" />
+          <Property Name="TRANSMIT_DISPLAY_DELAY" Type="number" Precision="5" />
+          <Property Name="RTU_ADDRESS" Type="nvarchar2" MaxLength="25" />
+          <Property Name="REPEATER" Type="nvarchar2" MaxLength="25" />
+          <Property Name="SPECIAL_CONDITIONS" Type="nvarchar2" MaxLength="250" />
+          <Property Name="RADIO_MANF_CD" Type="nvarchar2" MaxLength="4" />
+          <Property Name="RADIO_MODEL_NUM" Type="nvarchar2" MaxLength="25" />
+          <Property Name="RADIO_SERIAL_NUM" Type="nvarchar2" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="SM_SWITCH_REQUIRED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="12" />
+          <Property Name="DEVICE_NAME" Type="nvarchar2" MaxLength="30" />
+          <Property Name="FIELD_NAME" Type="nvarchar2" MaxLength="30" />
+          <Property Name="SWITCH_TYPE" Type="nvarchar2" MaxLength="30" />
+          <Property Name="ATS" Type="nvarchar2" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="SM_TABLE_LOOKUP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="12" />
+          <Property Name="DEVICE_NAME" Type="nvarchar2" MaxLength="30" />
+          <Property Name="FIELD_NAME" Type="nvarchar2" MaxLength="30" />
+          <Property Name="CODE" Type="nvarchar2" MaxLength="5" />
+          <Property Name="SORT_NUM" Type="number" Precision="2" />
+          <Property Name="DESCRIPTION" Type="nvarchar2" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="SM_TABLE_RANGE_VALUE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="12" />
+          <Property Name="DEVICE_NAME" Type="nvarchar2" MaxLength="30" />
+          <Property Name="FIELD_NAME" Type="nvarchar2" MaxLength="30" />
+          <Property Name="MIN_VALUE" Type="number" Precision="10" Scale="3" />
+          <Property Name="MAX_VALUE" Type="number" Precision="10" Scale="3" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'EDSETT.SM_SECTIONALIZER_REQUIRED' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="SM_SECTIONALIZER_REQUIRED">
+        <Property Name="ID" Type="number" Precision="12" />
+        <Property Name="DEVICE_NAME" Type="nvarchar2" MaxLength="30" />
+        <Property Name="FIELD_NAME" Type="nvarchar2" MaxLength="30" />
+      </EntityType>-->
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SettingsApp.Data" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SettingsAppDBConnection" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SM_SECTIONALIZER" EntityType="SettingsApp.Data.SM_SECTIONALIZER" />
+          <EntitySet Name="SM_SWITCH" EntityType="SettingsApp.Data.SM_SWITCH" />
+          <EntitySet Name="SM_SWITCH_REQUIRED" EntityType="SettingsApp.Data.SM_SWITCH_REQUIRED" />
+          <EntitySet Name="SM_TABLE_LOOKUP" EntityType="SettingsApp.Data.SM_TABLE_LOOKUP" />
+          <EntitySet Name="SM_TABLE_RANGE_VALUE" EntityType="SettingsApp.Data.SM_TABLE_RANGE_VALUE" />
+        </EntityContainer>
+        <EntityType Name="SM_SECTIONALIZER">
+          <Key>
+            <PropertyRef Name="GLOBAL_ID" />
+          </Key>
+          <Property Name="GLOBAL_ID" Type="String" Nullable="false" MaxLength="38" Unicode="false" FixedLength="true" />
+          <Property Name="ROW_TYPE" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="FEATURE_CLASS_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="OPERATING_NUM" Type="String" MaxLength="9" Unicode="true" FixedLength="false" />
+          <Property Name="DEVICE_ID" Type="Int32" />
+          <Property Name="SECTIONALIZER_ID" Type="Int32" />
+          <Property Name="SECTIONALIZER_TYPE" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="CREATION_USER" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" />
+          <Property Name="SYS_TIMESTAMP" Type="DateTime" Precision="6" />
+          <Property Name="CREATED_DATE" Type="DateTime" />
+          <Property Name="EFFECTIVE_DATE" Type="DateTime" />
+          <Property Name="PEER_REVIEW_DATE" Type="DateTime" />
+          <Property Name="PEER_REVIEW_BY" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="DIVISION" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DISTRICT" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NOTES" Type="String" MaxLength="240" Unicode="true" FixedLength="false" />
+          <Property Name="CONTROL_SERIAL_NUM" Type="String" MaxLength="18" Unicode="true" FixedLength="false" />
+          <Property Name="CONTROL_UNIT_TYPE" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="PROCESSED_FLAG" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="RELEASED_BY" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="RELEASED_FLAG" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="OK_TO_BYPASS" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="CONTROL_TYPE" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="SECT_TYPE" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="MIN_PC_TO_CT" Type="Int16" />
+          <Property Name="PHA_INRUSH_DURATION" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="PHA_INRUSH_MULTIPLIER" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="PHA_INRUSH_TIME" Type="Int16" />
+          <Property Name="FIRST_RECLOSE_RESET_TIME" Type="Int16" />
+          <Property Name="REQUIRED_FAULT_CURRENT" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="MIN_GRD_TO_CT" Type="Int16" />
+          <Property Name="GRD_INRUSH_DURATION" Type="Decimal" Precision="6" Scale="1" />
+          <Property Name="GRD_INRUSH_MULTIPLIER" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="GRD_INRUSH_TIME" Type="Int16" />
+          <Property Name="RESET" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="VOLT_THRESHOLD" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="LOCKOUT_NUM" Type="Int16" />
+          <Property Name="ONE_SHOT_LOCKOUT_NUM" Type="Int16" />
+          <Property Name="ONE_SHOT_LOCKOUT_TIME_" Type="Int16" />
+          <Property Name="FIRMWARE_VERSION" Type="String" MaxLength="12" Unicode="true" FixedLength="false" />
+          <Property Name="SOFTWARE_VERSION" Type="String" MaxLength="12" Unicode="true" FixedLength="false" />
+          <Property Name="ENGINEERING_DOCUMENT" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="SCADA" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="SCADA_TYPE" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="MASTER_STATION" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="BAUD_RATE" Type="Int16" />
+          <Property Name="TRANSMIT_ENABLE_DELAY" Type="Int16" />
+          <Property Name="TRANSMIT_DISABLE_DELAY" Type="Int16" />
+          <Property Name="RTU_ADDRESS" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="REPEATER" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="SPECIAL_CONDITIONS" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="RADIO_MANF_CD" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="RADIO_MODEL_NUM" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="RADIO_SERIAL_NUM" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SM_SWITCH">
+          <Key>
+            <PropertyRef Name="GLOBAL_ID" />
+          </Key>
+          <Property Name="GLOBAL_ID" Type="String" Nullable="false" MaxLength="38" Unicode="false" FixedLength="true" />
+          <Property Name="ROW_TYPE" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="FEATURE_CLASS_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="OPERATING_NUM" Type="String" MaxLength="9" Unicode="true" FixedLength="false" />
+          <Property Name="DEVICE_ID" Type="Int32" />
+          <Property Name="SWITCH_ID" Type="Int32" />
+          <Property Name="SWITCH_TYPE" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="CREATION_USER" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" />
+          <Property Name="SYS_TIMESTAMP" Type="DateTime" Precision="6" />
+          <Property Name="CREATED_DATE" Type="DateTime" />
+          <Property Name="EFFECTIVE_DATE" Type="DateTime" />
+          <Property Name="PEER_REVIEW_DATE" Type="DateTime" />
+          <Property Name="PEER_REVIEW_BY" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="DIVISION" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DISTRICT" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NOTES" Type="String" MaxLength="240" Unicode="true" FixedLength="false" />
+          <Property Name="FIRMWARE_VERSION" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="SOFTWARE_VERSION" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="CONTROL_SERIAL_NUM" Type="String" MaxLength="18" Unicode="true" FixedLength="false" />
+          <Property Name="CONTROL_UNIT_TYPE" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="PROCESSED_FLAG" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="RELEASED_BY" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="RELEASE_FLAG" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="OK_TO_BYPASS_FLAG" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="SECTIONALIZING_FEATURE" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="ATS_CAPABLE_FLAG" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="ATS_FEATURE" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="PHASE_FAULT_CUR_LEVEL" Type="Int32" />
+          <Property Name="GRD_FAULT_CUR_LEVEL" Type="Int32" />
+          <Property Name="PHASE_FAULT_DURATION" Type="Int32" />
+          <Property Name="GRD_FAULT_DURATION" Type="Int32" />
+          <Property Name="PHASE_INRUSH_TIME" Type="Int32" />
+          <Property Name="GRD_INRUSH_TIME" Type="Int32" />
+          <Property Name="PHASE_INRUSH_MULT" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="GRD_INRUSH_MULT" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="SECT_RESET_TIME" Type="Int32" />
+          <Property Name="RECLOSE_RESET_TIME" Type="Int32" />
+          <Property Name="OC_TO_VOLT_TIME" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="FAULT_CUR_LOSS" Type="Int32" />
+          <Property Name="RECL_COUNT_TO_TRIP" Type="Int32" />
+          <Property Name="SHOTS_REQ_LOCKOUT" Type="Int32" />
+          <Property Name="SHOTS_TO_LOCKOUT_TIME" Type="Int32" />
+          <Property Name="OVERC_SHOTS_TO_LO_OPER" Type="Int32" />
+          <Property Name="VOLT_LOSS_THRESH" Type="Int32" />
+          <Property Name="TIME_THRESH" Type="Int32" />
+          <Property Name="CURR_THRESH" Type="Int32" />
+          <Property Name="AUTO_RECLOSE_TIME" Type="Int32" />
+          <Property Name="ATS_PREFERRED_FEED" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ATS_ALTERNATE_FEED" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SELECT_PREFERRED" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="UNBALANCE_DETECT_FLAG" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="SELECT_RETURN" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="SELECT_TRANSACTION" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="DWELL_TIMER" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="NORMALIZE_LEFT" Type="Int32" />
+          <Property Name="NORMALIZE_RIGHT" Type="Int32" />
+          <Property Name="SET_BASE_LEFT" Type="Int32" />
+          <Property Name="SET_BASE_RIGHT" Type="Int32" />
+          <Property Name="ACCESS_CODE" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="COMM_OBIT_RATE" Type="Int32" />
+          <Property Name="LOCHOUT_LEVEL" Type="Int32" />
+          <Property Name="LOSS_OF_SOURCE" Type="Int32" />
+          <Property Name="RETURN_TO_SOURCE" Type="Int32" />
+          <Property Name="OVERVOLT_DETECT_FLAG" Type="Int32" />
+          <Property Name="UNBALANCE_DETECT" Type="Int32" />
+          <Property Name="LOSS_OF_LEFT_SOURCE" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="LOSS_OF_RIGHT_SOURCE" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="LOCKOUT_RESET" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="OC_LOCKOUT_PICKUP" Type="Int32" />
+          <Property Name="TRANSITION_DWELL" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="WINDOW_BEGIN" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="WINDOW_LENGTH" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="FLISR_FLAG" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="SUMMER_LOAD_LIMIT" Type="Int32" />
+          <Property Name="WINTER_LOAD_LIMIT" Type="Int32" />
+          <Property Name="LIMITING_FACTOR" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="ENG_COMMENTS" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="OPERATING_MODE" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="ENG_DOCUMENT" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="SCADA_FLAG" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="SCADA_TYPE" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="MASTER_STATION" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="BAUD_RATE" Type="Int16" />
+          <Property Name="TRANSMIT_ENABLE_DELAY" Type="Int16" />
+          <Property Name="TRANSMIT_DISPLAY_DELAY" Type="Int16" />
+          <Property Name="RTU_ADDRESS" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="REPEATER" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="SPECIAL_CONDITIONS" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="RADIO_MANF_CD" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="RADIO_MODEL_NUM" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="RADIO_SERIAL_NUM" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SM_SWITCH_REQUIRED">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="DEVICE_NAME" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="FIELD_NAME" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="SWITCH_TYPE" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="ATS" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SM_TABLE_LOOKUP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="DEVICE_NAME" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="FIELD_NAME" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="CODE" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="SORT_NUM" Type="Int16" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SM_TABLE_RANGE_VALUE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="DEVICE_NAME" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="FIELD_NAME" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="MIN_VALUE" Type="Decimal" Precision="10" Scale="3" />
+          <Property Name="MAX_VALUE" Type="Decimal" Precision="10" Scale="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SettingsAppDataStoreContainer" CdmEntityContainer="SettingsAppDBConnection">
+          <EntitySetMapping Name="SM_SECTIONALIZER">
+            <EntityTypeMapping TypeName="SettingsApp.Data.SM_SECTIONALIZER">
+              <MappingFragment StoreEntitySet="SM_SECTIONALIZER">
+                <ScalarProperty Name="GLOBAL_ID" ColumnName="GLOBAL_ID" />
+                <ScalarProperty Name="ROW_TYPE" ColumnName="ROW_TYPE" />
+                <ScalarProperty Name="FEATURE_CLASS_ID" ColumnName="FEATURE_CLASS_ID" />
+                <ScalarProperty Name="OPERATING_NUM" ColumnName="OPERATING_NUM" />
+                <ScalarProperty Name="DEVICE_ID" ColumnName="DEVICE_ID" />
+                <ScalarProperty Name="SECTIONALIZER_ID" ColumnName="SECTIONALIZER_ID" />
+                <ScalarProperty Name="SECTIONALIZER_TYPE" ColumnName="SECTIONALIZER_TYPE" />
+                <ScalarProperty Name="CREATION_USER" ColumnName="CREATION_USER" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="SYS_TIMESTAMP" ColumnName="SYS_TIMESTAMP" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="EFFECTIVE_DATE" ColumnName="EFFECTIVE_DATE" />
+                <ScalarProperty Name="PEER_REVIEW_DATE" ColumnName="PEER_REVIEW_DATE" />
+                <ScalarProperty Name="PEER_REVIEW_BY" ColumnName="PEER_REVIEW_BY" />
+                <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+                <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+                <ScalarProperty Name="NOTES" ColumnName="NOTES" />
+                <ScalarProperty Name="CONTROL_SERIAL_NUM" ColumnName="CONTROL_SERIAL_NUM" />
+                <ScalarProperty Name="CONTROL_UNIT_TYPE" ColumnName="CONTROL_UNIT_TYPE" />
+                <ScalarProperty Name="PROCESSED_FLAG" ColumnName="PROCESSED_FLAG" />
+                <ScalarProperty Name="RELEASED_BY" ColumnName="RELEASED_BY" />
+                <ScalarProperty Name="RELEASED_FLAG" ColumnName="RELEASED_FLAG" />
+                <ScalarProperty Name="OK_TO_BYPASS" ColumnName="OK_TO_BYPASS" />
+                <ScalarProperty Name="CONTROL_TYPE" ColumnName="CONTROL_TYPE" />
+                <ScalarProperty Name="SECT_TYPE" ColumnName="SECT_TYPE" />
+                <ScalarProperty Name="MIN_PC_TO_CT" ColumnName="MIN_PC_TO_CT" />
+                <ScalarProperty Name="PHA_INRUSH_DURATION" ColumnName="PHA_INRUSH_DURATION" />
+                <ScalarProperty Name="PHA_INRUSH_MULTIPLIER" ColumnName="PHA_INRUSH_MULTIPLIER" />
+                <ScalarProperty Name="PHA_INRUSH_TIME" ColumnName="PHA_INRUSH_TIME" />
+                <ScalarProperty Name="FIRST_RECLOSE_RESET_TIME" ColumnName="FIRST_RECLOSE_RESET_TIME" />
+                <ScalarProperty Name="REQUIRED_FAULT_CURRENT" ColumnName="REQUIRED_FAULT_CURRENT" />
+                <ScalarProperty Name="MIN_GRD_TO_CT" ColumnName="MIN_GRD_TO_CT" />
+                <ScalarProperty Name="GRD_INRUSH_DURATION" ColumnName="GRD_INRUSH_DURATION" />
+                <ScalarProperty Name="GRD_INRUSH_MULTIPLIER" ColumnName="GRD_INRUSH_MULTIPLIER" />
+                <ScalarProperty Name="GRD_INRUSH_TIME" ColumnName="GRD_INRUSH_TIME" />
+                <ScalarProperty Name="RESET" ColumnName="RESET" />
+                <ScalarProperty Name="VOLT_THRESHOLD" ColumnName="VOLT_THRESHOLD" />
+                <ScalarProperty Name="LOCKOUT_NUM" ColumnName="LOCKOUT_NUM" />
+                <ScalarProperty Name="ONE_SHOT_LOCKOUT_NUM" ColumnName="ONE_SHOT_LOCKOUT_NUM" />
+                <ScalarProperty Name="ONE_SHOT_LOCKOUT_TIME_" ColumnName="ONE_SHOT_LOCKOUT_TIME&#x9;" />
+                <ScalarProperty Name="FIRMWARE_VERSION" ColumnName="FIRMWARE_VERSION" />
+                <ScalarProperty Name="SOFTWARE_VERSION" ColumnName="SOFTWARE_VERSION" />
+                <ScalarProperty Name="ENGINEERING_DOCUMENT" ColumnName="ENGINEERING_DOCUMENT" />
+                <ScalarProperty Name="SCADA" ColumnName="SCADA" />
+                <ScalarProperty Name="SCADA_TYPE" ColumnName="SCADA_TYPE" />
+                <ScalarProperty Name="MASTER_STATION" ColumnName="MASTER_STATION" />
+                <ScalarProperty Name="BAUD_RATE" ColumnName="BAUD_RATE" />
+                <ScalarProperty Name="TRANSMIT_ENABLE_DELAY" ColumnName="TRANSMIT_ENABLE_DELAY" />
+                <ScalarProperty Name="TRANSMIT_DISABLE_DELAY" ColumnName="TRANSMIT_DISABLE_DELAY" />
+                <ScalarProperty Name="RTU_ADDRESS" ColumnName="RTU_ADDRESS" />
+                <ScalarProperty Name="REPEATER" ColumnName="REPEATER" />
+                <ScalarProperty Name="SPECIAL_CONDITIONS" ColumnName="SPECIAL_CONDITIONS" />
+                <ScalarProperty Name="RADIO_MANF_CD" ColumnName="RADIO_MANF_CD" />
+                <ScalarProperty Name="RADIO_MODEL_NUM" ColumnName="RADIO_MODEL_NUM" />
+                <ScalarProperty Name="RADIO_SERIAL_NUM" ColumnName="RADIO_SERIAL_NUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SM_SWITCH">
+            <EntityTypeMapping TypeName="SettingsApp.Data.SM_SWITCH">
+              <MappingFragment StoreEntitySet="SM_SWITCH">
+                <ScalarProperty Name="GLOBAL_ID" ColumnName="GLOBAL_ID" />
+                <ScalarProperty Name="ROW_TYPE" ColumnName="ROW_TYPE" />
+                <ScalarProperty Name="FEATURE_CLASS_ID" ColumnName="FEATURE_CLASS_ID" />
+                <ScalarProperty Name="OPERATING_NUM" ColumnName="OPERATING_NUM" />
+                <ScalarProperty Name="DEVICE_ID" ColumnName="DEVICE_ID" />
+                <ScalarProperty Name="SWITCH_ID" ColumnName="SWITCH_ID" />
+                <ScalarProperty Name="SWITCH_TYPE" ColumnName="SWITCH_TYPE" />
+                <ScalarProperty Name="CREATION_USER" ColumnName="CREATION_USER" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="SYS_TIMESTAMP" ColumnName="SYS_TIMESTAMP" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="EFFECTIVE_DATE" ColumnName="EFFECTIVE_DATE" />
+                <ScalarProperty Name="PEER_REVIEW_DATE" ColumnName="PEER_REVIEW_DATE" />
+                <ScalarProperty Name="PEER_REVIEW_BY" ColumnName="PEER_REVIEW_BY" />
+                <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+                <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+                <ScalarProperty Name="NOTES" ColumnName="NOTES" />
+                <ScalarProperty Name="FIRMWARE_VERSION" ColumnName="FIRMWARE_VERSION" />
+                <ScalarProperty Name="SOFTWARE_VERSION" ColumnName="SOFTWARE_VERSION" />
+                <ScalarProperty Name="CONTROL_SERIAL_NUM" ColumnName="CONTROL_SERIAL_NUM" />
+                <ScalarProperty Name="CONTROL_UNIT_TYPE" ColumnName="CONTROL_UNIT_TYPE" />
+                <ScalarProperty Name="PROCESSED_FLAG" ColumnName="PROCESSED_FLAG" />
+                <ScalarProperty Name="RELEASED_BY" ColumnName="RELEASED_BY" />
+                <ScalarProperty Name="RELEASE_FLAG" ColumnName="RELEASE_FLAG" />
+                <ScalarProperty Name="OK_TO_BYPASS_FLAG" ColumnName="OK_TO_BYPASS_FLAG" />
+                <ScalarProperty Name="SECTIONALIZING_FEATURE" ColumnName="SECTIONALIZING_FEATURE" />
+                <ScalarProperty Name="ATS_CAPABLE_FLAG" ColumnName="ATS_CAPABLE_FLAG" />
+                <ScalarProperty Name="ATS_FEATURE" ColumnName="ATS_FEATURE" />
+                <ScalarProperty Name="PHASE_FAULT_CUR_LEVEL" ColumnName="PHASE_FAULT_CUR_LEVEL" />
+                <ScalarProperty Name="GRD_FAULT_CUR_LEVEL" ColumnName="GRD_FAULT_CUR_LEVEL" />
+                <ScalarProperty Name="PHASE_FAULT_DURATION" ColumnName="PHASE_FAULT_DURATION" />
+                <ScalarProperty Name="GRD_FAULT_DURATION" ColumnName="GRD_FAULT_DURATION" />
+                <ScalarProperty Name="PHASE_INRUSH_TIME" ColumnName="PHASE_INRUSH_TIME" />
+                <ScalarProperty Name="GRD_INRUSH_TIME" ColumnName="GRD_INRUSH_TIME" />
+                <ScalarProperty Name="PHASE_INRUSH_MULT" ColumnName="PHASE_INRUSH_MULT" />
+                <ScalarProperty Name="GRD_INRUSH_MULT" ColumnName="GRD_INRUSH_MULT" />
+                <ScalarProperty Name="SECT_RESET_TIME" ColumnName="SECT_RESET_TIME" />
+                <ScalarProperty Name="RECLOSE_RESET_TIME" ColumnName="RECLOSE_RESET_TIME" />
+                <ScalarProperty Name="OC_TO_VOLT_TIME" ColumnName="OC_TO_VOLT_TIME" />
+                <ScalarProperty Name="FAULT_CUR_LOSS" ColumnName="FAULT_CUR_LOSS" />
+                <ScalarProperty Name="RECL_COUNT_TO_TRIP" ColumnName="RECL_COUNT_TO_TRIP" />
+                <ScalarProperty Name="SHOTS_REQ_LOCKOUT" ColumnName="SHOTS_REQ_LOCKOUT" />
+                <ScalarProperty Name="SHOTS_TO_LOCKOUT_TIME" ColumnName="SHOTS_TO_LOCKOUT_TIME" />
+                <ScalarProperty Name="OVERC_SHOTS_TO_LO_OPER" ColumnName="OVERC_SHOTS_TO_LO_OPER" />
+                <ScalarProperty Name="VOLT_LOSS_THRESH" ColumnName="VOLT_LOSS_THRESH" />
+                <ScalarProperty Name="TIME_THRESH" ColumnName="TIME_THRESH" />
+                <ScalarProperty Name="CURR_THRESH" ColumnName="CURR_THRESH" />
+                <ScalarProperty Name="AUTO_RECLOSE_TIME" ColumnName="AUTO_RECLOSE_TIME" />
+                <ScalarProperty Name="ATS_PREFERRED_FEED" ColumnName="ATS_PREFERRED_FEED" />
+                <ScalarProperty Name="ATS_ALTERNATE_FEED" ColumnName="ATS_ALTERNATE_FEED" />
+                <ScalarProperty Name="SELECT_PREFERRED" ColumnName="SELECT_PREFERRED" />
+                <ScalarProperty Name="UNBALANCE_DETECT_FLAG" ColumnName="UNBALANCE_DETECT_FLAG" />
+                <ScalarProperty Name="SELECT_RETURN" ColumnName="SELECT_RETURN" />
+                <ScalarProperty Name="SELECT_TRANSACTION" ColumnName="SELECT_TRANSACTION" />
+                <ScalarProperty Name="DWELL_TIMER" ColumnName="DWELL_TIMER" />
+                <ScalarProperty Name="NORMALIZE_LEFT" ColumnName="NORMALIZE_LEFT" />
+                <ScalarProperty Name="NORMALIZE_RIGHT" ColumnName="NORMALIZE_RIGHT" />
+                <ScalarProperty Name="SET_BASE_LEFT" ColumnName="SET_BASE_LEFT" />
+                <ScalarProperty Name="SET_BASE_RIGHT" ColumnName="SET_BASE_RIGHT" />
+                <ScalarProperty Name="ACCESS_CODE" ColumnName="ACCESS_CODE" />
+                <ScalarProperty Name="COMM_OBIT_RATE" ColumnName="COMM_OBIT_RATE" />
+                <ScalarProperty Name="LOCHOUT_LEVEL" ColumnName="LOCHOUT_LEVEL" />
+                <ScalarProperty Name="LOSS_OF_SOURCE" ColumnName="LOSS_OF_SOURCE" />
+                <ScalarProperty Name="RETURN_TO_SOURCE" ColumnName="RETURN_TO_SOURCE" />
+                <ScalarProperty Name="OVERVOLT_DETECT_FLAG" ColumnName="OVERVOLT_DETECT_FLAG" />
+                <ScalarProperty Name="UNBALANCE_DETECT" ColumnName="UNBALANCE_DETECT" />
+                <ScalarProperty Name="LOSS_OF_LEFT_SOURCE" ColumnName="LOSS_OF_LEFT_SOURCE" />
+                <ScalarProperty Name="LOSS_OF_RIGHT_SOURCE" ColumnName="LOSS_OF_RIGHT_SOURCE" />
+                <ScalarProperty Name="LOCKOUT_RESET" ColumnName="LOCKOUT_RESET" />
+                <ScalarProperty Name="OC_LOCKOUT_PICKUP" ColumnName="OC_LOCKOUT_PICKUP" />
+                <ScalarProperty Name="TRANSITION_DWELL" ColumnName="TRANSITION_DWELL" />
+                <ScalarProperty Name="WINDOW_BEGIN" ColumnName="WINDOW_BEGIN" />
+                <ScalarProperty Name="WINDOW_LENGTH" ColumnName="WINDOW_LENGTH" />
+                <ScalarProperty Name="FLISR_FLAG" ColumnName="FLISR_FLAG" />
+                <ScalarProperty Name="SUMMER_LOAD_LIMIT" ColumnName="SUMMER_LOAD_LIMIT" />
+                <ScalarProperty Name="WINTER_LOAD_LIMIT" ColumnName="WINTER_LOAD_LIMIT" />
+                <ScalarProperty Name="LIMITING_FACTOR" ColumnName="LIMITING_FACTOR" />
+                <ScalarProperty Name="ENG_COMMENTS" ColumnName="ENG_COMMENTS" />
+                <ScalarProperty Name="OPERATING_MODE" ColumnName="OPERATING_MODE" />
+                <ScalarProperty Name="ENG_DOCUMENT" ColumnName="ENG_DOCUMENT" />
+                <ScalarProperty Name="SCADA_FLAG" ColumnName="SCADA_FLAG" />
+                <ScalarProperty Name="SCADA_TYPE" ColumnName="SCADA_TYPE" />
+                <ScalarProperty Name="MASTER_STATION" ColumnName="MASTER_STATION" />
+                <ScalarProperty Name="BAUD_RATE" ColumnName="BAUD_RATE" />
+                <ScalarProperty Name="TRANSMIT_ENABLE_DELAY" ColumnName="TRANSMIT_ENABLE_DELAY" />
+                <ScalarProperty Name="TRANSMIT_DISPLAY_DELAY" ColumnName="TRANSMIT_DISPLAY_DELAY" />
+                <ScalarProperty Name="RTU_ADDRESS" ColumnName="RTU_ADDRESS" />
+                <ScalarProperty Name="REPEATER" ColumnName="REPEATER" />
+                <ScalarProperty Name="SPECIAL_CONDITIONS" ColumnName="SPECIAL_CONDITIONS" />
+                <ScalarProperty Name="RADIO_MANF_CD" ColumnName="RADIO_MANF_CD" />
+                <ScalarProperty Name="RADIO_MODEL_NUM" ColumnName="RADIO_MODEL_NUM" />
+                <ScalarProperty Name="RADIO_SERIAL_NUM" ColumnName="RADIO_SERIAL_NUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SM_SWITCH_REQUIRED">
+            <EntityTypeMapping TypeName="SettingsApp.Data.SM_SWITCH_REQUIRED">
+              <MappingFragment StoreEntitySet="SM_SWITCH_REQUIRED">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DEVICE_NAME" ColumnName="DEVICE_NAME" />
+                <ScalarProperty Name="FIELD_NAME" ColumnName="FIELD_NAME" />
+                <ScalarProperty Name="SWITCH_TYPE" ColumnName="SWITCH_TYPE" />
+                <ScalarProperty Name="ATS" ColumnName="ATS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SM_TABLE_LOOKUP">
+            <EntityTypeMapping TypeName="SettingsApp.Data.SM_TABLE_LOOKUP">
+              <MappingFragment StoreEntitySet="SM_TABLE_LOOKUP">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DEVICE_NAME" ColumnName="DEVICE_NAME" />
+                <ScalarProperty Name="FIELD_NAME" ColumnName="FIELD_NAME" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="SORT_NUM" ColumnName="SORT_NUM" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SM_TABLE_RANGE_VALUE">
+            <EntityTypeMapping TypeName="SettingsApp.Data.SM_TABLE_RANGE_VALUE">
+              <MappingFragment StoreEntitySet="SM_TABLE_RANGE_VALUE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DEVICE_NAME" ColumnName="DEVICE_NAME" />
+                <ScalarProperty Name="FIELD_NAME" ColumnName="FIELD_NAME" />
+                <ScalarProperty Name="MIN_VALUE" ColumnName="MIN_VALUE" />
+                <ScalarProperty Name="MAX_VALUE" ColumnName="MAX_VALUE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="SettingsModel" ZoomLevel="46">
+        <EntityTypeShape EntityType="SettingsApp.Data.SM_SECTIONALIZER" Width="1.5" PointX="0.75" PointY="0.75" Height="11.595358072916666" IsExpanded="true" />
+        <EntityTypeShape EntityType="SettingsApp.Data.SM_SWITCH" Width="1.5" PointX="2.75" PointY="0.75" Height="18.710511067708335" IsExpanded="true" />
+        <EntityTypeShape EntityType="SettingsApp.Data.SM_SWITCH_REQUIRED" Width="1.5" PointX="4.75" PointY="0.75" Height="1.9802864583333326" IsExpanded="true" />
+        <EntityTypeShape EntityType="SettingsApp.Data.SM_TABLE_LOOKUP" Width="1.5" PointX="4.75" PointY="3.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SettingsApp.Data.SM_TABLE_RANGE_VALUE" Width="1.5" PointX="6.75" PointY="0.75" Height="1.9802864583333317" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

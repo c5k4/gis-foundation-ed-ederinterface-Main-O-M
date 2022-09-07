@@ -1,0 +1,6 @@
+﻿Process the next available circuits
+-T 2 -P 1 -N DEBUG
+Parent process for bulk run which will populate the circuit to trace tables and start processes
+-a
+Run Change Detection
+-C

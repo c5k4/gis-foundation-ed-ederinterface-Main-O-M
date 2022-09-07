@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+
+  <!--The following are some of the User Interface items available to customized.-->
+  
+  <String Id="CancelDlg_Title" Overridable="yes">[INTERFACE_NAME] Setup</String>
+  <String Id="CancelDlgText" Overridable="yes">Are you sure you want to cancel [INTERFACE_NAME] installation?</String>
+  <String Id="CustomizeDlg_Title" Overridable="yes">[INTERFACE_NAME] Setup</String>
+  <String Id="ExitDialog_Title" Overridable="yes">[INTERFACE_NAME] Setup</String>
+  <String Id="ExitDialogTitle" Overridable="yes">{\WixUI_Font_Bigger}Completed the [INTERFACE_NAME] Setup Wizard</String>
+
+  <String Id="ProgressDlg_Title" Overridable="yes">[INTERFACE_NAME] Setup</String>
+  <String Id="ProgressDlgTextInstalling" Overridable="yes">Please wait while the Setup Wizard installs [INTERFACE_NAME].</String>
+  <String Id="ProgressDlgTitleInstalling" Overridable="yes">{\WixUI_Font_Title}Installing [INTERFACE_NAME]</String>
+  <String Id="ProgressDlgTextChanging" Overridable="yes">Please wait while the Setup Wizard changes [INTERFACE_NAME].</String>
+  <String Id="ProgressDlgTitleChanging" Overridable="yes">{\WixUI_Font_Title}Changing [INTERFACE_NAME]</String>
+  <String Id="ProgressDlgTextRepairing" Overridable="yes">Please wait while the Setup Wizard repairs [INTERFACE_NAME].</String>
+  <String Id="ProgressDlgTitleRepairing" Overridable="yes">{\WixUI_Font_Title}Repairing [INTERFACE_NAME]</String>
+  <String Id="ProgressDlgTextRemoving" Overridable="yes">Please wait while the Setup Wizard removes [INTERFACE_NAME].</String>
+  <String Id="ProgressDlgTitleRemoving" Overridable="yes">{\WixUI_Font_Title}Removing [INTERFACE_NAME]</String>
+
+  <String Id="VerifyReadyDlg_Title" Overridable="yes">[INTERFACE_NAME] Setup</String>
+  <String Id="VerifyReadyDlgInstallTitle" Overridable="yes">{\WixUI_Font_Title}Ready to install [INTERFACE_NAME]</String>
+  <String Id="VerifyReadyDlgChangeTitle" Overridable="yes">{\WixUI_Font_Title}Ready to change [INTERFACE_NAME]</String>
+ 
+  <String Id="WelcomeDlg_Title" Overridable="yes">[INTERFACE_NAME] Setup</String>
+  <String Id="WelcomeDlgDescription" Overridable="yes">The Setup Wizard will install [INTERFACE_NAME] on your computer. Click Next to continue or Cancel to exit the Setup Wizard.</String>
+  <String Id="WelcomeDlgTitle" Overridable="yes">{\WixUI_Font_Bigger}Welcome to the [INTERFACE_NAME] Setup Wizard</String>
+
+</WixLocalization>

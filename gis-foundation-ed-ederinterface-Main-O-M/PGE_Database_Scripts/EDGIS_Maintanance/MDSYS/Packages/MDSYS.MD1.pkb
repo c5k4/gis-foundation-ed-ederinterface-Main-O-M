@@ -1,0 +1,51 @@
+Prompt drop Package Body MD1;
+DROP PACKAGE BODY MDSYS.MD1
+/
+
+Prompt Package Body MD1;
+--
+-- MD1  (Package Body) 
+--
+CREATE OR REPLACE PACKAGE BODY MDSYS.MD1 wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+214d 5c8
+mqZtuklmXZIN/fCt8bcmBZIxJyEwgw111/GMyi+p/m6wj1cmm3wGqkMavfQ8xehf+jxBm/kg
+LdPjJRjhiN+ciHulMngpOUVkOgi/P6hNEa6qzMebzD8Fzf+/I4oKp8us/M9+E/YZ89Jcp8Yz
+os/DzHdDqnrbxlRf/phK0v5KUYAZpNk0agdVDdmWLiLPmre5bixb27O39/hqF+UZht1r/EXU
+sOU1DzIZ6nNzogTsGROs9RzluiNYvYCN1pKyeW5FaZ+XEuJ5zgd6m+xSMZ0c4IsNiVBB9BgY
+i1WaSWqHX1yeM+YXCI/FmWsg9eIRu9IUDLnH+svXIrFKdgr976onbMTJOJE+X1Zb73NsaP3U
+cwMb0iWcIgnPnUuJEAR0jHmrYVFEq6Nw6ZkqoFAYb94R95RiPFDg1aNRa2wroMOEDDsRWECn
+k7PkIC7SP7qz9b6PurNLQEA7ETdAb1Sz5rJioFHpq6OR6W0qoM6GhkvDLAdGwvZIUxvlQGmf
+GZuEuzJESmXYyESMWSnXIX/DVkqOwrSOdRZvsJ6TyZ5dWOEf+LzmQC43N+BSTcjp6N1ULVfM
+hQlecOjOjZQFqRCEytQYlRh53Ws+fAlWK34d3Fk3JuAt4P2sIIRwDuf3cAgrVf/yQT/Zsf3u
+k/osawwqcu4x0jpO8E0yK7IcQeglzHy/Ap09YYV2a2AotbWOVQls7O32eLSK9rJYLsxRbcbT
+fpsODcfYMBaNnPJDit9TYcTl6iJK6qyfOljRlEbf5vqF+dODu+XU5j156sgM6Q8iXMHe+XlL
+CuLMD9N7ktVvqqFstAWpzE4/S7fXbIHwVGJ2eaS9irEiLJ+KZFQUIK/IRISgM2KuhijFIn2Y
+yArlWvSgwYuFRQETVMj+zdAY5mFOaFag1snXHi69PkerPdnfLQkI+WGX6VURo1fiuWRx27wu
+MNUzG0W48sIPnwqJVQaN6AoJ6zItKUVo9Uy4RdGtTB+Q4tncsQKwHiXrMggpReT1TKlF0TVM
+H2vi2Wl4An31zEdy6lCqTl2/5/3t/9/KlQqW7LG+RIs5rC/h3lOh491oWi/gyvB4vb11E+fm
+nhopG6gdx4K7kAt8jN/zvCjrlbbeptY//fPd42/jL9RD32asNUkvf3SkUr+n/JhOnfUUbp/v
+bp9mbp+obp/Kbp8sbp8cbp+kbp92bp/9itqyCmSDAQlCwi2byshbHikiAdB6JKdb9HpagRpH
+HSmmm6YUqRyV3JY+pTXb2da0po2pL5xbiOM4AJ7ZSHB0rG+iCvvF4cyeFV4cBH7a/2d6lx0s
+Nm5XxEJWN5ebxs3lPd0CfYhOTJPxvjUQ+CHeATudCafXfGttt8FFdCO6jAdaJpkvFExikCll
+EZ95Cuz7G0w0rjmJCJs8oZl+cx9BxDGLXP6RqHgXyQu+J4wT3FhcjH4SHgx96H5P5ObsdtGa
+ywNSx5sonfn7LHnrng==
+
+/

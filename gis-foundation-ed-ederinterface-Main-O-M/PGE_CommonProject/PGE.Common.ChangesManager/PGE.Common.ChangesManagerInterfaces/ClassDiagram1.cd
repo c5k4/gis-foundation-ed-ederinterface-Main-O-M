@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.Common.ChangesManagerShared.AdoOleDbConnection" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABEEAAAgAAAQGAQABAAAAIAAACAAAAACAAAAAAAA=</HashCode>
+      <FileName>AdoOleDbConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.ChangesManagerShared.AdoOracleConnection" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABEFAQAAAAAQCAQABAAAAIAAACAABAAAAAAAAAAA=</HashCode>
+      <FileName>AdoOracleConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.ChangesManagerShared.ChangeDetectionVersionInfo" Collapsed="true">
+    <Position X="7" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAABAAAAAAAAAAAAEAAAAAAEAAAAAAAAAAQAQ=</HashCode>
+      <FileName>ChangeDetectionVersionInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.ChangesManagerShared.ChangeDictionariesList" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAMAAAAAIAAAAAIACAAgAAIAwAAIAAAAAAAgAAAIQ=</HashCode>
+      <FileName>ChangeDictionariesList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.ChangesManagerShared.ChangeDictionary" Collapsed="true">
+    <Position X="7" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>MAIAAgEAgCAEAAAGDBgABBAIABQACAAADAEAAAAAAAA=</HashCode>
+      <FileName>ChangeDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.ChangesManagerShared.ChangeRow" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAEAEAAAAAAAAAAEAAIAAAAAAAAAAAAQ=</HashCode>
+      <FileName>ChangeRow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.ChangesManagerShared.ChangeTable" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAIACAAAAAAAAECEDAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>ChangeTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.ChangesManagerShared.ErrorCodeException" Collapsed="true">
+    <Position X="3.5" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>ErrorCodeException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.ChangesManagerShared.Extensions" Collapsed="true">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAACAAAAAAAAIAAIACAYAAAQAAAAAAABgACAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.ChangesManagerShared.StringExtension" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.ChangesManagerShared.FeatureClassChangeRestrictions" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FeatureClassChangeRestrictions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.ChangesManagerShared.OleDbWorkspaceConnection" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QAQAAAAAAAhAAAACAAAAAAAAIAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>OleDbWorkspaceConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.ChangesManagerShared.SchemaRestrictor" Collapsed="true">
+    <Position X="3.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAACCAAAAAAAAAIAAAIEAAAABAAAAAAAA=</HashCode>
+      <FileName>SchemaRestrictor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.ChangesManagerShared.SDEWorkspaceConnection" Collapsed="true">
+    <Position X="7" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAQAAAAgAAhAAACCBAAAAAAAIAAAAAAAAAgAAAAAgAA=</HashCode>
+      <FileName>SDEWorkspaceConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Framework.EncryptionFacade" Collapsed="true">
+    <Position X="4.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EncryptionFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Framework.PasswordEncryption" Collapsed="true">
+    <Position X="2" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAgAEAAAAAAAAAQAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>EncryptionFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.ChangesManagerShared.Utilities.AOHelper" Collapsed="true">
+    <Position X="1.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAAAQAAAAgAAEAAAAAAEAAIAEACAAAACAAAAAAAAA=</HashCode>
+      <FileName>Utilities\AOHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="PGE.Common.ChangesManagerShared.Interfaces.IChangeDetector" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIACAAAAgAAAAAAAAAAAAAkAAAAA=</HashCode>
+      <FileName>Interfaces\IChangeDetector.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PGE.Common.ChangesManagerShared.Interfaces.IChangeSubscriber" Collapsed="true">
+    <Position X="2.25" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IChangeSubscriber.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PGE.Common.ChangesManagerShared.Interfaces.IExtractTransformLoad" Collapsed="true">
+    <Position X="4" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IExtractTransformLoad.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="PGE.Common.ChangesManagerShared.ChangeWorkspace" Collapsed="true">
+    <Position X="1.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAQAAAAAAAAACCAAAA=</HashCode>
+      <FileName>ChangeDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Common.ChangesManagerShared.ChangeRowUpdateType" Collapsed="true">
+    <Position X="2.25" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAABAEAAAAAEEAAoAAAAAAAAAAEAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>ChangeRow.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Common.ChangesManagerShared.FilterResultType" Collapsed="true">
+    <Position X="6.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABACCAAAAABBAACAAAAAAAAAAAAAAQAAAAAAAQEAAIQ=</HashCode>
+      <FileName>ChangeTable.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Common.ChangesManagerShared.ChangeRowTypes" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAgAAAAAAAwAAAAAAAAAAAAAAAAAEBACA=</HashCode>
+      <FileName>ChangeTable.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Common.ChangesManagerShared.ErrorCode" Collapsed="true">
+    <Position X="4.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABgQARAAAEAoAAAACAAAAAAAAACAMBAAAAAAAI=</HashCode>
+      <FileName>ErrorCodeException.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

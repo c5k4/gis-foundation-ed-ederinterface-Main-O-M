@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.Desktop.AlgorithmPropertyPages", "PGE.Desktop.AlgorithmPropertyPages\PGE.Desktop.AlgorithmPropertyPages.csproj", "{853D23D2-71DB-437A-A37D-BAB5A159D157}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.Desktop.Algorithms", "PGE.Desktop.Algorithms\PGE.Desktop.Algorithms.csproj", "{B75CDBF2-2996-4962-B3FC-8373D4C8E6D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.Desktop.SchematicsMaintenanceAddin", "PGE.Desktop.SchematicsMaintenanceAddin\PGE.Desktop.SchematicsMaintenanceAddin.csproj", "{5521C9F7-4CE5-4773-9454-1DB3859C8661}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{853D23D2-71DB-437A-A37D-BAB5A159D157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{853D23D2-71DB-437A-A37D-BAB5A159D157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{853D23D2-71DB-437A-A37D-BAB5A159D157}.Debug|x86.ActiveCfg = Debug|x86
+		{853D23D2-71DB-437A-A37D-BAB5A159D157}.Debug|x86.Build.0 = Debug|x86
+		{853D23D2-71DB-437A-A37D-BAB5A159D157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{853D23D2-71DB-437A-A37D-BAB5A159D157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{853D23D2-71DB-437A-A37D-BAB5A159D157}.Release|x86.ActiveCfg = Release|x86
+		{853D23D2-71DB-437A-A37D-BAB5A159D157}.Release|x86.Build.0 = Release|x86
+		{B75CDBF2-2996-4962-B3FC-8373D4C8E6D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B75CDBF2-2996-4962-B3FC-8373D4C8E6D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B75CDBF2-2996-4962-B3FC-8373D4C8E6D0}.Debug|x86.ActiveCfg = Debug|x86
+		{B75CDBF2-2996-4962-B3FC-8373D4C8E6D0}.Debug|x86.Build.0 = Debug|x86
+		{B75CDBF2-2996-4962-B3FC-8373D4C8E6D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B75CDBF2-2996-4962-B3FC-8373D4C8E6D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B75CDBF2-2996-4962-B3FC-8373D4C8E6D0}.Release|x86.ActiveCfg = Release|x86
+		{B75CDBF2-2996-4962-B3FC-8373D4C8E6D0}.Release|x86.Build.0 = Release|x86
+		{5521C9F7-4CE5-4773-9454-1DB3859C8661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5521C9F7-4CE5-4773-9454-1DB3859C8661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5521C9F7-4CE5-4773-9454-1DB3859C8661}.Debug|x86.ActiveCfg = Debug|x86
+		{5521C9F7-4CE5-4773-9454-1DB3859C8661}.Debug|x86.Build.0 = Debug|x86
+		{5521C9F7-4CE5-4773-9454-1DB3859C8661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5521C9F7-4CE5-4773-9454-1DB3859C8661}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5521C9F7-4CE5-4773-9454-1DB3859C8661}.Release|x86.ActiveCfg = Release|x86
+		{5521C9F7-4CE5-4773-9454-1DB3859C8661}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DEB5C25-DD33-4EF5-A3E9-F34700170268}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PGE.Desktop.AlgorithmPropertyPages\\PGE.Desktop.AlgorithmPropertyPages.csproj
+		SccProjectName1 = PGE.Desktop.AlgorithmPropertyPages
+		SccLocalPath1 = PGE.Desktop.AlgorithmPropertyPages
+		SccProjectUniqueName2 = PGE.Desktop.Algorithms\\PGE.Desktop.Algorithms.csproj
+		SccProjectName2 = PGE.Desktop.Algorithms
+		SccLocalPath2 = PGE.Desktop.Algorithms
+		SccProjectUniqueName3 = PGE.Desktop.SchematicsMaintenanceAddin\\PGE.Desktop.SchematicsMaintenanceAddin.csproj
+		SccProjectName3 = PGE.Desktop.SchematicsMaintenanceAddin
+		SccLocalPath3 = PGE.Desktop.SchematicsMaintenanceAddin
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<SymbolNumberRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<FeatureClass>
+
+	<Rule SymbolNumber="56">
+		<And>
+			<Attribute FieldName="STATUS"><Value>0</Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="57">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POTENTIAL"><Value>DP</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="58">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POTENTIAL"><Value>SPL</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="59">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POTENTIAL"><Value>SPR</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="60">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+			<Attribute FieldName="POTENTIAL"><Value>DP</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="61">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+			<Attribute FieldName="POTENTIAL"><Value>SPL</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="62">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+			<Attribute FieldName="POTENTIAL"><Value>SPR</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+
+	<Rule SymbolNumber="63">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>1</Value></Attribute>
+			<Attribute FieldName="AUTOMANUAL"><Value>M</Value></Attribute>
+			<Attribute FieldName="POTENTIAL"><Value>SPL</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+
+	<Rule SymbolNumber="64">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>1</Value></Attribute>
+			<Attribute FieldName="AUTOMANUAL"><Value>M</Value></Attribute>
+			<Attribute FieldName="POTENTIAL"><Value>SPR</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+
+	<Rule SymbolNumber="65">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>2</Value></Attribute>
+			<Attribute FieldName="AUTOMANUAL"><Value>M</Value></Attribute>
+			<Attribute FieldName="POTENTIAL"><Value>SPL</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+
+	<Rule SymbolNumber="66">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>2</Value></Attribute>
+			<Attribute FieldName="AUTOMANUAL"><Value>M</Value></Attribute>
+			<Attribute FieldName="POTENTIAL"><Value>SPR</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+
+	<Rule SymbolNumber="67">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>1</Value></Attribute>
+			<Attribute FieldName="AUTOMANUAL"><Value>A</Value></Attribute>
+			<Attribute FieldName="POTENTIAL"><Value>DP</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+
+	<Rule SymbolNumber="68">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>2</Value></Attribute>
+			<Attribute FieldName="AUTOMANUAL"><Value>A</Value></Attribute>
+			<Attribute FieldName="POTENTIAL"><Value>DP</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+	
+</FeatureClass>
+</SymbolNumberRules>

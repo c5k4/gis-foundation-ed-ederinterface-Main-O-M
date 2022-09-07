@@ -1,0 +1,415 @@
+<?xml version="1.0"?>
+<SymbolNumberRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<FeatureClass>
+ 
+	<Rule SymbolNumber="69">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>0</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT"><Value>0</Value><Value>1</Value><Value>2</Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="70">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>2</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT"><Value>0</Value><Value>1</Value><Value>2</Value></Attribute>
+		</And>
+	</Rule>
+
+	<Rule SymbolNumber="71">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>Y</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="false"><Value>0</Value></Count>
+			</Relationship>
+		</And>
+	</Rule>
+
+	<Rule SymbolNumber="72">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>Y</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count>
+			</Relationship>
+		</And>
+	</Rule>
+
+	<Rule SymbolNumber="73">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>N</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count>
+			</Relationship>
+		</And>
+	</Rule>
+
+	<Rule SymbolNumber="74">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>0</Value></Attribute>
+		</And>
+	</Rule>
+
+	<Rule SymbolNumber="75">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="true"><Value>0</Value></Count>
+			</Relationship>
+		</And>
+	</Rule>
+
+	<Rule SymbolNumber="76">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="false"><Value>0</Value></Count>
+			</Relationship>
+		</And>
+	</Rule>
+
+ 	<Rule SymbolNumber="77">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POLEUSE"><Value>4</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>N</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT"><Value>0</Value><Value>1</Value><Value>2</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="JPNUMBER"><Value></Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>WOOD</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="true"><Value>0</Value></Count><!-- Joint Use IDC NO -->
+			</Relationship>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count><!-- Metered NO -->
+			</Relationship>
+		</And>
+	</Rule>
+
+	<Rule SymbolNumber="78">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POLEUSE"><Value>4</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>N</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT"><Value>0</Value><Value>1</Value><Value>2</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="JPNUMBER" Condition="false"><Value></Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>WOOD</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="true"><Value>0</Value></Count><!-- Joint Use IDC NO -->
+			</Relationship>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count><!-- Metered NO -->
+			</Relationship>
+		</And>
+	</Rule>
+ 
+	<Rule SymbolNumber="79">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POLEUSE"><Value>2</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>N</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT"><Value>0</Value><Value>1</Value><Value>2</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="JPNUMBER" Condition="false"><Value></Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>WOOD</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="false"><Value>0</Value></Count><!-- Joint Use IDC YES -->
+			</Relationship>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count><!-- Metered NO -->
+			</Relationship>
+		</And>
+	</Rule>
+
+ 	<Rule SymbolNumber="80">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POLEUSE"><Value>2</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>N</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT"><Value>0</Value><Value>1</Value><Value>2</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="JPNUMBER"><Value></Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>WOOD</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="true"><Value>0</Value></Count><!-- Joint Use IDC NO -->
+			</Relationship>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count><!-- Metered NO -->
+			</Relationship>
+		</And>
+	</Rule>
+
+	<!-- Add 81 this was missing in release 1.3 -->
+ 	<Rule SymbolNumber="81">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POLEUSE"><Value>4</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>N</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT"><Value>0</Value><Value>1</Value><Value>2</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="JPNUMBER" Condition="false"><Value></Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>WOOD</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="false"><Value>0</Value></Count><!-- Joint Use IDC Yes -->
+			</Relationship>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count><!-- Metered NO -->
+			</Relationship>
+		</And>
+	</Rule>
+
+ 	<Rule SymbolNumber="82">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POLEUSE"><Value>4</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>N</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT"><Value>0</Value><Value>1</Value><Value>2</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="JPNUMBER" Condition="false"><Value></Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>WOOD</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="false"><Value>0</Value></Count><!-- Joint Use IDC YES -->
+			</Relationship>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count><!-- Metered NO -->
+			</Relationship>
+		</And>
+	</Rule>
+
+ 	<Rule SymbolNumber="83">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POLEUSE"><Value>4</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>N</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="false"><Value>0</Value></Count><!-- Joint Use IDC YES -->
+			</Relationship>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT" Condition="false"><Value>0</Value><Value>3</Value></Attribute>
+			<Attribute FieldName="JPNUMBER" Condition="false"><Value></Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>WOOD</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count><!-- Metered NO -->
+			</Relationship>
+		</And>
+	</Rule>
+
+	<!--Commenting 83 appears twice with 2 different configuration -->
+ 	<!-- <Rule SymbolNumber="83">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POLEUSE"><Value>4</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>N</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="true"><Value>0</Value></Count>--><!-- Joint Use IDC NO -->
+			<!-- </Relationship>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT"><Value>0</Value><Value>1</Value><Value>2</Value></Attribute>
+			<Attribute FieldName="JPNUMBER"><Value></Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>WOOD</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count>--><!-- Metered NO -->
+			<!-- </Relationship>
+		</And>
+	</Rule>-->
+
+ 	<Rule SymbolNumber="84">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POLEUSE"><Value>4</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>Y</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="true"><Value>0</Value></Count><!-- Joint Use IDC NO -->
+			</Relationship>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT"><Value>0</Value><Value>1</Value><Value>2</Value></Attribute>
+			<Attribute FieldName="JPNUMBER"><Value></Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>WOOD</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count><!-- Metered NO -->
+			</Relationship>
+		</And>
+	</Rule>
+
+ 	<Rule SymbolNumber="85">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POLEUSE"><Value>1</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>N</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="true"><Value>0</Value></Count><!-- Joint Use IDC NO -->
+			</Relationship>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT"><Value>0</Value><Value>1</Value><Value>2</Value></Attribute>
+			<Attribute FieldName="JPNUMBER"><Value></Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>WOOD</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count><!-- Metered NO -->
+			</Relationship>
+		</And>
+	</Rule>
+
+ 	<Rule SymbolNumber="86">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POLEUSE"><Value>1</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>N</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="true"><Value>0</Value></Count><!-- Joint Use IDC NO -->
+			</Relationship>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT"><Value>0</Value><Value>1</Value><Value>2</Value></Attribute>
+			<Attribute FieldName="JPNUMBER"><Value></Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>STEL</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count><!-- Metered NO -->
+			</Relationship>
+		</And>
+	</Rule>
+
+ 	<Rule SymbolNumber="87">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POLEUSE"><Value>1</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>N</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="true"><Value>0</Value></Count><!-- Joint Use IDC NO -->
+			</Relationship>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT"><Value>0</Value><Value>1</Value><Value>2</Value></Attribute>
+			<Attribute FieldName="JPNUMBER"><Value></Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>CNCT</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count><!-- Metered NO -->
+			</Relationship>
+		</And>
+	</Rule>
+
+ 	<Rule SymbolNumber="88">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POLEUSE"><Value>1</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>N</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="true"><Value>0</Value></Count><!-- Joint Use IDC NO -->
+			</Relationship>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT"><Value>0</Value><Value>1</Value><Value>2</Value></Attribute>
+			<Attribute FieldName="JPNUMBER"><Value></Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>WOOD</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count><!-- Metered NO -->
+			</Relationship>
+		</And>
+	</Rule>
+
+ 	<Rule SymbolNumber="89">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POLEUSE"><Value>1</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>N</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="false"><Value>0</Value></Count><!-- Joint Use IDC YES -->
+			</Relationship>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT"><Value>0</Value><Value>1</Value><Value>2</Value></Attribute>
+			<Attribute FieldName="JPNUMBER" Condition="false"><Value></Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>WOOD</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count><!-- Metered NO -->
+			</Relationship>
+		</And>
+	</Rule>
+
+ 	<Rule SymbolNumber="90">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="POLEUSE"><Value>1</Value></Attribute>
+			<Attribute FieldName="CUSTOMEROWNED"><Value>N</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="false"><Value>0</Value></Count><!-- Joint Use IDC YES -->
+			</Relationship>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="JOINTCOUNT"><Value>0</Value><Value>1</Value><Value>2</Value></Attribute>
+			<Attribute FieldName="JPNUMBER" Condition="false"><Value></Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>WOOD</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStruct_PrimaryMeter">
+				<Count Condition="true"><Value>0</Value></Count><!-- Metered NO -->
+			</Relationship>
+		</And>
+	</Rule>
+
+ 	<Rule SymbolNumber="91">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="true"><Value>0</Value></Count><!-- Joint Use IDC NO -->
+			</Relationship>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+ 
+ 	<Rule SymbolNumber="92">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="true"><Value>0</Value></Count><!-- Joint Use IDC NO -->
+			</Relationship>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+
+ 	<Rule SymbolNumber="93">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+			<Or>
+				<Attribute FieldName="POLEUSE"><Value>1</Value></Attribute>
+				<Attribute FieldName="POLEUSE"><Value>5</Value></Attribute>
+			</Or>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="false"><Value>0</Value></Count><!-- Joint Use IDC YES -->
+			</Relationship>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>WOOD</Value></Attribute>
+		</And>
+	</Rule>
+
+ 	<Rule SymbolNumber="94">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+			<Attribute FieldName="POLEUSE"><Value>1</Value></Attribute>
+			<Relationship ClassName="EDGIS.SupportStructure_JointUseAttach">
+				<Count Condition="false"><Value>0</Value></Count><!-- Joint Use IDC YES -->
+			</Relationship>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+			<Attribute FieldName="MATERIAL"><Value>STEL</Value></Attribute>
+		</And>
+	</Rule>
+
+ 	<Rule SymbolNumber="95">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>6</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>5</Value></Attribute>
+		</And>
+	</Rule>
+
+	<Rule SymbolNumber="96">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>7</Value></Attribute>
+			<Attribute FieldName="STATUS"><Value>0</Value></Attribute>
+		</And>
+	</Rule>
+
+	</FeatureClass>
+</SymbolNumberRules>

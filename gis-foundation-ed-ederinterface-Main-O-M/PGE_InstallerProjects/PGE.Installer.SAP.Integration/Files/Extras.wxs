@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="Batch">
+      <Component Id="PGE.Interfaces.SAP.Batch.exe" Directory="SAPAssetSynch" Guid="E265606B-598F-4D23-B300-83000661EE31" >
+        <File Id="PGE.Interfaces.SAP.Batch.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.Interfaces.SAP.Batch.exe"/>
+      </Component>
+
+      <Component Id="SAPBatch.log4net.config" Directory="LoggingConfiguration" Guid="74D69C97-8E7C-4F39-BC20-4653CEAECFFC" Permanent="yes" >
+        <File Id="SAPBatch.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\SAPBatch.log4net.config"/>
+      </Component>
+
+      <Component Id="SAPGDBM.log4net.config" Directory="LoggingConfiguration" Guid="0EA7B2A9-6DAF-40B7-86F6-4569E680766E" Permanent="yes" >
+        <File Id="SAPGDBM.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\SAPGDBM.log4net.config"/>
+      </Component>
+
+      
+      <Component Id="SAPReProcessSAPRecords.log4net.config" Directory="LoggingConfiguration" Guid="D4171B40-8F51-42A8-8D5F-46ED575594C2" Permanent="yes" >
+        <File Id="SAPReProcessSAPRecords.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\SAPReProcessSAPRecords.log4net.config"/>
+      </Component>
+
+      <Component Id="PGE.Interfaces.SAP.Batch.exe.config" Directory="SAPAssetSynch" Guid="508AA311-FCF0-4031-979E-E0E935F63E28" Permanent="yes" >
+        <File Id="PGE.Interfaces.SAP.Batch.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.Interfaces.SAP.Batch.exe.config"/>
+      </Component>
+
+      <Component Id="PGE.Interfaces.Settings.exe" Directory="SAPAssetSynch" Guid="175725A6-09B4-4F3F-AD33-9AE4BD73E264" >
+        <File Id="PGE.Interfaces.Settings.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.Interfaces.Settings.exe"/>
+      </Component>
+
+      <Component Id="PGE.Interfaces.Settings.exe.config" Directory="SAPAssetSynch" Guid="920A8CF2-0659-43F2-8FC5-5B2B83046AAF" Permanent="yes" >
+        <File Id="PGE.Interfaces.Settings.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.Interfaces.Settings.exe.config"/>
+      </Component>
+
+      <Component Id="PGE.Interfaces.Settings.log4net.config" Directory="LoggingConfiguration" Guid="26182A76-9B0F-460E-808A-1C69B456F7F6" Permanent="yes" >
+        <File Id="PGE.Interfaces.Settings.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.Interfaces.Settings.log4net.config"/>
+      </Component>
+
+      <Component Id="PGE.BatchApplication.GUIDCsvToResyncTable.exe" Directory="SAPAssetSynch" Guid="C22A353F-E297-4172-ADA6-FB8F7AD1DAD2" >
+        <File Id="PGE.BatchApplication.GUIDCsvToResyncTable.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.BatchApplication.GUIDCsvToResyncTable.exe"/>
+      </Component>
+
+      <Component Id="PGE.BatchApplication.ReProcessSAPRecords.exe" Directory="SAPAssetSynch" Guid="88C9323A-E484-414E-960E-A0D7A7E0A2F0" >
+        <File Id="PGE.BatchApplication.ReProcessSAPRecords.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.BatchApplication.ReProcessSAPRecords.exe"/>
+      </Component>
+
+      <Component Id="PGE.BatchApplication.ReProcessSAPRecords.exe.config" Directory="SAPAssetSynch" Guid="5619861B-2A8D-427E-846D-A77B5F91B149" Permanent="yes" >
+        <File Id="PGE.BatchApplication.ReProcessSAPRecords.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.BatchApplication.ReProcessSAPRecords.exe.config"/>
+      </Component>
+
+      <Component Id="PGE.BatchApplication.GUIDCsvToResyncTable.exe.config" Directory="SAPAssetSynch" Guid="29D94E8E-8709-4C06-B683-CCCA4061A9BF" Permanent="yes" >
+        <File Id="PGE.BatchApplication.GUIDCsvToResyncTable.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.BatchApplication.GUIDCsvToResyncTable.exe.config"/>
+      </Component>
+
+      <Component Id="PGE.Interfaces.SAP.ED06.Batch.exe" Directory="SAPAssetSynch" Guid="37E4B9FA-0304-4254-91B5-4E497EB4B604" Permanent="yes" >
+        <File Id="PGE.Interfaces.SAP.ED06.Batch.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.Interfaces.SAP.ED06.Batch.exe"/>
+      </Component>
+      <Component Id="PGE.Interfaces.SAP.ED06.Batch.log4net.config" Directory="SAPAssetSynch" Guid="37E4B9FA-0304-4254-91B5-4E497EB4B606" Permanent="yes" >
+        <File Id="PGE.Interfaces.SAP.ED06.Batch.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.Interfaces.SAP.ED06.Batch.log4net.config"/>
+      </Component>
+      <Component Id="PGE.Interfaces.SAP.ED06.Batch.exe.config" Directory="SAPAssetSynch" Guid="37E4B9FA-0304-4254-91B5-4E497EB4B607" Permanent="yes" >
+        <File Id="PGE.Interfaces.SAP.ED06.Batch.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.Interfaces.SAP.ED06.Batch.exe.config"/>
+      </Component>
+
+      <Component Id="PGE.Interfaces.SAP.dll" Directory="SAPAssetSynch" Guid="72CFCE07-6615-4A83-A444-AA49D82CF8D5" Permanent="yes" >
+        <File Id="PGE.Interfaces.SAP.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.Interfaces.SAP.dll"/>
+      </Component>
+
+
+      <Component Id="PGE.Interfaces.SAP.dll.config" Directory="SAPAssetSynch" Guid="6898FC41-5C15-45E2-A56B-A4E4BE88990E" Permanent="yes" >
+        <File Id="PGE.Interfaces.SAP.dll.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.Interfaces.SAP.dll.config"/>
+      </Component>
+      <Component Id="PGE.Interfaces.Integration.Framework.dll" Directory="SAPAssetSynch" Guid="744C6054-0AA9-46D7-A0A2-0145F9D696D0" Permanent="yes" >
+        <File Id="PGE.Interfaces.Integration.Framework.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.Interfaces.Integration.Framework.dll"/>
+      </Component>
+
+    </ComponentGroup>
+
+    <!--  TestApp needs too many files to be standalone, ignore for now
+    <ComponentGroup Id="TestApp">
+
+	  
+	   <Component Id="PGE.Interfaces.SAP.TestApp.exe" Directory="SAPAssetSynch" Guid="27B13CC6-AA4E-4844-9BCD-28BA5D982891" >
+        <File Id="PGE.Interfaces.SAP.TestApp.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.Interfaces.SAP.TestApp.exe"/>
+      </Component>
+      
+      <Component Id="PGE.Interfaces.SAP.TestApp.exe.config" Directory="SAPAssetSynch" Guid="95121B44-7EF2-492E-8C3B-D6BAB0808F0E" >
+        <File Id="PGE.Interfaces.SAP.TestApp.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.Interfaces.SAP.TestApp.exe.config"/>
+      </Component>
+
+      
+
+
+    </ComponentGroup>
+    -->
+  </Fragment>
+</Wix>

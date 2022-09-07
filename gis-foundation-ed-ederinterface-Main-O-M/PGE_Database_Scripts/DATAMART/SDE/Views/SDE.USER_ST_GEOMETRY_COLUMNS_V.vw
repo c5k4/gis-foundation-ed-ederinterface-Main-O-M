@@ -1,0 +1,32 @@
+Prompt drop View USER_ST_GEOMETRY_COLUMNS_V;
+DROP VIEW SDE.USER_ST_GEOMETRY_COLUMNS_V
+/
+
+/* Formatted on 7/2/2019 01:17:56 PM (QP5 v5.313) */
+PROMPT View USER_ST_GEOMETRY_COLUMNS_V;
+--
+-- USER_ST_GEOMETRY_COLUMNS_V  (View)
+--
+
+CREATE OR REPLACE FORCE VIEW SDE.USER_ST_GEOMETRY_COLUMNS_V
+(
+    TABLE_NAME,
+    COLUMN_NAME,
+    GEOMETRY_TYPE,
+    PROPERTIES,
+    SRID
+)
+AS
+    SELECT table_name,
+           column_name,
+           geometry_type,
+           properties,
+           srid
+      FROM SDE.st_geometry_columns
+     WHERE owner IN (SELECT USER FROM DUAL)
+/
+
+
+Prompt Grants on VIEW USER_ST_GEOMETRY_COLUMNS_V TO PUBLIC to PUBLIC;
+GRANT DELETE, INSERT, SELECT, UPDATE ON SDE.USER_ST_GEOMETRY_COLUMNS_V TO PUBLIC
+/

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Template for installing COM and non-GAC Dlls
+Required Parameters:
+Filename - Defines the name of the file to be installed, does not include the extension.
+FilenameUpper - The name of the file in uppper case to support global variables.
+ClientName - Used to define where the client registry key should reside.
+Directory - Defines where the file will be installed.
+GUID - Guid for the component to be installed.
+DoNotCOMRegister - Define this to disable COM registration for the next include.
+
+Template:
+<?define Filename="AssemblyName"?>
+<?define FilenameUpper="UppercaseFilename"?>
+<?define ClientName="CustomerName"?>
+<?define Directory="DirectoryName"?>
+
+<?define ActionKey="UniqueIdentifier"?>
+
+Optional properties:
+<?define DoNotCOMRegister?> 
+<?define OutputPath="OutputDirectoryPath"?> Default: "..\output\Assemblies\"
+<?define Product="[Engine/Desktop]"?> Default: Desktop
+<?define ESRIRegAsmCAPath="PathtoEsriRegAsmCA.dll"?>  Default: "..\Externals\CustomActions\ESRIRegAsmCustomAction.CA.dll"
+<?include InstallAssembly10.wxi?>
+
+-->
+
+<?ifndef ESRIRegAsmCAPath?>
+  <?define ESRIRegAsmCAPath="..\Externals\CustomActions\ESRIRegAsmCustomAction.CA.dll"?>
+<?endif?>
+<?ifndef OutputPath?>
+  <?define OutputPath="..\output\Assemblies\"?>
+<?endif?>
+<?ifndef Product?>
+  <?define Product="Desktop"?>
+<?endif?>
+
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="$(var.Filename).dll">
+      <ComponentRef Id="$(var.Filename)"/>
+      <ComponentRef Id="$(var.Filename)Pdb"/>
+      <!--<ComponentRef Id="$(var.Filename)GAC"/>-->
+    </ComponentGroup>
+
+
+    <!--Check for installed versions-->
+    <Property Id="$(var.Filename).Version" Value="!(bind.FileVersion.$(var.Filename).dll)"/>
+    <Property Id="$(var.FilenameUpper)VERSION" Value="!(bind.FileVersion.$(var.Filename).dll)">
+      <RegistrySearch Id="$(var.Filename)Version" Root="HKLM" Key="Software\Miner and Miner\$(var.ClientName)\Assemblies" Type="raw" Name="$(var.Filename)Version" />
+    </Property>
+    <Condition Message="A differing version of the $(var.Filename).dll was found: this installer contains [$(var.Filename).Version] version [$(var.FilenameUpper)VERSION] is installed.">
+      <![CDATA[$(var.Filename).Version = $(var.FilenameUpper)VERSION]]>
+    </Condition>
+
+    <DirectoryRef Id="$(var.Directory)">
+      <Component Id="$(var.Filename)" SharedDllRefCount="yes" Guid="*">
+        <!--Install dll to the target directory.-->
+        <File Id="$(var.Filename).dll" Source="$(var.OutputPath)$(var.Filename).dll" KeyPath="yes"/>      
+        
+        <!-- Registry Entries -->
+        <RegistryKey Id="$(var.Filename)Shared"
+            Root="HKLM"
+            Key="Software\Miner and Miner\$(var.ClientName)\Assemblies"
+            Action="create" >
+
+          <RegistryValue Id="$(var.Filename)Version"
+                  Name="$(var.Filename)Version"
+                  Action="write"
+                  Type="string"
+                  Value="!(bind.FileVersion.$(var.Filename).dll)"/>
+        </RegistryKey>
+      </Component>
+      <Component Id="$(var.Filename)Pdb" SharedDllRefCount="yes" Guid="*">
+        <File Id="$(var.Filename).pdb"  Source="$(var.OutputPath)\$(var.Filename).pdb" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    <!--<DirectoryRef Id="GAC">
+      <Component Id="$(var.Filename)GAC" SharedDllRefCount="yes" Guid="*">
+        <File Id="$(var.Filename).dllGAC" Source="$(var.OutputPath)\$(var.Filename).dll" Assembly=".net" KeyPath="yes"/>
+
+      </Component>
+    </DirectoryRef>-->
+
+    <?ifndef DoNotCOMRegister?>
+    <CustomAction Id="ESRIRegAsmList$(var.Filename).SetProperty"
+         Property="ESRIREGASMLIST"
+         Value="[ESRIREGASMLIST];[$(var.Directory)]\$(var.Filename).dll|$(var.Product)"
+         Return='check'/>
+
+    <InstallExecuteSequence>
+      <!--Add to ESRIRegAsmList if any of the following conditions are met.
+      Removing Local Component: (?$(var.Filename)=3 AND $$$(var.Filename)=2)
+      Removing Source Component: (?$(var.Filename)=4 AND $$$(var.Filename)=2)
+      Installing Component as Local: (?$(var.Filename)=2 AND $$$(var.Filename)=3)
+      Installing Component as Source: (?$(var.Filename)=2 AND $$$(var.Filename)=4)
+      Reinstalling already installed local Component: (?$(var.Filename)=3 AND REINSTALL)
+      Reinstalling already installed source Component: (?$(var.Filename)=4 AND REINSTALL)-->
+      <Custom Action="ESRIRegAsmList$(var.Filename).SetProperty" After="ProcessComponents"><![CDATA[(?$(var.Filename)=2 AND $$$(var.Filename)=3) OR (?$(var.Filename)=3 AND $$$(var.Filename)=2) OR (?$(var.Filename)=3 AND REINSTALL)]]></Custom>  
+    </InstallExecuteSequence>
+    <?endif?>
+
+    <!--Custom actions are defined in ESRIRegAsm10.wxi that should be included somewhere one time, typically in the Shared wixproj-->
+    <CustomActionRef Id="ESRIRegAsmInstall"/>
+
+    <?undef Filename?>
+    <?undef FilenameUpper?>
+    
+    <?ifdef DoNotCOMRegister?>
+      <?undef DoNotCOMRegister?>
+    <?endif?>
+    
+  </Fragment>
+</Include>

@@ -1,0 +1,690 @@
+--- Based on v3.9.5 mapping document
+--------------------------------------------------------
+--  DDL for Table DEVICE
+--------------------------------------------------------
+  DROP TABLE DEVICE;
+  CREATE TABLE DEVICE 
+   (DNAME VARCHAR2(45), 
+	DFPOS VARCHAR2(40), 
+	LI_KEY VARCHAR2(40), 
+	LINE_END NUMBER(3,0), 
+	XD_1 NUMBER(12,0), 
+	XD_2 NUMBER(12,0), 
+	YD_1 NUMBER(12,0), 
+	YD_2 NUMBER(12,0), 
+	DEVICESIZE NUMBER(12,2), 
+	STATE NUMBER(3,0), 
+	DESCRIPTIVE_LOC VARCHAR2(255), 
+	LTH_1 NUMBER(5,0), 
+	LTH_2 NUMBER(5,0), 
+	FUZESIZE NUMBER(6,2), 
+	LATITUDE NUMBER(11,7), 
+	LONGITUDE NUMBER(11,7), 
+	FEATURE_CLASS VARCHAR2(50), 
+	FC_SUB_TYPE VARCHAR2(50), 
+	LOCAL_OFFICE VARCHAR2(4), 
+	GUID VARCHAR2(38), 
+	SUBSTATION_OBJ_IDC VARCHAR2(1), 
+	FDR_SUB_ID NUMBER(10,0), 
+	INSTALLATION_TYPE VARCHAR2(20), 
+	DEVICE_TYPE VARCHAR2(50), 
+	SUPERVISORY_CONTROL_IDC VARCHAR2(7), 
+	CONTROL_TYPE VARCHAR2(20), 
+	SECTIONALIZER_CUTOUT_IDC VARCHAR2(14), 
+	LINK_TYPE VARCHAR2(50), 
+	SWITCH_TYPE VARCHAR2(50), 
+	SECTIONALIZING_FEATURE VARCHAR2(20), 
+	ATTACHMENT_TYPE VARCHAR2(30), 
+	COMPLEX_DEVICE_IDC VARCHAR2(3), 
+	RATED_KVA NUMBER(10,0), 
+	OPERATING_VOLTAGE VARCHAR2(10), 
+	OUTPUT_VOLTAGE VARCHAR2(10), 
+	RATED_AMPS VARCHAR2(14), 
+	DIRECTION VARCHAR2(50), 
+	UNIT_COUNT NUMBER(1,0), 
+	FLISR_IDC VARCHAR2(14), 
+	MULTI_FUNCTIONAL_IDC VARCHAR2(14), 
+	OPERATING_AS VARCHAR2(50), 
+	RECLOSE_BLOCKING_IDC VARCHAR2(14), 
+	RECLOSING_CAPABILITY_IDC VARCHAR2(14), 
+	TIE_SWITCH_IDC VARCHAR2(14), 
+	ATO_IDC VARCHAR2(3), 
+	GANG_OPERATED_IDC VARCHAR2(14), 
+	FUSES_PER_PHASE NUMBER(1,0), 
+	BYPASS_SWITCH_IDC VARCHAR2(14), 
+	NORMAL_POSITION_A VARCHAR2(20), 
+	NORMAL_POSITION_B VARCHAR2(20), 
+	NORMAL_POSITION_C VARCHAR2(20), 
+	PHASE_DESIGNATION VARCHAR2(3), 
+	COMMENTS VARCHAR2(255), 
+	ZIP VARCHAR2(10), 
+	CITY VARCHAR2(40), 
+	CEDSADEVICEID VARCHAR2(15), 
+	AUTO_BOOSTER_IDC VARCHAR2(14), 
+	AUTO_MANUAL_IDC VARCHAR2(14), 
+	VAULT VARCHAR2(6), 
+	BOOST_PERCENT VARCHAR2(7), 
+	BUCK_PERCENT VARCHAR2(7), 
+	REVERSE_POWER_FLOW_IDC VARCHAR2(3), 
+	DEVICE_GROUP_ID VARCHAR2(38), 
+	DEVICE_GROUP_DESC VARCHAR2(100), 
+	HOT_STICK_OPERABLE_IDC VARCHAR2(7), 
+	RACKEDIN_IDC VARCHAR2(7), 
+	RACKED_IDC VARCHAR2(7), 
+	METAL_CLAD_IDC VARCHAR2(7), 
+	OPERATING_MECHANISM VARCHAR2(50), 
+	OPERATING_TYPE VARCHAR2(50), 
+	SWITCH_USE VARCHAR2(50), 
+	INTERLOCK_IDC VARCHAR2(7), 
+	HIGH_SIDE_VOLTAGE number(38,8), 
+	LOW_SIDE_VOLTAGE number(38,8), 
+	TERTIARY_VOLTAGE number(38,8), 
+	COASTAL_IDC VARCHAR2(3),
+	--release 2
+	INSTALLATION_DATE	varchar2(20),
+	INST_JOB_NO	varchar2(20),
+	INST_JOB_PREFIX	varchar2(20),
+	INST_JOB_YEAR	varchar2(20),
+	MANUFACTURER	varchar2(50),
+	MANUFACTURED_DATE	varchar2(20),
+	SERIAL_NO	varchar2(50),
+	AREA_SERVED	varchar2(300),
+	BYPASS_PLANS	varchar2(255),
+	FLIP_FLOP	varchar2(3),
+	LOCKOUT_NO	varchar2(20),
+	PHASES	varchar2(1),
+	BYPASS_OK	varchar2(3),
+	SWITCH_CLASS	varchar2(20),
+	PC_MIN_TO_CT	varchar2(20),
+	BYPASS_POSITION	varchar2(20),
+	HIGH_SIDE_CONFIG	varchar2(30),
+	CONNECTION_CODE	varchar2(50),
+	STEP_UP_IDC	varchar2(3),
+	AUTO_TRANSFER_IDC	varchar2(7),
+	--release 3
+	MAX_CONTINUOUS_CURRENT	varchar2(20),
+	MAXINTERRUPTING_CURRENT	varchar2(20),
+	INTERRUPTING_MECHANISM	varchar2(20),
+	INTERRUPTING_MEDIUM	varchar2(10),
+	FUTURE_IDC	varchar2(7),
+	CELL	number(5,0),
+	INDUCTANCE	number(38,8),
+	REACTANCE_OHMS	number(38,8),
+	REGULATOR_TYPE	varchar2(20),
+	AUTO_TX_BANK_IDC	varchar2(7),
+	LOW_SIDE_CONFIG	varchar2(20),
+	LTC_IDC	varchar2(7),
+	SPARE_AVAILABILITY_IDC	varchar2(7),
+	TEMPERATURE_RISE	varchar2(10),
+	TERTIARY_CONFIG	varchar2(20),
+	TERTIARY_IDC	varchar2(7),
+	TERTIARY_MVA_PERCENT	number(10,0),
+	TERTIARY_MVA	varchar2(20),
+	SUMMER_EMERG_KVA	number(38,8),
+	SUMMER_NORM_KVA	number(38,8),
+	WINTER_EMER_KVA	number(38,8),
+	WINTER_NORM_KVA	number(38,8),
+	RATING_CLASS	varchar2(20),
+	NUM_TAPS	number(10,0),
+	PT_RATIO	number(38,8),
+	CONNECTED_RATIO	varchar2(255),
+	HYPER_LINK	varchar2(255),
+        -- Mapping Doc 3.9.9
+	CUSTOMER_OWNED_IDC	varchar2(20),
+	OPERATING_NUMBER2	varchar2(40),
+	DISTRICT	varchar2(20),
+	REPLACE_GUID	varchar2(38),
+	STRUCTURE_GUID	varchar2(38),
+	SSD	varchar2(20),
+	GEMS_CIRCUIT_MAP	varchar2(20),
+	GEMS_DIST_MAP	varchar2(20),	
+	PHASING_VERIFIED	varchar2(30)
+  ) ;
+--------------------------------------------------------
+--  DDL for Table CAPACITOR
+--------------------------------------------------------
+  DROP TABLE CAPACITOR;
+  CREATE TABLE CAPACITOR 
+   (CANAME VARCHAR2(40), 
+	CAFPOS VARCHAR2(40), 
+	NO_KEY VARCHAR2(40), 
+	RATING_1 VARCHAR2(20), 
+	RATING_2 NUMBER(8,2), 
+	RATING_3 NUMBER(8,2), 
+	RATING_4 NUMBER(8,2), 
+	DESCRIPTIVE_LOC VARCHAR2(100), 
+	PH3PRES NUMBER(3,0), 
+	STATE NUMBER(3,0), 
+	REGULATING NUMBER(1,0), 
+	FEATURE_CLASS VARCHAR2(50), 
+	FC_SUB_TYPE VARCHAR2(50), 
+	GUID VARCHAR2(38), 
+	LOCAL_OFFICE VARCHAR2(4), 
+	SUPERVISORY_CONTROL_IDC VARCHAR2(7), 
+	SUBSTATION_OBJ_IDC VARCHAR2(1), 
+	FDR_SUB_ID VARCHAR2(15), 
+	INSTALLATION_TYPE VARCHAR2(20), 
+	ZIP VARCHAR2(10), 
+	CITY VARCHAR2(30), 
+	COMMENTS VARCHAR2(255), 
+	PHASE_DESIGNATION VARCHAR2(3), 
+	CEDSADEVICEID VARCHAR2(15), 
+	CONTROLLER_TYPE VARCHAR2(50), 
+	COMPLEX_DEVICE_IDC VARCHAR2(3), 
+	SERIES_IMPEDENCE NUMBER(38,8), 
+	DEVICE_GROUP_ID VARCHAR2(38), 
+	DEVICE_GROUP_DESC VARCHAR2(100), 
+	SWITCH_TYPE VARCHAR2(50), 
+	SWITCH_POSITION VARCHAR2(20), 
+	FUSED VARCHAR2(7), 
+	SEASON VARCHAR2(7), 
+	GANG_OPERATED_IDC VARCHAR2(14),
+	-- release 2
+	UNIT_COUNT	VARCHAR2(2),
+	INSTALLATION_DATE	varchar2(20),
+	INST_JOB_NO	varchar2(20),
+	INST_JOB_PREFIX	varchar2(3),
+	INST_JOB_YEAR	varchar2(4),
+	MANUFACTURER	varchar2(30),
+	MANUFACTURED_DATE	varchar2(5),
+	SERIAL_NO	varchar2(30),
+	PHASES	varchar2(1),
+	OPERATING_VOLTAGE	varchar2(10),
+	SWITCHED_SENSOR_IDC	varchar2(3),
+	--release 3
+	ONLINE_STATUS	varchar2(10),
+        -- Mapping Doc 3.9.9
+        FLISR_IDC	varchar2(20),
+	CUSTOMER_OWNED_IDC	varchar2(20),
+	OPERATING_NUMBER2	varchar2(20),
+	DISTRICT	varchar2(20),
+	REPLACE_GUID	varchar2(38),
+	STRUCTURE_GUID	varchar2(38),
+	SSD	varchar2(20),
+	GEMS_CIRCUIT_MAP	varchar2(20),
+	GEMS_DIST_MAP	varchar2(20)
+  ) ;
+--------------------------------------------------------
+--  DDL for Table LINE
+--------------------------------------------------------
+  DROP TABLE LINE;
+  CREATE TABLE LINE 
+   (FPOS VARCHAR2(40), 
+	NO_KEY_1 VARCHAR2(40), 
+	NO_KEY_2 VARCHAR2(40), 
+	LENGTH NUMBER(10,3), 
+	STATE NUMBER(3,0), 
+	FEATURE_CLASS VARCHAR2(50), 
+	FC_SUB_TYPE VARCHAR2(50), 
+	LOCAL_OFFICE VARCHAR2(4), 
+	CEDSALINESECTIONID VARCHAR2(10), 
+	MATERIAL VARCHAR2(30), 
+	CONDUCTOR_SIZE VARCHAR2(10), 
+	CONDUCTOR_TYPE VARCHAR2(30), 
+	PGE_CONDUCTOR_CODE VARCHAR2(50), 
+	INSULATION VARCHAR2(75), 
+	OPERATING_VOLTAGE VARCHAR2(10), 
+	GUID VARCHAR2(38), 
+	FDR_SUB_ID NUMBER(10,0), 
+	PHASE_DESIGNATION VARCHAR2(3), 
+	SUBSTATION_OBJ_IDC VARCHAR2(1), 
+	BUSBAR_USAGE VARCHAR2(20), 
+	BUSBAR_SHAPE VARCHAR2(20), 
+	BUSBAR_NUMBER VARCHAR2(10), 
+	BUSBAR_SECTION VARCHAR2(6), 
+	METAL_CLAD_IDC VARCHAR2(7), 
+	CONDUCTORS_PER_PHASE NUMBER(10,0),
+	--release 3
+	CONDUCTOR_USE	VARCHAR2(40),
+	BUSBAR_SIZE	VARCHAR2(15),
+        -- Mapping Doc 3.9.9
+        PHASING_VERIFIED	varchar2(30),
+	DISTRICT	varchar2(20),
+	REPLACE_GUID	varchar2(38),
+	MAIN_LINE_IDC	varchar2(3),
+	NEUTRAL_IDC	varchar2(3),
+	SERVICE_IDC	varchar2(3),
+	CUSTOMER_OWNED_IDC	varchar2(3),
+	CONSTRUCTIONTYPE	varchar2(20),
+	LABEL_TEXT	varchar2(100),
+	COASTAL_IDC	varchar2(3),
+	CABLE_COUNT	varchar2(10),
+	COMMENTS	varchar2(200)
+  ) ;
+--------------------------------------------------------
+--  DDL for Table LOAD
+--------------------------------------------------------
+  DROP TABLE LOAD;
+  CREATE TABLE LOAD 
+   (LOID VARCHAR2(40), 
+	LONAME VARCHAR2(40), 
+	LOFPOS VARCHAR2(40), 
+	NO_KEY VARCHAR2(40), 
+	RATING_1 VARCHAR2(20), 
+	RATING_2 NUMBER(8,2), 
+	RATING_3 NUMBER(8,2), 
+	RATING_4 NUMBER(8,2), 
+	STATE NUMBER(3,0), 
+	DESCRIPTIVE_LOC VARCHAR2(255), 
+	LATITUDE NUMBER(10,5), 
+	LONGITUDE NUMBER(10,5), 
+	SSD VARCHAR2(40), 
+	FEATURE_CLASS VARCHAR2(50), 
+	FC_SUB_TYPE VARCHAR2(50), 
+	GUID VARCHAR2(38), 
+	DEVICE_GROUP_ID VARCHAR2(40), 
+	DEVICE_GROUP_DESC VARCHAR2(100), 
+	UNIT_COUNT NUMBER(1,0), 
+	INSTALLATION_TYPE VARCHAR2(20), 
+	INTERRUPTER_IDC VARCHAR2(3), 
+	AUTO_IDC VARCHAR2(3), 
+	PHASE_DESIGNATION VARCHAR2(3), 
+	OPERATING_VOLTAGE VARCHAR2(10), 
+	SUBSTATION_OBJ_IDC VARCHAR2(1), 
+	FDR_SUB_ID NUMBER(10,0), 
+	LOCAL_OFFICE VARCHAR2(4), 
+	CITY VARCHAR2(30), 
+	ZIP VARCHAR2(10), 
+	COMMENTS VARCHAR2(255), 
+	VAULT VARCHAR2(6), 
+	SUPERVISORY_CONTROL_IDC VARCHAR2(7), 
+	COASTAL_IDC VARCHAR2(3),
+	-- release 2
+	MANUFACTURER	varchar2(30),
+	INSTALLATION_DATE	varchar2(20),
+	INST_JOB_NO	varchar2(20),
+	INST_JOB_PREFIX	varchar2(3),
+	INST_JOB_YEAR	varchar2(4),
+	MANUFACTURED_DATE	varchar2(5),
+	SERIAL_NO	varchar2(30),
+	PHASES	varchar2(1),
+	LIVE_FRONT_IDC	varchar2(14),
+	LOAD_BREAK_IDC	varchar2(14),
+	SPOT_IDC	varchar2(3),
+	STABLIZING_BANK_IDC	varchar2(3),
+	GROUNDED_IDC	varchar2(3),
+	TNUM	varchar2(255),
+	--release 3
+	RACKEDIN_IDC	varchar2(7),
+	HIGH_SIDE_VOLTAGE	VARCHAR2(10),
+	LOW_SIDE_VOLTAGE	VARCHAR2(20),
+	--release 4
+	GENERATOR_IDC	VARCHAR2(14),
+	GENERATOR_NAME	VARCHAR2(50),
+	GENERATOR_TYPE	VARCHAR2(3),
+	CUSTOMER_OWNED_IDC	VARCHAR2(14),
+	GENERATOR_KW	VARCHAR2(10),
+	-- Mapping Doc 3.9.9
+	CEDSA_STRUCTURE_ID	varchar2(50),
+	CEDSA_DEVICE_ID		varchar2(50),
+	DISTRICT	varchar2(20),
+	GEMS_CIRCUIT_MAP	varchar2(20),
+	GEMS_DIST_MAP	varchar2(20),
+	PHASING_VERIFIED	varchar2(30),
+	REPLACE_GUID	varchar2(38),
+	SUBWAY_IDC	varchar2(5),
+	STRUCTURE_GUID	varchar2(38),
+	DIST_GEN_IDC	varchar2(5),
+	STRUCTURE_CONV_ID	varchar2(20)
+  ) ;
+--------------------------------------------------------
+--  DDL for Table NODE
+--------------------------------------------------------
+  DROP TABLE NODE;
+  CREATE TABLE NODE 
+   (NFPOS VARCHAR2(40), 
+	XN_1 NUMBER(12,0), 
+	XN_2 NUMBER(12,0), 
+	YN_1 NUMBER(12,0), 
+	YN_2 NUMBER(12,0), 
+	STATE NUMBER(3,0), 
+	SUB_ID NUMBER(10,0), 
+	SITE_KEY VARCHAR2(40), 
+	FEATURE_CLASS VARCHAR2(50), 
+	FC_SUB_TYPE VARCHAR2(50), 
+	GUID VARCHAR2(38), 
+	SUBSTATION_OBJ_IDC VARCHAR2(1), 
+	FDR_SUB_ID NUMBER(10,0), 
+	LOCAL_OFFICE VARCHAR2(4), 
+	DEVICE_GROUP_DESC VARCHAR2(100),
+	SUBSTATION_NAME VARCHAR2(50),
+	-- Mapping Doc 3.9.9
+	DISTRICT	varchar2(20)
+  ) ;
+--------------------------------------------------------
+--  DDL for Table PATH
+--------------------------------------------------------
+  DROP TABLE PATH;
+  CREATE TABLE PATH 
+   (XDIFF NUMBER(12,0), 
+	YDIFF NUMBER(12,0), 
+	ORDER_NUM NUMBER(10,0), 
+	TYPE VARCHAR2(1), 
+	LINE_GUID VARCHAR2(38), 
+	SUBSTATION_OBJ_IDC VARCHAR2(1)
+  ) ;
+--------------------------------------------------------
+--  DDL for Table SITE
+--------------------------------------------------------
+  DROP TABLE SITE;
+  CREATE TABLE SITE 
+   (
+	SIID VARCHAR2(38),
+	SINAME VARCHAR2(40), 
+	SIFPOS VARCHAR2(40), 
+	NO_KEY VARCHAR2(40), 
+	XSITE NUMBER(10,0), 
+	YSITE NUMBER(10,0), 
+	SITEW NUMBER(10,0), 
+	SITEH NUMBER(10,0), 
+	SSITE_ANG NUMBER(3,0), 
+	GXSITE NUMBER(10,0), 
+	GYSITE NUMBER(10,0), 
+	GSITEW NUMBER(10,0), 
+	GSITEH NUMBER(10,0), 
+	GSITE_ANG NUMBER(3,0), 
+	STATE NUMBER(3,0),
+	-- Mapping Doc 3.9.9
+	DEVICE_GROUP_TYPE	varchar2(50),
+	HYPERLINK	varchar2(1000),
+	COMMENTS	varchar2(300),
+	DISTRICT	varchar2(20)
+  ) ;
+--------------------------------------------------------
+--  DDL for Table SOURCE
+--------------------------------------------------------
+  DROP TABLE SOURCE;
+  CREATE TABLE SOURCE 
+   (SONAME VARCHAR2(40), 
+	SOFPOS VARCHAR2(40), 
+	NO_KEY VARCHAR2(40), 
+	STYPE NUMBER(3,0), 
+	STATE NUMBER(3,0), 
+	KWGEN NUMBER(10,0), 
+	POSSEQR NUMBER(38,8), 
+	POSSEQX NUMBER(38,8), 
+	ZEROSEQR NUMBER(38,8), 
+	ZEROSEQX NUMBER(38,8), 
+	NEGSEQX NUMBER(38,8),
+	DISTRICT VARCHAR2(20), 
+	FEATURE_CLASS VARCHAR2(50), 
+	FC_SUB_TYPE VARCHAR2(50), 
+	GUID VARCHAR2(38), 
+	LOCAL_OFFICE VARCHAR2(4), 
+	CEDSADEVICEID VARCHAR2(15), 
+	SUBSTATION_OBJ_IDC VARCHAR2(1), 
+	FDR_SUB_ID NUMBER(10,0), 
+	NOMINAL_VOLTAGE VARCHAR2(10),
+	--release 3
+	MAX_NORMAL_VOLTAGE	NUMBER(38,8),
+	SUBSTATION_NAME	VARCHAR2(40),
+	POT_HEAD_IDC	VARCHAR2(7),
+	SUPERVISORY_CONTROL_IDC	VARCHAR2(7),
+	STITCH_POINT_ID	VARCHAR2(40),
+	-- Mapping Doc 3.9.9
+	GENERATOR_NAME	VARCHAR2(20),
+	GENERATOR_TYPE	VARCHAR2(20),
+	CUSTOMER_OWNED_IDC	VARCHAR2(20),
+	POWER_FACTOR	VARCHAR2(20),
+	COMMENTS	VARCHAR2(200),
+	DESCRIPTIVE_LOC	VARCHAR2(200),
+	ZIP	VARCHAR2(20),
+	CITY	VARCHAR2(20)
+  ) ;
+
+drop table EXPORTED;
+CREATE TABLE EXPORTED 
+(EXPORT_ID VARCHAR2(50) NOT NULL,
+  EXPORT_TYPE VARCHAR2(1) NOT NULL,
+  DATE_PROCESSED DATE,
+  FEATURE_COUNT NUMBER(38,0),
+  STATUS NUMBER(1, 0),
+  MESSAGE VARCHAR2(4000)
+  );
+
+drop table PGE_DMS_PROCESS_LOG;
+
+drop table PGE_DMS_PROCESSES_RUNNING;
+CREATE TABLE PGE_DMS_PROCESSES_RUNNING
+  (SERVERNAME VARCHAR2(100),
+		AVAILABLEPROCESSORS NUMBER(38,0),
+		CIRCUITSPROCESSED NUMBER(38,0),
+		FEATURESPROCESSED NUMBER(38,0),
+		EXPORTEDDATA VARCHAR2(20)
+    );
+
+drop table PGE_DMS_PROCESSES_RUNNING_ARC;
+CREATE TABLE PGE_DMS_PROCESSES_RUNNING_ARC
+  (DATE_DELETED TIMESTAMP DEFAULT systimestamp,
+		SERVERNAME VARCHAR2(100),
+		AVAILABLEPROCESSORS NUMBER(38,0),
+		CIRCUITSPROCESSED NUMBER(38,0),
+		FEATURESPROCESSED NUMBER(38,0),
+		EXPORTEDDATA VARCHAR2(20)
+    );
+
+drop table PGE_DMS_TO_PROCESS;
+CREATE TABLE PGE_DMS_TO_PROCESS
+  (PROCESSORID	VARCHAR2(40),
+		CIRCUITIDS VARCHAR2(300),
+		SUBSTATIONORCIRCUIT VARCHAR2(2),
+		SERVERNAME VARCHAR2(100),
+		BATCHID	VARCHAR2(40),
+		CIRCUITSTATUS NUMBER(1,0),
+		MINUTESTOPROCESS NUMBER(38,1),
+		FEATURESPROCESSED NUMBER(38,0),
+		ERROR VARCHAR2(4000)	
+    );
+
+drop table PGE_DMS_TO_PROCESS_ARC;
+CREATE TABLE PGE_DMS_TO_PROCESS_ARC
+  (DATE_DELETED TIMESTAMP DEFAULT systimestamp,
+		PROCESSORID	VARCHAR2(40),
+		CIRCUITIDS VARCHAR2(300),
+		SUBSTATIONORCIRCUIT VARCHAR2(2),
+		SERVERNAME VARCHAR2(100),
+		BATCHID	VARCHAR2(40),
+		CIRCUITSTATUS NUMBER(1,0),
+		MINUTESTOPROCESS NUMBER(38,1),
+		FEATURESPROCESSED NUMBER(38,0),
+		ERROR VARCHAR2(4000)	
+    );
+
+drop table PGE_DMS_SCHEMATICS_ERRORS;
+CREATE TABLE PGE_DMS_SCHEMATICS_ERRORS
+  (FEATURE_CLASS VARCHAR2(50),
+		OBJECTID VARCHAR2(300),
+		GUID CHAR(38),
+		CIRCUITID VARCHAR2(15),
+		ERROR VARCHAR2(4000)	
+    );
+
+drop table PGE_DMS_SCHEMATICS_ERRORS_ARC;
+CREATE TABLE PGE_DMS_SCHEMATICS_ERRORS_ARC
+  (DATE_ENCOUNTERED TIMESTAMP DEFAULT systimestamp,
+		FEATURE_CLASS VARCHAR2(50),
+		OBJECTID VARCHAR2(300),
+		GUID CHAR(38),
+		CIRCUITID VARCHAR2(15),
+		ERROR VARCHAR2(4000)	
+    );
+
+drop table PGE_DMS_SCHEMATICS_WARNINGS;
+CREATE TABLE PGE_DMS_SCHEMATICS_WARNINGS
+  (FEATURE_CLASS VARCHAR2(50),
+		OBJECTID VARCHAR2(300),
+		GUID CHAR(38),
+		CIRCUITID VARCHAR2(15),
+		WARNING VARCHAR2(4000)	
+    );
+
+drop table PGE_DMS_SCHEMATICS_WARN_ARC;
+CREATE TABLE PGE_DMS_SCHEMATICS_WARN_ARC
+  (DATE_ENCOUNTERED TIMESTAMP DEFAULT systimestamp,
+		FEATURE_CLASS VARCHAR2(50),
+		OBJECTID VARCHAR2(300),
+		GUID CHAR(38),
+		CIRCUITID VARCHAR2(15),
+		WARNING VARCHAR2(4000)	
+    );
+	
+drop table PGE_DMS_FEATURE_ERRORS;
+CREATE TABLE PGE_DMS_FEATURE_ERRORS
+  (FEATURE_CLASS VARCHAR2(50),
+		OBJECTID VARCHAR2(300),
+		CIRCUITID VARCHAR2(15),
+		ERROR VARCHAR2(4000)	
+    );
+
+drop table PGE_DMS_FEATURE_ERRORS_ARC;
+CREATE TABLE PGE_DMS_FEATURE_ERRORS_ARC
+  (DATE_ENCOUNTERED TIMESTAMP DEFAULT systimestamp,
+		FEATURE_CLASS VARCHAR2(50),
+		OBJECTID VARCHAR2(300),
+		CIRCUITID VARCHAR2(15),
+		ERROR VARCHAR2(4000)	
+    );
+
+drop table PGE_DMS_FEATURE_WARNINGS;
+CREATE TABLE PGE_DMS_FEATURE_WARNINGS
+  (FEATURE_CLASS VARCHAR2(50),
+		OBJECTID VARCHAR2(300),
+		CIRCUITID VARCHAR2(15),
+		WARNING VARCHAR2(4000)	
+    );
+
+drop table PGE_DMS_FEATURE_WARNINGS_ARC;
+CREATE TABLE PGE_DMS_FEATURE_WARNINGS_ARC
+  (DATE_ENCOUNTERED TIMESTAMP DEFAULT systimestamp,
+		FEATURE_CLASS VARCHAR2(50),
+		OBJECTID VARCHAR2(300),
+		CIRCUITID VARCHAR2(15),
+		WARNING VARCHAR2(4000)	
+    );
+
+drop table PGE_SUBSTITCH_ELECSTITCH_MAP;
+create table PGE_SUBSTITCH_ELECSTITCH_MAP (
+SUBOID NUMBER,
+ELECOID NUMBER);
+
+drop table xy_device_temp;
+create table xy_device_temp (
+GLOBALID NVARCHAR2(38),
+ X NUMBER,
+ Y NUMBER);
+
+drop table xy_node_temp;
+create table xy_node_temp (
+GLOBALID NVARCHAR2(38),
+ X NUMBER,
+ Y NUMBER);
+
+drop sequence PGE_DMS_PROCESS_LOG_SEQ;
+
+create or replace
+PROCEDURE CLEANUPDMS AS 
+BEGIN
+	INSERT INTO PGE_DMS_PROCESSES_RUNNING_ARC (SERVERNAME,AVAILABLEPROCESSORS,CIRCUITSPROCESSED,FEATURESPROCESSED,EXPORTEDDATA) (SELECT * FROM PGE_DMS_PROCESSES_RUNNING);
+	INSERT INTO PGE_DMS_TO_PROCESS_ARC (PROCESSORID,CIRCUITIDS,SUBSTATIONORCIRCUIT,SERVERNAME,BATCHID,CIRCUITSTATUS,MINUTESTOPROCESS,FEATURESPROCESSED,ERROR) (SELECT * FROM PGE_DMS_TO_PROCESS);
+	INSERT INTO PGE_DMS_SCHEMATICS_ERRORS_ARC (FEATURE_CLASS,OBJECTID,GUID,CIRCUITID,ERROR) (SELECT * FROM PGE_DMS_SCHEMATICS_ERRORS);
+	INSERT INTO PGE_DMS_SCHEMATICS_WARN_ARC (FEATURE_CLASS,OBJECTID,GUID,CIRCUITID,WARNING) (SELECT * FROM PGE_DMS_SCHEMATICS_WARNINGS);
+	INSERT INTO PGE_DMS_FEATURE_ERRORS_ARC (FEATURE_CLASS,OBJECTID,CIRCUITID,ERROR) (SELECT * FROM PGE_DMS_FEATURE_ERRORS);
+	INSERT INTO PGE_DMS_FEATURE_WARNINGS_ARC (FEATURE_CLASS,OBJECTID,CIRCUITID,WARNING) (SELECT * FROM PGE_DMS_FEATURE_WARNINGS);
+	execute immediate 'truncate table dmsstaging.line';
+	execute immediate 'truncate table dmsstaging.path';
+	execute immediate 'truncate table dmsstaging.device';
+	execute immediate 'truncate table dmsstaging.site';
+	execute immediate 'truncate table dmsstaging.capacitor';
+	execute immediate 'truncate table dmsstaging.load';
+	execute immediate 'truncate table dmsstaging.source';
+	execute immediate 'truncate table dmsstaging.node';
+	execute immediate 'truncate table dmsstaging.exported';
+	execute immediate 'truncate table dmsstaging.PGE_DMS_PROCESSES_RUNNING';
+	execute immediate 'truncate table dmsstaging.PGE_DMS_TO_PROCESS';
+	execute immediate 'truncate table dmsstaging.PGE_DMS_FEATURE_ERRORS';
+	execute immediate 'truncate table dmsstaging.PGE_DMS_SCHEMATICS_ERRORS';
+	execute immediate 'truncate table dmsstaging.PGE_DMS_SCHEMATICS_WARNINGS';
+	execute immediate 'truncate table dmsstaging.PGE_DMS_FEATURE_WARNINGS';
+	execute immediate 'truncate table dmsstaging.PGE_SUBSTITCH_ELECSTITCH_MAP';
+	commit;
+END CLEANUPDMS;
+/
+
+create or replace
+PROCEDURE CLEANUPDMSCHANGEDETECTION AS 
+BEGIN
+   delete from edgis.pge_changed_circuit where circuitid in (select circuitids from dmsstaging.pge_dms_to_process where circuitstatus = 1);
+   delete from edgis.pge_changed_substation where substationid in (select circuitids from dmsstaging.pge_dms_to_process where circuitstatus = 1);
+   commit;
+END CLEANUPDMSCHANGEDETECTION ;
+/
+
+create or replace
+PROCEDURE REMOVE_DUPLICATES AS 
+BEGIN
+  DELETE FROM source s where s.feature_class = 'SUBElectricStitchPoint' AND s.sofpos in (select nfpos from node where feature_class = 'ElectricStitchPoint');
+  DELETE FROM node n where n.feature_class = 'SUBElectricStitchPoint' AND n.nfpos in (select nfpos from node where feature_class = 'ElectricStitchPoint');
+  DELETE FROM DEVICE A WHERE a.rowid > ANY (SELECT B.rowid FROM DEVICE B WHERE a.dfpos = b.dfpos); 
+  DELETE FROM NODE A WHERE a.rowid > ANY (SELECT B.rowid FROM NODE B WHERE a.nfpos = b.nfpos);
+  DELETE FROM SITE A WHERE a.rowid > ANY (SELECT B.rowid FROM SITE B WHERE a.sifpos = b.sifpos); 
+  delete from node where feature_class = 'DeviceGroup' and nfpos not in (select no_key from site);		
+END REMOVE_DUPLICATES;
+/
+
+CREATE or replace PROCEDURE UPDATE_SCHEM_XY AS
+sqlstr VARCHAR2(3000);
+BEGIN
+commit;
+END;
+/
+
+grant select,insert,update,delete on DEVICE to GISInterface;
+grant select,insert,update,delete on CAPACITOR to GISInterface;
+grant select,insert,update,delete on LINE to GISInterface;
+grant select,insert,update,delete on LOAD to GISInterface;
+grant select,insert,update,delete on NODE to GISInterface;
+grant select,insert,update,delete on PATH to GISInterface;
+grant select,insert,update,delete on SITE to GISInterface;
+grant select,insert,update,delete on SOURCE to GISInterface;
+grant select,insert,update,delete on EXPORTED to GISInterface;
+grant select,insert,update,delete on PGE_DMS_PROCESSES_RUNNING to GISInterface;
+grant select,insert,update,delete on PGE_DMS_TO_PROCESS to GISInterface;
+grant select,insert,update,delete on PGE_DMS_PROCESSES_RUNNING to GISInterface;
+grant select,insert,update,delete on PGE_DMS_PROCESSES_RUNNING_ARC to GISInterface;
+grant select,insert,update,delete on PGE_DMS_TO_PROCESS to GISInterface;
+grant select,insert,update,delete on PGE_DMS_TO_PROCESS_ARC to GISInterface;
+grant select,insert,update,delete on PGE_DMS_SCHEMATICS_ERRORS to GISInterface;
+grant select,insert,update,delete on PGE_DMS_SCHEMATICS_ERRORS_ARC to GISInterface;
+grant select,insert,update,delete on PGE_DMS_SCHEMATICS_WARNINGS to GISInterface;
+grant select,insert,update,delete on PGE_DMS_SCHEMATICS_WARN_ARC to GISInterface;
+grant select,insert,update,delete on PGE_DMS_FEATURE_ERRORS to GISInterface;
+grant select,insert,update,delete on PGE_DMS_FEATURE_ERRORS_ARC to GISInterface;
+grant select,insert,update,delete on PGE_DMS_FEATURE_WARNINGS to GISInterface;
+grant select,insert,update,delete on PGE_DMS_FEATURE_WARNINGS_ARC to GISInterface;
+grant select,insert,update,delete on PGE_SUBSTITCH_ELECSTITCH_MAP to GISInterface;
+
+grant execute on cleanupdms to GISInterface;
+grant execute on CLEANUPDMSCHANGEDETECTION to GISInterface;
+grant execute on REMOVE_DUPLICATES to GISInterface;
+grant execute on UPDATE_SCHEM_XY to GISInterface;
+
+grant all on UPDATE_SCHEM_XY to public;
+grant all on xy_node_temp to public;
+grant all on xy_device_temp to public;
+grant all on UPDATE_SCHEM_XY to gisinterface;
+grant all on UPDATE_SCHEM_XY to gis_interface;
+grant all on UPDATE_SCHEM_XY to gis_i ;
+grant all on UPDATE_SCHEM_XY to sde_editor ;
+grant all on UPDATE_SCHEM_XY to sde_viewer ;
+
+grant all on xy_node_temp to gisinterface;
+grant all on xy_node_temp to gis_interface;
+grant all on xy_node_temp to gis_i ;
+grant all on xy_node_temp to sde_editor ;
+grant all on xy_node_temp to sde_viewer ;
+
+grant all on xy_device_temp to gisinterface;
+grant all on xy_device_temp to gis_interface;
+grant all on xy_device_temp to gis_i ;
+grant all on xy_device_temp to sde_editor ;
+grant all on xy_device_temp to sde_viewer ;

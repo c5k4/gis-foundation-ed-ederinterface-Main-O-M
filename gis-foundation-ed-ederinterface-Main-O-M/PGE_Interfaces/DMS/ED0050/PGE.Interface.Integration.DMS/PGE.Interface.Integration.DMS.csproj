@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97AA8B67-FC19-4021-9667-39F94FA6E072}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PGE.Interface.Integration.DMS</RootNamespace>
+    <AssemblyName>PGE.Interface.Integration.DMS</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\PGE.Interface.Integration.DMS.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>PGE.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>Output\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.ADF.Local, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.NetworkAnalysis, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Schematic, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Monika\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Miner.Framework.Engine, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL" />
+    <Reference Include="Miner.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Miner.Geodatabase.Engine, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL" />
+    <Reference Include="Miner.Interop.Framework, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Interop.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="PGE.Common.Delivery.Diagnostics, Version=10.8.1.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\Output\Release\PGE.Common.Delivery.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="PGE_DBPasswordManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=820abe4faa45686d, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Miner and Miner\PG&amp;E Custom Components\PGE.PasswordMgmt\PGE_DBPasswordManagement.exe</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="CADOPS.cs" />
+    <Compile Include="Common\CoincidentNode.cs" />
+    <Compile Include="Common\InvalidDataException.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\StaticSites.cs" />
+    <Compile Include="Common\Subtypes.cs" />
+    <Compile Include="Features\Capacitor.cs" />
+    <Compile Include="Features\ServiceLocation.cs" />
+    <Compile Include="Features\Substation\SUBVoltageRegulator.cs" />
+    <Compile Include="Features\Substation\SUBTransformer.cs" />
+    <Compile Include="Features\VoltageRegulator.cs" />
+    <Compile Include="Features\Substation\SubStitchPoint.cs" />
+    <Compile Include="Features\Substation\SubOH.cs" />
+    <Compile Include="Features\Substation\SubUG.cs" />
+    <Compile Include="Features\Substation\SubBusBar.cs" />
+    <Compile Include="Features\Switch.cs" />
+    <Compile Include="Features\DPD.cs" />
+    <Compile Include="Manager\CircuitFinder.cs" />
+    <Compile Include="Common\Configuration.cs" />
+    <Compile Include="Common\DomainManager.cs" />
+    <Compile Include="Common\ExtractorMessage.cs" />
+    <Compile Include="Common\FCID.cs" />
+    <Compile Include="Common\InvalidConfigurationException.cs" />
+    <Compile Include="Common\LicenseInitializer.cs" />
+    <Compile Include="Common\LicenseInitializer.Designer.cs">
+      <DependentUpon>LicenseInitializer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Oracle.cs" />
+    <Compile Include="Common\RelID.cs" />
+    <Compile Include="Common\SiteCoordinates.cs" />
+    <Compile Include="EdgeProcessor.cs" />
+    <Compile Include="Features\PrimaryMeter.cs" />
+    <Compile Include="Features\PrimaryGen.cs" />
+    <Compile Include="Features\Transformer.cs" />
+    <Compile Include="Features\StitchPoint.cs" />
+    <Compile Include="Features\DistrBusBar.cs" />
+    <Compile Include="Features\FeatureValues.cs" />
+    <Compile Include="Features\PrimaryUG.cs" />
+    <Compile Include="Features\IFeatureValues.cs" />
+    <Compile Include="Features\PrimaryOH.cs" />
+    <Compile Include="JunctionProcessor.cs" />
+    <Compile Include="Manager\ControlTable.cs" />
+    <Compile Include="Manager\DataChecks.cs" />
+    <Compile Include="Manager\ExportProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager\ExportProgress.Designer.cs">
+      <DependentUpon>ExportProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\ExtractorManager.cs" />
+    <Compile Include="NAStandalone.cs" />
+    <Compile Include="PolygonProcessor.cs" />
+    <Compile Include="Processors\BaseProcessor.cs" />
+    <Compile Include="Processors\Capacitor.cs" />
+    <Compile Include="Processors\ColumnMapper.cs" />
+    <Compile Include="Processors\Device.cs" />
+    <Compile Include="Processors\FeatureRemover.cs" />
+    <Compile Include="Processors\Load.cs" />
+    <Compile Include="Processors\Site.cs" />
+    <Compile Include="Processors\Source.cs" />
+    <Compile Include="Processors\Line.cs" />
+    <Compile Include="Processors\Node.cs" />
+    <Compile Include="Processors\Path.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchematicExtractor.cs" />
+    <Compile Include="Tracers\ESRITrace.cs" />
+    <Compile Include="Tracers\GenericExportScope.cs" />
+    <Compile Include="Tracers\NADownstreamTrace.cs" />
+    <Compile Include="Utilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cadops.sql" />
+    <Content Include="cadops_schema.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Columns.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="DataChecks.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="dms.sql" />
+    <Content Include="Domains.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EDDomainsmapping.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EDFCIDMapping.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="EDSubtypeMapping.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="staging.sql" />
+    <Content Include="SUBDomainsmapping.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SUBFCIDMapping.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SUBSubtypeMapping.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IntegrationDMSClassDiagram.cd" />
+    <None Include="ED50.log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="Sites.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="spatial.prj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="PGE.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Manager\ExportProgress.resx">
+      <DependentUpon>ExportProgress.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetPath)" "C:\Program Files\Miner and Miner\ArcFM Solution\Bin" /y
+exit 0
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

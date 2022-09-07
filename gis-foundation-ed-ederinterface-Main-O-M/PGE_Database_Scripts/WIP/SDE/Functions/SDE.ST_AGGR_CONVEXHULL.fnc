@@ -1,0 +1,15 @@
+Prompt drop Function ST_AGGR_CONVEXHULL;
+DROP FUNCTION SDE.ST_AGGR_CONVEXHULL
+/
+
+Prompt Function ST_AGGR_CONVEXHULL;
+--
+-- ST_AGGR_CONVEXHULL  (Function) 
+--
+CREATE OR REPLACE FUNCTION SDE.st_aggr_convexhull (input SDE.st_geometry) return SDE.st_geometry AGGREGATE USING stgeom_aggr_convexhull;
+/
+
+
+Prompt Grants on FUNCTION ST_AGGR_CONVEXHULL TO PUBLIC to PUBLIC;
+GRANT EXECUTE ON SDE.ST_AGGR_CONVEXHULL TO PUBLIC
+/

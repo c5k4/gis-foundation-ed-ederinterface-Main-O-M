@@ -1,0 +1,51 @@
+Initialize WIP Cleanup Solution
+==========================================================
+
+
+Create SDE Connection
+==========================================================
+1.) Create a SDE Connection to the target database called "WEBR.sde" using the the webr user.
+
+
+Create Yes/No Domain Steps in WEBR Steps
+==========================================================
+1) Check to see if the following file is in the WIP_CLEANUP folder: CREATE_YN_DOMAIN.bat.
+1a) If the file is _not_ there then copy the following file to the WIP_CLEANUP installation folder
+"\\sfshare04-nas2\sfgispoc_data\EDGIS_Enhancements\WP1\REQ4\CREATE_YN_DOMAIN.bat"
+2) Open a command prompt and navigate to the WIP_CLEANUP folder
+3) Run CREATE_YN_DOMAIN.bat
+4) Confirm the Yes/No Indicator Domain has been created in Target Database
+
+
+Copy DELETEDWIP Feature Class to Target Database Step
+==========================================================
+1) Log into EQW1D as the webr user.
+2) In the root, right click on the DELETEDWIP feature class and select copy.
+3) Navigate to the Target database and in the root, select Paste.
+4) Confirm the DELETEDWIP feature class was copied to the root of the target database.
+
+Create ETL_EXECUTED Table
+==========================================================
+1) Check to see if the following file is in the WIP_CLEANUP folder: CREATE_TABLE_ETL_EXECUTED.bat.
+1a) If the file is _not_ there then copy the following file to the WIP_CLEANUP installation folder
+"\\sfshare04-nas2\sfgispoc_data\EDGIS_Enhancements\WP1\REQ4\CREATE_YN_DOMAIN.bat"
+2) Open a command prompt and navigate to the WIP_CLEANUP folder
+3) Run CREATE_TABLE_ETL_EXECUTED.bat
+4) Confirm ETL_EXECUTED table has been created in the root of the target database.
+
+Run WIP_CLEANUP SQL
+==========================================================
+1) Check to see if the following file is in the WIP_CLEANUP folder: WIP_CLEANUP_RUN.bat.
+1a) If the file is _not_ there then copy the following file to the WIP_CLEANUP installation folder
+"\\sfshare04-nas2\sfgispoc_data\EDGIS_Enhancements\WP1\REQ4\CREATE_TABLE_ETL_EXECUTED.bat"
+2) Open a command prompt and navigate to the WIP_CLEANUP folder
+3) Run WIP_CLEANUP_RUN.bat
+4) Confirm roughly 2400 features were created in the DELETEDWIP feature class and deleted from the WIP feature class. 
+5) Confirm zero records exist in the WIP feature class with the following criteria:
+	a) ORDERCREATEDATE OLDER than 10 Years
+	b) SAPUSERSTATUS = "CLSD"
+	c) In DELETEDWIP feature class, TIMEDOUT_YN field set to Yes when ORDERCREATEDATE OLDER than 10 Years 
+	   and SAPUSERSTATUS <> "CLSD", rest should be No.
+
+	
+

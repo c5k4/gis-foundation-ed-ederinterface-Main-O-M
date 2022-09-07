@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.Interfaces.CCBServicePointUpdater.VersionedEditor" Collapsed="true">
+    <Position X="7.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIEAAAAAABAEAEIgAAAAAAAAAAAAAAAAACAAAAABAI=</HashCode>
+      <FileName>ApplicationLayer\VersionedEditor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="editSession" />
+      <Field Name="featWksp" />
+      <Field Name="muWksp" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Interfaces.CCBServicePointUpdater.SQLTableInterface" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAACAAAgAAAAgAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>DatabaseLayer\SQLTableInterface.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.CCBServicePointUpdater.ModifierClient" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>ModifierClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.CCBServicePointUpdater.ServicePointModifier" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAQIAAAQAAAAAQACAIQAAAAABAAEJAAAABoICA=</HashCode>
+      <FileName>ServicePointModifier.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="SERVICEPOINT" />
+      <Field Name="vEditor" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Interfaces.CCBServicePointUpdater.Common.Common" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACgAAAACAAAAIAAAAAAAAIAIAA=</HashCode>
+      <FileName>Common\Common.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_AOLicenseInitializer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Interfaces.CCBServicePointUpdater.Common.Errors" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="PGE.Interfaces.CCBServicePointUpdater.Common.Errors.ERRORS" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Common\Errors.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\Errors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.CCBServicePointUpdater.Common.LicenseInitializer" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAYAnBEgAAAE2AAABAIAigACAAACqAwAAEKCAAAAAA=</HashCode>
+      <FileName>Common\LicenseInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.CCBServicePointUpdater.Common.LogManager" Collapsed="true">
+    <Position X="6.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAIAARAAAAAAAAACACAAAAAAAEAAAA=</HashCode>
+      <FileName>Common\LogManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="ConsoleLogger" />
+      <Field Name="FileLogger" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Interfaces.CCBServicePointUpdater.Common.CustomTextWriterTraceListener" Collapsed="true">
+    <Position X="3.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Common\LogManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.CCBServicePointUpdater.Common.CustomConsoleTraceListener" Collapsed="true">
+    <Position X="1.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Common\LogManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.CCBServicePointUpdater.SQL.SQLConstants" Collapsed="true">
+    <Position X="2.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAgAAAEAAAAAQAAABAAEAAAAABAAAAAAAIBAAAAAAA=</HashCode>
+      <FileName>DatabaseLayer\SQLConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Diagnostics.ConsoleTraceListener" Collapsed="true">
+    <Position X="1.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Diagnostics.TextWriterTraceListener" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.ITable" Collapsed="true">
+    <Position X="9.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IWorkspaceEdit" Collapsed="true">
+    <Position X="3.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IFeatureWorkspace" Collapsed="true">
+    <Position X="5.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IMultiuserWorkspaceEdit" Collapsed="true">
+    <Position X="7.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

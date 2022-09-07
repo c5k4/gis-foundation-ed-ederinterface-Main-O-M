@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvokeESRIRegAsm", "InvokeESRIRegAsm\InvokeESRIRegAsm.csproj", "{D89632CE-2B54-4F0A-8547-731D85DFAAC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{39C46BCC-1D28-48E0-846C-D4A5B6A540C8}"
+	ProjectSection(SolutionItems) = preProject
+		PGE Schematic GP Tools Help.docx = PGE Schematic GP Tools Help.docx
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.Desktop.SchematicGPTools", "PGE.Desktop.SchematicGPTools\PGE.Desktop.SchematicGPTools.csproj", "{E4AECDC0-D11E-4BEA-9703-624D3E68B145}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PGESchematicGPTools_Setup", "PGE.Installers.SchematicGPTools\PGESchematicGPTools_Setup.vdproj", "{9895C382-D6EF-436F-89E5-2B16303A27B2}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PGE.Desktop.SchematicUpdateTask", "PGE.Desktop.SchematicUpdateTask\PGE.Desktop.SchematicUpdateTask.pyproj", "{15236E78-D2E9-45CE-ACFB-E4F18A70FCDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D89632CE-2B54-4F0A-8547-731D85DFAAC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D89632CE-2B54-4F0A-8547-731D85DFAAC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D89632CE-2B54-4F0A-8547-731D85DFAAC7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D89632CE-2B54-4F0A-8547-731D85DFAAC7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D89632CE-2B54-4F0A-8547-731D85DFAAC7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D89632CE-2B54-4F0A-8547-731D85DFAAC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D89632CE-2B54-4F0A-8547-731D85DFAAC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D89632CE-2B54-4F0A-8547-731D85DFAAC7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D89632CE-2B54-4F0A-8547-731D85DFAAC7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D89632CE-2B54-4F0A-8547-731D85DFAAC7}.Release|x86.ActiveCfg = Release|Any CPU
+		{D89632CE-2B54-4F0A-8547-731D85DFAAC7}.Release|x86.Build.0 = Release|Any CPU
+		{E4AECDC0-D11E-4BEA-9703-624D3E68B145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4AECDC0-D11E-4BEA-9703-624D3E68B145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4AECDC0-D11E-4BEA-9703-624D3E68B145}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{E4AECDC0-D11E-4BEA-9703-624D3E68B145}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{E4AECDC0-D11E-4BEA-9703-624D3E68B145}.Debug|x86.ActiveCfg = Debug|x86
+		{E4AECDC0-D11E-4BEA-9703-624D3E68B145}.Debug|x86.Build.0 = Debug|x86
+		{E4AECDC0-D11E-4BEA-9703-624D3E68B145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4AECDC0-D11E-4BEA-9703-624D3E68B145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4AECDC0-D11E-4BEA-9703-624D3E68B145}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{E4AECDC0-D11E-4BEA-9703-624D3E68B145}.Release|Mixed Platforms.Build.0 = Release|x86
+		{E4AECDC0-D11E-4BEA-9703-624D3E68B145}.Release|x86.ActiveCfg = Release|x86
+		{E4AECDC0-D11E-4BEA-9703-624D3E68B145}.Release|x86.Build.0 = Release|x86
+		{9895C382-D6EF-436F-89E5-2B16303A27B2}.Debug|Any CPU.ActiveCfg = Debug
+		{9895C382-D6EF-436F-89E5-2B16303A27B2}.Debug|Any CPU.Build.0 = Debug
+		{9895C382-D6EF-436F-89E5-2B16303A27B2}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{9895C382-D6EF-436F-89E5-2B16303A27B2}.Debug|Mixed Platforms.Build.0 = Debug
+		{9895C382-D6EF-436F-89E5-2B16303A27B2}.Debug|x86.ActiveCfg = Debug
+		{9895C382-D6EF-436F-89E5-2B16303A27B2}.Debug|x86.Build.0 = Debug
+		{9895C382-D6EF-436F-89E5-2B16303A27B2}.Release|Any CPU.ActiveCfg = Release
+		{9895C382-D6EF-436F-89E5-2B16303A27B2}.Release|Any CPU.Build.0 = Release
+		{9895C382-D6EF-436F-89E5-2B16303A27B2}.Release|Mixed Platforms.ActiveCfg = Release
+		{9895C382-D6EF-436F-89E5-2B16303A27B2}.Release|Mixed Platforms.Build.0 = Release
+		{9895C382-D6EF-436F-89E5-2B16303A27B2}.Release|x86.ActiveCfg = Release
+		{9895C382-D6EF-436F-89E5-2B16303A27B2}.Release|x86.Build.0 = Release
+		{15236E78-D2E9-45CE-ACFB-E4F18A70FCDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15236E78-D2E9-45CE-ACFB-E4F18A70FCDC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{15236E78-D2E9-45CE-ACFB-E4F18A70FCDC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{15236E78-D2E9-45CE-ACFB-E4F18A70FCDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15236E78-D2E9-45CE-ACFB-E4F18A70FCDC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{15236E78-D2E9-45CE-ACFB-E4F18A70FCDC}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6ADD7D3F-E393-4BEB-AB05-FA48ADA458E6}
+	EndGlobalSection
+EndGlobal

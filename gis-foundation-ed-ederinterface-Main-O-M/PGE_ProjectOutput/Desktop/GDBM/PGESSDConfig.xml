@@ -1,0 +1,25 @@
+﻿<?xml version='1.0'?>
+<Configuration>
+  <!-- Source Side Device configurations -->
+  <SSDs>
+    <!-- Dynamic Protective device is always an SSD -->
+    <Class Name="EDGIS.DYNAMICPROTECTIVEDEVICE" ClassID="998" WhereClause=""/>
+    <!-- Fuse is always an SSD -->
+    <Class Name="EDGIS.FUSE" ClassID="1003" WhereClause=""/>
+    <!-- Switch is an SSD only if its Switch Type code is not 7, 8 or 99-->
+    <Class Name="EDGIS.SWITCH" ClassID="1005" WhereClause="SWITCHTYPE NOT IN (7,8,99)"/>
+  </SSDs>
+  <!-- Protective Source Side Device configurations -->
+  <ProtectiveSSDs>
+    <!-- Dynamic Protective device is only an Protective SSD if its subtype is Recloser(3) or Interrupter(2)
+    ((Sectionalizer(8) and DeviceType <> 'SCAD') or (Sectionalizer(8) and DeviceType = 'SCAD' and SectionalizerCutout = 'Y' -->
+    <Class Name="EDGIS.DYNAMICEPROTECTIVEDEVICE" ClassID="998" WhereClause="SUBTYPECD = 3 or SUBTYPECD = 2 or (SUBTYPECD = 8 AND DEVICETYPE NOT IN ('SCAD')) or (SUBTYPECD = 8 AND DEVICETYPE = 'SCAD' AND SECTIONALIZERCUTOUT = 'N')"/>
+    <Class Name="EDGIS.FUSE" ClassID="1003" WhereClause=""/>
+  </ProtectiveSSDs>
+  <!-- Auto Protective Source Side Device configurations -->
+  <AutoProtectiveSSDs>
+    <!-- Dynamic Protective device is only an Protective SSD if its subtype is Recloser(3)
+    ((Sectionalizer(8) and DeviceType <> 'SCAD') or (Sectionalizer(8) and DeviceType = 'SCAD' and SectionalizerCutout = 'Y' -->
+    <Class Name="EDGIS.DYNAMICEPROTECTIVEDEVICE" ClassID="998" WhereClause="SUBTYPECD = 3 or (SUBTYPECD = 8 AND DEVICETYPE NOT IN ('SCAD')) or (SUBTYPECD = 8 AND DEVICETYPE = 'SCAD' AND SECTIONALIZERCUTOUT = 'N')"/>
+  </AutoProtectiveSSDs>
+</Configuration>

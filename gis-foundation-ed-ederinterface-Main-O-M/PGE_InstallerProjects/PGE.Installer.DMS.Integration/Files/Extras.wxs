@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--PGE.DMS.Integration-->
+  <Fragment>
+    <ComponentGroup Id="DMSExtra">
+      <Component Id="PGE.Interface.Integration.DMS.Extractor.exe" Directory="DMS" Guid="D79F7001-5CA7-47E6-8789-A4CA771D2B26" >
+        <File Id="PGE.Interface.Integration.DMS.Extractor.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DMS_Integration\PGE.Interface.Integration.DMS.Extractor.exe"/>
+      </Component>
+      <Component Id="PGE.Interface.Integration.DMS.Extractor.pdb" Directory="DMS" Guid="A6B8DA5D-6C29-45FA-BF08-AAA2636C7759" >
+        <File Id="PGE.Interface.Integration.DMS.Extractor.pdb" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DMS_Integration\PGE.Interface.Integration.DMS.Extractor.pdb"/>
+      </Component>
+      <Component Id="PGE.Interface.Integration.DMS.Extractor.exe.config" Directory="DMS" Guid="B259DDCF-740E-47CB-8085-7E291BD45327" Permanent="yes" >
+        <File Id="PGE.Interface.Integration.DMS.Extractor.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DMS_Integration\PGE.Interface.Integration.DMS.Extractor.exe.config"/>
+      </Component>
+      <Component Id="PGE.Interface.Integration.DMS.dll" Directory="DMS" Guid="24271F74-B7C3-4DC0-B34D-070A8067FD66" >
+        <File Id="PGE.Interface.Integration.DMS.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DMS_Integration\PGE.Interface.Integration.DMS.dll"/>
+      </Component>
+      <Component Id="spatial.prj" Directory="DMS" Guid="E493FEE3-DAEE-433D-AC96-A63E40721FCC" >
+        <File Id="spatial.prj" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DMS_Integration\spatial.prj"/>
+      </Component>
+      <Component Id="Columns.xml" Directory="DMS" Guid="644158DB-171E-45AC-BB7D-3793B8ECE6DF" >
+        <File Id="Columns.xml" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DMS_Integration\Columns.xml"/>
+      </Component>
+      <Component Id="Domains.xml" Directory="DMS" Guid="6A0DE694-D7D0-4DD2-B71C-F1A4C0E037A4" >
+        <File Id="Domains.xml" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DMS_Integration\Domains.xml"/>
+      </Component>
+      <Component Id="Sites.xml" Directory="DMS" Guid="17D5572C-5350-48AC-BC3A-9B4E69A7E191" >
+        <File Id="Sites.xml" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DMS_Integration\Sites.xml"/>
+      </Component>
+      <Component Id="ED50.log4net.config" Directory="LoggingConfiguration" Guid="54EB4650-364E-4E26-BE19-F2C3A9D57775" Permanent="yes" >
+        <File Id="ED50.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DMS_Integration\ED50.log4net.config"/>
+      </Component>
+      <Component Id="DataChecks.xml" Directory="DMS" Guid="391F6E10-6A26-469D-B0A6-8A19E60EE75D" >
+        <File Id="DataChecks.xml" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DMS_Integration\DataChecks.xml"/>              
+      </Component>
+
+      <Component Id="EDDomainsmapping.txt" Directory="DMS" Guid="9B5201C1-99CE-415A-8AD0-6A8C6B177EB2" >
+        <File Id="EDDomainsmapping.txt" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DMS_Integration\EDDomainsmapping.txt"/>
+      </Component>
+      <Component Id="EDFCIDMapping.txt" Directory="DMS" Guid="943704DC-B8A9-4670-8612-DEED843B8523" >
+        <File Id="EDFCIDMapping.txt" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DMS_Integration\EDFCIDMapping.txt"/>
+      </Component>
+      <Component Id="EDSubtypeMapping.txt" Directory="DMS" Guid="5102821F-D582-48CA-8AFE-0B3024C1B96C" >
+        <File Id="EDSubtypeMapping.txt" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DMS_Integration\EDSubtypeMapping.txt"/>
+      </Component>
+      <Component Id="SUBDomainsmapping.txt" Directory="DMS" Guid="E7EA3799-721B-4499-8465-78EC56BA0EBF" >
+        <File Id="SUBDomainsmapping.txt" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DMS_Integration\SUBDomainsmapping.txt"/>
+      </Component>
+      <Component Id="SUBFCIDMapping.txt" Directory="DMS" Guid="5E7C6AE6-36EB-4D21-B3F0-E4DD5D0B3ECC" >
+        <File Id="SUBFCIDMapping.txt" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DMS_Integration\SUBFCIDMapping.txt"/>
+      </Component>
+      <Component Id="SUBSubtypeMapping.txt" Directory="DMS" Guid="2C23A752-3913-4F4E-A0F8-BFD565B625C8" >
+        <File Id="SUBSubtypeMapping.txt" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DMS_Integration\SUBSubtypeMapping.txt"/>
+      </Component>
+      
+    </ComponentGroup>
+  </Fragment>
+</Wix>

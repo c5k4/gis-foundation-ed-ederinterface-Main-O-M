@@ -1,0 +1,48 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Error";
+}
+<div class="list-header clearfix">
+    <span>Error</span>
+</div>
+<div class="list-sfs-holder">
+    @if (Model != null && HttpContext.Current.IsDebuggingEnabled)
+    {
+
+        if (Model.Exception.Message.Contains("At least one of the") || Model.Exception.Message.Contains("More than 3 units") || Model.Exception.Message.Contains("#1: Some Device Types"))
+        {
+        <div>
+            <p>
+                @Html.Raw(@Model.Exception.Message)<br />
+                <br />
+                <b>Controller:</b>
+                @Model.ControllerName<br />
+                <br />
+                <b>Action:</b> @Model.ActionName
+            </p>
+        </div>
+        }
+        else
+        {
+        <div class="alert alert-error">
+            An unexpected error has occurred. Please contact the system administrator.
+        </div>
+        <div>
+            <p>
+                <b>Exception:</b>@Html.Raw(@Model.Exception.Message)<br />
+                <br />
+                <b>Controller:</b>
+                @Model.ControllerName<br />
+                <br />
+                <b>Action:</b> @Model.ActionName
+            </p>
+            <div style="overflow: scroll">
+                <pre>
+            @Model.Exception.StackTrace
+            </pre>
+            </div>
+        </div>
+        }
+    }
+</div>

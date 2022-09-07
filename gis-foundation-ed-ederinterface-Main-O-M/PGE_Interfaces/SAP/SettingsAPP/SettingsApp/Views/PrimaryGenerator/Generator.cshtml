@@ -1,0 +1,452 @@
+﻿<script type="text/javascript">
+    $(document).ready(function () {
+        $(".generator-type option[value='']").prop('disabled', true);
+    });
+</script>
+@using SettingsApp.Common;
+@model SettingsApp.Models.PrimaryGeneratorModel
+
+@using (Html.BeginForm("Generator", "PrimaryGenerator"))
+{
+    @Html.ValidationSummary(true)
+    <table cellpadding="0" cellspacing="0" width="90%">
+        <tr>
+            <td style="padding: 0px">
+                <div class="float-left">
+                    <nav>
+                        <ul id="menu">
+                            <li class="selected">@Html.ActionLink("Generator", "Generator", "PrimaryGenerator", new { globalID = ViewBag.GlobalID, ObjectId = ViewBag.ObjectId, layerName = ViewBag.LayerName }, null)</li>
+                            <li class="@ViewBag.CurrentClass">@Html.ActionLink("Current Settings", "Index", "PrimaryGenerator", new { globalID = ViewBag.GlobalID, ObjectId = ViewBag.ObjectId, layerName = ViewBag.LayerName }, null)</li>
+                            <li class="@ViewBag.FutureClass">@Html.ActionLink("Future Settings", "Future", "PrimaryGenerator", new { globalID = ViewBag.GlobalID, ObjectId = ViewBag.ObjectId, layerName = ViewBag.LayerName }, null)</li>
+                        </ul>
+                    </nav>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="header" style="padding-top: 15px; padding-bottom: 0px; padding-left: 10px">
+                @ViewBag.Title
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color: #ffffff; padding: 10px;">
+                @if (ViewBag.ShowPageError == true)
+                {
+                    <label id="lableDeviceValidationError" runat="server" style="color: Red; text-align: center;">
+                        There are error(s), please check below.
+                    </label>
+                }
+                @if (ViewBag.ShowSaveSucessful == true)
+                {
+                    <label id="lableDeviceSaveSucess" runat="server" style="color: Green; text-align: center;">
+                        Device saved successfully.
+                    </label>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color: #ffffff; padding: 10px">
+                <table style="width: 100%; background-color: #f2f2f2">
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.GeneratorType)
+                        </td>
+                        <td>@Html.DropDownListFor(model => model.GeneratorType, Model.GeneratorTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new {@class="generator-type", onchange = Model.DropDownPostbackScriptGeneratorType })@Html.ValidationMessageFor(model => model.GeneratorType)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td colspan="2" class="sectionHeader">
+                                        @if (Model.GeneratorTypeList != null && Model.GeneratorTypeList.Count() > 0 && Model.GeneratorType!=null)
+                                        {
+                                            @Model.GeneratorTypeList.SingleOrDefault(gt => gt.Value == Model.GeneratorType).Text
+                                        }
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.RatedPowerKva)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.RatedPowerKva, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.RatedPowerKva)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.RatedVoltKvll)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.RatedVoltKvll, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.RatedVoltKvll)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveGenerationKw)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveGenerationKw, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ActiveGenerationKw)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.PowerFactorPerc)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.PowerFactorPerc, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PowerFactorPerc)
+                                    </td>
+                                </tr>
+                                @if (Model.GeneratorType == "EC")
+                                {
+                                           
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.FaultContributionPerc)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.FaultContributionPerc, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.FaultContributionPerc)
+                                        </td>
+                                    </tr>
+                                           
+                                }
+                                @if (Model.GeneratorType == "IN")
+                                {
+                                        
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.RatedSpeedRpm)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.RatedSpeedRpm, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.RatedSpeedRpm)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.AnsiMotorGroup)
+                                        </td>
+                                        <td>@Html.DropDownListFor(model => model.AnsiMotorGroup, Model.AnsiMotorGroupList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.AnsiMotorGroup)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SubtransientZROhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SubtransientZROhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SubtransientZROhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SubtransientZXOhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SubtransientZXOhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SubtransientZXOhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.RotorType)
+                                        </td>
+                                        <td>@Html.DropDownListFor(model => model.RotorType, Model.RotorTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.RotorType)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.EstimationMethod)
+                                        </td>
+                                        <td>@Html.DropDownListFor(model => model.EstimationMethod, Model.EstimatedMethodsList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.EstimationMethod)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.StatorRsOhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.StatorRsOhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.StatorRsOhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.StatorXsOhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.StatorXsOhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.StatorXsOhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.MagnetisingRmOhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.MagnetisingRmOhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.MagnetisingRmOhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.MagnetisingXmOhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.MagnetisingXmOhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.MagnetisingXmOhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.Rotor1RrOhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.Rotor1RrOhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Rotor1RrOhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.Rotor1XrOhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.Rotor1XrOhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Rotor1XrOhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.Rotor2RrOhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.Rotor2RrOhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Rotor2RrOhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.Rotor2XrOhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.Rotor2XrOhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Rotor2XrOhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.CageFactorCfr)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.CageFactorCfr, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.CageFactorCfr)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.CageFactorCfx)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.CageFactorCfx, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.CageFactorCfx)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.InertialRotatingMassh)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.InertialRotatingMassh, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.InertialRotatingMassh)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.InertialRotatingMassj)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.InertialRotatingMassj, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.InertialRotatingMassj)
+                                        </td>
+                                    </tr>
+                                        
+                                }
+                                @if (Model.GeneratorType == "SY")
+                                {
+                                     
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.NumberOfPoles)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.NumberOfPoles, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.NumberOfPoles)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.MaxReactivePwKvar)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.MaxReactivePwKvar, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.MaxReactivePwKvar)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.MinReactivePwKvar)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.MinReactivePwKvar, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.MinReactivePwKvar)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.Configuration)
+                                        </td>
+                                        <td>@Html.DropDownListFor(model => model.Configuration, Model.ConfigurationList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Configuration)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.ReactivePowerCapability)
+                                        </td>
+                                        <td>@Html.DropDownListFor(model => model.ReactivePowerCapability, Model.ReactivePowerCapabilityList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ReactivePowerCapability)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SteadyStateZ10ROhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SteadyStateZ10ROhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SteadyStateZ10ROhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SteadyStateZ10XOhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SteadyStateZ10XOhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SteadyStateZ10XOhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SteadyStateZ11ROhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SteadyStateZ11ROhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SteadyStateZ11ROhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SteadyStateZ11XOhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SteadyStateZ11XOhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SteadyStateZ11XOhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SteadyStateZ12ROhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SteadyStateZ12ROhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SteadyStateZ12ROhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SteadyStateZ12XOhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SteadyStateZ12XOhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SteadyStateZ12XOhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.ZeroSeqZ0ROhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.ZeroSeqZ0ROhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ZeroSeqZ0ROhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.ZeroSeqZ0XOhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.ZeroSeqZ0XOhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ZeroSeqZ0XOhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.NegSeqZ2ROhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.NegSeqZ2ROhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.NegSeqZ2ROhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.NegSeqZ2XOhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.NegSeqZ2XOhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.NegSeqZ2XOhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.GroundingZgROhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.GroundingZgROhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GroundingZgROhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.GroundingZgXOhms)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.GroundingZgXOhms, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GroundingZgXOhms)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SyncGenModel)
+                                        </td>
+                                        <td>@Html.DropDownListFor(model => model.SyncGenModel, Model.SyncGenModelList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SyncGenModel)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SynchReactanceXdPu)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SynchReactanceXdPu, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SynchReactanceXdPu)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SynchReactanceXqPu)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SynchReactanceXqPu, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SynchReactanceXqPu)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SynchReactanceXiPu)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SynchReactanceXiPu, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SynchReactanceXiPu)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.TransientDataXdPu)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.TransientDataXdPu, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.TransientDataXdPu)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.TransientDataTdoPu)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.TransientDataTdoPu, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.TransientDataTdoPu)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.TransientDataXqPu)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.TransientDataXqPu, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.TransientDataXqPu)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.TransientDataTqoPu)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.TransientDataTqoPu, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.TransientDataTqoPu)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SubtransientDataXdPu)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SubtransientDataXdPu, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SubtransientDataXdPu)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SubtransientDataTdoPu)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SubtransientDataTdoPu, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SubtransientDataTdoPu)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SubtransientDataXqPu)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SubtransientDataXqPu, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SubtransientDataXqPu)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SubtransientDataTqoPu)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SubtransientDataTqoPu, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SubtransientDataTqoPu)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SaturationDataSguPu)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SaturationDataSguPu, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SaturationDataSguPu)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SaturationDataSglPu)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SaturationDataSglPu, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SaturationDataSglPu)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SaturationDataEuPu)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SaturationDataEuPu, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SaturationDataEuPu)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.SaturationDataElPu)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.SaturationDataElPu, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SaturationDataElPu)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.InertialRotatingMassh)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.InertialRotatingMassh, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.InertialRotatingMassh)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.InertialRotatingMassj)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.InertialRotatingMassj, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.InertialRotatingMassj)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.DampingConstantKdPu)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.DampingConstantKdPu, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.DampingConstantKdPu)
+                                        </td>
+                                    </tr>
+                                        
+                                }
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: right; padding-right: 10px">
+                            @Html.HiddenFor(model => model.DeviceId, new { @class = "deviceid-hide-box" })
+                            <input type="button" value="Cancel" onclick="this.form.action='/@ViewBag.ControllerName/Generator/@ViewBag.GlobalID/@ViewBag.LayerName';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                            <input type="button" value="Save" onclick="this.form.action='/@ViewBag.ControllerName/SaveGenerator/@ViewBag.GlobalID/@ViewBag.LayerName';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <DirectoryRef Id="CWOSL">
+      <Component Id="ConfigFiles" Guid="05EAEC0D-A905-41E7-81D9-12CC28700CCA" Permanent="yes" NeverOverwrite="yes">
+        <!--<File Id="PGECWOSL.exe.config" Name="PGECWOSL.exe.config" Source="..\..\..\..\..\PGE_ProjectOutput\CWOSL\EDER.config"/>-->
+      </Component>
+
+      <Component Id="CWOSLApplication" Guid="28499575-BC9D-4583-9184-D6D44992854E">
+        <File Id="Castle.Components.Binder.dll" Source="..\..\..\..\..\PGE_ProjectOutput\CWOSL\Castle.Components.Binder.dll"/>
+        <File Id="Castle.Core.dll" Source="..\..\..\..\..\PGE_ProjectOutput\CWOSL\Castle.Core.dll"/>
+        <File Id="Castle.DynamicProxy2.dll" Source="..\..\..\..\..\PGE_ProjectOutput\CWOSL\Castle.DynamicProxy2.dll"/>
+        <File Id="Castle.Facilities.Logging.dll" Source="..\..\..\..\..\PGE_ProjectOutput\CWOSL\Castle.Facilities.Logging.dll"/>
+        <File Id="Castle.Facilities.WcfIntegration.dll" Source="..\..\..\..\..\PGE_ProjectOutput\CWOSL\Castle.Facilities.WcfIntegration.dll"/>
+        <File Id="Castle.MicroKernel.dll" Source="..\..\..\..\..\PGE_ProjectOutput\CWOSL\Castle.MicroKernel.dll"/>
+        <File Id="Castle.Services.Logging.Log4netIntegration.dll" Source="..\..\..\..\..\PGE_ProjectOutput\CWOSL\Castle.Services.Logging.Log4netIntegration.dll"/>
+        <File Id="Castle.Windsor.dll" Source="..\..\..\..\..\PGE_ProjectOutput\CWOSL\Castle.Windsor.dll"/>
+        <File Id="CommandFlags.dll" Source="..\..\..\..\..\PGE_ProjectOutput\CWOSL\CommandFlags.dll"/>
+        <File Id="PGE.Common.ChangesManagerShared.dll" Source="..\..\..\..\..\PGE_ProjectOutput\CWOSL\PGE.Common.ChangesManagerShared.dll"/>
+        <File Id="PGE.BatchApplication.CWOSL.exe" Source="..\..\..\..\..\PGE_ProjectOutput\CWOSL\PGE.BatchApplication.CWOSL.exe"/>
+        <!--Configuration Files below-->
+        <File Id="CWOSL.config" Source="..\..\..\..\..\PGE_ProjectOutput\CWOSL\CWOSL.config"/>
+
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="LoggingConfiguration">
+      <Component Id="LoggingFiles" Guid="34FEE186-C354-4326-8A8C-11ED81DB537A" Permanent="yes" NeverOverwrite="yes">
+        <File Id="CWOSL.log4net.EDER.config" Source="..\..\..\..\..\PGE_ProjectOutput\CWOSL\CWOSLDefault.log4net.config"/>
+      </Component>
+    </DirectoryRef>
+    
+  </Fragment>
+</Wix>

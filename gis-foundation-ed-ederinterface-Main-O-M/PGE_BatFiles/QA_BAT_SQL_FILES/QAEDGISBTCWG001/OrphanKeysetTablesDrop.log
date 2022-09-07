@@ -1,0 +1,62 @@
+SQL> 
+SQL> DECLARE
+  2  
+  3  CURSOR all_keysets IS
+  4  SELECT owner, table_name
+  5  FROM dba_tables
+  6  WHERE table_name LIKE 'KEYSET_%';
+  7  
+  8  sess_id INTEGER;
+  9  valid_sess INTEGER;
+ 10  lock_name VARCHAR2(30);
+ 11  lock_handle VARCHAR2(128);
+ 12  lock_status INTEGER;
+ 13  cnt INTEGER DEFAULT 0;
+ 14  
+ 15  BEGIN
+ 16  
+ 17  FOR drop_keysets IN all_keysets LOOP
+ 18  
+ 19  sess_id := TO_NUMBER(SUBSTR(drop_keysets.table_name, 8));
+ 20  
+ 21  SELECT COUNT(*) INTO valid_sess FROM sde.process_information WHERE owner = drop_keysets.owner AND sde_id = sess_id;
+ 22  
+ 23  IF valid_sess = 1 THEN
+ 24  
+ 25  lock_name := 'SDE_Connection_ID#' || TO_CHAR (sess_id);
+ 26  DBMS_LOCK.ALLOCATE_UNIQUE (lock_name,lock_handle);
+ 27  lock_status := DBMS_LOCK.REQUEST (lock_handle,DBMS_LOCK.X_MODE,0,TRUE);
+ 28  
+ 29  IF lock_status = 0 THEN
+ 30  
+ 31  DELETE FROM sde.process_information WHERE sde_id = sess_id;
+ 32  DELETE FROM sde.state_locks WHERE sde_id = sess_id;
+ 33  DELETE FROM sde.table_locks WHERE sde_id = sess_id;
+ 34  DELETE FROM sde.object_locks WHERE sde_id = sess_id;
+ 35  DELETE FROM sde.layer_locks WHERE sde_id = sess_id;
+ 36  dbms_output.put_line('Removed orphaned process_information entry ('||sess_id||')');
+ 37  
+ 38  EXECUTE IMMEDIATE 'DROP TABLE '||drop_keysets.owner||'.'||drop_keysets.table_name;
+ 39  cnt := cnt + 1;
+ 40  
+ 41  END IF;
+ 42  
+ 43  ELSE
+ 44  
+ 45  EXECUTE IMMEDIATE 'DROP TABLE '||drop_keysets.owner||'.'||drop_keysets.table_name;
+ 46  cnt := cnt + 1;
+ 47  
+ 48  END IF;
+ 49  
+ 50  END LOOP;
+ 51  
+ 52  dbms_output.put_line('Dropped '||cnt||' keyset tables.');
+ 53  
+ 54  END;
+ 55  /
+Dropped 1 keyset tables.                                                        
+
+PL/SQL procedure successfully completed.
+
+SQL> 
+SQL> spool off

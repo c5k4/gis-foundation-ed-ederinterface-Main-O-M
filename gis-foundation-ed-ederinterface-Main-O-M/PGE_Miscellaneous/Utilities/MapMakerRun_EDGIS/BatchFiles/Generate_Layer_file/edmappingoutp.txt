@@ -1,0 +1,121 @@
+
+D:\EDGISPUB\MapMakerRun_EDGIS\BatchFiles\Generate_Layer_file>set basepath=D:\EDGISPub\MapMakerRun_EDGIS 
+
+D:\EDGISPUB\MapMakerRun_EDGIS\BatchFiles\Generate_Layer_file>set servicename=EDmapping 
+
+D:\EDGISPUB\MapMakerRun_EDGIS\BatchFiles\Generate_Layer_file>set baseinputpath=\\SFSHARE04-NAS2\sfgispoc_data\ApplicationDevelopment\EDGIS_ReArchitecture\MapDeployment\Common\MapMakerInput 
+
+D:\EDGISPUB\MapMakerRun_EDGIS\BatchFiles\Generate_Layer_file>d:
+
+D:\EDGISPUB\MapMakerRun_EDGIS\BatchFiles\Generate_Layer_file>D:\EDGISPub\MapMakerRun_EDGIS\Tool\MapDocMaker.exe read "D:\EDGISPub\MapMakerRun_EDGIS\Source\EDmapping.mxd" "\\SFSHARE04-NAS2\sfgispoc_data\ApplicationDevelopment\EDGIS_ReArchitecture\MapDeployment\Common\MapMakerInput\Input\XLS\EDmapping.xls" "D:\EDGISPub\MapMakerRun_EDGIS\Input\Layers\EDmapping" "" D:\EDGISPub\MapMakerRun_EDGIS\Input\MXD\EDmapping_Blank.mxd" 
+Opening DocumentProcessing LayersProcessing Layer DevicesWarning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Processing Layer CustomerWarning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Processing Layer Device Group MaskedWarning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Processing Layer Bus Bar            Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Processing Layer UFM                Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Processing Layer Structures         Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Processing Layer Conductors         Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Processing Layer Device Group Not MaskedWarning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Processing Layer Annotation             Processing Layer WIP                    Processing Layer POLPolygon             Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Processing Layer UFM Boundary           Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Processing Layer 50 Scale Area          Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Processing Layer Conduit and Subsurface StructureWarning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Processing Layer Misc Network Features           Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Processing Layer Maintenance Plat                Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Processing Layer Unified Map Grid                Warning:Error while reading workspace:Error HRESULT E_FAIL has been returned from a call to a COM component.
+Processing Layer Township - Range                Processing Layer Township - Range (projected into Land Grants)Processing Layer Organizational Boundaries                    Processing Layer Fire Data                                    Processing Layer Common Landbase - Vector                     Error while reading workspace:Object reference not set to an instance of an object.
+Error while reading workspace:Object reference not set to an instance of an object.
+Error while reading workspace:Object reference not set to an instance of an object.
+Processing Layer TPL/Annexation Group                         error in getting fields:City (Point)
+Processing Layer Landbase                                     Processing Tables                                             Warning.NO data source found:PGE.CableTest
+Processing Table PGE.CableTest                                Warning.NO data source found:PGE.CircuitLoadSummary
+Processing Table PGE.CircuitLoadSummary                       Warning.NO data source found:PGE.CircuitRelay
+Processing Table PGE.CircuitRelay                             Warning.NO data source found:PGE.CircuitSource
+Processing Table PGE.CircuitSource                            Warning.NO data source found:PGE.CWOT
+Processing Table PGE.CWOT                                     Warning.NO data source found:PGE.DCConductorInfo
+Processing Table PGE.DCConductorInfo                          Warning.NO data source found:PGE.DuctDefinition
+Processing Table PGE.DuctDefinition                           Warning.NO data source found:PGE.ElectricMeterLoad
+Processing Table PGE.ElectricMeterLoad                        Warning.NO data source found:PGE.Framing
+Processing Table PGE.Framing                                  Warning.NO data source found:PGE.JointOwner
+Processing Table PGE.JointOwner                               Warning.NO data source found:PGE.JointUseAttachment
+Processing Table PGE.JointUseAttachment                       Warning.NO data source found:PGE.MeterLoadSummary
+Processing Table PGE.MeterLoadSummary                         Warning.NO data source found:PGE.Motor
+Processing Table PGE.Motor                                    Warning.NO data source found:PGE.PartialCurtailPoint
+Processing Table PGE.PartialCurtailPoint                      Warning.NO data source found:PGE.PriOHConductorInfo
+Processing Table PGE.PriOHConductorInfo                       Warning.NO data source found:PGE.PriUGConductorInfo
+Processing Table PGE.PriUGConductorInfo                       Warning.NO data source found:PGE.RelayControl
+Processing Table PGE.RelayControl                             Warning.NO data source found:PGE.ROBC
+Processing Table PGE.ROBC                                     Warning.NO data source found:PGE.SCADA
+Processing Table PGE.SCADA                                    Warning.NO data source found:PGE.SecOHConductorInfo
+Processing Table PGE.SecOHConductorInfo                       Warning.NO data source found:PGE.SecUGConductorInfo
+Processing Table PGE.SecUGConductorInfo                       Warning.NO data source found:PGE.ServicePoint
+Processing Table PGE.ServicePoint                             Warning.NO data source found:PGE.SpecialConditions
+Processing Table PGE.SpecialConditions                        Warning.NO data source found:PGE.SpecialLoad
+Processing Table PGE.SpecialLoad                              Warning.NO data source found:PGE.StepDownUnit
+Processing Table PGE.StepDownUnit                             Warning.NO data source found:PGE.SUB_LoadTapChanger
+Processing Table PGE.SUB_LoadTapChanger                       Warning.NO data source found:PGE.SUB_OHConductorInfo
+Processing Table PGE.SUB_OHConductorInfo                      Warning.NO data source found:PGE.SUB_RELAYCONTROL
+Processing Table PGE.SUB_RELAYCONTROL                         Warning.NO data source found:PGE.SUB_TransformerUnit
+Processing Table PGE.SUB_TransformerUnit                      Warning.NO data source found:PGE.SUB_UGConductorInfo
+Processing Table PGE.SUB_UGConductorInfo                      Warning.NO data source found:PGE.SUB_VoltageRegulaotrUnit
+Processing Table PGE.SUB_VoltageRegulaotrUnit                 Warning.NO data source found:PGE.TransformerUnit
+Processing Table PGE.TransformerUnit                          Warning.NO data source found:PGE.VoltageRegulatorUnit
+Processing Table PGE.VoltageRegulatorUnit                     Warning.NO data source found:EDGIS.Controller
+Processing Table EDGIS.Controller                             Warning.NO data source found:EDGIS.CustomerAgreement
+Processing Table EDGIS.CustomerAgreement                      Warning.NO data source found:EDGIS.RemoteTermUnit
+Processing Table EDGIS.RemoteTermUnit                         Warning.NO data source found:EDGIS.TransformerDevice
+Processing Table EDGIS.TransformerDevice                      Warning.NO data source found:EDGIS.SUBStationTransformerUnit
+Processing Table EDGIS.SUBStationTransformerUnit              Warning.NO data source found:EDGIS.SUBTransformerRating
+Processing Table EDGIS.SUBTransformerRating                   Warning.NO data source found:EDGIS.GroundingBank
+Processing Table EDGIS.GroundingBank                          Warning.NO data source found:EDGIS.Guy
+Processing Table EDGIS.Guy                                    Warning.NO data source found:EDGIS.GenerationInfo
+Processing Table EDGIS.GenerationInfo                         Warning.NO data source found:EDGIS.SurgeArrester
+Processing Table EDGIS.SurgeArrester                          Warning.NO data source found:EDGIS.OtherUtilityAttachments
+Processing Table EDGIS.OtherUtilityAttachments                Deleting Layers                                               Deleting Tables                                               Writing Excel                                                 Writing Map Document                                          Total Time Taken: 80.9719533                                  

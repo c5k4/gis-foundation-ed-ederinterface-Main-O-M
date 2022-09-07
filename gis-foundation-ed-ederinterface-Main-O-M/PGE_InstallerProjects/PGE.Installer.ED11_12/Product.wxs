@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--PGE.Interfaces.MapProduction.Integration-->
+  <Product Id="*"
+           Name="PGE ED11_12 v$(var.InstallVersion)"
+           Language="1033"
+           Version="$(var.InstallVersion)"
+           Manufacturer="Pacific Gas and Electric Co."
+           UpgradeCode="CFB139FE-7C83-4825-8BA9-DD9D04677166">
+
+    <Package InstallerVersion="200" Compressed="yes" />
+    <Property Id="PRODUCTNAME" Value="ED11_12"/>
+    <Property Id="InstallVersion" Value="$(var.InstallVersion)"/>
+    <Property Id="INSTALLLEVEL" Value="100"/>
+    <Media Id="1" Cabinet="PGE.cab" EmbedCab="yes" />
+
+    <MajorUpgrade AllowSameVersionUpgrades="yes"
+                  DowngradeErrorMessage="A newer version of [ProductName] is already installed. If you are sure you want to downgrade, remove the existing installation via Programs and Features." />
+
+    <Property Id="ARPPRODUCTICON" Value="PGEIcon.ico" />
+    <Icon Id="PGEIcon.ico" SourceFile="..\..\PGE_Resource\ICON\PGEIcon.ico"/>
+
+    <!-- Install for all users -->
+    <Property Id="ALLUSERS"><![CDATA[1]]></Property>
+
+    <!--Verify proper versions of required software and aquire locations.-->
+    <PropertyRef Id="NETFRAMEWORK20"/>
+    <Condition Message="This setup requires the .NET Framework 2.0 to be installed.">
+      Installed OR NETFRAMEWORK20
+    </Condition>
+
+    <PropertyRef Id="NETFRAMEWORK35_SP_LEVEL" />
+    <Condition Message="This setup requires the .NET Framework 3.5 SP1 to be installed.">
+      <![CDATA[Installed OR (NETFRAMEWORK35_SP_LEVEL and NOT NETFRAMEWORK35_SP_LEVEL = "#0")]]>
+    </Condition>
+
+    <Property Secure="yes"  Id="ARCFMINSTALLVERSION">
+      <RegistrySearch Id="Version" Root="HKLM" Key="SOFTWARE\Miner and Miner\Products Installed\ArcFMDesktop" Type="raw" Name="Version" />
+    </Property>
+    <!--<Condition Message="This setup requires ArcFM 9.3 to be installed.">ARCFMINSTALLVERSION="#9301"</Condition>-->
+
+    <Property Secure="yes"  Id="TARGETDIR">
+      <RegistrySearch Id="ArcFMDir" Root="HKLM" Key="SOFTWARE\Miner and Miner\ArcFM8" Type="raw" Name="InstallDir" />
+    </Property>
+
+    <Property Secure="yes"  Id="BASEINSTALLDIR" Value="-1">
+      <RegistrySearch Id="BaseDir" Root="HKLM" Key="Software\Miner and Miner\PGE" Type="raw" Name="BaseDirectory" />
+    </Property>
+    <Property Secure="yes" Id="ARCFMINSTALLLOCATION">
+      <RegistrySearch Id="InstallDir" Root="HKLM" Key="SOFTWARE\Miner and Miner\ArcFM8" Type="raw" Name="InstallDir" />
+    </Property>
+
+    <!--Specify Components Here-->
+    <Feature Id="ProductFeature" Title="PGE" Display="expand" InstallDefault="local" AllowAdvertise="no" ConfigurableDirectory="PGE"  Level="1">
+      <Feature Id="ED11_12" Title="ED11_12" InstallDefault="local" AllowAdvertise="no" ConfigurableDirectory="PGE" Level="2" Description="Installs components necessary to execute the ED11_12 functionality">
+        <ComponentGroupRef Id="ED11_12Component"/>
+      </Feature>
+    </Feature>
+
+    <!--Now that the directory is using the registry search directly, this cutsom action is not needed-->
+    <!--<CustomAction Id="ArcFM" Directory="ArcFM" Value="[ARCFMINSTALLLOCATION]\" />
+    <InstallExecuteSequence>
+      <Custom Action="ArcFM" After="CostFinalize"/>
+    </InstallExecuteSequence>-->
+
+    <Property Id="WIXUI_INSTALLDIR" Value="TARGETDIR" />
+    <!--
+First-time install dialog sequence:      Maintenance dialog sequence:
+ - WixUI_WelcomeDlg                     - WixUI_MaintenanceWelcomeDlg
+                                          - WixUI_MaintenanceTypeDlg
+ - WixUI_InstallDirDlg                    - WixUI_InstallDirDlg
+   - WixUI_VerifyReadyDlg                 - WixUI_VerifyReadyDlg
+   - WixUI_DiskCostDlg
+-->
+    <UI Id="WixUI_InstallDir">
+      <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+      <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12" />
+      <TextStyle Id="WixUI_Font_Title" FaceName="Tahoma" Size="9" Bold="yes" />
+
+      <Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+      <Property Id="WixUI_Mode" Value="InstallDir" />
+
+      <DialogRef Id="BrowseDlg" />
+      <DialogRef Id="DiskCostDlg" />
+      <DialogRef Id="ErrorDlg" />
+      <DialogRef Id="FatalError" />
+      <DialogRef Id="FilesInUse" />
+      <DialogRef Id="MsiRMFilesInUse" />
+      <DialogRef Id="PrepareDlg" />
+      <DialogRef Id="ProgressDlg" />
+      <DialogRef Id="ResumeDlg" />
+      <DialogRef Id="UserExit" />
+
+      <Publish Dialog="BrowseDlg" Control="OK" Event="DoAction" Value="WixUIValidatePath" Order="3">1</Publish>
+      <Publish Dialog="BrowseDlg" Control="OK" Event="SpawnDialog" Value="InvalidDirDlg" Order="4"><![CDATA[WIXUI_INSTALLDIR_VALID<>"1"]]></Publish>
+
+      <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999">1</Publish>
+
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="CustomizeDlg"></Publish>
+
+      <Publish Dialog="CustomizeDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="CustomizeDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg">NOT Installed</Publish>
+      <Publish Dialog="CustomizeDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg">Installed</Publish>
+
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="CustomizeDlg" Order="1">NOT Installed</Publish>
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg" Order="2">Installed</Publish>
+
+      <Publish Dialog="MaintenanceWelcomeDlg" Control="Next" Event="NewDialog" Value="MaintenanceTypeDlg">1</Publish>
+
+      <Publish Dialog="MaintenanceTypeDlg" Control="RepairButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="RemoveButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="Back" Event="NewDialog" Value="MaintenanceWelcomeDlg">1</Publish>
+
+      <Property Id="ARPNOMODIFY" Value="1" />
+    </UI>
+    <UIRef Id="WixUI_Common" />
+  </Product>
+</Wix>

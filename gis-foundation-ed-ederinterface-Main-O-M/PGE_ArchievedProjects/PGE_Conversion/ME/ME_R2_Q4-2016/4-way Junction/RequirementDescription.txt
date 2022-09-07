@@ -1,0 +1,1 @@
+The Network Junction Features will be replaced with Conductor Tie Features. The List of junctions to be replaced will be available as a csv file.

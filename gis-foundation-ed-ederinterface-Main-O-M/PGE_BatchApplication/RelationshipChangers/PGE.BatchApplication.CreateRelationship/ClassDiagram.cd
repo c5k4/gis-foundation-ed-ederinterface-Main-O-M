@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.BatchApplication.CreateRelationship.LicenseInitializer" Collapsed="true">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAIAnBEgAAAE2AAABAAAigACAAACqAQAAEKCAAAAAA=</HashCode>
+      <FileName>LicenseInitializer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_AoInit" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.CreateRelationship.Program" Collapsed="true">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAIAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_AOLicenseInitializer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.CreateRelationship.RelationshipBuilder" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EAAAgAABACAAAAAAACEUAIAAAAIAAEEAQQAQAABAAAA=</HashCode>
+      <FileName>RelationshipBuilder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_destinationClass" />
+      <Field Name="_relClass" />
+      <Field Name="_ws" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IObjectClass" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IRelationshipClass" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IWorkspace" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.esriSystem.IAoInitialize" Collapsed="true">
+    <Position X="1" Y="3" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

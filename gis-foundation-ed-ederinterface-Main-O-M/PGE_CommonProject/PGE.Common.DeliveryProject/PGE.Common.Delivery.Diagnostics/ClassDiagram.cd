@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.Common.Delivery.Diagnostics.EventLogger" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAQAAAAAAAAAAAAgAAAMAAQAAAAAAAAA=</HashCode>
+      <FileName>EventLogger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Diagnostics.FormattedConsoleTraceListener" Collapsed="true">
+    <Position X="9" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>FormattedConsoleTraceListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Diagnostics.FormattedTextBoxTraceListener" Collapsed="true">
+    <Position X="11.25" Y="2" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="PGE.Common.Delivery.Diagnostics.FormattedTextBoxTraceListener.AppendEntryEventHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>FormattedTextBoxTraceListener.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAEAIAAAIECAAAAAAAAAAAAAAAAAAAAEAAAE=</HashCode>
+      <FileName>FormattedTextBoxTraceListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Diagnostics.FormattedTextWriterTraceListener" Collapsed="true">
+    <Position X="4.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACEAAABAABAAAIAAABAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>FormattedTextWriterTraceListener.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_Formatter" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Diagnostics.FormatterTraceListener" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAABAABAAAIAAABAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>FormatterTraceListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Diagnostics.Log4NetLogger" Collapsed="true">
+    <Position X="6.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ZIAAAAAAEABAAbAAAAgQQAAAYCAAAAEAAAAAAEAEEAA=</HashCode>
+      <FileName>Log4NetLogger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Diagnostics.LogEntry" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oAAAUAigiAQAEEYFESDBEAIAAJEAEApAAAgAKAQAALU=</HashCode>
+      <FileName>LogEntry.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_Formatter" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.Diagnostics.Logger" Collapsed="true">
+    <Position X="8.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIYAAAAAAAAAAAAAABAAAAAAEIAAA=</HashCode>
+      <FileName>Logger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Diagnostics.Formatters.BinaryLogFormatter" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Formatters\BinaryLogFormatter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Diagnostics.Formatters.LogFormatter" Collapsed="true">
+    <Position X="1.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Formatters\LogFormatter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.Diagnostics.Formatters.TextFormatter" Collapsed="true">
+    <Position X="2.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgBgAEAAA0gEAAAACQAAAAQAANhgAAAEAAAMAgAAACA=</HashCode>
+      <FileName>Formatters\TextFormatter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Diagnostics.Formatters.TimeStampToken" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACIAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Formatters\TimeStampToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Diagnostics.Formatters.TokenFunction" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAwAAEAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Formatters\TokenFunction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Diagnostics.TextWriterTraceListener" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="PGE.Common.Delivery.Diagnostics.Formatters.ILogFormatter" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Formatters\ILogFormatter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

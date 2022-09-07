@@ -1,0 +1,116 @@
+﻿<UserControl x:Class="ArcFMSilverlight.WIPEditorWidget"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    xmlns:local="clr-namespace:ArcFMSilverlight" 
+    xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <StackPanel Orientation="Horizontal" Margin="-5 0 -5 -5">
+            <StackPanel.Resources>
+                <esri:Editor x:Name="EditorWIP" 
+                             EditCompleted="WIPEditor_EditCompleted"
+							 EditorActivated="WIPEditorTemplate_OnEditorActivated"/>
+            </StackPanel.Resources>
+            
+            <local:RibbonPanel Title="WIP" Visibility="{Binding ElementName=WIPTemplatePicker, Path=TemplateGroups, Converter={StaticResource TemplateGroupsToVis}}">
+                <esri:TemplatePicker x:Name="WIPTemplatePicker"                                      
+                                     Margin="0"                                                  
+									 ShowAttributesOnAdd="False"
+									 EditCompleted="WIPEditor_EditCompleted"
+									EditorActivated="WIPEditorTemplate_OnEditorActivated"/>
+            </local:RibbonPanel>
+
+            <local:RibbonPanel Title="WIP Edit">
+                <controlsToolkit:WrapPanel MaxWidth="120" Orientation="Horizontal" DataContext="{StaticResource EditorWIP}">
+                    <Button  x:Name="WipSelect" 
+							Command="{Binding Select}"
+							CommandParameter="New"
+							HorizontalContentAlignment="Left"
+							Style="{StaticResource RibbonButton}"
+							ToolTipService.ToolTip="Select WIP polygon">
+                        <Image Margin="2 0"
+								Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/NewSelection.png"
+								Stretch="None" />
+                    </Button>
+                    <Button x:Name="WipClearSelect"
+							Command="{Binding ClearSelection}"
+							HorizontalContentAlignment="Left"
+							Style="{StaticResource RibbonButton}"
+							ToolTipService.ToolTip="Clear Selection">
+                        <Image Margin="2 0"
+							    Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/Clear.png"
+							    Stretch="None" />
+                    </Button>
+                    <Button x:Name="WipDelete"
+							Command="{Binding DeleteSelected}"
+							HorizontalContentAlignment="Left"
+							Style="{StaticResource RibbonButton}"
+							ToolTipService.ToolTip="Delete Selection">
+                        <Image Margin="2 0"
+							Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/deleteFeature.png"
+							Stretch="None" />
+                    </Button>
+                    <Button x:Name="WipEditVertices"
+							Command="{Binding EditVertices}"
+							HorizontalContentAlignment="Left"
+							Style="{StaticResource RibbonButton}"
+							ToolTipService.ToolTip="Edit Selected Feature">
+                        <Image Margin="2 0"
+							Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/showVertices.png"
+							Stretch="None" />
+                    </Button>
+                    <!--<Button x:Name="WipReshape"
+												Command="{Binding Reshape}"
+												HorizontalContentAlignment="Left"
+												Style="{StaticResource RibbonButton}"
+												ToolTipService.ToolTip="Reshape Selected Feature">
+											<Image Margin="2 0"
+											Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/reshape.png"
+											Stretch="None" />
+										</Button> -->
+                    <Button x:Name="WipSaveEdits"
+							Command="{Binding Save}"
+							HorizontalContentAlignment="Left"
+							Style="{StaticResource RibbonButton}"
+							ToolTipService.ToolTip="Save Edits">
+                        <Image Margin="2 0"
+											Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/commit.png"
+											Stretch="None" />
+                    </Button>
+                    <Button x:Name="DisplayAttribute" Style="{StaticResource RibbonButton}" IsEnabled="{Binding ElementName=WipSelect, Path=IsEnabled}"
+										ToolTipService.ToolTip="Display attributes" Click="DisplayAttribute_Click">
+                        <Image Margin="2 0" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/attributes.png" Stretch="None" />
+                    </Button>
+
+
+                </controlsToolkit:WrapPanel>
+            </local:RibbonPanel>
+
+            <local:RibbonPanel x:Name="WipLabelEditPanel" Title="Move Label" DataContext="{StaticResource EditorWIP}">
+                <ToggleButton x:Name="WipLabelEdit"
+							Content="T"     
+							FontFamily="Times New Roman"
+							FontSize="22"
+							Padding="3"
+							Style="{StaticResource RibbonToggleButton}"
+							Checked="ToggleButton_OnChecked"
+							Unchecked="ToggleButton_OnUnchecked">
+                    <ToolTipService.ToolTip>
+                        <ToolTip Content="Move WIP Labels" />
+                    </ToolTipService.ToolTip>
+                </ToggleButton>
+            </local:RibbonPanel>
+            <!--PLC Changes RK 07/21/2017-->
+            <!--New PLC Tools Control-->
+            <local:RibbonPanel  x:Name="PLCRibbon" Title="PLC">
+                <local:PLCWidget x:Name="PLC" />
+            </local:RibbonPanel>
+            <!--PLC Changes Ends-->
+        </StackPanel>
+    </Grid>
+</UserControl>

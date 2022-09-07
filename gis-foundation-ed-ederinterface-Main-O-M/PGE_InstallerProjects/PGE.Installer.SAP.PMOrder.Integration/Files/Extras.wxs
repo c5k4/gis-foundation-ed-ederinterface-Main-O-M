@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <ComponentGroup Id="PMOrderExtra">
+      <Component Id="PGE.Interfaces.SAP.PMOrder.exe" Directory="SAPPMOrdersynch" Guid="22D728F6-0B15-460D-A659-45D8B65DAB49" >
+        <File Id="PGE.Interfaces.SAP.PMOrder.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_PMOrder_Integration\PGE.Interfaces.SAP.PMOrder.exe"/>
+      </Component>
+      <Component Id="PGE.Interfaces.SAP.PMOrder.exe.config" Directory="SAPPMOrdersynch" Guid="A39026AF-AB2A-40CF-9957-4B29891C75E2" Permanent="yes" >
+        <File Id="PGE.Interfaces.SAP.PMOrder.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_PMOrder_Integration\PGE.Interfaces.SAP.PMOrder.exe.config"/>
+      </Component>
+      <Component Id="PGE.Interfaces.SAP.WOSynchronization.dll" Directory="SAPPMOrdersynch" Guid="C01DD7A2-3CCB-4FCB-AAC7-C9FA0F9C0CE1" >
+        <File Id="PGE.Interfaces.SAP.WOSynchronization.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_PMOrder_Integration\PGE.Interfaces.SAP.WOSynchronization.dll"/>
+      </Component>
+      <Component Id="SAPPMOrder.log4net.config" Directory="LoggingConfiguration" Guid="CF70F4A4-4C28-4F83-ABF1-0CAB4912E4FF" Permanent="yes" NeverOverwrite="yes">
+        <File Id="SAPPMOrder.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_PMOrder_Integration\SAPPMOrder.log4net.config"/>
+      </Component>
+
+      <Component Id="PGE.Interfaces.Integration.Framework.dll" Directory="SAPPMOrdersynch" Guid="3D74969C-113C-4B89-B501-740177D4057F" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.Interfaces.Integration.Framework.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_PMOrder_Integration\PGE.Interfaces.Integration.Framework.dll"/>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

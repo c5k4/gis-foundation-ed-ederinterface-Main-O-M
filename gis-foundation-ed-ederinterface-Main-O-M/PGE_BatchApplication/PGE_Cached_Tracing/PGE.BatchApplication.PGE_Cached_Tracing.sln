@@ -1,0 +1,101 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "externals", "externals", "{31B39077-393D-4A17-B5D2-B15F34922A94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.BatchApplication.PGE_Cached_Tracing", "PGE.BatchApplication.PGE_Cached_Tracing\PGE.BatchApplication.PGE_Cached_Tracing.csproj", "{EBC0DA4D-2785-45F6-9E2F-023E53350F9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.BatchApplication.PGE_SSD_Initialization", "PGE.BatchApplication.PGE_SSD_Initialization\PGE.BatchApplication.PGE_SSD_Initialization.csproj", "{5BD32706-139E-449D-822D-72D2E4272FF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.Common.Delivery.Diagnostics", "..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Diagnostics\PGE.Common.Delivery.Diagnostics.csproj", "{1D019976-FFE6-41A2-AB9C-6241696EDB8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.Common.Delivery.Systems", "..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.System\PGE.Common.Delivery.Systems.csproj", "{BB4E7878-3B0A-4BB4-A34C-61B4630684BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		NoBuild|Any CPU = NoBuild|Any CPU
+		NoBuild|x86 = NoBuild|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBC0DA4D-2785-45F6-9E2F-023E53350F9F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{EBC0DA4D-2785-45F6-9E2F-023E53350F9F}.Debug|x86.ActiveCfg = Debug|x86
+		{EBC0DA4D-2785-45F6-9E2F-023E53350F9F}.Debug|x86.Build.0 = Debug|x86
+		{EBC0DA4D-2785-45F6-9E2F-023E53350F9F}.NoBuild|Any CPU.ActiveCfg = Debug|x86
+		{EBC0DA4D-2785-45F6-9E2F-023E53350F9F}.NoBuild|Any CPU.Build.0 = Debug|x86
+		{EBC0DA4D-2785-45F6-9E2F-023E53350F9F}.NoBuild|x86.ActiveCfg = Debug|x86
+		{EBC0DA4D-2785-45F6-9E2F-023E53350F9F}.NoBuild|x86.Build.0 = Debug|x86
+		{EBC0DA4D-2785-45F6-9E2F-023E53350F9F}.Release|Any CPU.ActiveCfg = Release|x86
+		{EBC0DA4D-2785-45F6-9E2F-023E53350F9F}.Release|x86.ActiveCfg = Release|x86
+		{EBC0DA4D-2785-45F6-9E2F-023E53350F9F}.Release|x86.Build.0 = Release|x86
+		{5BD32706-139E-449D-822D-72D2E4272FF8}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{5BD32706-139E-449D-822D-72D2E4272FF8}.Debug|x86.ActiveCfg = Debug|x86
+		{5BD32706-139E-449D-822D-72D2E4272FF8}.Debug|x86.Build.0 = Debug|x86
+		{5BD32706-139E-449D-822D-72D2E4272FF8}.NoBuild|Any CPU.ActiveCfg = Debug|x86
+		{5BD32706-139E-449D-822D-72D2E4272FF8}.NoBuild|Any CPU.Build.0 = Debug|x86
+		{5BD32706-139E-449D-822D-72D2E4272FF8}.NoBuild|x86.ActiveCfg = Debug|x86
+		{5BD32706-139E-449D-822D-72D2E4272FF8}.NoBuild|x86.Build.0 = Debug|x86
+		{5BD32706-139E-449D-822D-72D2E4272FF8}.Release|Any CPU.ActiveCfg = Release|x86
+		{5BD32706-139E-449D-822D-72D2E4272FF8}.Release|x86.ActiveCfg = Release|x86
+		{5BD32706-139E-449D-822D-72D2E4272FF8}.Release|x86.Build.0 = Release|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Debug|x86.ActiveCfg = Debug|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Debug|x86.Build.0 = Debug|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.NoBuild|Any CPU.ActiveCfg = NoBuild|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.NoBuild|Any CPU.Build.0 = NoBuild|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.NoBuild|x86.ActiveCfg = NoBuild|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.NoBuild|x86.Build.0 = NoBuild|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Release|x86.ActiveCfg = Release|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Release|x86.Build.0 = Release|x86
+		{BB4E7878-3B0A-4BB4-A34C-61B4630684BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB4E7878-3B0A-4BB4-A34C-61B4630684BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB4E7878-3B0A-4BB4-A34C-61B4630684BA}.Debug|x86.ActiveCfg = Debug|x86
+		{BB4E7878-3B0A-4BB4-A34C-61B4630684BA}.Debug|x86.Build.0 = Debug|x86
+		{BB4E7878-3B0A-4BB4-A34C-61B4630684BA}.NoBuild|Any CPU.ActiveCfg = NoBuild|Any CPU
+		{BB4E7878-3B0A-4BB4-A34C-61B4630684BA}.NoBuild|Any CPU.Build.0 = NoBuild|Any CPU
+		{BB4E7878-3B0A-4BB4-A34C-61B4630684BA}.NoBuild|x86.ActiveCfg = NoBuild|x86
+		{BB4E7878-3B0A-4BB4-A34C-61B4630684BA}.NoBuild|x86.Build.0 = NoBuild|x86
+		{BB4E7878-3B0A-4BB4-A34C-61B4630684BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB4E7878-3B0A-4BB4-A34C-61B4630684BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB4E7878-3B0A-4BB4-A34C-61B4630684BA}.Release|x86.ActiveCfg = Release|x86
+		{BB4E7878-3B0A-4BB4-A34C-61B4630684BA}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E} = {31B39077-393D-4A17-B5D2-B15F34922A94}
+		{BB4E7878-3B0A-4BB4-A34C-61B4630684BA} = {31B39077-393D-4A17-B5D2-B15F34922A94}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E2826C0-3A6C-412B-BC88-854EA1D3AD09}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccProjectUniqueName0 = ..\\..\\PGE_CommonProject\\PGE.Common.DeliveryProject\\PGE.Common.Delivery.Diagnostics\\PGE.Common.Delivery.Diagnostics.csproj
+		SccProjectTopLevelParentUniqueName0 = PGE_Cached_Tracing.sln
+		SccProjectName0 = ../../PGE_CommonProject/PGE.Common.DeliveryProject/PGE.Common.Delivery.Diagnostics
+		SccLocalPath0 = ..\\..\\PGE_CommonProject\\PGE.Common.DeliveryProject\\PGE.Common.Delivery.Diagnostics
+		SccProjectUniqueName1 = ..\\..\\PGE_CommonProject\\PGE.Common.DeliveryProject\\PGE.Common.Delivery.System\\PGE.Common.Delivery.Systems.csproj
+		SccProjectTopLevelParentUniqueName1 = PGE_Cached_Tracing.sln
+		SccProjectName1 = ../../PGE_CommonProject/PGE.Common.DeliveryProject/PGE.Common.Delivery.System
+		SccLocalPath1 = ..\\..\\PGE_CommonProject\\PGE.Common.DeliveryProject\\PGE.Common.Delivery.System
+		SccLocalPath2 = .
+		SccProjectUniqueName3 = PGE.BatchApplication.PGE_Cached_Tracing\\PGE.BatchApplication.PGE_Cached_Tracing.csproj
+		SccProjectName3 = PGE.BatchApplication.PGE_Cached_Tracing
+		SccLocalPath3 = PGE.BatchApplication.PGE_Cached_Tracing
+		SccProjectUniqueName4 = PGE.BatchApplication.PGE_SSD_Initialization\\PGE.BatchApplication.PGE_SSD_Initialization.csproj
+		SccProjectName4 = PGE.BatchApplication.PGE_SSD_Initialization
+		SccLocalPath4 = PGE.BatchApplication.PGE_SSD_Initialization
+	EndGlobalSection
+EndGlobal

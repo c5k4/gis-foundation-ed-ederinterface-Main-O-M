@@ -1,0 +1,34 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Target Name="PostBuildEvent">
+		<Message Text="PostBuildEvent events are being suppressed." Importance="high"/>
+	</Target>
+    <Target Name="PreBuildEvent">
+		<Message Text="PreBuildEvent events are being suppressed." Importance="high"/>
+	</Target>
+	<Target Name="BeforeClean">
+		<Message Text="BeforeClean events are being suppressed." Importance="high"/>
+	</Target>
+	<Target Name="AfterBuild">
+		<Message Text="AfterBuild events are being suppressed." Importance="high"/>
+	</Target>
+	
+	<PropertyGroup>
+        <BuildDependsOn>
+            BeforeBuild;
+            CoreBuild;
+			<!--AfterBuild-->
+        </BuildDependsOn>
+	</PropertyGroup>
+	<PropertyGroup>
+        <CleanDependsOn>
+			<!--BeforeClean-->
+            UnmanagedUnregistration;
+            CoreClean;
+            CleanReferencedProjects;
+            CleanPublishFolder;
+            AfterClean
+        </CleanDependsOn>
+    </PropertyGroup>
+	
+	<Target Name="_CopyFilesMarkedCopyLocal"/>
+</Project>

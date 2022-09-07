@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <DirectoryRef Id="CONFIG">
+      <Component Id="ConfigFiles" Guid="4FA290AA-2FF9-45B9-99A0-C6CD6EA1C289" >
+        <File Id="ADMSLabelConfig.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\AutoUpdaters\Special\ADMSLabelAU\Config\ADMSLabelConfig.xml"/>
+        <File Id="CapacitorBank.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\AutoUpdaters\Special\SymbolNumber\Config\CapacitorBank.xml"/>
+        <File Id="DynamicProtectiveDevice.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\AutoUpdaters\Special\SymbolNumber\Config\DynamicProtectiveDevice.xml"/>
+        <File Id="SupportStructure.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\AutoUpdaters\Special\SymbolNumber\Config\SupportStructure.xml"/>
+        <File Id="Switch.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\AutoUpdaters\Special\SymbolNumber\Config\Switch.xml"/>
+        <File Id="Transformer.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\AutoUpdaters\Special\SymbolNumber\Config\Transformer.xml"/>
+        <File Id="VoltageRegulator.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\AutoUpdaters\Special\SymbolNumber\Config\VoltageRegulator.xml"/>
+        <File Id="ExternalAttrConfig.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\AutoUpdaters\Special\RegionalAttributesAU\Config\ExternalAttrConfig.xml"/>
+        <File Id="NeutralConductorConfig.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\ConfigNeutralPhase\NeutralConductorConfig.xml"/>
+        <File Id="ExternalTransformerVoltage.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\ValidationRules\Config\ExternalTransformerVoltage.xml"/>
+        <File Id="PGEMapUtiltiesConfig.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\AutoTextElements\PGEMapUtiltiesConfig.xml"/>
+        <File Id="Relationship_Subtype_Mapping.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\D8TreeTools\CreateRelatedObject\Relationship_Subtype_Mapping.xml"/>
+        <File Id="PGECircuitColor.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\FieldEditors\PGECircuitColor.xml"/>
+        <File Id="PGESSDConfig.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\GDBM\PGESSDConfig.xml"/>
+        <File Id="VoltageConfig.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\Common\VoltageConfig.xml"/>
+        <File Id="PGE_OpenPointADMSLabel_Config.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\GDBM\PGE_OpenPointADMSLabel_Config.xml"/>
+
+        <!--<File Id="PONSDesktopConfig.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\ArcMapCommands\PONS\PONSDesktopConfig.xml"/>-->
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="SCHEMAS">
+      <Component Id="Schemas" Guid="4EAF1BCA-452C-497B-BE59-46AE5D604A2F" >
+        <File Id="SymbolNumber.xsd" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\AutoUpdaters\Special\SymbolNumber\Schema\SymbolNumber.xsd"/>
+        <File Id="SymbolNumber.xss" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\AutoUpdaters\Special\SymbolNumber\Schema\SymbolNumber.xss"/>
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="LoggingConfiguration">
+      <Component Id="LogConfig" Guid="ABC8B5CA-84EB-4FC1-A1FE-8F2DA28407CA" Permanent="yes" NeverOverwrite="yes" >
+        <File Id="EDERDesktop.log4net.config" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\EDERDesktop.log4net.config"/>
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="ArcFMBin">
+      <Component Id="UFMConfiguration" Guid="813FC154-18E5-4A58-A94A-C502B891821D" Permanent="yes" >
+        <File Id="UFMConfiguration.xml" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\UFM\Configuration\UFMConfiguration.xml"/>
+      </Component>
+    </DirectoryRef>
+    
+  </Fragment>
+</Wix>

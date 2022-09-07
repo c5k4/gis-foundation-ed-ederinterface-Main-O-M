@@ -1,0 +1,49 @@
+Prompt drop View VW_D_DEVICES;
+DROP VIEW EDGISBO.VW_D_DEVICES
+/
+
+/* Formatted on 6/27/2019 02:52:08 PM (QP5 v5.313) */
+PROMPT View VW_D_DEVICES;
+--
+-- VW_D_DEVICES  (View)
+--
+
+CREATE OR REPLACE FORCE VIEW EDGISBO.VW_D_DEVICES
+(
+    DEVICEID,
+    CIRCUITID,
+    CIRCUITID2,
+    DEVICETYPE,
+    OPERATINGNUMBER,
+    DIVISION,
+    CGC12,
+    STATUS
+)
+AS
+    (  SELECT MAX (CEDSADEVICEID)
+                  AS DEVICEID,
+              LISTAGG (TRIM (CAST (CIRCUITID AS VARCHAR2 (100))), ';')
+                  WITHIN GROUP (ORDER BY CEDSADEVICEID)
+                  AS CIRCUITID,
+              LISTAGG (TRIM (CAST (CIRCUITID2 AS VARCHAR2 (100))), ';')
+                  WITHIN GROUP (ORDER BY CEDSADEVICEID)
+                  AS CIRCUITID2,
+              LISTAGG (TRIM (CAST (DEVICETYPE AS VARCHAR2 (100))), ';')
+                  WITHIN GROUP (ORDER BY CEDSADEVICEID)
+                  AS DEVICETYPE,
+              LISTAGG (TRIM (CAST (OPERATINGNUMBER AS VARCHAR2 (100))), ';')
+                  WITHIN GROUP (ORDER BY CEDSADEVICEID)
+                  AS OPERATINGNUMBER,
+              LISTAGG (TRIM (CAST (DIVISION AS VARCHAR2 (100))), ';')
+                  WITHIN GROUP (ORDER BY CEDSADEVICEID)
+                  AS DIVISION,
+              LISTAGG (TRIM (CAST (CGC12 AS VARCHAR2 (100))), ';')
+                  WITHIN GROUP (ORDER BY CEDSADEVICEID)
+                  AS CGC12,
+              LISTAGG (TRIM (CAST (STATUS AS VARCHAR2 (100))), ';')
+                  WITHIN GROUP (ORDER BY CEDSADEVICEID)
+                  AS STATUS
+         FROM EDGISBO.vw_devices
+        WHERE CEDSADEVICEID <> 9999
+     GROUP BY CEDSADEVICEID)
+/

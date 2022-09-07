@@ -1,0 +1,107 @@
+Prompt drop View USER_SDO_NETWORK_TIMESTAMPS;
+DROP VIEW MDSYS.USER_SDO_NETWORK_TIMESTAMPS
+/
+
+/* Formatted on 6/27/2019 02:51:41 PM (QP5 v5.313) */
+PROMPT View USER_SDO_NETWORK_TIMESTAMPS;
+--
+-- USER_SDO_NETWORK_TIMESTAMPS  (View)
+--
+
+CREATE OR REPLACE FORCE VIEW MDSYS.USER_SDO_NETWORK_TIMESTAMPS
+(
+    NETWORK,
+    TABLE_NAME,
+    LAST_DML_TIME
+)
+AS
+    SELECT network, table_name, last_dml_time
+      FROM sdo_network_timestamps
+     WHERE owner = SYS_CONTEXT ('USERENV', 'CURRENT_SCHEMA')
+/
+
+
+Prompt Trigger SDO_NETWORK_TIME_DEL_TRIG;
+--
+-- SDO_NETWORK_TIME_DEL_TRIG  (Trigger) 
+--
+CREATE OR REPLACE TRIGGER MDSYS.sdo_network_time_del_trig
+INSTEAD OF DELETE ON MDSYS.USER_SDO_NETWORK_TIMESTAMPS
+REFERENCING OLD AS o
+FOR EACH ROW
+DECLARE
+  user_name    VARCHAR2(256);
+BEGIN
+
+  EXECUTE IMMEDIATE 'SELECT USER FROM DUAL' INTO user_name;
+
+  DELETE
+    FROM  sdo_network_timestamps
+    WHERE owner = NLS_UPPER(user_name)
+      AND network = :o.network
+      AND table_name = :o.table_name;
+END;
+/
+
+
+Prompt Trigger SDO_NETWORK_TIME_INS_TRIG;
+--
+-- SDO_NETWORK_TIME_INS_TRIG  (Trigger) 
+--
+CREATE OR REPLACE TRIGGER MDSYS.sdo_network_time_ins_trig
+INSTEAD OF INSERT ON MDSYS.USER_SDO_NETWORK_TIMESTAMPS
+REFERENCING NEW AS n
+FOR EACH ROW
+DECLARE
+ user_name         VARCHAR2(32);
+BEGIN
+
+  EXECUTE IMMEDIATE 'SELECT user FROM dual' INTO user_name;
+
+  INSERT INTO sdo_network_timestamps(
+     owner, network, table_name, last_dml_time)
+  VALUES(NLS_UPPER(user_name),:n.network,:n.table_name, :n.last_dml_time);
+
+EXCEPTION WHEN OTHERS THEN RAISE;
+END;
+/
+
+
+Prompt Trigger SDO_NETWORK_TIME_UPD_TRIG;
+--
+-- SDO_NETWORK_TIME_UPD_TRIG  (Trigger) 
+--
+CREATE OR REPLACE TRIGGER MDSYS.sdo_network_time_upd_trig
+INSTEAD OF UPDATE ON MDSYS.USER_SDO_NETWORK_TIMESTAMPS
+REFERENCING OLD AS o NEW AS n
+FOR EACH ROW
+DECLARE
+  user_name    VARCHAR2(256);
+BEGIN
+
+  EXECUTE IMMEDIATE 'SELECT USER FROM DUAL' INTO user_name;
+
+  UPDATE sdo_network_timestamps
+   SET(network,table_name,last_dml_time)
+      =
+   (SELECT
+      :n.network,:n.table_name,:n.last_dml_time
+    FROM DUAL)
+    WHERE  owner = NLS_UPPER(user_name)
+      AND  NLS_UPPER(network) = NLS_UPPER(:o.network)
+      AND  NLS_UPPER(table_name) = NLS_UPPER(:o.table_name);
+END;
+/
+
+
+Prompt Synonym USER_SDO_NETWORK_TIMESTAMPS;
+--
+-- USER_SDO_NETWORK_TIMESTAMPS  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM USER_SDO_NETWORK_TIMESTAMPS FOR MDSYS.USER_SDO_NETWORK_TIMESTAMPS
+/
+
+
+Prompt Grants on VIEW USER_SDO_NETWORK_TIMESTAMPS TO PUBLIC to PUBLIC;
+GRANT DELETE, INSERT, SELECT, UPDATE ON MDSYS.USER_SDO_NETWORK_TIMESTAMPS TO PUBLIC
+/

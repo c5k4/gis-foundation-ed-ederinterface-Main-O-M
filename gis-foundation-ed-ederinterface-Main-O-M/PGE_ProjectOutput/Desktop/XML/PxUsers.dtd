@@ -1,0 +1,6 @@
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Rick Wells (Miner & Miner Engineering) -->
+<!-- DTD structure for Process Framework Workflow -->
+<!ELEMENT PX_USERS (IEPROGID, XML_VERSION, USERS?)>
+<!ELEMENT USERS (USER*)>
+<!ELEMENT USER (NAME, DISPLAY_NAME, DESCRIPTION?, USER_ROLES)>
+<!ELEMENT USER_ROLES (NAME*)>

@@ -1,0 +1,1173 @@
+<?xml version="1.0"?>
+<SymbolNumberRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FeatureClass>
+    <Rule SymbolNumber="9">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>2</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>N</Value>
+        </Attribute>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="10">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>2</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="11">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPL</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Recloser</Value>
+          <Value></Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="12">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPR</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Recloser</Value>
+          <Value></Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="13">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPL</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Recloser</Value>
+          <Value></Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="14">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPR</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Recloser</Value>
+          <Value></Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="98">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>UNK</Value>
+          <Value>NA</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Recloser</Value>
+          <Value></Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="102">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>UNK</Value>
+          <Value>NA</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Recloser</Value>
+          <Value></Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="97">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>UNK</Value>
+          <Value>NA</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Recloser</Value>
+          <Value></Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="103">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPL</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Recloser</Value>
+          <Value></Value>
+        </Attribute>
+        <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+          <Count Condition="false">
+            <Value>0</Value>
+          </Count>
+          <!-- SCADA -->
+          <RelatedObject>
+            <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+              <Value>Y</Value>
+            </Attribute>
+          </RelatedObject>
+        </Relationship>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="104">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPL</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Sectionalizer</Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="105">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPL</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Sectionalizer</Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="106">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPL</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Sectionalizer</Value>
+        </Attribute>
+        <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+          <Count Condition="false">
+            <Value>0</Value>
+          </Count>
+          <!-- SCADA -->
+          <RelatedObject>
+            <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+              <Value>Y</Value>
+            </Attribute>
+          </RelatedObject>
+        </Relationship>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="107">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPL</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Switch</Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="108">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPL</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Switch</Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="109">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPL</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Switch</Value>
+        </Attribute>
+        <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+          <Count Condition="false">
+            <Value>0</Value>
+          </Count>
+          <!-- SCADA -->
+          <RelatedObject>
+            <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+              <Value>Y</Value>
+            </Attribute>
+          </RelatedObject>
+        </Relationship>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="110">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPR</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Recloser</Value>
+          <Value></Value>
+        </Attribute>
+        <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+          <Count Condition="false">
+            <Value>0</Value>
+          </Count>
+          <!-- SCADA -->
+          <RelatedObject>
+            <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+              <Value>Y</Value>
+            </Attribute>
+          </RelatedObject>
+        </Relationship>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="111">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPR</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Sectionalizer</Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="112">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPR</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Sectionalizer</Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="113">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPR</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Sectionalizer</Value>
+        </Attribute>
+        <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+          <Count Condition="false">
+            <Value>0</Value>
+          </Count>
+          <!-- SCADA -->
+          <RelatedObject>
+            <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+              <Value>Y</Value>
+            </Attribute>
+          </RelatedObject>
+        </Relationship>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="114">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPR</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Switch</Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="115">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPR</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Switch</Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="116">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>SPR</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Switch</Value>
+        </Attribute>
+        <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+          <Count Condition="false">
+            <Value>0</Value>
+          </Count>
+          <!-- SCADA -->
+          <RelatedObject>
+            <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+              <Value>Y</Value>
+            </Attribute>
+          </RelatedObject>
+        </Relationship>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="117">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>UNK</Value>
+          <Value>NA</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Recloser</Value>
+          <Value></Value>
+        </Attribute>
+        <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+          <Count Condition="false">
+            <Value>0</Value>
+          </Count>
+          <!-- SCADA -->
+          <RelatedObject>
+            <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+              <Value>Y</Value>
+            </Attribute>
+          </RelatedObject>
+        </Relationship>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="118">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>UNK</Value>
+          <Value>NA</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Sectionalizer</Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="119">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>UNK</Value>
+          <Value>NA</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Switch</Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="120">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>UNK</Value>
+          <Value>NA</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Sectionalizer</Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="121">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>UNK</Value>
+          <Value>NA</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Sectionalizer</Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="122">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>UNK</Value>
+          <Value>NA</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Sectionalizer</Value>
+        </Attribute>
+        <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+          <Count Condition="false">
+            <Value>0</Value>
+          </Count>
+          <!-- SCADA -->
+          <RelatedObject>
+            <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+              <Value>Y</Value>
+            </Attribute>
+          </RelatedObject>
+        </Relationship>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="123">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>UNK</Value>
+          <Value>NA</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Switch</Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="124">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>UNK</Value>
+          <Value>NA</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Switch</Value>
+        </Attribute>
+        <Or>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="false">
+              <Value>0</Value>
+            </Count>
+            <!-- SCADA -->
+            <RelatedObject>
+              <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+                <Value>N</Value>
+                <Value></Value>
+              </Attribute>
+            </RelatedObject>
+          </Relationship>
+          <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+            <Count Condition="true">
+              <Value>0</Value>
+            </Count>
+            <!-- NO SCADA -->
+          </Relationship>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="125">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>3</Value>
+        </Attribute>
+        <Attribute FieldName="SUPERVISORYCONTROL">
+          <Value>Y</Value>
+        </Attribute>
+        <Attribute FieldName="POTENTIAL">
+          <Value>UNK</Value>
+          <Value>NA</Value>
+        </Attribute>
+        <Attribute FieldName="COMPLEXDEVICEIDC">
+          <Value>N</Value>
+        </Attribute>
+        <Attribute FieldName="OPERATINGAS">
+          <Value>Switch</Value>
+        </Attribute>
+        <Relationship ClassName="EDGIS.DynProtDev_SCADA">
+          <Count Condition="false">
+            <Value>0</Value>
+          </Count>
+          <!-- SCADA -->
+          <RelatedObject>
+            <Attribute FieldName="FLISRAUTOMATIONDEVICEIDC">
+              <Value>Y</Value>
+            </Attribute>
+          </RelatedObject>
+        </Relationship>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="16">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>8</Value>
+        </Attribute>
+        <Or>
+          <Attribute FieldName="DEVICETYPE">
+            <Value>ELSP</Value>
+          </Attribute>
+          <Attribute FieldName="DEVICETYPE">
+            <Value>GN3E</Value>
+          </Attribute>
+          <Attribute FieldName="DEVICETYPE">
+            <Value>GN3V</Value>
+          </Attribute>
+          <Attribute FieldName="DEVICETYPE">
+            <Value>GV</Value>
+          </Attribute>
+          <Attribute FieldName="DEVICETYPE">
+            <Value>GW</Value>
+          </Attribute>
+          <Attribute FieldName="DEVICETYPE">
+            <Value>OTHR</Value>
+          </Attribute>
+        </Or>
+      </And>
+    </Rule>
+    <Rule SymbolNumber="32">
+      <And>
+        <Attribute FieldName="SubtypeCD">
+          <Value>8</Value>
+        </Attribute>
+        <Attribute FieldName="DEVICETYPE">
+          <Value>SCAD</Value>
+        </Attribute>
+      </And>
+    </Rule>
+  </FeatureClass>
+</SymbolNumberRules>

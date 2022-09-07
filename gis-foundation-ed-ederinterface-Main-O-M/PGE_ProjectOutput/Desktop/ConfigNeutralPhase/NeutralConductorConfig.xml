@@ -1,0 +1,212 @@
+﻿<DomainMappings>
+  <DomainMapping name="Desktop-NeutralConductor">
+    <Domain name="PHASE DESIGNATION - CONDUCTORINFO">
+      <add fromValue="{default}" toValue="No" />
+      <add fromValue="1" toValue="No" />
+      <add fromValue="2" toValue="No" />
+      <add fromValue="3" toValue="No" />
+      <add fromValue="4" toValue="No" />
+      <add fromValue="5" toValue="No" />
+      <add fromValue="6" toValue="No" />
+      <add fromValue="7" toValue="No" />
+      <add fromValue="8" toValue="Yes" />
+      <add fromValue="9" toValue="Yes" />
+      <add fromValue="10" toValue="Yes" />
+      <add fromValue="11" toValue="Yes" />
+      <add fromValue="12" toValue="Yes" />
+    </Domain>
+    <Domain name="CONDUCTORUSE - PRIOH">
+      <add fromValue="{default}" toValue="Yes" />
+      <add fromValue="1" toValue="No" />
+      <add fromValue="2" toValue="Yes" />
+      <add fromValue="4" toValue="Yes" />
+      <add fromValue="6" toValue="Yes" />
+    </Domain>
+    <Domain name="CONDUCTORUSE - SECOH">
+      <add fromValue="{default}" toValue="No" />
+      <add fromValue="3" toValue="No" />
+      <add fromValue="5" toValue="No" />
+      <add fromValue="6" toValue="No" />
+      <add fromValue="8" toValue="No" />
+      <add fromValue="9" toValue="No" />
+    </Domain>
+    <Domain name="CONDUCTOR CODE - UG">
+      <add fromValue="{default}" toValue="No" />
+      <add fromValue="50" toValue="No"/>
+      <add fromValue="51" toValue="No"/>
+      <add fromValue="52" toValue="No"/>
+      <add fromValue="53" toValue="No"/>
+      <add fromValue="54" toValue="No"/>
+      <add fromValue="55" toValue="No"/>
+      <add fromValue="56" toValue="No"/>
+      <add fromValue="57" toValue="No"/>
+      <add fromValue="58" toValue="No"/>
+      <add fromValue="59" toValue="No"/>
+      <add fromValue="60" toValue="No"/>
+      <add fromValue="61" toValue="No"/>
+      <add fromValue="62" toValue="No"/>
+      <add fromValue="63" toValue="No"/>
+      <add fromValue="64" toValue="No"/>
+      <add fromValue="65" toValue="No"/>
+      <add fromValue="66" toValue="No"/>
+      <add fromValue="67" toValue="No"/>
+      <add fromValue="68" toValue="No"/>
+      <add fromValue="69" toValue="No"/>
+      <add fromValue="77" toValue="No"/>
+      <add fromValue="79" toValue="No"/>
+      <add fromValue="80" toValue="No"/>
+      <add fromValue="91" toValue="No"/>
+      <add fromValue="92" toValue="No"/>
+      <add fromValue="93" toValue="No"/>
+      <add fromValue="94" toValue="No"/>
+      <add fromValue="95" toValue="No"/>
+      <add fromValue="96" toValue="No"/>
+      <add fromValue="100" toValue="No"/>
+      <add fromValue="101" toValue="No"/>
+      <add fromValue="102" toValue="No"/>
+      <add fromValue="103" toValue="No"/>
+      <add fromValue="104" toValue="No"/>
+      <add fromValue="105" toValue="No"/>
+      <add fromValue="106" toValue="No"/>
+      <add fromValue="107" toValue="No"/>
+      <add fromValue="108" toValue="No"/>
+      <add fromValue="109" toValue="No"/>
+      <add fromValue="110" toValue="No"/>
+      <add fromValue="111" toValue="No"/>
+      <add fromValue="112" toValue="No"/>
+      <add fromValue="113" toValue="No"/>
+      <add fromValue="114" toValue="No"/>
+      <add fromValue="115" toValue="No"/>
+      <add fromValue="116" toValue="No"/>
+      <add fromValue="117" toValue="No"/>
+      <add fromValue="118" toValue="No"/>
+      <add fromValue="119" toValue="No"/>
+      <add fromValue="120" toValue="No"/>
+      <add fromValue="121" toValue="No"/>
+      <add fromValue="122" toValue="No"/>
+      <add fromValue="123" toValue="No"/>
+      <add fromValue="124" toValue="No"/>
+      <add fromValue="125" toValue="No"/>
+      <add fromValue="130" toValue="No"/>
+      <add fromValue="131" toValue="No"/>
+      <add fromValue="132" toValue="No"/>
+      <add fromValue="133" toValue="No"/>
+      <add fromValue="134" toValue="No"/>
+      <add fromValue="135" toValue="No"/>
+      <add fromValue="136" toValue="No"/>
+      <add fromValue="137" toValue="No"/>
+      <add fromValue="138" toValue="No"/>
+      <add fromValue="139" toValue="No"/>
+      <add fromValue="140" toValue="No"/>
+      <add fromValue="141" toValue="Yes"/>
+      <add fromValue="142" toValue="Yes"/>
+      <add fromValue="143" toValue="Yes"/>
+      <add fromValue="144" toValue="Yes"/>
+      <add fromValue="145" toValue="Yes"/>
+      <add fromValue="150" toValue="No"/>
+      <add fromValue="151" toValue="No"/>
+      <add fromValue="152" toValue="No"/>
+      <add fromValue="153" toValue="No"/>
+      <add fromValue="154" toValue="No"/>
+      <add fromValue="155" toValue="No"/>
+      <add fromValue="161" toValue="No"/>
+      <add fromValue="162" toValue="No"/>
+      <add fromValue="163" toValue="No"/>
+      <add fromValue="164" toValue="No"/>
+      <add fromValue="165" toValue="No"/>
+      <add fromValue="166" toValue="No"/>
+      <add fromValue="170" toValue="No"/>
+      <add fromValue="171" toValue="No"/>
+      <add fromValue="180" toValue="Yes"/>
+      <add fromValue="181" toValue="Yes"/>
+      <add fromValue="182" toValue="Yes"/>
+      <add fromValue="183" toValue="Yes"/>
+      <add fromValue="184" toValue="Yes"/>
+      <add fromValue="185" toValue="Yes"/>
+      <add fromValue="186" toValue="Yes"/>
+      <add fromValue="187" toValue="Yes"/>
+      <add fromValue="188" toValue="Yes"/>
+      <add fromValue="189" toValue="Yes"/>
+      <add fromValue="190" toValue="Yes"/>
+      <add fromValue="191" toValue="Yes"/>
+      <add fromValue="192" toValue="Yes"/>
+      <add fromValue="193" toValue="Yes"/>
+      <add fromValue="194" toValue="Yes"/>
+      <add fromValue="195" toValue="Yes"/>
+      <add fromValue="196" toValue="Yes"/>
+      <add fromValue="199" toValue="No"/>
+      <add fromValue="201" toValue="No"/>
+      <add fromValue="202" toValue="No"/>
+      <add fromValue="203" toValue="No"/>
+      <add fromValue="204" toValue="No"/>
+      <add fromValue="205" toValue="No"/>
+      <add fromValue="206" toValue="No"/>
+      <add fromValue="207" toValue="No"/>
+      <add fromValue="211" toValue="No"/>
+      <add fromValue="212" toValue="No"/>
+      <add fromValue="213" toValue="No"/>
+      <add fromValue="214" toValue="No"/>
+      <add fromValue="215" toValue="No"/>
+      <add fromValue="216" toValue="No"/>
+      <add fromValue="217" toValue="No"/>
+      <add fromValue="218" toValue="No"/>
+      <add fromValue="219" toValue="No"/>
+      <add fromValue="220" toValue="No"/>
+      <add fromValue="221" toValue="Yes"/>
+      <add fromValue="222" toValue="Yes"/>
+      <add fromValue="231" toValue="Yes"/>
+      <add fromValue="232" toValue="Yes"/>
+      <add fromValue="233" toValue="Yes"/>
+      <add fromValue="234" toValue="Yes"/>
+      <add fromValue="235" toValue="Yes"/>
+      <add fromValue="236" toValue="Yes"/>
+      <add fromValue="237" toValue="Yes"/>
+      <add fromValue="241" toValue="No"/>
+      <add fromValue="242" toValue="No"/>
+      <add fromValue="243" toValue="Yes"/>
+      <add fromValue="244" toValue="Yes"/>
+      <add fromValue="251" toValue="No"/>
+      <add fromValue="252" toValue="No"/>
+      <add fromValue="253" toValue="No"/>
+      <add fromValue="254" toValue="No"/>
+      <add fromValue="255" toValue="No"/>
+      <add fromValue="261" toValue="Yes"/>
+      <add fromValue="262" toValue="Yes"/>
+      <add fromValue="263" toValue="Yes"/>
+      <add fromValue="269" toValue="Yes"/>
+      <add fromValue="270" toValue="Yes"/>
+      <add fromValue="271" toValue="Yes"/>
+      <add fromValue="272" toValue="Yes"/>
+      <add fromValue="273" toValue="Yes"/>
+      <add fromValue="274" toValue="Yes"/>
+      <add fromValue="275" toValue="Yes"/>
+      <add fromValue="276" toValue="Yes"/>
+      <add fromValue="277" toValue="Yes"/>
+      <add fromValue="278" toValue="Yes"/>
+      <add fromValue="279" toValue="Yes"/>
+      <add fromValue="280" toValue="Yes"/>
+      <add fromValue="281" toValue="Yes"/>
+      <add fromValue="282" toValue="Yes"/>
+      <add fromValue="283" toValue="Yes"/>
+      <add fromValue="284" toValue="Yes"/>
+      <add fromValue="285" toValue="Yes"/>
+      <add fromValue="286" toValue="Yes"/>
+      <add fromValue="287" toValue="Yes"/>
+      <add fromValue="288" toValue="Yes"/>
+      <add fromValue="289" toValue="Yes"/>
+      <add fromValue="290" toValue="Yes"/>
+      <add fromValue="291" toValue="Yes"/>
+      <add fromValue="292" toValue="Yes"/>
+      <add fromValue="293" toValue="Yes"/>
+      <add fromValue="294" toValue="Yes"/>
+      <add fromValue="298" toValue="No"/>
+      <add fromValue="299" toValue="No"/>
+      <add fromValue="390" toValue="No"/>
+      <add fromValue="391" toValue="No"/>
+      <add fromValue="777" toValue="No"/>
+      <!-- Need to get fromValue="888" toValue="?"for timebeing kept as No-->
+      <add fromValue="888" toValue="No"/>
+      <add fromValue="9999" toValue="No"/>
+    </Domain>
+  </DomainMapping>
+</DomainMappings>

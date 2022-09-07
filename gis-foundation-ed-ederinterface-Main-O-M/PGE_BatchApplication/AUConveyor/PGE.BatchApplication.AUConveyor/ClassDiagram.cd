@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.BatchApplication.AUConveyor.Autoupdaters.AUDisabler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAACAAAAAAAAAABAAAAAACAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Autoupdaters\AUDisabler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_mmAu" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Autoupdaters.AUHelper" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <AssociationLine Name="_auWrapper" Type="PGE.BatchApplication.AUConveyor.Autoupdaters.AUWrapper">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.015" Y="0.091" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAIAACAAAAAACEAAAAgAAAAAAQAAAIAAA=</HashCode>
+      <FileName>Autoupdaters\AUHelper.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_auWrapper" />
+      <Field Name="_ws" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Autoupdaters.AUWrapper" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEAAAEACAAAQQAAAAAAAQQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Autoupdaters\AUWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Conveyor" Collapsed="true">
+    <Position X="9.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAEACAAIIAAAQAAAAQBAAhAAAAABAAQAAAAQAA=</HashCode>
+      <FileName>Conveyor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_auHelper" />
+      <Field Name="_ws" />
+      <Field Name="_auWrapper" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Program" Collapsed="true">
+    <Position X="8.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAgAAAAAAQAAAIAAAAAAAABAAAAAABAIAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_AOLicenseInitializer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Processing.Annotation.AnnotationManipulation" Collapsed="true">
+    <Position X="7.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQBAAEAAgMAACACAAAAAAAAAAIAAAQCAgAA=</HashCode>
+      <FileName>Processing\Annotation\AnnotationManipulation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Processing.Annotation.AnnotationPlacement" Collapsed="true">
+    <Position X="9" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAgIAEAAAAACAAAAAAAEAAAAAAYAA=</HashCode>
+      <FileName>Processing\Annotation\AnnotationPlacement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Processing.Annotation.AnnotationStore" Collapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAACAgJAAAgAAAAAAADAAAMABARBACBA=</HashCode>
+      <FileName>Processing\Annotation\AnnotationStore.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="AnnoRelClass" />
+      <Field Name="ParentObject" />
+      <Field Name="RotateAnglePoint" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Processing.ConveyorSpawn" Collapsed="true">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAQAAAQAACAAAAAAAAAQAAAIAAIAAACAAAAAAAA=</HashCode>
+      <FileName>Processing\ConveyorSpawn.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_baseConveyor" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Processing.GISEditor" Collapsed="true">
+    <Position X="6.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAICAAAIAAAIAAAAAAACAAIAAAAAAAAgAAAABA=</HashCode>
+      <FileName>Processing\GISEditor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_editWorkspace" />
+      <Field Name="_version" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Processing.ProcessBitgate" Collapsed="true">
+    <Position X="11.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAIAQQEAAMQAAAAAgAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Processing\ProcessBitgate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Processing.QueuedObjectClass" Collapsed="true">
+    <Position X="1.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAKAAAACAQBAABQAABgAQAAAAAAABAEAAAAAAEQI=</HashCode>
+      <FileName>Processing\QueuedObjectClass.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_objectClass" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_recreateCapableRelationships" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Utilities.DBHelper" Collapsed="true">
+    <Position X="8.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\DBHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Utilities.LicenseInitializer" Collapsed="true">
+    <Position X="12" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAYAnBEgAAAE2AAABAIAigACAAACqAwAAEKCAAAAAA=</HashCode>
+      <FileName>Utilities\LicenseInitializer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_mmAppInit" />
+      <Field Name="m_AoInit" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Utilities.LogManager" Collapsed="true">
+    <Position X="4" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAIAARAAAAAAAAACACAAAAAAAEAAAA=</HashCode>
+      <FileName>Utilities\LogManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="ConsoleLogger" />
+      <Field Name="FileLogger" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Utilities.CustomTextWriterTraceListener" Collapsed="true">
+    <Position X="6.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Utilities\LogManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Utilities.CustomConsoleTraceListener" Collapsed="true">
+    <Position X="4" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Utilities\LogManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.AUConveyor.Utilities.ToolSettings" Collapsed="true">
+    <Position X="12.25" Y="5.75" Width="1.5" />
+    <NestedTypes>
+      <Class Name="PGE.BatchApplication.AUConveyor.Utilities.ToolSettings.ExecutionProperties" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Utilities\ToolSettings.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AEAEAAAgAAAAAAAAAAAAAAAAAAAAAAAAQAIAAAAAAAA=</HashCode>
+      <FileName>Utilities\ToolSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Collections.ObjectModel.KeyedCollection&lt;TKey, TItem&gt;" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Diagnostics.ConsoleTraceListener" Collapsed="true">
+    <Position X="4" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Diagnostics.TextWriterTraceListener" Collapsed="true">
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Struct Name="PGE.BatchApplication.AUConveyor.Processing.ProcessOIDInfo" Collapsed="true">
+    <Position X="10.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Processing\ProcessOIDInfo.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IRelationshipClass" Collapsed="true">
+    <Position X="2" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IObject" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geometry.IPoint" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IWorkspace" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Miner.Interop.IMMAutoUpdater" Collapsed="true">
+    <Position X="2" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IWorkspaceEdit" Collapsed="true">
+    <Position X="6" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IVersion" Collapsed="true">
+    <Position X="8" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Miner.Interop.IMMAppInitialize" Collapsed="true">
+    <Position X="13" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.esriSystem.IAoInitialize" Collapsed="true">
+    <Position X="10.75" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IObjectClass" Collapsed="true">
+    <Position X="1.75" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

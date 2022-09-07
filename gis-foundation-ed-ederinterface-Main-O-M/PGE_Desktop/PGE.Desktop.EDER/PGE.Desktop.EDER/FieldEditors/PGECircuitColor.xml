@@ -1,0 +1,24 @@
+﻿<?xml version='1.0'?>
+<ColorCodes>
+  <!-- Color configurations -->
+  <Color ColorName="Blue" ColorRGB="31,120,180" />
+  <Color ColorName="Brown" ColorRGB="177,89,40"/>
+  <Color ColorName="Dark Blue" ColorRGB="5,47,227"/>
+  <Color ColorName="Dark Pastel Purple" ColorRGB="190,186,218"/>
+  <Color ColorName="Dark Pastel Red" ColorRGB="251,128,114"/>
+  <Color ColorName="Ginger Pink" ColorRGB="255,0,197"/>
+  <Color ColorName="Green" ColorRGB="51,160,44"/>
+  <Color ColorName="Grey" ColorRGB="217,217,217"/>
+  <Color ColorName="Light Pastel Green" ColorRGB="204,235,197"/>
+  <Color ColorName="Light Purple" ColorRGB="188,128,189"/>
+  <Color ColorName="Lime Green" ColorRGB="179,222,105"/>
+  <Color ColorName="Orange" ColorRGB="255,127,0"/>
+  <Color ColorName="Pastel Blue" ColorRGB="166,206,227"/>
+  <Color ColorName="Pastel Green" ColorRGB="178,223,138"/>
+  <Color ColorName="Pastel Orange" ColorRGB="253,191,111"/>
+  <Color ColorName="Pastel Purple" ColorRGB="202,178,214"/>
+  <Color ColorName="Pastel Red" ColorRGB="251,154,153"/>
+  <Color ColorName="Pink" ColorRGB="252,205,229"/>
+  <Color ColorName="Purple" ColorRGB="106,61,154"/>
+  <Color ColorName="Yellow" ColorRGB="255,237,111"/>
+</ColorCodes>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <Component Id="RegistryEntries" Guid="745E5FD2-517C-4505-96DE-DCF62A0A4C55" Directory="PGE">
+      <RegistryKey Root="HKLM" Key="SOFTWARE\Miner and Miner\PGE" Action="createAndRemoveOnUninstall">
+        <RegistryValue Type="string" Name="Directory" Value="[PGE]" KeyPath="no"/>
+        <RegistryValue Type="string" Name="LoggingConfigurations" Value="[LoggingConfiguration]" KeyPath="no"/>
+        <RegistryValue Type="string" Name="Config" Value="[CONFIG]" KeyPath="no"/>
+        <RegistryValue Type="string" Name="DeviceGroupSearchTolerance" Value="5" KeyPath="no"/>
+      </RegistryKey>
+    </Component>
+  </Fragment>
+</Wix>

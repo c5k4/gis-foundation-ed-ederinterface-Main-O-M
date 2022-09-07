@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--PGE.Interfaces.MapProduction.Integration-->
+  <Fragment>
+    <ComponentGroup Id="Extras">
+
+      <Component Id="PGE.Interfaces.ED11_12.exe" Directory="ED11_12" Guid="C726EFB4-D41A-422C-A541-A15580C944D9" >
+        <File Id="PGE.Interfaces.ED11_12.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ED11_12\PGE.Interfaces.ED11_12.exe"/>
+      </Component>
+
+      <Component Id="ED11_12.log4net.config" Directory="LoggingConfiguration" Guid="EFB38CC4-A6BC-4A34-A561-F8A547F364F0" Permanent="yes" >
+        <File Id="ED11_12.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ED11_12\PGE.Interfaces.ED11_12.log4net.config"/>
+      </Component>
+
+      <Component Id="PGE.Interfaces.ED11_12.exe.config" Directory="ED11_12" Guid="FEE3B27E-1BBB-428C-B0C6-6D594C4FCCA2" Permanent="yes" >
+        <File Id="PGE.Interfaces.ED11_12.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ED11_12\PGE.Interfaces.ED11_12.exe.config"/>
+      </Component>
+
+      <Component Id="Domains.xml" Directory="ED11_12" Guid="75B64C96-812F-4F10-8862-4324D06F1F48" Permanent="yes" >
+        <File Id="Domains.xml" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ED11_12\Domains.xml"/>
+      </Component>
+
+      <Component Id="SupportStructureFieldMap.xml" Directory="ED11_12" Guid="65F02859-6FFD-477E-AB4E-CDE0ED7A2800" Permanent="yes" >
+        <File Id="SupportStructureFieldMap.xml" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ED11_12\SupportStructureFieldMap.xml"/>
+      </Component>
+
+    </ComponentGroup>
+
+  </Fragment>
+</Wix>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file contains the features for the Desktop installers. 
+This was moved to the Shared project since it is used by both the Desktop and GWD installers.-->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="CWOSLComponents">
+      <ComponentGroupRef Id="PGE.Common.Delivery.Diagnostics.dll"/>
+      <ComponentRef Id="LoggingFiles"/>
+      <ComponentRef Id="ConfigFiles"/>
+      <ComponentRef Id="CWOSLApplication"/>
+      <ComponentRef Id="RegistryEntries"/>
+      <ComponentRef Id="DefaultLogFile"/>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
+
+

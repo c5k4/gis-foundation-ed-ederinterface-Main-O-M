@@ -1,0 +1,1420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B614BAE2-18E6-44CF-A130-DDD682CD3D47}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PGE.Desktop.EDER</RootNamespace>
+    <AssemblyName>PGE.Desktop.EDER</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\..\..\Program Files %28x86%29\ArcGIS\Desktop10.8\bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\..\..\..\Program Files %28x86%29\Miner and Miner\ArcFM Solution\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>PGE.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\..\..\Program Files %28x86%29\ArcGIS\Desktop10.8\bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'KF_Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\..\..\Program Files %28x86%29\Miner and Miner\ArcFM Solution\Bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'KF_Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\..\..\..\..\Program Files %28x86%29\Miner and Miner\ArcFM Solution\Bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NoBuild|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\NoBuild\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NoBuild|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\NoBuild\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PGE_EDER_JENKINS|x86'">
+    <OutputPath>bin\x86\PGE_EDER_JENKINS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PGE_EDER_JENKINS|AnyCPU'">
+    <OutputPath>bin\PGE_EDER_JENKINS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF.Local, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AnalysisTools, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Analyst3DTools, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ArcMapUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.CartoUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Catalog, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.CatalogUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesOleDB, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesRaster, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DisplayUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Editor, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.EditorExt, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Framework, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoDatabaseDistributed, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoDatabaseUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessing, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.NetworkAnalysis, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Server, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\PGE_ExternalLibraries\log4net\Older_Version\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Miner.Controls, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.Desktop, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.Framework, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL" />
+    <Reference Include="Miner.Framework.Engine, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86" />
+    <Reference Include="Miner.FrameworkUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86" />
+    <Reference Include="Miner.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.Geodatabase.Engine, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.Interop.Desktop, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Interop.Framework, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.Interop.FrameworkUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Interop.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Interop.Process, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.Interop.Process.Session, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.Interop.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Miner.NetworkModel, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL" />
+    <Reference Include="Miner.Process, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="PGE_DBPasswordManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=820abe4faa45686d, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Miner and Miner\PG&amp;E Custom Components\PGE.PasswordMgmt\PGE_DBPasswordManagement.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="ArcCatalogCommands\SDPropSync\PGEUtilitiesToolbar.cs" />
+    <Compile Include="ArcCatalogCommands\SDPropSync\PropChooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArcCatalogCommands\SDPropSync\PropChooser.Designer.cs">
+      <DependentUpon>PropChooser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArcCatalogCommands\SDPropSync\SDPropSyncCommand.cs" />
+    <Compile Include="ArcCatalogCommands\SDPropSync\UC\SyncSDFieldProps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArcCatalogCommands\SDPropSync\UC\SyncSDFieldProps.Designer.cs">
+      <DependentUpon>SyncSDFieldProps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArcCatalogCommands\UploadSessionConfig.cs" />
+    <Compile Include="ArcMapCommands\AnnotationComposite\AnnotationCompositeToolbar.cs" />
+    <Compile Include="ArcMapCommands\AnnotationComposite\BaseCALMTool.cs" />
+    <Compile Include="ArcMapCommands\AnnotationComposite\CALMClickTool.cs" />
+    <Compile Include="ArcMapCommands\AnnotationComposite\CALMSelectionTool.cs" />
+    <Compile Include="ArcMapCommands\AnnotationComposite\CALMSettingsTool.cs" />
+    <Compile Include="ArcMapCommands\AnnotationComposite\CALMToolbarComposite.cs" />
+    <Compile Include="ArcMapCommands\AnnotationComposite\UI\CALMSettingsUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\AnnotationComposite\UI\CALMSettingsUC.designer.cs">
+      <DependentUpon>CALMSettingsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArcMapCommands\AnnotationComposite\UI\CALMToolbarUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\AnnotationComposite\UI\CALMToolbarUC.designer.cs">
+      <DependentUpon>CALMToolbarUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArcMapCommands\DateYear\DateYearCommand.cs" />
+    <Compile Include="ArcMapCommands\DateYear\DateYearUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\DateYear\DateYearUpdate.designer.cs">
+      <DependentUpon>DateYearUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArcMapCommands\PGESnapping\PGE_LoadDefaultSnapping.cs" />
+    <Compile Include="ArcMapCommands\PGESnapping\PGE_SaveClassicSnapping.cs" />
+    <Compile Include="ArcMapCommands\PGESnapping\PGE_SnappingToggle.cs" />
+    <Compile Include="ArcMapCommands\PGESnapping\PGE_SnappingToolbar.cs" />
+    <Compile Include="ArcMapCommands\PGE_AttributeCopyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\PGE_AttributeCopyForm.Designer.cs">
+      <DependentUpon>PGE_AttributeCopyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArcMapCommands\PGE_AttributeCopyTool.cs" />
+    <Compile Include="ArcMapCommands\PGE_SelectRecordForSAPCommandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\PGE_SelectRecordForSAPCommandForm.Designer.cs">
+      <DependentUpon>PGE_SelectRecordForSAPCommandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArcMapCommands\MapUtilities\PGEMapUtilitiesToolbar.cs" />
+    <Compile Include="ArcMapCommands\MapUtilities\PGEPrintMapCommand.cs" />
+    <Compile Include="ArcMapCommands\MapUtilities\PGEPrintMapGrids.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\MapUtilities\PGEPrintMapGrids.Designer.cs">
+      <DependentUpon>PGEPrintMapGrids.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArcMapCommands\MapUtilities\PGERunQAQCCommand.cs" />
+    <Compile Include="ArcMapCommands\MapUtilities\PgeUfmMapCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\MapUtilities\PgeUfmTemplateSelection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\MapUtilities\TNSPingCommand.cs" />
+    <Compile Include="ArcMapCommands\PGERemoveAllFromSelection.cs" />
+    <Compile Include="ArcMapCommands\PGERemoveFromSelection.cs" />
+    <Compile Include="ArcMapCommands\PGESwizzleMxdCommand.cs" />
+    <Compile Include="ArcMapCommands\PGE_RotateTool.cs" />
+    <Compile Include="ArcMapCommands\PGE_SelectRecordForSAPCommand.cs" />
+    <Compile Include="ArcMapCommands\PGE_SessionCheckerToolBar.cs" />
+    <Compile Include="ArcMapCommands\PGE_Toolbar\PGEEDGIS_Toolbar.cs" />
+    <Compile Include="ArcMapCommands\PGE_Toolbar\PGE_DisconnectMultipleFeature_Tool.cs" />
+    <Compile Include="ArcMapCommands\PGE_Tracing\PGE_DownstreamProtTrace.cs" />
+    <Compile Include="ArcMapCommands\PGE_Tracing\PGE_DownstreamTrace.cs" />
+    <Compile Include="ArcMapCommands\PGE_Tracing\PGE_Trace.cs" />
+    <Compile Include="ArcMapCommands\PGE_Tracing\PGE_TraceResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\PGE_Tracing\PGE_TraceResults.Designer.cs">
+      <DependentUpon>PGE_TraceResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArcMapCommands\PGE_Tracing\PGE_TracingToolbar.cs" />
+    <Compile Include="ArcMapCommands\PGE_Tracing\PGE_UpstreamProtTrace.cs" />
+    <Compile Include="ArcMapCommands\PGE_Tracing\PGE_UpstreamTrace.cs" />
+    <Compile Include="ArcMapCommands\PGE_TransformerSearch.cs" />
+    <Compile Include="ArcMapCommands\PGE_TransformerSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\PGE_TransformerSearchForm.Designer.cs">
+      <DependentUpon>PGE_TransformerSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArcMapCommands\PGE_UpdateMapNumber.cs" />
+    <Compile Include="ArcMapCommands\PGE_UpdateMapNumberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\PGE_UpdateMapNumberForm.Designer.cs">
+      <DependentUpon>PGE_UpdateMapNumberForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArcMapCommands\PGE_ViewWebViewerCommand.cs" />
+    <Compile Include="ArcMapCommands\PGE_ViewWebViewerToolbar.cs" />
+    <Compile Include="ArcMapCommands\PSPS_CircuitFilter\PSPS_CircuitFilter.cs" />
+    <Compile Include="ArcMapCommands\PSPS_CircuitFilter\PSPS_CircuitFilter_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\PSPS_CircuitFilter\PSPS_CircuitFilter_Form.Designer.cs" />
+    <Compile Include="ArcMapCommands\ReplaceAnnotation.cs" />
+    <Compile Include="ArcMapCommands\RestrictedTools\AutoupdatersOffTool.cs" />
+    <Compile Include="ArcMapCommands\RestrictedTools\AutoupdatersOnTool.cs" />
+    <Compile Include="ArcMapCommands\RestrictedTools\ReconcileParallelTool.cs" />
+    <Compile Include="ArcMapCommands\RestrictedTools\RestrictedToolbar.cs" />
+    <Compile Include="ArcMapCommands\SelectEdits.cs" />
+    <Compile Include="ArcMapCommands\SelectReviewMode.cs" />
+    <Compile Include="ArcMapCommands\Status\StatusUpdateCommand.cs" />
+    <Compile Include="ArcMapCommands\SuperUser\PGEActivateSuperUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\SuperUser\PGEActivateSuperUser.Designer.cs">
+      <DependentUpon>PGEActivateSuperUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArcMapCommands\SuperUser\PGEActivateSuperUserCommand.cs" />
+    <Compile Include="ArcMapCommands\SyncOnSwitch\SyncOnSwitch.cs" />
+    <Compile Include="ArcMapCommands\UFMFilter\UC\UfmFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\UFMFilter\UfmFilterCommand.cs" />
+    <Compile Include="ArcMapCommands\UFMFilter\UfmFilterToolbar.cs" />
+    <Compile Include="ArcMapCommands\UFMFilter\UpdateDuctAvailability.cs" />
+    <Compile Include="ArcMapCommands\UpdateSessionDescription\PGEUpdateSessionDescription.cs" />
+    <Compile Include="ArcMapCommands\UpdateSessionDescription\PGEUpdateSessionDesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\UpdateSessionDescription\PGEUpdateSessionDesForm.designer.cs">
+      <DependentUpon>PGEUpdateSessionDesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArcMapCommands\VersionDifference\PGE_VersionDifferences.cs" />
+    <Compile Include="ArcMapCommands\PGETreeViewToolBase.cs" />
+    <Compile Include="ArcMapCommands\PopulateLastJobNumber\PopulateLastJobNumberCommand.cs" />
+    <Compile Include="ArcMapCommands\PopulateLastJobNumber\PopulateLastJobNumberToolbar.cs" />
+    <Compile Include="ArcMapCommands\PopulateLastJobNumber\UC\PopulateLastJobNumberUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\PopulateLastJobNumber\UC\PopulateLastJobNumberUC.Designer.cs">
+      <DependentUpon>PopulateLastJobNumberUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArcMapCommands\VersionDifference\VersionChangesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArcMapCommands\VersionDifference\VersionChangesForm.Designer.cs">
+      <DependentUpon>VersionChangesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArcMapWindow.cs" />
+    <Compile Include="AutoTextElements\AdjacentGridATES\AdjacentGridEastATE.cs" />
+    <Compile Include="AutoTextElements\AdjacentGridATES\AdjacentGridNorthATE.cs" />
+    <Compile Include="AutoTextElements\AdjacentGridATES\AdjacentGridWestATE.cs" />
+    <Compile Include="AutoTextElements\AdjacentGridATES\BaseAdjacentGridATE.cs" />
+    <Compile Include="AutoTextElements\AdjacentGridATES\AdjacentGridSouthATE.cs" />
+    <Compile Include="AutoTextElements\AdjacentGridATES\AdjacentGridSouthEastATE.cs" />
+    <Compile Include="AutoTextElements\AdjacentGridATES\AdjacentGridSouthWestATE.cs" />
+    <Compile Include="AutoTextElements\AdjacentGridATES\AdjacentGridNorthWestATE.cs" />
+    <Compile Include="AutoTextElements\AdjacentGridATES\AdjacentGridNorthEastATE.cs" />
+    <Compile Include="AutoTextElements\AdjacentGridATES\CurrentGridDisplayATE.cs" />
+    <Compile Include="AutoTextElements\BasePointInPolyATE.cs" />
+    <Compile Include="AutoTextElements\MapProdHashingATE.cs" />
+    <Compile Include="AutoTextElements\PGEMapUtilityConfigHelper.cs" />
+    <Compile Include="AutoTextElements\XMaxATE.cs" />
+    <Compile Include="AutoTextElements\XMinATE.cs" />
+    <Compile Include="AutoTextElements\YMaxATE.cs" />
+    <Compile Include="AutoTextElements\YMinATE.cs" />
+    <Compile Include="AutoTextElements\ZipATE.cs" />
+    <Compile Include="AutoTextElements\DivisionATE.cs" />
+    <Compile Include="AutoTextElements\CountyATE.cs" />
+    <Compile Include="AutoUpdaters\Attribute\PNodeIdDisplayAU.cs" />
+    <Compile Include="AutoUpdaters\Attribute\PNodeIDDisplayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoUpdaters\Attribute\PNodeIDDisplayForm.designer.cs">
+      <DependentUpon>PNodeIDDisplayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoUpdaters\Attribute\UpdateCircuitName.cs" />
+    <Compile Include="AutoUpdaters\Attribute\UpdateDPDRecloserAttributes.cs" />
+    <Compile Include="AutoUpdaters\CalculateXY.cs" />
+    <Compile Include="AutoUpdaters\LabelText\DCConductorLabel.cs" />
+    <Compile Include="AutoUpdaters\LabelText\DeactivatedLabel.cs" />
+    <Compile Include="AutoUpdaters\LabelText\NeutralConductorFiberDcLabelAU.cs" />
+    <Compile Include="AutoUpdaters\LabelText\PriUGConductorFiberDcLabelAU.cs" />
+    <Compile Include="AutoUpdaters\LabelText\SecUGConductorFiberDcLabelAU.cs" />
+    <Compile Include="AutoUpdaters\Relationship\GenerationInfoRelComboAU.cs" />
+    <Compile Include="AutoUpdaters\Relationship\PGEManageGWOCRelAU.cs" />
+    <Compile Include="AutoUpdaters\Relationship\PGEUpdateGenCategoryRelAU.cs" />
+    <Compile Include="AutoUpdaters\Relationship\PGEUpdateLabelTextRelAU.cs" />
+    <Compile Include="AutoUpdaters\Relationship\RelationshipBankCode.cs" />
+    <Compile Include="AutoUpdaters\SecOHConductorInfoOnDeleteAU.cs" />
+    <Compile Include="AutoUpdaters\LabelText\RelLabelTextSymbolNumCombo.cs" />
+    <Compile Include="AutoUpdaters\LabelText\NeutralConductorLabel.cs" />
+    <Compile Include="AutoUpdaters\Relationship\CleanupOrphanRows.cs" />
+    <Compile Include="AutoUpdaters\Relationship\LabelTextCleanupOrphanComboAU.cs" />
+    <Compile Include="AutoUpdaters\Relationship\PGEAttachedCustomerWarningRelAU.cs" />
+    <Compile Include="AutoUpdaters\Special\ADMSLabelAU\ADMSLabelHelper.cs" />
+    <Compile Include="AutoUpdaters\Special\ADMSLabelAU\PGEADMSLabelAU.cs" />
+    <Compile Include="AutoUpdaters\Special\DeleteOrphanRowsAU.cs" />
+    <Compile Include="AutoUpdaters\Special\PGEInheritPSPS_SegmentAU.cs" />
+    <Compile Include="AutoUpdaters\Special\PGEManageGWOCOnDeletingGenAU.cs" />
+    <Compile Include="AutoUpdaters\Special\PGENoOfFusePerPhaseAU.cs" />
+    <Compile Include="AutoUpdaters\Special\PGEUpdateAmpYearAU.cs" />
+    <Compile Include="AutoUpdaters\Special\PGEUpdateBearingAndLength.cs" />
+    <Compile Include="AutoUpdaters\Special\PGEUpdateClimateZone.cs" />
+    <Compile Include="AutoUpdaters\Special\PGEUpdateDeleteLiDARCorrectionAU.cs" />
+    <Compile Include="AutoUpdaters\Special\PGEUpdateGangoperatedAU.cs" />
+    <Compile Include="AutoUpdaters\Special\PGEUpdateGenCategory.cs" />
+    <Compile Include="AutoUpdaters\Special\PGEUpdateHFRAIDC.cs" />
+    <Compile Include="AutoUpdaters\Special\PGEUpdateLabelText.cs" />
+    <Compile Include="AutoUpdaters\Special\PGEUpdateSCADAMATESandMSOAU.cs" />
+    <Compile Include="AutoUpdaters\Special\PGE_AutoRelateConductorAU.cs" />
+    <Compile Include="AutoUpdaters\Special\PLC\PGEUpdatePLDBID.cs" />
+    <Compile Include="AutoUpdaters\Special\SaveRelatedObjects.cs" />
+    <Compile Include="AutoUpdaters\Special\AnnoHalfFontSizeAU.cs" />
+    <Compile Include="AutoUpdaters\Special\AlignAnnoAU.cs" />
+    <Compile Include="AutoUpdaters\Special\AnnoHorizontalAlignmentAU.cs" />
+    <Compile Include="AutoUpdaters\Special\BaseSplitAU.cs" />
+    <Compile Include="AutoUpdaters\Special\PGEAnnoStatusSync.cs" />
+    <Compile Include="AutoUpdaters\Special\PGESegmentSplitAU.cs" />
+    <Compile Include="AutoUpdaters\Special\RestoreRelatedObjects.cs" />
+    <Compile Include="AutoUpdaters\Special\UfmSetDuctAnnoAngleAU.cs" />
+    <Compile Include="AutoUpdaters\Special\SetDuctAttributesAU.cs" />
+    <Compile Include="AutoUpdaters\Special\CrossSectionAnnoAU.cs" />
+    <Compile Include="AutoUpdaters\Special\PGEInheritNominalVoltageAU.cs" />
+    <Compile Include="AutoUpdaters\Special\PGEPreserveAnnoAngle.cs" />
+    <Compile Include="AutoUpdaters\PGEPreserveRelationship.cs" />
+    <Compile Include="AutoUpdaters\Special\PGE_Asset_Replacement_AU.cs" />
+    <Compile Include="AutoUpdaters\Special\RecordVersionAU.cs" />
+    <Compile Include="AutoUpdaters\Special\PGEAllowableEdits.cs" />
+    <Compile Include="AutoUpdaters\Special\RecordChangedMaps.cs" />
+    <Compile Include="AutoUpdaters\Special\SourceSideDevice.cs" />
+    <Compile Include="AutoUpdaters\Special\SourceSideDeviceHelper.cs" />
+    <Compile Include="AutoUpdaters\Special\SplitMeasuredLength.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\FlisrSymbolNumberAU.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\SupportStructure_JointOwnerComboRelAU.cs" />
+    <Compile Include="AutoUpdaters\Special\SyncDuctAttributesAU.cs" />
+    <Compile Include="AutoUpdaters\Special\SyncVaultPolygonAU.cs" />
+    <Compile Include="AutoUpdaters\Special\UniqueSPIDAU.cs" />
+    <Compile Include="AutoUpdaters\Special\UpdateHFTD.cs" />
+    <Compile Include="AutoUpdaters\Special\UpdateLIDARConflatedDate_AU.cs" />
+    <Compile Include="AutoUpdaters\Special\ValidateBarcodeAU.cs" />
+    <Compile Include="AutoUpdaters\Special\ValidateDeleteStreetLightAU.cs" />
+    <Compile Include="AutoUpdaters\Substation\BaseClasses\SubstationLabelTextSpecialAU.cs" />
+    <Compile Include="AutoUpdaters\Substation\SubstationRelationshipLabelAU.cs" />
+    <Compile Include="AutoUpdaters\Substation\SubstationTransformerLabelTextAU.cs" />
+    <Compile Include="AutoUpdaters\Substation\SubTransformerBankLabelAU.cs" />
+    <Compile Include="AutoUpdaters\Substation\SubVoltageRegulatorLabelAU.cs" />
+    <Compile Include="AutoUpdaters\Special\UfmSyncFacilityIdsAU.cs" />
+    <Compile Include="ChangedCircuitTable.cs" />
+    <Compile Include="AutoUpdaters\LabelText\LabelTextHelper.cs" />
+    <Compile Include="AutoUpdaters\PGEPopulateLastJobNumberAU.cs" />
+    <Compile Include="AutoUpdaters\Relationship\PopulateConductorPhaseRelAU.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AutoUpdaters\CalculateLatitudeLongitude.cs" />
+    <Compile Include="AutoUpdaters\Special\CircuitID.cs" />
+    <Compile Include="AutoUpdaters\Special\PGEInheritOperatingVoltagerAU.cs" />
+    <Compile Include="AutoUpdaters\Special\RecordDeletedFeeder.cs" />
+    <Compile Include="AutoUpdaters\Special\RecordDeletedNetworkFeature.cs" />
+    <Compile Include="AutoUpdaters\Special\UpdateDistributionMapNumberAU.cs" />
+    <Compile Include="AutoUpdaters\Special\InstallJobYearAutoupdater.cs" />
+    <Compile Include="AutoUpdaters\Special\PopulateAs-BuiltSourceSideAU.cs" />
+    <Compile Include="AutoUpdaters\Special\PopulateLocalOfficeAU.cs" />
+    <Compile Include="AutoUpdaters\ConductorAttributeDecoder.cs" />
+    <Compile Include="AutoUpdaters\GeneratorName.cs" />
+    <Compile Include="AutoUpdaters\NumberOfPhasesFromDesignation.cs" />
+    <Compile Include="AutoUpdaters\ProtectionType.cs" />
+    <Compile Include="AutoUpdaters\Relationship\SumUnitCountsRelAU.cs" />
+    <Compile Include="AutoUpdaters\Special\CapBankUnitKVarAU.cs" />
+    <Compile Include="AutoUpdaters\LabelText\BaseLabelTextAU.cs" />
+    <Compile Include="AutoUpdaters\LabelText\ConduitLabel.cs" />
+    <Compile Include="AutoUpdaters\LabelText\DuckBankInfo.cs" />
+    <Compile Include="AutoUpdaters\LabelText\DuctInfo.cs" />
+    <Compile Include="AutoUpdaters\LabelText\PriOHConductorLabel.cs" />
+    <Compile Include="AutoUpdaters\LabelText\PriUGConductorLabel.cs" />
+    <Compile Include="AutoUpdaters\LabelText\SecOHConductorLabel.cs" />
+    <Compile Include="AutoUpdaters\LabelText\SecUGConductorLabel.cs" />
+    <Compile Include="AutoUpdaters\LabelText\SupportStructureLabel.cs" />
+    <Compile Include="AutoUpdaters\LabelText\RelationshipLabel.cs" />
+    <Compile Include="AutoUpdaters\LabelText\TransformerLabel.cs" />
+    <Compile Include="AutoUpdaters\Relationship\RelatedObjectCount.cs" />
+    <Compile Include="AutoUpdaters\Relationship\ConductorInfoRelComboAU.cs" />
+    <Compile Include="AutoUpdaters\Special\PreventDeleteofDeviceswithCustomersAU.cs" />
+    <Compile Include="AutoUpdaters\Special\RegionalAttributesAU\InheritRegionalAttributesAU.cs" />
+    <Compile Include="AutoUpdaters\Special\RegionalAttributesAU\RegionalAttributeMethod.cs" />
+    <Compile Include="AutoUpdaters\Special\PopulateDistMapNoAU.cs" />
+    <Compile Include="AutoUpdaters\Special\SetNormalPositionAU.cs" />
+    <Compile Include="AutoUpdaters\Special\UpdateConductorPhaseAU.cs" />
+    <Compile Include="AutoUpdaters\Special\RelateDeviceGroupAU.cs" />
+    <Compile Include="AutoUpdaters\Special\SumUnitCountsAU.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\TransformerComboAU.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\EvaluationEngine.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\IEvaluationCriteria.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\RelatedObjectFacade.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\Schema\AndOperator.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\Schema\Count.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\Schema\FeatureAttribute.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\Schema\FeatureClass.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\Schema\LogicalOperator.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\Schema\OrOperator.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\Schema\RelatedRecord.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\Schema\Relationship.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\Schema\Rule.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\Schema\SchemaErrorList.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\Schema\SymbolNumberRules.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\SymbolNumberAU.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\UI\OperatingNumberConfigCommand.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\SymbolNumberUpdateParentObject.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\UI\DatasetListItem.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\UI\SymbolNumberConfigCommand.cs" />
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\UI\SymbolNumberConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoUpdaters\Special\SymbolNumber\UI\SymbolNumberConfigForm.designer.cs">
+      <DependentUpon>SymbolNumberConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoUpdaters\Special\UpperCaseAU.cs" />
+    <Compile Include="Common\DBFacade.cs" />
+    <Compile Include="Common\StatusHelper.cs" />
+    <Compile Include="Common\UnitHelper.cs" />
+    <Compile Include="Common\VoltageHelper.cs" />
+    <Compile Include="ConductorAttributeFacade.cs" />
+    <Compile Include="AutoUpdaters\Special\ValidatePoleSpacingAU.cs" />
+    <Compile Include="AutoUpdaters\Special\UniqueCircuitIdAU.cs" />
+    <Compile Include="AutoUpdaters\Special\UGConductorEliminateType4\UGConductorEliminateType4AU.cs" />
+    <Compile Include="AutoUpdaters\Special\UGConductorEliminateType4\UI\UGConductorEliminateType4Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoUpdaters\Special\UGConductorEliminateType4\UI\UGConductorEliminateType4Form.Designer.cs">
+      <DependentUpon>UGConductorEliminateType4Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoUpdaters\Special\ValidateMapNumberAU.cs" />
+    <Compile Include="D8TreeTools\CreateRelatedObject\PGE_Create_Related_Object.cs" />
+    <Compile Include="D8TreeTools\CreateRelatedObject\Subtype_Field_Editor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="D8TreeTools\CreateRelatedObject\Subtype_Field_Editor.Designer.cs">
+      <DependentUpon>Subtype_Field_Editor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="D8TreeTools\PgePlaceCrossSection.cs" />
+    <Compile Include="D8TreeTools\PGE_Asset_Replacement.cs" />
+    <Compile Include="D8TreeTools\PGE_DeactivationTool.cs" />
+    <Compile Include="AutoUpdaters\Special\ValidateClosedDeviceAU.cs" />
+    <Compile Include="D8TreeTools\PGE_Fill_PII_Info.cs" />
+    <Compile Include="D8TreeTools\PGE_Fill_PII_Info_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="D8TreeTools\PGE_Fill_PII_Info_Form.Designer.cs">
+      <DependentUpon>PGE_Fill_PII_Info_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="D8TreeTools\PGE_OpenTableShowingSelection.cs" />
+    <Compile Include="D8TreeTools\PGE_PNodeUpdate2.cs" />
+    <Compile Include="D8TreeTools\PGE_ReplaceFuseWithSB.cs" />
+    <Compile Include="D8TreeTools\PGE_ReplaceSBWithFuse.cs" />
+    <Compile Include="D8TreeTools\PTTCombineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="D8TreeTools\PTTCombineForm.Designer.cs">
+      <DependentUpon>PTTCombineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="D8TreeTools\PTTCombineStructure.cs" />
+    <Compile Include="D8TreeTools\PTTPromoteStructure.cs" />
+    <Compile Include="DisplayNamers\PGE_DisplayName.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="FieldEditors\CircuitIDSelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FieldEditors\CircuitIDSelectorForm.Designer.cs">
+      <DependentUpon>CircuitIDSelectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FieldEditors\ColorSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FieldEditors\ColorSelector.Designer.cs">
+      <DependentUpon>ColorSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FieldEditors\CircuitIDSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FieldEditors\CircuitIDSelector.Designer.cs">
+      <DependentUpon>CircuitIDSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FieldEditors\DateSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FieldEditors\DateSelector.designer.cs">
+      <DependentUpon>DateSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FieldEditors\PGE_LocDesc_FieldEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FieldEditors\PGE_LocDesc_FieldEditor.Designer.cs">
+      <DependentUpon>PGE_LocDesc_FieldEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Filters\ExportSessionFilter.cs" />
+    <Compile Include="Filters\ExportSessionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filters\ExportSessionsForm.designer.cs">
+      <DependentUpon>ExportSessionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Filters\SessionFilter.cs" />
+    <Compile Include="Filters\SessionFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filters\SessionFilterForm.designer.cs">
+      <DependentUpon>SessionFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AlignmentPopupMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AlignmentPopupMenu.designer.cs">
+      <DependentUpon>AlignmentPopupMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FieldInstance.cs" />
+    <Compile Include="GDBM\CircuitProcessing\CircuitSourceData.cs" />
+    <Compile Include="GDBM\DBHelper.cs" />
+    <Compile Include="GDBM\GDBM_CommonFunctions.cs" />
+    <Compile Include="GDBM\ConsolidatedAH\PGE_OperatingNumberHandlerAH.cs" />
+    <Compile Include="GDBM\ConsolidatedAH\PGE_CircuitColorAH.cs" />
+    <Compile Include="GDBM\ConsolidatedAH\PGE_DeviceGroupCircuitIDAH.cs" />
+    <Compile Include="GDBM\ConsolidatedAH\PGE_SourceSideDeviceAH.cs" />
+    <Compile Include="GDBM\Email.cs" />
+    <Compile Include="GDBM\EmailService.cs" />
+    <Compile Include="GDBM\MemoryCheck.cs" />
+    <Compile Include="GDBM\PGE_AfterRestrictReconcileActionhandler.cs" />
+    <Compile Include="GDBM\PGE_CircuitIDCollectorForROBCCalculation.cs" />
+    <Compile Include="GDBM\PGE_DeleteStagingData_ActionHandler.cs" />
+    <Compile Include="GDBM\PGE_AUProcessor_ActionHandler.cs" />
+    <Compile Include="GDBM\PGE_OpenPointADMSLabel.cs" />
+    <Compile Include="GDBM\PGE_PostError_ActionHandler.cs" />
+    <Compile Include="GDBM\PGE_QAQC.cs" />
+    <Compile Include="GDBM\PGE_QAQC_Ext.cs" />
+    <Compile Include="GDBM\PGE_BeforeRestrictReconcileActionHandler.cs" />
+    <Compile Include="GDBM\PGE_RecalculateROBC.cs" />
+    <Compile Include="GDBM\PGE_CColor_OPNUMBER_AH.cs" />
+    <Compile Include="GDBM\PGE_SSD_DEVICE_AH.cs" />
+    <Compile Include="GDBM\PGE_UpdateStatus_AH.cs" />
+    <Compile Include="LocatorTools\GUIDSearchLocator\GUIDSearchLocator.cs" />
+    <Compile Include="LocatorTools\GUIDSearchLocator\PGE_GUIDSearchLocatorUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LocatorTools\GUIDSearchLocator\PGE_GUIDSearchLocatorUI.Designer.cs" />
+    <Compile Include="LocatorTools\MlxRelationshipTool\PGE_AgreementNumber.cs" />
+    <Compile Include="LocatorTools\MlxRelationshipTool\PGE_AgreementNumberUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LocatorTools\MlxRelationshipTool\PGE_AgreementNumberUI.Designer.cs">
+      <DependentUpon>PGE_AgreementNumberUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocatorTools\MlxRelationshipTool\PGE_PMOrderNumberRelate.cs" />
+    <Compile Include="LocatorTools\MlxRelationshipTool\PGE_PMOrderNumberRelateUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocatorTools\MlxRelationshipTool\PGE_PMOrderNumberRelateUI.Designer.cs">
+      <DependentUpon>PGE_PMOrderNumberRelateUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocatorTools\MlxRelationshipTool\PGE_PMOrderNumberUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LocatorTools\MlxRelationshipTool\PGE_PMOrderNumberUI.Designer.cs">
+      <DependentUpon>PGE_PMOrderNumberUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocatorTools\MlxRelationshipTool\PMOrderNumberLocator.cs" />
+    <Compile Include="LocatorTools\OperatingNumberLocator\OperatingNumberLocator.cs" />
+    <Compile Include="LocatorTools\OperatingNumberLocator\PGE_OperatingNumberLocatorUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LocatorTools\OperatingNumberLocator\PGE_OperatingNumberLocatorUI.Designer.cs">
+      <DependentUpon>PGE_OperatingNumberLocatorUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IChange.cs" />
+    <Compile Include="LocatorTools\SAPIDSearchLocator\PGE_SAPIDSearchLocatorUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LocatorTools\SAPIDSearchLocator\PGE_SAPIDSearchLocatorUI.Designer.cs" />
+    <Compile Include="LocatorTools\SAPIDSearchLocator\SAPIDSearchLocator.cs" />
+    <Compile Include="Login\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\EditBalloon.cs" />
+    <Compile Include="Login\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\MessageTool.cs" />
+    <Compile Include="Login\MMRegistrySettings.cs" />
+    <Compile Include="Login\SessionManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\SessionManager.Designer.cs">
+      <DependentUpon>SessionManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\WindowsWrapper.cs" />
+    <Compile Include="ModelessDialog.cs" />
+    <Compile Include="Model\RecordVersionChange.cs" />
+    <Compile Include="NeutralPhaseHelper.cs" />
+    <Compile Include="D8TreeTools\CreateRelatedObject\PGE_Create_Related_Object_TargetTab.cs" />
+    <Compile Include="OracleDbConnection.cs" />
+    <Compile Include="PGEExtension.cs" />
+    <Compile Include="PgeModelNameFacade.cs" />
+    <Compile Include="PLC\CreatePole.cs" />
+    <Compile Include="PLC\CreatePoleTool.cs" />
+    <Compile Include="PLC\FrmCreatePole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PLC\FrmCreatePole.designer.cs">
+      <DependentUpon>FrmCreatePole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC\PoleData.cs" />
+    <Compile Include="PLC\PoleHeader.cs" />
+    <Compile Include="PLC\StartAnalysisCall.cs" />
+    <Compile Include="PopulateDistMapNo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SafeNativeMethods.cs" />
+    <Compile Include="SchemaInfo.cs" />
+    <Compile Include="StepProgressBar.cs" />
+    <Compile Include="Subtasks\ATTRIBUTE.cs" />
+    <Compile Include="Subtasks\AttributeChangeTrackingSubtask.cs" />
+    <Compile Include="Subtasks\BaseChangeDetectionSubtask.cs" />
+    <Compile Include="Subtasks\CheckCurrentOwnerSubtask.cs" />
+    <Compile Include="Subtasks\CheckSessionDeletes.cs" />
+    <Compile Include="Subtasks\DeleteOrphanRows.cs" />
+    <Compile Include="Subtasks\DisplaySAPErrorsSubtask.cs" />
+    <Compile Include="Subtasks\EditSessionLimitSubtask.cs" />
+    <Compile Include="Subtasks\FEATURE.cs" />
+    <Compile Include="Subtasks\PGEAUProcessor.cs" />
+    <Compile Include="Subtasks\PGEPrioritizeSessionSubTask.cs" />
+    <Compile Include="Subtasks\PGEReconcileSession.cs" />
+    <Compile Include="Subtasks\RecordDMSChanges.cs" />
+    <Compile Include="Subtasks\RecordEditedMap.cs" />
+    <Compile Include="Subtasks\RunQAQC.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Subtasks\SAPErrorsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subtasks\SAPErrorsUI.Designer.cs">
+      <DependentUpon>SAPErrorsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutoUpdaters\Special\PreventEditOfROBCAU.cs" />
+    <Compile Include="UFM\Operations\SetButterflyFilterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFM\Operations\SetButterflyFilterControl.designer.cs">
+      <DependentUpon>SetButterflyFilterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFM\Operations\SetButterflyFilter.cs" />
+    <Compile Include="UFM\Operations\CreateButterflyAnno.cs" />
+    <Compile Include="UFM\Operations\CreateButterflyAnnoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFM\Operations\CreateButterflyAnnoControl.designer.cs">
+      <DependentUpon>CreateButterflyAnnoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFM\UfmSelectTool.cs" />
+    <Compile Include="UFM\UfmSyncDuctAttrHelper.cs" />
+    <Compile Include="UFM\VaultFilter.cs" />
+    <Compile Include="Utility\Annotation\AnnotationFacade.cs" />
+    <Compile Include="Utility\Annotation\CALMConfig.cs" />
+    <Compile Include="Utility\AuDisabler.cs" />
+    <Compile Include="Utility\FieldManager.cs" />
+    <Compile Include="Utility\ModelNames.cs" />
+    <Compile Include="Utility\RelationshipManager.cs" />
+    <Compile Include="UFM\XSectionConductorHelper.cs" />
+    <Compile Include="Utility\WipDbApi.cs" />
+    <Compile Include="ValidationRules\CommonValidate.cs" />
+    <Compile Include="ValidationRules\PhaseValidator.cs" />
+    <Compile Include="ValidationRules\PLC\ValidateNullPLDBID.cs" />
+    <Compile Include="ValidationRules\ValidateConnectivity.cs" />
+    <Compile Include="ValidationRules\ValidateDataAndGeometry.cs" />
+    <Compile Include="ValidationRules\ValidateDuctDefinition.cs" />
+    <Compile Include="ValidationRules\ValidateFuse.cs" />
+    <Compile Include="ValidationRules\ValidateHighSideConfiguration.cs" />
+    <Compile Include="ValidationRules\ValidateLowSideConfiguration.cs" />
+    <Compile Include="ValidationRules\ValidateMultiFeatureNonSecondary.cs" />
+    <Compile Include="ValidationRules\ValidateNormalPosition.cs" />
+    <Compile Include="ValidationRules\ValidateOperatingNumberExists.cs" />
+    <Compile Include="ValidationRules\ValidateOrphansError.cs" />
+    <Compile Include="ValidationRules\ValidatePhaseDesignationProposed.cs" />
+    <Compile Include="ValidationRules\ValidatePrimaryInServiceConnectivity.cs" />
+    <Compile Include="ValidationRules\ValidatePrimaryMeterConnectivity.cs" />
+    <Compile Include="ValidationRules\ValidateRatedKVA.cs" />
+    <Compile Include="ValidationRules\ValidateRelatedRecordStatus.cs" />
+    <Compile Include="ValidationRules\ValidateRelatedUnitRecords.cs" />
+    <Compile Include="ValidationRules\ValidateRelatedUnitRecordsError.cs" />
+    <Compile Include="ValidationRules\ValidateServicePointRels.cs" />
+    <Compile Include="ValidationRules\ValidateSwitchableDevices.cs" />
+    <Compile Include="ValidationRules\ValidateTransformerDuplex.cs" />
+    <Compile Include="ValidationRules\ValidateTransformerUnitRatedKVA.cs" />
+    <Compile Include="ValidationRules\ValidateTransformerUnitSerialNumber.cs" />
+    <Compile Include="ValidationRules\ValidateVaultDimensions.cs" />
+    <Compile Include="ValidationRules\DateValidator\DateValidatorRule.cs" />
+    <Compile Include="ValidationRules\DateValidator\ValidateCableTestDate.cs" />
+    <Compile Include="ValidationRules\DateValidator\ValidateFaultIndicatorInstalled.cs" />
+    <Compile Include="ValidationRules\DateValidator\ValidateInstallationDate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationRules\DateValidator\ValidateWindSpeedRerateYear.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationRules\DateValidator\ValidateYearManufactured.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidationRules\DeviceGroupRelToStructure.cs" />
+    <Compile Include="ValidateClosedDevice.cs" />
+    <Compile Include="ValidationRules\CapacitorAnnotation.cs" />
+    <Compile Include="ValidationRules\UFM\UfmDuct.cs" />
+    <Compile Include="ValidationRules\UFM\UfmDuctBank.cs" />
+    <Compile Include="UFM\UfmHelper.cs" />
+    <Compile Include="ValidationRules\UFM\ValidateConduit.cs" />
+    <Compile Include="ValidationRules\UFM\ValidateUfmConductor.cs" />
+    <Compile Include="ValidationRules\UI\ModelessDialog.cs" />
+    <Compile Include="ValidationRules\UI\QAQCErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValidationRules\UI\QAQCErrorForm.designer.cs">
+      <DependentUpon>QAQCErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValidationRules\UI\RunQAQCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValidationRules\UI\RunQAQCForm.designer.cs">
+      <DependentUpon>RunQAQCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValidationRules\ValidateElectricConnectivity.cs" />
+    <Compile Include="ValidationRules\ValidateESRIFieldRules.cs" />
+    <Compile Include="ValidationRules\ValidateESRIRules.cs" />
+    <Compile Include="ValidationRules\ValidateIslandFeature.cs" />
+    <Compile Include="ValidationRules\ValidateLocalOffice.cs" />
+    <Compile Include="ValidationRules\ValidateMap.cs" />
+    <Compile Include="ValidationRules\OneXFRPerLineValidationRule.cs" />
+    <Compile Include="TestInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValidationRules\ValidateCircuitIDFormat.cs" />
+    <Compile Include="ValidationRules\ValidatePhaseDesignation.cs" />
+    <Compile Include="ValidationRules\ValidateLoopFeature.cs" />
+    <Compile Include="ValidationRules\ValidateMultifeederFeature.cs" />
+    <Compile Include="ValidationRules\ValidateRequiredFields.cs" />
+    <Compile Include="ValidationRules\ValidateTransformerUnitSubtype.cs" />
+    <Compile Include="ValidationRules\ScadaValidator.cs" />
+    <Compile Include="ValidationRules\SourceLinePhase.cs" />
+    <Compile Include="ValidationRules\StepDownValidator.cs" />
+    <Compile Include="ValidationRules\TransformerDetectionScheme.cs" />
+    <Compile Include="ValidationRules\TransformerPhase.cs" />
+    <Compile Include="ValidationRules\UniqueCGCNumber.cs" />
+    <Compile Include="ValidationRules\ValidateOperatingNumber.cs" />
+    <Compile Include="ValidationRules\ValidateFieldsInServiceStatus.cs" />
+    <Compile Include="ValidationRules\ValidateClosedDeviceAction.cs" />
+    <Compile Include="ValidationRules\ValidateProposedChange.cs" />
+    <Compile Include="ValidationRules\ValidateProtectionScheme.cs" />
+    <Compile Include="ValidationRules\ValidateSerialNumberManufacturer.cs" />
+    <Compile Include="ValidationRules\ValidateSourceConnectivity.cs" />
+    <Compile Include="ValidationRules\ValidateSumUnitCount.cs" />
+    <Compile Include="ValidationRules\ValidateTransformerVoltage.cs" />
+    <Compile Include="ValidationRules\ValidateXFRServicePointDivision.cs" />
+    <Compile Include="ValidationRules\ValidationEngine.cs" />
+    <Compile Include="ValidationRules\VoltageValidator\DPDPrimaryVoltageValidator.cs" />
+    <Compile Include="ValidationRules\VoltageValidator\RelationshipClassResolver.cs" />
+    <Compile Include="ValidationRules\VoltageValidator\SecVoltageValidator.cs" />
+    <Compile Include="ValidationRules\VoltageValidator\PrimaryVoltageRule.cs" />
+    <Compile Include="ValidationRules\VoltageValidator\SecondaryVoltageRule.cs" />
+    <Compile Include="ValidationRules\ValidateRegionalAttributes.cs" />
+    <Compile Include="ValidationRules\VoltageValidator\VoltageValidatorFactory.cs" />
+    <Compile Include="ValidationRules\VoltageValidator\PriVoltageValidator.cs" />
+    <Compile Include="ValidationRules\VoltageValidator\VoltageValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ArcCatalogCommands\SDPropSync\PropChooser.resx">
+      <DependentUpon>PropChooser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArcCatalogCommands\SDPropSync\UC\SyncSDFieldProps.resx">
+      <DependentUpon>SyncSDFieldProps.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArcMapCommands\AnnotationComposite\UI\CALMSettingsUC.resx">
+      <DependentUpon>CALMSettingsUC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArcMapCommands\AnnotationComposite\UI\CALMToolbarUC.resx">
+      <DependentUpon>CALMToolbarUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArcMapCommands\DateYear\DateYearUpdate.resx">
+      <DependentUpon>DateYearUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArcMapCommands\PGE_AttributeCopyForm.resx">
+      <DependentUpon>PGE_AttributeCopyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArcMapCommands\PGE_SelectRecordForSAPCommandForm.resx">
+      <DependentUpon>PGE_SelectRecordForSAPCommandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArcMapCommands\MapUtilities\PGEPrintMapGrids.resx">
+      <DependentUpon>PGEPrintMapGrids.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArcMapCommands\PGE_Tracing\PGE_TraceResults.resx">
+      <DependentUpon>PGE_TraceResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArcMapCommands\PGE_TransformerSearchForm.resx">
+      <DependentUpon>PGE_TransformerSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArcMapCommands\PGE_UpdateMapNumberForm.resx">
+      <DependentUpon>PGE_UpdateMapNumberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArcMapCommands\PopulateLastJobNumber\UC\PopulateLastJobNumberUC.resx">
+      <DependentUpon>PopulateLastJobNumberUC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArcMapCommands\PSPS_CircuitFilter\PSPS_CircuitFilter_Form.resx" />
+    <EmbeddedResource Include="ArcMapCommands\SuperUser\PGEActivateSuperUser.resx">
+      <DependentUpon>PGEActivateSuperUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArcMapCommands\UpdateSessionDescription\PGEUpdateSessionDesForm.resx">
+      <DependentUpon>PGEUpdateSessionDesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArcMapCommands\VersionDifference\VersionChangesForm.resx">
+      <DependentUpon>VersionChangesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoUpdaters\Attribute\PNodeIDDisplayForm.resx">
+      <DependentUpon>PNodeIDDisplayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoUpdaters\Special\SymbolNumber\UI\SymbolNumberConfigForm.resx">
+      <DependentUpon>SymbolNumberConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoUpdaters\Special\UGConductorEliminateType4\UI\UGConductorEliminateType4Form.resx">
+      <DependentUpon>UGConductorEliminateType4Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="D8TreeTools\CreateRelatedObject\Subtype_Field_Editor.resx">
+      <DependentUpon>Subtype_Field_Editor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="D8TreeTools\PGE_Fill_PII_Info_Form.resx">
+      <DependentUpon>PGE_Fill_PII_Info_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="D8TreeTools\PTTCombineForm.resx">
+      <DependentUpon>PTTCombineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FieldEditors\CircuitIDSelectorForm.resx">
+      <DependentUpon>CircuitIDSelectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FieldEditors\ColorSelector.resx">
+      <DependentUpon>ColorSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FieldEditors\CircuitIDSelector.resx">
+      <DependentUpon>CircuitIDSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FieldEditors\DateSelector.resx">
+      <DependentUpon>DateSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FieldEditors\PGE_LocDesc_FieldEditor.resx">
+      <DependentUpon>PGE_LocDesc_FieldEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filters\ExportSessionsForm.resx">
+      <DependentUpon>ExportSessionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filters\SessionFilterForm.resx">
+      <DependentUpon>SessionFilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AlignmentPopupMenu.resx">
+      <DependentUpon>AlignmentPopupMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocatorTools\GUIDSearchLocator\PGE_GUIDSearchLocatorUI.resx" />
+    <EmbeddedResource Include="LocatorTools\MlxRelationshipTool\PGE_AgreementNumberUI.resx">
+      <DependentUpon>PGE_AgreementNumberUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocatorTools\MlxRelationshipTool\PGE_PMOrderNumberRelateUI.resx">
+      <DependentUpon>PGE_PMOrderNumberRelateUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocatorTools\MlxRelationshipTool\PGE_PMOrderNumberUI.resx">
+      <DependentUpon>PGE_PMOrderNumberUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocatorTools\OperatingNumberLocator\PGE_OperatingNumberLocatorUI.resx">
+      <DependentUpon>PGE_OperatingNumberLocatorUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocatorTools\SAPIDSearchLocator\PGE_SAPIDSearchLocatorUI.resx" />
+    <EmbeddedResource Include="Login\ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\SessionManager.resx">
+      <DependentUpon>SessionManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC\FrmCreatePole.resx">
+      <DependentUpon>FrmCreatePole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subtasks\SAPErrorsUI.resx">
+      <DependentUpon>SAPErrorsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestInfo.resx">
+      <DependentUpon>TestInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFM\Operations\SetButterflyFilterControl.resx">
+      <DependentUpon>SetButterflyFilterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFM\Operations\CreateButterflyAnnoControl.resx">
+      <DependentUpon>CreateButterflyAnnoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValidationRules\UI\QAQCErrorForm.resx">
+      <DependentUpon>QAQCErrorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValidationRules\UI\RunQAQCForm.resx">
+      <DependentUpon>RunQAQCForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\PGE_BatchApplication\ROBC\ROBC_API\PGE.BatchApplication.ROBC_API\PGE.BatchApplication.ROBC_API.csproj">
+      <Project>{40246c50-f005-483f-8306-7f80a561a4fa}</Project>
+      <Name>PGE.BatchApplication.ROBC_API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.ChangeDetectionAPI\PGE.Common.ChangeDetectionAPI\PGE.Common.ChangeDetectionAPI.csproj">
+      <Project>{69b7ff1f-49bf-46f5-8d71-b09ae5e8fc2a}</Project>
+      <Name>PGE.Common.ChangeDetectionAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.ArcFM\PGE.Common.Delivery.ArcFM.csproj">
+      <Project>{d51259a8-4142-4c43-a95c-6c1fcbf88a73}</Project>
+      <Name>PGE.Common.Delivery.ArcFM</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Framework\PGE.Common.Delivery.Framework.csproj">
+      <Project>{f83a2262-39cf-4af1-91b4-6bf243568f30}</Project>
+      <Name>PGE.Common.Delivery.Framework</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.System\PGE.Common.Delivery.Systems.csproj">
+      <Project>{bb2f3f97-87f6-434a-8618-c4016f020b3f}</Project>
+      <Name>PGE.Common.Delivery.Systems</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.UI\PGE.Common.Delivery.UI.csproj">
+      <Project>{9c7b8625-11ea-477e-937c-0fd928f1f6f6}</Project>
+      <Name>PGE.Common.Delivery.UI</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.ArcFM\PGE.Common.Delivery.ArcFM.csproj">
+      <Project>{d51259a8-4142-4c43-a95c-6c1fcbf88a73}</Project>
+      <Name>PGE.Common.Delivery.ArcFM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Diagnostics\PGE.Common.Delivery.Diagnostics.csproj">
+      <Project>{f1d566a4-a80b-44d5-ac34-f4859d068a13}</Project>
+      <Name>PGE.Common.Delivery.Diagnostics</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Framework\PGE.Common.Delivery.Framework.csproj">
+      <Project>{f83a2262-39cf-4af1-91b4-6bf243568f30}</Project>
+      <Name>PGE.Common.Delivery.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Geodatabase\PGE.Common.Delivery.Geodatabase.csproj">
+      <Project>{c5d5c40d-f0da-4455-9e1d-86f8a9c57c2b}</Project>
+      <Name>PGE.Common.Delivery.Geodatabase</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.ProcessManager\PGE.Common.Delivery.Process.csproj">
+      <Project>{50d5b168-0d42-40d3-970f-00b5e0d6d7bd}</Project>
+      <Name>PGE.Common.Delivery.Process</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.SessionManager\PGE.Common.Delivery.SessionManager.csproj">
+      <Project>{086a1cdd-e760-4503-aff3-1c3f7f113106}</Project>
+      <Name>PGE.Common.Delivery.SessionManager</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.System\PGE.Common.Delivery.Systems.csproj">
+      <Project>{bb2f3f97-87f6-434a-8618-c4016f020b3f}</Project>
+      <Name>PGE.Common.Delivery.Systems</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.UI\PGE.Common.Delivery.UI.csproj">
+      <Project>{9c7b8625-11ea-477e-937c-0fd928f1f6f6}</Project>
+      <Name>PGE.Common.Delivery.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AutoUpdaters\Special\SymbolNumber\Schema\SymbolNumber.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="AutoUpdaters\Special\SymbolNumber\Schema\SymbolNumber.xss">
+      <DependentUpon>SymbolNumber.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DesktopClassDiagram.cd" />
+    <None Include="Login\registryInfo.reg" />
+    <None Include="PGE.snk" />
+    <EmbeddedResource Include="Bitmaps\CALM.bmp" />
+    <EmbeddedResource Include="Bitmaps\CALMSelection.bmp" />
+    <EmbeddedResource Include="Bitmaps\CALMSettings.bmp" />
+    <EmbeddedResource Include="Bitmaps\ReplaceAnnotation.bmp" />
+    <EmbeddedResource Include="Cursors\ReplaceAnnotation.cur" />
+    <Content Include="ArcMapCommands\MapUtilities\PgeUfmTemplateSelection.bmp" />
+    <EmbeddedResource Include="ArcMapCommands\PGE_SelectRecordForSAPCommand.bmp" />
+    <EmbeddedResource Include="ArcMapCommands\PGE_AttributeCopyTool.bmp" />
+    <EmbeddedResource Include="ArcMapCommands\RestrictedTools\AutoupdatersOffTool.bmp" />
+    <EmbeddedResource Include="ArcMapCommands\RestrictedTools\AutoupdatersOffTool.cur" />
+    <EmbeddedResource Include="ArcMapCommands\RestrictedTools\AutoupdatersOnTool.bmp" />
+    <EmbeddedResource Include="ArcMapCommands\RestrictedTools\AutoupdatersOnTool.cur" />
+    <EmbeddedResource Include="ArcMapCommands\RestrictedTools\ReconcileParallelTool.bmp" />
+    <EmbeddedResource Include="ArcMapCommands\RestrictedTools\ReconcileParallelTool.cur" />
+    <EmbeddedResource Include="ArcMapCommands\PGE_Toolbar\PGE_DisconnectMultipleFeature_Tool.bmp" />
+    <Content Include="ArcMapCommands\Status\StatusUpdateCommand.bmp" />
+    <Content Include="ArcMapCommands\SyncOnSwitch\SyncOnSwitch.bmp" />
+    <Content Include="ArcMapCommands\SyncOnSwitch\SyncOnSwitchOff.bmp" />
+    <EmbeddedResource Include="Bitmaps\SelectEdits.bmp" />
+    <EmbeddedResource Include="Bitmaps\UploadSessionConfig.bmp" />
+    <EmbeddedResource Include="Bitmaps\PGE_ViewWebViewer.bmp" />
+    <EmbeddedResource Include="Bitmaps\SessionDescriptionIconNew.bmp" />
+    <Content Include="AutoUpdaters\Special\ADMSLabelAU\Config\ADMSLabelConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Common\VoltageConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FieldEditors\InitialCircuitColorAssignment.txt" />
+    <Content Include="FieldEditors\PGECircuitColor.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GDBM\PGESSDConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GDBM\PGE_OpenPointADMSLabel_Config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GDBM\SessionErrors.sql" />
+    <EmbeddedResource Include="PLC\CreatePole.bmp" />
+    <EmbeddedResource Include="PLC\CreatePoleTool.bmp" />
+    <Content Include="PLC\CreatePoleTool.cur" />
+    <Content Include="Sql\AUModeTracker.sql" />
+    <EmbeddedResource Include="ArcMapCommands\MapUtilities\TNSPingCommand.bmp" />
+    <Content Include="EDERDesktop.log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ArcMapCommands\MapUtilities\PGEPrintMapCommand.bmp" />
+    <EmbeddedResource Include="ArcMapCommands\PGE_RotateTool.bmp" />
+    <EmbeddedResource Include="ArcMapCommands\MapUtilities\PGERunQAQCCommand.bmp" />
+    <Content Include="AutoTextElements\PGEMapUtiltiesConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AutoUpdaters\Special\RegionalAttributesAU\Config\ExternalAttrConfig.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AutoUpdaters\Special\SymbolNumber\Config\CapacitorBank.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AutoUpdaters\Special\SymbolNumber\Config\DynamicProtectiveDevice.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AutoUpdaters\Special\SymbolNumber\Config\SupportStructure.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="AutoUpdaters\Special\SymbolNumber\Config\Switch.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AutoUpdaters\Special\SymbolNumber\Config\Transformer.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="AutoUpdaters\Special\SymbolNumber\Config\VoltageRegulator.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ConfigNeutralPhase\NeutralConductorConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="D8TreeTools\CreateRelatedObject\Relationship_Subtype_Mapping.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Login\SQL\LoginSqlProcedures.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UFM\Configuration\UFMConfiguration.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ValidationRules\Config\ExternalTransformerVoltage.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ValidationRules\ValidateOperatingNumberConfig\CapacitorBank.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ValidationRules\ValidateOperatingNumberConfig\DynamicProtectiveDevice.xml" />
+    <Content Include="ValidationRules\ValidateOperatingNumberConfig\Fuse.xml" />
+    <Content Include="ValidationRules\ValidateOperatingNumberConfig\OpenPoint.xml" />
+    <Content Include="ValidationRules\ValidateOperatingNumberConfig\StepDown.xml" />
+    <Content Include="ValidationRules\ValidateOperatingNumberConfig\Switch.xml" />
+    <Content Include="ValidationRules\ValidateOperatingNumberConfig\Transformer.xml" />
+    <Content Include="ValidationRules\ValidateOperatingNumberConfig\VoltageRegulator.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>regx /u "$(TargetPath)"
+regx /r /c /s /d "$(TargetPath)"
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <!--
+  > This CANNOT BE! At 10 <
+    -->
+  <!--
+  <Target Name="BeforeClean">
+    <Exec WorkingDirectory="$(CommonProgramFiles)\ArcGIS\bin" Command="esriRegasm.exe &quot;$(TargetPath)&quot; /p:Desktop /u /s" Condition="Exists('$(TargetPath)') And Exists('$(CommonProgramFiles)\ArcGIS\bin\esriRegasm.exe')" />
+  </Target>
+  <Target Name="AfterBuild">
+    <Exec WorkingDirectory="$(CommonProgramFiles)\ArcGIS\bin" Command="esriRegasm.exe &quot;$(TargetPath)&quot; /p:Desktop /s" Condition="Exists('$(CommonProgramFiles)\ArcGIS\bin\esriRegasm.exe')" />
+  </Target>-->
+</Project>

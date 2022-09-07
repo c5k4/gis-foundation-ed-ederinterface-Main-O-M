@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.Common.ChangesManager.ChangeManager" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAICAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>ChangeManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_changeDetectors" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.ChangesManager.ChangePublisher" Collapsed="true">
+    <Position X="0.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAEAAAAAAAAAAIAAAAAAAAAIIAAAABAABAAAAAQAAA=</HashCode>
+      <FileName>ChangePublisher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.ChangesManager.FeatureCompareChangeDetector" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="5.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAABEYBCAAAAgIIwAABAAAAAACkAIAoA=</HashCode>
+      <FileName>FeatureCompareChangeDetector.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_extractGdbManager" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PGE.Common.ChangesManager.FGDBManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="1" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAMAgCAAIAECAgAAIMAAIQABAAAALBgJAACAAAA=</HashCode>
+      <FileName>FGDBManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_fgdbName" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.ChangesManager.MDBManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAIACCAAIAAGAAoAIMACIwAIAAAQDBgIAACBAAA=</HashCode>
+      <FileName>MDBManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.ChangesManager.VersionedChangeDetector" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="7.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAKAACAIAQhCJADAAAAgKAwAGKAAAhBEYkAEAIA=</HashCode>
+      <FileName>VersionedChangeDetector.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PGE.Common.ChangesManagerShared.ChangeDictionariesList" Collapsed="true">
+    <Position X="3.75" Y="10" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="PGE.Common.ChangesManagerShared.ChangeDictionary" Collapsed="true">
+    <Position X="0.75" Y="10" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="PGE.Common.ChangesManager.ChangeXmlConverter" Collapsed="true">
+    <Position X="6.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAQAABAAAAAAAACEAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>ChangeXmlConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.ChangesManager.Utilities.AUDisabler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAACAAAAAAAAAABAAAAAACAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Utilities\AUDisabler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_mmAu" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="PGE.Common.ChangesManager.IExtractGDBManager" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAACAAAAIMAAAQAAAAAACBAIAACAAAA=</HashCode>
+      <FileName>IExtractGDBManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Miner.Interop.IMMAutoUpdater" Collapsed="true">
+    <Position X="4.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.esriSystem.IName" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Collections.Generic.IList&lt;T&gt;" Collapsed="true">
+    <Position X="4.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

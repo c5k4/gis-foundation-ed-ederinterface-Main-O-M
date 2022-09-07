@@ -1,0 +1,179 @@
+﻿@using SettingsApp.Common;
+@model SettingsApp.Models.GenEquipmentModel
+<script type="text/javascript" src="/Scripts/SettingsApp.js"></script>
+@if ((SettingsApp.Models.GeneratorModel)ViewBag.CurrentGenerator != null)
+{
+    var superuser = Session["SuperuserOn"] != null ? (bool)Session["SuperuserOn"] : false;
+    var currentGenerator = (SettingsApp.Models.GeneratorModel)ViewBag.CurrentGenerator;
+    var currentEquipment = Model as SettingsApp.Models.GenEquipmentModel;
+    <table cellpadding="0" cellspacing="0" style="margin:auto;background-color: #f2f2f2; width:100%;">
+@*       <tr>
+            <td class="sectionHeader" colspan="2">
+                Equipments
+            </td>
+        </tr>*@
+        <tr>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 0px">
+                <div class="float-left" style="width:auto">
+                    <nav>
+                        <ul id="menu">
+                            @if (currentGenerator.Equipments != null && currentGenerator.Equipments.Count > 0)
+                            {
+                                int ActiveEquipmentIndex = currentGenerator.Equipments.FindIndex(x=> x.SAPEquipmentID == currentEquipment.SAPEquipmentID);
+                                for (int i = 0; i <= currentGenerator.Equipments.Count - 1; i++)
+                                {
+                                    string equipName = "Gen Equip " + (i + 1).ToString();
+                                    var equipment = currentGenerator.Equipments[i];
+                                    string url = "/Generation/Equipment?sapEquipmentID=" + equipment.SAPEquipmentID.ToString();
+                                    if (ActiveEquipmentIndex == i)
+                                    {
+                                        <li class="selected"><a href=@url> @equipName  </a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li class="@ViewBag.Generator"><a href=@url> @equipName  </a>
+                                        </li>
+                                    }
+                                }
+                                if (superuser)
+                                {
+                                    string url = "/Generation/AddNewEquipment?generatorID=" + ViewBag.GeneratorID;
+                                <li style="display: inline;list-style: none;padding: 0px 5px 0px 5px;text-align: center;background-color: #FFFF00;color: #ffffff;"> <a  style="background: none;text-decoration: none; color: #000000;" href=@url> New </a></li>
+                                }
+                            }
+                            else
+                            {
+                                if (superuser)
+                                {
+                                    string url = "/Generation/AddNewEquipment?generatorID=" + ViewBag.GeneratorID;
+                                <li style="display: inline;list-style: none;padding: 0px 5px 0px 5px;text-align: center;background-color: #FFFF00;color: #ffffff;"> <a  style="background: none;text-decoration: none; color: #000000;" href=@url> New </a></li>
+                                }
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color: #ffffff; padding: 10px;">
+                @if (ViewBag.ShowPageError == true)
+                {
+                    <label id="lableEquipmentValidationError" runat="server" style="color: Red; text-align: center;">
+                        There are error(s), please check below.
+                    </label>
+                }
+                @if (ViewBag.ShowSaveSucessful == true)
+                {
+                    <label id="lableEquipmentSaveSucess" runat="server" style="color: Green; text-align: center;">
+                        Device saved successfully.
+                    </label>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+            @if (Model != null)
+            {
+                <table cellpadding="0"  cellspacing="0" style="margin:auto;background-color: #f2f2f2;border:0px solid #000; width:90%;">
+                        @*<tr>
+                            <td>@Html.LabelForRequired(model => model.GenTechCD)
+                            </td>
+                            <td>@Html.DropDownListFor(model => model.GenTechCD, Model.EquipmentTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GenTechCD)
+                            </td>
+                        </tr>*@
+                        <tr>
+                            <td>@Html.LabelForRequired(model => model.GenTechCD)
+                            </td>
+                            <td>@Html.TextBoxFor(model => model.GenTechCD, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GenTechCD)
+                                @Html.HiddenFor(model => model.GenTechCD)
+@*                                                @Html.HiddenFor(model => model.ID)
+                                @Html.HiddenFor(model => model.GeneratorID)*@
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelForRequired(model => model.Manufacturer)
+                            </td>
+                            <td>@Html.TextBoxFor(model => model.Manufacturer, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Manufacturer)
+@*                                                    @Html.HiddenFor(model => model.Manufacturer)*@
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelForRequired(model => model.Model)
+                            </td>
+                            <td>@Html.TextBoxFor(model => model.Model, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Model)
+                                    @* @Html.HiddenFor(model => model.Model)*@
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelForRequired(model => model.SAPEquipmentID)
+                            </td>
+                            <td>@Html.TextBoxFor(model => model.SAPEquipmentID, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SAPEquipmentID)
+                                    @* @Html.HiddenFor(model => model.SAPEquipmentID)*@
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelForRequired(model => model.Quantity)
+                            </td>
+                            <td>@Html.TextBoxFor(model => model.Quantity, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.Quantity)
+                                    @*@Html.HiddenFor(model => model.Quantity)*@
+                            </td>
+                        </tr>
+                        @if (Model.GenTechCD == "SOLAR")
+                        {
+
+                        }
+                        @if (Model.GenTechCD == "BATTERY")
+                        {
+                            <tr>
+                                <td>@Html.LabelForRequired(model => model.PTCRatedkW)
+                                </td>
+                                <td>@Html.TextBoxFor(model => model.PTCRatedkW, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PTCRatedkW)
+                                        @* @Html.HiddenFor(model => model.PTCRatedkW)*@
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>@Html.LabelForRequired(model => model.MaxStorageCapacity)
+                                </td>
+                                <td>@Html.TextBoxFor(model => model.MaxStorageCapacity, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.MaxStorageCapacity)
+                                        @* @Html.HiddenFor(model => model.MaxStorageCapacity)*@
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>@Html.LabelForRequired(model => model.RatedDischarge)
+                                </td>
+                                <td>@Html.TextBoxFor(model => model.RatedDischarge, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.RatedDischarge)
+                                        @*@Html.HiddenFor(model => model.RatedDischarge)*@
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>@Html.LabelForRequired(model => model.ChargeDemandkW)
+                                </td>
+                                <td>@Html.TextBoxFor(model => model.ChargeDemandkW, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ChargeDemandkW)
+                                        @*@Html.HiddenFor(model => model.ChargeDemandkW)*@
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>@Html.LabelForRequired(model => model.GridCharged)
+                                </td>
+                                <td>@Html.TextBoxFor(model => model.GridCharged, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GridCharged)
+                                        @*@Html.HiddenFor(model => model.GridCharged)*@
+                                </td>
+                            </tr>
+                        }
+                </table>
+            }
+            </td>
+        </tr>
+        <tr>
+            <td><br /></td>
+        </tr>
+        <tr>
+            <td><br /></td>
+        </tr>
+    </table>
+}

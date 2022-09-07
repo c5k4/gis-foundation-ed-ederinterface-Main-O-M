@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file contains the features for the Desktop installers. 
+This was moved to the Shared project since it is used by both the Desktop and GWD installers.-->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="Delivery">
+      <ComponentGroupRef Id="Telvent.Delivery.Framework.dll"/>
+      <ComponentGroupRef Id="Telvent.Delivery.Diagnostics.dll"/>
+      <ComponentGroupRef Id="Telvent.Delivery.Systems.dll"/>
+      <ComponentGroupRef Id="Telvent.Delivery.Geodatabase.dll"/>
+      <!--
+      <ComponentGroupRef Id="Example.exe"/>
+      <ComponentRef Id="Example.config"/>
+      <ComponentRef Id="DesktopStyleSheets"/>
+      <ComponentRef Id="Desktop" />
+      <ComponentRef Id="DesktopScripts" />
+      <ComponentRef Id="CommonRegistry"/> -->
+    </ComponentGroup>
+  </Fragment>
+</Wix>

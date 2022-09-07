@@ -1,0 +1,9 @@
+-s http://edgiswebdev01:6080/arcgis/rest/services/Data/ElectricDistribution/MapServer -o exportMap -t 2 -j 1000
+-s http://edgiswebtst01:6080/arcgis/rest/services/Data/ElectricDistribution/MapServer -o exportMap -t 4 -j 1000
+
+-s http://wsgo496902:6080/arcgis/rest/services/Data/PublicationFS/FeatureServer -o queryGeometry -t 2 -j 1000
+
+-s http://edgiswebtst01/arcgis/rest/services/Data/ElectricDistribution/MapServer -o getFind -t 2 -j 1000
+
+
+-s http://edgiswebdev01:6080/arcgis/rest/services/Data/ElectricDistribution/MapServer -o exportMap -t 2 -j 10000

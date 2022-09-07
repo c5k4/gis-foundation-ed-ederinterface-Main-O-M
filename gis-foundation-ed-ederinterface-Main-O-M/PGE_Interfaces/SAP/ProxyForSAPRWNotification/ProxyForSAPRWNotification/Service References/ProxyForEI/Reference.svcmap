@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="765d8158-6ca3-4700-bd0a-1513d2850193" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://itapposbd01vip.comp.pge.com/ei.electric.edgis/MapCorrection?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MapCorrection.xsd" MetadataType="Schema" ID="5e6b97c3-910b-44fc-9e8a-9424848df2fa" SourceId="1" SourceUrl="https://itapposbd01vip.comp.pge.com/ei.electric.edgis/MapCorrection?SCHEMA%2Fei.electric.edgis%2FResources%2FDataStructures%2FXMLSchema%2FMapCorrection" />
+    <MetadataFile FileName="MapCorrection.wsdl" MetadataType="Wsdl" ID="1eca6f7e-d297-45dd-9682-54acb6133cff" SourceId="1" SourceUrl="https://itapposbd01vip.comp.pge.com/ei.electric.edgis/MapCorrection?wsdl" />
+    <MetadataFile FileName="MapCorrection1.xsd" MetadataType="Schema" ID="83b68fc0-22b2-4a2b-9b96-400385b7e016" SourceId="1" SourceUrl="https://itapposbd01vip.comp.pge.com/ei.electric.edgis/MapCorrection?SCHEMA%2Fei.electric.edgis%2FResources%2FDataStructures%2FXMLSchema%2FMapCorrectionMessage" />
+    <MetadataFile FileName="MapCorrection2.xsd" MetadataType="Schema" ID="ba2359c7-9aab-43bf-a3ac-f0aaeb8ab8a7" SourceId="1" SourceUrl="https://itapposbd01vip.comp.pge.com/ei.electric.edgis/MapCorrection?SCHEMA%2Fei.electric.edgis%2FResources%2FDataStructures%2FXMLSchema%2FMessage" />
+    <MetadataFile FileName="MapCorrection3.xsd" MetadataType="Schema" ID="0499f963-2af2-4fda-894f-741f0da6f117" SourceId="1" SourceUrl="https://itapposbd01vip.comp.pge.com/ei.electric.edgis/MapCorrection?SCHEMA%2Fei.electric.edgis%2FResources%2FDataStructures%2FXMLSchema%2FGetMapCorrection" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

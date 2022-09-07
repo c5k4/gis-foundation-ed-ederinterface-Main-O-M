@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--PGE.MapProduction.Integration-->
+  <Fragment>
+    <ComponentGroup Id="Extras">
+
+      <Component Id="PGE.BatchApplication.DeleteAnnos.exe" Directory="DELETEANNO" Guid="6B9C890B-3640-4A7F-9626-B46F40FBE115" >
+        <File Id="PGE.BatchApplication.DeleteAnnos.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DeleteAnno\PGE.BatchApplication.DeleteAnnos.exe"/>
+      </Component>      
+      <Component Id="PGE.BatchApplication.DeleteAnnos.exe.config" Directory="DELETEANNO" Guid="0274201D-E6BB-4C6B-8526-66E838C213C2" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.BatchApplication.DeleteAnnos.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DeleteAnno\PGE.BatchApplication.DeleteAnnos.exe.config"/>
+      </Component>      
+	  <Component Id="PGE.BatchApplication.DeleteAnnos.log4net.config" Directory="LoggingConfiguration" Guid="08F9B32E-0930-4860-A405-405CED3CB966" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.BatchApplication.DeleteAnnos.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\DeleteAnno\PGE.BatchApplication.DeleteAnnos.log4net.config"/>
+      </Component>
+      
+    </ComponentGroup>
+    
+  </Fragment>
+</Wix>

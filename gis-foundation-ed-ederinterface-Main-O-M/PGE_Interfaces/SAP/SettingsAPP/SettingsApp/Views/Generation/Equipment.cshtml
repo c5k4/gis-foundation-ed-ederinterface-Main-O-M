@@ -1,0 +1,6 @@
+﻿@model SettingsApp.Models.GenEquipmentModel
+@using (Html.BeginForm("Equipment", "Generation"))
+{
+    @Html.ValidationSummary(true)
+    Html.RenderPartial("~/Views/Shared/_EquipmentPartial.cshtml");    
+}

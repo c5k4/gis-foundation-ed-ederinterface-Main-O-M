@@ -1,0 +1,39 @@
+drop table PGE_UndergroundNetwork_Trace;
+
+Create table PGE_UndergroundNetwork_Trace
+(FEEDERFEDBY NVARCHAR2(9),
+FEEDERID NVARCHAR2(9),
+FROM_FEATURE_EID NUMBER(38),
+TO_FEATURE_EID NUMBER(38),
+TO_FEATURE_OID NUMBER(38),
+TO_FEATURE_GLOBALID CHAR(38),
+TO_FEATURE_FCID NUMBER(38),
+TO_FEATURE_TYPE NUMBER(1),
+ORDER_NUM NUMBER(38),
+MIN_BRANCH NUMBER(38),
+MAX_BRANCH NUMBER(38),
+TREELEVEL NUMBER(38));
+
+drop table PGE_UndergroundNetwork_Temp;
+
+Create table PGE_UndergroundNetwork_Temp
+(FEEDERFEDBY NVARCHAR2(9),
+FEEDERID NVARCHAR2(9),
+FROM_FEATURE_EID NUMBER(38),
+TO_FEATURE_EID NUMBER(38),
+TO_FEATURE_OID NUMBER(38),
+TO_FEATURE_GLOBALID CHAR(38),
+TO_FEATURE_FCID NUMBER(38),
+TO_FEATURE_TYPE NUMBER(1),
+ORDER_NUM NUMBER(38),
+MIN_BRANCH NUMBER(38),
+MAX_BRANCH NUMBER(38),
+TREELEVEL NUMBER(38));
+
+/
+
+
+Grant all on PGE_UndergroundNetwork_Trace to gisinterface;
+Grant all on PGE_UndergroundNetwork_Temp to gisinterface;
+Grant all on PGE_UndergroundNetwork_Trace to webr;
+Grant all on PGE_UndergroundNetwork_Trace to edgisbo;

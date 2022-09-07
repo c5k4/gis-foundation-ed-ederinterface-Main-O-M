@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--PGE.MapProduction.Integration-->
+  <Fragment>
+    <ComponentGroup Id="Extras">
+
+      <Component Id="PGE.Interfaces.ED08TaxReport.exe" Directory="ED08" Guid="242164BD-D797-47A8-A105-97AAF6BA4076" >
+        <File Id="ED08TaxReportFile.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ED08TaxReport\PGE.Interfaces.ED08TaxReport.exe"/>
+      </Component>
+
+      <Component Id="ED08TaxReport_exe_config" Directory="ED08" Guid="F3119761-3E95-42E8-8847-F7E7334E9380" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.Interfaces.ED08TaxReport.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ED08TaxReport\PGE.Interfaces.ED08TaxReport.exe.config"/>
+      </Component>
+
+      <Component Id="ED08.log4net.config" Directory="LoggingConfiguration" Guid="A5EF57D3-EB1D-4908-A01E-29CD4B3FA84E" Permanent="yes" NeverOverwrite="yes">
+        <File Id="ED08.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ED08TaxReport\ED08.log4net.config"/>
+      </Component>
+
+      <Component Id="PGE.Interfaces.ProcessTaxData_exe_config" Directory="ED08" Guid="842F6921-1B29-49C1-B48A-6D0BF141F9A1" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.Interfaces.ProcessTaxData.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ED08TaxReport\PGE.Interfaces.ProcessTaxData.exe.config"/>
+      </Component>
+
+      <Component Id="PGE.Interfaces.TaxReportData_exe_config" Directory="ED08" Guid="88576975-B8EE-4618-817D-8E356F644573" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.Interfaces.TaxReportData.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ED08TaxReport\PGE.Interfaces.TaxReportData.exe.config"/>
+      </Component>
+
+      <Component Id="PGE.Interfaces.ProcessTaxData_exe" Directory="ED08" Guid="9F653FD5-BC5F-4F64-9988-8FB864DAF03D">
+        <File Id="PGE.Interfaces.ProcessTaxData.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ED08TaxReport\PGE.Interfaces.ProcessTaxData.exe"/>
+      </Component>
+
+      <Component Id="PGE.Interfaces.TaxReportData_exe" Directory="ED08" Guid="F027A120-A33D-4AE0-A118-CD9B48AD16CE">
+        <File Id="PGE.Interfaces.TaxReportData.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ED08TaxReport\PGE.Interfaces.TaxReportData.exe"/>
+      </Component>
+
+      <Component Id="PGE.Interfaces.TaxReportDataStaging_dll" Directory="ED08" Guid="70F1F818-4C05-4335-831A-5E4D9BB0BD5F">
+        <File Id="PGE.Interfaces.TaxReportDataStaging.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ED08TaxReport\PGE.Interfaces.TaxReportDataStaging.dll"/>
+      </Component>
+
+    </ComponentGroup>
+
+
+  </Fragment>
+</Wix>

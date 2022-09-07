@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--PGE.MapProduction.Integration-->
+  <Fragment>
+    <ComponentGroup Id="Extras">
+
+      <Component Id="PGE.BatchApplication.FAISessionProcessor.exe" Directory="FAISessionProcessor" Guid="AC127EA2-DB8B-42FD-AAD5-904078B6FE5D" >
+        <File Id="PGE.BatchApplication.FAISessionProcessor.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\FAI\PGE.BatchApplication.FAISessionProcessor.exe"/>
+      </Component>
+
+      <Component Id="PGE.BatchApplication.FAISessionProcessor.log4net.config" Directory="LoggingConfiguration" Guid="9433C941-D843-4D44-9C5C-C9CFAC375FFF" Permanent="yes" >
+        <File Id="PGE.BatchApplication.FAISessionProcessor.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\FAI\PGE.BatchApplication.FAISessionProcessor.log4net.config"/>
+      </Component>
+
+      <Component Id="PGE.BatchApplication.FAISessionProcessor.exe.config" Directory="FAISessionProcessor" Guid="0ABC513D-5742-4A34-A2BC-F5A7839E78AA" Permanent="yes" >
+        <File Id="PGE.BatchApplication.FAISessionProcessor.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\FAI\PGE.BatchApplication.FAISessionProcessor.exe.config"/>
+      </Component>
+
+    </ComponentGroup>
+
+  </Fragment>
+</Wix>

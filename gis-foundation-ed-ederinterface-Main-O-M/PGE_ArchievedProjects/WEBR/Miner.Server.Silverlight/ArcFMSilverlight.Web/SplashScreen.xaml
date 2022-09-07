@@ -1,0 +1,28 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      x:Name="parentCanvas"
+      Background="#EEE">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock Margin="0 5" 
+                   FontSize="14"
+                   Foreground="#555"
+                   Text="ED Web Viewer"
+                   TextWrapping="Wrap" />
+        <Grid Width="300">
+            <Border Height="6" 
+                    BorderBrush="#555"
+                    BorderThickness="1" />
+            <Rectangle x:Name="uxProgress" 
+                       Width="1"
+                       Height="4"
+                       Margin="1 2"
+                       HorizontalAlignment="Left"
+                       Fill="#888" />
+        </Grid>
+        <TextBlock x:Name="uxStatus" 
+                   FontSize="32"
+                   Foreground="#AAA"
+                   Text="Loading..."
+                   TextWrapping="Wrap" />
+    </StackPanel>
+</Grid>

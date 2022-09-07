@@ -1,0 +1,30 @@
+#Daily transfer of SharePoint shared Meta Data Batch upload files from SharePoint Shared to Documentum
+
+FT_SRC_HOST=QAEDGISBTCWG005
+FT_SRC_LOGIN=LOGIN.WINDOWS.UC4TSTWIN
+FT_SRC_FILE=D:\edgisdbmaint\LOB_GeoMart\Replication\export\EDGIS\EDERSUB_TO_EDSUBGMC_Replica_DELTA.gdb\*.*
+FT_SRC_CODE=UC_CODE
+
+FT_DST_HOST=QAETGISGENWC009
+FT_DST_LOGIN=LOGIN.WINDOWS.UC4TSTWIN
+FT_DST_FILE=\\QAETGISGENWC009\D$\LOB_GeoMart\Replication\export\EDGIS\EDERSUB_TO_EDSUBGMC_Replica_DELTA.gdb\*.*
+FT_DST_CODE=UC_CODE
+
+# Needed because * is used.
+FT_WILDCARDS=Y
+
+# A=Abort O=Overwrite E=append to End
+FT_EXISTING_DST_FILE=O
+
+#FT_ERASE_SRC_FILE=Y
+FT_ERASE_SRC_FILE=N
+FT_INCLUDE_SUB_DIR=N
+
+# Will cause file transfer to END EMPTY without error if no file.
+SOURCE_CHECK=Y
+
+# T=Text B=Binary.
+FT_FILE_TYPE=T
+
+# Transfer files in this FileTransfer one at a time.
+MAX_PARALLEL_TRANSFERS=1

@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F0FE1362-56EA-498D-8CD8-A0FD7605AFFE}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PageTemplates</RootNamespace>
+    <AssemblyName>PageTemplates</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>PageTemplates.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Distribution.App</SilverlightAppEntry>
+    <TestPageFileName>DistributionTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.Client, Version=10.1.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Bing, Version=10.1.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Printing, Version=10.1.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Toolkit, Version=10.1.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="NLog">
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Json, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Windows.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdHoc\AdHoc_18x24_P.xaml.cs">
+      <DependentUpon>AdHoc_18x24_P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdHoc\AdHoc_24x32_P.xaml.cs">
+      <DependentUpon>AdHoc_24x32_P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdHoc\AdHoc_85x11_L.xaml.cs">
+      <DependentUpon>AdHoc_85x11_L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdHoc\AdHoc_85x11_P.xaml.cs">
+      <DependentUpon>AdHoc_85x11_P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Circuit\Circuit_MapName_18x24L.xaml.cs">
+      <DependentUpon>Circuit_MapName_18x24L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Circuit\Circuit_MapName_85x11P.xaml.cs">
+      <DependentUpon>Circuit_MapName_85x11P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Circuit\Circuit_MapName_85x11L.xaml.cs">
+      <DependentUpon>Circuit_MapName_85x11L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Circuit\Circuit_MapName_11x17L.xaml.cs">
+      <DependentUpon>Circuit_MapName_11x17L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Circuit\Circuit_MapName_11x17P.xaml.cs">
+      <DependentUpon>Circuit_MapName_11x17P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Circuit\Circuit_MapName_18x24P.xaml.cs">
+      <DependentUpon>Circuit_MapName_18x24P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Circuit\Circuit_MapName_24x32L.xaml.cs">
+      <DependentUpon>Circuit_MapName_24x32L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Circuit\Circuit_MapName_24x32P.xaml.cs">
+      <DependentUpon>Circuit_MapName_24x32P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdHocPrintWindow.xaml.cs">
+      <DependentUpon>AdHocPrintWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CMCSPrintWindow.xaml.cs">
+      <DependentUpon>CMCSPrintWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PrintPreview.xaml.cs">
+      <DependentUpon>PrintPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StandardMapPrintWindow.xaml.cs">
+      <DependentUpon>StandardMapPrintWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\ExtentCenterPointValueConverter.cs" />
+    <Compile Include="Converters\ExtentCoordinateConverter.cs" />
+    <Compile Include="Converters\RoundDoubleConverter.cs" />
+    <Compile Include="Distribution\Distribution_MapName_11x17L.xaml.cs">
+      <DependentUpon>Distribution_MapName_11x17L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Distribution\Distribution_MapName_11x17P.xaml.cs">
+      <DependentUpon>Distribution_MapName_11x17P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Distribution\Distribution_MapName_18x24L.xaml.cs">
+      <DependentUpon>Distribution_MapName_18x24L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Distribution\Distribution_MapName_18x24P.xaml.cs">
+      <DependentUpon>Distribution_MapName_18x24P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Distribution\Distribution_MapName_24x32P.xaml.cs">
+      <DependentUpon>Distribution_MapName_24x32P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Distribution\Distribution_MapName_24x32L.xaml.cs">
+      <DependentUpon>Distribution_MapName_24x32L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Distribution\Distribution_MapName_85x11L.xaml.cs">
+      <DependentUpon>Distribution_MapName_85x11L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Distribution\Distribution_MapName_85x11P.xaml.cs">
+      <DependentUpon>Distribution_MapName_85x11P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DuctBlock\DuctBlock_MapName_11x17L.xaml.cs">
+      <DependentUpon>DuctBlock_MapName_11x17L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DuctBlock\DuctBlock_MapName_11x17P.xaml.cs">
+      <DependentUpon>DuctBlock_MapName_11x17P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DuctBlock\DuctBlock_MapName_18x24L.xaml.cs">
+      <DependentUpon>DuctBlock_MapName_18x24L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DuctBlock\DuctBlock_MapName_18x24P.xaml.cs">
+      <DependentUpon>DuctBlock_MapName_18x24P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DuctBlock\DuctBlock_MapName_24x32P.xaml.cs">
+      <DependentUpon>DuctBlock_MapName_24x32P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DuctBlock\DuctBlock_MapName_24x32L.xaml.cs">
+      <DependentUpon>DuctBlock_MapName_24x32L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DuctBlock\DuctBlock_MapName_85x11L.xaml.cs">
+      <DependentUpon>DuctBlock_MapName_85x11L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DuctBlock\DuctBlock_MapName_85x11P.xaml.cs">
+      <DependentUpon>DuctBlock_MapName_85x11P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="General\Disclaimer.xaml.cs">
+      <DependentUpon>Disclaimer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="General\L11x17.xaml.cs">
+      <DependentUpon>L11x17.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="General\MapInformation.xaml.cs">
+      <DependentUpon>MapInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ScaleSelection.xaml.cs">
+      <DependentUpon>ScaleSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="General\Utilities.cs" />
+    <Compile Include="StreetLight\StreetLight_MapName_85x11L.xaml.cs">
+      <DependentUpon>StreetLight_MapName_85x11L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StreetLight\StreetLight_MapName_11x17L.xaml.cs">
+      <DependentUpon>StreetLight_MapName_11x17L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StreetLight\StreetLight_MapName_11x17P.xaml.cs">
+      <DependentUpon>StreetLight_MapName_11x17P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StreetLight\StreetLight_MapName_18x24L.xaml.cs">
+      <DependentUpon>StreetLight_MapName_18x24L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StreetLight\StreetLight_MapName_18x24P.xaml.cs">
+      <DependentUpon>StreetLight_MapName_18x24P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StreetLight\StreetLight_MapName_24x32P.xaml.cs">
+      <DependentUpon>StreetLight_MapName_24x32P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StreetLight\StreetLight_MapName_24x32L.xaml.cs">
+      <DependentUpon>StreetLight_MapName_24x32L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StreetLight\StreetLight_MapName_85x11P.xaml.cs">
+      <DependentUpon>StreetLight_MapName_85x11P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Schematic\Schematic_MapName_11x17L.xaml.cs">
+      <DependentUpon>Schematic_MapName_11x17L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Schematic\Schematic_MapName_11x17P.xaml.cs">
+      <DependentUpon>Schematic_MapName_11x17P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Schematic\Schematic_MapName_18x24L.xaml.cs">
+      <DependentUpon>Schematic_MapName_18x24L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Schematic\Schematic_MapName_18x24P.xaml.cs">
+      <DependentUpon>Schematic_MapName_18x24P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Schematic\Schematic_MapName_24x32P.xaml.cs">
+      <DependentUpon>Schematic_MapName_24x32P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Schematic\Schematic_MapName_24x32L.xaml.cs">
+      <DependentUpon>Schematic_MapName_24x32L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Schematic\Schematic_MapName_85x11L.xaml.cs">
+      <DependentUpon>Schematic_MapName_85x11L.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Schematic\Schematic_MapName_85x11P.xaml.cs">
+      <DependentUpon>Schematic_MapName_85x11P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemplateLayers.cs" />
+    <Compile Include="TemplateOptions.cs" />
+    <Compile Include="TemplatePresenter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AdHoc\AdHoc_18x24_P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AdHoc\AdHoc_24x32_P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AdHoc\AdHoc_85x11_L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AdHoc\AdHoc_85x11_P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Circuit\Circuit_MapName_18x24L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Circuit\Circuit_MapName_85x11P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Circuit\Circuit_MapName_85x11L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Circuit\Circuit_MapName_11x17L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Circuit\Circuit_MapName_11x17P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Circuit\Circuit_MapName_18x24P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Circuit\Circuit_MapName_24x32L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Circuit\Circuit_MapName_24x32P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\AdHocPrintWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CMCSPrintWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PrintPreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StandardMapPrintWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Distribution\Distribution_MapName_11x17L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Distribution\Distribution_MapName_11x17P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Distribution\Distribution_MapName_18x24L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Distribution\Distribution_MapName_18x24P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Distribution\Distribution_MapName_24x32P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Distribution\Distribution_MapName_24x32L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Distribution\Distribution_MapName_85x11L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Distribution\Distribution_MapName_85x11P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DuctBlock\DuctBlock_MapName_11x17L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DuctBlock\DuctBlock_MapName_11x17P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DuctBlock\DuctBlock_MapName_18x24L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DuctBlock\DuctBlock_MapName_18x24P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DuctBlock\DuctBlock_MapName_24x32P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DuctBlock\DuctBlock_MapName_24x32L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DuctBlock\DuctBlock_MapName_85x11L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DuctBlock\DuctBlock_MapName_85x11P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <ApplicationDefinition Include="General\Disclaimer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <ApplicationDefinition Include="General\MapInformation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Controls\ScaleSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="General\L11x17.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StreetLight\StreetLight_MapName_85x11L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StreetLight\StreetLight_MapName_11x17L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StreetLight\StreetLight_MapName_11x17P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StreetLight\StreetLight_MapName_18x24L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StreetLight\StreetLight_MapName_18x24P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StreetLight\StreetLight_MapName_24x32P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StreetLight\StreetLight_MapName_24x32L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StreetLight\StreetLight_MapName_85x11P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Schematic\Schematic_MapName_11x17L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Schematic\Schematic_MapName_11x17P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Schematic\Schematic_MapName_18x24L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Schematic\Schematic_MapName_18x24P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Schematic\Schematic_MapName_24x32P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Schematic\Schematic_MapName_24x32L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Schematic\Schematic_MapName_85x11L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Schematic\Schematic_MapName_85x11P.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\NorthArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TelventLogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ArcFM Silverlight 2.4 Full Client Toolkit Code\Silverlight\Miner.Server.Client.Toolkit\Miner.Server.Client.Toolkit.csproj">
+      <Project>{FD30120F-2488-484B-A930-2B48DF6AD65F}</Project>
+      <Name>Miner.Server.Client.Toolkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ArcFM Silverlight 2.4 Full Client Toolkit Code\Silverlight\Miner.Server.Client\Miner.Server.Client.csproj">
+      <Project>{54FFCDE9-5C79-4891-949B-182AA9729D35}</Project>
+      <Name>Miner.Server.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Miner.Silverlight.Logging\Miner.Silverlight.Logging.Client\Miner.Silverlight.Logging.Client.csproj">
+      <Project>{3EBE4333-5AA5-406F-8E57-752CCF2DA2E6}</Project>
+      <Name>Miner.Silverlight.Logging.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArcFM.Silverlight.PGE.CustomTools\ArcFM.Silverlight.PGE.CustomTools.csproj">
+      <Project>{1F2F2213-72BB-4B7B-8ED1-76353C9EDA80}</Project>
+      <Name>ArcFM.Silverlight.PGE.CustomTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PGnE.Printing\PGnE.Printing.csproj">
+      <Project>{CB87B09B-9F66-4F48-9F23-7BFFE047BC34}</Project>
+      <Name>PGnE.Printing</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo-pge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pan_up.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

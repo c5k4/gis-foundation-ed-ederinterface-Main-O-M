@@ -1,0 +1,71 @@
+﻿<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>PG&amp;E Schematics Maintenance</Name>
+  <AddInID>{49be4b9c-c4eb-4026-8b46-ae0101f0cfc1}</AddInID>
+  <Description>Provides a set of Schematics Maintenance tools to streamline common PG&amp;E editing tasks.</Description>
+  <Version>10.8.8</Version>
+  <Image>Images\CheckInOutSchematics.png</Image>
+  <Author>Pacific Gas and Electric Co.</Author>
+  <Company>Pacific Gas and Electric Co.</Company>
+  <Date>10/06/2021</Date>
+  <Targets>
+    <Target name="Desktop" version="10.8" />
+  </Targets>
+  <AddIn language="CLR" library="PGE.Desktop.SchematicsMaintenanceAddin.dll" namespace="PGE.Desktop.SchematicsMaintenance">
+    <ArcMap>
+      <Extensions>
+        <Extension id="ESRI_SchematicsMaintenance_Extension" class="PGE.Desktop.SchematicsMaintenance.UI.Extensions.PGESchematicsMaintenanceExtension" showInExtensionDialog="false" autoLoad="true" productName="PG&amp;E Schematics Maintenance" />
+      </Extensions>
+      <Commands>
+        <Button id="ESRI_SchematicsMaintenance_ToggleSchemaCacheButton" caption="Schematics Cache Button" class="ToggleSchemaCacheButton" category="PG&amp;E Schematics Maintenance" onDemand="false" />
+        <Button id="ESRI_SchematicsMaintenance_WorkQueueSelector" class="WorkQueueSelector" message="Open Work Queue Manager" caption="Work Queue Manager" tip="Work Queue Manager" category="PG&amp;E Schematics Maintenance" image="Images\CheckOutDiagram.png" onDemand="false" />
+        <Tool id="ESRI_SchematicsMaintenance_CorrectionSUP" class="CorrectionSUP" message="Open Supervisor Correction Tool" caption="Supervisor Correction Tool" tip="Supervisor Correction Tool" category="PG&amp;E Schematics Maintenance" image="Images\CorrectionSUP.png" onDemand="false" />
+        <!--(V3SF) EDGISREARC-375  : Check-Out/In no longer required to perform Schematics Editing -->
+        <!--<Button id="ESRI_SchematicsMaintenance_CheckOutDiagram" class="CheckOutDiagram" message="Check out a child diagram from the schematic features currently selected in the map, that references the master schematic diagram template layer." caption="Check Out Diagram" tip="Check Out Diagram" category="PG&amp;E Schematics Maintenance" image="Images\CheckOutDiagram.png" onDemand="false" />
+				<Button id="ESRI_SchematicsMaintenance_CheckInDiagram" class="CheckInDiagram" message="Check the active child diagram content into their related master diagrams." caption="Check In Diagram" tip="Check In Diagram" category="PG&amp;E Schematics Maintenance" image="Images\CheckInDiagram.png" onDemand="false" />-->
+        <Button id="ESRI_SchematicsMaintenance_PropagateToGeo" class="PropagateToGeo" tip="Propagate To Geography" caption="Propagate To Geography" message="Propagate the set of schematic features currently selected in the map that references the master schematic diagram template layer to the geographic map." category="PG&amp;E Schematics Maintenance" image="Images\PropagateToGeo.png" />
+        <Button id="ESRI_SchematicsMaintenance_PropagateFromGeo" class="PropagateFromGeo" tip="Propagate To Schematic" caption="Propagate To Schematic" message="Propagate the set of GIS features currently selected in the geographic map to the map that references the master schematic diagram template layer." category="PG&amp;E Schematics Maintenance" image="Images\PropagateFromGeo.png" />
+        <Button id="ESRI_SchematicsMaintenance_SetLinkLengthButton" class="PGE.Desktop.SchematicsMaintenance.UI.Buttons.SetLinkLengthButton" tip="Set Link Length" caption="Set Link Length" message="Opens a dialog to adjust the length of the selected schematic link." category="PG&amp;E Schematics Maintenance" image="Images\SetLinkLengthCommand.png" onDemand="false" />
+        <Button id="ESRI_SchematicsMaintenance_SetLinkPerpendicularButton" class="PGE.Desktop.SchematicsMaintenance.UI.Buttons.SetLinkPerpendicularButton" tip="Set Link Perpendicular" caption="Set Link Perpendicular" message="Opens a dialog to adjust the length of a selected schematic link and make it perpendicular to the connected link." category="PG&amp;E Schematics Maintenance" image="Images\SetLinkPerpendicularLengthCommand.png" onDemand="false" />
+        <Button id="ESRI_SchematicsMaintenance_CreateBypassButton" class="PGE.Desktop.SchematicsMaintenance.UI.Buttons.CreateBypassButton" tip="Create Bypass From Links" caption="Create Bypass" message="Opens a dialog to create a box shaped bypass from selected schematic bypass links." category="PG&amp;E Schematics Maintenance" image="Images\CreateBypass.png" onDemand="false" />
+        <Button id="ESRI_SchematicsMaintenance_RotateSymbolsButton" class="PGE.Desktop.SchematicsMaintenance.UI.Buttons.RotateSymbolsButton" tip="Rotate Schematic Symbols" caption="Rotate Selected Schematic Symbols" message="Opens a dialog to rotate the angle of the selected schematic features." category="PG&amp;E Schematics Maintenance" image="Images\RotateSymbols.png" onDemand="false" />
+        <Button id="ESRI_SchematicsMaintenance_RotateFeaturesButton" class="PGE.Desktop.SchematicsMaintenance.UI.Buttons.RotateFeaturesButton" tip="Rotate Schematic Features" caption="Rotate Selected Schematic Features" message="Opens a dialog to rotate the selected schematic features around a input point." category="PG&amp;E Schematics Maintenance" image="Images\RotateFeatures.png" onDemand="false" />
+        <Tool id="ESRI_SchematicsMaintenance_RotateFeaturesInputPointTool" class="PGE.Desktop.SchematicsMaintenance.UI.Tools.RotateFeaturesInputPointTool" tip="Input Point for Rotate Schematic Features" caption="Input Point for Rotate Schematic Features" message="Provides the input point for the Rotate Schematic Features tool." category="PG&amp;E Schematics Maintenance" image="Images\RotateFeaturesInputPoint.png" onDemand="false" />
+        <Button id="ESRI_SchematicsMaintenance_OffsetLinksButton" class="PGE.Desktop.SchematicsMaintenance.UI.Buttons.OffsetLinksButton" tip="Offset Links" caption="Offset Selected Links" message="Opens a dialog to offset overlapping or converging lines to a standardized spacing of the selected schematic features." category="PG&amp;E Schematics Maintenance" image="Images\OffsetLinks.png" onDemand="false" />
+        <Button id="ESRI_SchematicsMaintenance_ConvergeBusButton" class="PGE.Desktop.SchematicsMaintenance.UI.Buttons.ConvergeBusBarsButton" tip="Converge Bus Bars" caption="Converge Selected Bus Bars" message="Converges selected bus bar features." category="PG&amp;E Schematics Maintenance" image="Images\ConvergeBusBars.png" onDemand="false" />
+        <Button id="ESRI_SchematicsMaintenance_ApplyCircuitFilterButton" class="PGE.Desktop.SchematicsMaintenance.UI.Buttons.ApplyCircuitFilterButton" tip="Apply Circuit ID Filter" caption="Apply Circuit ID Filter to Layers for Printing" message="Opens a Dialog box that allows a user to specify the Circuit ID to filter by.  Layers that have a Circuit ID field will only display features that belong to the specified circuit." category="PG&amp;E Schematics Maintenance" image="Images\ApplyCircuitIDFilter.png" onDemand="false" />
+        <Button id="ESRI_SchematicsMaintenance_RemoveCircuitFilterButton" class="PGE.Desktop.SchematicsMaintenance.UI.Buttons.RemoveCircuitFilterButton" tip="Remove Circuit ID Filter" caption="Remove Circuit ID Filter from Layers" message="Removes the Circuit ID filter from all layers.  Layers will display features from all circuits." category="PG&amp;E Schematics Maintenance" image="Images\RemoveCircuitIDFilter.png" onDemand="false" />
+      </Commands>
+      <DockableWindows>
+        <DockableWindow id="ESRI_SchematicsMaintenance_EditToolsDockableWindow" class="PGE.Desktop.SchematicsMaintenance.UI.DockableWindows.EditToolsDockableWindow" caption="PG&amp;E Schematics Maintenance">
+          <InitialPlacement height="350" width="300" state="unpinned" position="float" />
+        </DockableWindow>
+      </DockableWindows>
+      <Toolbars>
+        <Toolbar id="SchematicsEdit_Toolbar" caption="PG&amp;E Schematics Maintenance">
+          <Items>
+            <!--(V3SF) EDGISREARC-375  : Create Polygon and Edit Vertices no longer required to perform Schematics Editing -->
+            <!--<Button refID="{12957C21-F327-11D0-83A5-080009B996CC}" />
+						<Button refID="{D5109671-75B9-11D2-A2D3-080009B6F22B}" />-->
+            <Button refID="ESRI_SchematicsMaintenance_WorkQueueSelector" />
+            <Tool refID="ESRI_SchematicsMaintenance_CorrectionSUP" />
+            <!--(V3SF) EDGISREARC-375  : Check-Out/In no longer required to perform Schematics Editing -->
+            <!--<Button refID="ESRI_SchematicsMaintenance_CheckOutDiagram" />
+						<Button refID="ESRI_SchematicsMaintenance_CheckInDiagram" />-->
+            <Button refID="ESRI_SchematicsMaintenance_PropagateToGeo" />
+            <Button refID="ESRI_SchematicsMaintenance_PropagateFromGeo" />
+            <Button refID="ESRI_SchematicsMaintenance_ApplyCircuitFilterButton" />
+            <Button refID="ESRI_SchematicsMaintenance_RemoveCircuitFilterButton" />
+            <Button refID="ESRI_SchematicsMaintenance_SetLinkLengthButton" separator="true" />
+            <Button refID="ESRI_SchematicsMaintenance_SetLinkPerpendicularButton" />
+            <Button refID="ESRI_SchematicsMaintenance_CreateBypassButton" />
+            <Button refID="ESRI_SchematicsMaintenance_OffsetLinksButton" />
+            <Button refID="ESRI_SchematicsMaintenance_ConvergeBusButton" />
+            <Button refID="ESRI_SchematicsMaintenance_RotateSymbolsButton" />
+            <Button refID="ESRI_SchematicsMaintenance_RotateFeaturesButton" />
+            <Tool refID="ESRI_SchematicsMaintenance_RotateFeaturesInputPointTool" />
+          </Items>
+        </Toolbar>
+      </Toolbars>
+    </ArcMap>
+  </AddIn>
+</ESRI.Configuration>

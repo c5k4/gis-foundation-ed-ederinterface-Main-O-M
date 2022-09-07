@@ -1,0 +1,11 @@
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Miner & Miner Engineering (Miner & Miner Engineering) -->
+<!--This is the DTD file used by ArcCatalog XML import/export to export relationship class properties-->
+<!--darlene 10.23.07 
+      If you add to RelationshipClass, you might also need to change FimObject.dtd.  I added AliasName and also 
+      needed to change FimObject.dtd-->
+<!ELEMENT RELATIONSHIPCLASS (IEPROGID, NAME, HASAUTOUPDATER, ALIASNAME?, (AUTOVALUE* | SIMPLESETTING*)*)>
+<!ATTLIST RELATIONSHIPCLASS
+	ProgID CDATA "mmGeoDatabase.MMRelationshipClass"
+>
+<!ELEMENT HASAUTOUPDATER (#PCDATA)>
+<!ELEMENT ALIASNAME (#PCDATA)>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<SymbolNumberRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FeatureClass Name="StepDown">
+  <Rule BeginsWith="" EndsWith="2" MinLength="4" MaxLength="7" Required="1">
+    <And>
+      <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+    </And>
+  </Rule>
+</FeatureClass>
+</SymbolNumberRules>

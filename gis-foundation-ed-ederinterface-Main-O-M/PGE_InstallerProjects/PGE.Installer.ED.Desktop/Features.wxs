@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file contains the features for the Desktop installers. 
+This was moved to the Shared project since it is used by both the Desktop and GWD installers.-->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="CommonDLLs">
+      <ComponentGroupRef Id="PGE.Common.Delivery.SessionManager.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.Process.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.Framework.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.Diagnostics.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.Geodatabase.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.Systems.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.ArcFM.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.UI.dll"/>
+      <ComponentGroupRef Id="PGE.BatchApplication.ROBC_API.dll"/>
+      <ComponentGroupRef Id="PGE.Common.ChangeDetectionAPI.dll"/>
+    </ComponentGroup>
+    <ComponentGroup Id="PGE.Desktop.EDER">
+      <ComponentGroupRef Id="PGE.Desktop.EDER.dll"/>
+      <ComponentRef Id="ConfigFiles"/>
+      <ComponentRef Id="Schemas"/>
+      <ComponentRef Id="RegistryEntries"/>
+      <ComponentRef Id="UFMConfiguration"/>
+      <ComponentRef Id="DefaultLogFile"/>
+      <ComponentRef Id="LogConfig"/>
+       <!--yxa6-Jeera Story- EDGISREARCH-1047-get the instance from registry-->
+      <!--Component Id="LoginRegistryEntries" Guid="A29E4586-3564-430e-9EFB-41E24870DCB7" Directory="PGE">
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Miner and Miner\ArcFM8\ArcFMLogin" Action="createAndRemoveOnUninstall">
+          <RegistryValue Type="string" Name="LoginObject" Value="PGE.CustomLogin" KeyPath="no"/>
+          <RegistryValue Type="string" Name="ArcFMShowSMLogin" Value="false" KeyPath="no"/>
+          <RegistryValue Type="string" Name="ArcFMLoginSuperUserName" Value="*#Kk%(d/KUmegSuev4LMHA6xaP/Q==" KeyPath="no"/>
+          <RegistryValue Type="string" Name="ArcFMLoginSuperUserPassword" Value="*#Kk%(d/KUmegSuev4LMHA6xaP/Q==" KeyPath="no"/>
+          <RegistryValue Type="string" Name="EmailDomain" Value="*#Kk%(EzRmn/1YY8M=" KeyPath="no"/>
+          <RegistryValue Type="string" Name="MailFromUser" Value="*#Kk%(wq2G0pki13DFy1AFFOwF901ngRnF0xML" KeyPath="no"/>
+          <RegistryValue Type="string" Name="SMTPServer" Value="*#Kk%(rlImTwY3L5L25+cJDVcxXZ0ud3wo9fZIWu4nslgWIzI=" KeyPath="no"/>
+        </RegistryKey> 
+      </Component>-->
+      <Component Id="PGE.Desktop.LoginEncrpytor.exe" Directory="DESKTOPFOLDER" Guid="AA5E64E9-26F9-4E61-ACC5-5FAC6FE2DA66" >
+        <File Id="PGE.Desktop.LoginEncrpytor.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\PGE.Desktop.LoginEncrpytor.exe"/>
+      </Component>
+      <Component Id="PGE.Desktop.LoginEncrpytor.exe.config" Directory="DESKTOPFOLDER" Guid="AD3A64D4-D23B-4E45-88ED-99FD9783F4BA" Permanent="yes" >
+        <File Id="PGE.Desktop.LoginEncrpytor.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\PGE.Desktop.LoginEncrpytor.exe.config"/>
+      </Component>
+      <Component Id="PGE.Desktop.LoginEncrpytor.pdb" Directory="DESKTOPFOLDER" Guid="3428A9CD-B56F-4F5F-968B-F743918D445B" >
+        <File Id="PGE.Desktop.LoginEncrpytor.pdb" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\PGE.Desktop.LoginEncrpytor.pdb"/>
+      </Component>
+      <Component Id="Desktop_SQL" Directory="DesktopSQL" Guid="56D854BC-DE9B-49FA-AE34-09C8C79AA497" >
+        <File Id="Desktop_SQL" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\Login\SQL\LoginSqlProcedures.sql"/>
+      </Component>
+		<!--<Component Id="Oracle.DataAccess.dll" Directory="DESKTOPFOLDER" Guid="57D854BC-DE9B-49FA-AE34-09C8C79AB497" >
+			<File Id="Oracle.DataAccess.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\Oracle.DataAccess.dll"/>
+		</Component>-->
+      <!--<Component Id="PONS_RO_EDER.sde" Directory="ESRIBin" Guid="1B4B42FE-DE4F-441C-8ED7-AD393CBB2C06" >
+        <File Id="PONS_RO_EDER.sde" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\ArcMapCommands\PONS\PONS_RO_EDER.sde"/>
+      </Component>
+      <Component Id="PONS_RO_EDERSUB.sde" Directory="ESRIBin" Guid="33FB7F9B-5B62-4348-B3FC-20FA37730691" >
+        <File Id="PONS_RO_EDERSUB.sde" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\ArcMapCommands\PONS\PONS_RO_EDERSUB.sde"/>
+      </Component>
+      
+      
+      <Component Id="DocumentFormat.OpenXml.dll" Directory="ESRIBin" Guid="2AD82089-9977-41D4-B588-9D9A45EA1C10" >
+        <File Id="DocumentFormat.OpenXml.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\ArcMapCommands\PONS\ExternalLibraries\DocumentFormat.OpenXml.dll"/>
+      </Component>
+      <Component Id="itextsharp.pdfa.dll" Directory="ESRIBin" Guid="C55E57B0-6B3F-4B21-86BF-A74EB06C5A2A" >
+        <File Id="itextsharp.pdfa.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\ArcMapCommands\PONS\ExternalLibraries\itextsharp.pdfa.dll"/>
+      </Component>
+      <Component Id="itextsharp.xtra.dll" Directory="ESRIBin" Guid="F53E472F-8896-4FE4-A0D4-318E3A5832C5" >
+        <File Id="itextsharp.xtra.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\ArcMapCommands\PONS\ExternalLibraries\itextsharp.xtra.dll"/>
+      </Component>      
+      <Component Id="ClosedXML.dll" Directory="ESRIBin" Guid="7497BA42-5643-4304-AC82-055E291EA25E" >
+        <File Id="ClosedXML.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\ArcMapCommands\PONS\ExternalLibraries\ClosedXML.dll"/>
+      </Component>
+      <Component Id="ClosedXML.XML" Directory="ESRIBin" Guid="0D8DFCE1-B792-4F88-9506-300E08F20A0B" >
+        <File Id="ClosedXML.XML" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\ArcMapCommands\PONS\ExternalLibraries\ClosedXML.XML"/>
+      </Component>
+      <Component Id="itextsharp.dll" Directory="ESRIBin" Guid="A65C881F-DB29-4529-A167-45F141191974" >
+        <File Id="itextsharp.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\ArcMapCommands\PONS\ExternalLibraries\itextsharp.dll"/>
+      </Component>
+      <Component Id="iTextSharp.xml" Directory="ESRIBin" Guid="30C9FB30-DE0C-480C-AC23-55C61D8BC328" >
+        <File Id="iTextSharp.xml" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\Desktop\ArcMapCommands\PONS\ExternalLibraries\iTextSharp.xml"/>
+      </Component>-->
+    </ComponentGroup>
+  </Fragment>
+</Wix>
+
+

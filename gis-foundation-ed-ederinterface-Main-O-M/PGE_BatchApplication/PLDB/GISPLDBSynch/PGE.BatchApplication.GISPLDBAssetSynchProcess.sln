@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.BatchApplication.GISPLDBAssetSynchProcess", "PGE.BatchApplication.GISPLDBAssetSynchProcess\PGE.BatchApplication.GISPLDBAssetSynchProcess.csproj", "{7DB9D199-712F-4AD5-BA71-349DAD80135B}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PGE.Installer.GISPLDBAssetSync", "PGE.Installer.GISPLDBAssetSync\PGE.Installer.GISPLDBAssetSync.vdproj", "{1A3A499B-3B1B-479B-A991-078763D32727}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DB9D199-712F-4AD5-BA71-349DAD80135B}.Debug|x86.ActiveCfg = Debug|x86
+		{7DB9D199-712F-4AD5-BA71-349DAD80135B}.Debug|x86.Build.0 = Debug|x86
+		{7DB9D199-712F-4AD5-BA71-349DAD80135B}.Release|x86.ActiveCfg = Release|x86
+		{7DB9D199-712F-4AD5-BA71-349DAD80135B}.Release|x86.Build.0 = Release|x86
+		{1A3A499B-3B1B-479B-A991-078763D32727}.Debug|x86.ActiveCfg = Debug
+		{1A3A499B-3B1B-479B-A991-078763D32727}.Debug|x86.Build.0 = Debug
+		{1A3A499B-3B1B-479B-A991-078763D32727}.Release|x86.ActiveCfg = Release
+		{1A3A499B-3B1B-479B-A991-078763D32727}.Release|x86.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5FA0575B-1A5C-49E9-BCC7-F6A3BFBC21B6}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccProjectUniqueName0 = PGE.Installer.GISPLDBAssetSync\\PGE.Installer.GISPLDBAssetSync.vdproj
+		SccProjectName0 = PGE.Installer.GISPLDBAssetSync
+		SccLocalPath0 = PGE.Installer.GISPLDBAssetSync
+		SccProjectUniqueName1 = PGE.BatchApplication.GISPLDBAssetSynchProcess\\PGE.BatchApplication.GISPLDBAssetSynchProcess.csproj
+		SccProjectName1 = PGE.BatchApplication.GISPLDBAssetSynchProcess
+		SccLocalPath1 = PGE.BatchApplication.GISPLDBAssetSynchProcess
+		SccLocalPath2 = .
+	EndGlobalSection
+EndGlobal

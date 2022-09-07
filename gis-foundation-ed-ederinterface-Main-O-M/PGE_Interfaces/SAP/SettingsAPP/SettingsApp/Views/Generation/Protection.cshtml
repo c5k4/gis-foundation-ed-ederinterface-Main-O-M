@@ -1,0 +1,13 @@
+﻿@model SettingsApp.Models.ProtectionModel
+<style type="text/css">
+    td.print-for-trf
+    {
+        display: none;
+    }
+</style>
+@using (Html.BeginForm("Protection", "Generation"))
+{
+    @Html.ValidationSummary(true)
+    @Html.Partial("~/Views/Shared/_ProtectionPartial.cshtml")
+         
+}

@@ -1,0 +1,10 @@
+﻿@if (@ViewBag.isTransformer)
+{
+<iframe src="@ViewBag.SettingsDomain/transformer/specialload?GlobalId=@ViewBag.GlobalId&CGCId=@ViewBag.CGCId" height="420" width="960" style="overflow:hidden;" scrolling="no" seamless="seamless"
+    frameborder="0"></iframe>
+}
+else
+{
+    <iframe src="@ViewBag.SettingsDomain/PrimaryMeter/Index/@ViewBag.GlobalId/Primary%20Meter" height="2000" width="960" style="overflow:hidden;" scrolling="no" seamless="seamless"
+    frameborder="0"></iframe>
+}

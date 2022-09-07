@@ -1,0 +1,45 @@
+Prompt drop Function SDO_AGGR_MBR;
+DROP FUNCTION MDSYS.SDO_AGGR_MBR
+/
+
+Prompt Function SDO_AGGR_MBR;
+--
+-- SDO_AGGR_MBR  (Function) 
+--
+CREATE OR REPLACE FUNCTION MDSYS.SDO_Aggr_MBR wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+65 8d
+0U3HMSZDAsKxzMGsc3qZfsXqZ1Mwg8eZgcfLCNL+XuefCNC/Wa6WGP4yniW4v4H+XKUyvUp0
+PB301lPiqDX37HGenjXiqGs1P1QUlFN2VVXWcVWkhHGU5tYAc2iUZ88O3jx0phXKduE=
+
+/
+
+
+Prompt Synonym SDO_AGGR_MBR;
+--
+-- SDO_AGGR_MBR  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM SDO_AGGR_MBR FOR MDSYS.SDO_AGGR_MBR
+/
+
+
+Prompt Grants on FUNCTION SDO_AGGR_MBR TO PUBLIC to PUBLIC;
+GRANT EXECUTE ON MDSYS.SDO_AGGR_MBR TO PUBLIC
+/

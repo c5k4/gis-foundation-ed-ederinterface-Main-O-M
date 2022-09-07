@@ -1,0 +1,277 @@
+﻿<!--ENOS2EDGIS-->
+@using SettingsApp.Common;
+@using SettingsApp.Models;
+<script type="text/javascript" src="~/Scripts/SettingsApp.js"></script>
+@model Tuple<GenerationModel,List<ProtectionModel>>
+<style>
+    .DropDown { width: 205px; }
+</style>
+<script type="text/javascript">
+    $('#body-content').on('change keyup keydown', 'input, textarea, select', function (e) {
+        $(this).addClass('changed-input');
+    });
+
+    var unsaved = false;
+    $(function () { // will trigger when the document is ready
+        $(":input").change(function () { //trigers change in all input fields including text type
+            unsaved = true;
+        });
+    });
+
+    //$(window).on('beforeunload', function () {
+    //    if (unsaved) {
+    //        return 'You haven\'t saved your changes.';
+    //    }else{
+
+    //    }
+    //});
+
+    function getPaging() {
+        if (unsaved) {
+            var r = confirm("Current page has unsaved edits, clicking on another tab will erase edited data, do you want to proceed ?");
+            if (r == true) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+    }
+
+    function PostDetails(url) {
+        $.ajax({
+            url: url,
+            type: "GET"
+        });
+    }
+
+</script>
+@using (Html.BeginForm())
+{
+    if (TempData["unsaved"] != null)
+    {
+      <script type="text/javascript">
+          unsaved = @TempData["unsaved"];
+      </script>
+    }
+    @Html.ValidationSummary(true)
+        var isDisabled = @ViewBag.IsDisabled ? "true" : "false";
+        ViewBag.GenerationId = Model.Item1.ID.ToString();
+    <table cellpadding="0" cellspacing="0" width="90%">
+        <tr>
+            <td style="padding: 0px">
+                <div class="float-left">
+                    <nav>
+                        <ul id="menu">
+                        
+                            <li class="@ViewBag.Generation">@Html.ActionLink("Generation", "Generation", "GenerationSettings", new { generationId = ViewBag.GenerationID }, new { onclick = "return getPaging();" })</li>  
+                            @if (Model.Item2 != null)
+                            {
+                                for (int i = 0; i <= Model.Item2.Count - 1; i++)
+                                {
+                                    
+                                        string protectionName = "Protection " + (i + 1).ToString();
+                                        var protection = Model.Item2[i];
+                                        TempData[protectionName] = protection.ID.ToString();
+                                        //string url = "/Protection/IndexByID?parentType=Generation&protectionId=" + protection.ID.ToString();
+                                  
+                                    <li class="@ViewBag.Protection" > 
+                                    
+                                     
+                                        @Html.ActionLink(protectionName, "IndexByID", "Protection", new { parentType = "Generation", protectionId = protection.ID.ToString() }, new { onclick = "return getPaging();" })
+                                          
+                                          </li>
+                                    
+                                   
+                                }
+                                
+                                
+                                <!--ENOS2EDGIS -ST - issue resolution-->
+                                if (Model.Item2.Count < 13 && (Security.IsInAdminGroup || (Security.IsInSuperUserGroup && Security.IsSuperUserActive)))
+                                {
+                                   if (Security.IsInSuperUserGroup && Security.IsSuperUserActive)
+                                    {
+                                        string url = "/Protection/AddNewProtection?parentType=Generation&generationID=" + ViewBag.GenerationID;
+                                    <li style="display: inline;list-style: none;padding: 0px 5px 0px 5px;text-align: center;background-color: #FFFF00;color: #ffffff;"> <a  style="background: none;text-decoration:none; color: #000000;" href=@url onclick="return getPaging();"> New </a></li>
+                                    }
+                                }
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </td>
+        </tr>
+         <tr>
+            <td class="header" style="padding-top: 15px; padding-bottom: 0px; padding-left: 10px">
+                @ViewBag.Title
+            </td>
+        </tr>
+        
+        <tr>
+          @if (Security.IsInSuperUserGroup)
+          {
+            <td colspan="2" style="text-align: right; padding-right: 10px">
+                <input type="button" id="btnActivate" value="@Session["SuperUserButtonText"]" onclick="this.form.action='/GenerationSettings/ToggleSuperUser?genID=@Model.Item1.ID.ToString()';this.form.submit();"
+                    @(Security.IsInSuperUserGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+
+
+            </td>
+          }
+        </tr>
+                
+        <tr>
+            <td style="background-color: #ffffff; padding: 10px;">
+                @if (ViewBag.ShowPageError == true || (TempData["ShowPageError"] != null && (bool)TempData["ShowPageError"]))
+                {
+                    <label id="lableDeviceValidationError" runat="server" style="color: Red; text-align: center;">
+                        There are error(s), please check below.
+                    </label>
+                }
+                @if (ViewBag.ShowSaveSucessful == true || (TempData["ShowSaveSucessful"] != null && (bool)TempData["ShowSaveSucessful"]))
+                {
+                    <label id="lableDeviceSaveSucess" runat="server" style="color: Green; text-align: center;">
+                        Generation saved successfully.
+                    </label>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color: #ffffff; padding: 10px">
+                <table cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f2f2">
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.Item1.SAPEGINotification)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.Item1.SAPEGINotification, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 12 })@Html.ValidationMessageFor(model => model.Item1.SAPEGINotification)
+                            @if (!Security.IsSuperUserActive)
+                            {
+                                @Html.HiddenFor(model => model.Item1.SAPEGINotification)
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.Item1.ProgramType)
+                        </td>
+                        <td>@Html.DropDownListFor(model => model.Item1.ProgramType, Model.Item1.ProgramTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled", @class = "DropDown" } : new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.Item1.ProgramType)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="padding-right: 0px">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td class="sectionHeader" colspan="2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.Item1.ExportkW)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.Item1.ExportkW, ViewBag.IsDisabled ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.Item1.ExportkW)
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td >@Html.LabelForRequired(model => model.Item1.NameplateRating)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.Item1.NameplateRating, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 250, @class = "form-control" })
+                                        @Html.HiddenFor(model => model.Item1.NameplateRating)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.Item1.EffRatingMachkW)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.Item1.EffRatingMachkW, ViewBag.IsDisabled ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.Item1.EffRatingMachkW)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.Item1.EffRatingInvkW)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.Item1.EffRatingInvkW, ViewBag.IsDisabled ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.Item1.EffRatingInvkW)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.Item1.EffRatingMachkVA)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.Item1.EffRatingMachkVA, ViewBag.IsDisabled ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.Item1.EffRatingMachkVA)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.Item1.EffRatingInvkVA)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.Item1.EffRatingInvkVA, ViewBag.IsDisabled ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.Item1.EffRatingInvkVA)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.Item1.MaxStorageCapacity)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.Item1.MaxStorageCapacity, ViewBag.IsDisabled ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.Item1.MaxStorageCapacity)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.Item1.ChargeDemandkW)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.Item1.ChargeDemandkW, ViewBag.IsDisabled ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.Item1.ChargeDemandkW)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.Item1.DirectTransferTrip)
+                                    </td>
+                                    <td>
+                                        @Html.CheckBoxFor(model => model.Item1.DirectTransferTrip, !Security.IsInAdminGroup && !(Security.IsInSuperUserGroup &&  Security.IsSuperUserActive) ? (object)new { disabled = "disabled" } : new { maxlength = 1 })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.Item1.GrdFaultDetectionCd)
+                                    </td>
+                                    <td>
+                                     @Html.CheckBoxFor(model => model.Item1.GrdFaultDetectionCd, !Security.IsInAdminGroup && !(Security.IsInSuperUserGroup &&  Security.IsSuperUserActive) ? (object)new { disabled = "disabled" } : new { })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.Item1.BackupGeneration)
+                                    </td>
+                                    <td>
+                                    @Html.CheckBoxFor(model => model.Item1.BackupGeneration, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.Item1.PowerSource)
+                                    </td>
+                                    <td>@Html.TextAreaFor(model => model.Item1.PowerSource, 3, 10, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 40 })@Html.ValidationMessageFor(model => model.Item1.PowerSource)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.Item1.Notes)
+                                    </td>
+                                    <td>@Html.TextAreaFor(model => model.Item1.Notes, 5, 15, !Security.IsInAdminGroup && !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled" } : new { maxlength = 2000, @class = "form-control" })@Html.ValidationMessageFor(model => model.Item1.Notes)
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                    @if ((Security.IsInAdminGroup || (Security.IsInSuperUserGroup && Security.IsSuperUserActive)))
+                    {
+                        <td colspan="2" style="text-align: right; padding-right: 10px">
+                            @Html.HiddenFor(model => model.Item1.CurrentOrFuture)
+                            @Html.HiddenFor(model => model.Item1.DateCreated)
+                            @Html.HiddenFor(model => model.Item1.CreatedBy)
+                            @Html.HiddenFor(model => model.Item1.DateModified)
+                            @Html.HiddenFor(model => model.Item1.ModifiedBy)
+                            @Html.HiddenFor(model => model.Item1.GenType)
+                            @Html.HiddenFor(model => model.Item1.ID)
+                            @Html.HiddenFor(model => model.Item1.GlobalID)
+                            @Html.HiddenFor(model => model.Item1.ProjectName)
+                            @Html.Raw(TempData["msg"])
+                            <input type="button" value="Cancel" onclick="this.form.action='/@ViewBag.ControllerName/Generation?generationId=@Model.Item1.ID.ToString()&layerName=Generation';this.form.submit();"
+                                    @((Security.IsInAdminGroup || Security.IsInSuperUserGroup) ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                            <input type="button" value="Save" onclick="this.form.action='/@ViewBag.ControllerName/SaveGeneration';this.form.submit();"
+                                    @((Security.IsInAdminGroup || Security.IsInSuperUserGroup) ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                        </td>
+                    }
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+}
+
+

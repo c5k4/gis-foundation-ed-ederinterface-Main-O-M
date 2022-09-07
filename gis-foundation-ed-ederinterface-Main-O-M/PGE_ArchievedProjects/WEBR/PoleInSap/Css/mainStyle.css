@@ -1,0 +1,10 @@
+﻿html, body,#layoutContainer,#mapDiv {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      
+    /*  #mapDiv_zoom_slider
+      {
+          display:none;
+      }*/

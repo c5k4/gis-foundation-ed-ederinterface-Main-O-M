@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.Common.Delivery.Process.BaseClasses.BaseChangeOwnerByRole" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggAAAAAAAAAhAAAAAAAQAQAAAgAAAAAACDAAEAAAAAI=</HashCode>
+      <FileName>BaseClasses\BaseChangeOwnerByRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.BaseClasses.BaseDesktopVersionDifferenceSubtask" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAJAABAAAAAAAAAAAQAAAEAAAAAABAAAAAAAAAI=</HashCode>
+      <FileName>BaseClasses\BaseDesktopVersionDifferenceSubtask.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_app" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.BaseClasses.BasePxControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAYAAAAAAIFQAAAABAAEIEAAWhAEAEAA=</HashCode>
+      <FileName>BaseClasses\BasePxControl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_PxApp" />
+      <Field Name="_Node" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.BaseClasses.BasePxDeleter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAgAAAAAAAAAEBAAAIAAAQAAQAEAA=</HashCode>
+      <FileName>BaseClasses\BasePxDeleter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_PxApp" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.BaseClasses.BasePxSubtask" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAQQCIAADIhAawCAgggIgQCIAABAEEhgMMQAIAAEAo=</HashCode>
+      <FileName>BaseClasses\BasePxSubtask.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.BaseClasses.BasePxTreeTool" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABCIAAAAAAQWEAQgAAQ4AKCACBAAAAAAQAIgBCAI=</HashCode>
+      <FileName>BaseClasses\BasePxTreeTool.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_PxApp" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.BaseClasses.BaseSessionSubtask" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseClasses\BaseSessionSubtask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.BaseClasses.BaseVersionDifferenceSubtask" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseClasses\BaseVersionDifferenceSubtask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.BaseClasses.BaseWMSSubtask" Collapsed="true">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseClasses\BaseWMSSubtask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.BaseClasses.ChooseUser" Collapsed="true">
+    <Position X="9.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAACAAABAAAACAAQEKAAAQAAAAAIAAAAwAAAA=</HashCode>
+      <FileName>Forms\ChooseUser.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_selectedUser" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.DesktopWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAQAAAAAAAAAAAAAAAAAQAAgAAAAAAA=</HashCode>
+      <FileName>DesktopWindow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.ProcessManager" Collapsed="true">
+    <Position X="3.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAABAAAABAAAAAAIAAAAAgAAAAACAQAAAAAAA=</HashCode>
+      <FileName>ProcessManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_PxApp" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.PxDb" Collapsed="true">
+    <Position X="6" Y="6.75" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="PGE.Common.Delivery.Process.PxDb.Tables" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>PxDB.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="PGE.Common.Delivery.Process.PxDb.Tasks" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>PxDB.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="PGE.Common.Delivery.Process.PxDb.Filters" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>PxDB.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="PGE.Common.Delivery.Process.PxDb.Configuration" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>PxDB.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="PGE.Common.Delivery.Process.PxDb.Roles" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>PxDB.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAQAAiAQIAAgAAAAAAgAAEEAAAAAyAQBAAAQAEAAUAA=</HashCode>
+      <FileName>PxDB.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_PxApp" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.PxFacade" Collapsed="true">
+    <Position X="12" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAgAAAAEAIAAAAAAAAAQAAAAAAAAIAAA=</HashCode>
+      <FileName>PxFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.PxNodeChannel&lt;TChannel&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="7.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IISAAIAiADAAgQAACEAAAAAAAAAAAEAAACASAAEUAAA=</HashCode>
+      <FileName>PxNodeChannel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_History" />
+      <Field Name="_PxApp" />
+      <Field Name="_PxDb" />
+      <Field Name="_PxNode" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.ReferenceDictionary" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACAAFAAQQhAAIAAAAAAAAAAAAAACgEIABAAIAAgAAAA=</HashCode>
+      <FileName>ReferenceDictionary.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.WPF.PxUser" Collapsed="true">
+    <Position X="12" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAggAAEgAAAAAQAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>PxUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.Subtasks.DoesUserHaveRole" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Subtasks\DoesUserHaveRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.Subtasks.IsNodeInState" Collapsed="true">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAI=</HashCode>
+      <FileName>Subtasks\IsNodeInState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Process.Subtasks.IsUsertheOwner" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Subtasks\IsUserTheOwner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Collections.Generic.Dictionary&lt;TKey, TValue&gt;" Collapsed="true">
+    <Position X="14.5" Y="4.75" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="9.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="PGE.Common.Delivery.Process.BaseClasses.IPxControlUI" Collapsed="true">
+    <Position X="9.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseClasses\BasePxControl.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Framework.IApplication" Collapsed="true">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Miner.Interop.Process.IMMPxApplication" Collapsed="true">
+    <Position X="3.5" Y="5.5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Miner.Interop.Process.IMMPxNode" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Miner.Interop.Process.IMMPxUser" Collapsed="true">
+    <Position X="12.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Miner.Interop.Process.IMMPxNodeHistory" Collapsed="true">
+    <Position X="1" Y="8.75" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

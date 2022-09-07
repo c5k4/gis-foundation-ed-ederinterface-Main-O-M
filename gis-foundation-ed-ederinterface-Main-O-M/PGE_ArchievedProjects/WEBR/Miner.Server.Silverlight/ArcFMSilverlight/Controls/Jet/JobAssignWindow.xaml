@@ -1,0 +1,45 @@
+﻿<controls:ChildWindow x:Class="ArcFMSilverlight.JobAssignWindow"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+           xmlns:arcFmSilverlight="clr-namespace:ArcFMSilverlight"
+           Title="Assign Job"
+            Loaded="JobAssignWindow_OnLoaded"
+			Width="400" Height="445"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center" KeyUp="JobAssignWindow_OnKeyUp"
+			HasCloseButton="True">
+    <Grid x:Name="LayoutRoot" Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="225" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.ColumnSpan="2">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Job Description" VerticalAlignment="Center" Margin="10,5,0,5"/>
+            <TextBox x:Name="TxtJobDescription" Width="365" HorizontalAlignment="Left" Margin="10,5,0,5" IsEnabled="False" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Currently assigned to" VerticalAlignment="Center" Margin="10,5,0,5"/>
+            <TextBox x:Name="TxtJobAssignedTo" Width="230" HorizontalAlignment="Left" Margin="10,5,0,5" IsEnabled="False" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Select the user to assign Job to" VerticalAlignment="Top" Margin="10,10,0,10"/>
+        </StackPanel>
+        <ListBox Grid.Row="3" Grid.ColumnSpan="2" Background="White" BorderBrush="Gray" BorderThickness="1" Margin="5" Name="usersListBox">
+        </ListBox>
+        <Rectangle Height="1" Fill="Black" VerticalAlignment="Bottom" Grid.Row="4" Grid.ColumnSpan="2" />
+        <StackPanel  Orientation="Horizontal" Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="0,0,0,0">
+            <Button x:Name="OkButton" Content="OK" Style="{StaticResource JetButtonStyle}"  Margin="0"  Click="OkButton_OnClick"/>
+            <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Style="{StaticResource JetButtonStyle}"  Margin="10,0,0,0" />
+        </StackPanel>
+    </Grid>
+</controls:ChildWindow>

@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="ArcFMSilverlight.MapInsetTools"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:esri="http://schemas.esri.com/arcgis/client/2009" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+             xmlns:ComponentModel="clr-namespace:System.ComponentModel;assembly=System.Windows"
+             xmlns:miner="http://schemas.miner.com/arcfm/client/2010">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Theming.TelventGray;component/themes/AlternateStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Border HorizontalAlignment="Stretch">
+            <Border Background="#FFEDEDED" BorderBrush="#5000" BorderThickness="0 0 0 1" HorizontalAlignment="Stretch"
+                    Margin="0">
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton 
+                        x:Name="PanToggle"
+                        ToolTipService.ToolTip="Pan" 
+                        Margin="3" 
+                        Style="{StaticResource RibbonRadioButton}"
+                        Command="{Binding PanCommand}" 
+                        IsChecked="{Binding Path=PanChecked, Mode=TwoWay}">
+                        <Image Source="/ArcFMSilverlight;component/Images/pan.png" Margin="1" Stretch="Fill" Height="16" Width="16" />
+                    </RadioButton>
+
+                    <RadioButton x:Name="ZoomOutRectButton"
+                                    ToolTipService.ToolTip="Draw a Rectangle to Zoom Out" 
+                                    Margin="3" 
+                                    Style="{StaticResource RibbonRadioButton}"
+                                    Command="{Binding ZoomOutCommand}"
+                                    IsChecked="{Binding ZoomOutChecked, Mode=TwoWay}">
+                        <Image Source="/ArcFMSilverlight;component/Images/box_zoom_out.png" Margin="1" Stretch="Fill" Height="16" Width="16" />
+                    </RadioButton>
+
+                    <RadioButton x:Name="ZoomInRectButton"
+                                    ToolTipService.ToolTip="Draw a Rectangle to Zoom In" 
+                                    Margin="3"
+                                    Style="{StaticResource RibbonRadioButton}"
+                                    Command="{Binding ZoomInCommand}"
+                                    IsChecked="{Binding ZoomInChecked, Mode=TwoWay}">
+                        <Image Source="/ArcFMSilverlight;component/Images/box_zoom_in.png" Margin="1" Stretch="Fill" Height="16" Width="16" />
+                    </RadioButton>
+                        
+                    <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+
+                    <RadioButton 
+                        x:Name="IdentifyToggle"
+                        ToolTipService.ToolTip="Identify" 
+                        Margin="3" 
+                        Style="{StaticResource RibbonRadioButton}"
+                        Command="{Binding IdentifyCommand}"
+                        IsChecked="{Binding IdentifyChecked, Mode=TwoWay}">
+                        <Image Source="/ArcFMSilverlight;component/Images/identify_cursor.png" Margin="1" Stretch="Fill" Height="16" Width="16" />
+                    </RadioButton>
+
+                    <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+
+                    <miner:LayerVisibility x:Name="InsetTOC"
+                                           Width="0"
+                                           Height="0" />
+                </StackPanel>
+            </Border>
+        </Border>
+    </Grid>
+</UserControl>

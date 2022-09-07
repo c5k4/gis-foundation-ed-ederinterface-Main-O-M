@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file contains the features for the Desktop installers. 
+This was moved to the Shared project since it is used by both the Desktop and GWD installers.-->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="ChangeDetectionComponents">
+      <ComponentGroupRef Id="PGE.Common.Delivery.Diagnostics.dll"/>
+      <ComponentRef Id="ChangeDetectionApplication"/>
+      <ComponentRef Id="ChangeDetectionDocumentation"/>
+      <ComponentRef Id="ChangeDetectionPython"/>
+      <ComponentRef Id="RegistryEntries"/>
+      <ComponentRef Id="DefaultLogFile"/>
+
+      <ComponentRef Id="ConfigFiles1"/>
+      <ComponentRef Id="ConfigFiles2"/>
+      <ComponentRef Id="ConfigFiles3"/>
+      <ComponentRef Id="ConfigFiles4"/>
+      <ComponentRef Id="ConfigFiles5"/>
+      <ComponentRef Id="ConfigFiles6"/>
+      <ComponentRef Id="ConfigFiles7"/>
+      <ComponentRef Id="ConfigFiles8"/>
+      <ComponentRef Id="ConfigFiles9"/>
+      <ComponentRef Id="ConfigFiles10"/>
+      <ComponentRef Id="ConfigFiles11"/>
+      <ComponentRef Id="ConfigFiles12"/>
+      <ComponentRef Id="ConfigFiles13"/>
+      <ComponentRef Id="ConfigFiles14"/>
+      <ComponentRef Id="ConfigFiles15"/>
+      <ComponentRef Id="ConfigFiles16"/>
+      <ComponentRef Id="ConfigFiles17"/>
+      <ComponentRef Id="ConfigFiles18"/>
+      <ComponentRef Id="ConfigFiles19"/>
+      <ComponentRef Id="ConfigFiles20"/>
+      <ComponentRef Id="ConfigFiles21"/>
+      <ComponentRef Id="ConfigFiles22"/>
+	  <ComponentRef Id="ConfigFiles23"/>
+		
+      <ComponentRef Id="LoggingFiles1"/>
+      <ComponentRef Id="LoggingFiles2"/>
+      <ComponentRef Id="LoggingFiles3"/>
+      <ComponentRef Id="LoggingFiles4"/>
+      <ComponentRef Id="LoggingFiles5"/>
+      <ComponentRef Id="LoggingFiles6"/>
+      <ComponentRef Id="LoggingFiles7"/>
+      <ComponentRef Id="LoggingFiles8"/>
+      <ComponentRef Id="LoggingFiles9"/>
+      <ComponentRef Id="LoggingFiles10"/>
+      <ComponentRef Id="LoggingFiles11"/>
+      <ComponentRef Id="LoggingFiles12"/>
+      <ComponentRef Id="LoggingFiles13"/>
+      <ComponentRef Id="LoggingFiles14"/>
+      <ComponentRef Id="LoggingFiles15"/>
+      <ComponentRef Id="LoggingFiles16"/>
+      <ComponentRef Id="LoggingFiles17"/>
+      <ComponentRef Id="LoggingFiles18"/>
+      <ComponentRef Id="LoggingFiles19"/>
+	  <ComponentRef Id="LoggingFiles20"/>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
+
+

@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "externals", "externals", "{1BC1C756-2BD7-4985-BA83-A78312C54A62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.BatchApplication.PGE_Tx_SL_Connectivity_Report", "PGE.BatchApplication.Tx_SL_Connectivity_Report\PGE.BatchApplication.PGE_Tx_SL_Connectivity_Report.csproj", "{4C5C8879-0406-41D6-899E-9ACD6BAA4561}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.Common.Delivery.Diagnostics", "..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Diagnostics\PGE.Common.Delivery.Diagnostics.csproj", "{1D019976-FFE6-41A2-AB9C-6241696EDB8E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		NoBuild|Any CPU = NoBuild|Any CPU
+		NoBuild|x86 = NoBuild|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C5C8879-0406-41D6-899E-9ACD6BAA4561}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{4C5C8879-0406-41D6-899E-9ACD6BAA4561}.Debug|x86.ActiveCfg = Debug|x86
+		{4C5C8879-0406-41D6-899E-9ACD6BAA4561}.Debug|x86.Build.0 = Debug|x86
+		{4C5C8879-0406-41D6-899E-9ACD6BAA4561}.NoBuild|Any CPU.ActiveCfg = Debug|x86
+		{4C5C8879-0406-41D6-899E-9ACD6BAA4561}.NoBuild|Any CPU.Build.0 = Debug|x86
+		{4C5C8879-0406-41D6-899E-9ACD6BAA4561}.NoBuild|x86.ActiveCfg = Debug|x86
+		{4C5C8879-0406-41D6-899E-9ACD6BAA4561}.NoBuild|x86.Build.0 = Debug|x86
+		{4C5C8879-0406-41D6-899E-9ACD6BAA4561}.Release|Any CPU.ActiveCfg = Release|x86
+		{4C5C8879-0406-41D6-899E-9ACD6BAA4561}.Release|x86.ActiveCfg = Release|x86
+		{4C5C8879-0406-41D6-899E-9ACD6BAA4561}.Release|x86.Build.0 = Release|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Debug|x86.ActiveCfg = Debug|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Debug|x86.Build.0 = Debug|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.NoBuild|Any CPU.ActiveCfg = NoBuild|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.NoBuild|Any CPU.Build.0 = NoBuild|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.NoBuild|x86.ActiveCfg = NoBuild|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.NoBuild|x86.Build.0 = NoBuild|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Release|x86.ActiveCfg = Release|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E} = {1BC1C756-2BD7-4985-BA83-A78312C54A62}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE03E3B4-1245-496F-AFA5-2DE05EE8D908}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccProjectUniqueName0 = ..\\..\\PGE_CommonProject\\PGE.Common.DeliveryProject\\PGE.Common.Delivery.Diagnostics\\PGE.Common.Delivery.Diagnostics.csproj
+		SccProjectTopLevelParentUniqueName0 = PGE_Tx_SL_Connectivity_Report.sln
+		SccProjectName0 = ../../PGE_CommonProject/PGE.Common.DeliveryProject/PGE.Common.Delivery.Diagnostics
+		SccLocalPath0 = ..\\..\\PGE_CommonProject\\PGE.Common.DeliveryProject\\PGE.Common.Delivery.Diagnostics
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = PGE.BatchApplication.Tx_SL_Connectivity_Report\\PGE.BatchApplication.PGE_Tx_SL_Connectivity_Report.csproj
+		SccProjectName2 = PGE.BatchApplication.Tx_SL_Connectivity_Report
+		SccLocalPath2 = PGE.BatchApplication.Tx_SL_Connectivity_Report
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<RelationshipClasses>
+  <!--Define subtype mapping between the origin and destination subtypes-->
+  <Relationship Origin="EDGIS.TRANSFORMER" Destination="EDGIS.TRANSFORMERUNIT" SubTypeCode="2">
+    <Subtype Origin="1" Destination="3"/>
+    <Subtype Origin="2" Destination="3"/>
+    <Subtype Origin="3" Destination="3"/>
+    <Subtype Origin="4" Destination="3"/>
+    <Subtype Origin="5" Destination="3"/>
+    <Subtype Origin="6" Destination="3"/>
+    <Subtype Origin="7" Destination="3"/>
+    <Subtype Origin="8" Destination="3"/>
+  </Relationship>
+  <Relationship Origin="EDGIS.TRANSFORMER" Destination="EDGIS.TRANSFORMERUNIT" SubTypeCode="3">
+    <Subtype Origin="1" Destination="2"/>
+    <Subtype Origin="2" Destination="2"/>
+    <Subtype Origin="3" Destination="2"/>
+    <Subtype Origin="4" Destination="2"/>
+    <Subtype Origin="5" Destination="2"/>
+    <Subtype Origin="6" Destination="2"/>
+    <Subtype Origin="7" Destination="2"/>
+    <Subtype Origin="8" Destination="2"/>
+  </Relationship>
+</RelationshipClasses>

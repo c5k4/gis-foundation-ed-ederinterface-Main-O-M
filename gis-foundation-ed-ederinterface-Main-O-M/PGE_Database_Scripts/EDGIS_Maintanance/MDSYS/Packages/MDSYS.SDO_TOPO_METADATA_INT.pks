@@ -1,0 +1,38 @@
+Prompt drop Package SDO_TOPO_METADATA_INT;
+DROP PACKAGE MDSYS.SDO_TOPO_METADATA_INT
+/
+
+Prompt Package SDO_TOPO_METADATA_INT;
+--
+-- SDO_TOPO_METADATA_INT  (Package) 
+--
+CREATE OR REPLACE PACKAGE MDSYS.SDO_TOPO_METADATA_INT wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+9
+7ca 233
+5XevQqq8aS50CuzGFJNkz5lnhqkwg9eN2cBqynTpmDPqS1kXRfzf1UTD5tav720bhwi1qsxL
+t3V6q9opC5eX1r7qBlpnHcAdq+kKz5GazlTv1uFAEXaZEQrl07JC9MUvnmnFUQv82+bOO4TT
++Dhuzqbx9g6xnPJxLDEZI1X0EqLUldbRqyrjcU3qWngGVBS4021XtvGnI7tliomiiHlT8JHS
+7IyqbZ5jJq//adNhr8B/7h0sNXqWlqkekv1HOAGzNfC/ERrEa5+MEUpgWINkGa7OQ0ry6/Pj
+DhKpzxvMUWldEyRIvBLFPbD+t2MjTStjfXZwuWw8wSYAoiCnYICZTCwRmrJzc1GzsNVARe7B
+GnsskinvAW4VTHZ/iTLsTFW6leltXx/S+UlFmkA32hvIel1361R2eK0XvwfnAMa3XSNUhIsX
+CG2lFSNpBaChne0c6qXRvy6fBCDxFcohKRBq1tLV0G76cIkc5nf66W4aqGLolcqxV81Lru/9
+NERJMTBJ8WlIOUDelQalf4eqUZdc7meMKcLmsOIkPdmwrqbZ6FU=
+
+/

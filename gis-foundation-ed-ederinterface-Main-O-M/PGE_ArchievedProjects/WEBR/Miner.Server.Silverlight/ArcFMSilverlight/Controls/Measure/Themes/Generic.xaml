@@ -1,0 +1,92 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:ArcFMSilverlight.ValueConverters"
+    xmlns:Silverlight="clr-namespace:ArcFMSilverlight">
+
+    <Style TargetType="Silverlight:MeasureControl">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="DarkGray" />
+                    <GradientStop Offset="1" Color="LightGray" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Value="White" Property="BorderBrush" />
+        <Setter Value="1" Property="BorderThickness" />
+        <Setter Value="0" Property="Margin" />
+        <Setter Value="0" Property="Padding" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Silverlight:MeasureControl">
+                    <Grid>
+                        <Grid.Resources>
+                            <converters:MeasureModeToBooleanValueConverter x:Key="MeasureToBool" />
+                        </Grid.Resources>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0"
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+
+                            <RadioButton x:Name="PART_MeasureAreaButton"
+                                Margin="1"
+                                IsChecked="{Binding MeasureMode, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent},                                                      Converter={StaticResource MeasureToBool}, ConverterParameter=Polygon}"
+                                Padding="1"
+                                Style="{StaticResource RibbonRadioButton}">
+                                <Image Width="16"
+                                    Height="16"
+                                    Source="/Images/area.png"
+                                    ToolTipService.ToolTip="Measure Area" />
+                            </RadioButton>
+                            <RadioButton x:Name="PART_MeasureDistanceButton"
+                                Margin="1"
+                                IsChecked="{Binding MeasureMode, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent},                                                      Converter={StaticResource MeasureToBool}, ConverterParameter=Polyline}"
+                                Padding="1"
+                                Style="{StaticResource RibbonRadioButton}">
+                                <Image Width="16"
+                                    Height="16"
+                                    Source="/Images/distance.png"
+                                    ToolTipService.ToolTip="Measure Distance" />
+                            </RadioButton>
+                            <RadioButton x:Name="PART_MeasureRadiusButton"
+                                Margin="1"
+                                IsChecked="{Binding MeasureMode, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent},                                                      Converter={StaticResource MeasureToBool}, ConverterParameter=Radius}"
+                                Padding="1"
+                                Style="{StaticResource RibbonRadioButton}">
+                                <Image Width="16"
+                                    Height="16"
+                                    Source="/Images/radius.png"
+                                    ToolTipService.ToolTip="Measure Radius" />
+                            </RadioButton>
+                            <Button x:Name="PART_MeasureClearButton"
+                                Margin="1"
+                                Padding="1"
+                                Style="{StaticResource RibbonButton}">
+                                <Image Width="16"
+                                    Height="16"
+                                    Source="/Miner.Server.Client.Toolkit;component/Images/eraser.png"
+                                    ToolTipService.ToolTip="Clear Measurements" />
+                            </Button>
+
+                        </StackPanel>
+
+                        <ComboBox x:Name="PART_MeasureUnitsComboBox"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="0 3 0 0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

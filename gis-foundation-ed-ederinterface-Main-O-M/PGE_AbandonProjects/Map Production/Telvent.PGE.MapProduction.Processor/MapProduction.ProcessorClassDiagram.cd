@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Telvent.PGE.MapProduction.Processor.PGEMapLookUpTable">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgACAAAAAAAQAAAAAAAAgAAAAAAAQAAAAA=</HashCode>
+      <FileName>PGEMapLookUpTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Telvent.PGE.MapProduction.Processor.Program">
+    <Position X="10.25" Y="0.5" Width="2" />
+    <NestedTypes>
+      <Enum Name="Telvent.PGE.MapProduction.Processor.Program.ExitCodes" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Program.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAIgQAAAAAEAAABAAAAAg=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Telvent.PGE.MapProduction.PreProcessing.PGEGDBDataManager">
+    <Position X="3.25" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEACAACAAAYAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>PreProcessing\PGEGDBDataManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Telvent.PGE.MapProduction.PreProcessing.PGEGDBFieldLookUp" BaseTypeListCollapsed="true">
+    <Position X="6" Y="0.5" Width="2.25" />
+    <NestedTypes>
+      <Struct Name="Telvent.PGE.MapProduction.PreProcessing.PGEGDBFieldLookUp.PGEGDBFields" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>PreProcessing\PGEGDBFieldLookUp.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAMAAAAAACAAAAAAAAAAAAAAAAAAAoAICQAQQ=</HashCode>
+      <FileName>PreProcessing\PGEGDBFieldLookUp.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Telvent.PGE.MapProduction.PreProcessing.PGEMPChangeDetector">
+    <Position X="0.5" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAACAAAAAAAQAAAAAAAAGQAACAAIAwIQAAAAAA=</HashCode>
+      <FileName>PreProcessing\PGEMPChangeDetector.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_gdbDataManager" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.148" />
+  </Class>
+  <Class Name="Telvent.PGE.MapProduction.PreProcessing.PGEMPChangeDetector2">
+    <Position X="1.75" Y="5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAIAAAAAAAAAAAIABBAAA=</HashCode>
+      <FileName>PreProcessing\PGEMPChangeDetector2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Telvent.PGE.MapProduction.PreProcessing.PGEPreProcessor">
+    <Position X="6.25" Y="4.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgBAAAAAAAAQAABAAAAAgCAAACIAEAAIAAgCAAA=</HashCode>
+      <FileName>PreProcessing\PGEPreProcessor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_dbInteraction" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="Telvent.PGE.MapProduction.IMPGDBDataManager" Collapsed="true">
+    <Position X="4.5" Y="4" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Telvent.PGE.MapProduction.IMPDBDataManager">
+    <Position X="10.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

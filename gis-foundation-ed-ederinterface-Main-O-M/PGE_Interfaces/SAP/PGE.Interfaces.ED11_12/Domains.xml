@@ -1,0 +1,1624 @@
+<DomainMappings>
+    <Domain name="Animal Guard Type">
+      <add fromValue="ANIM" toValue="ANIM" />
+      <add fromValue="BIRD" toValue="BIRD" />
+      <add fromValue="BOTH" toValue="BOTH" />
+      <add fromValue="NONE" toValue="NONE" />
+      <add fromValue="UNSP" toValue="UNSP" />
+      <add fromValue="NA" toValue="NONE" />
+    </Domain>
+    <Domain name="BANKCODE">
+      <add fromValue="1" toValue="1" />
+      <add fromValue="2" toValue="2" />
+      <add fromValue="3" toValue="3" />
+      <add fromValue="4" toValue="4" />
+      <add fromValue="5" toValue="5" />
+      <add fromValue="6" toValue="6" />
+    </Domain>
+    <Domain name="BoosterType">
+      <add fromValue="Y" toValue="14" />
+      <add fromValue="N" toValue="5" />
+    </Domain>
+    <Domain name="Capacitor Switch Type">
+      <add fromValue="OIL" toValue="OIL" />
+      <add fromValue="VAC" toValue="VAC" />
+      <add fromValue="UNSP" toValue="UNSP" />
+      <add fromValue="NONE" toValue="NONE" />
+      <add fromValue="NA" toValue="NONE" />
+    </Domain>
+    <Domain name="Capacitor Subtype">
+      <add fromValue="1" toValue="FIXD" />
+      <add fromValue="2" toValue="SWTD" />
+      <add fromValue="3" toValue="SWVS" />
+    </Domain>
+    <Domain name="Capacitor Unit Count">
+      <add fromValue="1" toValue="1" />
+      <add fromValue="2" toValue="2" />
+      <add fromValue="3" toValue="3" />
+      <add fromValue="4" toValue="4" />
+      <add fromValue="5" toValue="5" />
+      <add fromValue="6" toValue="6" />
+      <add fromValue="12" toValue="12" />
+      <add fromValue="15" toValue="15" />
+      <add fromValue="20" toValue="20" />
+      <add fromValue="24" toValue="24" />
+    </Domain>
+    <Domain name="Capacitor Unit kVAR">
+      <add fromValue="50" toValue="50" />
+      <add fromValue="100" toValue="100" />
+      <add fromValue="200" toValue="200" />
+      <add fromValue="300" toValue="300" />
+      <add fromValue="600" toValue="600" />
+      <add fromValue="900" toValue="900" />
+      <add fromValue="1200" toValue="1200" />
+      <add fromValue="1800" toValue="1800" />
+      <!--below not used in GIS-->
+      <add fromValue="15" toValue="15" />
+      <add fromValue="20" toValue="20" />
+      <add fromValue="150" toValue="150" />
+      <add fromValue="250" toValue="250" />
+      <add fromValue="320" toValue="320" />
+      <add fromValue="200300" toValue="200300" />
+    </Domain>
+    <Domain name="City">
+      <add fromValue="1" toValue="Ashland" />
+      <add fromValue="2" toValue="Atascadero" />
+      <add fromValue="3" toValue="Atwater" />
+      <add fromValue="4" toValue="Auberry" />
+      <add fromValue="5" toValue="Auburn" />
+      <add fromValue="6" toValue="August" />
+      <add fromValue="7" toValue="August" />
+      <add fromValue="8" toValue="Avenal" />
+      <add fromValue="9" toValue="Avery" />
+      <add fromValue="10" toValue="Bakersfield" />
+      <add fromValue="11" toValue="Bay Point" />
+      <add fromValue="12" toValue="Bayview" />
+      <add fromValue="13" toValue="Bayview-Montalvin" />
+      <add fromValue="14" toValue="Baywood-Los Osos" />
+      <add fromValue="15" toValue="Beale AFB" />
+      <add fromValue="16" toValue="Bear Valley" />
+      <add fromValue="17" toValue="Bear Valley Springs" />
+      <add fromValue="18" toValue="Belden" />
+      <add fromValue="19" toValue="Belmont" />
+      <add fromValue="20" toValue="Belvedere" />
+      <add fromValue="21" toValue="Ben Lomond" />
+      <add fromValue="22" toValue="Benicia" />
+      <add fromValue="23" toValue="Berkeley" />
+      <add fromValue="24" toValue="Bethel Island" />
+      <add fromValue="25" toValue="Big Bend" />
+      <add fromValue="26" toValue="Biggs" />
+      <add fromValue="27" toValue="Biola" />
+      <add fromValue="28" toValue="Black Point-Green Point" />
+      <add fromValue="29" toValue="Blackhawk-Camino Tassajara" />
+      <add fromValue="30" toValue="Blue Lake" />
+      <add fromValue="31" toValue="Bodega Bay" />
+      <add fromValue="32" toValue="Bolinas" />
+      <add fromValue="33" toValue="Bonadelle Ranchos-Madera Ranchos" />
+      <add fromValue="34" toValue="Bootjack" />
+      <add fromValue="35" toValue="Boronda" />
+      <add fromValue="36" toValue="Boulder Creek" />
+      <add fromValue="37" toValue="Boyes Hot Springs" />
+      <add fromValue="38" toValue="Bradley" />
+      <add fromValue="39" toValue="Brentwood" />
+      <add fromValue="40" toValue="Brisbane" />
+      <add fromValue="41" toValue="Broadmoor" />
+    </Domain>
+    <Domain name="Climate Zone">
+      <add fromValue="R" toValue="R" />
+      <add fromValue="S" toValue="S" />
+      <add fromValue="T" toValue="T" />
+      <add fromValue="X" toValue="X" />
+      <add fromValue="R1" toValue="" />
+      <add fromValue="S1" toValue="" />
+      <add fromValue="T1" toValue="" />
+      <add fromValue="UNK" toValue="" />
+    </Domain>
+    <!--ControllerType is no longer in use. The code is read the field value as it is since per SAP this is a mapping that can simply copy the value over. If any inconsistence is encountered, the ControllerType sub domains needs to be added and the config file needs to be updated as well.  -->
+    <Domain name="ControllerType">
+      <add fromValue="EN" toValue="EN"/>
+      <add fromValue="FSPR" toValue="FSPR"/>
+      <add fromValue="LNCT" toValue="LNCT"/>
+      <add fromValue="MS" toValue="MS"/>
+      <add fromValue="SNGM" toValue="SNGM"/>
+      <add fromValue="UNSP" toValue="UNSP"/>
+      <add fromValue="COOP" toValue="COOP" />
+      <add fromValue="TRBA" toValue="TRBA" />
+      <add fromValue="TRSC" toValue="TRSC" />
+      <add fromValue="3A" toValue="3A"/>
+      <add fromValue="4C" toValue="4C"/>
+      <add fromValue="H" toValue="H"/>
+      <add fromValue="6" toValue="6"/>
+      <add fromValue="BECK" toValue="BECK"/>
+      <add fromValue="CL-2" toValue="CL-2"/>
+      <add fromValue="CL-4" toValue="CL-4"/>
+      <add fromValue="CL-5" toValue="CL-5"/>
+      <add fromValue="CL-6" toValue="CL-6"/>
+      <add fromValue="IJ-2" toValue="IJ-2"/>
+      <add fromValue="M27A" toValue="M27A"/>
+      <add fromValue="MJ3A" toValue="MJ3A"/>
+      <add fromValue="VR1" toValue="VR1"/>
+      <add fromValue="ENGL" toValue="ENGL"/>
+      <add fromValue="CONW" toValue="CONW"/>
+      <add fromValue="HYDR" toValue="HYDR"/>
+      <add fromValue="INTR" toValue="INTR"/>
+      <add fromValue="OTHR" toValue="OTHR"/>
+      <add fromValue="RELT" toValue="RELT"/>
+      <add fromValue="TRAY" toValue="TRAY"/>
+      <add fromValue="" toValue=""/>
+    </Domain>
+    <Domain name="County Name">
+      <add fromValue="1" toValue="001" />
+      <add fromValue="2" toValue="002" />
+      <add fromValue="3" toValue="003" />
+      <add fromValue="4" toValue="004" />
+      <add fromValue="5" toValue="005" />
+      <add fromValue="6" toValue="006" />
+      <add fromValue="7" toValue="007" />
+      <add fromValue="9" toValue="009" />
+      <add fromValue="10" toValue="010" />
+      <add fromValue="11" toValue="011" />
+      <add fromValue="12" toValue="012" />
+      <add fromValue="15" toValue="015" />
+      <add fromValue="16" toValue="016" />
+      <add fromValue="17" toValue="017" />
+      <add fromValue="18" toValue="018" />
+      <add fromValue="19" toValue="019" />
+      <add fromValue="20" toValue="020" />
+      <add fromValue="21" toValue="021" />
+      <add fromValue="22" toValue="022" />
+      <add fromValue="23" toValue="023" />
+      <add fromValue="24" toValue="024" />
+      <add fromValue="25" toValue="025" />
+      <add fromValue="26" toValue="026" />
+      <add fromValue="27" toValue="027" />
+      <add fromValue="28" toValue="028" />
+      <add fromValue="29" toValue="029" />
+      <add fromValue="31" toValue="031" />
+      <add fromValue="32" toValue="032" />
+      <add fromValue="34" toValue="034" />
+      <add fromValue="35" toValue="035" />
+      <add fromValue="36" toValue="036" />
+      <add fromValue="38" toValue="038" />
+      <add fromValue="39" toValue="039" />
+      <add fromValue="40" toValue="040" />
+      <add fromValue="41" toValue="041" />
+      <add fromValue="42" toValue="042" />
+      <add fromValue="43" toValue="043" />
+      <add fromValue="44" toValue="044" />
+      <add fromValue="45" toValue="045" />
+      <add fromValue="46" toValue="046" />
+      <add fromValue="47" toValue="047" />
+      <add fromValue="48" toValue="048" />
+      <add fromValue="49" toValue="049" />
+      <add fromValue="50" toValue="050" />
+      <add fromValue="51" toValue="051" />
+      <add fromValue="52" toValue="052" />
+      <add fromValue="53" toValue="053" />
+      <add fromValue="54" toValue="054" />
+      <add fromValue="55" toValue="055" />
+      <add fromValue="57" toValue="057" />
+      <add fromValue="58" toValue="058" />
+      <add fromValue="99" toValue="099" />
+      <add fromValue="8" toValue="008" />
+      <add fromValue="13" toValue="013" />
+      <add fromValue="14" toValue="014" />
+      <add fromValue="30" toValue="030" />
+      <add fromValue="33" toValue="033" />
+      <add fromValue="37" toValue="037" />
+      <add fromValue="56" toValue="056" />
+    </Domain>
+    <!-- CT Ratio is not used in code. Recloser CT Ratio is used.  -->
+    <Domain name="CT Ratio">
+      <add fromValue="10" toValue="10" />
+      <add fromValue="2000" toValue="2000" />
+      <add fromValue="500" toValue="500" />
+      <add fromValue="OTHER" toValue="OTHER" />
+      <add fromValue="UNSP" toValue="UNSP" />
+    </Domain>
+    <Domain name="CustomerOwned">
+      <add fromValue="N" toValue="PGE"/>
+      <add fromValue="Y" toValue="THIRDPARTY"/>
+    </Domain>
+    <Domain name="Device Group Type Padmount">
+      <add fromValue="1" toValue="PMH 3" />
+      <add fromValue="2" toValue="PMH 4 w/1 fuse" />
+      <add fromValue="3" toValue="PMH 4 w/2 fuses" />
+      <add fromValue="4" toValue="PMH 4 w/3 fuses" />
+      <add fromValue="5" toValue="PMH 5" />
+      <add fromValue="6" toValue="PMH 6 w/(1) Hot Leg" />
+      <add fromValue="7" toValue="PMH 9 w/(2) Hot Legs" />
+      <add fromValue="8" toValue="PMH 11 w/(1) Hot Leg" />
+      <add fromValue="9" toValue="PMH 11 w/(3) single phase Leg" />
+      <add fromValue="10" toValue="PMH 6 w/(3) 1-phase Leg" />
+      <add fromValue="11" toValue="PMH 9 w/(6)1-phase Leg" />
+      <add fromValue="12" toValue="PMH 9 w/ (3) 1-phase &amp; (1) 3-phase Leg" />
+      <add fromValue="13" toValue="PMH 41,42,43 Single Bypass" />
+      <add fromValue="14" toValue="PMH 42 Double Bypass" />
+      <add fromValue="15" toValue="PMH 43 Triple Bypass" />
+      <add fromValue="16" toValue="Padmounted Transformer" />
+      <add fromValue="17" toValue="Padmounted Transformer with Load Break Elbows" />
+      <add fromValue="18" toValue="Padmounted Duplex Transformer" />
+      <add fromValue="19" toValue="Padmounted Transformer with Internal Switch" />
+      <add fromValue="20" toValue="Padmounted Transformer w/ Two Internal Switches" />
+      <add fromValue="21" toValue="Padmounted Auto Transformer 20780 GRD Y/21,00-12,000 GRD Y/6900" />
+      <add fromValue="22" toValue="Padmounted Transformer Auto-Bank with Two Reclosers" />
+      <add fromValue="23" toValue="Padmounted 3-phase, 12KV or 21KV to 4KV Transformer and Recloser" />
+      <add fromValue="24" toValue="Padmounted Capacitor" />
+      <add fromValue="25" toValue="Padmounted Capacitor (Supervisory Controlled)" />
+      <add fromValue="26" toValue="Padmounted Regulator" />
+      <add fromValue="27" toValue="Padmounted Regulator Bypass Switch" />
+      <add fromValue="28" toValue="Padmounted Oil Switch" />
+      <add fromValue="29" toValue="Padmounted Oil Switch (Supervisory Controlled)" />
+      <add fromValue="30" toValue="Padmounted Interrupter" />
+      <add fromValue="31" toValue="Padmounted Interrupter (Supervisory Controlled)" />
+      <add fromValue="32" toValue="Padmounted Transformer with Internal Interrupter" />
+      <add fromValue="33" toValue="Padmounted Transformer with Internal Interrupter and Two Switches" />
+      <add fromValue="34" toValue="Padmounted Automatic Circuit Recloser (Supervisory Controlled)" />
+      <add fromValue="35" toValue="Padmounted Sectionalizer" />
+      <add fromValue="36" toValue="JBox - Padmount" />
+      <add fromValue="37" toValue="Misc #1 - 16' X 16'" />
+      <add fromValue="38" toValue="Misc #2 - 16' X 32'"/>
+      <add fromValue="39" toValue="Misc #3 - 16' X 40'"/>
+      <add fromValue="40" toValue="Misc #4 - 16' X 24'"/>
+      <add fromValue="41" toValue="Misc #5 - 24' X 32'"/>
+      <add fromValue="42" toValue="Misc #6 - 24' X 40'"/>
+      <add fromValue="43" toValue="Misc #7 - 24' X 60'"/>
+      <add fromValue="44" toValue="Misc #8 - 24' X 50'"/>
+      <add fromValue="45" toValue="Misc #9 - 24' X 80'"/>
+      <add fromValue="46" toValue="Misc #10 - 24' X 56'"/>
+      <add fromValue="47" toValue="Misc #11 - 24' X 24'"/>
+    </Domain>
+    <Domain name="Device Group Type Subsurface">
+      <add fromValue="1" toValue="Subsurface Transformer" />
+      <add fromValue="2" toValue="Subsurface Single-Phase Banked for Open" />
+      <add fromValue="3" toValue="Subsurface Duplex Transformers" />
+      <add fromValue="4" toValue="Subsurface Transformer with Internal Swi" />
+      <add fromValue="5" toValue="Subsurface Transformer with Two Internal" />
+      <add fromValue="6" toValue="Subsurface Duplex Transformer with Inter" />
+      <add fromValue="7" toValue="Subsurface Fused Switch" />
+      <add fromValue="8" toValue="Subsurface Fused Switch Dual Well" />
+      <add fromValue="9" toValue="Subsurface Cutouts" />
+      <add fromValue="10" toValue="Subsurface Switch, Two Way, One Way Swit" />
+      <add fromValue="11" toValue="Subsurface Switch, Two way, One Way Supe" />
+      <add fromValue="12" toValue="Subsurface Switch, Three way, Two Ways S" />
+      <add fromValue="13" toValue="Subsurface Switch, Three Way, Three Ways" />
+      <add fromValue="14" toValue="Subsurface Switch, Three Way, Three Supe" />
+      <add fromValue="15" toValue="Subsurface Smart Switch" />
+      <add fromValue="16" toValue="Subsurface Switch-Interrupter-Switch, 3-" />
+      <add fromValue="17" toValue="Subsurface Interrupter" />
+      <add fromValue="18" toValue="Subsurface Interrupter (Supervisory Cont" />
+      <add fromValue="19" toValue="Subsurface Sectionalizer" />
+      <add fromValue="20" toValue="Vault Mounted Switch - 2-Way, 1-Way Swit" />
+      <add fromValue="21" toValue="Vault Mounted Switch - 3-Way, 2-Way Swit" />
+      <add fromValue="22" toValue="Vault Mounted Switch - 3-Way, 3-Way Swit" />
+      <add fromValue="23" toValue="Vault Mounted Interrupter - 2-Way, 1-Way" />
+      <add fromValue="24" toValue="Vault Mounted Switch-Interrupter-Switch," />
+      <add fromValue="25" toValue="Subway Transformer in MH" />
+      <add fromValue="26" toValue="TGRAL" />
+      <add fromValue="27" toValue="TGRAM (Three Way)" />
+      <add fromValue="28" toValue="TGRAM (Four Way)" />
+      <add fromValue="29" toValue="JBox - Subsurface" />
+      <add fromValue="30" toValue="Misc #1C - 16'"/>
+      <add fromValue="31" toValue="Misc #2C - 24'"/>
+      <add fromValue="32" toValue="Misc #12C - 2 - 16 X 16"/>
+      <add fromValue="33" toValue="Network"/>
+      <add fromValue="34" toValue="TGRAM (Two Way)" />
+      <add fromValue="36" toValue="Vault Mounted Switch-Interrupter-Interrupter, 3-way, 3-way Switched" />
+    </Domain>
+    <Domain name="Device Manufacturer">
+      <add fromValue="AA" toValue="AA" />
+      <add fromValue="AB" toValue="AB" />
+      <add fromValue="AC" toValue="AC" />
+      <add fromValue="AD" toValue="AD" />
+      <add fromValue="AE" toValue="AE" />
+      <add fromValue="AN" toValue="AN" />
+      <add fromValue="AS" toValue="AS" />
+      <add fromValue="AT" toValue="AT" />
+      <add fromValue="CA" toValue="CA" />
+      <add fromValue="CE" toValue="CE" />
+      <add fromValue="CI" toValue="CI" />
+      <add fromValue="CM" toValue="CM" />
+      <add fromValue="CO" toValue="CO" />
+      <add fromValue="CP" toValue="CP" />
+      <add fromValue="DE" toValue="DE" />
+      <add fromValue="DS" toValue="DS" />
+      <add fromValue="DT" toValue="DT" />
+      <add fromValue="EA" toValue="EA" />
+      <add fromValue="EE" toValue="EE" />
+      <add fromValue="EL" toValue="EL" />
+      <add fromValue="EM" toValue="EM" />
+      <add fromValue="EN" toValue="EN" />
+      <add fromValue="EO" toValue="EO" />
+      <add fromValue="ER" toValue="ER" />
+      <add fromValue="FE" toValue="FE" />
+      <add fromValue="FP" toValue="FP" />
+      <add fromValue="FS" toValue="FS" />
+      <add fromValue="GC" toValue="GC" />
+      <add fromValue="GE" toValue="GE" />
+      <add fromValue="GP" toValue="GP" />
+      <add fromValue="GW" toValue="GW" />
+      <add fromValue="HI" toValue="HI" />
+      <add fromValue="HO" toValue="HO" />
+      <add fromValue="IA" toValue="IA" />
+      <add fromValue="IT" toValue="IT" />
+      <add fromValue="IS" toValue="Innovative Switchgear Solution Inc."/>
+      <!-- INC000003885629-->
+      <add fromValue="JO" toValue="JO" />
+      <add fromValue="KA" toValue="KA" />
+      <add fromValue="KC" toValue="KC" />
+      <add fromValue="KE" toValue="KE" />
+      <add fromValue="KP" toValue="KP" />
+      <add fromValue="KU" toValue="KU" />
+      <add fromValue="KM" toValue="KM" />
+      <add fromValue="LC" toValue="LC" />
+      <add fromValue="LM" toValue="LM" />
+      <add fromValue="ME" toValue="ME" />
+      <add fromValue="MO" toValue="MO" />
+      <add fromValue="MS" toValue="MS" />
+      <add fromValue="NE" toValue="NE" />
+      <add fromValue="NS" toValue="NS" />
+      <add fromValue="OB" toValue="OB" />
+      <add fromValue="OE" toValue="OE" />
+      <add fromValue="OK" toValue="OK" />
+      <add fromValue="PD" toValue="PD" />
+      <add fromValue="PM" toValue="PM" />
+      <add fromValue="PT" toValue="PT" />
+      <add fromValue="PP" toValue="PP" />
+      <add fromValue="RM" toValue="RM" />
+      <add fromValue="RO" toValue="RO" />
+      <add fromValue="RT" toValue="RT" />
+      <add fromValue="SA" toValue="SA" />
+      <add fromValue="SB" toValue="SB" />
+      <add fromValue="SC" toValue="SC" />
+      <add fromValue="SD" toValue="SD" />
+      <add fromValue="SI" toValue="SI" />
+      <add fromValue="SO" toValue="SO" />
+      <add fromValue="SP" toValue="SP" />
+      <add fromValue="ST" toValue="ST" />
+      <add fromValue="TC" toValue="TC" />
+      <add fromValue="TR" toValue="TR" />
+      <add fromValue="TU" toValue="TU" />
+      <add fromValue="WA" toValue="WA" />
+      <add fromValue="WE" toValue="WE" />
+      <add fromValue="WT" toValue="WT" />
+      <add fromValue="WU" toValue="WU" />
+      <add fromValue="ZI" toValue="ZI" />
+      <add fromValue="XX" toValue="XX" />
+      <add fromValue="HM" toValue="HM" />
+      <add fromValue="SE" toValue="SE" />
+      <add fromValue="SL" toValue="SL" />
+      <add fromValue="SS" toValue="SS" />
+      <add fromValue="TG" toValue="TG" />
+      <add fromValue="A2" toValue="ABB" />
+      <add fromValue="E2" toValue="Eaton" />
+      <add fromValue="CH" toValue="Cutler Hammer" />
+      <add fromValue="RI" toValue="Richards" />
+      <add fromValue="W2" toValue="WEST" />
+      <add fromValue="ET" toValue="ETI" />
+      <add fromValue="NA" toValue="NAV" />
+      <add fromValue="WH" toValue="WH" />
+      <add fromValue="" toValue="" />
+    </Domain>
+    <Domain name="Division Name">
+      <add fromValue="17"	toValue="CC" />
+      <add fromValue="16"	toValue="DA" />
+      <add fromValue="9"	toValue="DI" />
+      <add fromValue="6"	toValue="EB" />
+      <add fromValue="12"	toValue="FR" />
+      <add fromValue="20"	toValue="HB" />
+      <add fromValue="13"	toValue="KE" />
+      <add fromValue="18"	toValue="LP" />
+      <add fromValue="14"	toValue="MI" />
+      <add fromValue="5"	toValue="NB" />
+      <add fromValue="2"	toValue="NV" />
+      <add fromValue="8"	toValue="PN" />
+      <add fromValue="3"	toValue="SA" />
+      <add fromValue="7"	toValue="SF" />
+      <add fromValue="15"	toValue="SJ" />
+      <add fromValue="4"	toValue="SI" />
+      <add fromValue="19"	toValue="Skyline" />
+      <add fromValue="1"	toValue="SO" />
+      <add fromValue="10"	toValue="ST" />
+      <add fromValue="11"	toValue="YO" />
+    </Domain>
+  <Domain name="District Name">
+    <add fromValue="28"	toValue="28" />
+    <add fromValue="26"	toValue="26" />
+    <add fromValue="16"	toValue="16" />
+    <add fromValue="9"	toValue="09" />
+    <add fromValue="80"	toValue="80" />
+    <add fromValue="93"	toValue="93" />
+    <add fromValue="30"	toValue="30" />
+    <add fromValue="21"	toValue="21" />
+    <add fromValue="35"	toValue="35" />
+    <add fromValue="36"	toValue="36" />
+    <add fromValue="70"	toValue="70" />
+    <add fromValue="34"	toValue="34" />
+    <add fromValue="14"	toValue="14" />
+    <add fromValue="8"	toValue="08" />
+    <add fromValue="66"	toValue="66" />
+    <add fromValue="4"	toValue="04" />
+    <add fromValue="18"	toValue="18" />
+    <add fromValue="11"	toValue="11" />
+    <add fromValue="24"	toValue="24" />
+    <add fromValue="7"	toValue="07" />
+    <add fromValue="95"	toValue="95" />
+    <add fromValue="22"	toValue="22" />
+    <add fromValue="40"	toValue="40" />
+    <add fromValue="13"	toValue="13" />
+    <add fromValue="17"	toValue="17" />
+    <add fromValue="3"	toValue="03" />
+    <add fromValue="58"	toValue="58" />
+    <add fromValue="20"	toValue="20" />
+    <add fromValue="52"	toValue="52" />
+    <add fromValue="5"	toValue="05" />
+    <add fromValue="60"	toValue="60" />
+    <add fromValue="78"	toValue="78" />
+    <add fromValue="2"	toValue="02" />
+    <add fromValue="1"	toValue="01" />
+    <add fromValue="44"	toValue="44" />
+    <add fromValue="87"	toValue="87" />
+    <add fromValue="56"	toValue="56" />
+    <add fromValue="48"	toValue="48" />
+    <add fromValue="91"	toValue="91" />
+    <add fromValue="85"	toValue="85" />
+    <add fromValue="88"	toValue="88" />
+    <add fromValue="46"	toValue="46" />
+    <add fromValue="42"	toValue="42" />
+    <add fromValue="38"	toValue="38" />
+    <add fromValue="50"	toValue="50" />
+    <add fromValue="72"	toValue="72" />
+    <add fromValue="76"	toValue="76" />
+  </Domain>
+    <Domain name="Dyn Protect Device Type Interrupter">
+      <add fromValue="C" toValue="C" />
+      <add fromValue="T" toValue="T" />
+      <add fromValue="OTH" toValue="9" />
+      <add fromValue="ISSI" toValue="ISSI" />
+      <add fromValue="GW" toValue="GW" />
+      <add fromValue="EM" toValue="EM" />
+      <!--below not used in GIS-->
+      <add fromValue="GWVAULT" toValue="GWVAULT" />
+      <add fromValue="ELASPAD" toValue="ELASPAD" />
+      <add fromValue="UNSP" toValue="UNSP" />
+    </Domain>
+    <Domain name="Dyn Protect Device Type Recloser">
+      <add fromValue="4H" toValue="3" />
+      <add fromValue="H" toValue="2" />
+      <add fromValue="NOVA" toValue="11"/>
+      <add fromValue="PWE2B" toValue="13"/>
+      <add fromValue="R" toValue="1" />
+      <add fromValue="RE" toValue="5" />
+      <add fromValue="RVE" toValue="7" />
+      <add fromValue="RXE" toValue="8" />
+      <add fromValue="VIPER" toValue="11" />
+      <add fromValue="VWE" toValue="15" />
+      <add fromValue="VWVE" toValue="14" />
+      <add fromValue="WE" toValue="6" />
+      <add fromValue="WVE" toValue="4" />
+      <add fromValue="OTH" toValue="9" />
+      <add fromValue="TS" toValue="16" />
+      <add fromValue="ESV2" toValue="17"/>
+    </Domain>
+    <Domain name="Dyn Protect Device Type Sectionalizer">
+      <add fromValue="ELSP" toValue="ELSP" />
+      <add fromValue="GN3E" toValue="GN3E" />
+      <add fromValue="GN3V" toValue="GN3V" />
+      <add fromValue="GV" toValue="GV" />
+      <add fromValue="GW" toValue="GW" />
+      <add fromValue="SCAD" toValue="SCAD" />
+      <add fromValue="OTHR" toValue="OTHR" />
+      <!--below not used in GIS-->
+      <add fromValue="GH" toValue="GH" />
+      <add fromValue="GN3" toValue="GN3" />
+      <add fromValue="GRS" toValue="GRS" />
+    </Domain>
+    <Domain name="External Operator">
+      <add fromValue="MSO" toValue="MSO" />
+      <add fromValue="SEO" toValue="SEO" />
+      <add fromValue="NONE" toValue="NONE" />
+      <add fromValue="UNSP" toValue="UNSP" />
+      <!--below not used in GIS-->
+      <add fromValue="OTHER" toValue="OTHER" />
+    </Domain>
+    <Domain name="Fault Indicator Type">
+      <add fromValue="AUTO" toValue="AUTO" />
+      <add fromValue="MANU" toValue="MANU" />
+    </Domain>
+    <Domain name="Field Investigation Code">
+      <add fromValue="1" toValue="Not Applicable" />
+      <add fromValue="2" toValue="Idle/Underloaded - Priority Ch" />
+      <add fromValue="3" toValue="Underloaded - OK for Change Ou" />
+      <add fromValue="4" toValue="Underloaded - Low Priority - C" />
+      <add fromValue="5" toValue="Underloaded - Multiple Custome" />
+      <add fromValue="9999" toValue="Unspecified" />
+      <add fromValue="A" toValue="Idle/Underloaded - Verified - " />
+      <add fromValue="B" toValue="Idle/Underloaded - Designated " />
+      <add fromValue="C" toValue="Idle/Overloaded/Underloaded - " />
+      <add fromValue="D" toValue="Idle - Premapped Entry - Trans" />
+      <add fromValue="E" toValue="Overloaded - Wrong LF - Metere" />
+      <add fromValue="F" toValue="Underloaded - Wrong LF - Meter" />
+      <add fromValue="G" toValue="Underloaded - Sized to Reduce " />
+      <add fromValue="H" toValue="Underloaded - Verified - Avail" />
+      <add fromValue="I" toValue="Underloaded - Minimum Size Tra" />
+      <add fromValue="J" toValue="Idle - Seasonally Idle" />
+      <add fromValue="K" toValue="Idle/Underloaded - Verified - " />
+      <add fromValue="M" toValue="Underloaded - Expected Custome" />
+      <add fromValue="N" toValue="Underloaded - Not Economical t" />
+      <add fromValue="O" toValue="Underloaded - Oil Leak" />
+      <add fromValue="P" toValue="Underloaded - PCB Content" />
+      <add fromValue="Q" toValue="Underloaded - No Change Out - " />
+      <add fromValue="Z" toValue="Transformer Changed Out" />
+    </Domain>
+    <Domain name="Installation Type">
+      <add fromValue="OH" toValue="OH" />
+      <add fromValue="PAD" toValue="PM" />
+      <add fromValue="SUB" toValue="SS" />
+      <add fromValue="UG" toValue="UG" />
+      <add fromValue="NEW" toValue="NW" />
+    </Domain>
+    <Domain name="InterrupterControlType">
+      <add fromValue="COOP" toValue="COOP" />
+      <add fromValue="TRBA" toValue="TRBA" />
+      <add fromValue="TRSC" toValue="TRSC" />
+    </Domain>
+    <Domain name="Local Offices">
+      <add fromValue="11ZZ" toValue="11ZZ" />
+      <add fromValue="13ZZ" toValue="13ZZ" />
+      <add fromValue="14ZZ" toValue="14ZZ" />
+      <add fromValue="16ZZ" toValue="16ZZ" />
+      <add fromValue="17ZZ" toValue="17ZZ" />
+      <add fromValue="18ZZ" toValue="18ZZ" />
+      <add fromValue="1ZZ" toValue="1ZZ" />
+      <add fromValue="20ZZ" toValue="20ZZ" />
+      <add fromValue="21ZZ" toValue="21ZZ" />
+      <add fromValue="22ZZ" toValue="22ZZ" />
+      <add fromValue="24ZZ" toValue="24ZZ" />
+      <add fromValue="26ZZ" toValue="26ZZ" />
+      <add fromValue="28ZZ" toValue="28ZZ" />
+      <add fromValue="2ZZ" toValue="2ZZ" />
+      <add fromValue="30ZZ" toValue="30ZZ" />
+      <add fromValue="34ZZ" toValue="34ZZ" />
+      <add fromValue="35ZZ" toValue="35ZZ" />
+      <add fromValue="36ZZ" toValue="36ZZ" />
+      <add fromValue="38ZZ" toValue="38ZZ" />
+      <add fromValue="3ZZ" toValue="3ZZ" />
+      <add fromValue="40ZZ" toValue="40ZZ" />
+      <add fromValue="42ZZ" toValue="42ZZ" />
+      <add fromValue="44ZZ" toValue="44ZZ" />
+      <add fromValue="46ZZ" toValue="46ZZ" />
+      <add fromValue="48ZZ" toValue="48ZZ" />
+      <add fromValue="4ZZ" toValue="4ZZ" />
+      <add fromValue="50ZZ" toValue="50ZZ" />
+      <add fromValue="56ZZ" toValue="56ZZ" />
+      <add fromValue="58ZZ" toValue="58ZZ" />
+      <add fromValue="5ZZ" toValue="5ZZ" />
+      <add fromValue="60ZZ" toValue="60ZZ" />
+      <add fromValue="66ZZ" toValue="66ZZ" />
+      <add fromValue="70ZZ" toValue="70ZZ" />
+      <add fromValue="72ZZ" toValue="72ZZ" />
+      <add fromValue="76ZZ" toValue="76ZZ" />
+      <add fromValue="78ZZ" toValue="78ZZ" />
+      <add fromValue="7ZZ" toValue="7ZZ" />
+      <add fromValue="80ZZ" toValue="80ZZ" />
+      <add fromValue="85ZZ" toValue="85ZZ" />
+      <add fromValue="87ZZ" toValue="87ZZ" />
+      <add fromValue="88ZZ" toValue="88ZZ" />
+      <add fromValue="8ZZ" toValue="8ZZ" />
+      <add fromValue="91ZZ" toValue="91ZZ" />
+      <add fromValue="93ZZ" toValue="93ZZ" />
+      <add fromValue="95ZZ" toValue="95ZZ" />
+      <add fromValue="9ZZ" toValue="9ZZ" />
+      <add fromValue="AU" toValue="AU" />
+      <add fromValue="BG" toValue="BG" />
+      <add fromValue="BJ" toValue="BJ" />
+      <add fromValue="BM" toValue="BM" />
+      <add fromValue="BR" toValue="BR" />
+      <add fromValue="BT" toValue="BT" />
+      <add fromValue="BV" toValue="BV" />
+      <add fromValue="BX" toValue="BX" />
+      <add fromValue="D56" toValue="D56" />
+      <add fromValue="F20" toValue="F20" />
+      <add fromValue="F9" toValue="F9" />
+      <add fromValue="F93" toValue="F93" />
+      <add fromValue="FB" toValue="FB" />
+      <add fromValue="FF" toValue="FF" />
+      <add fromValue="FJ" toValue="FJ" />
+      <add fromValue="FM" toValue="FM" />
+      <add fromValue="FN" toValue="FN" />
+      <add fromValue="FP" toValue="FP" />
+      <add fromValue="FQ" toValue="FQ" />
+      <add fromValue="FY" toValue="FY" />
+      <add fromValue="HB" toValue="HB" />
+      <add fromValue="HD" toValue="HD" />
+      <add fromValue="HM" toValue="HM" />
+      <add fromValue="HP" toValue="HP" />
+      <add fromValue="HS" toValue="HS" />
+      <add fromValue="HT" toValue="HT" />
+      <add fromValue="J48" toValue="J48" />
+      <add fromValue="J60" toValue="J60" />
+      <add fromValue="JC" toValue="JC" />
+      <add fromValue="JG" toValue="JG" />
+      <add fromValue="JJ" toValue="JJ" />
+      <add fromValue="JK" toValue="JK" />
+      <add fromValue="JL" toValue="JL" />
+      <add fromValue="JN" toValue="JN" />
+      <add fromValue="JQ" toValue="JQ" />
+      <add fromValue="JR" toValue="JR" />
+      <add fromValue="JT" toValue="JT" />
+      <add fromValue="LF" toValue="LF" />
+      <add fromValue="LJ" toValue="LJ" />
+      <add fromValue="LM" toValue="LM" />
+      <add fromValue="LW" toValue="LW" />
+      <add fromValue="NC" toValue="NC" />
+      <add fromValue="NF" toValue="NF" />
+      <add fromValue="NG" toValue="NG" />
+      <add fromValue="NJ" toValue="NJ" />
+      <add fromValue="NL" toValue="NL" />
+      <add fromValue="NN" toValue="NN" />
+      <add fromValue="NQ" toValue="NQ" />
+      <add fromValue="NR" toValue="NR" />
+      <add fromValue="NV" toValue="NV" />
+      <add fromValue="NX" toValue="NX" />
+      <add fromValue="NY" toValue="NY" />
+      <add fromValue="P26" toValue="P26" />
+      <add fromValue="P44" toValue="P44" />
+      <add fromValue="P48" toValue="P48" />
+      <add fromValue="P56" toValue="P56" />
+      <add fromValue="P72" toValue="P72" />
+      <add fromValue="PK" toValue="PK" />
+      <add fromValue="PS" toValue="PS" />
+      <add fromValue="PX" toValue="PX" />
+      <add fromValue="PY" toValue="PY" />
+      <add fromValue="RB" toValue="RB" />
+      <add fromValue="RG" toValue="RG" />
+      <add fromValue="RH" toValue="RH" />
+      <add fromValue="RN" toValue="RN" />
+      <add fromValue="RZ" toValue="RZ" />
+      <add fromValue="TC" toValue="TC" />
+      <add fromValue="TD" toValue="TD" />
+      <add fromValue="TF" toValue="TF" />
+      <add fromValue="TG" toValue="TG" />
+      <add fromValue="TJ" toValue="TJ" />
+      <add fromValue="TK" toValue="TK" />
+      <add fromValue="TL" toValue="TL" />
+      <add fromValue="TM" toValue="TM" />
+      <add fromValue="TN" toValue="TN" />
+      <add fromValue="TQ" toValue="TQ" />
+      <add fromValue="TR" toValue="TR" />
+      <add fromValue="TS" toValue="TS" />
+      <add fromValue="TT" toValue="TT" />
+      <add fromValue="TV" toValue="TV" />
+      <add fromValue="TX" toValue="TX" />
+      <add fromValue="V9" toValue="V9" />
+      <add fromValue="VF" toValue="VF" />
+      <add fromValue="VJ" toValue="VJ" />
+      <add fromValue="VP" toValue="VP" />
+      <add fromValue="VT" toValue="VT" />
+      <add fromValue="VV" toValue="VV" />
+      <add fromValue="W30" toValue="W30" />
+      <add fromValue="W42" toValue="W42" />
+      <add fromValue="X50" toValue="X50" />
+      <add fromValue="X76" toValue="X76" />
+      <add fromValue="XB" toValue="XB" />
+      <add fromValue="XD" toValue="XD" />
+      <add fromValue="XH" toValue="XH" />
+      <add fromValue="XJ" toValue="XJ" />
+      <add fromValue="XL" toValue="XL" />
+      <add fromValue="XN" toValue="XN" />
+      <add fromValue="XR" toValue="XR" />
+      <add fromValue="XT" toValue="XT" />
+      <add fromValue="XV" toValue="XV" />
+      <add fromValue="XX" toValue="XX" />
+      <add fromValue="Z46" toValue="Z46" />
+      <add fromValue="Z50" toValue="Z50" />
+      <add fromValue="ZC" toValue="ZC" />
+    </Domain>
+    <Domain name="Location Description">
+      <add fromValue="ROAD" toValue="Adjacent to road or street" />
+      <add fromValue="DRWY" toValue="Driveway" />
+      <add fromValue="SDWK" toValue="Sidewalk" />
+      <add fromValue="WKWY" toValue="Walkway" />
+      <add fromValue="PMED" toValue="Parking or median strip" />
+      <add fromValue="REAR" toValue="Rear lot easement" />
+      <add fromValue="PVTP" toValue="On private property" />
+      <add fromValue="SWDR" toValue="In a sidewalk or driveway" />
+      <add fromValue="UNK" toValue="Unknown" />
+    </Domain>
+    <Domain name="Max Interrupting Current">
+      <add fromValue="2500" toValue="2500" />
+      <add fromValue="4000" toValue="4000" />
+      <add fromValue="6000" toValue="6000" />
+      <add fromValue="8000" toValue="8000" />
+      <add fromValue="10000" toValue="10000" />
+      <add fromValue="12000" toValue="12000" />
+      <add fromValue="12500" toValue="12500" />
+      <add fromValue="16000" toValue="16000" />
+      <add fromValue="20000" toValue="20000" />
+      <add fromValue="25000" toValue="25000" />
+      <add fromValue="31000" toValue="31000" />
+      <add fromValue="40000" toValue="40000" />
+    </Domain>
+    <Domain name="Map Offices">
+      <add fromValue="ANG" toValue="ANG" />
+      <add fromValue="AUB" toValue="AUB" />
+      <add fromValue="BKD" toValue="BKD" />
+      <!-- <add fromValue="BEL" toValue="12" /> -->
+      <add fromValue="CHI" toValue="CHI" />
+      <add fromValue="CMA" toValue="CMA" />
+      <add fromValue="CND" toValue="CND" />
+      <add fromValue="COL" toValue="COL" />
+      <add fromValue="CUO" toValue="CUO" />
+      <add fromValue="EUR" toValue="EUR" />
+      <add fromValue="SJE" toValue="SJE" />
+      <add fromValue="FRE" toValue="FRE" />
+      <add fromValue="HAY" toValue="HAY" />
+      <add fromValue="JCK" toValue="JCK" />
+      <!-- <add fromValue="HUM" toValue="7" /> -->
+      <add fromValue="MER" toValue="MER" />
+      <add fromValue="MRY" toValue="MRY" />
+      <!-- <add fromValue="MOD" toValue="3" />
+      <add fromValue="MLD" toValue="1" /> -->
+      <add fromValue="NAP" toValue="NAP" />
+      <add fromValue="OAK" toValue="OAK" />
+      <add fromValue="ORO" toValue="ORO" />
+      <add fromValue="PVL" toValue="PVL" />
+      <!-- <add fromValue="RCH" toValue="44" /> -->
+      <add fromValue="RDG" toValue="RDG" />
+      <add fromValue="SAC" toValue="SAC" />
+      <add fromValue="SAL" toValue="SAL" />
+      <add fromValue="SCL" toValue="SCL" />
+      <add fromValue="SCR" toValue="SCR" />
+      <add fromValue="SFO" toValue="SFO" />
+      <add fromValue="SLO" toValue="SLO" />
+      <add fromValue="SNR" toValue="SNR" />
+      <add fromValue="SMA" toValue="SMA" />
+      <add fromValue="SRO" toValue="SRO" />
+      <add fromValue="STK" toValue="STK" />
+      <add fromValue="UKI" toValue="UKI" />
+      <add fromValue="VJO" toValue="VJO" />
+      <!-- <add fromValue="WNC" toValue="44" />       -->
+    </Domain>
+    <Domain name="Overhead Switch Type">
+      <add fromValue="10" toValue="10" />
+      <add fromValue="38" toValue="38" />
+      <add fromValue="99" toValue="99" />
+      <add fromValue="14" toValue="14" />
+      <add fromValue="44" toValue="44" />
+      <add fromValue="40" toValue="40" />
+      <add fromValue="4" toValue="4" />
+      <add fromValue="17" toValue="17" />
+      <add fromValue="7" toValue="7" />
+      <add fromValue="18" toValue="18" />
+      <add fromValue="35" toValue="35" />
+      <add fromValue="3" toValue="3" />
+      <add fromValue="1" toValue="1" />
+      <!--below not used in GIS-->
+      <add fromValue="8" toValue="8" />
+    </Domain>
+    <Domain name="Pole Class">
+      <add fromValue="0" toValue="00" />
+      <add fromValue="0" toValue="0" />
+      <add fromValue="1" toValue="1" />
+      <add fromValue="2" toValue="2" />
+      <add fromValue="3" toValue="3" />
+      <add fromValue="4" toValue="4" />
+      <add fromValue="5" toValue="5" />
+      <add fromValue="6" toValue="6" />
+      <add fromValue="7" toValue="7" />
+      <add fromValue="H1" toValue="H1" />
+      <add fromValue="H2" toValue="H2" />
+      <add fromValue="H3" toValue="H3" />
+      <add fromValue="H4" toValue="H4" />
+      <add fromValue="H5" toValue="H5" />
+      <add fromValue="OT" toValue="OT" />
+    </Domain>
+    <Domain name="Pole Height">
+      <add fromValue="10" toValue="10" />
+      <add fromValue="15" toValue="15" />
+      <add fromValue="20" toValue="20" />
+      <add fromValue="25" toValue="25" />
+      <add fromValue="30" toValue="30" />
+      <add fromValue="35" toValue="35" />
+      <add fromValue="40" toValue="40" />
+      <add fromValue="45" toValue="45" />
+      <add fromValue="50" toValue="50" />
+      <add fromValue="55" toValue="55" />
+      <add fromValue="60" toValue="60" />
+      <add fromValue="65" toValue="65" />
+      <add fromValue="70" toValue="70" />
+      <add fromValue="75" toValue="75" />
+      <add fromValue="80" toValue="80" />
+      <add fromValue="85" toValue="85" />
+      <add fromValue="90" toValue="90" />
+      <add fromValue="95" toValue="95" />
+      <add fromValue="100" toValue="100" />
+      <add fromValue="105" toValue="105" />
+      <add fromValue="110" toValue="110" />
+      <add fromValue="115" toValue="115" />
+      <add fromValue="120" toValue="120" />
+      <add fromValue="125" toValue="125" />
+      <add fromValue="130" toValue="130" />
+      <add fromValue="135" toValue="135" />
+      <add fromValue="140" toValue="140" />
+      <add fromValue="145" toValue="145" />
+      <add fromValue="150" toValue="150" />
+      <add fromValue="165" toValue="165" />
+      <add fromValue="0" toValue="0" />
+      <add fromValue="9" toValue="9" />
+      <add fromValue="12" toValue="12" />
+      <add fromValue="13" toValue="13" />
+      <add fromValue="14" toValue="14" />
+      <add fromValue="16" toValue="16" />
+      <add fromValue="18" toValue="18" />
+      <add fromValue="32" toValue="32" />
+      <add fromValue="34" toValue="34" />
+      <add fromValue="36" toValue="36" />
+      <add fromValue="38" toValue="38" />
+    </Domain>
+    <Domain name="Pole Material - Tower">
+      <add fromValue="A" toValue="AL" />
+      <add fromValue="B" toValue="FIBR" />
+      <add fromValue="LS" toValue="LS" />
+      <add fromValue="OTH" toValue="OTHR" />
+      <add fromValue="S" toValue="STEL" />
+      <add fromValue="UNK" toValue="UNK" />
+      <add fromValue="WOOD" toValue="WOOD" />
+    </Domain>
+    <Domain name="Pole Material H Frame">
+      <add fromValue="A" toValue="AL" />
+      <add fromValue="B" toValue="FIBR" />
+      <add fromValue="C" toValue="CNCT" />
+      <add fromValue="OTH" toValue="OTHR" />
+      <add fromValue="W" toValue="WOOD" />
+    </Domain>
+    <Domain name="Pole Material">
+      <add fromValue="ALM" toValue="AL" />
+      <add fromValue="CNCT" toValue="CNCT" />
+      <add fromValue="FIBR" toValue="FIBR" />
+      <add fromValue="OTH" toValue="OTHR" />
+      <add fromValue="STEL" toValue="STEL" />
+      <add fromValue="UNK" toValue="UNK" />
+      <add fromValue="WOOD" toValue="WOOD" />
+      <add fromValue="CNTR" toValue="CNTR" />
+      <add fromValue="THBR" toValue="THBR" />
+      <add fromValue="TREE" toValue="TREE" />
+      <add fromValue="WGUY" toValue="WGUY" />
+      <add fromValue="NA" toValue="OTHR" />
+      <add fromValue="GUYP" toValue="GUYP" />
+      <add fromValue="PUSH" toValue="PUSH" />
+      <add fromValue="TOWR" toValue="TOWR" />
+      <add fromValue="WOST" toValue="WOST" />
+      <add fromValue="IRON" toValue="IRON" />
+    </Domain>
+    <Domain name="Pole Material - Non Wood">
+      <add fromValue="ALM" toValue="AL" />
+      <add fromValue="CNCT" toValue="CNCT" />
+      <add fromValue="FIBR" toValue="FIBR" />
+      <add fromValue="OTH" toValue="OTHR" />
+      <add fromValue="STEL" toValue="STEL" />
+      <add fromValue="UNK" toValue="UNK" />
+    </Domain>
+    <Domain name="Pole Material - Wood">
+      <add fromValue="WOOD" toValue="WOOD" />
+    </Domain>
+    <Domain name="Pole Species">
+      <add fromValue="DF" toValue="DF" />
+      <add fromValue="LP" toValue="LP" />
+      <add fromValue="WP" toValue="WP" />
+      <add fromValue="WC" toValue="WC" />
+      <add fromValue="OT" toValue="OT" />
+      <add fromValue="NA" toValue="NA" />
+    </Domain>
+    <!--this value mapping is not used, because all values are just the same 
+	so  GIS value is sent without mapping-->
+    <Domain name="PoleTreatmentType - Wood">
+      <add fromValue="SZ" toValue="SZ" />
+      <add fromValue="B" toValue="B" />
+      <add fromValue="G" toValue="G" />
+      <add fromValue="SK" toValue="SK" />
+      <add fromValue="N" toValue="N" />
+      <add fromValue="C" toValue="C" />
+      <add fromValue="MP" toValue="MP" />
+      <add fromValue="NOT" toValue="NOT" />
+      <add fromValue="NON" toValue="NON" />
+      <add fromValue="P" toValue="P" />
+      <add fromValue="A" toValue="A" />
+      <add fromValue="PEN" toValue="PEN" />
+      <add fromValue="PD" toValue="PD" />
+      <add fromValue="PB" toValue="PB" />
+      <add fromValue="PA" toValue="PA" />
+      <add fromValue="U" toValue="U" />
+      <add fromValue="ZMA" toValue="ZMA" />
+      <add fromValue="OTH" toValue="OTH" />
+      <add fromValue="UNK" toValue="UNK" />
+      <add fromValue="O" toValue="O" />
+      <add fromValue="SB" toValue="SB" />
+    </Domain>
+    <Domain name="PoleTreatmentType - Non Wood">
+      <add fromValue="NON" toValue="NOT" />
+      <add fromValue="PNT" toValue="" />
+      <add fromValue="OTH" toValue="OTH" />
+    </Domain>
+   <!--added mapping for poletype domain-->
+    <Domain name="PoleType">
+      <add fromValue="AL" toValue="AL" />
+      <add fromValue="WOOD" toValue="WOOD" />
+      <add fromValue="CNCT" toValue="CNCT" />
+      <add fromValue="CNTR" toValue="CNTR" />
+      <add fromValue="FIBR" toValue="FIBR" />
+      <add fromValue="OTHR" toValue="OTHR" />
+      <add fromValue="STEL" toValue="STEL" />
+      <add fromValue="THBR" toValue="THBR" />
+      <add fromValue="TOWR" toValue="TOWR" />
+      <add fromValue="TREE" toValue="TREE" />    
+      <add fromValue="WGUY" toValue="WGUY" />
+      <add fromValue="WOST" toValue="WOST" />
+      <add fromValue="PUSH" toValue="PUSH" />
+      <add fromValue="GUYP" toValue="GUYP" />    
+    </Domain>
+    <Domain name="Primary Voltage">
+      <add fromValue="0" toValue="0" />
+      <add fromValue="1" toValue="1" />
+      <add fromValue="2" toValue="2" />
+      <add fromValue="3" toValue="3" />
+      <add fromValue="4" toValue="4" />
+      <add fromValue="5" toValue="5" />
+      <add fromValue="6" toValue="6" />
+      <add fromValue="7" toValue="7" />
+      <add fromValue="8" toValue="8" />
+      <add fromValue="9" toValue="9" />
+      <add fromValue="65" toValue="65" />
+      <add fromValue="85" toValue="85" />
+      <add fromValue="35" toValue="35" />
+    </Domain>
+    <!-- RatedKva is not used in code, the field value is sent directly -->
+    <Domain name="RatedKva">
+      <add fromValue=".5" toValue=".5" />
+      <add fromValue="1" toValue="1" />
+      <add fromValue="1.5" toValue="1.5" />
+      <add fromValue="10" toValue="10" />
+      <add fromValue="100" toValue="100" />
+      <add fromValue="1000" toValue="1000" />
+      <add fromValue="10000" toValue="10000" />
+      <add fromValue="10025" toValue="10025" />
+      <add fromValue="10050" toValue="10050" />
+      <add fromValue="103" toValue="103" />
+      <add fromValue="104" toValue="104" />
+      <add fromValue="11000" toValue="11000" />
+      <add fromValue="112" toValue="112" />
+      <add fromValue="112.5" toValue="112.5" />
+      <add fromValue="114" toValue="114" />
+      <add fromValue="116" toValue="116" />
+      <add fromValue="1200" toValue="1200" />
+      <add fromValue="12000" toValue="12000" />
+      <add fromValue="124" toValue="124" />
+      <add fromValue="125" toValue="125" />
+      <add fromValue="12500" toValue="12500" />
+      <add fromValue="138" toValue="138" />
+      <add fromValue="15" toValue="15" />
+      <add fromValue="150" toValue="150" />
+      <add fromValue="1500" toValue="1500" />
+      <add fromValue="152" toValue="152" />
+      <add fromValue="155" toValue="155" />
+      <add fromValue="16000" toValue="16000" />
+      <add fromValue="167" toValue="167" />
+      <add fromValue="167.5" toValue="167.5" />
+      <add fromValue="1800" toValue="1800" />
+      <add fromValue="18000" toValue="18000" />
+      <add fromValue="1845" toValue="1845" />
+      <add fromValue="187" toValue="187" />
+      <add fromValue="19" toValue="19" />
+      <add fromValue="2.5" toValue="2.5" />
+      <add fromValue="20" toValue="20" />
+      <add fromValue="200" toValue="200" />
+      <add fromValue="2000" toValue="2000" />
+      <add fromValue="207" toValue="207" />
+      <add fromValue="208" toValue="208" />
+      <add fromValue="217" toValue="217" />
+      <add fromValue="225" toValue="225" />
+      <add fromValue="232" toValue="232" />
+      <add fromValue="24000" toValue="24000" />
+      <add fromValue="249" toValue="249" />
+      <add fromValue="25" toValue="25" />
+      <add fromValue="250" toValue="250" />
+      <add fromValue="2500" toValue="2500" />
+      <add fromValue="2510" toValue="2510" />
+      <add fromValue="276" toValue="276" />
+      <add fromValue="3" toValue="3" />
+      <add fromValue="30" toValue="30" />
+      <add fromValue="300" toValue="300" />
+      <add fromValue="3000" toValue="3000" />
+      <add fromValue="309" toValue="309" />
+      <add fromValue="332" toValue="332" />
+      <add fromValue="3325" toValue="3325" />
+      <add fromValue="333" toValue="333" />
+      <add fromValue="3348" toValue="3348" />
+      <add fromValue="34" toValue="34" />
+      <add fromValue="35" toValue="35" />
+      <add fromValue="359" toValue="359" />
+      <add fromValue="36" toValue="36" />
+      <add fromValue="3600" toValue="3600" />
+      <add fromValue="37" toValue="37" />
+      <add fromValue="37.5" toValue="37.5" />
+      <add fromValue="375" toValue="375" />
+      <add fromValue="3750" toValue="3750" />
+      <add fromValue="38" toValue="38" />
+      <add fromValue="40" toValue="40" />
+      <add fromValue="400" toValue="400" />
+      <add fromValue="414" toValue="414" />
+      <add fromValue="416" toValue="416" />
+      <add fromValue="448" toValue="448" />
+      <add fromValue="45" toValue="45" />
+      <add fromValue="464" toValue="464" />
+      <add fromValue="5" toValue="5" />
+      <add fromValue="50" toValue="50" />
+      <add fromValue="500" toValue="500" />
+      <add fromValue="5000" toValue="5000" />
+      <add fromValue="5010" toValue="5010" />
+      <add fromValue="52" toValue="52" />
+      <add fromValue="60" toValue="60" />
+      <add fromValue="600" toValue="600" />
+      <add fromValue="62" toValue="62" />
+      <add fromValue="OTHR" toValue="OTHR" />
+      <add fromValue="UNSP" toValue="UNSP" />
+      <add fromValue="9999" toValue="9999" />
+      <add fromValue="90" toValue="90" />
+      <add fromValue="667" toValue="667" />
+      <add fromValue="69" toValue="69" />
+      <add fromValue="7.5" toValue="7.5" />
+      <add fromValue="72" toValue="72" />
+      <add fromValue="7200" toValue="7200" />
+      <add fromValue="75" toValue="75" />
+      <add fromValue="750" toValue="750" />
+      <add fromValue="7500" toValue="7500" />
+      <add fromValue="7515" toValue="7515" />
+      <add fromValue="76" toValue="76" />
+      <add fromValue="8888" toValue="8888" />
+    </Domain>
+    <Domain name="RatedAmps">
+      <add fromValue="0" toValue="0" />
+      <add fromValue="10" toValue="10" />
+      <add fromValue="100" toValue="100" />
+      <add fromValue="1175" toValue="1175" />
+      <add fromValue="120" toValue="120" />
+      <add fromValue="1200" toValue="1200" />
+      <add fromValue="125" toValue="125" />
+      <add fromValue="140" toValue="140" />
+      <add fromValue="15" toValue="15" />
+      <add fromValue="150" toValue="150" />
+      <add fromValue="1500" toValue="1500" />
+      <add fromValue="160" toValue="160" />
+      <add fromValue="1600" toValue="1600" />
+      <add fromValue="167" toValue="167" />
+      <add fromValue="170" toValue="170" />
+      <add fromValue="185" toValue="185" />
+      <add fromValue="1875" toValue="1875" />
+      <add fromValue="193" toValue="193" />
+      <add fromValue="20" toValue="20" />
+      <add fromValue="200" toValue="200" />
+      <add fromValue="219" toValue="219" />
+      <add fromValue="220" toValue="220" />
+      <add fromValue="224" toValue="224" />
+      <add fromValue="225" toValue="225" />
+      <add fromValue="25" toValue="25" />
+      <add fromValue="250" toValue="250" />
+      <add fromValue="280" toValue="280" />
+      <add fromValue="2825" toValue="2825" />
+      <add fromValue="2826" toValue="2826" />
+      <add fromValue="30" toValue="30" />
+      <add fromValue="300" toValue="300" />
+      <add fromValue="3000" toValue="3000" />
+      <add fromValue="33" toValue="33" />
+      <add fromValue="35" toValue="35" />
+      <add fromValue="3500" toValue="3500" />
+      <add fromValue="400" toValue="400" />
+      <add fromValue="438" toValue="438" />
+      <add fromValue="4500" toValue="4500" />
+      <add fromValue="5" toValue="5" />
+      <add fromValue="50" toValue="50" />
+      <add fromValue="500" toValue="500" />
+      <add fromValue="548" toValue="548" />
+      <add fromValue="560" toValue="560" />
+      <add fromValue="60" toValue="60" />
+      <add fromValue="600" toValue="600" />
+      <add fromValue="630" toValue="630" />
+      <add fromValue="70" toValue="70" />
+      <add fromValue="720" toValue="720" />
+      <add fromValue="800" toValue="800" />
+      <add fromValue="83" toValue="83" />
+      <add fromValue="900" toValue="900" />
+      <add fromValue="OTHER" toValue="OTHER" />
+      <add fromValue="UNSP" toValue="UNSP" />
+    </Domain>
+    <Domain name="RecloserControlType">
+    </Domain>
+    <Domain name="Recloser CT Ratio">
+      <add fromValue="5" toValue="500" />
+      <add fromValue="10" toValue="10" />
+      <add fromValue="20" toValue="2000" />
+    </Domain>
+    <Domain name="RegulatorControlType">
+    </Domain>
+    <Domain name="Secondary Voltage">
+      <add fromValue="20" toValue="12" />
+      <add fromValue="21" toValue="3" />
+      <add fromValue="22" toValue="1" />
+      <add fromValue="23" toValue="4" />
+      <add fromValue="24" toValue="2" />
+      <add fromValue="25" toValue="7" />
+      <add fromValue="26" toValue="5" />
+      <add fromValue="27" toValue="6" />
+      <add fromValue="28" toValue="8" />
+      <add fromValue="29" toValue="9" />
+      <add fromValue="30" toValue="10" />
+      <add fromValue="31" toValue="11" />
+      <add fromValue="99" toValue="99" />
+      <add fromValue="32" toValue="21" />
+      <add fromValue="33" toValue="33" />
+      <add fromValue="34" toValue="34" />
+      <add fromValue="35" toValue="20" />
+      <add fromValue="4000" toValue="4000" />
+      <add fromValue="5000" toValue="5000" />
+    </Domain>
+    <Domain name="SectionalizerControlType">
+    </Domain>
+    <Domain name="Street Light Fixture Manufacturer">
+      <add fromValue="AB" toValue="AB_CCB"/>
+      <add fromValue="AC" toValue="AC" />
+      <add fromValue="AE" toValue="AE_CCB"/>
+      <add fromValue="AI" toValue="AI"/>
+      <add fromValue="AM" toValue="AM"/>
+      <add fromValue="AP" toValue="AP"/>
+      <add fromValue="AR" toValue="AR"/>
+      <add fromValue="AT" toValue="AMETEK"/>
+      <add fromValue="AX" toValue="AE"/>
+      <add fromValue="BS" toValue="BS"/>
+      <add fromValue="CN" toValue="CN"/>
+      <add fromValue="CO" toValue="CO_CCB"/>
+      <add fromValue="DA" toValue="DA"/>
+      <add fromValue="DC" toValue="DCSI"/>
+      <add fromValue="DR" toValue="DR"/>
+      <add fromValue="DS" toValue="DS_CCB"/>
+      <add fromValue="EL" toValue="EL_CCB"/>
+      <add fromValue="EM" toValue="EM_CCB"/>
+      <add fromValue="FP" toValue="FP_CCB"/>
+      <add fromValue="GA" toValue="GA"/>
+      <add fromValue="GD" toValue="GD"/>
+      <add fromValue="GE" toValue="GE"/>
+      <add fromValue="HP" toValue="HO"/>
+      <add fromValue="HX" toValue="HX"/>
+      <add fromValue="IN" toValue="IN"/>
+      <add fromValue="IT" toValue="ITT"/>
+      <add fromValue="JS" toValue="JS"/>
+      <add fromValue="KM" toValue="KM"/>
+      <add fromValue="LG" toValue="LG"/>
+      <add fromValue="MC" toValue="MC"/>
+      <add fromValue="ME" toValue="ME"/>
+      <add fromValue="MM" toValue="MM"/>
+      <add fromValue="MR" toValue="MR"/>
+      <add fromValue="MT" toValue="MT"/>
+      <add fromValue="NA" toValue="NA"/>
+      <add fromValue="NE" toValue="NE_CCB"/>
+      <add fromValue="NN" toValue="NN"/>
+      <add fromValue="NS" toValue="NS"/>
+      <add fromValue="OB" toValue="OB_CCB"/>
+      <add fromValue="OT" toValue="OT"/>
+      <add fromValue="PR" toValue="PR"/>
+      <add fromValue="PS" toValue="PS"/>
+      <add fromValue="RB" toValue="RB"/>
+      <add fromValue="RM" toValue="RM_CCB"/>
+      <add fromValue="RO" toValue="RO_CCB"/>
+      <add fromValue="SC" toValue="SC_CCB"/>
+      <add fromValue="SP" toValue="SP"/>
+      <add fromValue="SS" toValue="SS"/>
+      <add fromValue="ST" toValue="ST_CCB"/>
+      <add fromValue="SU" toValue="SU"/>
+      <add fromValue="TD" toValue="TD"/>
+      <add fromValue="TE" toValue="TE"/>
+      <add fromValue="TO" toValue="TO"/>
+      <add fromValue="TT" toValue="TT"/>
+      <add fromValue="U" toValue="U"/>
+      <add fromValue="UK" toValue="UK"/>
+      <add fromValue="WA" toValue="WA_CCB"/>
+      <add fromValue="WH" toValue="WH"/>
+    </Domain>
+    <Domain name="Street Light Item Type">
+      <add fromValue="1" toValue="S4H-50"/>
+      <add fromValue="2" toValue="S4H-70"/>
+      <add fromValue="3" toValue="S4H-100"/>
+      <add fromValue="4" toValue="S4H-150"/>
+      <add fromValue="5" toValue="S4H-200"/>
+      <add fromValue="6" toValue="S4H-250"/>
+      <add fromValue="7" toValue="S4H-310"/>
+      <add fromValue="8" toValue="S4H-360"/>
+      <add fromValue="9" toValue="S4H-400"/>
+      <add fromValue="10" toValue="S-H-35"/>
+      <add fromValue="11" toValue="S-H-50"/>
+      <add fromValue="12" toValue="S-H-70"/>
+      <add fromValue="13" toValue="S-H-100"/>
+      <add fromValue="14" toValue="S-H-150"/>
+      <add fromValue="15" toValue="S-H-200"/>
+      <add fromValue="16" toValue="S-H-250"/>
+      <add fromValue="17" toValue="S-H-400"/>
+      <add fromValue="18" toValue="S-I-58"/>
+      <add fromValue="19" toValue="?"/>
+      <add fromValue="20" toValue="S-I-198"/>
+      <add fromValue="21" toValue="S-I-295"/>
+      <add fromValue="22" toValue="S-I-405"/>
+      <add fromValue="23" toValue="S-I-620"/>
+      <add fromValue="24" toValue="S-I-860"/>
+      <add fromValue="25" toValue="?"/>
+      <add fromValue="26" toValue="?"/>
+      <add fromValue="27" toValue="S-L-35"/>
+      <add fromValue="28" toValue="S-L-55"/>
+      <add fromValue="29" toValue="S-L-90"/>
+      <add fromValue="30" toValue="S-L-135"/>
+      <add fromValue="31" toValue="S-L-180"/>
+      <add fromValue="32" toValue="S-V-40"/>
+      <add fromValue="33" toValue="S-V-50"/>
+      <add fromValue="34" toValue="S-V-100"/>
+      <add fromValue="35" toValue="S-V-175"/>
+      <add fromValue="36" toValue="S-V-250"/>
+      <add fromValue="37" toValue="S-V-400"/>
+      <add fromValue="38" toValue="S-V-700"/>
+      <add fromValue="39" toValue="S-V-1000"/>
+      <add fromValue="40" toValue="S-M-70"/>
+      <add fromValue="41" toValue="S-M-100"/>
+      <add fromValue="42" toValue="S-M-150"/>
+      <add fromValue="43" toValue="S-M-175"/>
+      <add fromValue="44" toValue="S-M-250"/>
+      <add fromValue="45" toValue="S-M-400"/>
+      <add fromValue="46" toValue="S-M-1000"/>
+      <add fromValue="47" toValue="?"/>
+      <add fromValue="48" toValue="POLE PAINTED"/>
+      <add fromValue="49" toValue="?"/>
+      <add fromValue="200" toValue="AMI MODULE ELECTRIC"/>
+      <add fromValue="201" toValue="AMI MODULE GAS"/>
+      <add fromValue="202" toValue="CATHODIC PROTECTION"/>
+      <add fromValue="203" toValue="CABLE TV POWER SUPPLY"/>
+      <add fromValue="204" toValue=""/>
+      <add fromValue="206" toValue="ELECTRIC CURRENT TRANSFORMER"/>
+      <add fromValue="207" toValue="ELECTRIC POTENTIAL TRANSFORMER"/>
+      <add fromValue="208" toValue="GAS ELECTRIC CORRECTOR EC"/>
+      <add fromValue="209" toValue="?"/>
+      <add fromValue="210" toValue="?"/>
+      <add fromValue="211" toValue="?"/>
+      <add fromValue="50" toValue="Z DE-ENRGZD - 240VHSV - 200W - 22000L" />
+      <add fromValue="51" toValue="Z DE-ENRGZD - 240VHSV - 70W - 5800L" />
+      <add fromValue="52" toValue="Z DE-ENRGZD - HSDMVPR - 200W -22000L" />
+      <add fromValue="53" toValue="Z DE-ENRGZD - HSDMVPR - 100W - 9500L" />
+      <add fromValue="54" toValue="Z DE-ENRGZD - HSDMVPR - 150W - 16000L" />
+      <add fromValue="55" toValue="Z DE-ENRGZD - HSDMVPR - 70W - 5800L" />
+      <add fromValue="56" toValue="Z DE-ENRGZD - MCRYVPR - 175W - 7500L" />
+      <add fromValue="57" toValue="Z HALF HOUR ADJUSTMENT - HP - 35" />
+      <add fromValue="58" toValue="Z HALF HOUR ADJUSTMENT - HP - 50" />
+      <add fromValue="59" toValue="Z HALF HOUR ADJUSTMENT - HP - 70" />
+      <add fromValue="60" toValue="Z HALF HOUR ADJUSTMENT - HP - 100" />
+      <add fromValue="61" toValue="Z HALF HOUR ADJUSTMENT - HP - 150" />
+      <add fromValue="62" toValue="Z HALF HOUR ADJUSTMENT - HP - 200" />
+      <add fromValue="63" toValue="Z HALF HOUR ADJUSTMENT - HP - 250" />
+      <add fromValue="64" toValue="Z HALF HOUR ADJUSTMENT - HP - 400" />
+      <add fromValue="65" toValue="Z HALF HOUR ADJUSTMENT - INC - 58" />
+      <add fromValue="66" toValue="Z HALF HOUR ADJUSTMENT - INC - 92" />
+      <add fromValue="67" toValue="Z HALF HOUR ADJUSTMENT - INC - 189" />
+      <add fromValue="68" toValue="Z HALF HOUR ADJUSTMENT - INC - 295" />
+      <add fromValue="69" toValue="Z HALF HOUR ADJUSTMENT - INC - 405" />
+      <add fromValue="70" toValue="Z HALF HOUR ADJUSTMENT - INC - 620" />
+      <add fromValue="71" toValue="Z HALF HOUR ADJUSTMENT - INC - 860" />
+      <add fromValue="72" toValue="Z HALF HOUR ADJUSTMENT - IND - 85" />
+      <add fromValue="73" toValue="Z HALF HOUR ADJUSTMENT - LED - 42" />
+      <add fromValue="74" toValue="Z HALF HOUR ADJUSTMENT - LP - 35" />
+      <add fromValue="75" toValue="Z HALF HOUR ADJUSTMENT - LP - 55" />
+      <add fromValue="76" toValue="Z HALF HOUR ADJUSTMENT - LP - 90" />
+      <add fromValue="77" toValue="Z HALF HOUR ADJUSTMENT - LP - 135" />
+      <add fromValue="78" toValue="Z HALF HOUR ADJUSTMENT - LP - 180" />
+      <add fromValue="79" toValue="Z HALF HOUR ADJUSTMENT - MH - 70" />
+      <add fromValue="80" toValue="Z HALF HOUR ADJUSTMENT - MH - 100" />
+      <add fromValue="81" toValue="Z HALF HOUR ADJUSTMENT - MH - 1000" />
+      <add fromValue="82" toValue="Z HALF HOUR ADJUSTMENT - MH - 150" />
+      <add fromValue="83" toValue="Z HALF HOUR ADJUSTMENT - MH - 175" />
+      <add fromValue="84" toValue="Z HALF HOUR ADJUSTMENT - MH - 250" />
+      <add fromValue="85" toValue="Z HALF HOUR ADJUSTMENT - MH - 400" />
+      <add fromValue="86" toValue="Z HALF HOUR ADJUSTMENT - MV - 40" />
+      <add fromValue="87" toValue="Z HALF HOUR ADJUSTMENT - MV - 50" />
+      <add fromValue="88" toValue="Z HALF HOUR ADJUSTMENT - MV - 100" />
+      <add fromValue="89" toValue="Z HALF HOUR ADJUSTMENT - MV - 1000" />
+      <add fromValue="90" toValue="Z HALF HOUR ADJUSTMENT - MV - 175" />
+      <add fromValue="91" toValue="Z HALF HOUR ADJUSTMENT - MV - 250" />
+      <add fromValue="92" toValue="Z HALF HOUR ADJUSTMENT - MV - 400" />
+      <add fromValue="93" toValue="Z HALF HOUR ADJUSTMENT - MV - 700" />
+      <add fromValue="94" toValue="Z HALF HOUR ADJUSTMENT - S4H - 50" />
+      <add fromValue="95" toValue="Z HALF HOUR ADJUSTMENT - S4H - 70" />
+      <add fromValue="96" toValue="Z HALF HOUR ADJUSTMENT - S4H - 100" />
+      <add fromValue="97" toValue="Z HALF HOUR ADJUSTMENT - S4H - 150" />
+      <add fromValue="98" toValue="Z HALF HOUR ADJUSTMENT - S4H - 200" />
+      <add fromValue="99" toValue="Z HALF HOUR ADJUSTMENT - S4H - 250" />
+      <add fromValue="100" toValue="Z HALF HOUR ADJUSTMENT - S4H - 310" />
+      <add fromValue="101" toValue="Z HALF HOUR ADJUSTMENT - S4H - 360" />
+      <add fromValue="102" toValue="Z HALF HOUR ADJUSTMENT - S4H - 400" />
+      <add fromValue="212" toValue="GAS REGULATOR" />
+      <add fromValue="213" toValue="INDUCTION - 165W 12000L SL" />
+      <add fromValue="214" toValue="LED - 42W 837L SL" />
+      <add fromValue="215" toValue="GASLAMP" />
+      <add fromValue="216" toValue="S-LD-45" />
+      <add fromValue="217" toValue="S-LD-40" />
+      <add fromValue="218" toValue="S-LD-110" />
+      <add fromValue="219" toValue="S-LD-55" />
+      <add fromValue="220" toValue="S-LD-95" />
+    </Domain>
+    <Domain name="Street Light Lamp Type">
+      <add fromValue="FLUO" toValue="FLUORESCENT"/>
+      <add fromValue="HPS" toValue="HIGHPRESSURE"/>
+      <add fromValue="INC" toValue="INCANDESCENT"/>
+      <add fromValue="INDUC" toValue="INDUCTION"/>
+      <add fromValue="LED" toValue="LED"/>
+      <add fromValue="LPS" toValue="LOWPRESSURE"/>
+      <add fromValue="MV" toValue="MERCURYVAPOR"/>
+      <add fromValue="MH" toValue="METALHALIDE"/>
+    </Domain>
+    <Domain name="Street Light Photocell Status">
+      <add fromValue="YES" toValue="Y"/>
+      <add fromValue="NO" toValue="N"/>
+      <add fromValue="CHGCELL" toValue="Y"/>
+    </Domain>
+    <Domain name="Street Light Rate Schedule">
+      <add fromValue="ECLSD" toValue="?"/>
+      <add fromValue="ECONV" toValue="?"/>
+      <add fromValue="LS1-A" toValue="LS1-A"/>
+      <add fromValue="LS1-B" toValue="LS1-B"/>
+      <add fromValue="LS1-C" toValue="LS1-C"/>
+      <add fromValue="LS1-D" toValue="LS1-D"/>
+      <add fromValue="LS1-E" toValue="LS1-E"/>
+      <add fromValue="LS1-F" toValue="LS1-F"/>
+      <add fromValue="LS1-F1" toValue="LS1-F1"/>
+      <add fromValue="LS2-A" toValue="LS2-A"/>
+      <add fromValue="LS2-B" toValue="LS2-B"/>
+      <add fromValue="LS2-C" toValue="LS2-C"/>
+      <add fromValue="LS3" toValue="LS3"/>
+      <add fromValue="OL1" toValue="OL1"/>
+      <!--New entries-->
+      <add fromValue="1" toValue="S1"/>
+      <add fromValue="2" toValue="S2"/>
+      <add fromValue="3" toValue="S3"/>
+      <add fromValue="4" toValue="S4"/>
+      <add fromValue="5" toValue="S5"/>
+      <add fromValue="6" toValue="S6"/>
+      <add fromValue="7" toValue="S7"/>
+      <add fromValue="7A" toValue="S7A"/>
+      <add fromValue="8" toValue="S8"/>
+      <add fromValue="9" toValue="S9"/>
+      <add fromValue="11" toValue="S11"/>
+      <add fromValue="12" toValue="S12"/>
+      <add fromValue="13" toValue="S13"/>
+    </Domain>
+    <Domain name="Street Light Service Type">
+      <add fromValue="OH" toValue="N"/>
+      <add fromValue="UG" toValue="Y"/>
+    </Domain>
+    <Domain name="Street Light Status Flag">
+      <add fromValue="A" toValue="A"/>
+      <add fromValue="H" toValue="H"/>
+      <add fromValue="P" toValue="P"/>
+      <add fromValue="T" toValue="T"/>
+      <add fromValue="N" toValue="N"/>
+    </Domain>
+    <Domain name="Street Light Suspension">
+      <add fromValue="10 FT OR 12 FT" toValue="10 FT OR 12 FT"/>
+      <add fromValue="13 FT" toValue="13 FT" />
+      <add fromValue="30 INCHES" toValue="30 INCHES" />
+      <add fromValue="4 FT" toValue="4 FT" />
+      <add fromValue="6 FT" toValue="6 FT" />
+      <add fromValue="8 FT" toValue="8 FT" />
+      <add fromValue="CABLE SUSPENSION" toValue="CABLE SUSPENSION" />
+      <add fromValue="FLOODLIGHT" toValue="FLOODLIGHT" />
+      <add fromValue="OTHER" toValue="OTHER" />
+      <add fromValue="POST TOP" toValue="POST TOP" />
+      <add fromValue="SOFFIT" toValue="SOFFIT" />
+      <add fromValue="" toValue="" />
+    </Domain>
+    <Domain name="Street Light Wattage">
+      <add fromValue="35" toValue="35"/>
+      <add fromValue="40" toValue="40"/>
+      <add fromValue="42" toValue="42"/>
+      <add fromValue="50" toValue="50"/>
+      <add fromValue="55" toValue="55"/>
+      <add fromValue="58" toValue="58"/>
+      <add fromValue="70" toValue="70"/>
+      <add fromValue="85" toValue="85"/>
+      <add fromValue="90" toValue="90"/>
+      <add fromValue="92" toValue="92"/>
+      <add fromValue="100" toValue="100"/>
+      <add fromValue="135" toValue="135"/>
+      <add fromValue="150" toValue="150"/>
+      <add fromValue="175" toValue="175"/>
+      <add fromValue="180" toValue="180"/>
+      <add fromValue="189" toValue="189"/>
+      <add fromValue="200" toValue="200"/>
+      <add fromValue="250" toValue="250"/>
+      <add fromValue="295" toValue="295"/>
+      <add fromValue="310" toValue="310"/>
+      <add fromValue="360" toValue="360"/>
+      <add fromValue="400" toValue="400"/>
+      <add fromValue="405" toValue="405"/>
+      <add fromValue="620" toValue="620"/>
+      <add fromValue="700" toValue="700"/>
+      <add fromValue="860" toValue="860"/>
+      <add fromValue="1000" toValue="1000"/>
+      <add fromValue="-1" toValue="OTHER"/>
+    </Domain>
+    <Domain name="Structure Material">
+      <add fromValue="1" toValue="CONCRETE" />
+      <add fromValue="2" toValue="WOOD" />
+      <add fromValue="3" toValue="OTHR" />
+      <add fromValue="4" toValue="METAL" />
+      <add fromValue="99" toValue="UNSP" />
+    </Domain>
+    <Domain name="Subsurface Subtype">
+      <add fromValue="2" toValue="2" />
+      <add fromValue="3" toValue="VAULT" />
+      <add fromValue="4" toValue="4" />
+      <add fromValue="5" toValue="5" />
+      <add fromValue="6" toValue="6" />
+      <add fromValue="7" toValue="7" />
+    </Domain>
+    <Domain name="SwitchControlType">
+    </Domain>
+    <Domain name="Trans Unit Type Overhead">
+      <add fromValue="12" toValue="12" />
+      <add fromValue="1" toValue="01" />
+      <add fromValue="2" toValue="02" />
+      <add fromValue="28" toValue="28" />
+      <add fromValue="29" toValue="29" />
+      <add fromValue="44" toValue="44" />
+      <add fromValue="45" toValue="45" />
+      <add fromValue="34" toValue="34" />
+      <add fromValue="35" toValue="35" />
+      <add fromValue="25" toValue="25" />
+      <add fromValue="24" toValue="24" />
+      <add fromValue="3" toValue="03" />
+      <add fromValue="4" toValue="04" />
+      <add fromValue="13" toValue="13" />
+      <add fromValue="46" toValue="46" />
+      <add fromValue="47" toValue="47" />
+      <add fromValue="36" toValue="36" />
+      <add fromValue="37" toValue="37" />
+      <add fromValue="5" toValue="05" />
+      <add fromValue="6" toValue="06" />
+      <add fromValue="30" toValue="30" />
+      <add fromValue="31" toValue="31" />
+      <add fromValue="26" toValue="26" />
+      <add fromValue="27" toValue="27" />
+      <add fromValue="22" toValue="22" />
+      <add fromValue="14" toValue="14" />
+      <!--below are Subsurface?-->
+      <add fromValue="88" toValue="88" />
+      <add fromValue="77" toValue="77" />
+      <add fromValue="99" toValue="99" />
+    </Domain>
+    <Domain name="Trans Unit Type Sub Surface">
+      <add fromValue="21" toValue="21" />
+      <add fromValue="18" toValue="18" />
+      <add fromValue="19" toValue="19" />
+      <add fromValue="20" toValue="20" />
+      <add fromValue="77" toValue="77" />
+      <add fromValue="88" toValue="88" />
+      <add fromValue="99" toValue="99" />
+      <add fromValue="7" toValue="07" />
+      <add fromValue="8" toValue="08" />
+      <add fromValue="16" toValue="16" />
+      <!--below are Overhead?-->
+      <add fromValue="12" toValue="12" />
+    </Domain>
+    <Domain name="Trans Unit Type Surface">
+      <add fromValue="32" toValue="32" />
+      <add fromValue="10" toValue="10" />
+      <add fromValue="9" toValue="09" />
+      <add fromValue="11" toValue="11" />
+      <add fromValue="33" toValue="33" />
+      <add fromValue="15" toValue="15" />
+      <!--below are Overhead?-->
+      <add fromValue="12" toValue="12" />
+      <add fromValue="3" toValue="3" />
+      <!--below are Subsurface?-->
+      <add fromValue="77" toValue="77" />
+      <add fromValue="88" toValue="88" />
+      <add fromValue="99" toValue="99" />
+      <!--below are Padmount?-->
+      <add fromValue="48" toValue="48" />
+      <add fromValue="49" toValue="49" />
+      <add fromValue="50" toValue="50" />
+      <add fromValue="51" toValue="51" />
+      <add fromValue="52" toValue="52" />
+      <add fromValue="53" toValue="53" />
+      <add fromValue="54" toValue="54" />
+      <add fromValue="55" toValue="55" />
+      <add fromValue="56" toValue="56" />
+    </Domain>
+    <Domain name="Underground Switch Type">
+      <add fromValue="38" toValue="38" />
+      <add fromValue="99" toValue="99" />
+      <add fromValue="14" toValue="14" />
+      <add fromValue="44" toValue="44" />
+      <add fromValue="23" toValue="23" />
+      <add fromValue="30" toValue="30" />
+      <add fromValue="34" toValue="34" />
+      <add fromValue="33" toValue="33" />
+      <add fromValue="8" toValue="8" />
+      <add fromValue="40" toValue="40" />
+      <add fromValue="11" toValue="11" />
+      <add fromValue="4" toValue="4" />
+      <add fromValue="17" toValue="17" />
+      <add fromValue="87" toValue="87" />
+      <add fromValue="86" toValue="86" />
+      <add fromValue="24" toValue="24" />
+      <add fromValue="7" toValue="7" />
+      <add fromValue="50" toValue="NONE" />
+      <add fromValue="21" toValue="21" />
+      <add fromValue="35" toValue="35" />
+      <add fromValue="13" toValue="13" />
+      <add fromValue="12" toValue="12" />
+      <add fromValue="22" toValue="22" />
+      <add fromValue="19" toValue="19" />
+      <add fromValue="1" toValue="1" />
+      <!--SCADA Switch-->
+      <add fromValue="18" toValue="18" />
+      <!--below not used in GIS-->
+      <add fromValue="26" toValue="26" />
+    </Domain>
+    <Domain name="Volt Reg Bank Connect config">
+      <add fromValue="1" toValue="1" />
+      <add fromValue="3" toValue="3" />
+      <add fromValue="4" toValue="4" />
+      <add fromValue="6" toValue="6" />
+      <add fromValue="5" toValue="5" />
+      <add fromValue="2" toValue="2" />
+      <add fromValue="99" toValue="9999" />
+      <add fromValue="7" toValue="WG1" />
+      <add fromValue="8" toValue="WG2" />
+      <add fromValue="9" toValue="WG3" />
+    </Domain>
+    <Domain name="Wiring Configuration">
+      <add fromValue="1" toValue="a" />
+      <add fromValue="2" toValue="b" />
+    </Domain>
+    <Domain name="Yes No Indicator">
+      <add fromValue="N" toValue="N" />
+      <add fromValue="Y" toValue="Y" />
+    </Domain>
+    <Domain name="Yes/No Number">
+      <add fromValue="N" toValue="0" />
+      <add fromValue="Y" toValue="1" />
+    </Domain>
+    <Domain name="Yes Default No">
+      <add fromValue="Y" toValue="Y" />
+      <add fromValue="{default}" toValue="N" />
+      <add fromValue="{null}" toValue="N" />
+    </Domain>
+    <Domain name="YesNoUnspecified">
+      <add fromValue="N" toValue="N" />
+      <add fromValue="UNSP" toValue="UNSP" />
+      <add fromValue="Y" toValue="Y" />
+    </Domain>
+    <Domain name="Zip">
+      <add fromValue="1" toValue="93117" />
+      <add fromValue="2" toValue="93203" />
+      <add fromValue="3" toValue="93204" />
+      <add fromValue="4" toValue="93206" />
+    </Domain>
+    <!-- TFS Bug 9357 -->
+    <Domain name="Fault Indicator Voltage">
+      <add fromValue="0" toValue="0.48" />
+      <add fromValue="1" toValue="2.4" />
+      <add fromValue="2" toValue="4.16" />
+      <add fromValue="3" toValue="4.8" />
+      <add fromValue="4" toValue="7.2" />
+      <add fromValue="5" toValue="12.0" />
+      <add fromValue="6" toValue="17.2" />
+      <add fromValue="7" toValue="22" />
+      <add fromValue="8" toValue="21" />
+      <add fromValue="9" toValue="44.0" />
+      <add fromValue="65" toValue="19.9" />
+      <add fromValue="85" toValue="34.5" />
+    </Domain>
+</DomainMappings>

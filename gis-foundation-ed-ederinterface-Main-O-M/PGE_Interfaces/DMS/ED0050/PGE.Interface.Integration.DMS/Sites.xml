@@ -1,0 +1,95 @@
+﻿<SITES>
+  <add name="Subsurface Transformer" subtype="2" devicetype="1" height="16" width="16" />
+  <add name="Subsurface Single-Phase Banked for Open Delta/Delta WYE Operations" subtype="2" devicetype="2" height="20" width="40" /><!--19.5?-->
+  <add name="Subsurface Duplex Transformers" subtype="2" devicetype="3" height="24" width="24" />
+  <add name="Subsurface Transformer with Internal Switch" subtype="2" devicetype="4" height="16" width="16" />
+  <add name="Subsurface Transformer with Two Internal Switches" subtype="2" devicetype="5" height="16" width="16" /> <!--24?-->-->
+  <add name="Subsurface Duplex Transformer with Internal Switch" subtype="2" devicetype="6" height="24" width="24" />
+  <add name="Subsurface Fused Switch" subtype="2" devicetype="7" height="24" width="24" />
+  <add name="Subsurface Fused Switch Dual Well" subtype="2" devicetype="8" height="24" width="24" />
+  <add name="Subsurface Cutouts" subtype="2" devicetype="9" height="16" width="16" />
+  <add name="Subsurface Switch, Two Way, One Way Switched" subtype="2" devicetype="10" height="24" width="24" />
+  <add name="Subsurface Switch, Two way, One Way Switched (Supervisory Controlled)" subtype="2" devicetype="11" height="24" width="24" />
+  <add name="Subsurface Switch, Three way, Two Ways Switched" subtype="2" devicetype="12" height="24" width="24" />
+  <add name="Subsurface Switch, Three Way, Three Ways Switched" subtype="2" devicetype="13" height="24" width="24" />
+  <add name="Subsurface Switch, Three Way, Three Ways Switched (Two Switches Supervisory Controlled Only)" subtype="2" devicetype="14" height="24" width="24" />
+  <add name="Subsurface Smart Switch" subtype="2" devicetype="15" height="24" width="24" />
+  <add name="Subsurface Switch-Interrupter-Switch, 3-Way, 3-Ways Switched" subtype="2" devicetype="16" height="24" width="24" />
+  <add name="Subsurface Interrupter" subtype="2" devicetype="17" height="24" width="24" />
+  <add name="Subsurface Interrupter (Supervisory Controlled)" subtype="2" devicetype="18" height="24" width="24" />
+  <add name="Subsurface Sectionalizer" subtype="2" devicetype="19" height="24" width="24" />
+  <add name="Vault Mounted Switch - 2-Way, 1-Way Switched" subtype="2" devicetype="20" height="16" width="32" />
+  <add name="Vault Mounted Switch - 3-Way, 2-Way Switched" subtype="2" devicetype="21" height="16" width="32" />
+  <add name="Vault Mounted Switch - 3-Way, 3-Way Switched" subtype="2" devicetype="22" height="16" width="32" />
+  <add name="Vault Mounted Interrupter - 2-Way, 1-Way Switched" subtype="2" devicetype="23" height="16" width="32" />
+  <add name="Vault Mounted Switch-Interrupter-Switch, 3-Way, 3-Way Switched" subtype="2" devicetype="24" height="16" width="32" />
+  <add name="Subway Transformer in MH" subtype="2" devicetype="25" height="24" width="24" />
+  <add name="TGRAL" subtype="2" devicetype="26" height="24" width="24" />
+  <add name="TGRAM (Three Way)" subtype="2" devicetype="27" height="24" width="24" />
+  <add name="TGRAM (Four Way)" subtype="2" devicetype="28" height="32" width="24" /><!-- 24x32?-->
+  <add name="JBox - Subsurface" subtype="2" devicetype="29" height="10" width="10" />
+  <add name="Misc #1C - 16'" subtype="2" devicetype="30" height="16" width="16" />
+  <add name="Misc #2C - 24'" subtype="2" devicetype="31" height="24" width="24" />
+  <add name="Misc #12C - 2 - 16 X 16" subtype="2" devicetype="32" height="16" width="16" />
+
+  <add name="PMH 3" subtype="3" devicetype="1" height="16" width="16" />
+  <add name="PMH 4 w/1 fuse" subtype="3" devicetype="2" height="16" width="16" />
+  <add name="PMH 4 w/2 fuses" subtype="3" devicetype="3" height="16" width="32" />
+  <add name="PMH 4 w/3 fuses" subtype="3" devicetype="4" height="16" width="40" />
+  <add name="PMH 5" subtype="3" devicetype="5" height="16" width="24" />
+  <add name="PMH 6 w/(1) Hot Leg" subtype="3" devicetype="6" height="24" width="32" />
+  <add name="PMH 9 w/(2) Hot Legs" subtype="3" devicetype="7" height="24" width="40" />
+  <add name="PMH 11 w/(1) Hot Leg" subtype="3" devicetype="8" height="24" width="40" />
+  <add name="PMH 11 w/(3) single phase Leg" subtype="3" devicetype="9" height="24" width="60" />
+  <add name="PMH 6 w/(3) 1-phase Leg" subtype="3" devicetype="10" height="24" width="50" />
+  <add name="PMH 9 w/(6)1-phase Leg" subtype="3" devicetype="11" height="24" width="80" />
+  <add name="PMH 9 w/ (3) 1-phase &amp; (1) 3-phase Leg" subtype="3" devicetype="12" height="24" width="60" />
+  <add name="PMH 41,42,43 Single Bypass" subtype="3" devicetype="13" height="24" width="24" />
+  <add name="PMH 42 Double Bypass" subtype="3" devicetype="14" height="24" width="40" />
+  <add name="PMH 43 Triple Bypass" subtype="3" devicetype="15" height="24" width="60" /> 
+  <add name="Padmounted Transformer" subtype="3" devicetype="16" height="16" width="16" />
+  <add name="Padmounted Transformer with Load Break Elbows" subtype="3" devicetype="17" height="16" width="16" />
+  <add name="Padmounted Duplex Transformer" subtype="3" devicetype="18" height="16" width="32" />
+  <add name="Padmounted Transformer with Internal Switch" subtype="3" devicetype="19" height="16" width="16" />
+  <add name="Padmounted Transformer w/ Two Internal Switches" subtype="3" devicetype="20" height="16" width="16" />
+  <add name="Padmounted Auto Transformer 20780 GRD Y/21,00-12,000 GRD Y/6900" subtype="3" devicetype="21" height="16" width="16" />
+  <add name="Padmounted Transformer Auto-Bank with Two Reclosers" subtype="3" devicetype="22" height="16" width="16" />
+  <add name="Padmounted 3-phase, 12KV or 21KV to 4KV Transformer and Recloser" subtype="3" devicetype="23" height="16" width="16" />
+  <add name="Padmounted Capacitor" subtype="3" devicetype="24" height="24" width="24" />
+  <add name="Padmounted Capacitor (Supervisory Controlled)" subtype="3" devicetype="25" height="16" width="16" />
+  <add name="Padmounted Regulator" subtype="3" devicetype="26" height="16" width="16" />
+  <add name="Padmounted Regulator Bypass Switch" subtype="3" devicetype="27" height="16" width="32" /><!--32 Guess-->
+  <add name="Padmounted Oil Switch" subtype="3" devicetype="28" height="16" width="16" />
+  <add name="Padmounted Oil Switch (Supervisory Controlled)" subtype="3" devicetype="29" height="16" width="16" />
+  <add name="Padmounted Interrupter" subtype="3" devicetype="30" height="16" width="16" />
+  <add name="Padmounted Interrupter (Supervisory Controlled)" subtype="3" devicetype="31" height="16" width="16" />
+  <add name="Padmounted Transformer with Internal Interrupter" subtype="3" devicetype="32" height="16" width="16" />
+  <add name="Padmounted Transformer with Internal Interrupter and Two Switches" subtype="3" devicetype="33" height="16" width="16" />
+  <add name="Padmounted Automatic Circuit Recloser (Supervisory Controlled)" subtype="3" devicetype="34" height="16" width="16" />
+  <add name="Padmounted Sectionalizer" subtype="3" devicetype="35" height="16" width="16" />
+  <add name="JBox - Padmount" subtype="3" devicetype="36" height="16" width="16" />
+  <add name="Misc #1 - 16' X 16'" subtype="3" devicetype="37" height="16" width="16" />
+  <add name="Misc #2 - 16' X 32'" subtype="3" devicetype="38" height="16" width="32" />
+  <add name="Misc #3 - 16' X 40'" subtype="3" devicetype="39" height="16" width="40" />
+  <add name="Misc #4 - 16' X 24'" subtype="3" devicetype="40" height="16" width="24" />
+  <add name="Misc #5 - 24' X 32'" subtype="3" devicetype="41" height="24" width="32" />
+  <add name="Misc #6 - 24' X 40'" subtype="3" devicetype="42" height="24" width="40" />
+  <add name="Misc #7 - 24' X 60'" subtype="3" devicetype="43" height="24" width="60" />
+  <add name="Misc #8 - 24' X 50'" subtype="3" devicetype="44" height="24" width="50" />
+  <add name="Misc #9 - 24' X 80'" subtype="3" devicetype="45" height="24" width="80" />
+  <add name="Misc #10 - 24' X 56'" subtype="3" devicetype="46" height="24" width="56" />
+  <add name="Misc #11 - 24' X 24'" subtype="3" devicetype="47" height="24" width="24" />
+
+  <!--<add name="xxx" subtype="0" devicetype="0" height="0" width="0" />
+  <add name="xxx" subtype="0" devicetype="0" height="0" width="0" />
+  <add name="xxx" subtype="0" devicetype="0" height="0" width="0" />
+  <add name="xxx" subtype="0" devicetype="0" height="0" width="0" />
+  <add name="xxx" subtype="0" devicetype="0" height="0" width="0" />
+  <add name="xxx" subtype="0" devicetype="0" height="0" width="0" />
+  <add name="xxx" subtype="0" devicetype="0" height="0" width="0" />
+  <add name="xxx" subtype="0" devicetype="0" height="0" width="0" />
+  <add name="xxx" subtype="0" devicetype="0" height="0" width="0" />
+  <add name="xxx" subtype="0" devicetype="0" height="0" width="0" />
+  <add name="xxx" subtype="0" devicetype="0" height="0" width="0" />
+  <add name="xxx" subtype="0" devicetype="0" height="0" width="0" />-->
+</SITES>

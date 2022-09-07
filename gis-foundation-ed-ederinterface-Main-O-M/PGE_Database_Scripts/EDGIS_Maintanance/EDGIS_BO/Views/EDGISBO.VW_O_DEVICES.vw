@@ -1,0 +1,48 @@
+Prompt drop View VW_O_DEVICES;
+DROP VIEW EDGISBO.VW_O_DEVICES
+/
+
+/* Formatted on 6/27/2019 02:52:08 PM (QP5 v5.313) */
+PROMPT View VW_O_DEVICES;
+--
+-- VW_O_DEVICES  (View)
+--
+
+CREATE OR REPLACE FORCE VIEW EDGISBO.VW_O_DEVICES
+(
+    OP#,
+    DIVISION,
+    DEVICEID,
+    CIRCUITID,
+    CIRCUITID2,
+    DEVICETYPE,
+    CGC12,
+    STATUS
+)
+AS
+    (  SELECT MAX (OPERATINGNUMBER)
+                  AS OP#,
+              MAX (DIVISION)
+                  AS DIVISION,
+              LISTAGG (TRIM (CAST (CEDSADEVICEID AS VARCHAR2 (100))), ';')
+                  WITHIN GROUP (ORDER BY OPERATINGNUMBER)
+                  AS DEVICEID,
+              LISTAGG (TRIM (CAST (CIRCUITID AS VARCHAR2 (100))), ';')
+                  WITHIN GROUP (ORDER BY OPERATINGNUMBER)
+                  AS CIRCUITID,
+              LISTAGG (TRIM (CAST (CIRCUITID2 AS VARCHAR2 (100))), ';')
+                  WITHIN GROUP (ORDER BY OPERATINGNUMBER)
+                  AS CIRCUITID2,
+              LISTAGG (TRIM (CAST (DEVICETYPE AS VARCHAR2 (100))), ';')
+                  WITHIN GROUP (ORDER BY OPERATINGNUMBER)
+                  AS DEVICETYPE,
+              LISTAGG (TRIM (CAST (CGC12 AS VARCHAR2 (100))), ';')
+                  WITHIN GROUP (ORDER BY OPERATINGNUMBER)
+                  AS CGC12,
+              LISTAGG (TRIM (CAST (STATUS AS VARCHAR2 (100))), ';')
+                  WITHIN GROUP (ORDER BY OPERATINGNUMBER)
+                  AS STATUS
+         FROM EDGISBO.vw_devices
+        WHERE OPERATINGNUMBER IS NOT NULL
+     GROUP BY OPERATINGNUMBER, DIVISION)
+/

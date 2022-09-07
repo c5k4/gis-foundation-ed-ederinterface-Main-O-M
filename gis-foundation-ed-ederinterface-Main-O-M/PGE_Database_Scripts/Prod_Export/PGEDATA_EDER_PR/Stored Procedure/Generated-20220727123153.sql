@@ -1,0 +1,41 @@
+--------------------------------------------------------
+--  File created - Wednesday-July-27-2022   
+--------------------------------------------------------
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCBTOGIS_CHECKSTATUS.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCBTOGIS_GIS_DELETES.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCBTOGIS_GIS_INSERTS.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCBTOGIS_GIS_REPLACEMENTS.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCBTOGIS_GIS_UPDATES.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCBTOGIS_GIS_UPDATES_ORGL_1121.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCBTOGIS_INITIALIZE_FILTERS.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCBTOGIS_RETURN_GISVALUES.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCBTOGIS_SP_ACTION_DELETES.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCBTOGIS_SP_ACTION_INSERTS.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCBTOGIS_SP_ACTION_NO_ACTION.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCBTOGIS_SP_ACTION_REPLACE.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCBTOGIS_SP_ACTION_REPLACE522.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCBTOGIS_SP_ACTION_UPDATES.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCBTOGIS_UPDATECWOT.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCB_GEN_NOSP_GWOC_INSERT.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCB_GWOC_FROM_STG_INSERT.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\CCB_GWOC_INSERT.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\DELETE_PROCESSED_DATA.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\ED008_PREPARETEMPTABLES.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\EDER_TO_SAP_STATUS_INSERT.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\EDER_TO_SAP_STATUS_INSERT_BKP.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\EDER_TO_SAP_UNIQUE_RCRD.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\FLDCMP.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\GENERATE_CD_TABLES.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\GENERATE_EXT_CCB_METER_LOAD.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\GENERATE_EXT_CCB_METER_LOAD_1.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\GEN_EXT_CCB_METER_LOAD_TEMP.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\INITIALIZE_ROBC.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\PGE_GWOC_UPDATE_GENERATION.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\PGE_INSERT_IN_STAGE_ARCHIVE.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\PGE_UPDT_STATUS_STG2_2_STG1_SP.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\RESET_SEQ.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\UNIQUE_SLCDX.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\UNIQUE_SLCDX_GISID.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\UPDATESAPEQUIPID_ED006TABLE.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\UPDATE_STL_CCB.sql
+@C:\Github\gis-foundation-ed-ederinterface\PGE_Database_Scripts\Prod_Export\PGEDATA_EDER_PR\Stored Procedure\UPDATE_STL_CCB_GISID.sql

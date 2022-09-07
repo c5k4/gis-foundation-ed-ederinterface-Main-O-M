@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:cim="cimBase2" xmlns:mdimsg="mdimsgMay2005" xmlns:m="Design" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="Design" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="mdiMessage.xsd" namespace="mdimsgMay2005" />
+  <xs:import schemaLocation="cimBase2.xsd" namespace="cimBase2" />
+  <xs:annotation>
+    <xs:documentation>Automatically generated using MDI Workbench from Xtensible Solutions (12/7/2005 12:04:13 PM Eastern Standard Time). [Source File : MDI Model v1.15.mdl]</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Design">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MessageHeader" type="mdimsg:MessageHeader" />
+        <xs:element name="MessagePayload">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="1" maxOccurs="unbounded" name="Design">
+                <xs:complexType>
+                  <xs:complexContent mixed="false">
+                    <xs:extension base="cim:Design">
+                      <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="DesignLocation">
+                          <xs:complexType>
+                            <xs:complexContent mixed="false">
+                              <xs:extension base="cim:DesignLocation">
+                                <xs:sequence>
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="MiscCostItem" type="cim:MiscCostItem" />
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="DesignLocationCU">
+                                    <xs:complexType>
+                                      <xs:complexContent mixed="false">
+                                        <xs:extension base="cim:DesignLocationCU">
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionFactor" type="cim:ConditionFactor" />
+                                          </xs:sequence>
+                                        </xs:extension>
+                                      </xs:complexContent>
+                                    </xs:complexType>
+                                  </xs:element>
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionFactor" type="cim:ConditionFactor" />
+                                </xs:sequence>
+                              </xs:extension>
+                            </xs:complexContent>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ConditionFactor" type="cim:ConditionFactor" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Request">
+                          <xs:complexType>
+                            <xs:complexContent mixed="false">
+                              <xs:extension base="cim:Request">
+                                <xs:sequence>
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" type="cim:Customer" />
+                                </xs:sequence>
+                              </xs:extension>
+                            </xs:complexContent>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="ActivityRecord" type="cim:ActivityRecord" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Organisation">
+                          <xs:complexType>
+                            <xs:complexContent mixed="false">
+                              <xs:extension base="cim:Organisation">
+                                <xs:sequence>
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Organisation.DesignRole" type="cim:DocOrgRole" />
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="ErpPerson">
+                                    <xs:complexType>
+                                      <xs:complexContent mixed="false">
+                                        <xs:extension base="cim:ErpPerson">
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="Organisation.ErpPersonRole" type="cim:OrgErpPersonRole" />
+                                          </xs:sequence>
+                                        </xs:extension>
+                                      </xs:complexContent>
+                                    </xs:complexType>
+                                  </xs:element>
+                                </xs:sequence>
+                              </xs:extension>
+                            </xs:complexContent>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:extension>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

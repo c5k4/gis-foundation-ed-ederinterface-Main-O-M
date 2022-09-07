@@ -1,0 +1,11 @@
+--  2/17/2016 4:05:49 PM  ----
+System.UnauthorizedAccessException: Access to the path '\\ecmqa01-nas\ecmstage01\IntegrationIntake\ELDS\PG&E Internal\1_2016_02_17_16_05_20.xps' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at System.Web.HttpPostedFile.SaveAs(String filename)
+   at System.Web.HttpPostedFileWrapper.SaveAs(String filename)
+   at SettingsApp.Common.Documentum.saveFile(HttpPostedFileBase file, String& fileName) in C:\Shashwat\EDGIS\Code\ElectricDistCollection\EDAMGIS\Source_Development\Integrations\SettingsAPP\SettingsApp\Common\Documentum.cs:line 106
+   at SettingsApp.Common.Documentum.CreateDocument(String globalID, String deviceType, String operatingNum, String district, String division, String docType, HttpPostedFileBase file) in C:\Shashwat\EDGIS\Code\ElectricDistCollection\EDAMGIS\Source_Development\Integrations\SettingsAPP\SettingsApp\Common\Documentum.cs:line 31
+   at SettingsApp.Controllers.SwitchController.uploadFile(HttpPostedFileBase file, String globalID, String docType, String& error) in C:\Shashwat\EDGIS\Code\ElectricDistCollection\EDAMGIS\Source_Development\Integrations\SettingsAPP\SettingsApp\Controllers\SwitchController.cs:line 382

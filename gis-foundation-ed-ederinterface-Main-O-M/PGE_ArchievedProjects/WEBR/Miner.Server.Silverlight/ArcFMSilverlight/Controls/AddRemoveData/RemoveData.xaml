@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="ArcFMSilverlight.RemoveDataControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Left"  Height="80" Width="275">
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Select Layer/Service" VerticalAlignment="Bottom" Margin="10,0,0,5"/>
+        <ComboBox Name="cboLayerList" MinWidth="255" HorizontalAlignment="Left" Margin="10,0,10,5" SelectionChanged="cboLayerList_SelectionChanged" ></ComboBox>
+       
+        <Button x:Name="RemoveLayerBtn" HorizontalAlignment="Right" Width="60" Content="Remove" Margin="10,5,10,5" Click="RemoveLayerBtn_Click"></Button>
+    </StackPanel>
+</UserControl>

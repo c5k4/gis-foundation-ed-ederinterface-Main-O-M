@@ -1,0 +1,69 @@
+﻿<!--PLC Changes  RK 07/21/2017 Added xmlns:sdk and Closed event-->
+    <controls:ChildWindow x:Class="ArcFMSilverlight.WIPAttributeEditor"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:esri="clr-namespace:ESRI.ArcGIS.Client.Toolkit;assembly=ESRI.ArcGIS.Client.Toolkit"
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"          
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+           Title="WIP Attribute Editor"
+           Width="400"
+           MaxHeight="500"
+                        Closed="WipChildWindow_Closed"
+                      HasCloseButton="False">
+    <!-- PLC Changes Ends-->
+    <!--PLC Changes  RK 07/21/2017 set margin 0-->
+    <Grid x:Name="LayoutRoot" Margin="0">
+        <!-- PLC Changes Ends-->
+        <Grid.RowDefinitions>
+            <!--PLC Changes  RK 07/21/2017-->
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <!-- PLC Changes Ends-->
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- PLC Changes  RK 07/21/2017-->
+        <esri:FeatureDataForm Grid.Row="1" x:Name="WIPAttributeEditorForm"
+										  IsReadOnly="False"
+										  LabelPosition="Left"
+										  BorderBrush="Transparent"
+										  DateTimeFormat="d"
+                                          DeleteButtonStyle="{StaticResource WIPAttributeEditorDeleteButton}"
+                                          DeleteButtonContent="{x:Null}"
+                                          CommitButtonStyle="{StaticResource WIPAttributeEditorDeleteButton}"
+										  CommitButtonContent="{x:Null}"
+                                          Padding="0,0,0,-50"
+                                          BindingValidationError="WIPAttributeEditorForm_BindingValidationError"
+                                          />
+
+        <Button x:Name="CancelButton" Grid.Row="2" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" />
+        <Button x:Name="OKButton" Grid.Row="2" Content="Save" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,158,0"  />
+        <Button x:Name="ResetButton" Grid.Row="2" Content="Clear" Click="ResetButton_Click"  Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0"  />
+        <!-- PLC Changes Ends-->
+        <!-- PLC Changes  RK 07/21/2017-->
+        <StackPanel Grid.Row="0" Margin="0" Background="White">
+            <Grid Margin="0" Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="165" />
+                    <ColumnDefinition Width="235" />
+                </Grid.ColumnDefinitions>
+                <sdk:Label Name="lblJobNumber" Grid.Column="0" Grid.Row="0" Content="PM Order Number" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="30,0,0,0"></sdk:Label>
+                <sdk:AutoCompleteBox  Grid.Column="1" x:Name="PmorderNumberAutoCompleteTextBlock" 
+                                         Margin="0,0,42,0" Padding="0"  
+                                         Width="185" Height="30" 
+                                        HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                                        SelectionChanged="PmorderNumberAutoCompleteTextBlock_SelectionChanged"    
+                                      
+                                        IsTextCompletionEnabled="True" 
+                                        ToolTipService.ToolTip="">
+                </sdk:AutoCompleteBox>
+
+            </Grid>
+        </StackPanel>
+        <!-- PLC Changes Ends-->
+    </Grid>
+</controls:ChildWindow>

@@ -1,0 +1,110 @@
+﻿   <script type="text/javascript">
+       $(function () {
+           $("#SearchLink").click(function () {
+               var textBoxValue = $("#SettingsGlobalId").val();
+//               debugger;
+               var href = $(this).attr("href");
+               var route = href + "/" + textBoxValue;
+               var settingsType = $('#SettingsType :selected').text();
+               var layer = $('#SettingsType').val();
+               href = this.href;
+               href = href.replace('globalid', textBoxValue);
+               href = href.replace('settingsType', settingsType);
+               href = href.replace('layer', layer);
+              // href = href.replace('layerType', layerType);
+               this.href = href;
+               //$(this).attr("href", route);
+               //alert(href);
+           });
+       });
+   </script>
+@{
+    ViewBag.Title = "Home Page";
+}
+By Operating Number
+@*<ul>
+    @if (ViewBag.Equipments.ContainsKey("Sectionalizer"))
+    {
+        <li>@Html.ActionLink("Sectionalizer", "Index", "Sectionalizer", new { globalID = ViewBag.Equipments["Sectionalizer"], layerName = "Dynamic Protective Device" }, null)</li>
+    }
+    @if (ViewBag.Equipments.ContainsKey("Switch"))
+    {
+        <li>@Html.ActionLink("Switch", "Index", "Switch", new { globalID = ViewBag.Equipments["Switch"], layerName = "Switch" }, null)</li>
+    }
+    @if (ViewBag.Equipments.ContainsKey("Regulator"))
+    {
+        <li>@Html.ActionLink("Regulator", "Index", "Regulator", new { globalID = ViewBag.Equipments["Regulator"], layerName = "EDGIS.VoltageRegulatorUnit" }, null)</li>
+    }
+    @if (ViewBag.Equipments.ContainsKey("NetworkProtector"))
+    {
+        <li>@Html.ActionLink("NetworkProtector", "Index", "NetworkProtector", new { globalID = ViewBag.Equipments["NetworkProtector"], layerName = "Network Protector" }, null)</li>
+    }
+    @if (ViewBag.Equipments.ContainsKey("Interrupter"))
+    {
+        <li>@Html.ActionLink("Interrupter", "Index", "Interrupter", new { globalID = ViewBag.Equipments["Interrupter"], layerName = "Dynamic Protective Device" }, null)</li>
+    }
+    @if (ViewBag.Equipments.ContainsKey("CircuitBreaker"))
+    {
+        <li>@Html.ActionLink("CircuitBreaker", "Index", "CircuitBreaker", new { globalID = ViewBag.Equipments["CircuitBreaker"], layerName = "Interrupting Device! Circuit Switcher - InterrupterGap N" }, null)</li>
+    }
+    @if (ViewBag.Equipments.ContainsKey("Capacitor"))
+    {
+        <li>@Html.ActionLink("Capacitor", "Index", "Capacitor", new { globalID = ViewBag.Equipments["Capacitor"], layerName = "Capacitor Bank" }, null)</li>
+    }
+    @if (ViewBag.Equipments.ContainsKey("Reclosure"))
+    {
+        <li>@Html.ActionLink("Recloser", "Index", "Recloser", new { globalID = ViewBag.Equipments["Reclosure"], layerName = "Dynamic Protective Device" }, null)</li>
+    }
+</ul>
+*@
+<br /><br />
+GlobalID: @Html.TextBox("SettingsGlobalId", "{87349DDF-EDAC-48F2-B19D-AECFDA57E158}", new { style = "width:280px" }) Device: @Html.DropDownList("SettingsType", new List<SelectListItem> { new SelectListItem { Text = "Switch", Value = "Switch" }, new SelectListItem { Text = "Sectionalizer", Value = "Dynamic Protective Device" }, new SelectListItem { Text = "Interrupter", Value = "Dynamic Protective Device" }, new SelectListItem { Text = "CircuitBreaker", Value = "Interrupting Device! Circuit Switcher - InterrupterGap N" }, new SelectListItem { Text = "Capacitor", Value = "Capacitor Bank" }, new SelectListItem { Text = "Recloser", Value = "Dynamic Protective Device" } }) 
+    @Html.ActionLink("Submit", "Index", "settingsType", new { globalID = "globalid", layerName = "layer" }, new { Id="SearchLink", @class = "ui-button-text"})
+
+<br /><br />
+By Global ID
+<ul>
+
+    @*        <li>globalid: <input type="text" value="{398D2E73-5F45-42B1-AB46-9F247D0AD68C}" name="txtGlobalId" /></li> *@        
+    <li>@Html.ActionLink("Sectionalizer", "Index", "Sectionalizer", new { globalID = "{21224C3F-7D8A-4B2C-9E50-567ADB9DF8A5}", layerName = "Dynamic Protective Device" }, null)</li>
+    <li>@Html.ActionLink("Switch", "Index", "Switch", new { globalID = "{1EA002B1-68FB-430D-A960-D1491113FD55}", layerName = "Switch" }, null)</li>
+
+    <li>@Html.ActionLink("Interrupter", "Index", "Interrupter", new { globalID = "{F0C22A69-AC3C-4A95-976C-EF181187655D}", layerName = "Dynamic Protective Device" }, null)</li>
+    <li>@Html.ActionLink("CircuitBreaker", "Index", "CircuitBreaker", new { globalID = "{5F4C6C65-60D6-4E6F-9320-002195D5EF53}", layerName = "Interrupting Device! Circuit Switcher - InterrupterGap N" }, null)</li>
+    <li>@Html.ActionLink("Capacitor", "Index", "Capacitor", new { globalID = "{B0B7411B-C261-4215-80E1-3CB7194694C1}", layerName = "Capacitor Bank" }, null)</li>
+    <li>@Html.ActionLink("Recloser", "Index", "Recloser", new { globalID = "{D8C0FAD0-BA6D-4618-89D9-E1F1BD1812CF}", layerName = "Dynamic Protective Device" }, null)</li>
+
+    <li>@Html.ActionLink("Transformer", "Index", "Transformer", new { globalID = "{D8C0FAD0-BA6D-4618-89D9-E1F1BD1812CF}", layerName = "Dynamic Protective Device" }, null)</li>
+    
+     
+    <li><a href="/home/integration?globalID={97E60834-F8E0-4775-9EA4-3564D2D6EBAE}&layerName=Primary Meter">Primary Meter</a></li>
+    <li><a href="/home/integration?globalID={138AB454-815C-4B71-B579-B9FEE63EACFD}&layerName=Primary Generation">Primary Generation</a></li>
+    <li><a href="/home/integration?globalID={69621778-4F37-4210-8B20-73F9AE247D76}&layerName=Dynamic+Protective+Device">Trip Saver</a></li>
+    <!--ENOS2EDGIS-->
+    <li><a href="/home/integration?globalID={4D5C23EB-0E44-0102-E053-0AF4574D38C0}&layerName=EDGIS.GENERATIONINFO">Generation Info</a></li>
+    <br /><br /><br />
+
+    <li><a href="/Switch/Index/%7B1EA002B1-68FB-430D-A960-D1491113FD55%7D/Switch">Switch</a></li>
+   
+    <li><a href="/home/integration?globalID={9CBDC0C9-0A99-4820-9854-F24D95B39BFB}&layerName=Voltage Regulator">Regulator</a></li>
+    <li><a href="/Home/Integration?GlobalID={12E0F1B6-3AD7-4245-9F88-59C475629B2B}&layerName=Sub Voltage Regulator">Regulator (sub)</a></li>
+    <li><a href="/home/integration?globalID=%7bBCD98B02-D5F7-44AB-B5C4-CE82FDC6D60B%7d&layerName=Transformer+Bank+-+Y%2c+N%2c+Y+and+Y%2c+Y%2c+Y">Transformer Bank Regulator (sub)</a></li>
+    <li><a href="/home/integration?globalID={1573D296-C62B-40A5-91E1-09F42339B968}&layerName=Voltage Regulator">Regulator (reg, null)</a></li>
+         
+
+    <li><a href="/Home/Integration?GlobalID={2289C5D0-6ABF-4581-B51B-C4468A1F64A5}&layerName=Sub Voltage Regulator">Regulator test (sub) - bad data (6)</a></li>
+    <li><a href="/Home/Integration?GlobalID={2CAEB636-819A-43F5-BCF1-C4EB319EA0DE}&layerName=Voltage Regulator">Regulator test reg 16909</a></li>
+    <li><a href="/Home/Integration?GlobalID={4A9BBF36-0D8C-425B-9F0D-EBD8891222D15}&layerName=Voltage Regulator">Regulator test reg 16927</a></li>
+
+         
+
+    <li><a href="/Home/Integration?GlobalID={8E7AB49D-6964-41B5-8CF8-BE4ECAF50076}&layerName=SUB Station Transformer">Regulator test reg xformer bank</a></li>
+    <li><a href="/Home/Integration?GlobalID={8E7AB49D-6964-41B5-8CF8-BE4ECAF50076}&layerName=Transformer Bank - N, Y, N">Regulator test reg xformer bank comma</a></li>
+
+    <li><a href="/home/integration?globalID={543E78D7-50AF-42E8-B4A5-B6AEE01B127E}&layerName=Sub Voltage Regulator">Regulator ERROR</a></li>
+
+    <li><a href="/home/integration?globalID={129EA2F9-4180-452F-B087-1AE0683C010E}&layerName=Sub Voltage Regulator">substation + op#</a></li>
+
+    <li><a href="/home/integration?globalID={543E78D7-50AF-42E8-B4A5-B6AEE01B127E}&layerName=Sub Voltage Regulator">defect 17047</a></li>
+
+</ul>

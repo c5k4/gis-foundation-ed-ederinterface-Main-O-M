@@ -1,0 +1,217 @@
+﻿<Page x:Class="PGE.BatchApplication.ROBCApp.MultipleCircuitsROBC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+        Title="Multiple circuits for ROBC management" Background="Transparent">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderThickness="0,0,0,1" Margin="0">
+            <TextBlock Style="{StaticResource HeaderTextStyle}">Multiple circuits for ROBC management</TextBlock>
+        </Border>
+        <DockPanel Grid.Row="1">
+            <Border Style="{StaticResource NonTitleBorderStyle}" Margin="0,0,0,10">
+                <TextBlock Name="BlkInstruction" TextWrapping="Wrap"
+                       Text="There may be multiple circuits found with same feeder name. Click on &quot;Assign&quot; button to assign an ROBC for that circuit."
+                   Grid.Row="1" Margin="8" Padding="3"/>
+            </Border>
+        </DockPanel>
+
+        <!--Sorting="MultipleCircuitROBCDataGrid_Sorting"-->
+        <DataGrid Grid.Row="2" Width="700" ColumnHeaderStyle="{StaticResource DatagridColumnHeaderStyle}" Name="dataGrid"
+      AutoGenerateColumns="False" 
+      IsReadOnly="True"
+      ItemsSource="{Binding MultipleCircuitROBCList, NotifyOnTargetUpdated=True}" SelectedItem="{Binding SelectedROBC, Mode=TwoWay}"
+      
+      TargetUpdated="MultipleCircuitROBCDataGrid_TargetUpdated"
+      Loaded="MultipleCircuitROBCDataGrid_Loaded" Margin="10" 
+                  HorizontalAlignment="Left" FontFamily="Calibri" FontSize="12">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn
+          Header="Circuit Id"
+          Binding="{Binding CircuitId}"
+          Width="*"
+          SortDirection="Ascending" >
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Circuit Id" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+          Header="Feeder Name"
+          Binding="{Binding FeederName}"
+          Width="*">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Feeder Name" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+          Header="Division"
+          Binding="{Binding Division}"
+          Width="*">
+
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+          Header="SCADA"
+          Binding="{Binding IsScada}"
+          Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+          Header="Desired ROBC"
+          Binding="{Binding DesiredROBCDesc}"
+          Width="*">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Desired ROBC" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+          Header="Desired SubBlock"
+          Binding="{Binding DesiredSubBlockDesc}"
+          Width="*">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Desired SubBlock" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+          Header="Established ROBC"
+          Binding="{Binding EstablishedROBCDesc}"
+          Width="*">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Established ROBC" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+          Header="Established SubBlock"
+          Binding="{Binding EstablishedSubBlockDesc}"
+          Width="*">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Established SubBlock" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="AssignROBC" Style="{StaticResource LinkButtonStyle}" Name="BtnAssignROBC">Assign</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel
+      Margin="4"
+      Grid.Row="3"
+      Orientation="Horizontal"
+      HorizontalAlignment="Center">
+            <Button        
+        Margin="4,0"
+        Content="&lt;&lt;"
+        Command="{Binding FirstCommand}" CommandParameter="MULTIPLE_ROBC"/>
+            <Button
+        Margin="4,0"
+        Content="&lt;"
+        Command="{Binding PreviousCommand}" CommandParameter="MULTIPLE_ROBC"/>
+            <StackPanel
+        VerticalAlignment="Center"
+        Orientation="Horizontal">
+                <TextBlock
+          Text="{Binding Start}"/>
+                <TextBlock
+          Text=" to "/>
+                <TextBlock
+          Text="{Binding End}"/>
+                <TextBlock
+          Text=" of "/>
+                <TextBlock
+          Text="{Binding TotalItems}"/>
+            </StackPanel>
+            <Button
+        Margin="4,0"
+        Content="&gt;"
+        Command="{Binding NextCommand}" CommandParameter="MULTIPLE_ROBC"/>
+            <Button
+        Margin="4,0"
+        Content="&gt;&gt;"
+        Command="{Binding LastCommand}" CommandParameter="MULTIPLE_ROBC"/>
+        </StackPanel>
+
+        <Grid Grid.IsSharedSizeScope="True" Height="Auto" HorizontalAlignment="Right" Margin="0,11" 
+              Name="grid1" VerticalAlignment="Top" Grid.Row="5" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" SharedSizeGroup="buttons" />
+            </Grid.ColumnDefinitions>
+            <Button Content="Cancel" Grid.Column="0" HorizontalAlignment="Right" Name="btnCancel" Style="{StaticResource OperationButtonStyle}" Click="btnCancel_Click" />
+        </Grid>
+        <TextBlock Name="txtMessage" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" FontStyle="Italic" Margin="0,5,0,0" Text="{Binding Message}"/>
+    </Grid>
+
+</Page>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- configuration file for PGE_ADMSOpenPointLabel-->
+<configuration>
+  <!-- objectclass: table, featureclass in database
+            - attribute name = [schema].[table name]  ex: EDGIS.OPENPOINT
+            FIELD - filter criteria -->
+  <objectclass Name="EDGIS.OPENPOINT">
+    <field Name="SHAPE">SHAPE</field>
+    <field Name="OPERATINGNUMBER">OPERATINGNUMBER</field>
+    <field Name="ELECTRICTRACEWEIGHT">ELECTRICTRACEWEIGHT</field>
+    <field Name="CIRCUITID">CIRCUITID</field>
+    <field Name="CIRCUITID2">CIRCUITID2</field>
+    <field Name="STRUCTUREGUID">STRUCTUREGUID</field>
+  </objectclass>
+  <objectclass Name="EDGIS.CAPACITORBANK">
+    <field Name="SHAPE">SHAPE</field>
+    <field Name="OPERATINGNUMBER">OPERATINGNUMBER</field>
+    <field Name="ELECTRICTRACEWEIGHT">ELECTRICTRACEWEIGHT</field>
+    <field Name="CIRCUITID">CIRCUITID</field>
+    <field Name="CIRCUITID2">CIRCUITID2</field>
+    <field Name="STRUCTUREGUID">STRUCTUREGUID</field>
+  </objectclass>
+  <objectclass Name="EDGIS.DYNAMICPROTECTIVEDEVICE">
+    <field Name="SHAPE">SHAPE</field>
+    <field Name="OPERATINGNUMBER">OPERATINGNUMBER</field>
+    <field Name="ELECTRICTRACEWEIGHT">ELECTRICTRACEWEIGHT</field>
+    <field Name="CIRCUITID">CIRCUITID</field>
+    <field Name="CIRCUITID2">CIRCUITID2</field>
+    <field Name="STRUCTUREGUID">STRUCTUREGUID</field>
+  </objectclass>
+  <objectclass Name="EDGIS.FUSE">
+    <field Name="SHAPE">SHAPE</field>
+    <field Name="OPERATINGNUMBER">OPERATINGNUMBER</field>
+    <field Name="ELECTRICTRACEWEIGHT">ELECTRICTRACEWEIGHT</field>
+    <field Name="CIRCUITID">CIRCUITID</field>
+    <field Name="CIRCUITID2">CIRCUITID2</field>
+    <field Name="STRUCTUREGUID">STRUCTUREGUID</field>
+  </objectclass>
+  <objectclass Name="EDGIS.NETWORKPROTECTOR">
+    <field Name="SHAPE">SHAPE</field>
+    <field Name="OPERATINGNUMBER">OPERATINGNUMBER</field>
+    <field Name="ELECTRICTRACEWEIGHT">ELECTRICTRACEWEIGHT</field>
+    <field Name="CIRCUITID">CIRCUITID</field>
+    <field Name="CIRCUITID2">CIRCUITID2</field>
+  </objectclass>
+  <objectclass Name="EDGIS.STEPDOWN">
+    <field Name="SHAPE">SHAPE</field>
+    <field Name="OPERATINGNUMBER">OPERATINGNUMBER</field>
+    <field Name="ELECTRICTRACEWEIGHT">ELECTRICTRACEWEIGHT</field>
+    <field Name="CIRCUITID">CIRCUITID</field>
+    <field Name="CIRCUITID2">CIRCUITID2</field>
+    <field Name="STRUCTUREGUID">STRUCTUREGUID</field>
+  </objectclass>
+  <objectclass Name="EDGIS.SWITCH">
+    <field Name="SHAPE">SHAPE</field>
+    <field Name="OPERATINGNUMBER">OPERATINGNUMBER</field>
+    <field Name="ELECTRICTRACEWEIGHT">ELECTRICTRACEWEIGHT</field>
+    <field Name="CIRCUITID">CIRCUITID</field>
+    <field Name="CIRCUITID2">CIRCUITID2</field>
+  </objectclass>
+  <objectclass Name="EDGIS.TRANSFORMER">
+    <field Name="SHAPE">SHAPE</field>
+    <field Name="OPERATINGNUMBER">OPERATINGNUMBER</field>
+    <field Name="ELECTRICTRACEWEIGHT">ELECTRICTRACEWEIGHT</field>
+    <field Name="CIRCUITID">CIRCUITID</field>
+    <field Name="CIRCUITID2">CIRCUITID2</field>
+    <field Name="STRUCTUREGUID">STRUCTUREGUID</field>
+  </objectclass>
+  <objectclass Name="EDGIS.VOLTAGEREGULATOR">
+    <field Name="SHAPE">SHAPE</field>
+    <field Name="OPERATINGNUMBER">OPERATINGNUMBER</field>
+    <field Name="ELECTRICTRACEWEIGHT">ELECTRICTRACEWEIGHT</field>
+    <field Name="CIRCUITID">CIRCUITID</field>
+    <field Name="CIRCUITID2">CIRCUITID2</field>
+    <field Name="STRUCTUREGUID">STRUCTUREGUID</field>
+  </objectclass>
+  <objectclass Name="EDGIS.PRIUGCONDUCTOR">
+    <field Name="SHAPE">SHAPE</field>
+  </objectclass>
+  <objectclass Name="EDGIS.PRIOHCONDUCTOR">
+    <field Name="SHAPE">SHAPE</field>
+  </objectclass>
+  <objectclass Name="EDGIS.DISTBUSBAR">
+    <field Name="SHAPE">SHAPE</field>
+  </objectclass>
+</configuration>

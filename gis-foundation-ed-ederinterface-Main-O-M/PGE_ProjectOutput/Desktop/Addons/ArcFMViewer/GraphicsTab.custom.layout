@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<LayoutData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layoutFormat="2">
+	<MainWindow>
+		<CommandManager>
+			<Commands>
+				<Command key="DeleteSelectedGraphic" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="Miner.Process.Commands.DeleteSelectedGraphicCommand, Miner.Process, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc" />
+						<Param type="System.String" value="DeleteSelectedGraphic" />
+					</CreateData>
+				</Command>
+			</Commands>
+			<CommandBars>
+				<CommandBar key="MapTools" type="Miner.Windows.ArcGIS.CommandBars.MapToolsCommandBar, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+			        <CommandItems>
+						<CommandItem key="DeleteSelectedGraphic" locateBefore="ClearSelectionCommand" />
+					</CommandItems>
+				</CommandBar>
+			</CommandBars>
+		</CommandManager>
+		<DockManager>
+ 			<DockInserts>
+        <InsertDockControl locateBy="LocatorHarness" key="GraphicsTab" type="Miner.Process.Windows.GraphicFavoritesWindow, Miner.Process, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc" isVisible="false" />
+      </DockInserts>
+		</DockManager>
+	</MainWindow>
+</LayoutData>
+
+

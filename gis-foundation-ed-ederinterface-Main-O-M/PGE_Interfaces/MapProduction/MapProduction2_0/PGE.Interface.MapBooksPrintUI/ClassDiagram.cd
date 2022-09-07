@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.Interfaces.MapBooksPrintUI.Common" Collapsed="true">
+    <Position X="2.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAFAQEAAgAAAAAABIAAAABAAABCAA=</HashCode>
+      <FileName>Common.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.MapBooksPrintUI.MapBookPrintUI" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAwAEIEGRAAFGABADIIggCQBgAQAwmRoAARIAABBU=</HashCode>
+      <FileName>MapBookPrintUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.MapBooksPrintUI.PrinterUtil" Collapsed="true">
+    <Position X="6.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACgAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PDFMassPrinter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.MapBooksPrintUI.PDFMassPrinter" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAABAAEAAAAAACgAAIABAABAAAgAAAAAAAA=</HashCode>
+      <FileName>PDFMassPrinter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.MapBooksPrintUI.Program" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.MapBooksPrintUI.SelectPrinter" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEEAAAACAAAAkAAACAAEACAAIAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>SelectPrinter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.MapBooksPrintUI.Controls.FolderDependentComboBox" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="PGE.Interfaces.MapBooksPrintUI.Controls.FolderDependentComboBox.DropDownInitializingEventHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\FolderDependentComboBox.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAIAAAAAAAEAAAACEAAIAAAwAAAgAAQAABAAAA=</HashCode>
+      <FileName>Controls\FolderDependentComboBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.MapBooksPrintUI.Controls.MultiSelect" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAAIAACCCAAAAEAQAIAgQAwAAAAIAAAAAAAAGAAAE=</HashCode>
+      <FileName>Controls\MultiSelect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.MapBooksPrintUI.Controls.MultiSelectCheckBox" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAgAQAAAAAAAAAAAAABAAAAAIAAAAA=</HashCode>
+      <FileName>Controls\MultiSelectCheckBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.MapBooksPrintUI.Controls.PopupHelper" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAACCAAAAAAAAAAAQAAAAEAIAAAAAAAACAAAE=</HashCode>
+      <FileName>Controls\PopupHelper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interfaces.MapBooksPrintUI.Properties.Resources" Collapsed="true">
+    <Position X="4.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.MapBooksPrintUI.Properties.Settings" Collapsed="true">
+    <Position X="2.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.ComboBox" Collapsed="true">
+    <Position X="1.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

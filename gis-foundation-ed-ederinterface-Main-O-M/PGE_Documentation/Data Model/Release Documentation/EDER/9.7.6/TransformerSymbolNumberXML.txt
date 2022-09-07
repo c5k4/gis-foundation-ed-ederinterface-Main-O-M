@@ -1,0 +1,296 @@
+<?xml version="1.0"?>
+<SymbolNumberRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<FeatureClass>
+ 	
+	<Rule SymbolNumber="36">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>1</Value></Attribute>
+			<Attribute FieldName="SYMBOLSPACE"><Value>1</Value><Value></Value></Attribute>
+		</And>
+	</Rule>
+	<Rule SymbolNumber="37">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>2</Value></Attribute>
+			<Attribute FieldName="SYMBOLSPACE"><Value>1</Value><Value></Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="38">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>3</Value></Attribute>
+			<Attribute FieldName="SYMBOLSPACE"><Value>1</Value><Value></Value></Attribute>
+		</And>
+	</Rule>
+			
+	<Rule SymbolNumber="39">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>1</Value></Attribute>
+			<Attribute FieldName="SUBWAYIDC"><Value>N</Value></Attribute>			
+			<Relationship ClassName="EDGIS.Transformer_TransformerUnit">
+			  <RelatedObject>
+				  <Attribute FieldName="TRANSFORMERTYPE" Condition="false"><Value>21</Value></Attribute>
+			  </RelatedObject>
+			</Relationship>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="40">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>2</Value></Attribute>
+			<Attribute FieldName="SUBWAYIDC"><Value>N</Value></Attribute>
+			<Relationship ClassName="EDGIS.Transformer_TransformerUnit">
+			  <RelatedObject>
+				  <Attribute FieldName="TRANSFORMERTYPE" Condition="false"><Value>21</Value></Attribute>
+			  </RelatedObject>
+			</Relationship>
+		</And>
+	</Rule>	
+	
+	<Rule SymbolNumber="41">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>1</Value></Attribute>
+			<Attribute FieldName="SUBWAYIDC"><Value>N</Value></Attribute>
+			<Relationship ClassName="EDGIS.Transformer_TransformerUnit">
+			  <RelatedObject>
+				  <Attribute FieldName="TRANSFORMERTYPE"><Value>21</Value></Attribute>
+			  </RelatedObject>
+			</Relationship>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="42">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>1</Value></Attribute>
+			<Attribute FieldName="SUBWAYIDC"><Value>Y</Value></Attribute>
+			<Relationship ClassName="EDGIS.Transformer_TransformerUnit">
+			  <RelatedObject>
+				  <Attribute FieldName="TRANSFORMERTYPE" Condition="false"><Value>21</Value></Attribute>
+			  </RelatedObject>
+			</Relationship>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="43">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+			<Attribute FieldName="INTERRUPTERIDC"><Value>N</Value></Attribute>
+			<Attribute FieldName="AUTOIDC"><Value>N</Value></Attribute>
+			<Relationship ClassName="EDGIS.Transformer_TransformerUnit">
+			  <RelatedObject>
+				  <Attribute FieldName="TRANSFORMERTYPE" Condition ="false"><Value>32</Value></Attribute>
+			  </RelatedObject>
+			</Relationship>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="44">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+			<Attribute FieldName="INTERRUPTERIDC"><Value>N</Value></Attribute>
+			<Attribute FieldName="AUTOIDC"><Value>N</Value></Attribute>
+			<Relationship ClassName="EDGIS.Transformer_TransformerUnit">
+			  <RelatedObject>
+				  <Attribute FieldName="TRANSFORMERTYPE"><Value>32</Value></Attribute>
+			  </RelatedObject>
+			</Relationship>
+		</And>
+	</Rule>	
+	
+	<Rule SymbolNumber="45">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+			<Attribute FieldName="INTERRUPTERIDC"><Value>Y</Value></Attribute>
+			<Attribute FieldName="AUTOIDC"><Value>N</Value></Attribute>
+			<Relationship ClassName="EDGIS.Transformer_TransformerUnit">
+				<RelatedObject>
+					<Attribute FieldName="TRANSFORMERTYPE" Condition ="false"><Value>32</Value></Attribute>
+				</RelatedObject>
+			</Relationship>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="46">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+			<Attribute FieldName="INTERRUPTERIDC"><Value>N</Value></Attribute>
+			<Attribute FieldName="AUTOIDC"><Value>Y</Value></Attribute>
+			<Relationship ClassName="EDGIS.Transformer_TransformerUnit">
+				<RelatedObject>
+					<Attribute FieldName="TRANSFORMERTYPE" Condition ="false"><Value>32</Value></Attribute>
+			  </RelatedObject>
+			</Relationship>
+
+		</And>
+	</Rule>
+		
+	<Rule SymbolNumber="47">
+			<Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute>
+			<Attribute FieldName="SYMBOLSPACE"><Value>1</Value></Attribute>
+	</Rule>
+
+	<Rule SymbolNumber="48">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute>
+			<Attribute FieldName="LOWSIDEVOLTAGE"><Value>21</Value></Attribute>
+			<Attribute FieldName="SPOTIDC"><Value>G</Value></Attribute>
+		</And>
+	</Rule>	
+
+	<Rule SymbolNumber="49">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute>
+			<Attribute FieldName="LOWSIDEVOLTAGE"><Value>21</Value></Attribute>
+			<Attribute FieldName="SPOTIDC"><Value>S</Value></Attribute>
+		</And>
+	</Rule>	
+	
+	<Rule SymbolNumber="50">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute>
+			<Attribute FieldName="LOWSIDEVOLTAGE"><Value>26</Value></Attribute>
+			<Attribute FieldName="SPOTIDC"><Value>S</Value></Attribute>
+		</And>
+	</Rule>	
+	
+	<Rule SymbolNumber="51">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute>
+			<!-- LowSideVoltage = 265/460 not in Secondary voltage domain  -->
+			<Attribute FieldName="LOWSIDEVOLTAGE"><Value>32</Value></Attribute>
+			<Attribute FieldName="SPOTIDC"><Value>G</Value></Attribute>
+		</And>
+	</Rule>	
+	
+	<Rule SymbolNumber="52">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute>
+			<!-- LowSideVoltage = 12000/4160 not in Secondary voltage domain  -->
+			<Attribute FieldName="LOWSIDEVOLTAGE"><Value>33</Value></Attribute>
+			<!-- <Attribute FieldName="LOWSIDEVOLTAGE"><Value>21</Value></Attribute> -->
+			<Attribute FieldName="SPOTIDC"><Value>G</Value></Attribute>
+		</And>
+	</Rule>	
+	
+	<Rule SymbolNumber="53">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute>
+			<!-- LowSideVoltage = 34000/4160 not in Secondary voltage domain  -->
+			<Attribute FieldName="LOWSIDEVOLTAGE"><Value>34</Value></Attribute>
+			<Attribute FieldName="SPOTIDC"><Value>G</Value></Attribute>
+		</And>
+	</Rule>	
+	
+	<Rule SymbolNumber="54">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>7</Value></Attribute>
+			<Attribute FieldName="SYMBOLSPACE"><Value>1</Value><Value></Value></Attribute>
+		</And>
+	</Rule>	
+	<Rule SymbolNumber="55">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>8</Value></Attribute>
+		</And>
+	</Rule>	
+	
+	<Rule SymbolNumber="56">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>1</Value></Attribute>
+			<Attribute FieldName="SYMBOLSPACE"><Value>2</Value></Attribute>
+		</And>
+	</Rule>
+	<Rule SymbolNumber="57">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>2</Value></Attribute>
+			<Attribute FieldName="SYMBOLSPACE"><Value>2</Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="58">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>3</Value></Attribute>
+			<Attribute FieldName="SYMBOLSPACE"><Value>2</Value></Attribute>
+		</And>
+	</Rule>
+
+	<Rule SymbolNumber="59">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>1</Value></Attribute>
+			<Attribute FieldName="SYMBOLSPACE"><Value>3</Value></Attribute>
+		</And>
+	</Rule>
+	<Rule SymbolNumber="60">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>2</Value></Attribute>
+			<Attribute FieldName="SYMBOLSPACE"><Value>3</Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="61">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+			<Attribute FieldName="UNITCOUNT"><Value>3</Value></Attribute>
+			<Attribute FieldName="SYMBOLSPACE"><Value>3</Value></Attribute>
+		</And>
+	</Rule>
+
+	<Rule SymbolNumber="62">
+			<Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute>
+			<Attribute FieldName="SYMBOLSPACE"><Value>2</Value></Attribute>
+	</Rule>
+
+	<Rule SymbolNumber="63">
+			<Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute>
+			<Attribute FieldName="SYMBOLSPACE"><Value>3</Value></Attribute>
+	</Rule>
+	
+	<Rule SymbolNumber="64">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>7</Value></Attribute>
+			<Attribute FieldName="SYMBOLSPACE"><Value>2</Value></Attribute>
+		</And>
+	</Rule>
+	
+	<Rule SymbolNumber="65">
+		<And>
+			<Attribute FieldName="SubtypeCD"><Value>7</Value></Attribute>
+			<Attribute FieldName="SYMBOLSPACE"><Value>3</Value></Attribute>
+		</And>
+	</Rule>
+
+  <Rule SymbolNumber="66">
+    <And>
+      <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+      <Attribute FieldName="UNITCOUNT"><Value>3</Value></Attribute>
+      <Attribute FieldName="SYMBOLSPACE"><Value>1</Value>
+      </Attribute>
+    </And>
+  </Rule>
+
+  <Rule SymbolNumber="67">
+    <And>
+      <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+      <Attribute FieldName="INTERRUPTERIDC"><Value>N</Value></Attribute>
+      <Attribute FieldName="AUTOIDC"><Value>N</Value></Attribute>
+      <Relationship ClassName="EDGIS.Transformer_TransformerUnit">
+        <RelatedObject>
+          <Attribute FieldName="TRANSFORMERTYPE"><Value>32</Value></Attribute>
+        </RelatedObject>
+      </Relationship>
+    </And>
+  </Rule>
+
+</FeatureClass>
+  
+</SymbolNumberRules>

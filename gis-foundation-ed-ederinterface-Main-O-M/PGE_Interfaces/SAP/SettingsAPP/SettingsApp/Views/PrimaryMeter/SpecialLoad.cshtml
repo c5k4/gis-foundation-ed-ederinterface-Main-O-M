@@ -1,0 +1,16 @@
+﻿@model SettingsApp.Models.SpecialLoadModel
+<style type="text/css">
+    td.print-for-trf
+    {
+        display: none;
+    }
+</style>
+@using (Html.BeginForm("SpecialLoad", "PrimaryMeter"))
+{
+    @Html.ValidationSummary(true)
+    @Html.Partial("~/Views/Shared/_SpecialLoadPartial.cshtml")
+         
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

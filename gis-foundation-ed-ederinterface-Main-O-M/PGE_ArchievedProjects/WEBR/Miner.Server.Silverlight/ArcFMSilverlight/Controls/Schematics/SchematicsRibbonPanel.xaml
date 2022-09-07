@@ -1,0 +1,130 @@
+﻿<UserControl x:Class="ArcFMSilverlight.SchematicsRibbonPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    xmlns:local="clr-namespace:ArcFMSilverlight" 
+    xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <StackPanel Orientation="Horizontal" Margin="-5 0 -5 -5">
+
+            <local:RibbonPanel Title="Filter">
+                <!--<controlsToolkit:WrapPanel MaxWidth="120" Orientation="Horizontal">-->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0"
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+
+                        <RadioButton x:Name="SchemClearFilterButton"
+                                Margin="1"
+                                IsChecked="True"
+                                Click="SchemClearFilterButton_OnClick"
+                                Padding="1"
+                                Style="{StaticResource RibbonRadioButton}">
+                            <Image Width="16"
+                                    Height="16"
+                                    Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/Clear.png"
+                                    ToolTipService.ToolTip="Clear Selection" />
+                        </RadioButton>
+
+                            
+                    <RadioButton x:Name="SchemCircuitFilterButton"
+							Command="{Binding DeleteSelected}"
+							HorizontalContentAlignment="Left"
+							Style="{StaticResource RibbonRadioButton}"
+							ToolTipService.ToolTip="Filter by Circuit"
+                            Click="SchemCircuitFilterButton_OnClick"
+                                 >
+                        <Image Margin="2 0"
+							Source="/Images/schem_filter_circuit.png"
+							Stretch="None" />
+                    </RadioButton>
+                        <Popup IsOpen="False" x:Name="PART_SchemCircuitPopup">
+                            <sdk:AutoCompleteBox x:Name="PART_SchematicsAutoCompleteTextBlock" 
+                                         Margin="0" Padding="1"  
+                                         Width="180" Height="30" 
+                                        HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                        SelectionChanged="PART_SchematicsAutoCompleteTextBlock_OnSelectionChanged"         
+                                        KeyDown="PART_SchematicsAutoCompleteTextBlock_OnKeyDown"  
+                                        IsTextCompletionEnabled="False" Populating="PART_SchematicsAutoCompleteTextBlock_OnPopulating"
+                                        ToolTipService.ToolTip="Enter Feeder Name to filter on. You will see only equipment on that Circuit.">
+                            </sdk:AutoCompleteBox>
+
+                        </Popup>
+
+                        <RadioButton x:Name="SchemVoltageFilterButton"
+							Command="{Binding EditVertices}"
+							HorizontalContentAlignment="Left"
+							Style="{StaticResource RibbonRadioButton}"
+							ToolTipService.ToolTip="Filter by Voltage"
+                            Click="SchemVoltageFilterButton_OnClick"  >
+                        <Image Margin="2 0"
+							Source="/Images/schem_filter_voltage.png"
+							Stretch="None" />
+                    </RadioButton>
+                        <Popup IsOpen="False" x:Name="PART_SchemVoltagePopup">
+                            <ComboBox x:Name="PART_SchemVoltageDropDown"
+                                Margin="0" Padding="1" 
+                                Width="130" Height="30"
+                                SelectionChanged="PART_SchemVoltageDropDown_OnSelectionChanged"
+                                DisplayMemberPath="Value"
+                                SelectedValuePath="Key"   
+                                HorizontalAlignment="Left" VerticalAlignment="Top"
+                                ToolTipService.ToolTip="Select Voltage to Filter on"                                
+                            />
+
+                        </Popup>
+
+                        <RadioButton x:Name="SchemFeederTypeFilterButton"
+							Command="{Binding EditVertices}"
+							HorizontalContentAlignment="Left"
+							Style="{StaticResource RibbonRadioButton}"
+							ToolTipService.ToolTip="Filter by Feeder Type"
+                            Click="SchemFeederTypeFilterButton_OnClick"  >
+                            <Image Margin="2 0" Width="16" Height="16"
+							Source="/Images/schem_filter_feeder_type.png"
+							Stretch="None" />
+                        </RadioButton>
+                        <Popup IsOpen="False" x:Name="PART_SchemFeederTypePopup">
+                            <ComboBox x:Name="PART_SchemFeederTypeDropDown"
+                                Margin="0" Padding="1" 
+                                Width="130" Height="30"
+                                SelectionChanged="PART_SchemFeederTypeDropDown_OnSelectionChanged"
+                                DisplayMemberPath="Value"
+                                SelectedValuePath="Key"   
+                                HorizontalAlignment="Left" VerticalAlignment="Top"
+                                ToolTipService.ToolTip="Select Feeder Type to Filter on"                                
+                            />
+
+                        </Popup>
+
+                    </StackPanel>
+                        
+                    <TextBlock x:Name="SchemFilterTextBlock"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Text="No Filter"
+                            Foreground="Gray"
+                            Margin="0 3 0 0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+
+                </Grid>
+            </local:RibbonPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

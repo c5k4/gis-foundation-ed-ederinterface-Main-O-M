@@ -1,0 +1,8 @@
+﻿var config = {
+    "Layers": [          
+            {"MapServiceName": "CommonLandbase", "Url": "http://lbgisappqa01:6080/arcgis/rest/services/EDGIS/CommonLandbase/MapServer", "Visible": "True", "Type": "ArcGISDynamicMapServiceLayer" },
+            { "MapServiceName": "Electric Distribution", "Url": "http://edgisapppqa02:6080/arcgis/rest/services/data/ElectricDistribution/MapServer", "Visible": "True", "Type": "ArcGISDynamicMapServiceLayer", "VisibleLayerIds": [3, 4, 5, 7, 8, 10, 11, 12, 13, 14, 15, 16, 18, 21, 22, 23, 24, 26, 27, 28, 31, 32, 33, 34, 35, 37, 40, 41, 42, 44, 47, 48, 49, 51, 52, 54, 55, 56, 57, 58, 60, 61, 64, 65, 66, 67, 69, 70, 72, 73, 74, 75, 76, 78, 80, 81, 83, 84, 85, 86, 87, 88, 90, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 113, 114, 115, 116, 117, 118, 119, 120, 123, 124, 125, 126, 127, 128, 129, 130, 144, 145, 146, 149, 150, 151, 153, 155, 156, 157, 158, 159, 160, 163, 164, 166, 169, 170, 171, 176, 179, 180, 181, 183, 184, 186, 187, 188, 189, 190, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 206, 207, 210, 211, 212, 213, 214, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 268, 269, 270, 271, 273, 274, 275, 276, 277, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288,289,290,291,290,293,294,295] }
+            ],
+    "PoleQueryLayer": { "Url": "http://edgisapppqa02:6080/arcgis/rest/services/data/ElectricDistribution/MapServer/145" },
+    "GeometryService": { "Url": "http://tsetappiiswc004/arcgis/rest/services/Utilities/Geometry/GeometryServer" }
+}

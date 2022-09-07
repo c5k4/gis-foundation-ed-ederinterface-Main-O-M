@@ -1,0 +1,407 @@
+﻿<controls:ChildWindow x:Class="PageTemplates.Controls.CMCSPrintWindow"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+           xmlns:local="clr-namespace:PageTemplates"
+           MinHeight="180" MinWidth="580"
+           Title="Print Options -  Circuit Map Change Sheet"
+		   VerticalAlignment="Center"
+           HorizontalAlignment="Center"
+           HasCloseButton="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="horizontal" VerticalAlignment="Stretch" Grid.Row="0">
+            <StackPanel Orientation="Vertical" Margin="0,0,20,0">
+                <TextBlock Text="Select CMCS Layout:"/>
+                <ComboBox x:Name="cmcsComboPageSizeSelection" Width="220" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0,0,20,0">
+                <TextBlock Text="Select Map Scale:" />
+                <ComboBox x:Name="cmcsComboScaleSelection" Width="220" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,5">
+                <Button x:Name="PrintCMCSMapButton" IsEnabled="False" Content="Print CMCS" Width="140" Height="24" Margin="0" Click="PrintCMCSMapButton_Click"/>
+                <Button x:Name="CancelCMCSButton" Content="Close" Click="CancelButton_Click" Width="140" Height="24"  Margin="10,0,0,0" />
+            </StackPanel>
+            <!--INC000004049426 and INC000004413542 - enable pan-->
+            <StackPanel x:Name="PanButtons" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,0,5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Pan" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+
+                    <Button  x:Name="PanW" Grid.Row="1" Grid.Column="0" Click="PanClick"  Tag="W" 
+                                            ToolTipService.ToolTip="Pan West"
+                               Style="{StaticResource IconButtonStyle}">
+                        <Image Source="../Images/pan_up.png" Stretch="Fill" Height="20" Width="20" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <CompositeTransform Rotation="-90"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Button>
+                    <Button  x:Name="PanE" Grid.Row="1" Grid.Column="2" Click="PanClick"  Tag="E"
+                                            ToolTipService.ToolTip="Pan East"
+                               Style="{StaticResource IconButtonStyle}">
+                        <Image Source="../Images/pan_up.png" Stretch="Fill" Height="20" Width="20" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <CompositeTransform Rotation="90"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Button>
+                    <Button  x:Name="PanN" Grid.Row="0" Grid.Column="1" Click="PanClick"  Tag="N"
+                                            ToolTipService.ToolTip="Pan North"
+                               Style="{StaticResource IconButtonStyle}">
+                        <Image Source="../Images/pan_up.png" Stretch="Fill" Height="20" Width="20"/>
+                    </Button>
+                    <Button  x:Name="PanS" Grid.Row="2" Grid.Column="1" Click="PanClick"  Tag="S"
+                                            ToolTipService.ToolTip="Pan South"
+                               Style="{StaticResource IconButtonStyle}">
+                        <Image Source="../Images/pan_up.png" Stretch="Fill" Height="20" Width="20" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <CompositeTransform Rotation="180"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Button>
+                    <Button  x:Name="PanNE" Grid.Row="0" Grid.Column="2" Click="PanClick"  Tag="NE"
+                                            ToolTipService.ToolTip="Pan North-East"
+                               Style="{StaticResource IconButtonStyle}">
+                        <Image Source="../Images/pan_up.png" Stretch="Fill" Height="20" Width="20" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <CompositeTransform Rotation="45"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Button>
+                    <Button  x:Name="PanSE" Grid.Row="2" Grid.Column="2" Click="PanClick"  Tag="SE"
+                                            ToolTipService.ToolTip="Pan South-East"
+                               Style="{StaticResource IconButtonStyle}">
+                        <Image Source="../Images/pan_up.png" Stretch="Fill" Height="20" Width="20" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <CompositeTransform Rotation="135"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Button>
+                    <Button  x:Name="PanSW" Grid.Row="2" Grid.Column="0" Click="PanClick"  Tag="SW"
+                                            ToolTipService.ToolTip="Pan South-West"
+                               Style="{StaticResource IconButtonStyle}">
+                        <Image Source="../Images/pan_up.png" Stretch="Fill" Height="20" Width="20" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <CompositeTransform Rotation="225"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Button>
+                    <Button  x:Name="PanNW" Grid.Row="0" Grid.Column="0" Click="PanClick"  Tag="NW"
+                                            ToolTipService.ToolTip="Pan North-West"
+                               Style="{StaticResource IconButtonStyle}">
+                        <Image Source="../Images/pan_up.png" Stretch="Fill" Height="20" Width="20" RenderTransformOrigin="0.5,0.5" >
+                            <Image.RenderTransform>
+                                <CompositeTransform Rotation="-45"/>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Button>
+                </Grid>
+            </StackPanel>
+
+            <!-- BEGIN AG modified on 2020/08/25-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,0,20,5">
+
+                <Button x:Name="btnCenter" IsEnabled="False" Width="120" Height="24" Margin="0" Click="btnCenter_Click">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3,0,0,3">
+                        <TextBlock Margin="5,0">Center Map</TextBlock>
+                        <Image Source="../Images/flag_cursor.png" Stretch="Fill" Height="18" Width="18" RenderTransformOrigin="0.5,0.5" />
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btnPan" Width="100" Height="24" Margin="0" Click="btnPan_Click">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3,0,0,3">
+                        <TextBlock Margin="5,0">Pan</TextBlock>
+                        <Image Source="../Images/pan.png" Stretch="Fill" Height="18" Width="18" RenderTransformOrigin="0.5,0.5" />
+                    </StackPanel>
+
+                </Button>
+            </StackPanel>
+            <!-- END AG modified on 2020/08/25-->
+
+
+        </StackPanel>
+        <!--<ScrollViewer x:Name="cmcsMapContainer" Grid.Row="1" MouseMove="cmcsMapControl_MouseMove" MouseLeftButtonUp="cmcsMapControl_MouseLeftButtonUp" >-->
+        <ScrollViewer x:Name="cmcsMapContainer" Grid.Row="1" >
+            <Border Name="cmcsMapBorder" BorderBrush="Black" BorderThickness="2">
+                <StackPanel>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0">
+                            <Grid Width="1000" HorizontalAlignment="Stretch">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,10,2">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="525"/>
+                                            <ColumnDefinition Width="300"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Left"  Grid.Column="0" VerticalAlignment="Top" Height="25" Width="25" Source="../Images/logo-pge.png"/>
+                                        <StackPanel  Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                                            <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="10"  VerticalAlignment="Center"><Italic>Pacific Gas and</Italic></TextBlock>
+                                            <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="10"  VerticalAlignment="Center"><Italic>Electric Company</Italic></TextBlock>
+                                        </StackPanel>
+                                        <TextBlock Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14" VerticalAlignment="Center">Circuit Map Change Sheet (CMCS)</TextBlock>
+                                        <StackPanel Grid.Row="1" Grid.Column="3" Orientation="Horizontal" Margin="10,2,10,2" HorizontalAlignment="Right">
+                                            <TextBlock FontSize="11" Margin="0,0,2,0" VerticalAlignment="Center" >Publication Date:</TextBlock>
+                                            <sdk:DatePicker TabIndex="1" Name="datePickerPublicationDate" Width="100" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" SelectedDateChanged="datePickerPublicationDate_SelectedDateChanged" />
+                                            <TextBlock FontSize="11" Margin="10,0,2,0" VerticalAlignment="Center" >Rec</TextBlock>
+                                            <TextBox Name="txtRecNo" Width="50" MaxLength="5"/>
+                                        </StackPanel>
+                                        <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Horizontal" Margin="10,2,10,2" HorizontalAlignment="Right">
+                                            <TextBox Name="txtTDNo" Width="150" MaxLength="20"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10,2,10,2">
+                                    <TextBlock FontSize="11" Margin="0,0,2,0" VerticalAlignment="Center" >US Event No.</TextBlock>
+                                    <TextBox Name="txtUSEventNo" Width="150" MaxLength="15"/>
+                                    <TextBlock FontSize="11" Margin="10,0,2,0" VerticalAlignment="Center">GIS Tag No.</TextBlock>
+                                    <TextBox Name="txtGISTagNo" Width="150" MaxLength="15"/>
+                                    <TextBlock FontSize="11" Margin="10,0,2,0" VerticalAlignment="Center">Control Center / AOR</TextBlock>
+                                    <TextBox Name="txtControlCenterAOR" Width="150" MaxLength="15"/>
+                                    <Border BorderBrush="Black" BorderThickness="2" Margin="10,0,2,0" >
+                                        <TextBlock FontSize="12" Margin="2,0,2,0" VerticalAlignment="Center" FontWeight="Bold">Distribution Operator Entry</TextBlock>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,2,10,2">
+                                    <TextBlock FontSize="11" Margin="0,0,2,0" VerticalAlignment="Center">Substation and Circuit Number</TextBlock>
+                                    <TextBox Name="txtSubNameCircuitNo" Width="150" MaxLength="20"/>
+                                    <TextBlock FontSize="11" Margin="10,0,2,0" VerticalAlignment="Center">Prepared By</TextBlock>
+                                    <TextBox Name="txtPreparedBy" Width="120" MaxLength="15"/>
+                                    <TextBlock FontSize="11" Margin="10,0,2,0" VerticalAlignment="Center">Engineering Approval By</TextBlock>
+                                    <TextBox Name="txtEnggApprovalBy" Width="120" MaxLength="15"/>
+                                    <TextBlock FontSize="11" Margin="10,0,2,0" VerticalAlignment="Center">Map No.</TextBlock>
+                                    <TextBox Name="txtMapNo" Width="90" MaxLength="12"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="10,2,10,2">
+                                    <TextBlock FontSize="11" Margin="0,0,2,0" VerticalAlignment="Center">Purpose of Work</TextBlock>
+                                    <TextBox Name="txtPurposeOfWork" Width="485" MaxLength="50"/>
+                                    <TextBlock FontSize="11" Margin="10,0,2,0" VerticalAlignment="Center">Job Number</TextBlock>
+                                    <TextBox Name="txtJobNo" Width="125" MaxLength="15"/>
+                                    <TextBlock FontSize="11" Margin="10,0,2,0" VerticalAlignment="Center">MAT</TextBlock>
+                                    <TextBox Name="txtMAT" Width="120" MaxLength="3"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="10,2,10,2">
+                                    <TextBlock FontSize="11" Margin="0,0,2,0" VerticalAlignment="Center">Location</TextBlock>
+                                    <TextBox Name="txtLocation" Width="530" MaxLength="50"/>
+                                    <TextBlock FontSize="11" Margin="10,0,2,0" VerticalAlignment="Center">Town</TextBlock>
+                                    <TextBox Name="txtTown" Width="140" MaxLength="20"/>
+                                    <TextBlock FontSize="11" Margin="10,0,2,0" VerticalAlignment="Center">Date</TextBlock>
+                                    <sdk:DatePicker  TabIndex="1" Name="datePickerOperatorEntryDate" Width="140" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="5" Margin="10,2,10,2">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="60"/>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="160"/>
+                                            <ColumnDefinition Width="135"/>
+                                            <ColumnDefinition Width="120"/>
+                                            <ColumnDefinition Width="250"/>
+                                            <ColumnDefinition Width="120"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border BorderBrush="Black" BorderThickness="2" Margin="4,2,4,2" Grid.Row="0" Grid.ColumnSpan="7" Width="400" HorizontalAlignment="Center">
+                                            <TextBlock Margin="4,2,4,2" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" >Construction Entry - New Installs or Removals</TextBlock>
+                                        </Border>
+                                        <TextBlock Grid.Row="1" Grid.Column="0" Margin="4,2,4,2" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center">LOC.</TextBlock>
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Margin="4,2,4,2" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center">Equip. No.</TextBlock>
+                                        <TextBlock Grid.Row="1" Grid.Column="2" Margin="4,2,4,2" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center">Serial. No.</TextBlock>
+                                        <TextBlock Grid.Row="1" Grid.Column="3" Margin="4,2,4,2" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center">Manufacture</TextBlock>
+                                        <TextBlock Grid.Row="1" Grid.Column="4" Margin="4,2,4,2" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center">Date Manuf.</TextBlock>
+                                        <TextBlock Grid.Row="1" Grid.Column="5" Margin="4,2,4,2" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center">Location</TextBlock>
+                                        <TextBlock Grid.Row="1" Grid.Column="6" Margin="4,2,4,2" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center">Town</TextBlock>
+
+                                        <TextBox Grid.Row="2" Grid.Column="0" Margin="4,2,4,2" Name="txtLOC1" MaxLength="3"/>
+                                        <TextBox Grid.Row="2" Grid.Column="1" Margin="4,2,4,2" Name="txtEquipNo1" MaxLength="9"/>
+                                        <TextBox Grid.Row="2" Grid.Column="2" Margin="4,2,4,2" Name="txtSerialNo1" MaxLength="20"/>
+                                        <TextBox Grid.Row="2" Grid.Column="3" Margin="4,2,4,2" Name="txtManuf1" MaxLength="15"/>
+                                        <sdk:DatePicker Grid.Row="2" Grid.Column="4" TabIndex="1" Name="txtDateManuf1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+                                        <TextBox Grid.Row="2" Grid.Column="5" Margin="4,2,4,2" Name="txtLocation1" MaxLength="35"/>
+                                        <TextBox Grid.Row="2" Grid.Column="6" Margin="4,2,4,2" Name="txtTown1" MaxLength="15"/>
+
+                                        <TextBox Grid.Row="3" Grid.Column="0" Margin="4,2,4,2" Name="txtLOC2" MaxLength="3"/>
+                                        <TextBox Grid.Row="3" Grid.Column="1" Margin="4,2,4,2" Name="txtEquipNo2" MaxLength="9"/>
+                                        <TextBox Grid.Row="3" Grid.Column="2" Margin="4,2,4,2" Name="txtSerialNo2" MaxLength="20"/>
+                                        <TextBox Grid.Row="3" Grid.Column="3" Margin="4,2,4,2" Name="txtManuf2" MaxLength="15"/>
+                                        <sdk:DatePicker Grid.Row="3" Grid.Column="4" TabIndex="1" Name="txtDateManuf2" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+                                        <TextBox Grid.Row="3" Grid.Column="5" Margin="4,2,4,2" Name="txtLocation2" MaxLength="35"/>
+                                        <TextBox Grid.Row="3" Grid.Column="6" Margin="4,2,4,2" Name="txtTown2" MaxLength="15"/>
+
+                                        <TextBox Grid.Row="4" Grid.Column="0" Margin="4,2,4,2" Name="txtLOC3" MaxLength="3"/>
+                                        <TextBox Grid.Row="4" Grid.Column="1" Margin="4,2,4,2" Name="txtEquipNo3" MaxLength="9"/>
+                                        <TextBox Grid.Row="4" Grid.Column="2" Margin="4,2,4,2" Name="txtSerialNo3" MaxLength="20"/>
+                                        <TextBox Grid.Row="4" Grid.Column="3" Margin="4,2,4,2" Name="txtManuf3" MaxLength="15"/>
+                                        <sdk:DatePicker Grid.Row="4" Grid.Column="4" TabIndex="1" Name="txtDateManuf3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+                                        <TextBox Grid.Row="4" Grid.Column="5" Margin="4,2,4,2" Name="txtLocation3" MaxLength="35"/>
+                                        <TextBox Grid.Row="4" Grid.Column="6" Margin="4,2,4,2" Name="txtTown3" MaxLength="15"/>
+
+                                        <TextBox Grid.Row="5" Grid.Column="0" Margin="4,2,4,2" Name="txtLOC4" MaxLength="3"/>
+                                        <TextBox Grid.Row="5" Grid.Column="1" Margin="4,2,4,2" Name="txtEquipNo4" MaxLength="9"/>
+                                        <TextBox Grid.Row="5" Grid.Column="2" Margin="4,2,4,2" Name="txtSerialNo4" MaxLength="20"/>
+                                        <TextBox Grid.Row="5" Grid.Column="3" Margin="4,2,4,2" Name="txtManuf4" MaxLength="15"/>
+                                        <sdk:DatePicker Grid.Row="5" Grid.Column="4" TabIndex="1" Name="txtDateManuf4" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+                                        <TextBox Grid.Row="5" Grid.Column="5" Margin="4,2,4,2" Name="txtLocation4" MaxLength="35"/>
+                                        <TextBox Grid.Row="5" Grid.Column="6" Margin="4,2,4,2" Name="txtTown4" MaxLength="15"/>
+
+                                        <TextBox Grid.Row="6" Grid.Column="0" Margin="4,2,4,2" Name="txtLOC5" MaxLength="3"/>
+                                        <TextBox Grid.Row="6" Grid.Column="1" Margin="4,2,4,2" Name="txtEquipNo5" MaxLength="9"/>
+                                        <TextBox Grid.Row="6" Grid.Column="2" Margin="4,2,4,2" Name="txtSerialNo5" MaxLength="20"/>
+                                        <TextBox Grid.Row="6" Grid.Column="3" Margin="4,2,4,2" Name="txtManuf5" MaxLength="15"/>
+                                        <sdk:DatePicker Grid.Row="6" Grid.Column="4" TabIndex="1" Name="txtDateManuf5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+                                        <TextBox Grid.Row="6" Grid.Column="5" Margin="4,2,4,2" Name="txtLocation5" MaxLength="35"/>
+                                        <TextBox Grid.Row="6" Grid.Column="6" Margin="4,2,4,2" Name="txtTown5" MaxLength="15"/>
+
+                                    </Grid>
+                                </StackPanel>
+                            </Grid>
+
+                        </StackPanel>
+                        
+                        <!-- BEGIN AG modified (2) on 2020/08/25-->
+                        <StackPanel Grid.Row="1" >
+
+                            <!--<StackPanel Grid.Row="1" MouseLeftButtonUp="ScrollViewer_MouseLeftButtonUp">-->
+                            <!--MouseLeftButtonUp="ScrollViewer_MouseLeftButtonUp">-->
+                            <Rectangle Height="1" Fill="Black" VerticalAlignment="Center"/>
+                            <TextBlock HorizontalAlignment="Center" FontSize="8" >Show the north arrow, adjacent switch numbers, and the corners of streets or roads, adjacent intersections, or land marks. Use a job sketch, if suitable. Sketches can be schematic but should appropriate the geographic map.</TextBlock>
+                            
+                            <!--<esri:Map x:Name="cmcsMapControl" MouseLeftButtonDown="cmcsMapControl_MouseLeftButtonDown"-->
+                            <!--<esri:Map x:Name="cmcsMapControl"
+                                IsLogoVisible="False"
+                                ExtentChanged="cmcsMapControl_ExtentChanged"/>-->
+                            <esri:Map x:Name="cmcsMapControl" MouseLeftButtonDown="cmcsMapControl_MouseLeftButtonDown"
+                                MouseMove="cmcsMapControl_MouseMove"
+                                MouseLeftButtonUp="cmcsMapControl_MouseLeftButtonUp"
+                                IsLogoVisible="False"
+                                ExtentChanged="cmcsMapControl_ExtentChanged"/>
+                            <Rectangle Height="1" Fill="Black" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        
+                       
+                        <!-- END AG modified (2) on 2020/08/25-->
+
+                        <StackPanel Grid.Row="2">
+                            <Grid Width="1000" HorizontalAlignment="Stretch">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="320"/>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="360"/>
+                                    <ColumnDefinition Width="140"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Row="0" Grid.ColumnSpan="4" Orientation="Horizontal" Margin="10,2,10,2">
+                                    <Grid HorizontalAlignment="Stretch">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="780"/>
+                                            <ColumnDefinition Width="250"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Grid.Row="0" Grid.Column="0" FontSize="8" Margin="0,0,2,0" VerticalAlignment="Center">The Foreman must immediately report any completed work. <Underline>For partially completed work, circle the portion that was completed. Include the date and show 'completed'.</Underline></TextBlock>
+                                        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                                            <TextBlock FontSize="11" VerticalAlignment="Center" Margin="0,0,4,0">Sheet</TextBlock>
+                                            <TextBox Name="txtSheetNo" Width="50" MaxLength="5"/>
+                                            <TextBlock FontSize="11" VerticalAlignment="Center" Margin="4,0,4,0">of</TextBlock>
+                                            <TextBox Name="txtTotalSheetsCount" Width="50" MaxLength="5"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </StackPanel>
+                                <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Margin="10,2,10,2">
+                                    <TextBlock FontSize="11" Margin="0,0,2,0" VerticalAlignment="Center">Work Completed By</TextBlock>
+                                    <TextBox Name="txtWorkCompletedBy" Width="185" MaxLength="22"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Margin="0,2,10,2">
+                                    <TextBlock FontSize="11" Margin="0,0,2,0" VerticalAlignment="Center">Date</TextBlock>
+                                    <sdk:DatePicker  TabIndex="1" Name="datePickerCompletionDate" Width="100" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" Margin="0,2,10,2">
+                                    <TextBlock FontSize="11" Margin="0,0,2,0" VerticalAlignment="Center" >Recorded at control center by</TextBlock>
+                                    <TextBox Name="txtRecordedBy" Width="180" MaxLength="22"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="1" Grid.Column="3" Orientation="Horizontal" Margin="0,2,10,2">
+                                    <TextBlock FontSize="11" Margin="0,0,2,0" VerticalAlignment="Center">Date</TextBlock>
+                                    <sdk:DatePicker  TabIndex="1" Name="datePickerRecordedDate" Width="100" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="10,2,10,2">
+                                    <TextBlock FontSize="11" Margin="0,0,2,0" VerticalAlignment="Center">Mapped By</TextBlock>
+                                    <TextBox Name="txtMappedBy" Width="235" MaxLength="22"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="0,2,10,2">
+                                    <TextBlock FontSize="11" Margin="0,0,2,0" VerticalAlignment="Center">Date</TextBlock>
+                                    <sdk:DatePicker  TabIndex="1" Name="datePickerMappedDate" Width="100" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" Margin="0,2,10,2">
+                                    <TextBlock FontSize="11" Margin="0,0,2,0" VerticalAlignment="Center" >Forward this completed form to</TextBlock>
+                                    <TextBox Name="txtForwardTo" Width="170" MaxLength="22"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Horizontal" Margin="0,2,10,2">
+                                    <TextBlock FontSize="11" Margin="0,0,2,0" VerticalAlignment="Center">Date</TextBlock>
+                                    <sdk:DatePicker  TabIndex="1" Name="datePickerForwardedDate" Width="100" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </ScrollViewer>
+
+        <controlsToolkit:BusyIndicator x:Name="BusyIndicatorCMCS" Grid.Row="0" Grid.RowSpan="2"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       IsBusy="False"/>
+    </Grid>
+</controls:ChildWindow>

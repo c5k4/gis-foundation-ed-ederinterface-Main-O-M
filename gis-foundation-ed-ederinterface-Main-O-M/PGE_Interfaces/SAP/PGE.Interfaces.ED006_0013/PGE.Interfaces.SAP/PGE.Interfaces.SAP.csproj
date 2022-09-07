@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B7541D44-8B04-4672-A3DD-FFC4978B367E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PGE.Interfaces.SAP</RootNamespace>
+    <AssemblyName>PGE.Interfaces.SAP</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Output\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <DocumentationFile>bin\Debug\Telvent.PGE.SAP.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\Output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\Output\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <DocumentationFile>C:\GitHub\gis-foundation-ed-ederinterface\PGE_Interfaces\SAP\PGE.Interfaces.ED006_0013\Output\\PGE.Interfaces.SAP.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>PGE.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.ADF, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF.Local, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoDatabaseDistributed, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.Geodatabase.Engine, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Miner.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PGE.Interfaces.Integration\PGE.Interfaces.Integration.Gateway\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PGE_DBPasswordManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=820abe4faa45686d, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Miner and Miner\PG&amp;E Custom Components\PGE.PasswordMgmt\PGE_DBPasswordManagement.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SAPSolutionInfo.cs">
+      <Link>Properties\SAPSolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="AssetProcessor.cs" />
+    <Compile Include="Csv.cs" />
+    <Compile Include="EnumerableCursor.cs" />
+    <Compile Include="RowTransformers\NetJuncOpenPointRowTransformer.cs" />
+    <Compile Include="RowTransformers\NetSwitchRowTransformer.cs" />
+    <Compile Include="RowTransformers\OpenPointRowTransformer.cs" />
+    <Compile Include="RowTransformers\SwitchRowTransformer.cs" />
+    <Compile Include="SettingsDataHelper.cs" />
+    <Compile Include="Data\GISSAP_ASSETSYNCH.cs" />
+    <Compile Include="Data\NamespaceDoc.cs" />
+    <Compile Include="Data\SAPRowData.cs" />
+    <Compile Include="DataHelper.cs" />
+    <Compile Include="Interfaces\ISAPDataOutput.cs" />
+    <Compile Include="Interfaces\ISAPDataReader.cs" />
+    <Compile Include="Interfaces\ISAPRowData.cs" />
+    <Compile Include="Interfaces\ISAPRowTransformer.cs" />
+    <Compile Include="Interfaces\NamespaceDoc.cs" />
+    <Compile Include="NamespaceDoc.cs" />
+    <Compile Include="RowTransformers\CircuitSourceRowTransformer.cs" />
+    <Compile Include="RowTransformers\ControllerRowTransformer.cs" />
+    <Compile Include="RowTransformers\SAPMaintenancePolygonRowTransformer.cs" />
+    <Compile Include="RowTransformers\NamespaceDoc.cs" />
+    <Compile Include="RowTransformers\RelationshipRowTransformer.cs" />
+    <Compile Include="RowTransformers\SAPBankDeviceRowTransformer.cs" />
+    <Compile Include="RowTransformers\SAPDeviceRowTransformer.cs" />
+    <Compile Include="RowTransformers\SAPEquipmentRowTransformer.cs" />
+    <Compile Include="RowTransformers\SAPStitchPointRowTransformer.cs" />
+    <Compile Include="RowTransformers\SAPRowTransformer.cs" />
+    <Compile Include="RowTransformers\SAPStructureRowTransformer.cs" />
+    <Compile Include="GISSAPIntegrator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RowTransformers\StreetLightRowTransformer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\Domains.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\GISSAP_AssetSynch_Config.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PGE.Interfaces.SAP.dll.Config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\SAPIntegrationConfig.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PGE.Interfaces.SAP.ED06.Batch.log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SAPClassDiagram.cd" />
+    <None Include="PGE.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.ChangeDetectionAPI\PGE.Common.ChangeDetectionAPI\PGE.Common.ChangeDetectionAPI.csproj">
+      <Project>{69b7ff1f-49bf-46f5-8d71-b09ae5e8fc2a}</Project>
+      <Name>PGE.Common.ChangeDetectionAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.ArcFM\PGE.Common.Delivery.ArcFM.csproj">
+      <Project>{36519d54-e65e-4974-8da5-1931f1bbb692}</Project>
+      <Name>PGE.Common.Delivery.ArcFM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Diagnostics\PGE.Common.Delivery.Diagnostics.csproj">
+      <Project>{1d019976-ffe6-41a2-ab9c-6241696edb8e}</Project>
+      <Name>PGE.Common.Delivery.Diagnostics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Framework\PGE.Common.Delivery.Framework.csproj">
+      <Project>{f36c0849-bf86-4632-aed8-dcc7c4827f86}</Project>
+      <Name>PGE.Common.Delivery.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Geodatabase\PGE.Common.Delivery.Geodatabase.csproj">
+      <Project>{472c594a-cd61-48e0-b814-8144cb1506fc}</Project>
+      <Name>PGE.Common.Delivery.Geodatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.System\PGE.Common.Delivery.Systems.csproj">
+      <Project>{bb4e7878-3b0a-4bb4-a34c-61b4630684ba}</Project>
+      <Name>PGE.Common.Delivery.Systems</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PGE.Interfaces.Integration.Framework\PGE.Interfaces.Integration.Framework.csproj">
+      <Project>{ef202b69-f091-4b28-b23b-81cff42c1dc3}</Project>
+      <Name>PGE.Interfaces.Integration.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

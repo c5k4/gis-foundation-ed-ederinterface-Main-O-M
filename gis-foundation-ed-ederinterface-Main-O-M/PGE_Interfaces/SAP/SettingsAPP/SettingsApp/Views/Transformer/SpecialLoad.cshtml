@@ -1,0 +1,39 @@
+﻿@using SettingsApp.Common;
+@model SettingsApp.Models.SpecialLoadModel
+<style type="text/css">
+    table.special-load
+    {
+        margin-top: -10px;
+        margin-left: -10px;
+        width: 100%;
+    }
+    
+    div.print-div
+    {
+        display:none;
+    }
+   
+    html
+    {
+        background-color: #efeeef !important;
+    }
+     input#CGCId
+    {
+        font-weight: bold;
+    }
+    ul#menu
+    {
+        display:none;
+    }
+    img.print-icon
+    {
+        cursor:pointer;
+    }
+</style>
+@using (Html.BeginForm("SpecialLoad", "Transformer"))
+{
+    @Html.Partial("~/Views/Shared/_SpecialLoadPartial.cshtml")
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

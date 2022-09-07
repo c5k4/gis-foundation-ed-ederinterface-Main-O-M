@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DataFramePropertiesReader.Common.Common" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAACgAAAACAAAAIAAAAAAAAIAIAA=</HashCode>
+      <FileName>Common\Common.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataFramePropertiesReader.LicenseInitializer" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAYAnBEgAAAE2AAABAIAigACAAACqAwAAEKCAAAAAA=</HashCode>
+      <FileName>Common\LicenseInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataFramePropertiesReader.CSVCreator" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAgAAAQAAACAAAAAAIAAAAAAAAAAAAAAABQAAIAAAA=</HashCode>
+      <FileName>CSVFormatting\CSVCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataFramePropertiesReader.CSVDatum" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAQACAAAgABAAAAAQAAAAAAA=</HashCode>
+      <FileName>CSVFormatting\CSVDatum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataFramePropertiesReader.DataFramePropertiesReader" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataFramePropertiesReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataFramePropertiesReader.ReaderClient" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Main.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="7" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:cim="cimBase2" xmlns:mdimsg="mdimsgMay2005" xmlns:m="Work" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="Work" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="mdiMessage.xsd" namespace="mdimsgMay2005" />
+  <xs:import schemaLocation="cimBase2.xsd" namespace="cimBase2" />
+  <xs:annotation>
+    <xs:documentation>Automatically generated using MDI Workbench from Xtensible Solutions (12/7/2005 6:40:48 PM Eastern Standard Time). [Source File : MDI Model v1.15.mdl]</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Work">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MessageHeader" type="mdimsg:MessageHeader" />
+        <xs:element name="MessagePayload">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="1" maxOccurs="unbounded" name="Work">
+                <xs:complexType>
+                  <xs:complexContent mixed="false">
+                    <xs:extension base="cim:Work">
+                      <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="Project">
+                          <xs:complexType>
+                            <xs:complexContent mixed="false">
+                              <xs:extension base="cim:Project">
+                                <xs:sequence>
+                                  <xs:element minOccurs="0" maxOccurs="1" name="BusinessCase" type="cim:BusinessCase" />
+                                  <xs:element minOccurs="1" maxOccurs="1" name="ErpProjectAccounting" type="cim:ErpProjectAccounting" />
+                                </xs:sequence>
+                              </xs:extension>
+                            </xs:complexContent>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Design" type="cim:Design" />
+                        <xs:element minOccurs="0" maxOccurs="1" name="Request">
+                          <xs:complexType>
+                            <xs:complexContent mixed="false">
+                              <xs:extension base="cim:Request">
+                                <xs:sequence>
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" type="cim:Customer" />
+                                </xs:sequence>
+                              </xs:extension>
+                            </xs:complexContent>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Location">
+                          <xs:complexType>
+                            <xs:complexContent mixed="false">
+                              <xs:extension base="cim:Location">
+                                <xs:sequence>
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Site" type="cim:Site" />
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="CoordinatePair" type="cim:CoordinatePair" />
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="ErpAddress" type="cim:ErpAddress" />
+                                </xs:sequence>
+                              </xs:extension>
+                            </xs:complexContent>
+                          </xs:complexType>
+                        </xs:element>
+                        <xs:element minOccurs="1" maxOccurs="1" name="WorkBillingInfo" type="cim:WorkBillingInfo" />
+                        <xs:element minOccurs="0" maxOccurs="1" name="WorkCostDetail" type="cim:WorkCostDetail" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkTask">
+                          <xs:complexType>
+                            <xs:complexContent mixed="false">
+                              <xs:extension base="cim:WorkTask">
+                                <xs:sequence>
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Location">
+                                    <xs:complexType>
+                                      <xs:complexContent mixed="false">
+                                        <xs:extension base="cim:Location">
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="ErpAddress" type="cim:ErpAddress" />
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="CoordinatePair" type="cim:CoordinatePair" />
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="Site" type="cim:Site" />
+                                          </xs:sequence>
+                                        </xs:extension>
+                                      </xs:complexContent>
+                                    </xs:complexType>
+                                  </xs:element>
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Crew">
+                                    <xs:complexType>
+                                      <xs:complexContent mixed="false">
+                                        <xs:extension base="cim:Crew">
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="Capability" type="cim:Capability" />
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="EquipmentAsset">
+                                              <xs:complexType>
+                                                <xs:complexContent mixed="false">
+                                                  <xs:extension base="cim:EquipmentAsset">
+                                                    <xs:sequence>
+                                                      <xs:element minOccurs="0" maxOccurs="unbounded" name="Usage" type="cim:Usage" />
+                                                    </xs:sequence>
+                                                  </xs:extension>
+                                                </xs:complexContent>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:extension>
+                                      </xs:complexContent>
+                                    </xs:complexType>
+                                  </xs:element>
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="AssetList" type="cim:AssetList" />
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="EquipmentList" type="cim:EquipmentList" />
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkCostDetail" type="cim:WorkCostDetail" />
+                                  <xs:element minOccurs="0" maxOccurs="1" name="WorkFlowStep" type="cim:WorkFlowStep" />
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="MaterialItem">
+                                    <xs:complexType>
+                                      <xs:complexContent mixed="false">
+                                        <xs:extension base="cim:MaterialItem">
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="AssetModel" type="cim:AssetModel" />
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="Usage" type="cim:Usage" />
+                                          </xs:sequence>
+                                        </xs:extension>
+                                      </xs:complexContent>
+                                    </xs:complexType>
+                                  </xs:element>
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="AccessPermit" type="cim:AccessPermit" />
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeSchedule">
+                                    <xs:complexType>
+                                      <xs:complexContent mixed="false">
+                                        <xs:extension base="cim:TimeSchedule">
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="TimePoint" type="cim:TimePoint" />
+                                          </xs:sequence>
+                                        </xs:extension>
+                                      </xs:complexContent>
+                                    </xs:complexType>
+                                  </xs:element>
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Procedure">
+                                    <xs:complexType>
+                                      <xs:complexContent mixed="false">
+                                        <xs:extension base="cim:Procedure">
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="ProcedureValue" type="cim:ProcedureValue" />
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeSchedule">
+                                              <xs:complexType>
+                                                <xs:complexContent mixed="false">
+                                                  <xs:extension base="cim:TimeSchedule">
+                                                    <xs:sequence>
+                                                      <xs:element minOccurs="0" maxOccurs="unbounded" name="TimePoint" type="cim:TimePoint" />
+                                                    </xs:sequence>
+                                                  </xs:extension>
+                                                </xs:complexContent>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="ActivityRecord" type="cim:ActivityRecord" />
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="Organisation">
+                                              <xs:complexType>
+                                                <xs:complexContent mixed="false">
+                                                  <xs:extension base="cim:Organisation">
+                                                    <xs:sequence>
+                                                      <xs:element minOccurs="0" maxOccurs="unbounded" name="Organisation.ProcedureRole" type="cim:DocOrgRole" />
+                                                    </xs:sequence>
+                                                  </xs:extension>
+                                                </xs:complexContent>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="ErpPerson">
+                                              <xs:complexType>
+                                                <xs:complexContent mixed="false">
+                                                  <xs:extension base="cim:ErpPerson">
+                                                    <xs:sequence>
+                                                      <xs:element minOccurs="0" maxOccurs="unbounded" name="Craft" type="cim:Craft" />
+                                                    </xs:sequence>
+                                                  </xs:extension>
+                                                </xs:complexContent>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="FailureEvent" type="cim:FailureEvent" />
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="MaintenanceDataSet">
+                                              <xs:complexType>
+                                                <xs:complexContent mixed="false">
+                                                  <xs:extension base="cim:MaintenanceDataSet">
+                                                    <xs:sequence>
+                                                      <xs:element minOccurs="0" maxOccurs="unbounded" name="ActivityRecord" type="cim:ActivityRecord" />
+                                                    </xs:sequence>
+                                                  </xs:extension>
+                                                </xs:complexContent>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="DiagnosisDataSet">
+                                              <xs:complexType>
+                                                <xs:complexContent mixed="false">
+                                                  <xs:extension base="cim:DiagnosisDataSet">
+                                                    <xs:sequence>
+                                                      <xs:element minOccurs="0" maxOccurs="unbounded" name="ActivityRecord" type="cim:ActivityRecord" />
+                                                    </xs:sequence>
+                                                  </xs:extension>
+                                                </xs:complexContent>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="TestDataSet">
+                                              <xs:complexType>
+                                                <xs:complexContent mixed="false">
+                                                  <xs:extension base="cim:TestDataSet">
+                                                    <xs:sequence>
+                                                      <xs:element minOccurs="0" maxOccurs="unbounded" name="ActivityRecord" type="cim:ActivityRecord" />
+                                                    </xs:sequence>
+                                                  </xs:extension>
+                                                </xs:complexContent>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:extension>
+                                      </xs:complexContent>
+                                    </xs:complexType>
+                                  </xs:element>
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="ActivityRecord" type="cim:ActivityRecord" />
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Organisation">
+                                    <xs:complexType>
+                                      <xs:complexContent mixed="false">
+                                        <xs:extension base="cim:Organisation">
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="Organisation.WorkTaskRole" type="cim:DocOrgRole" />
+                                          </xs:sequence>
+                                        </xs:extension>
+                                      </xs:complexContent>
+                                    </xs:complexType>
+                                  </xs:element>
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceLocation">
+                                    <xs:complexType>
+                                      <xs:complexContent mixed="false">
+                                        <xs:extension base="cim:ServiceLocation">
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="ErpAddress" type="cim:ErpAddress" />
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="CoordinatePair" type="cim:CoordinatePair" />
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="Site" type="cim:Site" />
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="MeterServicePosition" type="cim:MeterServicePosition" />
+                                          </xs:sequence>
+                                        </xs:extension>
+                                      </xs:complexContent>
+                                    </xs:complexType>
+                                  </xs:element>
+                                  <xs:element minOccurs="0" maxOccurs="unbounded" name="ErpPerson">
+                                    <xs:complexType>
+                                      <xs:complexContent mixed="false">
+                                        <xs:extension base="cim:ErpPerson">
+                                          <xs:sequence>
+                                            <xs:element minOccurs="0" maxOccurs="unbounded" name="Craft" type="cim:Craft" />
+                                          </xs:sequence>
+                                        </xs:extension>
+                                      </xs:complexContent>
+                                    </xs:complexType>
+                                  </xs:element>
+                                </xs:sequence>
+                              </xs:extension>
+                            </xs:complexContent>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:extension>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

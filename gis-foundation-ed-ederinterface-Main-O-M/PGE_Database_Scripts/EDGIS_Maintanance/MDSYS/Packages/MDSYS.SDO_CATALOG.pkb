@@ -1,0 +1,52 @@
+Prompt drop Package Body SDO_CATALOG;
+DROP PACKAGE BODY MDSYS.SDO_CATALOG
+/
+
+Prompt Package Body SDO_CATALOG;
+--
+-- SDO_CATALOG  (Package Body) 
+--
+CREATE OR REPLACE PACKAGE BODY MDSYS.sdo_catalog wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+648 26c
+Tzvv2UNoNCmg72gTknFngvPtGYwwg5CJDK7byo4CTE7VuUiD2wLQkLeTaVPrqGFQpqSQlH/s
+U39Sa7Uk5tmg6cFcmCfRD9HBHMshiQAl02tpz1sPIE+5gUP4Q4ZOpE2okVXyyQLxyl+3eZB/
+XDfIS2PseU282TWMeQ1G5lrlv9xabWwnrrauYYFayf54OvGOVJ6hpsriIthnK9QNLtZ70jPj
+D472hWZLrAIt8hIQ/7mrcaklLy8EEjAaolyMgfi7WJ3nXvLHxunwJc5Cy4QqEJ8ujCiWq2LO
+ZluYNYgfhorEkBGJaJm7Pwtzyb1nRcDBVfFZimhRb/ZknG+Ue89v1FGRdYhhr+w5mWDB4jUl
+q16xoWgVxGIjmIwDjBpLCO5MNMhg1UA0PWs7NXmkjKcr5Uc88xxGFPIz6F+aQbsUFWzkuCuz
+MevPrV6urV5yIXEdmpgjTfghFxcpD/fahMaKLsWwfS/UoGVQQuOERx30NSmGyEEy09Zh7ncG
+FDnt7rPGk4hXv2eCe5zHewewPoGGNtjFuWGgJ5ae9Nuw77gGgXf8d3LbJ0qUHMSS2HW1GTRt
+SHAiImyRtUpCCDhRw58kY+4nFnFzpqlK3nQ=
+
+/
+
+
+Prompt Synonym SDO_CATALOG;
+--
+-- SDO_CATALOG  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM SDO_CATALOG FOR MDSYS.SDO_CATALOG
+/
+
+
+Prompt Grants on PACKAGE SDO_CATALOG TO PUBLIC to PUBLIC;
+GRANT EXECUTE ON MDSYS.SDO_CATALOG TO PUBLIC
+/

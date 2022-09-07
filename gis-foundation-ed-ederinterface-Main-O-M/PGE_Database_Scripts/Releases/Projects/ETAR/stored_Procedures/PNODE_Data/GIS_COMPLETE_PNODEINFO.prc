@@ -1,0 +1,110 @@
+create or replace PROCEDURE       GIS_COMPLETE_PNODEINFO AS
+-- Latest edits 3/4/2020 4:15 pm
+
+BEGIN
+    --sets the version to default
+    sde.version_util.set_current_version('SDE.DEFAULT');
+COMMIT;
+
+--This gets TREELEVEL from TRACING TABLE IN ED.
+UPDATE EDGIS.GIS_PNODEINFO GSB
+SET GSB.TREELEVEL =
+  (SELECT EDV.TREELEVEL
+  FROM EDGIS.PGE_FEEDERFEDNETWORK_TRACE@To_EDDM EDV
+  WHERE EDV.to_feature_globalid = GSB.LINE_GUID);
+  COMMIT;
+
+--This gets ORDER_NUM from TRACING TABLE IN ED.
+UPDATE EDGIS.GIS_PNODEINFO GSB
+SET GSB.ORDER_NUM =
+  (SELECT EDV.ORDER_NUM
+  FROM EDGIS.PGE_FEEDERFEDNETWORK_TRACE@To_EDDM EDV
+  WHERE EDV.to_feature_globalid = GSB.LINE_GUID);
+  COMMIT;
+
+--This gets MIN_BRANCH from TRACING TABLE IN ED.
+UPDATE EDGIS.GIS_PNODEINFO GSB
+SET GSB.MIN_BRANCH =
+  (SELECT EDV.MIN_BRANCH
+  FROM EDGIS.PGE_FEEDERFEDNETWORK_TRACE@To_EDDM EDV
+  WHERE EDV.to_feature_globalid = GSB.LINE_GUID);
+  COMMIT;
+
+--This gets MAX_BRANCH from TRACING TABLE IN ED.
+UPDATE EDGIS.GIS_PNODEINFO GSB
+SET GSB.MAX_BRANCH =
+  (SELECT EDV.MAX_BRANCH
+  FROM EDGIS.PGE_FEEDERFEDNETWORK_TRACE@To_EDDM EDV
+  WHERE EDV.to_feature_globalid = GSB.LINE_GUID);
+  COMMIT;
+
+--Updates FNM_CNODEID from FNM.
+UPDATE EDGIS.GIS_PNODEINFO GSB
+SET GSB.FNM_CNODEID =
+  (SELECT FN.CNODE_ID
+  FROM EDGIS.FNM FN
+  WHERE GSB.PNODE_FNMGUID = FN.GLOBALID);
+  COMMIT;
+
+--Updates BUS_ID from FNM.
+UPDATE EDGIS.GIS_PNODEINFO GSB
+SET GSB.BUS_ID =
+  (SELECT FN.BUS_ID
+  FROM EDGIS.FNM FN
+  WHERE GSB.PNODE_FNMGUID = FN.GLOBALID);
+  COMMIT;
+
+--Updates FNM_GLOBALID from FNM.
+UPDATE EDGIS.GIS_PNODEINFO GSB
+SET GSB.FNM_GLOBALID =
+  (SELECT FN.GLOBALID
+  FROM EDGIS.FNM FN
+  WHERE GSB.PNODE_FNMGUID = FN.GLOBALID);
+  COMMIT;
+
+--Updates LCA_ID from FNM.
+UPDATE EDGIS.GIS_PNODEINFO GSB
+SET GSB.LCA_ID =
+  (SELECT FN.LCA_ID
+  FROM EDGIS.FNM FN
+  WHERE GSB.PNODE_FNMGUID = FN.GLOBALID);
+  COMMIT;
+
+--Updates LAP_ID from FNM.
+UPDATE EDGIS.GIS_PNODEINFO GSB
+SET GSB.LAP_ID =
+  (SELECT FN.LAP_ID
+  FROM EDGIS.FNM FN
+  WHERE GSB.PNODE_FNMGUID = FN.GLOBALID);
+  COMMIT;
+
+
+--FOR NOW: removing this, since this is not valid for edge-cases.
+----The same FeederFedBy / CircuitID is sometimes assigned to multiple substation banks and transmission / distribution interpace poins.
+----This causes multiple pnodes to be returned for a given FeederFedBy / CircuitID when only one pnode is allowed.
+----The following sql resolves the issues by deleting those pnodes that are not the first pnode found on up-stream trace.
+----The pnode with the max TreeLevel is retained while the other pnodes are deleted from the table.
+--DELETE FROM EDGIS.GIS_PNODEINFO PN1
+--WHERE PN1.TREELEVEL <(
+--	SELECT MAX(TREELEVEL)
+--	FROM EDGIS.GIS_PNODEINFO PN2
+--	WHERE PN1.CircuitID = PN2.CircuitID
+--	AND PN1.BUS_ID != PN2.BUS_ID
+--	AND PN1.FNM_CNODEID != PN2.FNM_CNODEID
+--  );
+--  COMMIT;
+
+--Show records where same PNode is connected to different Feeders, JOING ON NODEID AND BUSID, AND set QA_FLAG TO ERROR.
+UPDATE EDGIS.GIS_PNODEINFO UP
+SET UP.QA_FLAG = 'ERROR'
+WHERE SUBPNODE_OID IN(
+Select T1.SUBPNODE_OID
+from EDGIS.GIS_PNODEINFO t1
+join
+(select * from EDGIS.GIS_PNODEINFO) t2
+on (t1.PNODE_CNODEID = t2.PNODE_CNODEID and
+      t1.BUS_ID = t2.BUS_ID)
+where (t1.CIRCUITID != t2.CIRCUITID));
+COMMIT;
+END GIS_COMPLETE_PNODEINFO;
+/

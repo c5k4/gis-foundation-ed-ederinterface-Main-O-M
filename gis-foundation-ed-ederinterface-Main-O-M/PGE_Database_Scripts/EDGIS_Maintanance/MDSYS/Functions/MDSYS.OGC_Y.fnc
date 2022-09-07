@@ -1,0 +1,28 @@
+Prompt drop Function OGC_Y;
+DROP FUNCTION MDSYS.OGC_Y
+/
+
+Prompt Function OGC_Y;
+--
+-- OGC_Y  (Function) 
+--
+CREATE OR REPLACE FUNCTION MDSYS.OGC_Y(
+  p ST_Point)
+    RETURN NUMBER IS
+BEGIN
+  RETURN p.ST_Y();
+END OGC_Y;
+/
+
+
+Prompt Synonym OGC_Y;
+--
+-- OGC_Y  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM OGC_Y FOR MDSYS.OGC_Y
+/
+
+
+Prompt Grants on FUNCTION OGC_Y TO PUBLIC to PUBLIC;
+GRANT EXECUTE ON MDSYS.OGC_Y TO PUBLIC
+/

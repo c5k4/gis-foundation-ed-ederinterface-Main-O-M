@@ -1,0 +1,91 @@
+﻿<controls:ChildWindow x:Class="ArcFMSilverlight.PLCAttributeEditor"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:esri="clr-namespace:ESRI.ArcGIS.Client.Toolkit;assembly=ESRI.ArcGIS.Client.Toolkit"
+                      xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"           
+           Width="355" Height="490" 
+           Title="Pole Header Information"
+           HasCloseButton="True" Closing="Close_click" >
+    <controlsToolkit:BusyIndicator x:Name="PLCBusyIndicator"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                        
+                                       >
+        <StackPanel>
+       
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+            
+            <sdk:Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Order No:"/>
+        <!--<TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="orderNoTxt" Width="140" Margin="10,0,0,0" IsEnabled="False"/>-->
+                <ComboBox  Grid.Row="0" Grid.Column="1"  Width="140"  HorizontalAlignment="Left" SelectionChanged="cboOrderNo_SelectionChanged" VerticalAlignment="Center" Name="cboOrderNo"  Margin="10,0,0,0"
+                       DisplayMemberPath="Value"
+                      SelectedValuePath="Key" />
+                <sdk:Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="SAP ID:"/>
+            <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="sapIdTxt" Width="140" Margin="10,0,0,0" IsEnabled="False" />
+            <sdk:Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="PLDBID:"/>
+            <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="poleNoTxt" Width="140" Margin="10,0,0,0" IsEnabled="False"/>
+                <Button  Grid.Row="2" Grid.Column="1" x:Name="CopyPLDBIDButton" ToolTipService.ToolTip="Copy PLDBID" Click="CopyPLDBID_Click"  Height="23" Margin="153,0,0,0">
+                    <Image Width="16"
+                   Height="16"
+                   Source="/Miner.Server.Client;component/Images/copy.png"/>
+                </Button>
+            <sdk:Label Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Sketch Location:"/>
+            <TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="sketchLocTxt" Width="140" Margin="10,0,0,0"/>
+            <sdk:Label Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Copy PLDBID:"/>
+            <TextBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="copyPoleNoTxt" Width="140" Margin="10,0,0,0" IsEnabled="False"/>
+            <sdk:Label Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Latitude:"/>
+            <TextBox Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="latTxt" Width="140" Margin="10,0,0,0" IsEnabled="False"/>
+            <sdk:Label Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Longitude:"/>
+            <TextBox Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="longTxt" Width="140" Margin="10,0,0,0" IsEnabled="False"/>
+            <sdk:Label Grid.Row="7" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Snow Load Dist:"/>
+            <TextBox Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="snowLoadTxt" Width="140" Margin="10,0,0,0" IsEnabled="False"/>
+            <sdk:Label Grid.Row="8" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Notification No:"/>
+            <TextBox Grid.Row="8" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="notificaionNoTxt" Width="140" Margin="10,0,0,0" IsEnabled="False"/>
+            <sdk:Label Grid.Row="9" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Mat Code:"/>
+            <TextBox Grid.Row="9" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="matCodeTxt" Width="140" Margin="10,0,0,0" IsEnabled="False"/>
+            <sdk:Label Grid.Row="10" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Elevation:"/>
+            <TextBox Grid.Row="10" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="ElevationTxt" Width="140" Margin="10,0,0,0" IsEnabled="False"/>
+            <sdk:Label Grid.Row="11" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Description:"/>
+            <TextBox Grid.Row="11" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="DescTxt" Width="140" Margin="10,0,0,0" IsEnabled="False"/>
+            <sdk:Label Grid.Row="12" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="LanID:"/>
+            <TextBox Grid.Row="12" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="lanIdTxt" Width="140" Margin="10,0,0,0" IsEnabled="False"/>
+            <sdk:Label Grid.Row="13" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Date:"/>
+            <sdk:DatePicker  Grid.Row="13" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="creationDateTxt" Width="140" Margin="10,0,0,0" IsEnabled="False"/>
+        </Grid>
+    <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Button  Grid.Row="0" x:Name="CopyButton" Content="Copy" Click="CopyButton_Click" Width="85" Height="23" HorizontalAlignment="Right" Margin="0,12,78,0"/>
+        <Button  Grid.Row="0" x:Name="OKButton" Content="Save" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,260,0"  />
+        <Button Grid.Row="0" x:Name="OpenOcalcBtn" Content="Open O-Calc" Click="OpenOcalc_Click" Width="95" Height="23" HorizontalAlignment="Right" Margin="0,12,164,0" />
+        <Button Grid.Row="0" x:Name="CancelPoleBtn" Content="Cancel" Click="CancelBtn_Click" Width="76" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" />
+    </Grid>
+          
+    </StackPanel>
+    </controlsToolkit:BusyIndicator>
+</controls:ChildWindow>

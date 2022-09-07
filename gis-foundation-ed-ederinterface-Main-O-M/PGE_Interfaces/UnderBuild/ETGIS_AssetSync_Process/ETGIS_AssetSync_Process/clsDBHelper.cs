@@ -1,0 +1,106 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Oracle.DataAccess.Client;
+using System.Configuration;
+using PGE_DBPasswordManagement;
+using System.Data;
+
+namespace ETGIS_AssetSync_Process
+{
+    public static class ClsDBHelper
+    {
+        public static OracleConnection conOraEDER = null;
+        public static Log4NetLogger _log = new Log4NetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType, "ETGISAssetSync.log4net.config");
+        public static void OpenConnection(out OracleConnection objconOra)
+        {
+            objconOra = null;
+            try
+            {
+                if (conOraEDER == null)
+                {
+                    string oracleConnectionString = ReadEncryption.GetConnectionStr(ConfigurationManager.AppSettings["ED_SDEConnection"]);
+                    if (string.IsNullOrEmpty(oracleConnectionString))
+                    {
+                        _log.Info("Cannot read EDER Connection String path from configuration file");
+                        throw new Exception();
+                    }
+                    conOraEDER = new OracleConnection();
+                    conOraEDER.ConnectionString = oracleConnectionString;
+                }
+                else
+                {
+                    objconOra = conOraEDER;
+                }
+                if (objconOra.State != ConnectionState.Open)
+                {
+                    objconOra.Open();
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Exception encountered while Open the Oracle Connection" + ex.ToString());
+                throw ex;
+            }
+        }
+        public static void CloseConnection(OracleConnection objconOra, out OracleConnection objReleaseConn)
+        {
+            objReleaseConn = null;
+            try
+            {
+                //close the database connection
+                if (objconOra != null)
+                {
+                    if (objconOra.State == ConnectionState.Open)
+                        objconOra.Close();
+                    objconOra.Dispose();
+                    objconOra = null;
+                    objReleaseConn = objconOra;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                objconOra = null;
+                _log.Error("Exception encountered while close the Oracle Connection" + ex.ToString());
+                throw ex;                
+            }
+
+        }
+        public static DataTable GetDataTableByQuery(string strQuery)
+        {
+            //Open Connection
+            if (conOraEDER == null)
+                OpenConnection(out conOraEDER);
+            DataSet dsData = new DataSet();
+            DataTable DT = new DataTable();
+            OracleCommand cmdExecuteSQL = null;
+            OracleDataAdapter daOracle = null;
+            try
+            {
+                cmdExecuteSQL = new OracleCommand();
+                cmdExecuteSQL.CommandType = CommandType.Text;
+                cmdExecuteSQL.CommandTimeout = 0;
+                cmdExecuteSQL.CommandText = strQuery;
+                cmdExecuteSQL.Connection = conOraEDER;
+                daOracle = new OracleDataAdapter();
+                daOracle.SelectCommand = cmdExecuteSQL;
+                daOracle.Fill(DT);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Exception encountered while getting the data from query with querystring " + ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                cmdExecuteSQL.Dispose();
+                daOracle.Dispose();
+                CloseConnection(conOraEDER, out conOraEDER);
+            }
+            return DT;
+        }
+    }
+}

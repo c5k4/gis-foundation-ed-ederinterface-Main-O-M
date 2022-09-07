@@ -1,0 +1,17 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Class="ArcFMSilverlight.App"
+             >
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Theming.TelventGray;component/themes/ThemeDictionary.xaml" />
+                <ResourceDictionary Source="Styles/Styles.xaml" />
+                <ResourceDictionary Source="Controls/Measure/Themes/Generic.xaml" />
+                <ResourceDictionary Source="Controls/RibbonPanel/Themes/Generic.xaml" />
+                <ResourceDictionary Source="Controls/Coordinates/Themes/Generic.xaml" />
+                <ResourceDictionary Source="Controls/TextCallout/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

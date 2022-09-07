@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ED Web Viewer</title>
+    <link rel="icon" type="image/x-icon" href="logo-pge.ico" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- \ stylesheet / -->
+    <link href="stylesheet.css" rel="stylesheet" type="text/css" />
+ 
+    <!-- \ TO MAKE HTML5 TAGS BEHAVE IN IE8 / -->
+    <script type="text/javascript">
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('menu');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('main');
+    </script>
+
+
+</head>
+<body>
+
+   <!-- \  ####  START - MAIN CONTENT WRAPPER  ####  / -->
+    <main class="wrapOuterContent">
+
+
+
+        <!-- \ START - INNER CONTENT WRAPPER / -->
+        <div class="wrapContent height_474px">
+
+            <!-- \ START - BUTTON BIG CROSS - CLOSE BROWSER / -->
+            <button type="button" class="btn_closeBig" onclick="closeMe()">
+                <span class="toolTip">Close&nbsp;Window</span>
+            </button>
+            <!-- \ END - BUTTON BIG CROSS - CLOSE BROWSER / -->
+            <!-- \ START - ACCESS DENIED SECTION / -->
+            <section class="wrapper_AccessDeied">
+
+
+                <!-- \ START - ACCESS DENIED CONTENT SECTION / -->
+                <section class="accDenied_ContWrapper">
+
+
+                    <!-- \ START - HEADING SECTION / -->
+                    <header>
+                        <h1>Access Denied</h1>
+                        <i class="icon_lockBig"></i>
+                    </header>
+                    <!-- \ END - HEADING SECTION / -->
+                    <!-- \ START - TEXT DESCRIPTION SECTION / -->
+                    <div class="content">
+                      <!--  <p>You are not authorized to access ED Web Viewer application.</p>-->
+                        <p>Access to EDGIS WebViewer has been restricted to specific user groups.</p>
+                        <br>
+                    <!--    <p style="font-size: 0.9em !important">Please follow <a href="JobAid/EDGISWebViewerAccessJobAid.html" target="_blank">link</a> to get access.</p>-->
+                            <p style="font-size: 0.9em !important">For more information on how to gain access click <a href="http://pgeweb.utility.pge.com/electric/am/tis/gisproject/AM%20GIS%20Project%20Draft/Pages/EDGIS-WebViewer_Access.aspx" target="_blank">here</a></p>
+                    </div>
+                    <!-- \ END - TEXT DESCRIPTION SECTION / -->
+
+
+
+                </section>
+                <!-- \ END - ACCESS DENIED CONTENT SECTION / -->
+
+
+
+
+            </section>
+            <!-- \ END - ACCESS DENIED SECTION / -->
+
+
+
+
+        </div>
+        <!-- \ END - INNER CONTENT WRAPPER / -->
+
+
+
+    </main>
+    <!-- \  #### END - MAIN CONTENT WRAPPER  #### / -->
+    <!-- \ #### START - FOOTER WRAPPER #### / -->
+    <footer class="wrapOuterFooter">
+
+
+        <!-- \ START - INNER FOOTER WRAPPER / -->
+        <div class="wrapFooter">
+
+
+            <!-- \ COLORED BAND / -->
+            <div class="ftr_colordBand gradient"></div>
+
+
+            <!-- \ COPYRIGHT TEXT / -->
+            <div class="ftr_cpyrghtTxtBox">&#169; Pacific Gas and Electric Company</div>
+
+
+
+            <!-- \ START - FOOTER LOGO SECTION  / -->
+            <div class="footer_logoSect">
+
+
+                <!-- \ START - COLUMN 1 / -->
+                <div class="col1">
+
+                    <img src="images/logo-pge.png" alt="Logo PGE" />
+
+
+                </div>
+                <!-- \ END - COLUMN 1 / -->
+                <!-- \ START - COLUMN 2 / -->
+                <div class="col2">
+
+                    <span><strong class="fontColor_pgeOrange">ED Web Viewer</strong></span>
+
+                </div>
+                <!-- \ END - COLUMN 2 / -->
+
+
+            </div>
+            <!-- \ END - FOOTER LOGO SECTION  / -->
+
+
+        </div>
+        <!-- \ END - INNER FOOTER WRAPPER / -->
+
+
+
+    </footer>
+    <!-- \ #### END - FOOTER WRAPPER #### / -->
+    <!-- \
+
+    ****  JAVASCRIPT SECTION  ****
+
+    / -->
+
+    <script type="text/javascript">
+        function closeMe() {
+            var win = window.open("", "_self"); /* url = "" or "about:blank"; target="_self" */
+            win.close();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <databaseconfig>
+    <username>edgis</username>
+    <password>edgis*Temp!</password>
+    <datasource>edgisa1t</datasource>
+    <server>edgisdbtst01.comp.pge.com</server>
+    <geodatabasesettings>
+      <instance>sde:oracle11g:/;local=edgisa1t</instance>
+      <database></database>
+      <server></server>
+      <version>SDE.DEFAULT</version>
+    </geodatabasesettings>
+  </databaseconfig>
+  <settings>
+    <setting name="TableOwner" value="EDGIS"/>
+    <setting name="UseLandscape" value="TRUE" />
+    <setting name="subtype" value="1" />
+    <setting name="numberexporters" value="5" />
+    <setting name="MxdLocation" value="C:\Program Files (x86)\Miner and Miner\PG&amp;E Custom Components\MAPProduction\Map Production Mxds" />
+    <setting name="TIFF500SCALEDPI" value="150" />
+    <setting name="TIFFDPI" value="200" />
+    <setting name="PDFDPI" value="800" />
+    <setting name="ExportPDF" value="TRUE" />
+    <setting name="ExportTIFF" value="TRUE" />
+    <setting name="IncludeAttributes" value="false" />
+    <setting name="RunExport" value="FALSE" />
+    <setting name="NAD 1927 StatePlane California I FIPS 0401" value="26741" />
+    <setting name="NAD 1927 StatePlane California II FIPS 0402" value="26742" />
+    <setting name="NAD 1927 StatePlane California III FIPS 0403" value="26743" />
+    <setting name="NAD 1927 StatePlane California IV FIPS 0404" value="26744" />
+    <setting name="NAD 1927 StatePlane California V FIPS 0405" value="26745" />
+    <setting name="NAD 1927 StatePlane California VI FIPS 0406" value="26746" />
+    <setting name="NAD 1927 StatePlane California VII FIPS 0407" value="26747" />
+    <setting name="25" value="300"/>
+    <setting name="50" value="600"/>
+    <setting name="100" value="1200"/>
+    <setting name="200" value="2400"/>
+    <setting name="250" value="3000"/>
+    <setting name="500" value="6000"/>
+    <setting name="1000" value="12000"/>
+    <setting name="DEFAULTSCALE" value="1200"/>
+    <setting name="WIPGDBInstance" value="sde:oracle11g:/;local=edgisw1t"/>
+    <setting name="WIPGDBDatabase" value=""/>
+    <setting name="WIPGDBServer" value=""/>
+    <setting name="WIPGDBVersion" value="SDE.DEFAULT"/>
+    <setting name="WIPGDBUserName" value="WEBR"/>
+    <setting name="WIPGDBPassword" value="webr"/>
+    <setting name="WIPClassName" value="WEBR.WIP"/>
+    <setting name="WIPDateCreationFieldName" value="DateCreated"/>
+    <setting name="WIPDateModifiedFieldName" value="DateModified"/>
+  </settings>
+</config>

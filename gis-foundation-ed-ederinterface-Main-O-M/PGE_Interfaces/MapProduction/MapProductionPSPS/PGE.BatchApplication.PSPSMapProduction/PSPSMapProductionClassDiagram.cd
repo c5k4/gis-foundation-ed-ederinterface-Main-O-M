@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="PGE.BatchApplication.PSPSMapProduction.BaseGDBFieldLookUp" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAACAAAAAAAAAAAAAAAAAAAAAICQAAQ=</HashCode>
+      <FileName>Base\BaseGDBFieldLookUp.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.BatchApplication.PSPSMapProduction.BaseMapLookUpTable" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQBAEIAAAgACAEAASAACQgQACQAAAAEAAAABQRAAAA=</HashCode>
+      <FileName>Base\BaseMapLookUpTable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.BatchApplication.PSPSMapProduction.BaseMapPreProcessor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAACgABACBAAAEQAgBAAQAQImAAADIAECgIAAiAAAA=</HashCode>
+      <FileName>Base\BaseMapPreProcessor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.BatchApplication.PSPSMapProduction.DBDataManager" BaseTypeListCollapsed="true">
+    <Position X="9" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAIAAAAAAAAAAIAAAAAAAAAACgAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\DBDataManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MapLookUpTable" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.BatchApplication.PSPSMapProduction.GDBDataManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAEECBAAACEAQAAAQAABAAAAAIKAAAAAAAAAAA=</HashCode>
+      <FileName>Base\GDBDataManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.BatchApplication.PSPSMapProduction.MapProductionConfigurationHandler" Collapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIQAAAAhQAAgAQAAAAAYAABIAkAACGgQgAAAAAAAA=</HashCode>
+      <FileName>Configuration\MapProductionConfigurationHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.PSPSMapProduction.MPGDBData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAIACQCAAAQAACgACQgQAAQAAAAAAEBAAAAAAAA=</HashCode>
+      <FileName>MPGDBData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.BatchApplication.PSPSMapProduction.UIMapProductionConfig" Collapsed="true">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AA0QCACQBCIQCAMIQAGAAEACAQAAABCBhgREAAYAAAI=</HashCode>
+      <FileName>UIMapProductionConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="config">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAA=</HashCode>
+      <FileName>Configuration\Configuration.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_databaseConfig" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DBConfig">
+    <Position X="1.75" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAggAAAAgAAQAEAAAAAAAAAAgACAQAAAgAAAAA=</HashCode>
+      <FileName>Configuration\Configuration.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_geodatabasesettingsField" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GDBSettings">
+    <Position X="2.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAIAAEAAAAAAAAAAAAAAAAAAAAAAYAAAAiAAAAA=</HashCode>
+      <FileName>Configuration\Configuration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Settings" Collapsed="true">
+    <Position X="13" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Configuration\Configuration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Setting" Collapsed="true">
+    <Position X="11.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAIAAAAAAAAAAAAAAAAAAAAAAEACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\Configuration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.ED.Extensions" Collapsed="true">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AJAAAAA0gAIAABAAAIAiZACAAEAAACAAAAQABQAyAQA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.BatchApplication.ED.FieldInstance" Collapsed="true">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAUAAAMAAAAAAACgAAQAAAAABAAAAAEhAAAAEAA=</HashCode>
+      <FileName>FieldInstance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="PGE.BatchApplication.PSPSMapProduction.IMPChangeDetector" Collapsed="true">
+    <Position X="11.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAQAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IMPChangeDetector.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PGE.BatchApplication.PSPSMapProduction.IMPDBDataManager">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAIAAAAAAAAAAIAAAAAAAAAACgAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IMPDBDataManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MapLookUpTable" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="PGE.BatchApplication.PSPSMapProduction.IMPExporter" Collapsed="true">
+    <Position X="13" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgABAAAAAAAAAAAABAAAACAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IMPExporter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PGE.BatchApplication.PSPSMapProduction.IMPGDBData" Collapsed="true">
+    <Position X="14.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAIACACAAAQAACgACQgQAAQAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IMPGDBData.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PGE.BatchApplication.PSPSMapProduction.IMPGDBDataManager">
+    <Position X="4.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAEEABAAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IMPGDBDataManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="GDBFieldLookUp" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="PGE.BatchApplication.PSPSMapProduction.IMPGDBFieldLookUp">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAACAAAAAAAAAAAAAAAAAAAAAICQAAQ=</HashCode>
+      <FileName>Interfaces\IMPGDBFieldLookUp.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PGE.BatchApplication.PSPSMapProduction.IMPMapLookUpTable">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAEIAAAgACAEAASAACQgQACQAAAAEAAAAAQAAAAA=</HashCode>
+      <FileName>Interfaces\IMPMapLookUpTable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PGE.BatchApplication.PSPSMapProduction.IMPProcessor" Collapsed="true">
+    <Position X="16.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACgABAABAAAAAAgBAAAAAACAAACIAECAIAAAAAAA=</HashCode>
+      <FileName>Interfaces\IMPProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="ExportType" Collapsed="true">
+    <Position X="13" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Base\MapProductionEnums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ExportState" Collapsed="true">
+    <Position X="11.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABCAAAAAAAAAAAAAAACAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Base\MapProductionEnums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

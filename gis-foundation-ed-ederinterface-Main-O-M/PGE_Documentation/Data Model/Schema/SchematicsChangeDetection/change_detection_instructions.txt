@@ -1,0 +1,139 @@
+Install Change Detection 10.03.19 into the <environment> batch server
+
+Prerequisites:
+- Install Tables & Stored Procedures by running SQL
+a) "\\sfetgis-nas01\sfgispoc_data\ApplicationDevelopment\IBM_Delivery\SchematicsChangeDetection\SQL_Changes"
+Open a command prompt. Run each script in the folder above, logging in as the user specified for each script e.g. log in as user sde for script 1, log in as process user for script 2 etc.
+b) Ensure that "Steps for Schematics Database Changes.docx" has been followed.
+c) Ensure that PGE_MODIFIEDMAPS has been unversioned (check in ArcCatalog that the menu item "Register As Versioned..." appears when you right-click it
+
+1) Copy the existing configuration file, PGEChangeDetection.exe.config, to another folder e.g. c:\temp for reference
+1a) Ensure TNS Names (see end of file)
+
+2) Uninstall existing Change Detection from the batch server using Add/Remove Programs. 
+
+3) Remove any leftover files in the folder you uninstalled from (usually D:\Program Files (x86)\Miner and Miner\PG&E Custom Components\Change Detection) except for any .sde files you may want to use
+
+4) Install Change Detection from "\\sfetgis-nas01\sfgispoc_data\ApplicationDevelopment\IBM_Delivery\SchematicsChangeDetection\PGEChangeDetectionInstaller_v10.0.3.19.msi"
+
+5) Navigate to the install folder and open the following files in a text editor (e.g. Notepad++ or an editor which can handle multiple documents):
+EDER.config
+Landbase.config
+Schematics.config
+SchematicsGUIDTotallETL.config
+WIP.config
+
+6) Find the following value in all files:
+"pge.connections.ederSDEWorkspaceConnection"
+
+7) Edit the <WorkspaceConnectionFile> element below to a password-saved SDE Connection file pointing to EDER. You can use the file from step 1 for reference.
+
+<workspaceConnectionFile><![CDATA[D:\Program Files (x86)\Miner and Miner\PG&E Custom Components\Change Detection\gis_i@edgisa1t.sde]]></workspaceConnectionFile>
+
+8) Find the following value in all files:
+"pge.connections.webrSDEWorkspaceConnection"
+
+9) Edit the <WorkspaceConnectionFile> element below to a password-saved SDE Connection file pointing to WIP DB. You can use the file from step 1 for reference.
+
+<workspaceConnectionFile><![CDATA[D:\Program Files (x86)\Miner and Miner\PG&E Custom Components\Change Detection\webr@edgisw1t.sde]]></workspaceConnectionFile>
+
+10) Find the following value in all files:
+"pge.connections.schematicsSDEWorkspaceConnection"
+
+11) Edit the <WorkspaceConnectionFile> element below to a password-saved SDE Connection file pointing to SCHEMATICS database (10.1).
+
+<workspaceConnectionFile><![CDATA[D:\Program Files (x86)\Miner and Miner\PG&E Custom Components\Change Detection\gis_i@edgisa1t.sde]]></workspaceConnectionFile>
+
+12) Find the following value in all files:
+"pge.connections.landbaseSDEWorkspaceConnection"
+
+13) Edit the <WorkspaceConnectionFile> element below to a password-saved SDE Connection file pointing to the landbase database.
+
+<workspaceConnectionFile><![CDATA[D:\Program Files (x86)\Miner and Miner\PG&E Custom Components\Change Detection\gis_i@lbgism1q.sde]]></workspaceConnectionFile>
+
+14) Find the following value:
+pge.changesManager.mdbManager
+
+15) edit the <mdbLocation> tag to the place where you have an mdb e.g. \\sfetgis-nas01\sfgispoc_data\ApplicationDevelopment\IBM_TeamMembers\PhilPenn\wip_fgdbs\w1t_wip.mdb
+If you do not have a suitable upto-date WIP mdb then you will have to generate an initial one but you will still have to have a location/name
+
+Save the files and exit
+
+16) In ArcCatalog in 10.1, grant all permissions on SchematicsMaintenance FeatureDataset and all tables to gis_i. In 10.0 ensure that PGE_VersionDeleteLinePoint/Line are.
+
+17) open a command prompt and navigate to the install folder
+
+18) If you don't have an existing, uptodate wIP mdb then, having ensured a full path to the mdb in previous step, enter the following:
+PGEChangeDetection.exe -o createInitialMDB -c WIP.config
+
+[ NOte that if you are running this in test and this step fails because of an incorrect connection file then delete the existing mdb ].
+
+19) Create the initial versions by running:
+PGEChangeDetection.exe -o createInitialVersion -c Schematics.config
+PGEChangeDetection.exe -o createInitialVersion -c EDER.config
+PGEChangeDetection.exe -o createInitialVersion -c Landbase.config
+
+There may be errors produced if the versions already exist in the database -- not a problem if the error is "version already exists".
+
+20) Smoke test Change Detection by entering the following in parallel (separate command prompts):
+PGEChangeDetection.exe -c EDER.config
+PGEChangeDetection.exe -c Schematics.config
+PGEChangeDetection.exe -c SchematicsGUIDTotal.config -o runETL
+PGEChangeDetection.exe -c Landbase.config
+PGEChangeDetection.exe -c WIP.config
+
+21) Expected output -- no error
+
+
+TNS Entries
+-----------
+EDSCMC1D, EDSCMC1D.WORLD =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = edgisdboraqa03.comp.pge.com)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = EDSCMC1D)
+    )
+  )
+
+
+EDSCMC1A, EDSCMC1A.WORLD =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = edgisdboraqa03.comp.pge.com)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = EDSCMC1A)
+    )
+  )
+
+EDSCMC1T, EDSCMC1T.WORLD =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = edgisdboraqa03.comp.pge.com)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = EDSCMC1T)
+    )
+  )
+
+EDSCMA1D, EDSCMA1D.WORLD =
+ (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = edgisdboradev02.comp.pge.com)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = EDSCMA1D)
+    )
+  )
+
+EDSCMA2D, EDSCMA2D.WORLD =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = edgisdboradev02.comp.pge.com)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = EDSCMA2D)
+    )
+  )

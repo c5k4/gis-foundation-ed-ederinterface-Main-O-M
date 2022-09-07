@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="ArcFMSilverlight.FEEDERToolPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    xmlns:local="clr-namespace:ArcFMSilverlight" 
+    xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"   
+    mc:Ignorable="d"
+     BorderBrush="#FFB70000">
+    <StackPanel Name="tabItem1"  Width="Auto" Visibility="Visible">
+        <Border Name ="FeederToolBorder" BorderThickness="3" BorderBrush="#FF4EB81E" Height="100" Width="615" CornerRadius="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+          
+                <Grid Height="370">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>                   
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="160" />
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="64*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Select Feeder/Enter Feeder ID:" Grid.Row="1" Margin="24,6,0,0" HorizontalAlignment="Left"/>
+                <!--<StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="2" Margin="0,22,0,0">
+            
+        </StackPanel>-->
+                
+        <!--<StackPanel Orientation="Horizontal"  HorizontalAlignment="Right" Margin="0,84,0,0"></StackPanel>
+                <controlsToolkit:BusyIndicator x:Name="BusyIndicator" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       IsBusy="False"/>-->
+                <!--<Popup x:Name="PARTFeeder_CircuitPopup" Grid.Row="1" HorizontalAlignment="Center" IsOpen="False" >-->
+                <controlsToolkit:BusyIndicator x:Name="BusyIndicator" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" 
+                                       IsBusy="False" Margin="225,0,230,19" Grid.Row="2" Height="21" /> 
+                <sdk:AutoCompleteBox x:Name="PART_FeederAutoCompleteTextBlock" Grid.Row="1" 
+                                         Padding="1"  
+                                         Width="180" Height="30" 
+                                        HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                        SelectionChanged="PART_AutoCompleteTextBlock_OnSelectionChanged"   
+                                        KeyDown="PART_AutoCompleteTextBlock_OnKeyDown"  
+                                        IsTextCompletionEnabled="False" Populating="PART_AutoCompleteTextBlock_OnPopulating"
+                                        Margin="213,0,0,0">
+                </sdk:AutoCompleteBox>
+                <!--</Popup>-->
+
+                <Button x:Name="SearchFeederButton" IsEnabled="True" Grid.Row="1" Content="Get Generations" HorizontalAlignment="Right" Click="SearchFeederButton_Click" Height="24" Margin="0,0,78,10" />
+                <TextBlock x:Name="txtFeederId" Grid.Row="2" FontWeight="ExtraBold"  Margin="0,16,270,0" ></TextBlock>
+                    <StackPanel x:Name="GenOnFeederStackPanel" Grid.Row="4" Orientation="Horizontal" Visibility="Collapsed">
+                    <sdk:DataGrid x:Name="genOnFeederGrid" SelectionMode="Single"  HeadersVisibility="All"  ColumnWidth="Auto"  RowHeight="30" Height="160" Width="610" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                IsReadOnly="True" LoadingRow="genOnFeederGrid_LoadingRow" CanUserResizeColumns="False" AutoGenerateColumns="False">
+                        <sdk:DataGrid.Columns>
+                            <sdk:DataGridTextColumn Header="Service Point"
+                      Binding="{Binding SPID}"/>
+                            <sdk:DataGridTextColumn Header="Meter Number"
+                      Binding="{Binding METERNUMBER}"/>
+                            <sdk:DataGridTextColumn Header="CGC12"
+                      Binding="{Binding CGC12}"/>
+                            <sdk:DataGridTextColumn Header="Eff.Rating(kW)"
+                      Binding="{Binding GenSize}"/>
+                            <sdk:DataGridTextColumn Header="NP Rating(kW)"
+                      Binding="{Binding Nameplate}"/>
+                            <sdk:DataGridTextColumn Header="De-Rated"
+                      Binding="{Binding Derated}"/>
+                            <sdk:DataGridTextColumn Header="Limited Export"
+                      Binding="{Binding LimitedExport}"/>
+                            <sdk:DataGridTextColumn Header="Gen Type"
+                      Binding="{Binding GenType}"/>
+                            <sdk:DataGridTextColumn Header="Feeder Number"
+                      Binding="{Binding FEEDERNUM}" Visibility="Collapsed"/>
+
+                            <sdk:DataGridTextColumn Header="Project/Reference"
+                      Binding="{Binding ProjectReference}"/>
+                            <sdk:DataGridTemplateColumn Header="Address" Width="150">
+                                <sdk:DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextWrapping="Wrap" Text="{Binding Address}" />
+                                    </DataTemplate>
+                                </sdk:DataGridTemplateColumn.CellTemplate>
+                            </sdk:DataGridTemplateColumn>                        
+                        </sdk:DataGrid.Columns>
+                        <toolkit:ContextMenuService.ContextMenu>
+                            <toolkit:ContextMenu>
+                                <toolkit:MenuItem Header="More Info..." Click="MenuItem_Click" />
+                            </toolkit:ContextMenu>
+                        </toolkit:ContextMenuService.ContextMenu>
+                    </sdk:DataGrid>
+                </StackPanel>
+                <TextBlock x:Name="txtSumGenSize_Feeder" Grid.Row="5" FontWeight="ExtraBold"  Margin="0,16,270,0" ></TextBlock>
+                <Button x:Name="SettingsButton" Content="Go To Settings" Visibility="Collapsed" Width="Auto" Height="23" Grid.Row="5" Click ="SettingsButton_Click" HorizontalAlignment="Right"  Margin="0,16,86,0"/>
+
+                <!--<Button x:Name="CancelButton" Content="Close" Width="75" Height="24" Click="CancelButton_Click" Grid.Row="5" HorizontalAlignment="Right" Margin="0,16,32,0" />-->
+                <Button x:Name="ExportToExcel_GenOnFeeder" Visibility="Collapsed"  Click="ExportToExcel_Click" ToolTipService.ToolTip="Export To Excel" Height="23" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" Margin="0,16,32,0" >
+                    <Image x:Name="ExportToExcelImage"
+                                                Width="16"
+                                               
+                                                Source="/Miner.Server.Client.Toolkit;component/Images/export.png" />
+
+                </Button>
+
+
+
+            </Grid>
+            </Border>
+        </StackPanel>
+</UserControl>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.BatchApplication.PrintCircuitTrace", "PGE.BatchApplication.PrintCircuitTrace\PGE.BatchApplication.PrintCircuitTrace.csproj", "{9198FCE9-9148-4D26-9825-908FBCEA19E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9198FCE9-9148-4D26-9825-908FBCEA19E7}.Debug|x86.ActiveCfg = Debug|x86
+		{9198FCE9-9148-4D26-9825-908FBCEA19E7}.Debug|x86.Build.0 = Debug|x86
+		{9198FCE9-9148-4D26-9825-908FBCEA19E7}.Release|x86.ActiveCfg = Release|x86
+		{9198FCE9-9148-4D26-9825-908FBCEA19E7}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {652FAF1F-1B23-42BB-87ED-25937F095855}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccProjectUniqueName0 = PGE.BatchApplication.PrintCircuitTrace\\PGE.BatchApplication.PrintCircuitTrace.csproj
+		SccProjectName0 = PGE.BatchApplication.PrintCircuitTrace
+		SccLocalPath0 = PGE.BatchApplication.PrintCircuitTrace
+		SccLocalPath1 = .
+	EndGlobalSection
+EndGlobal

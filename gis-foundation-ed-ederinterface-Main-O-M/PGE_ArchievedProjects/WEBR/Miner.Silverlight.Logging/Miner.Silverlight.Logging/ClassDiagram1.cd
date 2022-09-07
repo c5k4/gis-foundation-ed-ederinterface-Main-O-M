@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Miner.Silverlight.Logging.LogToBugZilla" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAIAAAAAgAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LogToBugZilla.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.665" Collapsed="true" />
+  </Class>
+  <Class Name="Miner.Silverlight.Logging.LogToServer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAIAAAAAgAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LogToServer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Miner.Silverlight.Logging.LogToUser" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAIAAAAAgAAAAAACAAAIAAgAAAAAAAA=</HashCode>
+      <FileName>LogToUser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Miner.Silverlight.Logging.ICustomLogger">
+    <Position X="3.25" Y="0.5" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAIAAAAAgAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICustomLogger.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Miner.Silverlight.Logging.LogLevel">
+    <Position X="11.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAIAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>LogEnums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Miner.Silverlight.Logging.LogType">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQCAAA=</HashCode>
+      <FileName>LogEnums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Miner.Silverlight.Logging.ErrorType">
+    <Position X="9.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAgAAAAAAAAAAAAAAAAQAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>LogEnums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.BatchApplication.MainlineIndicator", "PGE.BatchApplication.MainlineIndicator\PGE.BatchApplication.MainlineIndicator.csproj", "{EF629A3E-B039-4DD3-B737-53FFFC8E8EFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "externals", "externals", "{1BF332E5-63E7-4E1C-88CE-25227E325F67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.Common.Delivery.Framework", "..\..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Framework\PGE.Common.Delivery.Framework.csproj", "{F36C0849-BF86-4632-AED8-DCC7C4827F86}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PGE.Installer.MainlineIndicator", "PGE.Installer.MainlineIndicator\PGE.Installer.MainlineIndicator.vdproj", "{F65B9C6D-D9B5-4A71-ACFF-989A97BACE28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		NoBuild|Any CPU = NoBuild|Any CPU
+		NoBuild|x86 = NoBuild|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF629A3E-B039-4DD3-B737-53FFFC8E8EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF629A3E-B039-4DD3-B737-53FFFC8E8EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF629A3E-B039-4DD3-B737-53FFFC8E8EFA}.Debug|x86.ActiveCfg = Debug|x86
+		{EF629A3E-B039-4DD3-B737-53FFFC8E8EFA}.Debug|x86.Build.0 = Debug|x86
+		{EF629A3E-B039-4DD3-B737-53FFFC8E8EFA}.NoBuild|Any CPU.ActiveCfg = Release|Any CPU
+		{EF629A3E-B039-4DD3-B737-53FFFC8E8EFA}.NoBuild|Any CPU.Build.0 = Release|Any CPU
+		{EF629A3E-B039-4DD3-B737-53FFFC8E8EFA}.NoBuild|x86.ActiveCfg = Debug|x86
+		{EF629A3E-B039-4DD3-B737-53FFFC8E8EFA}.NoBuild|x86.Build.0 = Debug|x86
+		{EF629A3E-B039-4DD3-B737-53FFFC8E8EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF629A3E-B039-4DD3-B737-53FFFC8E8EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF629A3E-B039-4DD3-B737-53FFFC8E8EFA}.Release|x86.ActiveCfg = Release|x86
+		{EF629A3E-B039-4DD3-B737-53FFFC8E8EFA}.Release|x86.Build.0 = Release|x86
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.Debug|x86.ActiveCfg = Debug|x86
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.Debug|x86.Build.0 = Debug|x86
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.NoBuild|Any CPU.ActiveCfg = NoBuild|Any CPU
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.NoBuild|Any CPU.Build.0 = NoBuild|Any CPU
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.NoBuild|x86.ActiveCfg = NoBuild|x86
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.NoBuild|x86.Build.0 = NoBuild|x86
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.Release|x86.ActiveCfg = Release|x86
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.Release|x86.Build.0 = Release|x86
+		{F65B9C6D-D9B5-4A71-ACFF-989A97BACE28}.Debug|Any CPU.ActiveCfg = Debug
+		{F65B9C6D-D9B5-4A71-ACFF-989A97BACE28}.Debug|Any CPU.Build.0 = Debug
+		{F65B9C6D-D9B5-4A71-ACFF-989A97BACE28}.Debug|x86.ActiveCfg = Debug
+		{F65B9C6D-D9B5-4A71-ACFF-989A97BACE28}.Debug|x86.Build.0 = Debug
+		{F65B9C6D-D9B5-4A71-ACFF-989A97BACE28}.NoBuild|Any CPU.ActiveCfg = Debug
+		{F65B9C6D-D9B5-4A71-ACFF-989A97BACE28}.NoBuild|Any CPU.Build.0 = Debug
+		{F65B9C6D-D9B5-4A71-ACFF-989A97BACE28}.NoBuild|x86.ActiveCfg = Debug
+		{F65B9C6D-D9B5-4A71-ACFF-989A97BACE28}.NoBuild|x86.Build.0 = Debug
+		{F65B9C6D-D9B5-4A71-ACFF-989A97BACE28}.Release|Any CPU.ActiveCfg = Release
+		{F65B9C6D-D9B5-4A71-ACFF-989A97BACE28}.Release|Any CPU.Build.0 = Release
+		{F65B9C6D-D9B5-4A71-ACFF-989A97BACE28}.Release|x86.ActiveCfg = Release
+		{F65B9C6D-D9B5-4A71-ACFF-989A97BACE28}.Release|x86.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86} = {1BF332E5-63E7-4E1C-88CE-25227E325F67}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {55BA03E7-7FDF-4526-A579-76E2B7F2655A}
+	EndGlobalSection
+EndGlobal

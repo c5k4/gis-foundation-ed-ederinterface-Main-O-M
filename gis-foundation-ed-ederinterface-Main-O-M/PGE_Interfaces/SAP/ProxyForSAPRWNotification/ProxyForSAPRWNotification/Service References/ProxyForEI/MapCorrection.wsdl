@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WL5G3N1:definitions xmlns:WL5G3N3="http://xmlns.pge.com/Core/Message" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:WL5G3N5="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:WL5G3N0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:WL5G3N2="http://xmlns.pge.com/Electric/MapCorrectionMessage" xmlns:WL5G3N4="http://xmlns.pge.com/Electric/MapCorrection" name="MapCorrection" targetNamespace="http://xmlns.pge.com/Electric/MapCorrection" xmlns:WL5G3N1="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:UsingPolicy WL5G3N1:Required="true" />
+  <wsp:Policy WL5G3N0:Id="Mtom.xml">
+    <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+  </wsp:Policy>
+  <WL5G3N1:types>
+    <xs:schema xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:msg="http://xmlns.pge.com/Core/Message" xmlns:WL5G3N3="http://xmlns.pge.com/Electric/MapCorrection" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.pge.com/Electric/MapCorrection" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:iom="http://xmlns.pge.com/Electric/MapCorrectionMessage" xmlns:WL5G3N1="http://xmlns.pge.com/Electric/MapCorrectionMessage" xmlns:WL5G3N2="http://xmlns.pge.com/Core/Message" xmlns:WL5G3N4="http://schemas.xmlsoap.org/wsdl/soap/" elementFormDefault="qualified" targetNamespace="http://xmlns.pge.com/Electric/MapCorrectionMessage" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:include schemaLocation="https://itapposbd01vip.comp.pge.com:443/ei.electric.edgis/MapCorrection?SCHEMA%2Fei.electric.edgis%2FResources%2FDataStructures%2FXMLSchema%2FMapCorrectionMessage" />
+    </xs:schema>
+  </WL5G3N1:types>
+  <WL5G3N1:message name="CreateMapCorrectionRequestMessage">
+    <WL5G3N1:part name="CreateMapCorrectionRequestMessage" element="WL5G3N2:CreateMapCorrectionRequestMessage" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="ChangeMapCorrectionRequestMessage">
+    <WL5G3N1:part name="ChangeMapCorrectionRequestMessage" element="WL5G3N2:ChangeMapCorrectionRequestMessage" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="CancelMapCorrectionRequestMessage">
+    <WL5G3N1:part name="CancelMapCorrectionRequestMessage" element="WL5G3N2:CancelMapCorrectionRequestMessage" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="CloseMapCorrectionRequestMessage">
+    <WL5G3N1:part name="CloseMapCorrectionRequestMessage" element="WL5G3N2:CloseMapCorrectionRequestMessage" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="DeleteMapCorrectionRequestMessage">
+    <WL5G3N1:part name="DeleteMapCorrectionRequestMessage" element="WL5G3N2:DeleteMapCorrectionRequestMessage" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="GetMapCorrectionRequestMessage">
+    <WL5G3N1:part name="GetMapCorrectionRequestMessage" element="WL5G3N2:GetMapCorrectionRequestMessage" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="CreatedMapCorrectionRequestMessage">
+    <WL5G3N1:part name="CreatedMapCorrectionRequestMessage" element="WL5G3N2:CreatedMapCorrectionRequestMessage" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="ChangedMapCorrectionRequestMessage">
+    <WL5G3N1:part name="ChangedMapCorrectionRequestMessage" element="WL5G3N2:ChangedMapCorrectionRequestMessage" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="CanceledMapCorrectionRequestMessage">
+    <WL5G3N1:part name="CanceledMapCorrectionRequestMessage" element="WL5G3N2:CanceledMapCorrectionRequestMessage" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="ClosedMapCorrectionRequestMessage">
+    <WL5G3N1:part name="ClosedMapCorrectionRequestMessage" element="WL5G3N2:ClosedMapCorrectionRequestMessage" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="DeletedMapCorrectionRequestMessage">
+    <WL5G3N1:part name="DeletedMapCorrectionRequestMessage" element="WL5G3N2:DeletedMapCorrectionRequestMessage" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="ResponseMessage">
+    <WL5G3N1:part name="ResponseMessage" element="WL5G3N2:MapCorrectionResponseMessage" />
+  </WL5G3N1:message>
+  <WL5G3N1:message name="FaultMessage">
+    <WL5G3N1:part name="FaultMessage" element="WL5G3N3:FaultMessage" />
+  </WL5G3N1:message>
+  <WL5G3N1:portType name="MapCorrection_Port">
+    <WL5G3N1:operation name="CreateMapCorrection">
+      <WL5G3N1:input name="CreateMapCorrectionRequest" message="WL5G3N4:CreateMapCorrectionRequestMessage" />
+      <WL5G3N1:output name="CreateMapCorrectionResponse" message="WL5G3N4:ResponseMessage" />
+      <WL5G3N1:fault name="CreateMapCorrectionFault" message="WL5G3N4:FaultMessage" />
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="ChangeMapCorrection">
+      <WL5G3N1:input name="ChangeMapCorrectionRequest" message="WL5G3N4:ChangeMapCorrectionRequestMessage" />
+      <WL5G3N1:output name="ChangeMapCorrectionResponse" message="WL5G3N4:ResponseMessage" />
+      <WL5G3N1:fault name="ChangeMapCorrectionFault" message="WL5G3N4:FaultMessage" />
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="CancelMapCorrection">
+      <WL5G3N1:input name="CancelMapCorrectionRequest" message="WL5G3N4:CancelMapCorrectionRequestMessage" />
+      <WL5G3N1:output name="CancelMapCorrectionResponse" message="WL5G3N4:ResponseMessage" />
+      <WL5G3N1:fault name="CancelMapCorrectionFault" message="WL5G3N4:FaultMessage" />
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="CloseMapCorrection">
+      <WL5G3N1:input name="CloseMapCorrectionRequest" message="WL5G3N4:CloseMapCorrectionRequestMessage" />
+      <WL5G3N1:output name="CloseMapCorrectionResponse" message="WL5G3N4:ResponseMessage" />
+      <WL5G3N1:fault name="CloseMapCorrectionFault" message="WL5G3N4:FaultMessage" />
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="DeleteMapCorrection">
+      <WL5G3N1:input name="DeleteMapCorrectionRequest" message="WL5G3N4:DeleteMapCorrectionRequestMessage" />
+      <WL5G3N1:output name="DeleteMapCorrectionResponse" message="WL5G3N4:ResponseMessage" />
+      <WL5G3N1:fault name="DeleteMapCorrectionFault" message="WL5G3N4:FaultMessage" />
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="GetMapCorrection">
+      <WL5G3N1:input name="GetMapCorrectionRequest" message="WL5G3N4:GetMapCorrectionRequestMessage" />
+      <WL5G3N1:output name="GetMapCorrectionResponse" message="WL5G3N4:ResponseMessage" />
+      <WL5G3N1:fault name="GetMapCorrectionFault" message="WL5G3N4:FaultMessage" />
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="CreatedMapCorrection">
+      <WL5G3N1:input name="CreatedMapCorrectionRequest" message="WL5G3N4:CreatedMapCorrectionRequestMessage" />
+      <WL5G3N1:output name="CreatedMapCorrectionResponse" message="WL5G3N4:ResponseMessage" />
+      <WL5G3N1:fault name="CreatedMapCorrectionFault" message="WL5G3N4:FaultMessage" />
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="ChangedMapCorrection">
+      <WL5G3N1:input name="ChangedMapCorrectionRequest" message="WL5G3N4:ChangedMapCorrectionRequestMessage" />
+      <WL5G3N1:output name="ChangedMapCorrectionResponse" message="WL5G3N4:ResponseMessage" />
+      <WL5G3N1:fault name="ChangedMapCorrectionFault" message="WL5G3N4:FaultMessage" />
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="CanceledMapCorrection">
+      <WL5G3N1:input name="CanceledMapCorrectionRequest" message="WL5G3N4:CanceledMapCorrectionRequestMessage" />
+      <WL5G3N1:output name="CanceledMapCorrectionResponse" message="WL5G3N4:ResponseMessage" />
+      <WL5G3N1:fault name="CanceledMapCorrectionFault" message="WL5G3N4:FaultMessage" />
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="ClosedMapCorrection">
+      <WL5G3N1:input name="ClosedMapCorrectionRequest" message="WL5G3N4:ClosedMapCorrectionRequestMessage" />
+      <WL5G3N1:output name="ClosedMapCorrectionResponse" message="WL5G3N4:ResponseMessage" />
+      <WL5G3N1:fault name="ClosedMapCorrectionFault" message="WL5G3N4:FaultMessage" />
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="DeletedMapCorrection">
+      <WL5G3N1:input name="DeletedMapCorrectionRequest" message="WL5G3N4:DeletedMapCorrectionRequestMessage" />
+      <WL5G3N1:output name="DeletedMapCorrectionResponse" message="WL5G3N4:ResponseMessage" />
+      <WL5G3N1:fault name="DeletedMapCorrectionFault" message="WL5G3N4:FaultMessage" />
+    </WL5G3N1:operation>
+  </WL5G3N1:portType>
+  <WL5G3N1:binding name="MapCorrection_Binding" type="WL5G3N4:MapCorrection_Port">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#Mtom.xml" />
+    </wsp:Policy>
+    <WL5G3N5:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <WL5G3N1:operation name="CreateMapCorrection">
+      <WL5G3N5:operation soapAction="http://xmlns.pge.com/MapCorrection/CreateMapCorrection" style="document" />
+      <WL5G3N1:input name="CreateMapCorrectionRequest">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output name="CreateMapCorrectionResponse">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:output>
+      <WL5G3N1:fault name="CreateMapCorrectionFault">
+        <WL5G3N5:fault use="literal" name="CreateMapCorrectionFault" namespace="" />
+      </WL5G3N1:fault>
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="ChangeMapCorrection">
+      <WL5G3N5:operation soapAction="http://xmlns.pge.com/MapCorrection/ChangeMapCorrection" style="document" />
+      <WL5G3N1:input name="ChangeMapCorrectionRequest">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output name="ChangeMapCorrectionResponse">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:output>
+      <WL5G3N1:fault name="ChangeMapCorrectionFault">
+        <WL5G3N5:fault use="literal" name="ChangeMapCorrectionFault" namespace="" />
+      </WL5G3N1:fault>
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="CancelMapCorrection">
+      <WL5G3N5:operation soapAction="http://xmlns.pge.com/MapCorrection/CancelMapCorrection" style="document" />
+      <WL5G3N1:input name="CancelMapCorrectionRequest">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output name="CancelMapCorrectionResponse">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:output>
+      <WL5G3N1:fault name="CancelMapCorrectionFault">
+        <WL5G3N5:fault use="literal" name="CancelMapCorrectionFault" namespace="" />
+      </WL5G3N1:fault>
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="CloseMapCorrection">
+      <WL5G3N5:operation soapAction="http://xmlns.pge.com/MapCorrection/CloseMapCorrection" style="document" />
+      <WL5G3N1:input name="CloseMapCorrectionRequest">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output name="CloseMapCorrectionResponse">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:output>
+      <WL5G3N1:fault name="CloseMapCorrectionFault">
+        <WL5G3N5:fault use="literal" name="CloseMapCorrectionFault" namespace="" />
+      </WL5G3N1:fault>
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="DeleteMapCorrection">
+      <WL5G3N5:operation soapAction="http://xmlns.pge.com/MapCorrection/DeleteMapCorrection" style="document" />
+      <WL5G3N1:input name="DeleteMapCorrectionRequest">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output name="DeleteMapCorrectionResponse">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:output>
+      <WL5G3N1:fault name="DeleteMapCorrectionFault">
+        <WL5G3N5:fault use="literal" name="DeleteMapCorrectionFault" namespace="" />
+      </WL5G3N1:fault>
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="GetMapCorrection">
+      <WL5G3N5:operation soapAction="http://xmlns.pge.com/MapCorrection/GetMapCorrection" style="document" />
+      <WL5G3N1:input name="GetMapCorrectionRequest">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output name="GetMapCorrectionResponse">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:output>
+      <WL5G3N1:fault name="GetMapCorrectionFault">
+        <WL5G3N5:fault use="literal" name="GetMapCorrectionFault" namespace="" />
+      </WL5G3N1:fault>
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="CreatedMapCorrection">
+      <WL5G3N5:operation soapAction="http://xmlns.pge.com/MapCorrection/CreatedMapCorrection" style="document" />
+      <WL5G3N1:input name="CreatedMapCorrectionRequest">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output name="CreatedMapCorrectionResponse">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:output>
+      <WL5G3N1:fault name="CreatedMapCorrectionFault">
+        <WL5G3N5:fault use="literal" name="CreatedMapCorrectionFault" namespace="" />
+      </WL5G3N1:fault>
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="ChangedMapCorrection">
+      <WL5G3N5:operation soapAction="http://xmlns.pge.com/MapCorrection/ChangedMapCorrection" style="document" />
+      <WL5G3N1:input name="ChangedMapCorrectionRequest">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output name="ChangedMapCorrectionResponse">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:output>
+      <WL5G3N1:fault name="ChangedMapCorrectionFault">
+        <WL5G3N5:fault use="literal" name="ChangedMapCorrectionFault" namespace="" />
+      </WL5G3N1:fault>
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="CanceledMapCorrection">
+      <WL5G3N5:operation soapAction="http://xmlns.pge.com/MapCorrection/CanceledMapCorrection" style="document" />
+      <WL5G3N1:input name="CanceledMapCorrectionRequest">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output name="CanceledMapCorrectionResponse">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:output>
+      <WL5G3N1:fault name="CanceledMapCorrectionFault">
+        <WL5G3N5:fault use="literal" name="CanceledMapCorrectionFault" namespace="" />
+      </WL5G3N1:fault>
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="ClosedMapCorrection">
+      <WL5G3N5:operation soapAction="http://xmlns.pge.com/MapCorrection/ClosedMapCorrection" style="document" />
+      <WL5G3N1:input name="ClosedMapCorrectionRequest">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output name="ClosedMapCorrectionResponse">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:output>
+      <WL5G3N1:fault name="ClosedMapCorrectionFault">
+        <WL5G3N5:fault use="literal" name="ClosedMapCorrectionFault" namespace="" />
+      </WL5G3N1:fault>
+    </WL5G3N1:operation>
+    <WL5G3N1:operation name="DeletedMapCorrection">
+      <WL5G3N5:operation soapAction="http://xmlns.pge.com/MapCorrection/DeletedMapCorrection" style="document" />
+      <WL5G3N1:input name="DeletedMapCorrectionRequest">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:input>
+      <WL5G3N1:output name="DeletedMapCorrectionResponse">
+        <WL5G3N5:body use="literal" />
+      </WL5G3N1:output>
+      <WL5G3N1:fault name="DeletedMapCorrectionFault">
+        <WL5G3N5:fault use="literal" name="DeletedMapCorrectionFault" namespace="" />
+      </WL5G3N1:fault>
+    </WL5G3N1:operation>
+  </WL5G3N1:binding>
+  <WL5G3N1:service name="MapCorrection">
+    <WL5G3N1:port name="MapCorrection_Port" binding="WL5G3N4:MapCorrection_Binding">
+      <WL5G3N5:address location="https://itapposbdev01.comp.pge.com:8006/ei.electric.edgis/MapCorrection" />
+    </WL5G3N1:port>
+  </WL5G3N1:service>
+</WL5G3N1:definitions>

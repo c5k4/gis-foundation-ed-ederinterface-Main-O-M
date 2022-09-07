@@ -1,0 +1,1295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TLM.Store" Alias="Self" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="TLMStoreContainer">
+          <EntitySet Name="CODE_LOOKUP" EntityType="TLM.Store.CODE_LOOKUP" store:Type="Tables" Schema="EDTLM" />
+          <EntitySet Name="METER" EntityType="TLM.Store.METER" store:Type="Tables" Schema="EDTLM" />
+          <EntitySet Name="SP_PEAK_GEN_HIST" EntityType="TLM.Store.SP_PEAK_GEN_HIST" store:Type="Tables" Schema="EDTLM" />
+          <EntitySet Name="SP_PEAK_HIST" EntityType="TLM.Store.SP_PEAK_HIST" store:Type="Tables" Schema="EDTLM" />
+          <EntitySet Name="TRANSFORMER" EntityType="TLM.Store.TRANSFORMER" store:Type="Tables" Schema="EDTLM" />
+          <EntitySet Name="TRANSFORMER_BANK" EntityType="TLM.Store.TRANSFORMER_BANK" store:Type="Tables" Schema="EDTLM" />
+          <EntitySet Name="TRF_NP_CAP_MULT" EntityType="TLM.Store.TRF_NP_CAP_MULT" store:Type="Tables" Schema="EDTLM" />
+          <EntitySet Name="TRF_PEAK" EntityType="TLM.Store.TRF_PEAK" store:Type="Tables" Schema="EDTLM" />
+          <EntitySet Name="TRF_PEAK_BY_CUST_TYP" EntityType="TLM.Store.TRF_PEAK_BY_CUST_TYP" store:Type="Tables" Schema="EDTLM" />
+          <EntitySet Name="TRF_PEAK_GEN" EntityType="TLM.Store.TRF_PEAK_GEN" store:Type="Tables" Schema="EDTLM" />
+          <EntitySet Name="TRF_PEAK_GEN_BY_CUST_TYP" EntityType="TLM.Store.TRF_PEAK_GEN_BY_CUST_TYP" store:Type="Tables" Schema="EDTLM" />
+          <EntitySet Name="TRF_PEAK_GEN_HIST" EntityType="TLM.Store.TRF_PEAK_GEN_HIST" store:Type="Tables" Schema="EDTLM" />
+          <EntitySet Name="TRF_PEAK_HIST" EntityType="TLM.Store.TRF_PEAK_HIST" store:Type="Tables" Schema="EDTLM" />
+          <AssociationSet Name="METER_FK1" Association="TLM.Store.METER_FK1">
+            <End Role="TRANSFORMER" EntitySet="TRANSFORMER" />
+            <End Role="METER" EntitySet="METER" />
+          </AssociationSet>
+          <AssociationSet Name="SP_PEAK_GEN_HIST_FK1" Association="TLM.Store.SP_PEAK_GEN_HIST_FK1">
+            <End Role="TRF_PEAK_GEN_HIST" EntitySet="TRF_PEAK_GEN_HIST" />
+            <End Role="SP_PEAK_GEN_HIST" EntitySet="SP_PEAK_GEN_HIST" />
+          </AssociationSet>
+          <AssociationSet Name="SP_PEAK_GEN_HIST_FK2" Association="TLM.Store.SP_PEAK_GEN_HIST_FK2">
+            <End Role="METER" EntitySet="METER" />
+            <End Role="SP_PEAK_GEN_HIST" EntitySet="SP_PEAK_GEN_HIST" />
+          </AssociationSet>
+          <AssociationSet Name="SP_PEAK_HIST_FK1" Association="TLM.Store.SP_PEAK_HIST_FK1">
+            <End Role="TRF_PEAK_HIST" EntitySet="TRF_PEAK_HIST" />
+            <End Role="SP_PEAK_HIST" EntitySet="SP_PEAK_HIST" />
+          </AssociationSet>
+          <AssociationSet Name="SP_PEAK_HIST_FK2" Association="TLM.Store.SP_PEAK_HIST_FK2">
+            <End Role="METER" EntitySet="METER" />
+            <End Role="SP_PEAK_HIST" EntitySet="SP_PEAK_HIST" />
+          </AssociationSet>
+          <AssociationSet Name="TRANSFORMER_BANK_FK1" Association="TLM.Store.TRANSFORMER_BANK_FK1">
+            <End Role="TRANSFORMER" EntitySet="TRANSFORMER" />
+            <End Role="TRANSFORMER_BANK" EntitySet="TRANSFORMER_BANK" />
+          </AssociationSet>
+          <AssociationSet Name="TRF_PEAK_BY_CUST_TYP_FK1" Association="TLM.Store.TRF_PEAK_BY_CUST_TYP_FK1">
+            <End Role="TRF_PEAK" EntitySet="TRF_PEAK" />
+            <End Role="TRF_PEAK_BY_CUST_TYP" EntitySet="TRF_PEAK_BY_CUST_TYP" />
+          </AssociationSet>
+          <AssociationSet Name="TRF_PEAK_FK1" Association="TLM.Store.TRF_PEAK_FK1">
+            <End Role="TRANSFORMER" EntitySet="TRANSFORMER" />
+            <End Role="TRF_PEAK" EntitySet="TRF_PEAK" />
+          </AssociationSet>
+          <AssociationSet Name="TRF_PEAK_GEN_BY_CUST_TYP_FK1" Association="TLM.Store.TRF_PEAK_GEN_BY_CUST_TYP_FK1">
+            <End Role="TRF_PEAK_GEN" EntitySet="TRF_PEAK_GEN" />
+            <End Role="TRF_PEAK_GEN_BY_CUST_TYP" EntitySet="TRF_PEAK_GEN_BY_CUST_TYP" />
+          </AssociationSet>
+          <AssociationSet Name="TRF_PEAK_GEN_FK1" Association="TLM.Store.TRF_PEAK_GEN_FK1">
+            <End Role="TRANSFORMER" EntitySet="TRANSFORMER" />
+            <End Role="TRF_PEAK_GEN" EntitySet="TRF_PEAK_GEN" />
+          </AssociationSet>
+          <AssociationSet Name="TRF_PEAK_GEN_HIST_FK1" Association="TLM.Store.TRF_PEAK_GEN_HIST_FK1">
+            <End Role="TRANSFORMER" EntitySet="TRANSFORMER" />
+            <End Role="TRF_PEAK_GEN_HIST" EntitySet="TRF_PEAK_GEN_HIST" />
+          </AssociationSet>
+          <AssociationSet Name="TRF_PEAK_HIST_FK1" Association="TLM.Store.TRF_PEAK_HIST_FK1">
+            <End Role="TRANSFORMER" EntitySet="TRANSFORMER" />
+            <End Role="TRF_PEAK_HIST" EntitySet="TRF_PEAK_HIST" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CODE_LOOKUP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="CODE_TYP" Type="varchar2" Nullable="false" MaxLength="15" />
+          <Property Name="CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="DESC_LONG" Type="varchar2" Nullable="false" MaxLength="120" />
+          <Property Name="DESC_SHORT" Type="varchar2" Nullable="false" MaxLength="64" />
+          <Property Name="CREATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="CREATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="UPDATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="UPDATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="METER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="10" />
+          <Property Name="SERVICE_POINT_ID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="UNQSPID" Type="varchar2" MaxLength="10" />
+          <Property Name="TRF_ID" Type="number" Nullable="false" />
+          <Property Name="REV_ACCT_CD" Type="varchar2" MaxLength="8" />
+          <Property Name="SVC_ST_NUM" Type="varchar2" MaxLength="12" />
+          <Property Name="SVC_ST_NAME" Type="varchar2" MaxLength="64" />
+          <Property Name="SVC_ST_NAME2" Type="varchar2" MaxLength="64" />
+          <Property Name="SVC_CITY" Type="varchar2" MaxLength="30" />
+          <Property Name="SVC_STATE" Type="varchar2" MaxLength="2" />
+          <Property Name="SVC_ZIP" Type="varchar2" MaxLength="10" />
+          <Property Name="CUST_TYP" Type="varchar2" MaxLength="3" />
+          <Property Name="RATE_SCHED" Type="varchar2" MaxLength="8" />
+          <Property Name="GLOBAL_ID" Type="varchar2" Nullable="false" MaxLength="38" />
+          <Property Name="SM_FLG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="CREATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="CREATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="UPDATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="UPDATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="SP_PEAK_GEN_HIST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="SERVICE_POINT_ID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="TRF_PEAK_GEN_HIST_ID" Type="number" Nullable="false" />
+          <Property Name="SP_PEAK_TIME" Type="date" Nullable="false" />
+          <Property Name="SP_PEAK_KVA" Type="number" Nullable="false" />
+          <Property Name="SP_KVA_TRF_PEAK" Type="number" Nullable="false" />
+          <Property Name="VEE_SP_KW_FLAG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="INT_LEN" Type="number" Nullable="false" />
+          <Property Name="CUST_TYP" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="VEE_TRF_KW_FLAG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="SM_FLG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="CREATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="CREATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="UPDATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="UPDATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="METER_ID" Type="number" Nullable="false" Precision="10" />
+        </EntityType>
+        <EntityType Name="SP_PEAK_HIST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="SERVICE_POINT_ID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="TRF_PEAK_HIST_ID" Type="number" Nullable="false" />
+          <Property Name="SP_PEAK_TIME" Type="date" Nullable="false" />
+          <Property Name="SP_PEAK_KVA" Type="number" Nullable="false" />
+          <Property Name="SP_KVA_TRF_PEAK" Type="number" />
+          <Property Name="VEE_SP_KW_FLG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="INT_LEN" Type="number" Nullable="false" />
+          <Property Name="CUST_TYP" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="VEE_TRF_KW_FLG" Type="char" MaxLength="1" />
+          <Property Name="SM_FLG" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="CREATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="CREATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="UPDATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="UPDATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="METER_ID" Type="number" Precision="10" />
+        </EntityType>
+        <EntityType Name="TRANSFORMER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="CGC_ID" Type="number" Nullable="false" Precision="12" />
+          <Property Name="GLOBAL_ID" Type="varchar2" Nullable="false" MaxLength="38" />
+          <Property Name="COAST_INTERIOR_FLG" Type="number" Nullable="false" Precision="1" />
+          <Property Name="CLIMATE_ZONE_CD" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="PHASE_CD" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="INSTALLATION_TYP" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="CREATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="CREATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="UPDATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="UPDATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="REGION" Type="varchar2" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TRANSFORMER_BANK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="TRF_ID" Type="number" Nullable="false" />
+          <Property Name="BANK_CD" Type="number" Nullable="false" Precision="1" />
+          <Property Name="NP_KVA" Type="number" Nullable="false" Precision="7" Scale="1" />
+          <Property Name="GLOBAL_ID" Type="varchar2" Nullable="false" MaxLength="38" />
+          <Property Name="PHASE_CD" Type="varchar2" MaxLength="10" />
+          <Property Name="CREATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="CREATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="UPDATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="UPDATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TRF_NP_CAP_MULT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="INSTALLATION_TYP" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="PHASE_CD" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="KVA_LOW" Type="number" Nullable="false" />
+          <Property Name="KVA_HIGH" Type="number" Nullable="false" />
+          <Property Name="COAST_INTERIOR_FLG" Type="number" Nullable="false" Precision="1" />
+          <Property Name="CUST_TYP" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="CAP_MULTIPLIER" Type="number" Nullable="false" Precision="2" Scale="1" />
+          <Property Name="CREATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="CREATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="UPDATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="UPDATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TRF_PEAK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="SMR_PEAK_DATE" Type="date" />
+          <Property Name="WNTR_PEAK_DATE" Type="date" />
+          <Property Name="SMR_KVA" Type="number" />
+          <Property Name="WNTR_KVA" Type="number" />
+          <Property Name="SMR_CAP" Type="number" />
+          <Property Name="WNTR_CAP" Type="number" />
+          <Property Name="SMR_PCT" Type="number" />
+          <Property Name="WNTR_PCT" Type="number" />
+          <Property Name="SMR_PEAK_SM_CUST_CNT" Type="number" />
+          <Property Name="SMR_PEAK_TOTAL_CUST_CNT" Type="number" />
+          <Property Name="WNTR_PEAK_SM_CUST_CNT" Type="number" />
+          <Property Name="WNTR_PEAK_TOTAL_CUST_CNT" Type="number" />
+          <Property Name="DATA_START_DATE" Type="date" Nullable="false" />
+          <Property Name="TRF_ID" Type="number" Nullable="false" />
+          <Property Name="CREATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="CREATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="UPDATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="UPDATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TRF_PEAK_BY_CUST_TYP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="TRF_PEAK_ID" Type="number" Nullable="false" />
+          <Property Name="SEASON" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="CUST_TYP" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="SEASON_CUST_CNT" Type="number" Nullable="false" />
+          <Property Name="SEASON_TOTAL_KVA" Type="number" Nullable="false" />
+          <Property Name="CREATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="CREATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="UPDATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="UPDATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TRF_PEAK_GEN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="TRF_ID" Type="number" Nullable="false" />
+          <Property Name="SMR_PEAK_DATE" Type="date" />
+          <Property Name="WNTR_PEAK_DATE" Type="date" />
+          <Property Name="SMR_KVA" Type="number" />
+          <Property Name="WNTR_KVA" Type="number" />
+          <Property Name="SMR_CAP" Type="number" />
+          <Property Name="WNTR_CAP" Type="number" />
+          <Property Name="SMR_PCT" Type="number" />
+          <Property Name="WNTR_PCT" Type="number" />
+          <Property Name="SMR_PEAK_SM_CUST_CNT" Type="number" />
+          <Property Name="SMR_PEAK_TOTAL_CUST_CNT" Type="number" />
+          <Property Name="WNTR_PEAK_SM_CUST_CNT" Type="number" />
+          <Property Name="WNTR_PEAK_TOTAL_CUST_CNT" Type="number" />
+          <Property Name="DATA_START_DATE" Type="date" Nullable="false" />
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="CREATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="CREATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="UPDATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="UPDATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TRF_PEAK_GEN_BY_CUST_TYP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="TRF_PEAK_GEN_ID" Type="number" Nullable="false" />
+          <Property Name="SEASON" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="CUST_TYP" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="SEASON_CUST_CNT" Type="number" Nullable="false" />
+          <Property Name="SEASON_TOTAL_KVA" Type="number" Nullable="false" />
+          <Property Name="CREATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="CREATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="UPDATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="UPDATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TRF_PEAK_GEN_HIST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="TRF_ID" Type="number" Nullable="false" />
+          <Property Name="BATCH_DATE" Type="date" Nullable="false" />
+          <Property Name="TRF_PEAK_TIME" Type="timestamp" Nullable="false" />
+          <Property Name="TRF_PEAK_KVA" Type="number" Nullable="false" />
+          <Property Name="SM_CUST_TOTAL" Type="number" Nullable="false" />
+          <Property Name="CCB_CUST_TOTAL" Type="number" Nullable="false" />
+          <Property Name="TRF_CAP" Type="number" Nullable="false" />
+          <Property Name="CREATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="CREATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="UPDATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="UPDATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TRF_PEAK_HIST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="TRF_ID" Type="number" Nullable="false" />
+          <Property Name="BATCH_DATE" Type="date" Nullable="false" />
+          <Property Name="TRF_PEAK_TIME" Type="timestamp" Nullable="false" />
+          <Property Name="TRF_PEAK_KVA" Type="number" Nullable="false" />
+          <Property Name="SM_CUST_TOTAL" Type="number" Nullable="false" />
+          <Property Name="CCB_CUST_TOTAL" Type="number" Nullable="false" />
+          <Property Name="TRF_CAP" Type="number" Nullable="false" />
+          <Property Name="CREATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="CREATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="UPDATE_DTM" Type="timestamp" Nullable="false" />
+          <Property Name="UPDATE_USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <Association Name="METER_FK1">
+          <End Role="TRANSFORMER" Type="TLM.Store.TRANSFORMER" Multiplicity="1" />
+          <End Role="METER" Type="TLM.Store.METER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANSFORMER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="METER">
+              <PropertyRef Name="TRF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SP_PEAK_GEN_HIST_FK1">
+          <End Role="TRF_PEAK_GEN_HIST" Type="TLM.Store.TRF_PEAK_GEN_HIST" Multiplicity="1" />
+          <End Role="SP_PEAK_GEN_HIST" Type="TLM.Store.SP_PEAK_GEN_HIST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRF_PEAK_GEN_HIST">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SP_PEAK_GEN_HIST">
+              <PropertyRef Name="TRF_PEAK_GEN_HIST_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SP_PEAK_GEN_HIST_FK2">
+          <End Role="METER" Type="TLM.Store.METER" Multiplicity="1" />
+          <End Role="SP_PEAK_GEN_HIST" Type="TLM.Store.SP_PEAK_GEN_HIST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="METER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SP_PEAK_GEN_HIST">
+              <PropertyRef Name="METER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SP_PEAK_HIST_FK1">
+          <End Role="TRF_PEAK_HIST" Type="TLM.Store.TRF_PEAK_HIST" Multiplicity="1" />
+          <End Role="SP_PEAK_HIST" Type="TLM.Store.SP_PEAK_HIST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRF_PEAK_HIST">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SP_PEAK_HIST">
+              <PropertyRef Name="TRF_PEAK_HIST_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SP_PEAK_HIST_FK2">
+          <End Role="METER" Type="TLM.Store.METER" Multiplicity="0..1" />
+          <End Role="SP_PEAK_HIST" Type="TLM.Store.SP_PEAK_HIST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="METER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SP_PEAK_HIST">
+              <PropertyRef Name="METER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRANSFORMER_BANK_FK1">
+          <End Role="TRANSFORMER" Type="TLM.Store.TRANSFORMER" Multiplicity="1" />
+          <End Role="TRANSFORMER_BANK" Type="TLM.Store.TRANSFORMER_BANK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANSFORMER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TRANSFORMER_BANK">
+              <PropertyRef Name="TRF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRF_PEAK_BY_CUST_TYP_FK1">
+          <End Role="TRF_PEAK" Type="TLM.Store.TRF_PEAK" Multiplicity="1" />
+          <End Role="TRF_PEAK_BY_CUST_TYP" Type="TLM.Store.TRF_PEAK_BY_CUST_TYP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRF_PEAK">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TRF_PEAK_BY_CUST_TYP">
+              <PropertyRef Name="TRF_PEAK_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRF_PEAK_FK1">
+          <End Role="TRANSFORMER" Type="TLM.Store.TRANSFORMER" Multiplicity="1" />
+          <End Role="TRF_PEAK" Type="TLM.Store.TRF_PEAK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANSFORMER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TRF_PEAK">
+              <PropertyRef Name="TRF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRF_PEAK_GEN_BY_CUST_TYP_FK1">
+          <End Role="TRF_PEAK_GEN" Type="TLM.Store.TRF_PEAK_GEN" Multiplicity="1" />
+          <End Role="TRF_PEAK_GEN_BY_CUST_TYP" Type="TLM.Store.TRF_PEAK_GEN_BY_CUST_TYP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRF_PEAK_GEN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TRF_PEAK_GEN_BY_CUST_TYP">
+              <PropertyRef Name="TRF_PEAK_GEN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRF_PEAK_GEN_FK1">
+          <End Role="TRANSFORMER" Type="TLM.Store.TRANSFORMER" Multiplicity="1" />
+          <End Role="TRF_PEAK_GEN" Type="TLM.Store.TRF_PEAK_GEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANSFORMER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TRF_PEAK_GEN">
+              <PropertyRef Name="TRF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRF_PEAK_GEN_HIST_FK1">
+          <End Role="TRANSFORMER" Type="TLM.Store.TRANSFORMER" Multiplicity="1" />
+          <End Role="TRF_PEAK_GEN_HIST" Type="TLM.Store.TRF_PEAK_GEN_HIST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANSFORMER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TRF_PEAK_GEN_HIST">
+              <PropertyRef Name="TRF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRF_PEAK_HIST_FK1">
+          <End Role="TRANSFORMER" Type="TLM.Store.TRANSFORMER" Multiplicity="1" />
+          <End Role="TRF_PEAK_HIST" Type="TLM.Store.TRF_PEAK_HIST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANSFORMER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TRF_PEAK_HIST">
+              <PropertyRef Name="TRF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TLM" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="TLMDBConnection" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CODE_LOOKUP" EntityType="TLM.CODE_LOOKUP" />
+          <EntitySet Name="METERs" EntityType="TLM.METER" />
+          <EntitySet Name="SP_PEAK_GEN_HIST" EntityType="TLM.SP_PEAK_GEN_HIST" />
+          <EntitySet Name="SP_PEAK_HIST" EntityType="TLM.SP_PEAK_HIST" />
+          <EntitySet Name="TRANSFORMERs" EntityType="TLM.TRANSFORMER" />
+          <EntitySet Name="TRANSFORMER_BANK" EntityType="TLM.TRANSFORMER_BANK" />
+          <EntitySet Name="TRF_NP_CAP_MULT" EntityType="TLM.TRF_NP_CAP_MULT" />
+          <EntitySet Name="TRF_PEAK" EntityType="TLM.TRF_PEAK" />
+          <EntitySet Name="TRF_PEAK_BY_CUST_TYP" EntityType="TLM.TRF_PEAK_BY_CUST_TYP" />
+          <EntitySet Name="TRF_PEAK_GEN" EntityType="TLM.TRF_PEAK_GEN" />
+          <EntitySet Name="TRF_PEAK_GEN_BY_CUST_TYP" EntityType="TLM.TRF_PEAK_GEN_BY_CUST_TYP" />
+          <EntitySet Name="TRF_PEAK_GEN_HIST" EntityType="TLM.TRF_PEAK_GEN_HIST" />
+          <EntitySet Name="TRF_PEAK_HIST" EntityType="TLM.TRF_PEAK_HIST" />
+          <AssociationSet Name="METER_FK1" Association="TLM.METER_FK1">
+            <End Role="TRANSFORMER" EntitySet="TRANSFORMERs" />
+            <End Role="METER" EntitySet="METERs" />
+          </AssociationSet>
+          <AssociationSet Name="SP_PEAK_GEN_HIST_FK2" Association="TLM.SP_PEAK_GEN_HIST_FK2">
+            <End Role="METER" EntitySet="METERs" />
+            <End Role="SP_PEAK_GEN_HIST" EntitySet="SP_PEAK_GEN_HIST" />
+          </AssociationSet>
+          <AssociationSet Name="SP_PEAK_HIST_FK2" Association="TLM.SP_PEAK_HIST_FK2">
+            <End Role="METER" EntitySet="METERs" />
+            <End Role="SP_PEAK_HIST" EntitySet="SP_PEAK_HIST" />
+          </AssociationSet>
+          <AssociationSet Name="SP_PEAK_GEN_HIST_FK1" Association="TLM.SP_PEAK_GEN_HIST_FK1">
+            <End Role="TRF_PEAK_GEN_HIST" EntitySet="TRF_PEAK_GEN_HIST" />
+            <End Role="SP_PEAK_GEN_HIST" EntitySet="SP_PEAK_GEN_HIST" />
+          </AssociationSet>
+          <AssociationSet Name="SP_PEAK_HIST_FK1" Association="TLM.SP_PEAK_HIST_FK1">
+            <End Role="TRF_PEAK_HIST" EntitySet="TRF_PEAK_HIST" />
+            <End Role="SP_PEAK_HIST" EntitySet="SP_PEAK_HIST" />
+          </AssociationSet>
+          <AssociationSet Name="TRANSFORMER_BANK_FK1" Association="TLM.TRANSFORMER_BANK_FK1">
+            <End Role="TRANSFORMER" EntitySet="TRANSFORMERs" />
+            <End Role="TRANSFORMER_BANK" EntitySet="TRANSFORMER_BANK" />
+          </AssociationSet>
+          <AssociationSet Name="TRF_PEAK_FK1" Association="TLM.TRF_PEAK_FK1">
+            <End Role="TRANSFORMER" EntitySet="TRANSFORMERs" />
+            <End Role="TRF_PEAK" EntitySet="TRF_PEAK" />
+          </AssociationSet>
+          <AssociationSet Name="TRF_PEAK_GEN_FK1" Association="TLM.TRF_PEAK_GEN_FK1">
+            <End Role="TRANSFORMER" EntitySet="TRANSFORMERs" />
+            <End Role="TRF_PEAK_GEN" EntitySet="TRF_PEAK_GEN" />
+          </AssociationSet>
+          <AssociationSet Name="TRF_PEAK_GEN_HIST_FK1" Association="TLM.TRF_PEAK_GEN_HIST_FK1">
+            <End Role="TRANSFORMER" EntitySet="TRANSFORMERs" />
+            <End Role="TRF_PEAK_GEN_HIST" EntitySet="TRF_PEAK_GEN_HIST" />
+          </AssociationSet>
+          <AssociationSet Name="TRF_PEAK_HIST_FK1" Association="TLM.TRF_PEAK_HIST_FK1">
+            <End Role="TRANSFORMER" EntitySet="TRANSFORMERs" />
+            <End Role="TRF_PEAK_HIST" EntitySet="TRF_PEAK_HIST" />
+          </AssociationSet>
+          <AssociationSet Name="TRF_PEAK_BY_CUST_TYP_FK1" Association="TLM.TRF_PEAK_BY_CUST_TYP_FK1">
+            <End Role="TRF_PEAK" EntitySet="TRF_PEAK" />
+            <End Role="TRF_PEAK_BY_CUST_TYP" EntitySet="TRF_PEAK_BY_CUST_TYP" />
+          </AssociationSet>
+          <AssociationSet Name="TRF_PEAK_GEN_BY_CUST_TYP_FK1" Association="TLM.TRF_PEAK_GEN_BY_CUST_TYP_FK1">
+            <End Role="TRF_PEAK_GEN" EntitySet="TRF_PEAK_GEN" />
+            <End Role="TRF_PEAK_GEN_BY_CUST_TYP" EntitySet="TRF_PEAK_GEN_BY_CUST_TYP" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CODE_LOOKUP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="CODE_TYP" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CODE" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DESC_LONG" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DESC_SHORT" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CREATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="CREATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UPDATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="UPDATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="METER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="SERVICE_POINT_ID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UNQSPID" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="TRF_ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="REV_ACCT_CD" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SVC_ST_NUM" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SVC_ST_NAME" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SVC_ST_NAME2" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SVC_CITY" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SVC_STATE" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SVC_ZIP" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUST_TYP" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RATE_SCHED" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GLOBAL_ID" Nullable="false" MaxLength="38" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SM_FLG" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="CREATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="CREATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UPDATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="UPDATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TRANSFORMER" Relationship="TLM.METER_FK1" FromRole="METER" ToRole="TRANSFORMER" />
+          <NavigationProperty Name="SP_PEAK_GEN_HIST" Relationship="TLM.SP_PEAK_GEN_HIST_FK2" FromRole="METER" ToRole="SP_PEAK_GEN_HIST" />
+          <NavigationProperty Name="SP_PEAK_HIST" Relationship="TLM.SP_PEAK_HIST_FK2" FromRole="METER" ToRole="SP_PEAK_HIST" />
+        </EntityType>
+        <EntityType Name="SP_PEAK_GEN_HIST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="SERVICE_POINT_ID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="TRF_PEAK_GEN_HIST_ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="SP_PEAK_TIME" Nullable="false" />
+          <Property Type="Decimal" Name="SP_PEAK_KVA" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SP_KVA_TRF_PEAK" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="VEE_SP_KW_FLAG" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="INT_LEN" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="CUST_TYP" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VEE_TRF_KW_FLAG" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="SM_FLG" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="CREATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="CREATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UPDATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="UPDATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="METER_ID" Nullable="false" />
+          <NavigationProperty Name="METER" Relationship="TLM.SP_PEAK_GEN_HIST_FK2" FromRole="SP_PEAK_GEN_HIST" ToRole="METER" />
+          <NavigationProperty Name="TRF_PEAK_GEN_HIST" Relationship="TLM.SP_PEAK_GEN_HIST_FK1" FromRole="SP_PEAK_GEN_HIST" ToRole="TRF_PEAK_GEN_HIST" />
+        </EntityType>
+        <EntityType Name="SP_PEAK_HIST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="SERVICE_POINT_ID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="TRF_PEAK_HIST_ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="SP_PEAK_TIME" Nullable="false" />
+          <Property Type="Decimal" Name="SP_PEAK_KVA" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SP_KVA_TRF_PEAK" Precision="38" Scale="0" />
+          <Property Type="String" Name="VEE_SP_KW_FLG" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="INT_LEN" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="CUST_TYP" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VEE_TRF_KW_FLG" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="SM_FLG" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="CREATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="CREATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UPDATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="UPDATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="METER_ID" />
+          <NavigationProperty Name="METER" Relationship="TLM.SP_PEAK_HIST_FK2" FromRole="SP_PEAK_HIST" ToRole="METER" />
+          <NavigationProperty Name="TRF_PEAK_HIST" Relationship="TLM.SP_PEAK_HIST_FK1" FromRole="SP_PEAK_HIST" ToRole="TRF_PEAK_HIST" />
+        </EntityType>
+        <EntityType Name="TRANSFORMER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Int64" Name="CGC_ID" Nullable="false" />
+          <Property Type="String" Name="GLOBAL_ID" Nullable="false" MaxLength="38" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="COAST_INTERIOR_FLG" Nullable="false" />
+          <Property Type="String" Name="CLIMATE_ZONE_CD" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PHASE_CD" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="INSTALLATION_TYP" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CREATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="CREATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UPDATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="UPDATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="REGION" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="METERs" Relationship="TLM.METER_FK1" FromRole="TRANSFORMER" ToRole="METER" />
+          <NavigationProperty Name="TRANSFORMER_BANK" Relationship="TLM.TRANSFORMER_BANK_FK1" FromRole="TRANSFORMER" ToRole="TRANSFORMER_BANK" />
+          <NavigationProperty Name="TRF_PEAK" Relationship="TLM.TRF_PEAK_FK1" FromRole="TRANSFORMER" ToRole="TRF_PEAK" />
+          <NavigationProperty Name="TRF_PEAK_GEN" Relationship="TLM.TRF_PEAK_GEN_FK1" FromRole="TRANSFORMER" ToRole="TRF_PEAK_GEN" />
+          <NavigationProperty Name="TRF_PEAK_GEN_HIST" Relationship="TLM.TRF_PEAK_GEN_HIST_FK1" FromRole="TRANSFORMER" ToRole="TRF_PEAK_GEN_HIST" />
+          <NavigationProperty Name="TRF_PEAK_HIST" Relationship="TLM.TRF_PEAK_HIST_FK1" FromRole="TRANSFORMER" ToRole="TRF_PEAK_HIST" />
+        </EntityType>
+        <EntityType Name="TRANSFORMER_BANK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="TRF_ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Int16" Name="BANK_CD" Nullable="false" />
+          <Property Type="Decimal" Name="NP_KVA" Nullable="false" Precision="7" Scale="1" />
+          <Property Type="String" Name="GLOBAL_ID" Nullable="false" MaxLength="38" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PHASE_CD" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CREATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="CREATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UPDATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="UPDATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TRANSFORMER" Relationship="TLM.TRANSFORMER_BANK_FK1" FromRole="TRANSFORMER_BANK" ToRole="TRANSFORMER" />
+        </EntityType>
+        <EntityType Name="TRF_NP_CAP_MULT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="INSTALLATION_TYP" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PHASE_CD" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="KVA_LOW" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="KVA_HIGH" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Int16" Name="COAST_INTERIOR_FLG" Nullable="false" />
+          <Property Type="String" Name="CUST_TYP" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="CAP_MULTIPLIER" Nullable="false" Precision="2" Scale="1" />
+          <Property Type="DateTime" Name="CREATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="CREATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UPDATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="UPDATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TRF_PEAK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="SMR_PEAK_DATE" />
+          <Property Type="DateTime" Name="WNTR_PEAK_DATE" />
+          <Property Type="Decimal" Name="SMR_KVA" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="WNTR_KVA" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SMR_CAP" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="WNTR_CAP" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SMR_PCT" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="WNTR_PCT" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SMR_PEAK_SM_CUST_CNT" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SMR_PEAK_TOTAL_CUST_CNT" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="WNTR_PEAK_SM_CUST_CNT" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="WNTR_PEAK_TOTAL_CUST_CNT" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="DATA_START_DATE" Nullable="false" />
+          <Property Type="Decimal" Name="TRF_ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="CREATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="CREATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UPDATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="UPDATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TRANSFORMER" Relationship="TLM.TRF_PEAK_FK1" FromRole="TRF_PEAK" ToRole="TRANSFORMER" />
+          <NavigationProperty Name="TRF_PEAK_BY_CUST_TYP" Relationship="TLM.TRF_PEAK_BY_CUST_TYP_FK1" FromRole="TRF_PEAK" ToRole="TRF_PEAK_BY_CUST_TYP" />
+        </EntityType>
+        <EntityType Name="TRF_PEAK_BY_CUST_TYP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="TRF_PEAK_ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="SEASON" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CUST_TYP" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="SEASON_CUST_CNT" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SEASON_TOTAL_KVA" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="CREATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="CREATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UPDATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="UPDATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TRF_PEAK" Relationship="TLM.TRF_PEAK_BY_CUST_TYP_FK1" FromRole="TRF_PEAK_BY_CUST_TYP" ToRole="TRF_PEAK" />
+        </EntityType>
+        <EntityType Name="TRF_PEAK_GEN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="TRF_ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="SMR_PEAK_DATE" />
+          <Property Type="DateTime" Name="WNTR_PEAK_DATE" />
+          <Property Type="Decimal" Name="SMR_KVA" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="WNTR_KVA" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SMR_CAP" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="WNTR_CAP" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SMR_PCT" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="WNTR_PCT" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SMR_PEAK_SM_CUST_CNT" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SMR_PEAK_TOTAL_CUST_CNT" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="WNTR_PEAK_SM_CUST_CNT" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="WNTR_PEAK_TOTAL_CUST_CNT" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="DATA_START_DATE" Nullable="false" />
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="CREATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="CREATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UPDATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="UPDATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TRANSFORMER" Relationship="TLM.TRF_PEAK_GEN_FK1" FromRole="TRF_PEAK_GEN" ToRole="TRANSFORMER" />
+          <NavigationProperty Name="TRF_PEAK_GEN_BY_CUST_TYP" Relationship="TLM.TRF_PEAK_GEN_BY_CUST_TYP_FK1" FromRole="TRF_PEAK_GEN" ToRole="TRF_PEAK_GEN_BY_CUST_TYP" />
+        </EntityType>
+        <EntityType Name="TRF_PEAK_GEN_BY_CUST_TYP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="TRF_PEAK_GEN_ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="SEASON" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="CUST_TYP" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="SEASON_CUST_CNT" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SEASON_TOTAL_KVA" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="CREATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="CREATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UPDATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="UPDATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TRF_PEAK_GEN" Relationship="TLM.TRF_PEAK_GEN_BY_CUST_TYP_FK1" FromRole="TRF_PEAK_GEN_BY_CUST_TYP" ToRole="TRF_PEAK_GEN" />
+        </EntityType>
+        <EntityType Name="TRF_PEAK_GEN_HIST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="TRF_ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="BATCH_DATE" Nullable="false" />
+          <Property Type="DateTime" Name="TRF_PEAK_TIME" Nullable="false" Precision="6" />
+          <Property Type="Decimal" Name="TRF_PEAK_KVA" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SM_CUST_TOTAL" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="CCB_CUST_TOTAL" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="TRF_CAP" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="CREATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="CREATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UPDATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="UPDATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SP_PEAK_GEN_HIST" Relationship="TLM.SP_PEAK_GEN_HIST_FK1" FromRole="TRF_PEAK_GEN_HIST" ToRole="SP_PEAK_GEN_HIST" />
+          <NavigationProperty Name="TRANSFORMER" Relationship="TLM.TRF_PEAK_GEN_HIST_FK1" FromRole="TRF_PEAK_GEN_HIST" ToRole="TRANSFORMER" />
+        </EntityType>
+        <EntityType Name="TRF_PEAK_HIST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Decimal" Name="ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="TRF_ID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="BATCH_DATE" Nullable="false" />
+          <Property Type="DateTime" Name="TRF_PEAK_TIME" Nullable="false" Precision="6" />
+          <Property Type="Decimal" Name="TRF_PEAK_KVA" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="SM_CUST_TOTAL" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="CCB_CUST_TOTAL" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="TRF_CAP" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="CREATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="CREATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UPDATE_DTM" Nullable="false" Precision="6" />
+          <Property Type="String" Name="UPDATE_USERID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SP_PEAK_HIST" Relationship="TLM.SP_PEAK_HIST_FK1" FromRole="TRF_PEAK_HIST" ToRole="SP_PEAK_HIST" />
+          <NavigationProperty Name="TRANSFORMER" Relationship="TLM.TRF_PEAK_HIST_FK1" FromRole="TRF_PEAK_HIST" ToRole="TRANSFORMER" />
+        </EntityType>
+        <Association Name="METER_FK1">
+          <End Type="TLM.TRANSFORMER" Role="TRANSFORMER" Multiplicity="1" />
+          <End Type="TLM.METER" Role="METER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANSFORMER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="METER">
+              <PropertyRef Name="TRF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SP_PEAK_GEN_HIST_FK2">
+          <End Type="TLM.METER" Role="METER" Multiplicity="1" />
+          <End Type="TLM.SP_PEAK_GEN_HIST" Role="SP_PEAK_GEN_HIST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="METER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SP_PEAK_GEN_HIST">
+              <PropertyRef Name="METER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SP_PEAK_HIST_FK2">
+          <End Type="TLM.METER" Role="METER" Multiplicity="0..1" />
+          <End Type="TLM.SP_PEAK_HIST" Role="SP_PEAK_HIST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="METER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SP_PEAK_HIST">
+              <PropertyRef Name="METER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SP_PEAK_GEN_HIST_FK1">
+          <End Type="TLM.TRF_PEAK_GEN_HIST" Role="TRF_PEAK_GEN_HIST" Multiplicity="1" />
+          <End Type="TLM.SP_PEAK_GEN_HIST" Role="SP_PEAK_GEN_HIST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRF_PEAK_GEN_HIST">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SP_PEAK_GEN_HIST">
+              <PropertyRef Name="TRF_PEAK_GEN_HIST_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SP_PEAK_HIST_FK1">
+          <End Type="TLM.TRF_PEAK_HIST" Role="TRF_PEAK_HIST" Multiplicity="1" />
+          <End Type="TLM.SP_PEAK_HIST" Role="SP_PEAK_HIST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRF_PEAK_HIST">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SP_PEAK_HIST">
+              <PropertyRef Name="TRF_PEAK_HIST_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRANSFORMER_BANK_FK1">
+          <End Type="TLM.TRANSFORMER" Role="TRANSFORMER" Multiplicity="1" />
+          <End Type="TLM.TRANSFORMER_BANK" Role="TRANSFORMER_BANK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANSFORMER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TRANSFORMER_BANK">
+              <PropertyRef Name="TRF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRF_PEAK_FK1">
+          <End Type="TLM.TRANSFORMER" Role="TRANSFORMER" Multiplicity="1" />
+          <End Type="TLM.TRF_PEAK" Role="TRF_PEAK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANSFORMER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TRF_PEAK">
+              <PropertyRef Name="TRF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRF_PEAK_GEN_FK1">
+          <End Type="TLM.TRANSFORMER" Role="TRANSFORMER" Multiplicity="1" />
+          <End Type="TLM.TRF_PEAK_GEN" Role="TRF_PEAK_GEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANSFORMER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TRF_PEAK_GEN">
+              <PropertyRef Name="TRF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRF_PEAK_GEN_HIST_FK1">
+          <End Type="TLM.TRANSFORMER" Role="TRANSFORMER" Multiplicity="1" />
+          <End Type="TLM.TRF_PEAK_GEN_HIST" Role="TRF_PEAK_GEN_HIST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANSFORMER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TRF_PEAK_GEN_HIST">
+              <PropertyRef Name="TRF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRF_PEAK_HIST_FK1">
+          <End Type="TLM.TRANSFORMER" Role="TRANSFORMER" Multiplicity="1" />
+          <End Type="TLM.TRF_PEAK_HIST" Role="TRF_PEAK_HIST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANSFORMER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TRF_PEAK_HIST">
+              <PropertyRef Name="TRF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRF_PEAK_BY_CUST_TYP_FK1">
+          <End Type="TLM.TRF_PEAK" Role="TRF_PEAK" Multiplicity="1" />
+          <End Type="TLM.TRF_PEAK_BY_CUST_TYP" Role="TRF_PEAK_BY_CUST_TYP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRF_PEAK">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TRF_PEAK_BY_CUST_TYP">
+              <PropertyRef Name="TRF_PEAK_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRF_PEAK_GEN_BY_CUST_TYP_FK1">
+          <End Type="TLM.TRF_PEAK_GEN" Role="TRF_PEAK_GEN" Multiplicity="1" />
+          <End Type="TLM.TRF_PEAK_GEN_BY_CUST_TYP" Role="TRF_PEAK_GEN_BY_CUST_TYP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRF_PEAK_GEN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TRF_PEAK_GEN_BY_CUST_TYP">
+              <PropertyRef Name="TRF_PEAK_GEN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TLMStoreContainer" CdmEntityContainer="TLMDBConnection">
+          <EntitySetMapping Name="CODE_LOOKUP">
+            <EntityTypeMapping TypeName="TLM.CODE_LOOKUP">
+              <MappingFragment StoreEntitySet="CODE_LOOKUP">
+                <ScalarProperty Name="UPDATE_USERID" ColumnName="UPDATE_USERID" />
+                <ScalarProperty Name="UPDATE_DTM" ColumnName="UPDATE_DTM" />
+                <ScalarProperty Name="CREATE_USERID" ColumnName="CREATE_USERID" />
+                <ScalarProperty Name="CREATE_DTM" ColumnName="CREATE_DTM" />
+                <ScalarProperty Name="DESC_SHORT" ColumnName="DESC_SHORT" />
+                <ScalarProperty Name="DESC_LONG" ColumnName="DESC_LONG" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="CODE_TYP" ColumnName="CODE_TYP" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="METERs">
+            <EntityTypeMapping TypeName="TLM.METER">
+              <MappingFragment StoreEntitySet="METER">
+                <ScalarProperty Name="UPDATE_USERID" ColumnName="UPDATE_USERID" />
+                <ScalarProperty Name="UPDATE_DTM" ColumnName="UPDATE_DTM" />
+                <ScalarProperty Name="CREATE_USERID" ColumnName="CREATE_USERID" />
+                <ScalarProperty Name="CREATE_DTM" ColumnName="CREATE_DTM" />
+                <ScalarProperty Name="SM_FLG" ColumnName="SM_FLG" />
+                <ScalarProperty Name="GLOBAL_ID" ColumnName="GLOBAL_ID" />
+                <ScalarProperty Name="RATE_SCHED" ColumnName="RATE_SCHED" />
+                <ScalarProperty Name="CUST_TYP" ColumnName="CUST_TYP" />
+                <ScalarProperty Name="SVC_ZIP" ColumnName="SVC_ZIP" />
+                <ScalarProperty Name="SVC_STATE" ColumnName="SVC_STATE" />
+                <ScalarProperty Name="SVC_CITY" ColumnName="SVC_CITY" />
+                <ScalarProperty Name="SVC_ST_NAME2" ColumnName="SVC_ST_NAME2" />
+                <ScalarProperty Name="SVC_ST_NAME" ColumnName="SVC_ST_NAME" />
+                <ScalarProperty Name="SVC_ST_NUM" ColumnName="SVC_ST_NUM" />
+                <ScalarProperty Name="REV_ACCT_CD" ColumnName="REV_ACCT_CD" />
+                <ScalarProperty Name="TRF_ID" ColumnName="TRF_ID" />
+                <ScalarProperty Name="UNQSPID" ColumnName="UNQSPID" />
+                <ScalarProperty Name="SERVICE_POINT_ID" ColumnName="SERVICE_POINT_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SP_PEAK_GEN_HIST">
+            <EntityTypeMapping TypeName="TLM.SP_PEAK_GEN_HIST">
+              <MappingFragment StoreEntitySet="SP_PEAK_GEN_HIST">
+                <ScalarProperty Name="METER_ID" ColumnName="METER_ID" />
+                <ScalarProperty Name="UPDATE_USERID" ColumnName="UPDATE_USERID" />
+                <ScalarProperty Name="UPDATE_DTM" ColumnName="UPDATE_DTM" />
+                <ScalarProperty Name="CREATE_USERID" ColumnName="CREATE_USERID" />
+                <ScalarProperty Name="CREATE_DTM" ColumnName="CREATE_DTM" />
+                <ScalarProperty Name="SM_FLG" ColumnName="SM_FLG" />
+                <ScalarProperty Name="VEE_TRF_KW_FLAG" ColumnName="VEE_TRF_KW_FLAG" />
+                <ScalarProperty Name="CUST_TYP" ColumnName="CUST_TYP" />
+                <ScalarProperty Name="INT_LEN" ColumnName="INT_LEN" />
+                <ScalarProperty Name="VEE_SP_KW_FLAG" ColumnName="VEE_SP_KW_FLAG" />
+                <ScalarProperty Name="SP_KVA_TRF_PEAK" ColumnName="SP_KVA_TRF_PEAK" />
+                <ScalarProperty Name="SP_PEAK_KVA" ColumnName="SP_PEAK_KVA" />
+                <ScalarProperty Name="SP_PEAK_TIME" ColumnName="SP_PEAK_TIME" />
+                <ScalarProperty Name="TRF_PEAK_GEN_HIST_ID" ColumnName="TRF_PEAK_GEN_HIST_ID" />
+                <ScalarProperty Name="SERVICE_POINT_ID" ColumnName="SERVICE_POINT_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SP_PEAK_HIST">
+            <EntityTypeMapping TypeName="TLM.SP_PEAK_HIST">
+              <MappingFragment StoreEntitySet="SP_PEAK_HIST">
+                <ScalarProperty Name="METER_ID" ColumnName="METER_ID" />
+                <ScalarProperty Name="UPDATE_USERID" ColumnName="UPDATE_USERID" />
+                <ScalarProperty Name="UPDATE_DTM" ColumnName="UPDATE_DTM" />
+                <ScalarProperty Name="CREATE_USERID" ColumnName="CREATE_USERID" />
+                <ScalarProperty Name="CREATE_DTM" ColumnName="CREATE_DTM" />
+                <ScalarProperty Name="SM_FLG" ColumnName="SM_FLG" />
+                <ScalarProperty Name="VEE_TRF_KW_FLG" ColumnName="VEE_TRF_KW_FLG" />
+                <ScalarProperty Name="CUST_TYP" ColumnName="CUST_TYP" />
+                <ScalarProperty Name="INT_LEN" ColumnName="INT_LEN" />
+                <ScalarProperty Name="VEE_SP_KW_FLG" ColumnName="VEE_SP_KW_FLG" />
+                <ScalarProperty Name="SP_KVA_TRF_PEAK" ColumnName="SP_KVA_TRF_PEAK" />
+                <ScalarProperty Name="SP_PEAK_KVA" ColumnName="SP_PEAK_KVA" />
+                <ScalarProperty Name="SP_PEAK_TIME" ColumnName="SP_PEAK_TIME" />
+                <ScalarProperty Name="TRF_PEAK_HIST_ID" ColumnName="TRF_PEAK_HIST_ID" />
+                <ScalarProperty Name="SERVICE_POINT_ID" ColumnName="SERVICE_POINT_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANSFORMERs">
+            <EntityTypeMapping TypeName="TLM.TRANSFORMER">
+              <MappingFragment StoreEntitySet="TRANSFORMER">
+                <ScalarProperty Name="REGION" ColumnName="REGION" />
+                <ScalarProperty Name="UPDATE_USERID" ColumnName="UPDATE_USERID" />
+                <ScalarProperty Name="UPDATE_DTM" ColumnName="UPDATE_DTM" />
+                <ScalarProperty Name="CREATE_USERID" ColumnName="CREATE_USERID" />
+                <ScalarProperty Name="CREATE_DTM" ColumnName="CREATE_DTM" />
+                <ScalarProperty Name="INSTALLATION_TYP" ColumnName="INSTALLATION_TYP" />
+                <ScalarProperty Name="PHASE_CD" ColumnName="PHASE_CD" />
+                <ScalarProperty Name="CLIMATE_ZONE_CD" ColumnName="CLIMATE_ZONE_CD" />
+                <ScalarProperty Name="COAST_INTERIOR_FLG" ColumnName="COAST_INTERIOR_FLG" />
+                <ScalarProperty Name="GLOBAL_ID" ColumnName="GLOBAL_ID" />
+                <ScalarProperty Name="CGC_ID" ColumnName="CGC_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANSFORMER_BANK">
+            <EntityTypeMapping TypeName="TLM.TRANSFORMER_BANK">
+              <MappingFragment StoreEntitySet="TRANSFORMER_BANK">
+                <ScalarProperty Name="UPDATE_USERID" ColumnName="UPDATE_USERID" />
+                <ScalarProperty Name="UPDATE_DTM" ColumnName="UPDATE_DTM" />
+                <ScalarProperty Name="CREATE_USERID" ColumnName="CREATE_USERID" />
+                <ScalarProperty Name="CREATE_DTM" ColumnName="CREATE_DTM" />
+                <ScalarProperty Name="PHASE_CD" ColumnName="PHASE_CD" />
+                <ScalarProperty Name="GLOBAL_ID" ColumnName="GLOBAL_ID" />
+                <ScalarProperty Name="NP_KVA" ColumnName="NP_KVA" />
+                <ScalarProperty Name="BANK_CD" ColumnName="BANK_CD" />
+                <ScalarProperty Name="TRF_ID" ColumnName="TRF_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRF_NP_CAP_MULT">
+            <EntityTypeMapping TypeName="TLM.TRF_NP_CAP_MULT">
+              <MappingFragment StoreEntitySet="TRF_NP_CAP_MULT">
+                <ScalarProperty Name="UPDATE_USERID" ColumnName="UPDATE_USERID" />
+                <ScalarProperty Name="UPDATE_DTM" ColumnName="UPDATE_DTM" />
+                <ScalarProperty Name="CREATE_USERID" ColumnName="CREATE_USERID" />
+                <ScalarProperty Name="CREATE_DTM" ColumnName="CREATE_DTM" />
+                <ScalarProperty Name="CAP_MULTIPLIER" ColumnName="CAP_MULTIPLIER" />
+                <ScalarProperty Name="CUST_TYP" ColumnName="CUST_TYP" />
+                <ScalarProperty Name="COAST_INTERIOR_FLG" ColumnName="COAST_INTERIOR_FLG" />
+                <ScalarProperty Name="KVA_HIGH" ColumnName="KVA_HIGH" />
+                <ScalarProperty Name="KVA_LOW" ColumnName="KVA_LOW" />
+                <ScalarProperty Name="PHASE_CD" ColumnName="PHASE_CD" />
+                <ScalarProperty Name="INSTALLATION_TYP" ColumnName="INSTALLATION_TYP" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRF_PEAK">
+            <EntityTypeMapping TypeName="TLM.TRF_PEAK">
+              <MappingFragment StoreEntitySet="TRF_PEAK">
+                <ScalarProperty Name="UPDATE_USERID" ColumnName="UPDATE_USERID" />
+                <ScalarProperty Name="UPDATE_DTM" ColumnName="UPDATE_DTM" />
+                <ScalarProperty Name="CREATE_USERID" ColumnName="CREATE_USERID" />
+                <ScalarProperty Name="CREATE_DTM" ColumnName="CREATE_DTM" />
+                <ScalarProperty Name="TRF_ID" ColumnName="TRF_ID" />
+                <ScalarProperty Name="DATA_START_DATE" ColumnName="DATA_START_DATE" />
+                <ScalarProperty Name="WNTR_PEAK_TOTAL_CUST_CNT" ColumnName="WNTR_PEAK_TOTAL_CUST_CNT" />
+                <ScalarProperty Name="WNTR_PEAK_SM_CUST_CNT" ColumnName="WNTR_PEAK_SM_CUST_CNT" />
+                <ScalarProperty Name="SMR_PEAK_TOTAL_CUST_CNT" ColumnName="SMR_PEAK_TOTAL_CUST_CNT" />
+                <ScalarProperty Name="SMR_PEAK_SM_CUST_CNT" ColumnName="SMR_PEAK_SM_CUST_CNT" />
+                <ScalarProperty Name="WNTR_PCT" ColumnName="WNTR_PCT" />
+                <ScalarProperty Name="SMR_PCT" ColumnName="SMR_PCT" />
+                <ScalarProperty Name="WNTR_CAP" ColumnName="WNTR_CAP" />
+                <ScalarProperty Name="SMR_CAP" ColumnName="SMR_CAP" />
+                <ScalarProperty Name="WNTR_KVA" ColumnName="WNTR_KVA" />
+                <ScalarProperty Name="SMR_KVA" ColumnName="SMR_KVA" />
+                <ScalarProperty Name="WNTR_PEAK_DATE" ColumnName="WNTR_PEAK_DATE" />
+                <ScalarProperty Name="SMR_PEAK_DATE" ColumnName="SMR_PEAK_DATE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRF_PEAK_BY_CUST_TYP">
+            <EntityTypeMapping TypeName="TLM.TRF_PEAK_BY_CUST_TYP">
+              <MappingFragment StoreEntitySet="TRF_PEAK_BY_CUST_TYP">
+                <ScalarProperty Name="UPDATE_USERID" ColumnName="UPDATE_USERID" />
+                <ScalarProperty Name="UPDATE_DTM" ColumnName="UPDATE_DTM" />
+                <ScalarProperty Name="CREATE_USERID" ColumnName="CREATE_USERID" />
+                <ScalarProperty Name="CREATE_DTM" ColumnName="CREATE_DTM" />
+                <ScalarProperty Name="SEASON_TOTAL_KVA" ColumnName="SEASON_TOTAL_KVA" />
+                <ScalarProperty Name="SEASON_CUST_CNT" ColumnName="SEASON_CUST_CNT" />
+                <ScalarProperty Name="CUST_TYP" ColumnName="CUST_TYP" />
+                <ScalarProperty Name="SEASON" ColumnName="SEASON" />
+                <ScalarProperty Name="TRF_PEAK_ID" ColumnName="TRF_PEAK_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRF_PEAK_GEN">
+            <EntityTypeMapping TypeName="TLM.TRF_PEAK_GEN">
+              <MappingFragment StoreEntitySet="TRF_PEAK_GEN">
+                <ScalarProperty Name="UPDATE_USERID" ColumnName="UPDATE_USERID" />
+                <ScalarProperty Name="UPDATE_DTM" ColumnName="UPDATE_DTM" />
+                <ScalarProperty Name="CREATE_USERID" ColumnName="CREATE_USERID" />
+                <ScalarProperty Name="CREATE_DTM" ColumnName="CREATE_DTM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DATA_START_DATE" ColumnName="DATA_START_DATE" />
+                <ScalarProperty Name="WNTR_PEAK_TOTAL_CUST_CNT" ColumnName="WNTR_PEAK_TOTAL_CUST_CNT" />
+                <ScalarProperty Name="WNTR_PEAK_SM_CUST_CNT" ColumnName="WNTR_PEAK_SM_CUST_CNT" />
+                <ScalarProperty Name="SMR_PEAK_TOTAL_CUST_CNT" ColumnName="SMR_PEAK_TOTAL_CUST_CNT" />
+                <ScalarProperty Name="SMR_PEAK_SM_CUST_CNT" ColumnName="SMR_PEAK_SM_CUST_CNT" />
+                <ScalarProperty Name="WNTR_PCT" ColumnName="WNTR_PCT" />
+                <ScalarProperty Name="SMR_PCT" ColumnName="SMR_PCT" />
+                <ScalarProperty Name="WNTR_CAP" ColumnName="WNTR_CAP" />
+                <ScalarProperty Name="SMR_CAP" ColumnName="SMR_CAP" />
+                <ScalarProperty Name="WNTR_KVA" ColumnName="WNTR_KVA" />
+                <ScalarProperty Name="SMR_KVA" ColumnName="SMR_KVA" />
+                <ScalarProperty Name="WNTR_PEAK_DATE" ColumnName="WNTR_PEAK_DATE" />
+                <ScalarProperty Name="SMR_PEAK_DATE" ColumnName="SMR_PEAK_DATE" />
+                <ScalarProperty Name="TRF_ID" ColumnName="TRF_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRF_PEAK_GEN_BY_CUST_TYP">
+            <EntityTypeMapping TypeName="TLM.TRF_PEAK_GEN_BY_CUST_TYP">
+              <MappingFragment StoreEntitySet="TRF_PEAK_GEN_BY_CUST_TYP">
+                <ScalarProperty Name="UPDATE_USERID" ColumnName="UPDATE_USERID" />
+                <ScalarProperty Name="UPDATE_DTM" ColumnName="UPDATE_DTM" />
+                <ScalarProperty Name="CREATE_USERID" ColumnName="CREATE_USERID" />
+                <ScalarProperty Name="CREATE_DTM" ColumnName="CREATE_DTM" />
+                <ScalarProperty Name="SEASON_TOTAL_KVA" ColumnName="SEASON_TOTAL_KVA" />
+                <ScalarProperty Name="SEASON_CUST_CNT" ColumnName="SEASON_CUST_CNT" />
+                <ScalarProperty Name="CUST_TYP" ColumnName="CUST_TYP" />
+                <ScalarProperty Name="SEASON" ColumnName="SEASON" />
+                <ScalarProperty Name="TRF_PEAK_GEN_ID" ColumnName="TRF_PEAK_GEN_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRF_PEAK_GEN_HIST">
+            <EntityTypeMapping TypeName="TLM.TRF_PEAK_GEN_HIST">
+              <MappingFragment StoreEntitySet="TRF_PEAK_GEN_HIST">
+                <ScalarProperty Name="UPDATE_USERID" ColumnName="UPDATE_USERID" />
+                <ScalarProperty Name="UPDATE_DTM" ColumnName="UPDATE_DTM" />
+                <ScalarProperty Name="CREATE_USERID" ColumnName="CREATE_USERID" />
+                <ScalarProperty Name="CREATE_DTM" ColumnName="CREATE_DTM" />
+                <ScalarProperty Name="TRF_CAP" ColumnName="TRF_CAP" />
+                <ScalarProperty Name="CCB_CUST_TOTAL" ColumnName="CCB_CUST_TOTAL" />
+                <ScalarProperty Name="SM_CUST_TOTAL" ColumnName="SM_CUST_TOTAL" />
+                <ScalarProperty Name="TRF_PEAK_KVA" ColumnName="TRF_PEAK_KVA" />
+                <ScalarProperty Name="TRF_PEAK_TIME" ColumnName="TRF_PEAK_TIME" />
+                <ScalarProperty Name="BATCH_DATE" ColumnName="BATCH_DATE" />
+                <ScalarProperty Name="TRF_ID" ColumnName="TRF_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRF_PEAK_HIST">
+            <EntityTypeMapping TypeName="TLM.TRF_PEAK_HIST">
+              <MappingFragment StoreEntitySet="TRF_PEAK_HIST">
+                <ScalarProperty Name="UPDATE_USERID" ColumnName="UPDATE_USERID" />
+                <ScalarProperty Name="UPDATE_DTM" ColumnName="UPDATE_DTM" />
+                <ScalarProperty Name="CREATE_USERID" ColumnName="CREATE_USERID" />
+                <ScalarProperty Name="CREATE_DTM" ColumnName="CREATE_DTM" />
+                <ScalarProperty Name="TRF_CAP" ColumnName="TRF_CAP" />
+                <ScalarProperty Name="CCB_CUST_TOTAL" ColumnName="CCB_CUST_TOTAL" />
+                <ScalarProperty Name="SM_CUST_TOTAL" ColumnName="SM_CUST_TOTAL" />
+                <ScalarProperty Name="TRF_PEAK_KVA" ColumnName="TRF_PEAK_KVA" />
+                <ScalarProperty Name="TRF_PEAK_TIME" ColumnName="TRF_PEAK_TIME" />
+                <ScalarProperty Name="BATCH_DATE" ColumnName="BATCH_DATE" />
+                <ScalarProperty Name="TRF_ID" ColumnName="TRF_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="TLMModel">
+        <EntityTypeShape EntityType="TLM.CODE_LOOKUP" Width="1.5" PointX="0.75" PointY="0.75" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="TLM.METER" Width="1.5" PointX="3" PointY="4.75" Height="5.2494108072916674" />
+        <EntityTypeShape EntityType="TLM.SP_PEAK_GEN_HIST" Width="1.5" PointX="8.25" PointY="15.125" Height="4.4802050781250014" />
+        <EntityTypeShape EntityType="TLM.SP_PEAK_HIST" Width="1.5" PointX="8.25" PointY="20.375" Height="4.4802050781250031" />
+        <EntityTypeShape EntityType="TLM.TRANSFORMER" Width="1.5" PointX="0.75" PointY="17.375" Height="4.4802050781250031" />
+        <EntityTypeShape EntityType="TLM.TRANSFORMER_BANK" Width="1.5" PointX="3" PointY="10.75" Height="3.1340950520833317" />
+        <EntityTypeShape EntityType="TLM.TRF_NP_CAP_MULT" Width="1.5" PointX="5.75" PointY="0.75" Height="3.3263964843750031" />
+        <EntityTypeShape EntityType="TLM.TRF_PEAK" Width="1.5" PointX="3" PointY="14.625" Height="5.0571093750000031" />
+        <EntityTypeShape EntityType="TLM.TRF_PEAK_BY_CUST_TYP" Width="1.5" PointX="5.25" PointY="15.625" Height="3.1340950520833317" />
+        <EntityTypeShape EntityType="TLM.TRF_PEAK_GEN" Width="1.5" PointX="3" PointY="20.5" Height="5.0571093750000031" />
+        <EntityTypeShape EntityType="TLM.TRF_PEAK_GEN_BY_CUST_TYP" Width="1.5" PointX="5.25" PointY="21.375" Height="3.1340950520833388" />
+        <EntityTypeShape EntityType="TLM.TRF_PEAK_GEN_HIST" Width="1.5" PointX="3" PointY="26.25" Height="3.7109993489583388" />
+        <EntityTypeShape EntityType="TLM.TRF_PEAK_HIST" Width="1.5" PointX="3" PointY="30.75" Height="3.7109993489583388" />
+        <AssociationConnector Association="TLM.METER_FK1" >
+          <ConnectorPoint PointX="1.5" PointY="17.375" />
+          <ConnectorPoint PointX="1.5" PointY="7.3747054036458337" />
+          <ConnectorPoint PointX="3" PointY="7.3747054036458337" />
+        </AssociationConnector>
+        <AssociationConnector Association="TLM.SP_PEAK_GEN_HIST_FK2" >
+          <ConnectorPoint PointX="4.5" PointY="7.3747054036458337" />
+          <ConnectorPoint PointX="9" PointY="7.3747054036458337" />
+          <ConnectorPoint PointX="9" PointY="15.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="TLM.SP_PEAK_HIST_FK2" >
+          <ConnectorPoint PointX="4.5" PointY="9.9994108072916674" />
+          <ConnectorPoint PointX="4.875" PointY="10.374410807291667" />
+          <ConnectorPoint PointX="4.875" PointY="20" />
+          <ConnectorPoint PointX="7.875" PointY="20" />
+          <ConnectorPoint PointX="8.25" PointY="20.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="TLM.SP_PEAK_GEN_HIST_FK1" >
+          <ConnectorPoint PointX="4.5" PointY="26.313460538461534" />
+          <ConnectorPoint PointX="5.0625" PointY="25.750960538461534" />
+          <ConnectorPoint PointX="5.0625" PointY="20.230205078125003" />
+          <ConnectorPoint PointX="7.625" PointY="20.230205078125003" />
+          <ConnectorPoint PointX="8.25" PointY="19.605205078125003" />
+        </AssociationConnector>
+        <AssociationConnector Association="TLM.SP_PEAK_HIST_FK1" >
+          <ConnectorPoint PointX="4.5" PointY="32.605499674479169" />
+          <ConnectorPoint PointX="9" PointY="32.605499674479169" />
+          <ConnectorPoint PointX="9" PointY="24.855205078125003" />
+        </AssociationConnector>
+        <AssociationConnector Association="TLM.TRANSFORMER_BANK_FK1" >
+          <ConnectorPoint PointX="1.9062525" PointY="17.375" />
+          <ConnectorPoint PointX="1.9062525" PointY="12.317047526041666" />
+          <ConnectorPoint PointX="3" PointY="12.317047526041666" />
+        </AssociationConnector>
+        <AssociationConnector Association="TLM.TRF_PEAK_FK1" >
+          <ConnectorPoint PointX="2.25" PointY="18.5285546875" />
+          <ConnectorPoint PointX="3" PointY="18.5285546875" />
+        </AssociationConnector>
+        <AssociationConnector Association="TLM.TRF_PEAK_GEN_FK1" >
+          <ConnectorPoint PointX="2.25" PointY="21.1776025390625" />
+          <ConnectorPoint PointX="3" PointY="21.1776025390625" />
+        </AssociationConnector>
+        <AssociationConnector Association="TLM.TRF_PEAK_GEN_HIST_FK1" >
+          <ConnectorPoint PointX="1.5" PointY="21.855205078125003" />
+          <ConnectorPoint PointX="1.5" PointY="28.105499674479169" />
+          <ConnectorPoint PointX="1.8229191666666667" PointY="28.105499674479169" />
+          <ConnectorPoint PointX="1.9895858333333332" PointY="28.105499674479169" />
+          <ConnectorPoint PointX="3" PointY="28.105499674479169" />
+        </AssociationConnector>
+        <AssociationConnector Association="TLM.TRF_PEAK_HIST_FK1" >
+          <ConnectorPoint PointX="1.9062525" PointY="21.855205078125003" />
+          <ConnectorPoint PointX="1.9062525" PointY="32.605499674479169" />
+          <ConnectorPoint PointX="3" PointY="32.605499674479169" />
+        </AssociationConnector>
+        <AssociationConnector Association="TLM.TRF_PEAK_BY_CUST_TYP_FK1" >
+          <ConnectorPoint PointX="4.5" PointY="17.192047526041666" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="17.192047526041666" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="17.192047526041666" />
+          <ConnectorPoint PointX="5.25" PointY="17.192047526041666" />
+        </AssociationConnector>
+        <AssociationConnector Association="TLM.TRF_PEAK_GEN_BY_CUST_TYP_FK1" >
+          <ConnectorPoint PointX="4.5" PointY="22.942047526041669" />
+          <ConnectorPoint PointX="4.979166666666667" PointY="22.942047526041669" />
+          <ConnectorPoint PointX="5.145833333333333" PointY="22.942047526041669" />
+          <ConnectorPoint PointX="5.25" PointY="22.942047526041669" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

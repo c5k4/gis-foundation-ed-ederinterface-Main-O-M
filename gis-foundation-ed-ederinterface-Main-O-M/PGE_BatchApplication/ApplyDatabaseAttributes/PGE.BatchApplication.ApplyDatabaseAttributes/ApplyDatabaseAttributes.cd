@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ApplyDatabaseAttributes.ImportAttributes" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQYEAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>ImportAttributes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplyDatabaseAttributes.LicenseInitializer" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAIAnBEgAAAE2AAABAAAigACAAACqAQAAEKCAAAAAA=</HashCode>
+      <FileName>LicenseInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplyDatabaseAttributes.Program" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAIAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Struct Name="ApplyDatabaseAttributes.FieldProperties" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAIgAIAAAAAAACAAAADAAAIAgAAAAgAAAAA=</HashCode>
+      <FileName>ImportAttributes.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

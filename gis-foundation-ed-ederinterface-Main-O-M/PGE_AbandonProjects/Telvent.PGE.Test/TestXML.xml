@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by XMLSPY 5 Professional Ed., Installed Multi + SMP for 10 users (Miner & Miner Engineering) -->
+<SystemMapper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\Ravi-Data\Ravi\Projects\PGE\Project\ED\Development\Integration\ED0006\SAPIntegrationConfig.xsd">
+	<MapperType>String</MapperType>
+	<DomainXMLPath>String</DomainXMLPath>
+	<DataWriter>String</DataWriter>
+	<TrackedClasses>
+    <TrackedClass SourceClass="CapacitorBank" Subtypes="4" OutName="Transformer" SAPType="4" TransformerType="Telvent.PGE.SAP.RowTransformers.RelationshipRowTransformer,Telvent.PGE.SAP" SupportClasses="String" RelationshipName="Transformer_TransformerUnit">
+      <Fields>
+        <Field OutName="static" Sequence="2">
+          <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.StaticValueTransformer, Telvent.PGE.Framework">
+            <StaticValueTransformer StaticValue="99" />
+          </FieldMapper>
+        </Field>
+        <Field OutName="relationship" Sequence="3">
+          <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.RelationshipFieldTransformer, Telvent.PGE.Framework">
+            <RelationshipFieldTransformer RelationshipName="DeviceGroup_Transformer">
+              <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+                <FieldValueTransformer FieldName="DeviceGroupNumber" />
+              </FieldMapper>
+            </RelationshipFieldTransformer>
+          </FieldMapper>
+        </Field>
+        <Field OutName="field" Sequence="4">
+          <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+            <FieldValueTransformer FieldName="CircuitID" />
+          </FieldMapper>
+        </Field>
+        <Field OutName="domain" Sequence="5">
+          <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.DomainTransformer, Telvent.PGE.Framework">
+            <DomainTransformer FieldName="OperatingVoltage" DomainName="Primary Voltage"></DomainTransformer>
+          </FieldMapper>
+        </Field>
+        <Field OutName="x" Sequence="6">
+          <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.XYTransformer, Telvent.PGE.Framework">
+            <XYTransformer FieldName="X" />
+          </FieldMapper>
+        </Field>
+        <Field OutName="y" Sequence="7">
+          <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.XYTransformer, Telvent.PGE.Framework">
+            <XYTransformer FieldName="Y" />
+          </FieldMapper>
+        </Field>
+        <Field OutName="alternate" Sequence="8">
+          <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.AlternateFieldTransformer, Telvent.PGE.Framework">
+            <AlternateFieldTransformer FieldName="LastUser" AlternateField="CreationUser"></AlternateFieldTransformer>
+          </FieldMapper>
+        </Field>
+        <Field OutName="datetime" Sequence="9">
+          <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.DateTimeTransformer, Telvent.PGE.Framework">
+            <DateTimeTransformer FieldName="CreationDate" DateFormat="yyyyMMdd"></DateTimeTransformer>
+          </FieldMapper>
+        </Field>
+        <Field OutName="altdatetime" Sequence="10">
+          <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.AlternateDateTimeTransformer, Telvent.PGE.Framework">
+            <AlternateDateTimeTransformer FieldName="LastModified" AlternateField="CreationDate" DateFormat="yyyyMMdd"></AlternateDateTimeTransformer>
+          </FieldMapper>
+        </Field>
+        <Field OutName="field" Sequence="11">
+          <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+            <FieldValueTransformer FieldName="AssetID" />
+          </FieldMapper>
+        </Field>
+      </Fields>
+      <Settings>
+        <Setting Name="String" Value="String"/>
+        <Setting Name="String" Value="String"/>
+      </Settings>
+      <RelatedClass SourceClass="TransformerUnit" Subtypes="" OutName="Transformer" TransformerType="Telvent.PGE.SAP.RowTransformers.SAPRowTransformer,Telvent.PGE.SAP" AssetIDField="12">
+        <Fields>
+          <Field OutName="UnitID" Sequence="12">
+            <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+              <FieldValueTransformer FieldName="UnitID" />
+            </FieldMapper>
+          </Field>
+        </Fields>
+      </RelatedClass>
+    </TrackedClass>
+    <TrackedClass SourceClass="TransformerUnit" Subtypes=""  OutName="TransformerUnit" TransformerType="Telvent.PGE.SAP.RowTransformers.RelationshipRowTransformer,Telvent.PGE.SAP" RelationshipName="Transformer_TransformerUnit" AssetIDField="12">
+      <Fields>
+        <Field OutName="UnitID" Sequence="12">
+          <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+            <FieldValueTransformer FieldName="UnitID" />
+          </FieldMapper>
+        </Field>
+      </Fields>
+      <RelatedClass SourceClass="Transformer" Subtypes="" OutName="Transformer" SAPType="4" TransformerType="Telvent.PGE.SAP.RowTransformers.SAPRowTransformer,Telvent.PGE.SAP">
+        <Fields>
+				<Field OutName="static" Sequence="2">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.StaticValueTransformer, Telvent.PGE.Framework">
+						<StaticValueTransformer StaticValue="99" />
+					</FieldMapper>
+				</Field>
+				<Field OutName="relationship" Sequence="3">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.RelationshipFieldTransformer, Telvent.PGE.Framework">
+						<RelationshipFieldTransformer RelationshipName="DeviceGroup_Transformer">
+						  <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+							<FieldValueTransformer FieldName="DeviceGroupNumber" />
+						  </FieldMapper>
+						</RelationshipFieldTransformer>
+					</FieldMapper>
+				</Field>
+				<Field OutName="field" Sequence="4">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+						<FieldValueTransformer FieldName="CircuitID" />
+					</FieldMapper>
+				</Field>
+				<Field OutName="domain" Sequence="5">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.DomainTransformer, Telvent.PGE.Framework">
+						<DomainTransformer FieldName="OperatingVoltage" DomainName="Primary Voltage"></DomainTransformer>
+					</FieldMapper>
+				</Field>
+				<Field OutName="x" Sequence="6">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.XYTransformer, Telvent.PGE.Framework">
+						<XYTransformer FieldName="X" />
+					</FieldMapper>
+				</Field>
+				<Field OutName="y" Sequence="7">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.XYTransformer, Telvent.PGE.Framework">
+						<XYTransformer FieldName="Y" />
+					</FieldMapper>
+				</Field><Field OutName="alternate" Sequence="8">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.AlternateFieldTransformer, Telvent.PGE.Framework">
+						<AlternateFieldTransformer FieldName="LastUser" AlternateField="CreationUser"></AlternateFieldTransformer>
+					</FieldMapper>
+				</Field>
+				<Field OutName="datetime" Sequence="9">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.DateTimeTransformer, Telvent.PGE.Framework">
+						<DateTimeTransformer FieldName="CreationDate" DateFormat="yyyyMMdd"></DateTimeTransformer>
+					</FieldMapper>
+				</Field>
+				<Field OutName="altdatetime" Sequence="10">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.AlternateDateTimeTransformer, Telvent.PGE.Framework">
+						<AlternateDateTimeTransformer FieldName="LastModified" AlternateField="CreationDate" DateFormat="yyyyMMdd"></AlternateDateTimeTransformer>
+					</FieldMapper>
+				</Field>
+				<Field OutName="field" Sequence="11">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+						<FieldValueTransformer FieldName="AssetID" />
+					</FieldMapper>
+				</Field>
+			</Fields>
+      </RelatedClass>
+    </TrackedClass>
+		<TrackedClass SourceClass="Transformer" Subtypes="4" OutName="Transformer" SAPType="4" TransformerType="Telvent.PGE.SAP.RowTransformers.RelationshipRowTransformer,Telvent.PGE.SAP" SupportClasses="String" RelationshipName="Transformer_TransformerUnit">
+			<Fields>
+				<Field OutName="static" Sequence="2">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.StaticValueTransformer, Telvent.PGE.Framework">
+						<StaticValueTransformer StaticValue="99" />
+					</FieldMapper>
+				</Field>
+				<Field OutName="relationship" Sequence="3">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.RelationshipFieldTransformer, Telvent.PGE.Framework">
+						<RelationshipFieldTransformer RelationshipName="DeviceGroup_Transformer">
+						  <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+							<FieldValueTransformer FieldName="DeviceGroupNumber" />
+						  </FieldMapper>
+						</RelationshipFieldTransformer>
+					</FieldMapper>
+				</Field>
+				<Field OutName="field" Sequence="4">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+						<FieldValueTransformer FieldName="CircuitID" />
+					</FieldMapper>
+				</Field>
+				<Field OutName="domain" Sequence="5">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.DomainTransformer, Telvent.PGE.Framework">
+						<DomainTransformer FieldName="OperatingVoltage" DomainName="Primary Voltage"></DomainTransformer>
+					</FieldMapper>
+				</Field>
+				<Field OutName="x" Sequence="6">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.XYTransformer, Telvent.PGE.Framework">
+						<XYTransformer FieldName="X" />
+					</FieldMapper>
+				</Field>
+				<Field OutName="y" Sequence="7">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.XYTransformer, Telvent.PGE.Framework">
+						<XYTransformer FieldName="Y" />
+					</FieldMapper>
+				</Field><Field OutName="alternate" Sequence="8">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.AlternateFieldTransformer, Telvent.PGE.Framework">
+						<AlternateFieldTransformer FieldName="LastUser" AlternateField="CreationUser"></AlternateFieldTransformer>
+					</FieldMapper>
+				</Field>
+				<Field OutName="datetime" Sequence="9">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.DateTimeTransformer, Telvent.PGE.Framework">
+						<DateTimeTransformer FieldName="CreationDate" DateFormat="yyyyMMdd"></DateTimeTransformer>
+					</FieldMapper>
+				</Field>
+				<Field OutName="altdatetime" Sequence="10">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.AlternateDateTimeTransformer, Telvent.PGE.Framework">
+						<AlternateDateTimeTransformer FieldName="LastModified" AlternateField="CreationDate" DateFormat="yyyyMMdd"></AlternateDateTimeTransformer>
+					</FieldMapper>
+				</Field>
+				<Field OutName="field" Sequence="11">
+					<FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+						<FieldValueTransformer FieldName="AssetID" />
+					</FieldMapper>
+				</Field>
+			</Fields>
+			<Settings>
+				<Setting Name="String" Value="String"/>
+				<Setting Name="String" Value="String"/>
+			</Settings>
+      <RelatedClass SourceClass="TransformerUnit" Subtypes="" OutName="Transformer" TransformerType="Telvent.PGE.SAP.RowTransformers.SAPRowTransformer,Telvent.PGE.SAP" AssetIDField="12">
+        <Fields>
+          <Field OutName="UnitID" Sequence="12">
+            <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+              <FieldValueTransformer FieldName="UnitID" />
+            </FieldMapper>
+          </Field>
+        </Fields>
+      </RelatedClass>
+		</TrackedClass>-->
+    <TrackedClass SourceClass="VoltageRegulatorUnit" Subtypes=""  OutName="Regulator" TransformerType="Telvent.PGE.SAP.RowTransformers.RelationshipRowTransformer,Telvent.PGE.SAP" RelationshipName="VoltageReg_VoltageRegUnit" TransformerTypeForOriginClass="Telvent.PGE.SAP.RowTransformers.SAPEquipmentRowTransformer,Telvent.PGE.SAP" AssetIDField="12">
+      <Fields>
+        <Field OutName="UnitID" Sequence="12">
+          <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+            <FieldValueTransformer FieldName="UnitID" />
+          </FieldMapper>
+        </Field>
+      </Fields>
+      <Settings>
+        <Setting Name="AssetIDFieldName" Value="GlobalID"/>
+        <Setting Name="AssetStatusFieldName" Value="Status"/>
+      </Settings>
+      <RelatedClass SourceClass="VoltageRegulator" Subtypes="" OutName="Regulator" SAPType="-4" TransformerType="Telvent.PGE.SAP.RowTransformers.RelationshipRowTransformer,Telvent.PGE.SAP" RelationshipName="VoltageRegulator_Controller" TransformerTypeForOriginClass="Telvent.PGE.SAP.RowTransformers.SAPBankDeviceRowTransformer,Telvent.PGE.SAP">
+        <Fields>
+          <Field OutName="static" Sequence="2">
+            <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.StaticValueTransformer, Telvent.PGE.Framework">
+              <StaticValueTransformer StaticValue="99" />
+            </FieldMapper>
+          </Field>
+          <Field OutName="relationship" Sequence="3">
+            <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.RelationshipFieldTransformer, Telvent.PGE.Framework">
+              <RelationshipFieldTransformer RelationshipName="DeviceGroup_VoltageRegulator">
+                <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+                  <FieldValueTransformer FieldName="DeviceGroupNumber" />
+                </FieldMapper>
+              </RelationshipFieldTransformer>
+            </FieldMapper>
+          </Field>
+          <Field OutName="field" Sequence="4">
+            <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+              <FieldValueTransformer FieldName="CircuitID" />
+            </FieldMapper>
+          </Field>
+          <Field OutName="domain" Sequence="5">
+            <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.DomainTransformer, Telvent.PGE.Framework">
+              <DomainTransformer FieldName="OperatingVoltage" DomainName="Primary Voltage"></DomainTransformer>
+            </FieldMapper>
+          </Field>
+          <Field OutName="x" Sequence="6">
+            <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.XYTransformer, Telvent.PGE.Framework">
+              <XYTransformer FieldName="X" />
+            </FieldMapper>
+          </Field>
+          <Field OutName="y" Sequence="7">
+            <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.XYTransformer, Telvent.PGE.Framework">
+              <XYTransformer FieldName="Y" />
+            </FieldMapper>
+          </Field>
+          <Field OutName="alternate" Sequence="8">
+            <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.AlternateFieldTransformer, Telvent.PGE.Framework">
+              <AlternateFieldTransformer FieldName="LastUser" AlternateField="CreationUser"></AlternateFieldTransformer>
+            </FieldMapper>
+          </Field>
+          <Field OutName="datetime" Sequence="9">
+            <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.DateTimeTransformer, Telvent.PGE.Framework">
+              <DateTimeTransformer FieldName="CreationDate" DateFormat="yyyyMMdd"></DateTimeTransformer>
+            </FieldMapper>
+          </Field>
+          <Field OutName="altdatetime" Sequence="10">
+            <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.AlternateDateTimeTransformer, Telvent.PGE.Framework">
+              <AlternateDateTimeTransformer FieldName="LastModified" AlternateField="CreationDate" DateFormat="yyyyMMdd"></AlternateDateTimeTransformer>
+            </FieldMapper>
+          </Field>
+          <Field OutName="field" Sequence="11">
+            <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+              <FieldValueTransformer FieldName="GlobalID" />
+            </FieldMapper>
+          </Field>
+          <Field OutName="field" Sequence="13">
+            <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+              <FieldValueTransformer FieldName="StructureGUID" />
+            </FieldMapper>
+          </Field>
+        </Fields>
+        <Settings>
+          <Setting Name="ParentIDFieldName" Value="StructureGUID"/>
+          <Setting Name="RelationshipNameWithDeviceGroup" Value="DeviceGroup_VoltageRegulator"/>
+        </Settings>
+        <RelatedClass SourceClass="Controller" Subtypes="" OutName="Regulator" TransformerType="Telvent.PGE.SAP.RowTransformers.SAPRowTransformer,Telvent.PGE.SAP">
+          <Fields>
+            <Field OutName="SerialNumber" Sequence="21">
+              <FieldMapper TransformerType="Telvent.PGE.Framework.FieldTransformers.FieldValueTransformer, Telvent.PGE.Framework">
+                <FieldValueTransformer FieldName="SerialNumber" />
+              </FieldMapper>
+            </Field>
+          </Fields>
+          <Settings>
+            <Setting Name="NullRowOk" Value="True"/>
+          </Settings>
+        </RelatedClass>
+      </RelatedClass>
+    </TrackedClass>
+  </TrackedClasses>
+	<Settings>
+		<Setting Name="String" Value="String"/>
+		<Setting Name="String" Value="String"/>
+	</Settings>
+</SystemMapper>

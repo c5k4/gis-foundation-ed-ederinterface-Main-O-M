@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ORDERS" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ORDERS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="ORDERS" msprop:Generator_UserDSName="ORDERS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Table" msprop:Generator_TableClassName="TableDataTable" msprop:Generator_TableVarName="tableTable" msprop:Generator_TablePropName="Table" msprop:Generator_RowDeletingName="TableRowDeleting" msprop:Generator_RowChangingName="TableRowChanging" msprop:Generator_RowEvHandlerName="TableRowChangeEventHandler" msprop:Generator_RowDeletedName="TableRowDeleted" msprop:Generator_UserTableName="Table" msprop:Generator_RowChangedName="TableRowChanged" msprop:Generator_RowEvArgName="TableRowChangeEvent" msprop:Generator_RowClassName="TableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PGE_OrderNumber" msprop:Generator_ColumnVarNameInTable="columnPGE_OrderNumber" msprop:Generator_ColumnPropNameInRow="PGE_OrderNumber" msprop:Generator_ColumnPropNameInTable="PGE_OrderNumberColumn" msprop:Generator_UserColumnName="PGE_OrderNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="PGE_NotificationNumber" msprop:Generator_ColumnVarNameInTable="columnPGE_NotificationNumber" msprop:Generator_ColumnPropNameInRow="PGE_NotificationNumber" msprop:Generator_ColumnPropNameInTable="PGE_NotificationNumberColumn" msprop:Generator_UserColumnName="PGE_NotificationNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="PGE_SAPEQUIPID" msprop:Generator_ColumnVarNameInTable="columnPGE_SAPEQUIPID" msprop:Generator_ColumnPropNameInRow="PGE_SAPEQUIPID" msprop:Generator_ColumnPropNameInTable="PGE_SAPEQUIPIDColumn" msprop:Generator_UserColumnName="PGE_SAPEQUIPID" type="xs:string" minOccurs="0" />
+              <xs:element name="Latitude" msprop:Generator_ColumnVarNameInTable="columnLatitude" msprop:Generator_ColumnPropNameInRow="Latitude" msprop:Generator_ColumnPropNameInTable="LatitudeColumn" msprop:Generator_UserColumnName="Latitude" type="xs:string" minOccurs="0" />
+              <xs:element name="Longitude" msprop:Generator_ColumnVarNameInTable="columnLongitude" msprop:Generator_ColumnPropNameInRow="Longitude" msprop:Generator_ColumnPropNameInTable="LongitudeColumn" msprop:Generator_UserColumnName="Longitude" type="xs:string" minOccurs="0" />
+              <xs:element name="PGE_SnowLoadDistrict" msprop:Generator_ColumnVarNameInTable="columnPGE_SnowLoadDistrict" msprop:Generator_ColumnPropNameInRow="PGE_SnowLoadDistrict" msprop:Generator_ColumnPropNameInTable="PGE_SnowLoadDistrictColumn" msprop:Generator_UserColumnName="PGE_SnowLoadDistrict" type="xs:string" minOccurs="0" />
+              <xs:element name="PGE_Description" msprop:Generator_ColumnVarNameInTable="columnPGE_Description" msprop:Generator_ColumnPropNameInRow="PGE_Description" msprop:Generator_ColumnPropNameInTable="PGE_DescriptionColumn" msprop:Generator_UserColumnName="PGE_Description" type="xs:string" minOccurs="0" />
+              <xs:element name="PGE_LANID" msprop:Generator_ColumnVarNameInTable="columnPGE_LANID" msprop:Generator_ColumnPropNameInRow="PGE_LANID" msprop:Generator_ColumnPropNameInTable="PGE_LANIDColumn" msprop:Generator_UserColumnName="PGE_LANID" type="xs:string" minOccurs="0" />
+              <xs:element name="PoleStrengthFactor" msprop:Generator_ColumnVarNameInTable="columnPoleStrengthFactor" msprop:Generator_ColumnPropNameInRow="PoleStrengthFactor" msprop:Generator_ColumnPropNameInTable="PoleStrengthFactorColumn" msprop:Generator_UserColumnName="PoleStrengthFactor" type="xs:string" minOccurs="0" />
+              <xs:element name="VerticalFactorOfSafety" msprop:Generator_ColumnVarNameInTable="columnVerticalFactorOfSafety" msprop:Generator_ColumnPropNameInRow="VerticalFactorOfSafety" msprop:Generator_ColumnPropNameInTable="VerticalFactorOfSafetyColumn" msprop:Generator_UserColumnName="VerticalFactorOfSafety" type="xs:string" minOccurs="0" />
+              <xs:element name="BendingFactorOfSafety" msprop:Generator_ColumnVarNameInTable="columnBendingFactorOfSafety" msprop:Generator_ColumnPropNameInRow="BendingFactorOfSafety" msprop:Generator_ColumnPropNameInTable="BendingFactorOfSafetyColumn" msprop:Generator_UserColumnName="BendingFactorOfSafety" type="xs:string" minOccurs="0" />
+              <xs:element name="PoleFactorOfSafety" msprop:Generator_ColumnVarNameInTable="columnPoleFactorOfSafety" msprop:Generator_ColumnPropNameInRow="PoleFactorOfSafety" msprop:Generator_ColumnPropNameInTable="PoleFactorOfSafetyColumn" msprop:Generator_UserColumnName="PoleFactorOfSafety" type="xs:string" minOccurs="0" />
+              <xs:element name="PoleClass" msprop:Generator_ColumnVarNameInTable="columnPoleClass" msprop:Generator_ColumnPropNameInRow="PoleClass" msprop:Generator_ColumnPropNameInTable="PoleClassColumn" msprop:Generator_UserColumnName="PoleClass" type="xs:string" minOccurs="0" />
+              <xs:element name="Species" msprop:Generator_ColumnVarNameInTable="columnSpecies" msprop:Generator_ColumnPropNameInRow="Species" msprop:Generator_ColumnPropNameInTable="SpeciesColumn" msprop:Generator_UserColumnName="Species" type="xs:string" minOccurs="0" />
+              <xs:element name="LenghtInInches" msprop:Generator_ColumnVarNameInTable="columnLenghtInInches" msprop:Generator_ColumnPropNameInRow="LenghtInInches" msprop:Generator_ColumnPropNameInTable="LenghtInInchesColumn" msprop:Generator_UserColumnName="LenghtInInches" type="xs:string" minOccurs="0" />
+              <xs:element name="PGE_SketchLocation" msprop:Generator_ColumnVarNameInTable="columnPGE_SketchLocation" msprop:Generator_ColumnPropNameInRow="PGE_SketchLocation" msprop:Generator_ColumnPropNameInTable="PGE_SketchLocationColumn" msprop:Generator_UserColumnName="PGE_SketchLocation" type="xs:string" minOccurs="0" />
+              <xs:element name="PGE_MatCode" msprop:Generator_ColumnVarNameInTable="columnPGE_MatCode" msprop:Generator_ColumnPropNameInRow="PGE_MatCode" msprop:Generator_ColumnPropNameInTable="PGE_MatCodeColumn" msprop:Generator_UserColumnName="PGE_MatCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Elevation" msprop:Generator_ColumnVarNameInTable="columnElevation" msprop:Generator_ColumnPropNameInRow="Elevation" msprop:Generator_ColumnPropNameInTable="ElevationColumn" msprop:Generator_UserColumnName="Elevation" type="xs:string" minOccurs="0" />
+              <xs:element name="PLDBID" msprop:Generator_ColumnVarNameInTable="columnPLDBID" msprop:Generator_ColumnPropNameInRow="PLDBID" msprop:Generator_ColumnPropNameInTable="PLDBIDColumn" msprop:Generator_UserColumnName="PLDBID" type="xs:string" minOccurs="0" />
+              <xs:element name="PGE_CopiedPLDBID" msprop:Generator_ColumnVarNameInTable="columnPGE_CopiedPLDBID" msprop:Generator_ColumnPropNameInRow="PGE_CopiedPLDBID" msprop:Generator_ColumnPropNameInTable="PGE_CopiedPLDBIDColumn" msprop:Generator_UserColumnName="PGE_CopiedPLDBID" type="xs:string" minOccurs="0" />
+              <xs:element name="PGE_GLOBALID" msprop:Generator_ColumnVarNameInTable="columnPGE_GLOBALID" msprop:Generator_ColumnPropNameInRow="PGE_GLOBALID" msprop:Generator_ColumnPropNameInTable="PGE_GLOBALIDColumn" msprop:Generator_UserColumnName="PGE_GLOBALID" type="xs:string" minOccurs="0" />
+              <xs:element name="PGE_OBJECTID" msprop:Generator_ColumnVarNameInTable="columnPGE_OBJECTID" msprop:Generator_ColumnPropNameInRow="PGE_OBJECTID" msprop:Generator_ColumnPropNameInTable="PGE_OBJECTIDColumn" msprop:Generator_UserColumnName="PGE_OBJECTID" type="xs:string" minOccurs="0" />
+              <xs:element name="PLD_STATUS" msprop:Generator_ColumnVarNameInTable="columnPLD_STATUS" msprop:Generator_ColumnPropNameInRow="PLD_STATUS" msprop:Generator_ColumnPropNameInTable="PLD_STATUSColumn" msprop:Generator_UserColumnName="PLD_STATUS" type="xs:string" minOccurs="0" />
+              <xs:element name="GLOBALID_PLD" msprop:Generator_ColumnVarNameInTable="columnGLOBALID_PLD" msprop:Generator_ColumnPropNameInRow="GLOBALID_PLD" msprop:Generator_ColumnPropNameInTable="GLOBALID_PLDColumn" msprop:Generator_UserColumnName="GLOBALID_PLD" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

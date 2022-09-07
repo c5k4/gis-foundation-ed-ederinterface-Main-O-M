@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.Interfaces.CCBtoGISInterface", "PGE.Interfaces.CCBtoGISInterface\PGE.Interfaces.CCBtoGISInterface.csproj", "{55980BB9-9785-4169-BB01-251B5BB43103}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55980BB9-9785-4169-BB01-251B5BB43103}.Debug|x86.ActiveCfg = Debug|x86
+		{55980BB9-9785-4169-BB01-251B5BB43103}.Debug|x86.Build.0 = Debug|x86
+		{55980BB9-9785-4169-BB01-251B5BB43103}.Release|x86.ActiveCfg = Release|x86
+		{55980BB9-9785-4169-BB01-251B5BB43103}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A109D4AD-6EC4-42AD-AC6B-AB76BF31ED2E}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PGE.Interfaces.CCBtoGISInterface\\PGE.Interfaces.CCBtoGISInterface.csproj
+		SccProjectName1 = PGE.Interfaces.CCBtoGISInterface
+		SccLocalPath1 = PGE.Interfaces.CCBtoGISInterface
+	EndGlobalSection
+EndGlobal

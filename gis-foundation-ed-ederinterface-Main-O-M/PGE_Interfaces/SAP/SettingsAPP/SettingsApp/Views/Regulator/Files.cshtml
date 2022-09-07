@@ -1,0 +1,133 @@
+﻿@using (Html.BeginForm("Files", "Regulator", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<table cellpadding="0" cellspacing="0" width="90%">
+    <tr>
+        <td style="padding: 0px">
+            <div class="float-left">
+                <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("GIS", "GIS", (string)ViewBag.DeviceType, new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, units = ViewBag.Units }, null)</li>
+                            <li>@Html.ActionLink("Current Settings", "Index", (string)ViewBag.DeviceType, new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, units = ViewBag.Units }, null)</li>
+                            <li>@Html.ActionLink("Future Settings", "Future", (string)ViewBag.DeviceType, new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, units = ViewBag.Units }, null)</li>
+                            <li class="selected">@Html.ActionLink("Settings Files", "Files", (string)ViewBag.DeviceType, new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, units = ViewBag.Units }, null)</li>
+                            <li>@Html.ActionLink("History", "History", (string)ViewBag.DeviceType, new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, units = ViewBag.Units }, null)</li>
+                             @if (ViewBag.IsLoadTabVisible == true)
+                                {
+                                    <li>@Html.ActionLink("Load", "EngineeringInfo", "Regulator", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, units = ViewBag.Units }, null)</li>
+                                }
+                        </ul>
+                    </nav>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="header" style="padding-top: 15px; padding-bottom: 0px; padding-left: 10px">
+            @if (ViewBag.layerName == "Proposed Voltage Regulator")
+            {
+                    <label id="lablelayertype" runat="server" style="color: Red; font-size:16; text-align: Left;">
+                       @ViewBag.Title 
+                    </label>
+                     
+                   
+            }
+            else
+            {
+                @ViewBag.Title 
+            }
+        </td>
+    </tr>
+    @if (ViewBag.ShowInsufficientMetaDataRequirement)
+    {
+    <tr>
+        <td style="padding-left: 10px; background-color: White" class="error">
+            <br />One or more of the required attribute 'district', 'division', or 'operating number' is missing and no files can be uploaded.
+        </td>
+    </tr>
+    }
+    <tr>
+        <td style="padding: 10px; background-color: White">
+            <table cellpadding="0" cellspacing="0" style="width: 100%; background-color: #f2f2f2">
+                <tr>
+                    <td colspan="3" class="sectionHeader">
+                        Settings File
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; width: 300px">
+                        <input type="file" name="fileSettings" id="fileSettings" style="width: 300px" />
+                    </td>
+                    <td style="text-align: left">
+                        <input type="button" value="Upload" id="buttonFile1" onclick="this.form.action='/@ViewBag.ControllerName/SettingsFiles/@ViewBag.GlobalID/@ViewBag.LayerName/@ViewBag.Units';this.form.submit();"
+                            @(!ViewBag.ShowInsufficientMetaDataRequirement ? Html.Raw("") : Html.Raw("disabled='disabled'"))
+                            @(SettingsApp.Common.Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                    </td>
+                    <td style="text-align: right; padding-right: 5px">
+                        <input type="button" value="Download or View Files" onclick="window.open('@ViewBag.D2SettingsURL');"
+                            @(!ViewBag.ShowInsufficientMetaDataRequirement ? Html.Raw("") : Html.Raw("disabled='disabled'"))
+                            @(SettingsApp.Common.Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                    </td>
+                </tr>
+                @if (ViewBag.SettingsFileUploaded)
+                {
+                <tr>
+                    <td colspan="3" style="padding-left: 10px;" >
+                        Request to upload document has been sent to Documentum.
+                    </td>
+                </tr>
+                }
+                else
+                {
+                <tr>
+                    <td colspan="3" style="padding-left: 10px;" class="error">
+                        @ViewBag.SettingsFileError
+                    </td>
+                </tr>
+                }
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td style="background-color: White; padding: 10px">
+            <table cellpadding="0" cellspacing="0" style="width: 100%; background-color: #f2f2f2">
+                <tr>
+                    <td colspan="3" class="sectionHeader">
+                        Peer Review File
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; width: 300px">
+                        <input type="file" name="filePeerReview" id="filePeerReview" style="width: 300px" />
+                    </td>
+                    <td style="text-align: left">
+                        <input type="button" value="Upload" id="buttonFile2" onclick="this.form.action='/@ViewBag.ControllerName/PeerReviewFiles/@ViewBag.GlobalID/@ViewBag.LayerName/@ViewBag.Units';this.form.submit();"
+                            @(!ViewBag.ShowInsufficientMetaDataRequirement ? Html.Raw("") : Html.Raw("disabled='disabled'"))
+                            @(SettingsApp.Common.Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                    </td>
+                    <td style="text-align: right; padding-right: 5px">
+                        <input type="button" value="Download or View Files" onclick="window.open('@ViewBag.DBPeerReviewURL');"
+                            @(!ViewBag.ShowInsufficientMetaDataRequirement ? Html.Raw("") : Html.Raw("disabled='disabled'"))
+                            @(SettingsApp.Common.Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                    </td>
+                </tr>
+                @if (ViewBag.PeerReviewFileUploaded)
+                {
+                <tr>
+                    <td colspan="3" style="padding-left: 10px;" >
+                        Request to upload document has been sent to Documentum.
+                    </td>
+                </tr>
+                }
+                else
+                {
+                <tr>
+                    <td colspan="3" style="padding-left: 10px;" class="error">
+                        @ViewBag.PeerReviewError
+                    </td>
+                </tr>
+                }
+            </table>
+        </td>
+    </tr>
+</table>
+}
+

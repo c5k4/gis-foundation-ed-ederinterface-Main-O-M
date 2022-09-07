@@ -1,0 +1,32 @@
+﻿@model SettingsApp.SM_COMMENT_HIST
+@using SettingsApp.Common;
+@using (Html.BeginForm("Index", "Sectionalizer"))
+{
+    @Html.ValidationSummary(true)
+    <table cellpadding="0" cellspacing="0" width="90%">
+        <tr>
+            <td class="header">
+                Add Comments
+            </td>        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 10px">
+                <table cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.COMMENTS)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.COMMENTS)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,14 @@
+﻿<CHECKS>
+  <add sql="SELECT count(*) FROM DMSSTAGING.LINE A WHERE a.rowid > ANY ( SELECT B.rowid FROM DMSSTAGING.LINE B WHERE a.fpos = b.fpos)" error="Duplicate Lines found." />
+  <add sql="select count(*) from DMSSTAGING.LINE where no_key_1 not in (select nfpos from DMSSTAGING.node)" error="Nodes missing from NODE table." />
+  <add sql="select count(*) from DMSSTAGING.LINE where no_key_2 not in (select nfpos from DMSSTAGING.node)" error="Nodes missing from NODE table." />
+  <add sql="SELECT count(*) FROM DMSSTAGING.SOURCE A WHERE a.rowid > ANY ( SELECT B.rowid FROM DMSSTAGING.SOURCE B WHERE a.sofpos = b.sofpos)" error="Duplicate Sources found." />
+  <add sql="SELECT count(*) FROM DMSSTAGING.LOAD A WHERE a.rowid > ANY ( SELECT B.rowid FROM DMSSTAGING.LOAD B WHERE a.lofpos = b.lofpos)" error="Duplicate Loads found." />
+  <add sql="SELECT count(*) FROM DMSSTAGING.CAPACITOR A WHERE a.rowid > ANY ( SELECT B.rowid FROM DMSSTAGING.CAPACITOR B WHERE a.cafpos = b.cafpos)" error="Duplicate Capacitors found." />
+  <add sql="SELECT count(*) FROM DMSSTAGING.PATH A WHERE a.rowid > ANY ( SELECT B.rowid FROM DMSSTAGING.PATH B WHERE a.line_guid = b.line_guid AND a.order_num = b.order_num)" error="Duplicate Paths found." />
+  <add sql="select count(*) from DMSSTAGING.LOAD where loname is null" error="Null Operating numbers found." />
+  <add sql="select count(*) from DMSSTAGING.LOAD where loid is null" error="Null CGC12 found." />
+  <add sql="SELECT count(*) FROM DMSSTAGING.LOAD A WHERE a.rowid > ANY ( SELECT B.rowid FROM DMSSTAGING.LOAD B WHERE a.loid = b.loid)" error="Duplicate CGC12 found." />
+  <add sql="SELECT count(*) FROM DMSSTAGING.NODE A WHERE a.rowid > ANY ( SELECT B.rowid FROM DMSSTAGING.NODE B WHERE a.xn_1 = b.xn_1 AND a.yn_1=b.yn_1)" error="Coincident Nodes found" /> 
+  <!--<add sql="xxx" error="xxx" />-->
+</CHECKS>

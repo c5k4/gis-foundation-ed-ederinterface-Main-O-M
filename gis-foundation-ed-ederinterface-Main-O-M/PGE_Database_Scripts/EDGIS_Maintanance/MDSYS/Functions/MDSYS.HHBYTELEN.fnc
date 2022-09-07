@@ -1,0 +1,22 @@
+Prompt drop Function HHBYTELEN;
+DROP FUNCTION MDSYS.HHBYTELEN
+/
+
+Prompt Function HHBYTELEN;
+--
+-- HHBYTELEN  (Function) 
+--
+CREATE OR REPLACE FUNCTION MDSYS.hhbytelen (ndim IN BINARY_INTEGER, mlv IN BINARY_INTEGER)
+    RETURN BINARY_INTEGER IS
+begin
+  return md.hhbytelen(ndim,mlv);
+end;
+/
+
+
+Prompt Synonym HHBYTELEN;
+--
+-- HHBYTELEN  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM HHBYTELEN FOR MDSYS.HHBYTELEN
+/

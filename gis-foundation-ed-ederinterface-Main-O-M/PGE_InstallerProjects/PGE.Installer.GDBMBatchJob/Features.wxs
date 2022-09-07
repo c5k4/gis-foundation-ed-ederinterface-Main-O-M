@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file contains the features for the Desktop installers. 
+This was moved to the Shared project since it is used by both the Desktop and GWD installers.-->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="GDBMBatchJobComponents">
+      <ComponentGroupRef Id="PGE.Common.Delivery.Diagnostics.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.Framework.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.Geodatabase.dll"/>
+      
+      <ComponentRef Id="ConfigFiles"/>
+      <ComponentRef Id="RegistryEntries"/>
+      <ComponentRef Id="DefaultLogFile"/>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
+
+

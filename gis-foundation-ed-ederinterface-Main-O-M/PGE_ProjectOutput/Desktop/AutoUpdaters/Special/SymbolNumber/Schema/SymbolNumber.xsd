@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="SymbolNumberRules" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="C:\projects\pge\ED\Desktop\PGE.Desktop.EDER\AutoUpdaters\Special\SymbolNumber\Schema\SymbolNumber.xsd">
+	<xs:element name="LogicalOperator">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="Attribute" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="LogicalOperator" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="And" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Or" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Relationship" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:attribute name="OpType" default="Or">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="And|Or|AND|OR|and|or"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="And">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="Attribute" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="LogicalOperator" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="And" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Or" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Relationship" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Or">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="Attribute" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="LogicalOperator" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="And" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Or" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Relationship" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Attribute">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Value" type="xs:string" maxOccurs="unbounded" msdata:Ordinal="0"/>
+			</xs:choice>
+			<xs:attribute name="ModelName" type="xs:string"/>
+			<xs:attribute name="FieldName" type="xs:string"/>
+			<xs:attribute name="Condition" type="xs:boolean" default="true"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Relationship">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="RelatedObject"/>
+				<xs:element ref="Count"/>				
+			</xs:choice>
+			<xs:attribute name="ClassName" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Count">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Value" type="xs:string" />
+			</xs:sequence>
+			<xs:attribute name="Condition" type="xs:boolean" use="required"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="RelatedObject">
+		<xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="Attribute"/>
+        <xs:element ref="Relationship"/>
+      </xs:choice>			
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SymbolNumberRules" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="LogicalOperator"/>
+				<xs:element ref="Attribute"/>
+				<xs:element name="FeatureClass">
+					<xs:complexType>
+						<xs:choice maxOccurs="unbounded">
+							<xs:element name="Rule" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:choice maxOccurs="unbounded">
+										<xs:element ref="LogicalOperator"/>
+										<xs:element ref="And"/>
+										<xs:element ref="Or"/>
+										<xs:element ref="Attribute" maxOccurs="unbounded"/>
+									</xs:choice>
+									<xs:attribute name="SymbolNumber" type="xs:integer" use="optional"/>
+									<xs:attribute name="BeginsWith" type="xs:string" use="optional"/>
+									<xs:attribute name="EndsWith" type="xs:string" use="optional"/>
+									<xs:attribute name="MinLength" type="xs:integer" use="optional"/>
+									<xs:attribute name="MaxLength" type="xs:integer" use="optional"/>
+									<xs:attribute name="Required" type="xs:integer" use="optional"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:choice>
+						<xs:attribute name="Name" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

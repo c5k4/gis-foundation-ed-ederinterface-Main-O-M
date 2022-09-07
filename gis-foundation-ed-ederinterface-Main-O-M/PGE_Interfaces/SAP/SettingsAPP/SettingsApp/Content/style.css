@@ -1,0 +1,37 @@
+.page
+{
+    background-color: F2F2F2;
+}
+.header
+{
+    font-family: Verdana;
+    color: Red;
+    background-color: E2E2E2;
+    height: 27;
+}
+.subheader
+{
+    font-family: Verdana;
+    color: #000000;
+    background-color: E2E2E2;
+    height: 22;
+}
+.label
+{
+    font-family: Verdana;
+    font-size: 20px;
+    color: #616161;
+    width: 150px;
+}
+.editor-label
+{
+    font-family: Verdana;
+    font-size: 12px;
+    color: #000000;
+    width: 300px;
+    height: 24;
+}
+.tableSections
+{
+    padding:50;
+}

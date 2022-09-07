@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.Common.Delivery.Framework.CartoFacade" Collapsed="true">
+    <Position X="0.5" Y="8.5" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="PGE.Common.Delivery.Framework.CartoFacade.UIDFacade" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>CartoFacade.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AABAEAAAACAAEAAABAAAAAAABBIAAAAAIAAAAAAAgAA=</HashCode>
+      <FileName>CartoFacade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="map" />
+      <Field Name="uid" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Framework.DomainManager" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAEAAAAIAAAAQAAAAAAAAAAAAAAAAAEQEACAAAAAAA=</HashCode>
+      <FileName>DomainManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Framework.EncryptionFacade" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EncryptionFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Framework.PasswordEncryption" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAgAEAAAAAAAAAQAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>EncryptionFacade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_cryptoService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Framework.GeometryFacade" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAEAAAAAAAAAACAAAAAAAAEAAAAAAACAgAAA=</HashCode>
+      <FileName>GeometryFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Framework.LicenseManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAQAAAAACAAAQAAAAAAgQEAAAAAABAAAAAAAAAAAAg=</HashCode>
+      <FileName>LicenseManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_AoInitialize" />
+      <Field Name="_MmAppInit" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.Framework.MapProductionFacade" Collapsed="true">
+    <Position X="3.25" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAAAAACAEgCAEAAEAKJCCAAIICDAAGAGAQEADgAASAA=</HashCode>
+      <FileName>MapProductionFacade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_logger" />
+      <Property Name="CurrentMapGridFeature" />
+      <Property Name="OriginalHashPolygonGeometry" />
+      <Property Name="OriginalHashSymbol" />
+      <Property Name="PGEMap" />
+      <Property Name="PGEPageLayout" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Framework.ModelNameFacade" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAIECIAAiAAAwAAAACAAAAEAEAAgAAQBAAgAAAIA=</HashCode>
+      <FileName>ModelNameFacade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_mnManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Framework.Swizzle" Collapsed="true">
+    <Position X="3.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAACAAAAAEAAAAAAAYAAAAAAAgiAAAAAAAAA=</HashCode>
+      <FileName>Swizzle\Swizzle.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_logger" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Framework.SwizzleLayersUI" Collapsed="true">
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwQBACUAaAQAhEgAQSAAMACYMACAEAQAAGCQBAACAI=</HashCode>
+      <FileName>Swizzle\SwizzleLayersUI.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_app" />
+      <Field Name="_logger" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Framework.TraceFacade" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="PGE.Common.Delivery.Framework.TraceFacade.TraceType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>TraceFacade.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>QCEAAAACAAAAAACABAAoCQAAQAAAYEAFAQBECCAAAAA=</HashCode>
+      <FileName>TraceFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.Framework.Exceptions.InvalidConfigurationException" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\InvalidConfigurationException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Exception" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.Diagnostics.Log4NetLogger" Collapsed="true">
+    <Position X="3.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="7.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Security.Cryptography.SymmetricAlgorithm" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="ESRI.ArcGIS.Carto.IMap" Collapsed="true">
+    <Position X="0.5" Y="7" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.esriSystem.UID" Collapsed="true">
+    <Position X="0.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.esriSystem.IAoInitialize" Collapsed="true">
+    <Position X="8" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Miner.Interop.IMMAppInitialize" Collapsed="true">
+    <Position X="8" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Framework.IApplication" Collapsed="true">
+    <Position X="7.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geodatabase.IFeature" Collapsed="true">
+    <Position X="7.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Geometry.IGeometry" Collapsed="true">
+    <Position X="7.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Display.ISymbol" Collapsed="true">
+    <Position X="7.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Carto.IPageLayout" Collapsed="true">
+    <Position X="7.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Miner.Interop.IMMModelNameManager" Collapsed="true">
+    <Position X="3.75" Y="3" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

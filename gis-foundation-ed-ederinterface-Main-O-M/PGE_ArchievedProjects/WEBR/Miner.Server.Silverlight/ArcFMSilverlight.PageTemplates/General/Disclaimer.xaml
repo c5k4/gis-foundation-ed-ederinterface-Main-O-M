@@ -1,0 +1,15 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="ArcFMSilverlight.PageTemplates.Disclaimer" >
+	<TextBlock Margin="5 10 5 10" TextWrapping="Wrap"
+               Text=
+"Telvent is providing this map to you as a courtesy. Telvent makes no representations or
+warranties, whether expressed or implied, as to the accuracy, correctness, defensibility, 
+completeness or any other standard or measure of quality or adequacy or as to its 
+use or intended use for any particular purpose. Telvent disclaims all warranties, expressed 
+or implied, including the warranty of fitness for a particular purpose. You are solely 
+responible for selecting this map to use and you solely responsible for any consequences 
+resulting from your use. Reproduction, duplication, or modification of this map is not 
+allowed without written permission from Telvent GIS Services."/>
+</UserControl>

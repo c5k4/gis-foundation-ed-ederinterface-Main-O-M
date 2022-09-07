@@ -1,0 +1,582 @@
+﻿<!--ENOS2EDGIS, Made changes as per project requirements, added protection records-->
+@using SettingsApp.Common;
+@model SettingsApp.Models.PrimaryMeterModel
+<script type="text/javascript" src="~/Scripts/SettingsApp.js"></script>
+<script type="text/javascript">
+
+
+    var unsaved = false;
+
+    $(function () { // will trigger when the document is ready
+        $(":input").bind("keyup change", function (e) { //trigers change in all input fields including text type
+            unsaved = true;
+        });
+    });
+
+    function getPaging() {
+        if (unsaved) {
+            var r = confirm("Current page has unsaved edits, clicking on another tab will erase edited data, do you want to proceed ?");
+            if (r == true) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+    }
+
+</script>
+<style>
+    .DropDown { width: 205px; }
+</style>
+@using (Html.BeginForm("Index", "PrimaryMeter"))
+{
+    @Html.ValidationSummary(true)
+    if (TempData["unsaved"] != null)
+    {
+      <script type="text/javascript">
+          unsaved = @TempData["unsaved"];
+      </script>
+    }
+    
+    <table cellpadding="0" cellspacing="0" width="90%">
+    <script type="text/javascript">
+
+
+        function OnScadaChange() {
+            $("#FlisrDeviceDropDown").val("N");
+            if ($("#ScadaDropDown").val() == "Y") {
+                $("#FlisrDeviceDropDown").prop("disabled", false);
+            }
+            else {
+                $("#FlisrDeviceDropDown").prop("disabled", true);
+            }
+        }
+
+</script>
+        <tr>
+            <td style="padding: 0px">
+                <div class="float-left">
+                    <nav>
+                        <ul id="menu">
+                          <li>@Html.ActionLink("GIS", "GIS", "PrimaryMeter", new { globalID = ViewBag.GlobalID, ObjectId = ViewBag.ObjectId, layerName = ViewBag.LayerName }, new { onclick = "return getPaging();" })</li>
+                          <li class="@ViewBag.Protection">@Html.ActionLink("Primary Protection", "Index", "PrimaryMeter", new { globalID = ViewBag.GlobalID, ObjectId = ViewBag.ObjectId, layerName = ViewBag.LayerName }, new { onclick = "return getPaging();" })</li>
+                          <li>@Html.ActionLink("Settings Files", "Files", "PrimaryMeter", new { globalID = ViewBag.GlobalID, ObjectId = ViewBag.ObjectId, LayerName = ViewBag.LayerName }, new { onclick = "return getPaging();" })</li>
+                          <li>@Html.ActionLink("Special Load", "SpecialLoad", (string)ViewBag.ControllerName, new { globalID = ViewBag.GlobalID, ObjectId = ViewBag.ObjectId, LayerName = ViewBag.LayerName }, new { onclick = "return getPaging();" })</li>
+                        </ul>
+                    </nav>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="header" style="padding-top: 15px; padding-bottom: 0px; padding-left: 10px">
+               @if (ViewBag.layerName == "Proposed Primary Meter")
+               {
+                    <label id="lablelayertype" runat="server" style="color: Red; font-size:16; text-align: Left;">
+                       @ViewBag.Title 
+                    </label>
+                     
+                   
+               }
+               else
+               {
+                @ViewBag.Title 
+               }
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color: #ffffff; padding: 10px;">
+                @if (ViewBag.ShowPageError == true)
+                {
+                    <label id="lableDeviceValidationError" runat="server" style="color: Red; text-align: center;">
+                        There are error(s), please check below.
+                    </label>
+                }
+                @if (ViewBag.ShowSaveSucessful == true)
+                {
+                    <label id="lableDeviceSaveSucess" runat="server" style="color: Green; text-align: center;">
+                        Device saved successfully.
+                    </label>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="2" style="background-color: #ffffff; padding: 10px">
+                <table cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f2f2">
+                    <tr>
+                        <td colspan="2">
+                            <table cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f2f2">
+                                <tr>
+                                    <td >@Html.LabelForRequired(model => model.DirectTransferTrip)
+                                    </td>
+                                    <td>@Html.CheckBoxFor(model => model.DirectTransferTrip, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { })
+                                        @Html.HiddenFor(model => model.ID)
+                                        @Html.HiddenFor(model => model.GlobalId)
+                                        @Html.HiddenFor(model => model.OperatingNumber)
+                                        @Html.HiddenFor(model => model.ActiveProtection.ID)
+                                        @Html.HiddenFor(model => model.ActiveProtection.ParentID)
+                                        @Html.HiddenFor(model => model.ActiveProtection.ParentType)
+                                        @Html.HiddenFor(model => model.ActiveProtection.DateCreated)
+                                        @Html.HiddenFor(model => model.ActiveProtection.CreatedBy)
+                                        @Html.HiddenFor(model => model.ActiveProtection.CurrentOrFuture)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 185px">@Html.LabelForRequired(model => model.ActiveProtection.ProtectionType)
+                                    </td>
+                                    <td>@Html.DropDownListFor(model => model.ActiveProtection.ProtectionType, Model.ActiveProtection.ProtectionTypeList, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : new { @class = "DropDown", onchange = Model.ActiveProtection.ProtectionTypeDropDownPostbackScript })@Html.ValidationMessageFor(model => model.ActiveProtection.ProtectionType)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 185px">@Html.LabelForRequired(model => model.ActiveProtection.Notes)
+                                    </td>
+                                    <td>@Html.TextAreaFor(model => model.ActiveProtection.Notes, 5, 15, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { maxlength = 500, @class = "form-control" })@Html.ValidationMessageFor(model => model.ActiveProtection.Notes)
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    @if (Model.ActiveProtection.ProtectionType == "FUS")
+                    {
+                        <tr>
+                          <td colspan="2" style="padding-right: 0px">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td class="sectionHeader" colspan="2">
+                                        Fuse
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td style="width: 185px">@Html.LabelForRequired(model => model.ActiveProtection.FuseType)
+                                    </td>
+                                    <td>@Html.DropDownListFor(model => model.ActiveProtection.FuseType, Model.ActiveProtection.FuseTypeList, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveProtection.FuseType)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.FuseSize)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.FuseSize, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { maxlength = 10 })@Html.ValidationMessageFor(model => model.ActiveProtection.FuseSize)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.Manufacturer)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.Manufacturer, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { maxlength = 100 })@Html.ValidationMessageFor(model => model.ActiveProtection.Manufacturer)
+                                    </td>
+                                </tr>
+                            </table>
+                          </td>
+                        </tr>
+                    }
+                    @if (Model.ActiveProtection.ProtectionType == "RECL")
+                    {
+                        <tr>
+                          <td colspan="2" style="padding-right: 0px">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td class="sectionHeader" colspan="2">
+                                        Recloser
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.Manufacturer)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.Manufacturer, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { maxlength = 100 })@Html.ValidationMessageFor(model => model.ActiveProtection.Manufacturer)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.PhaseMinAmpsTrip)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.PhaseMinAmpsTrip, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "decimal-no", maxlength = 6 })@Html.ValidationMessageFor(model => model.ActiveProtection.PhaseMinAmpsTrip)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.PhaseSlowCurve)
+                                    </td>
+                                    <td>@Html.DropDownListFor(model => model.ActiveProtection.PhaseSlowCurve, Model.ActiveProtection.RecloseCurveList, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveProtection.PhaseSlowCurve)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.PhaseFastCurve)
+                                    </td>
+                                    <td>@Html.DropDownListFor(model => model.ActiveProtection.PhaseFastCurve, Model.ActiveProtection.RecloseCurveList, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveProtection.PhaseFastCurve)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.PhaseTimeDial)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.PhaseTimeDial, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "decimal-no", maxlength = 4 })@Html.ValidationMessageFor(model => model.ActiveProtection.PhaseTimeDial)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.PhaseInst)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.PhaseInst, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "decimal-no", maxlength = 6 })@Html.ValidationMessageFor(model => model.ActiveProtection.PhaseInst)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.GroundMinAmpsTrip)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.GroundMinAmpsTrip, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "decimal-no", maxlength = 6 })@Html.ValidationMessageFor(model => model.ActiveProtection.GroundMinAmpsTrip)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.GroundSlowCurve)
+                                    </td>
+                                    <td>@Html.DropDownListFor(model => model.ActiveProtection.GroundSlowCurve, Model.ActiveProtection.RecloseCurveList, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveProtection.GroundSlowCurve)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.GroundFastCurve)
+                                    </td>
+                                    <td>@Html.DropDownListFor(model => model.ActiveProtection.GroundFastCurve, Model.ActiveProtection.RecloseCurveList, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveProtection.GroundFastCurve)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.GroundTimeDial)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.GroundTimeDial, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "decimal-no", maxlength = 4 })@Html.ValidationMessageFor(model => model.ActiveProtection.GroundTimeDial)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.GroundInst)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.GroundInst, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "decimal-no", maxlength = 6 })@Html.ValidationMessageFor(model => model.ActiveProtection.GroundInst)
+                                    </td>
+                                </tr>
+                            </table>
+                          </td>
+                        </tr>
+                    }
+                    @if (Model.ActiveProtection.ProtectionType == "RELY")
+                    {      
+                        <tr style="height:190">
+                            @if (Model.ActivePrimaryPhaseRelay != null)
+                            {
+                                var colspanVal = @Model.ActiveBackupPhaseRelay != null ? 2 : 1; 
+                              <td align="center" colspan="1">
+                                <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 430px; height: 290px; table-layout:fixed">
+                                    <tr>
+                                        <td class="sectionHeader" style="text-align: left;" colspan=@colspanVal>
+                                            Primary Phase Relay
+                                            
+                                                  @Html.HiddenFor(model => model.ActivePrimaryPhaseRelay.ID)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryPhaseRelay.ProtectionId)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryPhaseRelay.DateCreated)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryPhaseRelay.CreatedBy)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryPhaseRelay.RelayCd)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryPhaseRelay.CurrentOrFuture)
+                                        </td>
+                                        @if (Model.ActiveBackupPhaseRelay == null)
+                                        {
+                                            <td class="sectionHeader" style="text-align: right;" colspan="1">
+                                                <input type="button" value="Add Backup" onclick="this.form.action='/@ViewBag.ControllerName/AddBackupRelay?globalID=@ViewBag.GlobalID&layerName=@ViewBag.LayerName&protectionID=@Model.ActiveProtection.ID.ToString()&backupType=BPHA';this.form.submit();"
+                                                @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                            </td>
+                                        }
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 185px">@Html.LabelForRequired(model => model.ActivePrimaryPhaseRelay.RelayType)
+                                        </td>
+                                        <td>@Html.DropDownListFor(model => model.ActivePrimaryPhaseRelay.RelayType, Model.ActivePrimaryPhaseRelay.RelayTypeList, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActivePrimaryPhaseRelay.RelayType)
+                                        </td>
+                                    </tr>
+                                   <tr>
+                                        <td style="width: 185px">@Html.LabelForRequired(model => model.ActivePrimaryPhaseRelay.CurveType)
+                                        </td>
+                                        <td>@Html.DropDownListFor(model => model.ActivePrimaryPhaseRelay.CurveType, Model.ActivePrimaryPhaseRelay.CurveTypeList, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActivePrimaryPhaseRelay.CurveType)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.ActivePrimaryPhaseRelay.MinAmpsTrip)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.ActivePrimaryPhaseRelay.MinAmpsTrip, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 4 })@Html.ValidationMessageFor(model => model.ActivePrimaryPhaseRelay.MinAmpsTrip)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td >@Html.LabelForRequired(model => model.ActivePrimaryPhaseRelay.LeverSettings)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.ActivePrimaryPhaseRelay.LeverSettings, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "decimal-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActivePrimaryPhaseRelay.LeverSettings)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.ActivePrimaryPhaseRelay.InstTrip)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.ActivePrimaryPhaseRelay.InstTrip, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActivePrimaryPhaseRelay.InstTrip)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.ActivePrimaryPhaseRelay.RestraintType)
+                                        </td>
+                                        <td>@Html.DropDownListFor(model => model.ActivePrimaryPhaseRelay.RestraintType, Model.ActivePrimaryPhaseRelay.RestraintList, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActivePrimaryPhaseRelay.RestraintType)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.ActivePrimaryPhaseRelay.RestraintPickup)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.ActivePrimaryPhaseRelay.RestraintPickup, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "decimal-no", maxlength = 7 })@Html.ValidationMessageFor(model => model.ActivePrimaryPhaseRelay.RestraintPickup)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.ActivePrimaryPhaseRelay.VoltageSetPoint)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.ActivePrimaryPhaseRelay.VoltageSetPoint, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "decimal-no", maxlength = 7 })@Html.ValidationMessageFor(model => model.ActivePrimaryPhaseRelay.VoltageSetPoint)
+                                        </td>
+                                    </tr>
+                                </table>
+                              </td>
+                            }
+                            @if (Model.ActivePrimaryGroundRelay != null)
+                            {
+                                var colspanVal = @Model.ActiveBackupGroundRelay != null ? 2 : 1; 
+                                <td align="center" colspan="1">
+                                    <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000;width: 430px; height: 290px; table-layout:fixed">
+                                        <tr>
+                                            <td class="sectionHeader" style="text-align: left;"colspan =@colspanVal>
+                                                Primary Ground Relay
+
+                                                  @Html.HiddenFor(model => model.ActivePrimaryGroundRelay.ID)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryGroundRelay.ProtectionId)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryGroundRelay.DateCreated)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryGroundRelay.CreatedBy)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryGroundRelay.RelayCd)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryGroundRelay.CurrentOrFuture)
+                                            </td>
+                                            @if (Model.ActiveBackupGroundRelay == null)
+                                            {
+                                                <td class="sectionHeader" style="text-align: right;" colspan="1">
+                                                    <input type="button" value="Add Backup" onclick="this.form.action='/@ViewBag.ControllerName/AddBackupRelay?globalID=@ViewBag.GlobalID&layerName=@ViewBag.LayerName&protectionID=@Model.ActiveProtection.ID.ToString()&backupType=BGRD';this.form.submit();"
+                                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                                </td>
+                                            }
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelForRequired(model => model.ActivePrimaryGroundRelay.RelayType)
+                                            </td>
+                                            <td>@Html.DropDownListFor(model => model.ActivePrimaryGroundRelay.RelayType, Model.ActivePrimaryGroundRelay.RelayTypeList, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActivePrimaryGroundRelay.RelayType)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 185px">@Html.LabelForRequired(model => model.ActivePrimaryGroundRelay.CurveType)
+                                            </td>
+                                            <td>@Html.DropDownListFor(model => model.ActivePrimaryGroundRelay.CurveType, Model.ActivePrimaryGroundRelay.CurveTypeList, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActivePrimaryGroundRelay.CurveType)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelForRequired(model => model.ActivePrimaryGroundRelay.MinAmpsTrip)
+                                            </td>
+                                            <td>@Html.TextBoxFor(model => model.ActivePrimaryGroundRelay.MinAmpsTrip, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 4 })@Html.ValidationMessageFor(model => model.ActivePrimaryGroundRelay.MinAmpsTrip)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelForRequired(model => model.ActivePrimaryGroundRelay.LeverSettings)
+                                            </td>
+                                            <td>@Html.TextBoxFor(model => model.ActivePrimaryGroundRelay.LeverSettings, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "decimal-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActivePrimaryGroundRelay.LeverSettings)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelForRequired(model => model.ActivePrimaryGroundRelay.InstTrip)
+                                            </td>
+                                            <td>@Html.TextBoxFor(model => model.ActivePrimaryGroundRelay.InstTrip, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActivePrimaryGroundRelay.InstTrip)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><br />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><br />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><br />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            }
+                        </tr>
+                        <tr>
+                            @if (Model.ActiveBackupPhaseRelay != null)
+                            {
+                                var colspanVal = @Model.ActiveBackupPhaseRelay != null ? 1 : 2; 
+                                <td colspan="1" align="center">
+                                    <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 430px; height: 290px; table-layout:fixed">
+                                                <tr>
+                                                    <td class="sectionHeader" style="text-align:left;" colspan=@colspanVal>
+                                                        Backup Phase Relay
+                                                         @Html.HiddenFor(model => model.ActiveBackupPhaseRelay.ID)
+                                                         @Html.HiddenFor(model => model.ActiveBackupPhaseRelay.ProtectionId)
+                                                         @Html.HiddenFor(model => model.ActiveBackupPhaseRelay.DateCreated)
+                                                         @Html.HiddenFor(model => model.ActiveBackupPhaseRelay.CreatedBy)
+                                                         @Html.HiddenFor(model => model.ActiveBackupPhaseRelay.RelayCd)
+                                                         @Html.HiddenFor(model => model.ActiveBackupPhaseRelay.CurrentOrFuture)
+                                                    </td>
+                                                    <td class="sectionHeader" style="text-align: right;" colspan="1">
+                                                        <input type="button" value="Delete Backup" onclick="this.form.action='/@ViewBag.ControllerName/DeleteBackupRelay?globalID=@ViewBag.GlobalID&layerName=@ViewBag.LayerName&protectionID=@Model.ActiveProtection.ID.ToString()&relayID=@Model.ActiveBackupPhaseRelay.ID';this.form.submit();"
+                                                        @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 185px">@Html.LabelForRequired(model => model.ActiveBackupPhaseRelay.RelayType)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.ActiveBackupPhaseRelay.RelayType, Model.ActiveBackupPhaseRelay.RelayTypeList, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveBackupPhaseRelay.RelayType)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 185px">@Html.LabelForRequired(model => model.ActiveBackupPhaseRelay.CurveType)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.ActiveBackupPhaseRelay.CurveType, Model.ActiveBackupPhaseRelay.CurveTypeList, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveBackupPhaseRelay.CurveType)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupPhaseRelay.MinAmpsTrip)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.ActiveBackupPhaseRelay.MinAmpsTrip, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 4 })@Html.ValidationMessageFor(model => model.ActiveBackupPhaseRelay.MinAmpsTrip)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupPhaseRelay.LeverSettings)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.ActiveBackupPhaseRelay.LeverSettings, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "decimal-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActiveBackupPhaseRelay.LeverSettings)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupPhaseRelay.InstTrip)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.ActiveBackupPhaseRelay.InstTrip, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActiveBackupPhaseRelay.InstTrip)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupPhaseRelay.RestraintType)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.ActiveBackupPhaseRelay.RestraintType, Model.ActiveBackupPhaseRelay.RestraintList, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveBackupPhaseRelay.RestraintType)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupPhaseRelay.RestraintPickup)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.ActiveBackupPhaseRelay.RestraintPickup, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "decimal-no", maxlength = 7 })@Html.ValidationMessageFor(model => model.ActiveBackupPhaseRelay.RestraintPickup)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupPhaseRelay.VoltageSetPoint)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.ActiveBackupPhaseRelay.VoltageSetPoint, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "decimal-no", maxlength = 7 })@Html.ValidationMessageFor(model => model.ActiveBackupPhaseRelay.VoltageSetPoint)
+                                                    </td>
+                                                </tr>
+                                    </table>
+                                  </td>
+                            }
+                            @if (Model.ActiveBackupGroundRelay != null)
+                            {
+                                var colspanVal = @Model.ActiveBackupGroundRelay != null ? 1 : 2; 
+                                <td colspan="1" align="center">
+                                    <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 430px; height: 290px; table-layout:fixed">
+                                                <tr>
+                                                    <td class="sectionHeader" style="text-align:left;" colspan=@colspanVal>
+                                                        Backup Ground Relay
+                                                         @Html.HiddenFor(model => model.ActiveBackupGroundRelay.ID)
+                                                         @Html.HiddenFor(model => model.ActiveBackupGroundRelay.ProtectionId)
+                                                         @Html.HiddenFor(model => model.ActiveBackupGroundRelay.DateCreated)
+                                                         @Html.HiddenFor(model => model.ActiveBackupGroundRelay.CreatedBy)
+                                                         @Html.HiddenFor(model => model.ActiveBackupGroundRelay.RelayCd)
+                                                         @Html.HiddenFor(model => model.ActiveBackupGroundRelay.CurrentOrFuture)
+                                                    </td>
+                                                    <td class="sectionHeader" style="text-align: right;" colspan="1">
+                                                        <input type="button" value="Delete Backup" onclick="this.form.action='/@ViewBag.ControllerName/DeleteBackupRelay?globalID=@ViewBag.GlobalID&layerName=@ViewBag.LayerName&protectionID=@Model.ActiveProtection.ID.ToString()&relayID=@Model.ActiveBackupGroundRelay.ID';this.form.submit();"
+                                                        @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupGroundRelay.RelayType)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.ActiveBackupGroundRelay.RelayType, Model.ActiveBackupGroundRelay.RelayTypeList, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveBackupGroundRelay.RelayType)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 185px">@Html.LabelForRequired(model => model.ActiveBackupGroundRelay.CurveType)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.ActiveBackupGroundRelay.CurveType, Model.ActiveBackupGroundRelay.CurveTypeList, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveBackupGroundRelay.CurveType)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupGroundRelay.MinAmpsTrip)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.ActiveBackupGroundRelay.MinAmpsTrip, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 4 })@Html.ValidationMessageFor(model => model.ActiveBackupGroundRelay.MinAmpsTrip)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupGroundRelay.LeverSettings)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.ActiveBackupGroundRelay.LeverSettings, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "decimal-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActiveBackupGroundRelay.LeverSettings)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupGroundRelay.InstTrip)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.ActiveBackupGroundRelay.InstTrip, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActiveBackupGroundRelay.InstTrip)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><br />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><br />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><br />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                            }
+                         </tr>
+                    }
+                    <tr>
+                    <td colspan="2"> <br />
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.DateModified)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.DateModified, !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "readonly-box", style = "font-style:italic;", onfocus = "this.blur();" } : new { disabled = "disabled", @class = "readonly-box", style = "font-style:italic;", onfocus = "this.blur();" })@Html.ValidationMessageFor(model => model.DateModified)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.PreparedBy)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PreparedBy, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { maxlength = 60 })@Html.ValidationMessageFor(model => model.PreparedBy)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.PeerReviewer)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PeerReviewer, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { maxlength = 60 })@Html.ValidationMessageFor(model => model.PeerReviewer)
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>@Html.LabelForRequired(model => model.PeerReviewerDate)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PeerReviewerDate, !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "form-control datepicker" })@Html.ValidationMessageFor(model => model.PeerReviewerDate)
+                        </td>
+                    </tr>
+              </table>
+            </td>
+        </tr>
+@*         @if (ViewBag.PageMode == "PROTECTION")
+         {*@
+            <tr>
+                <td colspan="2" style="text-align: right; padding-right: 10px">
+                    <input type="button" value="Cancel" onclick="this.form.action='/@ViewBag.ControllerName/Index/@ViewBag.GlobalID/@ViewBag.LayerName';this.form.submit();"
+                        @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                    <input type="button" value="Save" onclick="this.form.action='/@ViewBag.ControllerName/SaveProtection/@ViewBag.GlobalID/@ViewBag.LayerName';this.form.submit();"
+                        @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                </td>
+            </tr>
+@*         }*@
+    </table>
+}

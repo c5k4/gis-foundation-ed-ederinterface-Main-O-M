@@ -1,0 +1,368 @@
+﻿<UserControl x:Class="ArcFMSilverlight.MapTools"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+               xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:esri="http://schemas.esri.com/arcgis/client/2009" 
+             xmlns:miner="http://schemas.miner.com/arcfm/client/2010"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+             xmlns:ComponentModel="clr-namespace:System.ComponentModel;assembly=System.Windows"
+             xmlns:Converters="clr-namespace:ArcFMSilverlight.ValueConverters"
+             xmlns:local="clr-namespace:ArcFMSilverlight;assembly=ArcFMSilverlight"
+             xmlns:pge="clr-namespace:ArcFM.Silverlight.PGE.CustomTools;assembly=ArcFM.Silverlight.PGE.CustomTools">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Theming.TelventGray;component/themes/AlternateStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <Converters:BooleanToVisibilityValueConverter x:Key="BoolToVisConverter"/>
+            <Converters:LayerFilterValueConverter x:Key="LayerFilterConverter"/>
+            <Converters:CloneLayersValueConverter x:Key="CloneLayersConverter"/>
+            
+            <CollectionViewSource x:Key="LayersSource" Source="{Binding Map.Layers, Mode=OneWay}" >
+                <CollectionViewSource.SortDescriptions>
+                    <ComponentModel:SortDescription PropertyName="ID"  />
+                </CollectionViewSource.SortDescriptions>
+            </CollectionViewSource>
+
+            <Style x:Key="ZoomOnlyNavigationStyle" TargetType="esri:Navigation">
+                <Setter Property="Background" Value="#1000"/>
+                <Setter Property="Foreground" Value="#FF333333"/>
+                <Setter Property="BorderBrush" Value="White"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="esri:Navigation">
+                            <Grid x:Name="LayoutRoot" RenderTransformOrigin="{TemplateBinding RenderTransformOrigin}" VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RenderTransform>
+                                    <ScaleTransform CenterY="0" CenterX="0"/>
+                                </Grid.RenderTransform>
+
+                                <Grid x:Name="ZoomContainer" Margin="0" VerticalAlignment="Center" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!--<Border Grid.ColumnSpan="3" BorderThickness="0 0 0 1" CornerRadius="6" BorderBrush="#DFFF" Background="{TemplateBinding Background}"/>
+                                    <Border Grid.ColumnSpan="3" BorderThickness="0 1 0 0" CornerRadius="6" BorderBrush="#4000"/>-->
+                                    <Button x:Name="ZoomOutButton" 
+                                            ToolTipService.ToolTip="Zoom Out" 
+                                            Margin="1 0 1 0" 
+                                            Grid.Column="0"
+                                            Style="{StaticResource IconButtonStyle}">
+                                        <Image Source="/Images/zoom_out.png" Stretch="Fill" Height="16" Width="16" />
+                                    </Button>
+
+                                    <!--<Rectangle Fill="#2000" HorizontalAlignment="Center" Height="2" Grid.Column="1" VerticalAlignment="Center" Width="4"/>-->
+                                    <Slider x:Name="ZoomSlider" Cursor="Hand" Margin="2" LargeChange="1" Maximum="15" Minimum="0" Orientation="Horizontal" Grid.Column="1" SmallChange="1" ToolTipService.ToolTip="Drag to zoom in or out" Value="0" VerticalAlignment="Center" Width="80"/>
+                                    <Button x:Name="ZoomInButton" 
+                                            ToolTipService.ToolTip="Zoom In" 
+                                            Margin="2 0 1 0"
+                                            Grid.Column="2"
+                                            Style="{StaticResource IconButtonStyle}">
+                                        <Image Source="/Images/zoom_in.png" Stretch="Fill" Height="16" Width="16" />
+                                    </Button>
+
+                                    <Button Click="ZoomFullExtent_Click" x:Name="PGEZoomFullExtent" 
+                                            ToolTipService.ToolTip="Full Extent" 
+                                            Margin="1 0 2 0"
+                                            Grid.Column="3"
+                                            Style="{StaticResource IconButtonStyle}">
+                                        <Image Source="/Images/zoom_to_extent.png" Stretch="Fill" Height="16" Width="16" />
+                                    </Button>
+
+                                </Grid>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="#FFF" BorderThickness="0 1 0 0" HorizontalAlignment="Stretch" Margin="0">
+            <Border Background="#DDEDEDED" BorderBrush="#5000" BorderThickness="0 0 0 1" HorizontalAlignment="Stretch" Margin="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal" >
+                        <Button ToolTipService.ToolTip="Previous Extent" 
+                                    Margin="1" Style="{StaticResource IconButtonStyle}"
+                                    Command="{Binding PreviousExtentCommand}">
+                            <Image Source="/Images/back_location.png" Stretch="Fill" Height="16" Width="16" />
+                        </Button>
+                        <Button x:Name="NextExtentButton" ToolTipService.ToolTip="Next Extent" 
+                                    Margin="1" Style="{StaticResource IconButtonStyle}"
+                                    Command="{Binding NextExtentCommand}">
+                            <Image Source="/Images/forward_location.png" Stretch="Fill" Height="16" Width="16" />
+                        </Button>
+
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+
+                        <esri:Navigation Map="{Binding Map}" Style="{StaticResource ZoomOnlyNavigationStyle}" />
+
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+
+                        <RadioButton 
+                            x:Name="PanToggle"
+                            ToolTipService.ToolTip="Pan" 
+                            Margin="1" 
+                            Style="{StaticResource RibbonRadioButton}"
+                            Command="{Binding PanCommand}"
+                            IsChecked="{Binding Path=PanChecked,  Mode=TwoWay}">
+                            <Image Source="/ArcFMSilverlight;component/Images/pan.png" Margin="1" Stretch="Fill" Height="16" Width="16" />
+                        </RadioButton>
+
+                        <RadioButton x:Name="ZoomOutRectButton"
+                                      ToolTipService.ToolTip="Draw a Rectangle to Zoom Out" 
+                                      Margin="1" 
+                                      Style="{StaticResource RibbonRadioButton}"
+                                      Command="{Binding ZoomOutCommand}"
+                                      IsChecked="{Binding ZoomOutChecked, Mode=TwoWay}">
+                            <Image Source="/ArcFMSilverlight;component/Images/box_zoom_out.png" Margin="1" Stretch="Fill" Height="16" Width="16" />
+                        </RadioButton>
+
+                        <RadioButton x:Name="ZoomInRectButton"
+                                      ToolTipService.ToolTip="Draw a Rectangle to Zoom In" 
+                                      Margin="1"
+                                      Style="{StaticResource RibbonRadioButton}"
+                                      Command="{Binding ZoomInCommand}"
+                                      IsChecked="{Binding ZoomInChecked, Mode=TwoWay}">
+                            <Image Source="/ArcFMSilverlight;component/Images/box_zoom_in.png" Margin="1" Stretch="Fill" Height="16" Width="16" />
+                        </RadioButton>
+
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+
+                        <RadioButton x:Name="MagnifyButton"
+                                      ToolTipService.ToolTip="View Map Inset" 
+                                      Margin="1"
+                                      Style="{StaticResource RibbonRadioButton}"
+                                      Command="{Binding MagnifyCommand}"
+                                      IsChecked="{Binding MagnifyChecked, Mode=TwoWay}">
+                            <Image Source="/Images/magnifying_glass.png" Margin="1" Stretch="Fill" Height="16" Width="16" />
+                        </RadioButton>
+
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+
+                        <RadioButton x:Name="XY"
+                                      ToolTipService.ToolTip="Display Lat/Long" 
+                                      Margin="1"
+                                      Style="{StaticResource RibbonRadioButton}"
+                                      Command="{Binding XYCommand}"
+                                      IsChecked="{Binding XYCommandChecked, Mode=TwoWay}">
+                            <Image Source="/Images/Maps-icon.png" Margin="1" Stretch="Fill" Height="16" Width="16" />
+                        </RadioButton>
+
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+
+                        <local:BookmarksControl Background="Transparent" Margin="1" x:Name="BookmarksControl"></local:BookmarksControl>
+                        <local:FavoritesControl Background="Transparent" Margin="1" x:Name="FavoritesControl"></local:FavoritesControl>
+                        <!--<pge:StartupExtentControl x:Name="SaveStartupExtent"
+                                                  Map="{Binding Map}"
+                                                  Margin="1"
+                                                  Style="{StaticResource IconButtonStyle}">
+                            <Image Source="/Images/SaveExtent.png" Margin="1" Stretch="Fill" Height="16" Width="16"/>
+                        </pge:StartupExtentControl>-->
+
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+                        <pge:ZoomToScaleControl Name="ZoomToScaleControl"
+                                                    Map="{Binding Map}"
+                                                    Margin="1">
+                        </pge:ZoomToScaleControl>
+                        <Canvas  >
+
+                            <TextBlock Canvas.Left="5"  
+                   Canvas.Top="10" 
+                  
+                   Foreground="Blue" 
+                   FontFamily="Arial" 
+                   FontSize="16" 
+                   Width="130" 
+                   FontWeight="Bold">
+                            </TextBlock>
+
+
+                        </Canvas>
+
+                        <sdk:AutoCompleteBox x:Name="ZoomToScaleTextbox" Width="80" Height="25" FontSize="12" FontFamily="Arial" BorderThickness=".5" ToolTipService.ToolTip="Type Scale and press Enter key" KeyUp="ZoomToScaleTextbox_KeyUp" SelectionChanged="ZoomToScaleTextbox_SelectionChanged" LostFocus="ZoomToScaleTextbox_LostFocus" MinimumPrefixLength="0" MinimumPopulateDelay="1" ></sdk:AutoCompleteBox>
+
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+
+                        <Button x:Name="BaseMapToggle" Click="BaseMapToggle_Click" ToolTipService.ToolTip="Toggle BaseMap" 
+                                    Margin="1" Style="{StaticResource IconButtonStyle}">
+
+                            <Image x:Name="imgSatellite" Source="/Images/satellite_map.png" Stretch="Fill" Height="16" Width="16" />
+                        </Button>
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+                        <Button x:Name="GoogleMapsExtent" ToolTipService.ToolTip="GoogleMap Extent" Click="GoogleMapsExtent_Click"
+                                    Margin="1" Style="{StaticResource IconButtonStyle}">
+
+                            <Image x:Name="imgGoogleMaps" Source="/Images/google_maps.png" Stretch="Fill" Height="16" Width="16" />
+                        </Button>
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+                        <Button x:Name="ShareCurrentURLBtn" ToolTipService.ToolTip="Share Current Url" Click="ShareCurrentURLBtnClick"
+                                    Margin="1" Style="{StaticResource IconButtonStyle}">
+
+                            <Image x:Name="imgShareUrl" Source="/Images/shareCurrentUrl.png" Stretch="Fill" Height="16" Width="16" />
+                        </Button>
+                        <Line x:Name="ShareUrlLine" Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+                        
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Orientation="Horizontal">
+
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+
+                        <TextBlock VerticalAlignment="Center" Margin="3 0" Width="100" Foreground="#9000">
+                            <Run></Run>
+                            <Run Text="{Binding XCoordinate}"/>
+                        </TextBlock>
+
+                        <TextBlock VerticalAlignment="Center" Margin="3 0" Width="100" Foreground="#9000">
+                            <Run></Run>
+                            <Run Text="{Binding YCoordinate}"/>
+                        </TextBlock>
+
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+
+                        <ToggleButton x:Name="StoredViewToggle" 
+                                      ToolTipService.ToolTip="Stored Views"
+                                      Style="{StaticResource HiddenToggleButtonStyle}"
+                                      Margin="1">
+                            <Image Source="/Images/stored_views.png" Margin="1" Stretch="Fill" Height="16" Width="16" />
+                        </ToggleButton>
+
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+
+                        <ToggleButton x:Name="LayerToggle"
+                                      ToolTipService.ToolTip="Toggle Layers" 
+                                      Style="{StaticResource HiddenToggleButtonStyle}"
+                                      Margin="1">
+                            <Image Source="/Images/layers.png" Margin="1" Stretch="Fill" Height="16" Width="16" />
+                        </ToggleButton>
+
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+                        <local:LegendToggle Background="Transparent" Margin="1" x:Name="LegendToggleControl"></local:LegendToggle>
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+
+                        <ToggleButton x:Name="OverviewToggle" ToolTipService.ToolTip="Toggle Overview Map"
+                                      Margin="1" 
+                                      Style="{StaticResource HiddenToggleButtonStyle}" >
+                            <Image Source="/Images/overview.png" 
+                                   Margin="1"
+                                   Stretch="Fill" 
+                                   Height="16" 
+                                   Width="16" />
+                        </ToggleButton>
+
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+
+                        <ToggleButton x:Name="ShowRolloverInfoToggleButton" 
+                                      ToolTipService.ToolTip="Show Hover Over"
+                                      Style="{StaticResource HiddenToggleButtonStyle}"
+                                      IsChecked="False"
+                                      Checked="ShowRolloverInfoToggleButton_OnChecked"
+                                      Unchecked="ShowRolloverInfoToggleButton_OnUnchecked"
+                                      Margin="1">
+                            <Image Source="/Images/hover_over_identify.png" Margin="1" Stretch="Fill" Height="16" Width="16" />
+                        </ToggleButton>
+
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+
+                        <ToggleButton x:Name="WIPLayerVisibleToggleButton" 
+                                      ToolTipService.ToolTip="WIP Layer On/Off"
+                                      Style="{StaticResource HiddenToggleButtonStyle}"
+                                      IsChecked="True"
+                                      Checked="WIPLayerVisibleToggleButton_Checked"
+                                      Unchecked="WIPLayerVisibleToggleButton_Unchecked"
+                                      Margin="1">
+                            <Image Source="/Images/wip_on_off.png"  Margin="1" Stretch="Fill" Height="16" Width="16" />
+                        </ToggleButton>
+
+                        <Line Y1="0" Y2="1" Width="1" Height="16" Margin="5 3" Stroke="#2000" StrokeThickness="1" Stretch="Fill" />
+
+                        <ToggleButton x:Name="InsetToggle"
+                                      ToolTipService.ToolTip="Toggle Map Inset"
+                                      Margin="1"
+                                      Style="{StaticResource HiddenToggleButtonStyle}"
+                                      IsChecked="{Binding InsetVisible, Mode=TwoWay}">
+                            <Image Source="/Images/expand.png" 
+                                   Margin="1"
+                                   Stretch="Fill" 
+                                   Height="16" 
+                                   Width="16" />
+                        </ToggleButton>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Border>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
+
+            <Border Background="#EDEDED" 
+                     BorderBrush="#5000"  
+                     VerticalAlignment="Top"
+                     BorderThickness="1 1 1 1" 
+                     CornerRadius="4 4 4 4" 
+                     Width="250"
+                     Visibility="{Binding ElementName=StoredViewToggle, Path=IsChecked, Converter={StaticResource BoolToVisConverter}}">
+                <pge:StoredViewControl x:Name="StoredViewControl" Map="{Binding Map}"/>
+            </Border>
+            
+            <Border Background="{StaticResource BackgroundBrush}" BorderBrush="#3000"  VerticalAlignment="Top"
+                    BorderThickness="0.5 0 0.5 1" CornerRadius="0 0 3 3" Width="250" 
+                    Visibility="{Binding ElementName=LayerToggle, Path=IsChecked, Converter={StaticResource BoolToVisConverter}}">
+                <miner:LayerVisibility x:Name="LayerControl" Map="{Binding Map}"/>
+            </Border>
+
+            <Border CornerRadius="4,4,4,4" 
+                    Background="#EDEDED" 
+                    Opacity="1"
+                    Width="250" 
+                    Height="180" 
+                    Visibility="{Binding ElementName=OverviewToggle, Path=IsChecked, Converter={StaticResource BoolToVisConverter}}"
+                    BorderBrush="#5000" 
+                    BorderThickness="1 1 1 1"
+                    VerticalAlignment="Top">
+                <esri:OverviewMap Margin="8" Map="{Binding Map}"
+                                  Layer="{Binding Map.Layers, Converter={StaticResource CloneLayersConverter}, ConverterParameter=0}"/>
+            </Border>
+
+            <Border x:Name="MapInsetContainer"
+                    CornerRadius="4,4,4,4" 
+                    Background="#EDEDED" 
+                    BorderBrush="#5000" 
+                    BorderThickness="1 1 1 1"
+                    Width="290" 
+                    Height="180"
+                    Visibility="{Binding InsetVisible, Converter={StaticResource BoolToVisConverter}}"
+                    VerticalAlignment="Top">
+                <Grid>
+                    <StackPanel Orientation="Vertical" Margin="8">
+                        <local:MapInsetTools x:Name="MapInset"/>
+                        <Border Grid.Row="1" Background="#FFF">
+                            <Grid Width="270" Height="140">
+                                <esri:Map x:Name="InsetMap" IsLogoVisible="False" Background="White" />
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

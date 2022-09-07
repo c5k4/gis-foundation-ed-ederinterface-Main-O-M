@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+
+    <Property Secure="yes" Id="ARCFMBIN">
+      <RegistrySearch Id="MMBinDir" Root="HKLM" Key="SOFTWARE\Miner and Miner\ArcFM8" Type="raw" Name="MMBinDir" />
+    </Property>
+
+    <ComponentGroup Id="Frameworks">
+      <ComponentGroupRef Id="PGE.Common.Delivery.Framework.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.Diagnostics.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.Geodatabase.dll"/>
+      <ComponentGroupRef Id="PGE.Common.Delivery.Systems.dll"/>
+      <ComponentGroupRef Id="PGE.Common.ChangeDetectionAPI.dll"/>
+      <ComponentRef Id="RegistryEntries"/>
+      <ComponentRef Id="DefaultLogFile"/>
+
+      <ComponentGroupRef Id="PGE.Common.Delivery.Framework.dll"/>
+      <!--Place in component folder as this is no longer GACed.-->
+
+      <!--<ComponentGroupRef Id="PGE.Interfaces.SAP.dll"/>
+      <Component Id="PGE.Interfaces.SAP.dll.Config" Directory="SAPAssetSynch" Guid="C38F13D4-0112-4DFC-BBC3-159C48D62528" Permanent="yes" >
+        <File Id="PGE.Interfaces.SAP.dll.Config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.Interfaces.SAP.dll.Config"/>
+      </Component>-->
+
+      <!--The sql file is mostly used by GDBM component where it is going to write to the table but install it even if just Batch component is installed-->
+      <Component Id="CreateGISSap_AssetSynchSql.sql" Directory="SQL" Guid="CB78023F-4F93-44CB-9404-C0F130BD030E" >
+        <File Id="CreateGISSap_AssetSynchSql.sql" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\CreateGISSap_AssetSynchSql.sql"/>
+      </Component>
+
+      <Component Id="SAPRegistryEntries" Guid="1D471012-A48B-4CA2-8AAD-E4AFD6310AA5" Directory="PGE">
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Miner and Miner\PGESAP" Action="create">
+          <RegistryValue Type="string" Name="Directory" Value="[PGE]" KeyPath="no"/>          
+        </RegistryKey>
+      </Component>
+      <!--This is needed by Desktop. Do not touch it here. Instead use my own registry SAPRegistryEntries to store the SAP install location. -->
+      <!--<ComponentRef Id="RegistryEntries" />-->
+    </ComponentGroup>
+    <ComponentGroup Id="GDBM">
+      <!--Desktop is also install this Diagnostics dll to ArcFMBin, SAP is running fine without it. To avoid interact, do not install -->
+      <!--<Component Id="PGE.Common.Delivery.Diagnostics.dll2" Directory="ArcFMBin" Guid="651F264C-D893-4E18-BEE2-E0E1EFCFB411" >
+        <Condition >NOT DIAGNOSTICSEXISTS</Condition>
+        <File Id="PGE.Common.Delivery.Diagnostics.dll2" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\PGE.Common.Delivery.Diagnostics.dll"/>
+      </Component>-->
+      
+      <ComponentGroupRef Id="PGE.Interfaces.SAP.GDBM.dll"/>
+      <Component Id="Domains.xml" Directory="SAPAssetSynchConfig" Guid="D6E1C0CD-4490-4FEE-8176-C288A60BD3BF" >
+        <File Id="Domains.xml" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\config\Domains.xml"/>
+      </Component>
+
+      <Component Id="GISSAP_AssetSynch_Config.xml" Directory="SAPAssetSynchConfig" Guid="DCA15C69-A011-4D74-989E-4D8D06B244D0" Permanent="yes" >
+        <File Id="GISSAP_AssetSynch_Config.xml" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\config\GISSAP_AssetSynch_Config.xml"/>
+      </Component>
+
+      <Component Id="SAPIntegrationConfig.xsd" Directory="SAPAssetSynchConfig" Guid="6421687C-A1DF-46C5-B39D-EFD87CBA31AD" >
+        <File Id="SAPIntegrationConfig.xsd" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\SAP_Integration\config\SAPIntegrationConfig.xsd"/>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

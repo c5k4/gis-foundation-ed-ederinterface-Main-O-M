@@ -1,0 +1,1 @@
+sqlplus -s uc4admin/V0lga#theriver55@EDER_QA @"D:\edgisdbmaint\Gatherstat\Gatherstat.sql"

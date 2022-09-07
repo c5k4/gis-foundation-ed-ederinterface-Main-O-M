@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.BatchApplication.RemoveDefaultValue", "PGE.BatchApplication.RemoveDefaultValue\PGE.BatchApplication.RemoveDefaultValue.csproj", "{5F1F52CE-4539-4BE6-8EE4-E162F13E3DD1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F1F52CE-4539-4BE6-8EE4-E162F13E3DD1}.Debug|x86.ActiveCfg = Debug|x86
+		{5F1F52CE-4539-4BE6-8EE4-E162F13E3DD1}.Debug|x86.Build.0 = Debug|x86
+		{5F1F52CE-4539-4BE6-8EE4-E162F13E3DD1}.Release|x86.ActiveCfg = Release|x86
+		{5F1F52CE-4539-4BE6-8EE4-E162F13E3DD1}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {159F95E7-E213-4832-A445-BF1A4F8296CB}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PGE.BatchApplication.RemoveDefaultValue\\PGE.BatchApplication.RemoveDefaultValue.csproj
+		SccProjectName1 = PGE.BatchApplication.RemoveDefaultValue
+		SccLocalPath1 = PGE.BatchApplication.RemoveDefaultValue
+	EndGlobalSection
+EndGlobal

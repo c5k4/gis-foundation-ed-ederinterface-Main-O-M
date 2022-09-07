@@ -1,0 +1,28 @@
+<!--This is a preliminery structur design for Field Information Manager(FIMObjects)-->
+<!--Helpful comments:
+    Element:	? optional zero or one, + mandatory one or more, 
+		* optional zero or more, (none) mandatory one and only one.
+    Attributes:
+-->
+  <!ELEMENT EXPORT_VERSION (#PCDATA)>
+  <!ENTITY % FEATURECLASS SYSTEM "FeatureClass.dtd">
+   %FEATURECLASS;
+  <!ENTITY % SNAPELEMENT SYSTEM "Snapping.dtd">
+   %SNAPELEMENT;	
+  <!ENTITY % MODELNAMES SYSTEM "ModelNames.dtd">
+   %MODELNAMES;
+  <!ENTITY % DOMAINS SYSTEM "Domains.dtd">
+   %DOMAINS;	
+  <!ENTITY % OBJECTCLASSINFO SYSTEM "ObjectInfo.dtd">
+   %OBJECTCLASSINFO;
+  <!ENTITY % RELATIONSHIPCLASS SYSTEM "RelationshipClass.dtd">
+   %RELATIONSHIPCLASS;
+  <!ENTITY % XML_NetWorks SYSTEM "GeometricNetwork.dtd">
+   %XML_NetWorks;	
+  <!ENTITY % DBPROPERTIES SYSTEM "DatabaseProperties.dtd">
+   %DBPROPERTIES;
+  <!ENTITY % LAYERELEMENT SYSTEM "DesignOptimizationLayers.dtd">
+   %LAYERELEMENT;
+
+  <!ELEMENT GXXML  ((EXPORT_VERSION? | FEATURECLASS* | SNAPELEMENT | MODELNAMES | DOMAINS | OBJECTCLASSINFO | RELATIONSHIPCLASS* | XML_NetWorks | DBPROPERTIES | LAYERELEMENT)*)>
+ 

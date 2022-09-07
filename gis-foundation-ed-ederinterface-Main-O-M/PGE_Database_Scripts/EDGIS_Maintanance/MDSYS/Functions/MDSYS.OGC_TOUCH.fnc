@@ -1,0 +1,30 @@
+Prompt drop Function OGC_TOUCH;
+DROP FUNCTION MDSYS.OGC_TOUCH
+/
+
+Prompt Function OGC_TOUCH;
+--
+-- OGC_TOUCH  (Function) 
+--
+CREATE OR REPLACE FUNCTION MDSYS.OGC_Touch(
+  g1 ST_Geometry,
+  g2 ST_Geometry)
+    RETURN Integer IS
+  result VARCHAR2(128);
+BEGIN
+  RETURN g1.ST_Touch(g2);
+END OGC_Touch;
+/
+
+
+Prompt Synonym TOUCH;
+--
+-- TOUCH  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM TOUCH FOR MDSYS.OGC_TOUCH
+/
+
+
+Prompt Grants on FUNCTION OGC_TOUCH TO PUBLIC to PUBLIC;
+GRANT EXECUTE ON MDSYS.OGC_TOUCH TO PUBLIC
+/

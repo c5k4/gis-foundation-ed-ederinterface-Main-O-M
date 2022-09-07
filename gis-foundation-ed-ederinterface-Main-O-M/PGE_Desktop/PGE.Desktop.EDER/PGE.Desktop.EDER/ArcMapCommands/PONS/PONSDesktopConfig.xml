@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <EDER_ConnectionString>Data Source=EDER;User Id=pons_ro;Password=pons_ro!2015;</EDER_ConnectionString>
+  <WEBR_ConnectionString>Data Source=EDPUB;User Id=pons_ro;Password=pons_ro!2015;</WEBR_ConnectionString>
+  <DivisionList>Central Coast,De Anza,Diablo,East Bay,Fresno,Humboldt,Kern,Los Padres,Mission,North Bay,North Valley,Peninsula,Sacramento,San Francisco,San Jose,Sierra,Skyline,Sonoma,Stockton,Yosemite</DivisionList>
+  <SS_ConnectionString></SS_ConnectionString>
+
+  <SP_Search2_PriMeter_INCL>PONS.CUST_INFO_PM_CGC_INCL</SP_Search2_PriMeter_INCL>
+  <SP_Search2_PriMeter_EXCL>PONS.CUST_INFO_PM_CGC_EXCL</SP_Search2_PriMeter_EXCL>
+  <TransformerServicePointStoredProcedureName_INCL>PONS.CUST_INFO_CGC_INCL</TransformerServicePointStoredProcedureName_INCL>
+  <TransformerServicePointStoredProcedureName_EXCL>PONS.CUST_INFO_CGC_EXCL</TransformerServicePointStoredProcedureName_EXCL>
+  <SubstationSearchStoredProcedureName_INCL>PONS.CUST_INFO_CIRCUITID_INCL</SubstationSearchStoredProcedureName_INCL>
+  <SubstationSearchStoredProcedureName_EXCL>PONS.CUST_INFO_CIRCUITID_EXCL</SubstationSearchStoredProcedureName_EXCL>
+  <SP_CustInfo_ByServicePointIDs_INCL>PONS.CUST_INFO_SERVICEPOINTS_INCL</SP_CustInfo_ByServicePointIDs_INCL>
+  <SP_CustInfo_ByServicePointIDs_EXCL>PONS.CUST_INFO_SERVICEPOINTS_EXCL</SP_CustInfo_ByServicePointIDs_EXCL>
+  <SP_SLGlobalIds_NetworkTrace>PONS_RO.GET_FEATURE_GLOBALID</SP_SLGlobalIds_NetworkTrace>
+  <SameCircuitEndDevice>True</SameCircuitEndDevice>
+  <FirstCircuitID>True</FirstCircuitID>
+  <Substation_Buffer>600.0</Substation_Buffer>
+  <ElectricStitchPoint>EDGIS.ElectricStitchPoint</ElectricStitchPoint>
+
+  <ElectricDataset>EDGIS.ElectricDataset</ElectricDataset>
+  <ElectricDistNetwork>EDGIS.ElectricDistNetwork</ElectricDistNetwork>
+  <Workspace_MapLayerList>Transformer,Substation,Fuse,Switch,OpenPoint,PriOHConductor,PriUGConductor,ElectricStitchPoint</Workspace_MapLayerList>
+  
+  <Search2_EligibleClasses>EDGIS.PrimaryMeter;EDGIS.PrimaryMeter;EDGIS.Transformer;EDGIS.Transformer</Search2_EligibleClasses>
+  <Search2_EligibleClassAttributes>CGC12;OPERATINGNUMBER;CGC12;OPERATINGNUMBER</Search2_EligibleClassAttributes>
+  <SearchBwDevicePointClasses>EDGIS.Switch;EDGIS.Fuse;EDGIS.OpenPoint;EDGIS.Transformer;EDGIS.DYNAMICPROTECTIVEDEVICE</SearchBwDevicePointClasses>
+  <SearchBwDevicePointClassUniqueFields>OPERATINGNUMBER;OPERATINGNUMBER;OPERATINGNUMBER;OPERATINGNUMBER;OPERATINGNUMBER</SearchBwDevicePointClassUniqueFields>
+  <SearchBwDevicesLinearClasses>EDGIS.PriOHConductor;EDGIS.PriUGConductor</SearchBwDevicesLinearClasses>
+  <SearchBwDevicesLinearClassUniqueFields>OBJECTID;OBJECTID</SearchBwDevicesLinearClassUniqueFields>
+  <Search3_CircuitSource>EDGIS.ELECTRITCSTICHPOINT</Search3_CircuitSource>
+  
+  <EDER_PONSUSER_SDE_FILENAME>PONS_RO_EDER.sde</EDER_PONSUSER_SDE_FILENAME>
+  <EDER_OSUSER_SDE_FILENAME>PONS_OS_EDER.sde</EDER_OSUSER_SDE_FILENAME>
+  <EDERSUB_PONSUSER_SDE_FILENAME>PONS_RO_EDERSUB.sde</EDERSUB_PONSUSER_SDE_FILENAME>
+  <EDERSUB_OSUSER_SDE_FILENAME>PONS_OS_EDERSUB.sde</EDERSUB_OSUSER_SDE_FILENAME>
+
+  <Transformer>EDGIS.Transformer</Transformer>
+  <Substation>EDGIS.Substation</Substation>
+  <SUBTransformerBank>EDGIS.SUBTransformerBank</SUBTransformerBank>
+  <Fuse>EDGIS.Fuse</Fuse>
+  <Switch>EDGIS.Switch</Switch>
+  <OpenPoint>EDGIS.OpenPoint</OpenPoint>
+  <PriOHConductor>EDGIS.PriOHConductor</PriOHConductor>
+  <PriUGConductor>EDGIS.PriUGConductor</PriUGConductor>
+  <PrimaryMeter>EDGIS.PrimaryMeter</PrimaryMeter>
+
+  <Field_PriMeter_CGC12>CGC12</Field_PriMeter_CGC12>
+  <Field_Transformer_CGC12>CGC12</Field_Transformer_CGC12>
+  <Field_CGC12>CGC12</Field_CGC12>
+  <FieldCircuitID>CircuitID</FieldCircuitID>
+  <FieldCircuitID2>CircuitID2</FieldCircuitID2>
+  <TrimCircuitID>false</TrimCircuitID>
+  <RC_ServiceLocation_ServicPoint>EDGIS.ServiceLocation_ServicePoint</RC_ServiceLocation_ServicPoint>
+  <FC_ServiceLocation>EDGIS.ServiceLocation</FC_ServiceLocation>
+  <PGE_FEEDERFEDNETWORK_TRACE>EDGIS.PGE_FEEDERFEDNETWORK_TRACE</PGE_FEEDERFEDNETWORK_TRACE>
+  <DESKTOP_SDE_FILE_PATH>C:\PONS\Configurations\EDGIS_SDE_CONNECTION_FILE.sde</DESKTOP_SDE_FILE_PATH>
+  <EDGIS_SDE_CONNECTION_FILE>EDGIS_SDE_CONNECTION_FILE.sde</EDGIS_SDE_CONNECTION_FILE>
+  <PONS_LOG_FILE_RELATIVE_PATH>PONSDesktopLogs\PONSDesktopLog.txt</PONS_LOG_FILE_RELATIVE_PATH>
+  <PRINT_REL_PATH>PONS_REPORTS</PRINT_REL_PATH>
+  <MAIL_SERVER>mailhost.utility.pge.com</MAIL_SERVER>
+  <PSL_DB_STRING>Server = ASCdev01;Database = BPM_ShutdownLtrs;User Id= CustInfo_Load;Password=40dc-a68f-5e74;</PSL_DB_STRING>
+  <!--Non Prod-->
+  <PSL_PORTAL_URL>http://wwwintdev/ADSCrt/BPMJobs/ShutdownLtrs/</PSL_PORTAL_URL>
+  <!--Prod-->
+  <!--
+  <PSL_PORTAL_URL>http://adscrt/bpmjobs/shutdownltrs/</PSL_PORTAL_URL>-->
+  <PSL_DB_STG_TBL>BPM_ShutdownLtrs.dbo.tblStaging</PSL_DB_STG_TBL>
+  <!--<GIS_DB_CONN_STR>Data Source=EDGIST1D;User Id=gis_i;Password=gisTemp!;</GIS_DB_CONN_STR>-->
+  <PONS_SHUTDOWNID_PCKG>PONS.GEN_SHUTDOWNID</PONS_SHUTDOWNID_PCKG>
+  <PSL_SP_NAME>dbo.spLoadData</PSL_SP_NAME>
+  <PONS_AD_GROUPNAME>Everyone</PONS_AD_GROUPNAME>
+  <!--Non Prod-->
+  <!--
+  <PONS_AD_GROUPNAME>EDGIS_WEB_PONS_NP</PONS_AD_GROUPNAME>-->
+  <!--Prod-->
+    <!--
+  <PONS_AD_GROUPNAME>EDGIS_WEB_PONS_PROD</PONS_AD_GROUPNAME>-->
+  
+  <FCID_SWITCH>1005</FCID_SWITCH>
+  <FCID_FUSE>1003</FCID_FUSE>
+  <FCID_OPENPOINT>1010</FCID_OPENPOINT>
+  <FCID_TRANSFORMER>1001</FCID_TRANSFORMER>
+  <FCID_SERVICELOCATION>1012</FCID_SERVICELOCATION>
+  <FCID_PRIOHCONDUCTOR>1023</FCID_PRIOHCONDUCTOR>
+  <FCID_PRIUGCONDUCTOR>1021</FCID_PRIUGCONDUCTOR>
+  
+  
+  <!--<Class Name="Support Structure JUA Label" ClassID="-1" LayerIDs="137" />
+  <Class Name="SAPNotification" ClassID="19422" LayerIDs="80,82,83,84,85,86,87,88,89,90,91,92" />
+  <Class Name="Circuit Point" ClassID="997" LayerIDs="94,250" />
+  <Class Name="Dynamic Protective Device" ClassID="998" LayerIDs="95,259" />
+  <Class Name="Switch" ClassID="1005" LayerIDs="96,244" />
+  <Class Name="Fuse" ClassID="1003" LayerIDs="97,256" />
+  <Class Name="Open Point" ClassID="1010" LayerIDs="98,248" />
+  <Class Name="Conductor Tie" ClassID="1006" LayerIDs="99" />
+  <Class Name="Capacitor Bank" ClassID="1008" LayerIDs="100,253" />
+  <Class Name="Voltage Regulator" ClassID="1000" LayerIDs="101,260" />
+  <Class Name="Step Down" ClassID="1002" LayerIDs="102,258" />
+  <Class Name="Transformer" ClassID="1001" LayerIDs="103,254,255" />
+  <Class Name="Street Light" ClassID="1011" LayerIDs="104,245" />
+  <Class Name="Antenna" ClassID="15490" LayerIDs="105,246" />
+  <Class Name="PhotoVoltaicCell" ClassID="13249" LayerIDs="106" />
+  <Class Name="DC Device" ClassID="14533" LayerIDs="107,251" />
+  <Class Name="DC Rectifier" ClassID="1007" LayerIDs="108,252" />
+  <Class Name="Smart Meter Network Device" ClassID="1009" LayerIDs="109,247" />
+  <Class Name="Fault Indicator" ClassID="1004" LayerIDs="110,249" />
+  <Class Name="Load Check Point" ClassID="1037" LayerIDs="111" />
+  <Class Name="Feature Note" ClassID="3841" LayerIDs="112" />
+  <Class Name="Service Location" ClassID="1012" LayerIDs="114,262" />
+  <Class Name="DC Service Location" ClassID="16129" LayerIDs="115,263" />
+  <Class Name="Primary Meter" ClassID="1014" LayerIDs="116,264" />
+  <Class Name="Primary Generation" ClassID="1013" LayerIDs="117,265" />
+  <Class Name="Secondary Generation" ClassID="1015" LayerIDs="118,266" />
+  <Class Name="Delivery Point" ClassID="1016" LayerIDs="119" />
+  <Class Name="Secondary Load Point" ClassID="999" LayerIDs="120" />
+  <Class Name="Customer Agreement Number" ClassID="1040" LayerIDs="121" />
+  <Class Name="Device Group Masked" ClassID="1029" LayerIDs="122,155,267,280" />
+  <Class Name="Bus Bar" ClassID="1019" LayerIDs="123,275" />
+  <Class Name="Duct" ClassID="1093" LayerIDs="129" />
+  <Class Name="Duct Bank" ClassID="1092" LayerIDs="130" />
+  <Class Name="Wall to Floor Leader Line" ClassID="15189" LayerIDs="131,166" />
+  <Class Name="Wall" ClassID="1089" LayerIDs="132" />
+  <Class Name="Floor" ClassID="1088" LayerIDs="133" />
+  <Class Name="Substation" ClassID="1027" LayerIDs="135" />
+  <Class Name="Support Structure" ClassID="1028" LayerIDs="136,273" />
+  <Class Name="Padmount Structure" ClassID="1030" LayerIDs="138,270" />
+  <Class Name="Secondary Riser" ClassID="3848" LayerIDs="139,269" />
+  <Class Name="Anchor Guy" ClassID="1026" LayerIDs="140,141,271" />
+  <Class Name="Span Guy" ClassID="1033" LayerIDs="142" />
+  <Class Name="Primary Riser" ClassID="3849" LayerIDs="144,257" />
+  <Class Name="Primary Overhead Conductor" ClassID="1023" LayerIDs="145,276" />
+  <Class Name="Primary Underground Conductor" ClassID="1021" LayerIDs="146,277" />
+  <Class Name="Neutral Conductor" ClassID="1034" LayerIDs="147" />
+  <Class Name="Secondary Overhead Conductor" ClassID="1024" LayerIDs="148,150,278" />
+  <Class Name="Secondary Underground Conductor" ClassID="1022" LayerIDs="149,151,279" />
+  <Class Name="DC Conductor" ClassID="1020" LayerIDs="152" />
+  <Class Name="Transformer Lead" ClassID="1025" LayerIDs="153" />
+  <Class Name="Deactivated Electric Line Segment" ClassID="1036" LayerIDs="154" />
+  <Class Name="Vault Polygon" ClassID="1031" LayerIDs="159,282" />
+  <Class Name="Enclosure" ClassID="1017" LayerIDs="160,161,272,283" />
+  <Class Name="Conduit System" ClassID="1018" LayerIDs="162,163,284" />
+  <Class Name="EDGIS.UndergroundNetwork_Junctions" ClassID="19092" LayerIDs="167" />
+  <Class Name="Maintenance Plat" ClassID="10577" LayerIDs="285" />
+  <Class Name="Unified Map Grid" ClassID="9299" LayerIDs="286" />-->
+
+</config>

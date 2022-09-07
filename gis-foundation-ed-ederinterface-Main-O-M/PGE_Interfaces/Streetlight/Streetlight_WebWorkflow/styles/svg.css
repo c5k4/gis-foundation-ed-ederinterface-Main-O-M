@@ -1,0 +1,7 @@
+﻿rect.myGray {
+    fill: gray;
+    stroke: red;
+    stroke-width: 3;
+    -webkit-transition: all 350ms;
+  }
+  

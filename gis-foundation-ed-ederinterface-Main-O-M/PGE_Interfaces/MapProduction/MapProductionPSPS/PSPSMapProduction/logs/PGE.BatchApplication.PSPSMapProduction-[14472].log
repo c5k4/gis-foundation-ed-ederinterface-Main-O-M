@@ -1,0 +1,6 @@
+
+===== Application Begin =====
+2022-04-25 08:01:26,752 [1] INFO  PGE.BatchApplication.PSPSMapProduction.PreProcessor.Program [(null)] - Get the Number of export processes to be used
+{LoggingAssemblyFileVersion=10.81.0.335, log4net:Identity=, log4net:UserName=PGE\yxa6, log4net:HostName=VPEG01B004156}
+2022-04-25 08:02:00,683 [1] INFO  PGE.BatchApplication.PSPSMapProduction.PreProcessor.Program [(null)] -  build the map lookup table and then export the maps-3
+{LoggingAssemblyFileVersion=10.81.0.335, log4net:Identity=, log4net:UserName=PGE\yxa6, log4net:HostName=VPEG01B004156}

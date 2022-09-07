@@ -1,0 +1,27 @@
+Prompt drop Function HHSUBSTR;
+DROP FUNCTION MDSYS.HHSUBSTR
+/
+
+Prompt Function HHSUBSTR;
+--
+-- HHSUBSTR  (Function) 
+--
+CREATE OR REPLACE FUNCTION MDSYS.hhsubstr (hhc IN RAW, slv IN BINARY_INTEGER, elv IN BINARY_INTEGER)
+    RETURN RAW IS
+begin
+  return md.hhsubstr(hhc, slv, elv);
+end;
+/
+
+
+Prompt Synonym HHSUBSTR;
+--
+-- HHSUBSTR  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM HHSUBSTR FOR MDSYS.HHSUBSTR
+/
+
+
+Prompt Grants on FUNCTION HHSUBSTR TO PUBLIC to PUBLIC;
+GRANT EXECUTE ON MDSYS.HHSUBSTR TO PUBLIC
+/

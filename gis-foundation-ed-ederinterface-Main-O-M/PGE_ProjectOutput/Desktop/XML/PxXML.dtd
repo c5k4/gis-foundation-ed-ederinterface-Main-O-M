@@ -1,0 +1,19 @@
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by XMLSPY 5 Professional Ed., Installed Multi + SMP for 10 users (Miner & Miner Engineering) -->
+<!--This is a structure design for Process Framework Import/Export XML-->
+<!--Helpful comments:
+    Element:	? optional zero or one, + mandatory one or more, 
+		* optional zero or more, (none) mandatory one and only one.
+    Attributes:
+-->
+<!ENTITY % PX_WORKFLOW SYSTEM "PxWorkflow.dtd">
+%PX_WORKFLOW;
+<!ENTITY % WFM_CU_LIBRARY SYSTEM "WorkflowManagerCU.dtd">
+%WFM_CU_LIBRARY;
+<!ENTITY % PX_USERS SYSTEM "PxUsers.dtd">
+%PX_USERS;
+<!ELEMENT EXPORT_DATE (#PCDATA)>
+<!ELEMENT EXPORT_MACHINE (#PCDATA)>
+<!ELEMENT PX_DATA_SOURCE (#PCDATA)>
+<!ELEMENT PX_DB_ID (#PCDATA)>
+<!ELEMENT PX_DB_VERSION (#PCDATA)>
+<!ELEMENT PXXML (EXPORT_DATE?, EXPORT_MACHINE?, PX_DATA_SOURCE?, PX_DB_ID?, PX_DB_VERSION?, (PX_WORKFLOW | WFM_CU_LIBRARY|PX_USERS)*)>

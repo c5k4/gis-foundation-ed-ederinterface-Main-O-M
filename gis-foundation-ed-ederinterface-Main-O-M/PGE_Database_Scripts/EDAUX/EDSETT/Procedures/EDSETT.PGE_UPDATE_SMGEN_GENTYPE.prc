@@ -1,0 +1,24 @@
+Prompt drop Procedure PGE_UPDATE_SMGEN_GENTYPE;
+DROP PROCEDURE EDSETT.PGE_UPDATE_SMGEN_GENTYPE
+/
+
+Prompt Procedure PGE_UPDATE_SMGEN_GENTYPE;
+--
+-- PGE_UPDATE_SMGEN_GENTYPE  (Procedure) 
+--
+CREATE OR REPLACE PROCEDURE EDSETT."PGE_UPDATE_SMGEN_GENTYPE"
+( gidot out nvarchar2,GID IN NVARCHAR2
+) AS
+gentype VARCHAR2(50):=null;
+BEGIN
+    gentype:=EDSETT.pge_cal_gen_type(GID);
+
+  UPDATE EDSETT.SM_GENERATION
+  SET GEN_TYPE= gentype
+  where global_id= GID  ;
+  COMMIT;
+
+  gidot := GID;
+
+END PGE_UPDATE_SMGEN_GENTYPE;
+/

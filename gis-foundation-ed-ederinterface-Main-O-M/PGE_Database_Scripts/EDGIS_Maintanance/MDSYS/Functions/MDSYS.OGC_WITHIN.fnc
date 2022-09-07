@@ -1,0 +1,29 @@
+Prompt drop Function OGC_WITHIN;
+DROP FUNCTION MDSYS.OGC_WITHIN
+/
+
+Prompt Function OGC_WITHIN;
+--
+-- OGC_WITHIN  (Function) 
+--
+CREATE OR REPLACE FUNCTION MDSYS.OGC_Within(
+  g1 ST_Geometry,
+  g2 ST_Geometry)
+    RETURN Integer IS
+BEGIN
+  RETURN g1.ST_Within(g2);
+END OGC_Within;
+/
+
+
+Prompt Synonym WITHIN;
+--
+-- WITHIN  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM WITHIN FOR MDSYS.OGC_WITHIN
+/
+
+
+Prompt Grants on FUNCTION OGC_WITHIN TO PUBLIC to PUBLIC;
+GRANT EXECUTE ON MDSYS.OGC_WITHIN TO PUBLIC
+/

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PGE.Installer.ENOS", "PGE.Installer.ENOS\PGE.Installer.ENOS.vdproj", "{A78F301A-D04E-425D-B730-1BC379D696F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.Interface.ENOS.Batch", "PGE.Interfaces.ENOS.Batch\PGE.Interface.ENOS.Batch.csproj", "{C2B3DE74-CEC7-492F-A6D5-93339AEC7A32}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A78F301A-D04E-425D-B730-1BC379D696F1}.Debug|x86.ActiveCfg = Debug
+		{A78F301A-D04E-425D-B730-1BC379D696F1}.Debug|x86.Build.0 = Debug
+		{A78F301A-D04E-425D-B730-1BC379D696F1}.Release|x86.ActiveCfg = Release
+		{A78F301A-D04E-425D-B730-1BC379D696F1}.Release|x86.Build.0 = Release
+		{C2B3DE74-CEC7-492F-A6D5-93339AEC7A32}.Debug|x86.ActiveCfg = Debug|x86
+		{C2B3DE74-CEC7-492F-A6D5-93339AEC7A32}.Debug|x86.Build.0 = Debug|x86
+		{C2B3DE74-CEC7-492F-A6D5-93339AEC7A32}.Release|x86.ActiveCfg = Release|x86
+		{C2B3DE74-CEC7-492F-A6D5-93339AEC7A32}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95A54A7C-88F8-4518-AB21-A3A4795C06FB}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccProjectUniqueName0 = PGE.Installer.ENOS\\PGE.Installer.ENOS.vdproj
+		SccProjectName0 = PGE.Installer.ENOS
+		SccLocalPath0 = PGE.Installer.ENOS
+		SccProjectUniqueName1 = PGE.Interfaces.ENOS.Batch\\PGE.Interface.ENOS.Batch.csproj
+		SccProjectName1 = PGE.Interfaces.ENOS.Batch
+		SccLocalPath1 = PGE.Interfaces.ENOS.Batch
+		SccLocalPath2 = .
+	EndGlobalSection
+EndGlobal

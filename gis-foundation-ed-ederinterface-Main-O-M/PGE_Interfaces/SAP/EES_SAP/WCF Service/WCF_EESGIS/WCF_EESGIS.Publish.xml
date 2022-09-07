@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\EES-SAP\WCF_EESGIS_PUB" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/WCF_EESGIS.pdb" publishTime="08/02/2019 18:33:26" />
+    <file relUrl="bin/WCF_EESGIS.dll" publishTime="08/02/2019 18:33:27" />
+    <file relUrl="EESGISService.svc" publishTime="07/22/2019 14:08:06" />
+    <file relUrl="Web.config" publishTime="07/30/2019 18:10:00" />
+  </publishProfile>
+</publishData>

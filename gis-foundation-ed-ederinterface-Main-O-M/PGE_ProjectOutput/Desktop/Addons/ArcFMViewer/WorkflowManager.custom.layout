@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<LayoutData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layoutFormat="2">
+	<SystemData>
+		<Extensions>
+			<Extension name="Workflow Manager Integration" progIDorGUID="{7296713D-8BEC-4D00-A331-C2DDF3266A40}" />
+      			<Extension name="Annotation Target Utilities" progIDorGUID="{5206579F-4736-4db4-ADC8-49AEFA50AC13}" />
+			<Extension name="MMMobileToolsExt" progIDorGUID="{0F990A2C-BDFF-4D02-B0F9-978FBAC9A614}" />
+			<Extension name="Process Framework Integration" progIDorGUID="{DD926481-F993-44ce-B29A-89E63DBDCC5A}" />
+		</Extensions>
+		<Licenses>
+			<License name="mmEngineRedliner" />
+		</Licenses>
+	</SystemData>
+	<MainWindow>
+		<CommandManager>
+			<Commands>
+				<Command key="OpenWorkflowManagerCommand" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="mmWFMIntegration.clsOpenWFM" />
+						<Param type="System.String" value="OpenWorkflowManagerCommand" />
+						<Param type="System.Boolean" value="False" />
+					</CreateData>
+				</Command>
+				<Command key="SaveDesignCommand" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="mmWFMIntegration.clsSaveDesign" />
+						<Param type="System.String" value="SaveDesignCommand" />
+						<Param type="System.Boolean" value="False" />
+					</CreateData>
+				</Command>
+				<Command key="CloseDesignCommand" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="mmWFMIntegration.clsCloseDesign" />
+						<Param type="System.String" value="CloseDesignCommand" />
+						<Param type="System.Boolean" value="False" />
+					</CreateData>
+				</Command>
+				<Command key="DeleteDesignCommand" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="mmWFMIntegration.clsDelete" />
+						<Param type="System.String" value="DeleteDesignCommand" />
+						<Param type="System.Boolean" value="False" />
+					</CreateData>
+				</Command>
+				<Command key="SendDesignCommand" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="mmWFMIntegration.clsSendDesign" />
+						<Param type="System.String" value="SendDesignCommand" />
+						<Param type="System.Boolean" value="False" />
+					</CreateData>
+				</Command>
+			</Commands>
+			<CommandBars>
+				<CommandBar key="WorkflowManagerToolBar" text="ArcFM Solution - ArcFM Workflow Manager" type="Miner.Windows.Commands.CommandBar, Miner.Windows, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc" dockedRow="1" dockedColumn="2" dockedPosition="Top" targetPosition="452" floatingLocationX="0" floatingLocationY="0" visible="false">
+
+					<CommandItems>
+						<CommandItem key="OpenWorkflowManagerCommand" />
+						<CommandItem key="SaveDesignCommand" />
+						<CommandItem key="CloseDesignCommand" />
+						<CommandItem key="DeleteDesignCommand" />
+						<CommandItem key="SendDesignCommand" />
+					</CommandItems>
+				</CommandBar>
+			</CommandBars>
+		</CommandManager>
+	</MainWindow>
+</LayoutData>

@@ -1,0 +1,3 @@
+The configuration file should be installed by the installer and the installer should also write a registry key for PGE.Common.Delivery.CodeLibrary's install location.
+The EDMConfiguration class uses this registry key setting to find the location of EDM config file.
+If the dll is installed by custom installer,add the registry key HKEY/LocalMachine/Software/Telvent/Utility during install and add a string key called EDMConfigLocation and set its value to the install location of the dll.

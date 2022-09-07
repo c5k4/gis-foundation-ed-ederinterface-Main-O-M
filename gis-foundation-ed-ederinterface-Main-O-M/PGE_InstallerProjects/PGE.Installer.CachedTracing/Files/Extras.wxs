@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--PGE.MapProduction.Integration-->
+  <Fragment>
+    <ComponentGroup Id="Extras">
+
+      <Component Id="PGE.BatchApplication.PGE_Cached_Tracing.exe" Directory="TRACINGCACHE" Guid="EAFE08F1-03BA-4AE0-83E2-C4C1FD2280E2" >
+        <File Id="MapProduction.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\CachedTracing\PGE.BatchApplication.PGE_Cached_Tracing.exe"/>
+      </Component>      
+      <Component Id="PGE.BatchApplication.PGE_Cached_Tracing.exe.config" Directory="TRACINGCACHE" Guid="8D1D2C80-610E-4BDF-A973-AB5EC5A0F473" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.BatchApplication.PGE_Cached_Tracing.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\CachedTracing\PGE.BatchApplication.PGE_Cached_Tracing.exe.config"/>
+      </Component>      
+	  <Component Id="CachedTracing.log4net.config" Directory="LoggingConfiguration" Guid="44F8C92A-1B4F-429F-A6E7-0A085CF7C6FE" Permanent="yes" NeverOverwrite="yes">
+        <File Id="CachedTracing.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\CachedTracing\CachedTracing.log4net.config"/>
+      </Component>
+      <Component Id="PGE_SSD_Init.exe" Directory="TRACINGCACHE" Guid="C939E994-66B4-43F7-9026-79A2387F4570" >
+        <File Id="PGE_SSD_Init.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\CachedTracing\PGE.BatchApplication.PGE_SSD_Initialization.exe"/>
+      </Component>
+      <Component Id="PGE.BatchApplication.PGE_SSD_Initialization.exe.config" Directory="TRACINGCACHE" Guid="52C9C01C-0454-4200-BC05-102985A4431D" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PPGE_SSD_Initialization.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\CachedTracing\PGE_SSD_Initialization.exe.config"/>
+      </Component>
+      <Component Id="SSDInitialization.log4net.config" Directory="LoggingConfiguration" Guid="4C90D14E-C499-4765-B68B-C14C373C915A" Permanent="yes" NeverOverwrite="yes">
+        <File Id="SSDInitialization.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\CachedTracing\SSDInitialization.log4net.config"/>
+      </Component>
+      <Component Id="ConfigFiles" Directory="CONFIG" Guid="4FA290AA-2FF9-45B9-99A0-C6CD6EA1C289" >
+        <File Id="PGESSDConfig.xml" Source="..\..\..\..\..\PGE_ProjectOutput\CachedTracing\PGESSDConfig.xml"/>
+      </Component>
+    </ComponentGroup>
+    
+  </Fragment>
+</Wix>

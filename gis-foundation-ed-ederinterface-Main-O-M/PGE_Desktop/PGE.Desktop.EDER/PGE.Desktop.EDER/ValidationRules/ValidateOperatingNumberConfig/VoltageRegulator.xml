@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<SymbolNumberRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FeatureClass Name="VoltageRegulator">
+  <Rule BeginsWith="R" EndsWith="2" MinLength="4" MaxLength="7" Required="1">
+    <Or>
+      <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute>
+      <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute>
+    </Or>
+  </Rule>
+  <Rule BeginsWith="B" EndsWith="2" MinLength="3" MaxLength="7" Required="1">
+    <Or>
+      <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute>
+    </Or>
+  </Rule>
+</FeatureClass>
+</SymbolNumberRules>

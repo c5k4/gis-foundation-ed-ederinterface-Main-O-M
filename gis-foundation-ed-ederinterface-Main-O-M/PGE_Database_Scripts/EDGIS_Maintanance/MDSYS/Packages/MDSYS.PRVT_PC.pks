@@ -1,0 +1,40 @@
+Prompt drop Package PRVT_PC;
+DROP PACKAGE MDSYS.PRVT_PC
+/
+
+Prompt Package PRVT_PC;
+--
+-- PRVT_PC  (Package) 
+--
+CREATE OR REPLACE PACKAGE MDSYS.prvt_pc wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+9
+6a0 2ad
+XH4VEC3UGtYsC1DuRZMf3oUYdU0wgzvD2UhofHSKKviUe8k36fM2fd6uoNsjPbTx8rM1MxqE
+P8rnGD+q3ruE8bFI4aBFWAbIgoSX+9K2oE0ZGaq18iBknjkiVIzSZ0ZK6y/3jtvXYCZnh4yI
+542x397mcFk1mnhVXndbgXQaKGfQ2mz7QOjnzosHifWEmsrNGiUlLTKyulxUr2fwN3Jw4doe
+g46pDtBEV32OKYSn8ZW8mBRVcWQObi1zlGpBTsGfD9oTTI3cWPAnylFNHkugk+CjhWgWIjoP
+Q6Mfi2uIAQgBSBhlzqRASgLpsc3AZnxewkEk8ne9D1SnTaBmq0+j0gBlpOo4jJWCW0ks4qkH
+ZCiVOisLrfSdfVGB0dFwLNl+hhJLSNxQXv0ynM4ESwZTXE5SMt9fapI+4PIBwpvPZ6v0GtlM
+mlAhB45Xl+PPA7qHH2sTrMTcwtHrLITWbUEE14pIx+r3nIlSvmXAMk4aEkQA0OUrUmEXi/SK
+3Drn/HtGVoOiTZsdTzLyVpTC/7+cHw7FDK3+nXLcLn3mDQmqQk/r4dhQE3GXu89CRCBKNE2g
+ipVJmaAGqSpSvh5VjWtJxw3Bd4VUePkvqedKuq9/CSCQ8H6BvJt5ii/oG7X6YaozZtmefvZM
+sBvV5d99X+cSbwAjtUMosJgH+w==
+
+/

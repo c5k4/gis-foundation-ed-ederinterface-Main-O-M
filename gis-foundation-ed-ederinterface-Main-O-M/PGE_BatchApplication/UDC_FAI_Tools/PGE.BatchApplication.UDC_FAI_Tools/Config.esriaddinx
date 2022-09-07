@@ -1,0 +1,21 @@
+﻿<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>UDC FAI Tools</Name>
+  <AddInID>{e3def46c-dc6e-4b94-917b-6f423cde560d}</AddInID>
+  <Description>This add-in provides tools specifically for use with the UDC FAI Project</Description>
+  <Version>1.0</Version>
+  <Image>Images\UDCFAIToolsAddIn.png</Image>
+  <Author>k1f8</Author>
+  <Company>Pacific Gas and Electric Co.</Company>
+  <Date>6/28/2018</Date>
+  <Targets>
+    <Target name="Desktop" version="10.2" />
+  </Targets>
+  <AddIn language="CLR" library="PGE.BatchApplication.UDC_FAI_Tools.dll" namespace="PGE.BatchApplication.UDC_FAI_Tools">
+    <ArcMap>
+      <Commands>
+        <Button id="UDC_FAI_CGC12Updater" class="CGC12Updater" message="This add-in will determine all of the version differences and trace upstream from service locations to update CGC12 information and relationships with the feeding transformer" caption="Service Point Feeding Transformer Updater" tip="This add-in will determine all of the version differences and trace upstream from service locations to update CGC12 information and relationships with the feeding transformer" category="UDC FAI Tools" image="Images\CGC12Updater.png" />
+        <Button id="UDC_FAI_FAIPhotoUpdater" class="FAIPhotoNameUpdater" message="Uses information in the EDGIS.PGE_FAI_JPGMAPPING table to rename JPG files in the specified directory to use the GLOBALID in the mapping table" caption="FAI Photo Name Updater" tip="Uses information in the EDGIS.PGE_FAI_JPGMAPPING table to rename JPG files in the specified directory to use the GLOBALID in the mapping table" category="UDC FAI Tools" image="Images\FAIPhotoNameUpdater.png" />
+      </Commands>
+    </ArcMap>
+  </AddIn>
+</ESRI.Configuration>

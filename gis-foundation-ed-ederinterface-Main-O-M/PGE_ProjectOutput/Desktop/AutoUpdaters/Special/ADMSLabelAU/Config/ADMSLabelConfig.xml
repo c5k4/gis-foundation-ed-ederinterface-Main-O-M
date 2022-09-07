@@ -1,0 +1,108 @@
+<!--
+  Status - sets default anno status (this will only effect new features)
+    0 - Do not populate match
+    1 - populate ADMSLabel field with matched value
+
+  Note: currently J-Boxes are not modifed by this autoupdater.
+    - description is included for one off - to update old descriptions with new ones (ie 'Obsolete')
+    - some domains may not exist anymore due to requested removal. 
+    - admslabel without a value will not be modified by Bulk Update or AutoUpdater
+    
+    Fields:
+      - subtype = DeviceGroup.SubTypeCD
+      - devicetype = DeviceGroup.DeviceGroupType (alias: Facility Type)
+                   = Domain code
+      - description = Domains description
+      - status = DeviceGroupAnno.Status
+-->
+
+<devicegroup>
+  <subtype name="2">
+    <item devicetype="1" description="Subsurface Transformer" admslabel="SS XFMR" status="1"/>
+    <item devicetype="2" description="Subsurface Single-Phase Banked for Open Delta/Delta WYE Operations" admslabel="SS 1P BANKED OD/DWYE"  status="1"/>
+    <item devicetype="3" description="Subsurface Duplex Transformers" admslabel="SS XFMR"  status="1"/>
+    <item devicetype="4" description="Subsurface Transformer with Internal Switch" admslabel="SS TX W/ SW"  status="1"/>
+    <item devicetype="5" description="Subsurface Transformer with Two Internal Switches" admslabel="SS TX W/ 2 SW"  status="1"/>
+    <item devicetype="6" description="Subsurface Duplex Transformer with Internal Switch" admslabel="SS DPLX TX W/ SW"  status="1"/>
+    <item devicetype="7" description="Subsurface Fused Switch" admslabel="SS FU SW"  status="1"/>
+    <item devicetype="8" description="Subsurface Fused Switch Dual Well" admslabel="SS FU SW"  status="1"/>
+    <item devicetype="9" description="Obsolete Subsurface Cutouts" admslabel="SS CUTOUTS"  status="1"/>
+    <item devicetype="10" description="Subsurface Switch, Two Way, One Way Switched" admslabel="SS SW"  status="1"/>
+    <item devicetype="11" description="Subsurface Switch, Two way, One Way Switched (Supervisory Controlled)" admslabel="SS SW"  status="1"/>
+    <item devicetype="12" description="Obsolete Subsurface Switch, Three way, Two Ways Switched" admslabel="SS SW"  status="1"/>
+    <item devicetype="13" description="Subsurface Switch, Three Way, Three Ways Switched" admslabel="SS SW"  status="1"/>
+    <item devicetype="14" description="Subsurface Switch, Three Way, Three Ways Switched (Two Switches Supervisory Controlled Only)" admslabel="SS SW"  status="1"/>
+    <item devicetype="15" description="Obsolete Subsurface Smart Switch" admslabel="SS SMART SW"  status="1"/>
+    <item devicetype="16" description="Subsurface Switch-Interrupter-Switch, 3-Way, 3-Ways Switched" admslabel="SS SW-INT-SW"  status="1"/>
+    <item devicetype="17" description="Subsurface Interrupter" admslabel="SS INT"  status="1"/>
+    <item devicetype="18" description="Subsurface Interrupter (Supervisory Controlled)" admslabel="SS INT"  status="1"/>
+    <item devicetype="19" description="Obsolete Subsurface Sectionalizer" admslabel="SS SECT"  status="1"/>
+    <item devicetype="20" description="Vault Mounted Switch - 2-Way, 1-Way Switched" admslabel="VLT SW"  status="1"/>
+    <item devicetype="21" description="Vault Mounted Switch - 3-Way, 2-Way Switched" admslabel="VLT SW"  status="1"/>
+    <item devicetype="22" description="Vault Mounted Switch - 3-Way, 3-Way Switched" admslabel="VLT SW"  status="1"/>
+    <item devicetype="23" description="Vault Mounted Interrupter - 2-Way, 1-Way Switched" admslabel="VLT INT"  status="1"/>
+    <item devicetype="24" description="Vault Mounted Switch-Interrupter-Switch, 3-Way, 3-Way Switched" admslabel="VLT SW-INT-SW"  status="1"/>
+    <item devicetype="25" description="Subway Transformer in MH" admslabel="SUBWAY TX IN MH"  status="1"/>
+    <item devicetype="26" description="Obsolete TGRAL" admslabel="TGRAL"  status="1"/>
+    <item devicetype="27" description="Obsolete TGRAM (Three Way)" admslabel="TGRAL"  status="1"/>
+    <item devicetype="28" description="Obsolete TGRAM (Four Way)" admslabel="TGRAL"  status="1"/>
+    <item devicetype="29" description="JBox - Subsurface" admslabel=""  status="0"/>
+    <item devicetype="30" description="Obsolete 4kV Junction" admslabel="4KV JUNCT"  status="1"/>
+    <item devicetype="31" description="Misc #2C - 24'" admslabel="MISC"  status="1"/>
+    <item devicetype="32" description="Misc #12C - 2 - 16 X 16" admslabel="MISC"  status="1"/>
+    <item devicetype="33" description="Network" admslabel="NETWORK"  status="1"/>
+    <item devicetype="34" description="Obsolete TGRAM (Two Way)" admslabel="TGRAM"  status="1"/>
+    <item devicetype="35" description="Subsurface Triplex Transformer" admslabel="SS XFMR"  status="1"/>
+    <item devicetype="36" description="Vault Mounted Switch-Interrupter-Interrupter, 3-way, 3-way Switched" admslabel="VLT SW'S W/INT"  status="1"/>
+  </subtype>
+  <subtype name="3">
+    <item devicetype="1" description="Obsolete PMH 3" admslabel="PMH 3"  status="1"/>
+    <item devicetype="2" description="Obsolete PMH 4 w/1 fuse" admslabel="PMH 4"  status="1"/>
+    <item devicetype="3" description="Obsolete PMH 4 w/2 fuses" admslabel="PMH 4"  status="1"/>
+    <item devicetype="4" description="Obsolete PMH 4 w/3 fuses" admslabel="PMH 4"  status="1"/>
+    <item devicetype="5" description="Obsolete PMH 5" admslabel="PMH 5"  status="1"/>
+    <item devicetype="6" description="Obsolete PMH 6 w/(1) Hot Leg" admslabel="PMH 6"  status="1"/>
+    <item devicetype="7" description="Obsolete PMH 9 w/(2) Hot Legs" admslabel="PMH 9"  status="1"/>
+    <item devicetype="8" description="Obsolete PMH 11 w/(1) Hot Leg" admslabel="PMH 11"  status="1"/>
+    <item devicetype="9" description="Obsolete PMH 11 w/(3) single phase Leg" admslabel="PMH 11"  status="1"/>
+    <item devicetype="10" description="Obsolete PMH 6 w/(3) 1-phase Leg" admslabel="PMH 6"  status="1"/>
+    <item devicetype="11" description="Obsolete PMH 9 w/(6)1-phase Leg" admslabel="PMH 9"  status="1"/>
+    <item devicetype="12" description="Obsolete PMH 9 w/ (3) 1-phase and (1) 3-phase Leg" admslabel="PMH 9"  status="1"/>
+    <item devicetype="13" description="PMH 41,42,43 Single Bypass" admslabel="PMH 41"  status="1"/>
+    <item devicetype="14" description="PMH 42 Double Bypass" admslabel="PMH 42"  status="1"/>
+    <item devicetype="15" description="PMH 43 Triple Bypass" admslabel="PMH 43"  status="1"/>
+    <item devicetype="16" description="Padmounted Transformer" admslabel="PM XFMR"  status="1"/>
+    <item devicetype="17" description="Padmounted Transformer with Load Break Elbows" admslabel="PM TX W/ LB"  status="1"/>
+    <item devicetype="18" description="Padmounted Duplex Transformer" admslabel="PM XFMR"  status="1"/>
+    <item devicetype="19" description="Padmounted Transformer with Internal Switch" admslabel="PM TX W/ SW"  status="1"/>
+    <item devicetype="20" description="Padmounted Transformer w/ Two Internal Switches" admslabel="PM TX W/ 2 SW"  status="1"/>
+    <item devicetype="21" description="Padmounted Auto Transformer 20780 GRD Y/21,00-12,000 GRD Y/6900" admslabel="PM AUTO BK"  status="1"/>
+    <item devicetype="22" description="Padmounted Transformer Auto-Bank with Two Reclosers" admslabel="PM AUTO BK W/ RCL"  status="1"/>
+    <item devicetype="23" description="Padmounted 3-phase, 12KV or 21KV to 4KV Transformer and Recloser" admslabel="PM AUTO BK W/ RCL"  status="1"/>
+    <item devicetype="24" description="Padmounted Capacitor" admslabel="PM CAP BK"  status="1"/>
+    <item devicetype="25" description="Padmounted Capacitor (Supervisory Controlled)" admslabel="PM CAP BK"  status="1"/>
+    <item devicetype="26" description="Padmounted Regulator" admslabel="PM REG"  status="1"/>
+    <item devicetype="27" description="Padmounted Regulator Bypass Switch" admslabel="PM REG"  status="1"/>
+    <item devicetype="28" description="Obsolete Padmounted Oil Switch" admslabel="PM SW"  status="1"/>
+    <item devicetype="29" description="Obsolete Padmounted Oil Switch (Supervisory Controlled)" admslabel="PM SW"  status="1"/>
+    <item devicetype="30" description="Padmounted Interrupter" admslabel="PM INT"  status="1"/>
+    <item devicetype="31" description="Padmounted Interrupter (Supervisory Controlled)" admslabel="PM INT"  status="1"/>
+    <item devicetype="32" description="Padmounted Transformer with Internal Interrupter" admslabel="PM TX W/ INT"  status="1"/>
+    <item devicetype="33" description="Padmounted Transformer with Internal Interrupter and Two Switches" admslabel="PM TX W/ INT"  status="1"/>
+    <item devicetype="34" description="Padmounted Automatic Circuit Recloser" admslabel="PM RCL"  status="1"/>
+    <item devicetype="35" description="Obsolete Padmounted Sectionalizer" admslabel="PM SECT"  status="1"/>
+    <item devicetype="36" description="JBox - Padmount" admslabel=""  status="0"/>
+    <item devicetype="37" description="Misc #1 - 16 X 16'" admslabel="MISC"  status="1"/>
+    <item devicetype="38" description="Misc #2 - 16 X 32'" admslabel="MISC"  status="1"/>
+    <item devicetype="39" description="Misc #3 - 16 X 40'" admslabel="MISC"  status="1"/>
+    <item devicetype="40" description="Misc #4 - 16 X 24'" admslabel="MISC"  status="1"/>
+    <item devicetype="41" description="Misc #5 - 24 X 32'" admslabel="MISC"  status="1"/>
+    <item devicetype="42" description="Misc #6 - 24 X 40'" admslabel="MISC"  status="1"/>
+    <item devicetype="43" description="Misc #7 - 24 X 60'" admslabel="MISC"  status="1"/>
+    <item devicetype="44" description="Misc #8 - 24 X 50'" admslabel="MISC"  status="1"/>
+    <item devicetype="45" description="Misc #9 - 24 X 80'" admslabel="MISC"  status="1"/>
+    <item devicetype="46" description="Misc #10 - 24 X 56'" admslabel="MISC"  status="1"/>
+    <item devicetype="47" description="Misc #11 - 24 X 24'" admslabel="MISC"  status="1"/>
+    <item devicetype="48" description="Padmounted Triplex Transformer" admslabel="PM XFMR"  status="1"/>
+  </subtype>
+</devicegroup>

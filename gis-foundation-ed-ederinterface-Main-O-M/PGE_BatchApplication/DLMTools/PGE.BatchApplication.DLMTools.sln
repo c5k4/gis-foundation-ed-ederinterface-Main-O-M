@@ -1,0 +1,105 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "externals", "externals", "{7748880F-6403-486E-9F43-E0114BEF5915}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.Common.Delivery.Diagnostics", "..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Diagnostics\PGE.Common.Delivery.Diagnostics.csproj", "{1D019976-FFE6-41A2-AB9C-6241696EDB8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.Common.Delivery.Framework", "..\..\PGE_CommonProject\PGE.Common.DeliveryProject\PGE.Common.Delivery.Framework\PGE.Common.Delivery.Framework.csproj", "{F36C0849-BF86-4632-AED8-DCC7C4827F86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.BatchApplication.DLMTools", "PGE.BatchApplication.DLMTools\PGE.BatchApplication.DLMTools.csproj", "{88643BCC-372B-43E7-B703-EEADD17CD4BF}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PGE.Installer.DLMTools", "PGE.Installer.DLMTools\DLMToolsInstaller.vdproj", "{DCD548CB-A5F9-433E-B088-29A5D3E93352}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		NoBuild|Any CPU = NoBuild|Any CPU
+		NoBuild|x86 = NoBuild|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Debug|x86.ActiveCfg = Debug|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Debug|x86.Build.0 = Debug|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.NoBuild|Any CPU.ActiveCfg = NoBuild|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.NoBuild|Any CPU.Build.0 = NoBuild|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.NoBuild|x86.ActiveCfg = NoBuild|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.NoBuild|x86.Build.0 = NoBuild|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Release|x86.ActiveCfg = Release|x86
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E}.Release|x86.Build.0 = Release|x86
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.Debug|x86.ActiveCfg = Debug|x86
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.Debug|x86.Build.0 = Debug|x86
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.NoBuild|Any CPU.ActiveCfg = NoBuild|Any CPU
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.NoBuild|Any CPU.Build.0 = NoBuild|Any CPU
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.NoBuild|x86.ActiveCfg = NoBuild|x86
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.NoBuild|x86.Build.0 = NoBuild|x86
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.Release|x86.ActiveCfg = Release|x86
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86}.Release|x86.Build.0 = Release|x86
+		{88643BCC-372B-43E7-B703-EEADD17CD4BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88643BCC-372B-43E7-B703-EEADD17CD4BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88643BCC-372B-43E7-B703-EEADD17CD4BF}.Debug|x86.ActiveCfg = Debug|x86
+		{88643BCC-372B-43E7-B703-EEADD17CD4BF}.Debug|x86.Build.0 = Debug|x86
+		{88643BCC-372B-43E7-B703-EEADD17CD4BF}.NoBuild|Any CPU.ActiveCfg = Debug|Any CPU
+		{88643BCC-372B-43E7-B703-EEADD17CD4BF}.NoBuild|Any CPU.Build.0 = Debug|Any CPU
+		{88643BCC-372B-43E7-B703-EEADD17CD4BF}.NoBuild|x86.ActiveCfg = Debug|x86
+		{88643BCC-372B-43E7-B703-EEADD17CD4BF}.NoBuild|x86.Build.0 = Debug|x86
+		{88643BCC-372B-43E7-B703-EEADD17CD4BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88643BCC-372B-43E7-B703-EEADD17CD4BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88643BCC-372B-43E7-B703-EEADD17CD4BF}.Release|x86.ActiveCfg = Release|x86
+		{88643BCC-372B-43E7-B703-EEADD17CD4BF}.Release|x86.Build.0 = Release|x86
+		{DCD548CB-A5F9-433E-B088-29A5D3E93352}.Debug|Any CPU.ActiveCfg = Debug
+		{DCD548CB-A5F9-433E-B088-29A5D3E93352}.Debug|Any CPU.Build.0 = Debug
+		{DCD548CB-A5F9-433E-B088-29A5D3E93352}.Debug|x86.ActiveCfg = Debug
+		{DCD548CB-A5F9-433E-B088-29A5D3E93352}.Debug|x86.Build.0 = Debug
+		{DCD548CB-A5F9-433E-B088-29A5D3E93352}.NoBuild|Any CPU.ActiveCfg = Debug
+		{DCD548CB-A5F9-433E-B088-29A5D3E93352}.NoBuild|Any CPU.Build.0 = Debug
+		{DCD548CB-A5F9-433E-B088-29A5D3E93352}.NoBuild|x86.ActiveCfg = Debug
+		{DCD548CB-A5F9-433E-B088-29A5D3E93352}.NoBuild|x86.Build.0 = Debug
+		{DCD548CB-A5F9-433E-B088-29A5D3E93352}.Release|Any CPU.ActiveCfg = Release
+		{DCD548CB-A5F9-433E-B088-29A5D3E93352}.Release|Any CPU.Build.0 = Release
+		{DCD548CB-A5F9-433E-B088-29A5D3E93352}.Release|x86.ActiveCfg = Release
+		{DCD548CB-A5F9-433E-B088-29A5D3E93352}.Release|x86.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1D019976-FFE6-41A2-AB9C-6241696EDB8E} = {7748880F-6403-486E-9F43-E0114BEF5915}
+		{F36C0849-BF86-4632-AED8-DCC7C4827F86} = {7748880F-6403-486E-9F43-E0114BEF5915}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57E0E227-5506-4D98-B829-B80F9BA77295}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\..\\PGE_CommonProject\\PGE.Common.DeliveryProject\\PGE.Common.Delivery.Diagnostics\\PGE.Common.Delivery.Diagnostics.csproj
+		SccProjectTopLevelParentUniqueName1 = PGE.BatchApplication.DLMTools.sln
+		SccProjectName1 = ../../PGE_CommonProject/PGE.Common.DeliveryProject/PGE.Common.Delivery.Diagnostics
+		SccLocalPath1 = ..\\..\\PGE_CommonProject\\PGE.Common.DeliveryProject\\PGE.Common.Delivery.Diagnostics
+		SccProjectUniqueName2 = ..\\..\\PGE_CommonProject\\PGE.Common.DeliveryProject\\PGE.Common.Delivery.Framework\\PGE.Common.Delivery.Framework.csproj
+		SccProjectTopLevelParentUniqueName2 = PGE.BatchApplication.DLMTools.sln
+		SccProjectName2 = ../../PGE_CommonProject/PGE.Common.DeliveryProject/PGE.Common.Delivery.Framework
+		SccLocalPath2 = ..\\..\\PGE_CommonProject\\PGE.Common.DeliveryProject\\PGE.Common.Delivery.Framework
+		SccProjectUniqueName3 = PGE.Installer.DLMTools\\DLMToolsInstaller.vdproj
+		SccProjectName3 = PGE.Installer.DLMTools
+		SccLocalPath3 = PGE.Installer.DLMTools
+		SccProjectUniqueName4 = PGE.BatchApplication.DLMTools\\PGE.BatchApplication.DLMTools.csproj
+		SccProjectName4 = PGE.BatchApplication.DLMTools
+		SccLocalPath4 = PGE.BatchApplication.DLMTools
+	EndGlobalSection
+EndGlobal

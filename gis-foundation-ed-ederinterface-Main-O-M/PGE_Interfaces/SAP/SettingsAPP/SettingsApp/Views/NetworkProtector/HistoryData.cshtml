@@ -1,0 +1,370 @@
+﻿@model SettingsApp.Models.NetworkProtectorModel
+@using SettingsApp.Common;
+@using (Html.BeginForm("Index", "NetworkProtector"))
+{
+    Layout = "~/Views/Shared/_PopUpLayout.cshtml";
+    @Html.ValidationSummary(true)
+    <table cellpadding="0" cellspacing="0" width="90%">
+        <tr>
+            <td class="header" style="padding-top:15px; padding-bottom:0px; padding-left:10px">
+                @ViewBag.Title
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color:#ffffff; padding: 10px">
+                   <table cellpadding="0" cellspacing="0" width="100%" style="background-color:#f2f2f2">
+                    <tr>
+                        <td >@Html.LabelForRequired(model => model.OperatingNumber)
+                        </td>
+                        <td>@Html.TextBox("optNum", (string)ViewBag.OperatingNum,(object)new { disabled = "disabled" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.SerialNumber)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.SerialNumber, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SerialNumber)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.SpecialConditions)
+                        </td>
+                        <td>@Html.TextAreaFor(model => model.SpecialConditions, 5, 15, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 250, @class = "form-control" })@Html.ValidationMessageFor(model => model.SpecialConditions)
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="2" style="padding-left: 10px; padding-right: 10px; width: 100%">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td colspan="2" class="sectionHeader">
+                                        Relay Settings
+                                    </td>
+                                </tr>
+                                <tr valign="top" class="text_width_80px">
+                                    <td style="padding-left: 10px; padding-right: 10px; width: 50%">
+                                        <table style="width:100%">
+                                            <tr>
+                                                <td style="padding-right: 0px">
+                                                     <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                        <tr>
+                                                            <td colspan="2" class="sectionHeader">
+                                                                Trip Functions
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding-top:20px">@Html.LabelForRequired(model => model.TripMode)
+                                                            </td>
+                                                            <td colspan="2" style="padding-top:20px">@Html.DropDownListFor(model => model.TripMode, Model.TripModeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new  {onchange = Model.DropDownPostbackScript  })@Html.ValidationMessageFor(model => model.TripMode)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.CtRatio)
+                                                            </td>
+                                                              @if (Model.TripMode == 2)
+                                                              {
+                                                            <td>@Html.TextBoxFor(model => model.CtRatio, null, new { disabled = "true", Style = "background:#cccccc;" })@Html.ValidationMessageFor(model => model.CtRatio)
+                                                            : 5
+                                                             </td>
+                                                              }
+                                                              else
+                                                              {
+                                                                  
+                                                                   <td>@Html.TextBoxFor(model => model.CtRatio, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.CtRatio)
+                                                            : 5
+                                                             </td>
+                                                              }
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ReverseTripSetting)
+                                                            </td>
+                                                             @if (Model.TripMode == 2)
+                                                             {
+                                                            <td>@Html.TextBoxFor(model => model.ReverseTripSetting, null, new { disabled = "true", Style = "background:#cccccc;" })@Html.ValidationMessageFor(model => model.ReverseTripSetting)
+                                                            % CT Primary Rating
+                                                            </td>
+                                                             }
+                                                             else
+                                                             {  <td>@Html.TextBoxFor(model => model.ReverseTripSetting, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ReverseTripSetting)
+                                                            % CT Primary Rating
+                                                            </td>
+                                                                 }
+                                                        </tr>
+                                                        <tr>
+
+                                                            <td>@Html.LabelForRequired(model => model.TimeDelay)
+                                                           
+                                                            </td>
+                                                             @if (Model.TripMode != 5)
+                                                             {
+                                                            <td>@Html.TextBoxFor(model => model.TimeDelay, null, new { disabled = "true",Style="background:#cccccc;" })@Html.ValidationMessageFor(model => model.TimeDelay)
+                                                             s
+                                                            </td>
+                                                             }
+                                                             else
+                                                             {
+                                                                 
+                                                                 <td>@Html.TextBoxFor(model => model.TimeDelay, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.TimeDelay)
+                                                             s
+                                                            </td>
+                                                             }
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.OvercurTrip)
+                                                            </td>
+                                                              @if (Model.TripMode == 2 && Model.TripMode==3)
+                                                              {
+                                                            <td>@Html.TextBoxFor(model => model.OvercurTrip, null, new { disabled = "true", Style = "background:#cccccc;" })@Html.ValidationMessageFor(model => model.OvercurTrip)
+                                                            % CT Primary Rating
+                                                            
+                                                             </td>
+                                                              }
+                                                              else
+                                                              {
+                                                                  
+                                                                     <td>@Html.TextBoxFor(model => model.OvercurTrip, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.OvercurTrip)
+                                                            % CT Primary Rating
+                                                            
+                                                             </td>
+                                                              }
+                                                           
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding-bottom:80px">@Html.LabelForRequired(model => model.WattTripAngle)
+                                                            </td>
+                                                              @if (Model.TripMode == 2)
+                                                              {
+                                                            <td style="padding-bottom:80px">@Html.TextBoxFor(model => model.WattTripAngle, null, new { disabled = "true", Style = "background:#cccccc;" })@Html.ValidationMessageFor(model => model.WattTripAngle)
+                                                            deg.
+                                                            </td>
+                                                              }
+                                                              else
+                                                              {   <td style="padding-bottom:80px">@Html.TextBoxFor(model => model.WattTripAngle, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @Value = string.Format("{0:0.0}", Model.WattTripAngle) })@Html.ValidationMessageFor(model => model.WattTripAngle)
+                                                            deg.
+                                                            </td>
+                                                              }
+                                                        </tr>
+                                               
+                                                     </table>
+                                                 </td>
+                                            </tr>
+
+                                           
+                                        
+                                        </table>                                       
+                                     </td>
+
+                                    <td style="padding-left: 10px; padding-right: 10px; width: 50%">
+                                        <table class="radiowidth_20px" style="width:100%">
+                                            <tr>
+                                                <td style="padding-right: 0px">
+                                                     <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                        <tr>
+                                                            <td colspan="2" class="sectionHeader">
+                                                                Trip Curve
+                                                            </td>
+                                                        </tr>
+                                                        <tr> 
+
+                                                            <td style="text-align: right">@Html.RadioButtonFor(model => model.WattVarTrip, "0", new { disabled = "true", id = "WattTrip" })
+                                                                Watt Trip
+                                                              
+                                                            </td>
+                                                            <td>@Html.RadioButtonFor(model => model.WattVarTrip, "1", new { disabled = "true", id = " WattVarTrip" })
+                                                                Watt-Var Trip
+                                                              
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                        @if (Model.WattVarTrip == 1)
+                                                        {
+                                                             <td>@Html.LabelForRequired(model => model.GullWingAngle)
+                                                             </td>
+                                                             <td>@Html.TextBoxFor(model => model.GullWingAngle, null, new { disabled = "true", Style = "background:#cccccc;", @Value = string.Format("{0:0.0}", Model.GullWingAngle) })@Html.ValidationMessageFor(model => model.GullWingAngle)
+                                                             deg.</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            
+                                                            <td>@Html.LabelForRequired(model => model.GullWingAngle)
+                                                             </td>
+                                                             <td>@Html.TextBoxFor(model => model.GullWingAngle, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @Value = string.Format("{0:0.0}", Model.GullWingAngle) })@Html.ValidationMessageFor(model => model.GullWingAngle)
+                                                             deg.</td>
+                                                        }
+                                                        </tr>
+                                                        <tr>
+                                                         @if (Model.WattVarTrip == 0)
+                                                         {
+                                                            <td>@Html.LabelForRequired(model => model.VarTripAngle)
+                                                             </td>
+                                                             <td>@Html.TextBoxFor(model => model.VarTripAngle, null, new { @readonly = "true", Style = "background:#cccccc;", @Value = string.Format("{0:0.0}", Model.VarTripAngle) })@Html.ValidationMessageFor(model => model.VarTripAngle)
+                                                             deg.</td>
+                                                         }
+                                                         else
+                                                         {
+                                                              <td>@Html.LabelForRequired(model => model.VarTripAngle)
+                                                             </td>
+                                                             <td>@Html.TextBoxFor(model => model.VarTripAngle, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @Value = string.Format("{0:0.0}", Model.VarTripAngle) })@Html.ValidationMessageFor(model => model.VarTripAngle)
+                                                             deg.</td>
+                                                         }
+                                                        </tr>                                               
+                                                     </table>
+                                                 </td>
+                                            </tr> 
+                                            <tr>
+                                                <td style="padding-right: 0px; padding-top:0px">
+                                                    <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                                            <tr>
+                                                                <td colspan="3" class="sectionHeader">
+                                                                    Close Functions
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>@Html.LabelForRequired(model => model.ClosingMode)
+                                                                </td>
+                                                                <td colspan="2">@Html.DropDownListFor(model => model.ClosingMode, Model.ClosingModeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = Model.DropDownPostbackScript })@Html.ValidationMessageFor(model => model.ClosingMode)
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                                <td style="padding-left:35px; text-align:left">ML
+                                                                </td> 
+                                                                @if (Model.ClosingMode == "SCC")
+                                                                {
+                                                                    <td style="padding-left:25px; text-align:left">Slope</td>
+                                                                }
+                                                                else if (Model.ClosingMode == "CCC")
+                                                                {
+                                                                    <td style="padding-left:25px; text-align:left">LH ML</td>
+                                                                }
+                                                            </tr> 
+                                                            <tr>
+                                                                <td>@Html.LabelForRequired(model => model.MasterLineML)
+                                                                </td>
+                                                               <td style="padding-right:0.25em">@Html.TextBoxFor(model => model.MasterLineML, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.MasterLineML)
+                                                                V</td>
+                                                                <td style="padding-right:0.25em">@Html.TextBoxFor(model => model.MasterLineAngle, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @Value = string.Format("{0:0.0}", Model.MasterLineAngle) })@Html.ValidationMessageFor(model => model.MasterLineAngle)
+                                                                deg.</td>
+                                                            </tr> 
+                                                            <tr>
+                                                                <td>
+                                                                </td>
+                                                                <td style="padding-left:35px; text-align:left">PL
+                                                                </td>  
+                                                                @if (Model.ClosingMode == "SCC")
+                                                                {
+                                                                    <td style="padding-left:35px; text-align:left">Offset</td>
+                                                                }
+                                                                else if (Model.ClosingMode == "CCC")
+                                                                {
+                                                                    <td></td>
+                                                                }
+                                                            </tr>
+                                                            <tr>
+                                                                <td>@Html.LabelForRequired(model => model.PhasingLineAngle)
+                                                                </td>
+                                                               <td style="padding-right:0.25em">@Html.TextBoxFor(model => model.PhasingLineAngle, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @Value = string.Format("{0:0.0}", Model.PhasingLineAngle) })@Html.ValidationMessageFor(model => model.PhasingLineAngle)
+                                                                deg.</td>
+                                                                 @if (Model.ClosingMode == "SCC")
+                                                                 {
+                                                                   <td style="padding-right:0.25em">@Html.TextBoxFor(model => model.PhasingLineOffset, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PhasingLineOffset)
+                                                                      V</td>
+                                                                 }
+                                                                 else if (Model.ClosingMode == "CCC")
+                                                                 {
+                                                                    <td></td>
+                                                                 }
+                                                            </tr>
+                                                              
+                                                                                                           
+                                                     </table>
+                                                </td>
+
+                                            </tr>                                       
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.DateModified)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.DateModified, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.DateModified)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.Notes)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.Notes, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 240 })@Html.ValidationMessageFor(model => model.Notes)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.PreparedBy)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PreparedBy, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 60 })@Html.ValidationMessageFor(model => model.PreparedBy)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.EffectiveDate)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.EffectiveDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepicker" })@Html.ValidationMessageFor(model => model.EffectiveDate)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.PeerReviewer)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PeerReviewer, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 60 })@Html.ValidationMessageFor(model => model.PeerReviewer)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.PeerReviewerDate)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PeerReviewerDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepicker" })@Html.ValidationMessageFor(model => model.PeerReviewerDate)
+                        </td>
+                    </tr>
+                    @if (ViewBag.PageMode == "FUTURE")
+                    {
+                        <tr>
+                            <td class="lable">
+                                <label>
+                                    Release</label>
+                            </td>
+                            <td>
+                                @Html.CheckBoxFor(model => model.Release, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })
+                            </td>
+                        </tr>
+                    }
+                    @if (ViewBag.PageMode == "CURRENT")
+                    {
+                        <tr>
+                            <td colspan="2" style="text-align: right; padding-right: 10px">
+                                <input type="button" value="Copy current to future settings" onclick="this.form.action='/@ViewBag.ControllerName/CopyToFuture/@ViewBag.GlobalID/@ViewBag.LayerName';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                            </td>
+                        </tr>
+                    }
+                    @if (ViewBag.PageMode == "FUTURE")
+                    {
+                        <tr>
+                            <td colspan="2" style="text-align: right; padding-right: 10px">
+                                <input type="button" value="Cancel" onclick="this.form.action='/@ViewBag.ControllerName/Future/@ViewBag.GlobalID/@ViewBag.LayerName';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                <input type="button" value="Save" onclick="this.form.action='/@ViewBag.ControllerName/SaveFuture/@ViewBag.GlobalID/@ViewBag.LayerName';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                            </td>
+                        </tr>
+                    }
+                    @if (ViewBag.PageMode == "HISTORY")
+                    {
+                    }
+                </table>
+            </td>
+        </tr>
+    </table>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

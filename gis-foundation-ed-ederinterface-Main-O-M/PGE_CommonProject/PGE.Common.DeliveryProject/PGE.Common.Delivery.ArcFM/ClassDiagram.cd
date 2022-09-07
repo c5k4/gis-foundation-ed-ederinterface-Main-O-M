@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.Common.Delivery.ArcFM.ApplicationFacade" Collapsed="true">
+    <Position X="8" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAABAAAAAAAAAEAAAACAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>ApplicationFacade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Application" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.ArcFM.BaseAbandonAU" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <AssociationLine Name="_logger" Type="PGE.Common.Delivery.Diagnostics.Log4NetLogger">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.04" Y="0.388" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAQAAAAAIAQAIAABAAAAAAAAAAAAEAI=</HashCode>
+      <FileName>BaseClasses\BaseAbandonAU.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_logger" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.ArcFM.BaseAttributeAU" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAgAABAABAAAAAAAAAAIAQIIAABAAgAAAAAAABAEAI=</HashCode>
+      <FileName>BaseClasses\BaseAttributeAU.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_logger" />
+      <Field Name="_FieldType" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.ArcFM.BaseAutoTextElement" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAIEQBCAAAAIDAAAAAACCAiIQRABAA=</HashCode>
+      <FileName>BaseClasses\BaseAutoTextElement.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_logger" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.ArcFM.BaseInheritAU" Collapsed="true">
+    <Position X="10.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAIAAAAAAAAAIAAAAAIAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseClasses\BaseInheritAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.ArcFM.BaseRelationshipAU" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEANAAAAAAAAAAAAAJAAAIAABgAAAEAAAAAAgEAI=</HashCode>
+      <FileName>BaseClasses\BaseRelationshipAU.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_logger" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.ArcFM.BaseSpecialAU" Collapsed="true">
+    <Position X="10.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAIAABAAAAQAAFAAIAQAKAABIAgAAAAAAAABEAI=</HashCode>
+      <FileName>BaseClasses\BaseSpecialAU.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.ArcFM.BaseTraceTask" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACACBAAAAAEAAABIASBICABAAAIAACAAAAAEAI=</HashCode>
+      <FileName>BaseClasses\BaseTraceTask.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_logger" />
+      <Field Name="_Barriers" />
+      <Field Name="_NetworkAnalysis" />
+      <Field Name="_Flags" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.ArcFM.BaseTreeTool" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAQECQgBIAQAJAAABAAAAAABAAABCAI=</HashCode>
+      <FileName>BaseClasses\BaseTreeTool.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_logger" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.ArcFM.BaseValidationRule" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgCACABAAAAAAiAoAQAIQABAAaEAAQAAAAlVAU=</HashCode>
+      <FileName>BaseClasses\BaseValidationRule.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_logger" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.ArcFM.FacilityIDConfigSection" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAABAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\FacilityIDConfigSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.ArcFM.FacilityIDDefinitionCollection" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEICAAAAAAAAIAAACAAAhAQAAAABAAgACAAAAEBAABA=</HashCode>
+      <FileName>Configuration\FacilityIDConfigSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.ArcFM.FacilityIDDefinition" Collapsed="true">
+    <Position X="3" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAABBAAAAAAABABAAAAAAQCAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\FacilityIDConfigSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.ArcFM.DesktopVersionDifference" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAEIAAAAAApAQAAAAAEAAAIIAAAAAAAACACIRAAAA=</HashCode>
+      <FileName>DesktopVersionDifference.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_logger" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Common.Delivery.ArcFM.OracleSequenceFacilityIDGenerator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="7.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>OracleSequenceFacilityIDGenerator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.ArcFM.TableSequenceFacilityIDGenerator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="7.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAQAgAJAAAAQAAAAAggAQAAgAABAIABAA=</HashCode>
+      <FileName>TableSequenceFacilityIDGenerator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Common.Delivery.Diagnostics.Log4NetLogger" Collapsed="true">
+    <Position X="2.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="PGE.Common.Delivery.ArcFM.IFacilityIDGenerator" Collapsed="true">
+    <Position X="5.25" Y="6.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IFacilityIDGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.Framework.IApplication" Collapsed="true">
+    <Position X="8.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.EditorExt.INetworkAnalysisExtBarriers" Collapsed="true">
+    <Position X="8" Y="2.75" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.EditorExt.INetworkAnalysisExt" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ESRI.ArcGIS.EditorExt.INetworkAnalysisExtFlags" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="ESRI.ArcGIS.Geodatabase.esriFieldType" Collapsed="true">
+    <Position X="3" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

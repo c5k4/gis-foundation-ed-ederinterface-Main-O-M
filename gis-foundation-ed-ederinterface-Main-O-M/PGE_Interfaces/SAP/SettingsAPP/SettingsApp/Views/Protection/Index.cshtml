@@ -1,0 +1,1404 @@
+﻿<!--ENOS2EDGIS-->
+@using SettingsApp.Common;
+@model SettingsApp.Models.ProtectionViewModel
+<script type="text/javascript" src="~/Scripts/SettingsApp.js"></script>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-ui-1.8.20.min.js")" type="text/javascript"></script>
+<script type="text/javascript">
+
+var inner = $('.innerTable');
+var setInnerSize = function () {
+    inner.width(inner.parent().width());
+    inner.height(inner.parent().height());
+};
+
+$('#body-content').on('change keyup keydown', 'input, textarea, select', function (e) {
+    $(this).addClass('changed-input');
+});
+
+var unsaved = false;
+var currentPage = $(this);
+$(function () { // will trigger when the document is ready
+    $(":input").bind("keyup change",function(e) { //trigers change in all input fields including text type
+        unsaved = true;
+    });
+});
+
+
+function getPaging() {
+    if (unsaved) {
+        var r = confirm("Current page has unsaved edits, clicking on another tab will erase edited data, do you want to proceed ?");
+        if (r == true) {
+            return true;
+        } else {
+        return false;
+        }
+    } else {
+        return true;
+    }
+}
+
+
+//ENOS-Bug fix
+function PostDetails(url, msg) {
+    var r = confirm(msg);
+    if (r == true) {
+        $.post(url, $("form").serializeArray(), function (result) {
+            window.location.href = result.Url;
+        });
+    } else {
+        return false;
+    }
+}
+//ENOS-Bug fix
+function SubmitForm(url, msg, form) {
+    var r = confirm(msg);
+    if (r == true) {
+        form.action = url;
+        form.submit();
+    } else {
+        return false;
+    }
+}
+
+function ToggleSuperUser(url) {
+    if (unsaved) {
+        var r = confirm("Current page has unsaved edits, Activating / De-activating Super User role while editing may erase edited data, do you want to proceed ?");
+        if (r == true) {
+            unsaved = false;
+            $.post(url, $("form").serializeArray(), function (result) {
+                window.location.href = result.Url;
+            });
+        } else {
+            unsaved = true;
+            return false;
+        }
+    } else {
+        $.post(url, $("form").serializeArray(), function (result) {
+            window.location.href = result.Url;
+        });
+    }
+}
+
+function GenTypeChange(dropdownValue) {
+        var url = "/Protection/GenTypeChanged?currentGenType=" + dropdownValue
+        $.post(url, $("form").serializeArray(), function (result) {
+            window.location.href = result.Url;
+        });
+}
+
+function openPopup() {
+    var elem = $("#moveGenerator");
+    elem.dialog({
+        modal: true,
+        resizable: false,
+        width: 580,
+        height: 'auto',
+        title: 'Move Genearators',
+        closeOnEscape: false,
+        open: function (event, ui) {
+            $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+        }
+    });
+    elem.dialog("open");
+}
+
+$(function () { // will trigger when the document is ready
+    $("#moveGenerator").dialog({
+        autoOpen: false,
+        title: 'Move Genarators',
+        width: 580,
+        height: 'auto',
+        modal: true
+    });
+});
+
+</script>
+<style>
+    .DropDown { width: 205px; }
+@*    .ui-dialog-titlebar-close{
+            display: none;
+        }*@
+        .ui-dialog .{
+          text-align: center;
+          width: 100%;
+        }
+</style>
+@using (Html.BeginForm())
+{
+    @Html.Raw(TempData["msg"])
+    @Html.ValidationSummary(true)
+    if (TempData["unsaved"] != null)
+    {
+      <script type="text/javascript">
+          unsaved = @TempData["unsaved"];
+      </script>
+    }
+    var superuser = Security.IsSuperUserActive;
+@*  <input type="hidden" id="ActiveProtectionIndex" name="ActiveProtectionIndex" value=@Model.ActiveProtectionIndex />
+    <input type="hidden" id="ActiveGeneratorIndex" name="ActiveGeneratorIndex" value=@Model.ActiveGeneratorIndex />
+    <input type="hidden" id="ActiveEquipmentIndex" name="ActiveEquipmentIndex" value=@Model.ActiveEquipmentIndex />*@
+    @Html.HiddenFor(model => model.ActiveProtectionIndex, new { Name = "ActiveProtectionIndex" });
+    @Html.HiddenFor(model => model.ActiveGeneratorIndex, new { Name = "ActiveGeneratorIndex" });
+    @Html.HiddenFor(model => model.ActiveEquipmentIndex, new { Name = "ActiveEquipmentIndex" });
+    
+    <div id="moveGenerator" style="display:none; width: 600"></div>
+    <table cellpadding="0" cellspacing="0" width="90%">
+        <tr>
+            <td style="padding: 0px">
+                <div class="float-left">
+                    <nav>
+                        <ul id="menu">
+                            <li class="@ViewBag.Generation">@Html.ActionLink("Generation", "Generation", "GenerationSettings", new { generationId = Model.ActiveProtection.ParentID.ToString() }, new { onclick = "return getPaging();" })</li>
+                             @if (Model.Protections != null && Model.Protections.Count > 0)
+                             {
+                                 for (int i = 0; i <= Model.Protections.Count - 1; i++)
+                                 {
+                                     string protectionName = "Protection " + (i + 1).ToString();
+                                     var protection = Model.Protections[i];
+                                     TempData[protectionName] = protection.ID;
+                                     string url = "/Protection/IndexByID?parentType=Generation&protectionId=" + protection.ID.ToString();
+                                     if (Model.ActiveProtectionIndex == i)
+                                     {
+                                        
+                                      <li class="selected" > @*<a href=@url onclick="return getPaging();"> @protectionName  </a>*@ 
+                                        @Html.ActionLink(protectionName, "IndexByID", "Protection", new { parentType = "Generation", protectionId = protection.ID.ToString() }, new { onclick = "return getPaging();" })
+                                      </li>
+                                         
+                                     }
+                                     else
+                                     {
+                                      <li> @*<a href=@url onclick="return getPaging();"> @protectionName  </a> *@
+                                        @Html.ActionLink(protectionName, "IndexByID", "Protection", new { parentType = "Generation", protectionId = protection.ID.ToString() }, new { onclick = "return getPaging();" })
+                                      </li>
+                                     }
+
+                                 }
+                                 
+                                 <!--ENOS2EDGIS -ST - issue resolution-->                                 
+                                 //if (Security.IsInAdminGroup) 
+                                 if (Model.Protections.Count < 13 && (Security.IsInAdminGroup || (Security.IsInSuperUserGroup && Security.IsSuperUserActive)))
+                                 {
+                                     if (Security.IsInSuperUserGroup && Security.IsSuperUserActive)
+                                     {
+                                         string url = "/Protection/AddNewProtection?parentType=Generation&generationID=" + Model.ActiveProtection.ParentID.ToString();
+                                    <li style="display: inline;list-style: none;padding: 0px 5px 0px 5px;text-align: center;background-color: #FFFF00;color: #ffffff;"> <a  style="background: none;text-decoration: none; color: #000000;" href=@url onclick="return getPaging();"> New </a></li>
+                                     }
+                                 }
+                             }
+                        </ul>
+                    </nav>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="header" style="padding-top: 15px; padding-bottom: 10px; padding-left: 10px" colspan="2">
+                @ViewBag.Title
+            </td>
+        </tr>
+        @if (Security.IsInSuperUserGroup)
+        {
+            var toggelPath = @"/Protection/ToggleSuperUser?protectionID=" + Model.ActiveProtection.ID.ToString();            
+            <tr>
+                <td colspan="2" style="text-align: right; padding-right: 10px">                                 
+                    <input type="button" id="btnProActivate" value="@Session["SuperUserButtonText"]" onclick="return ToggleSuperUser('@toggelPath')"
+                   @* <input type="button" id="btnProActivate" value="@Session["SuperUserButtonText"]" onclick="this.form.action='/@ViewBag.ControllerName/ToggleSuperUser?protectionID=@Model.ActiveProtection.ID.ToString()';this.form.submit();"*@
+                    @((Security.IsInSuperUserGroup) ? Html.Raw("") : Html.Raw("disabled='disabled'")) 
+                    
+                   
+                    />
+                </td>
+            </tr>
+        }
+       @* @if (Model.Generators == null || Model.Generators.Count == 0)
+        {
+            <tr>
+                <td colspan="2" style="text-align: right;background-color: #ffffff; padding-right: 10px">
+                    <input type="button" id="btnDelete" value="Delete" onclick="this.form.action = '/@ViewBag.ControllerName/DeleteProtection?protectionId=@Model.ActiveProtection.ID.ToString()'; this.form.submit();"
+                    @((Security.IsInSuperUserGroup) ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: right;background-color: #ffffff; padding-right: 10px">
+                    <br />
+                </td>
+            </tr>
+        }   *@
+            
+            @if (Model.Generators == null || Model.Generators.Count == 0)
+            {
+                var urlpath = @"/Protection/DeleteProtection?protectionId=" + Model.ActiveProtection.ID.ToString();
+                var msg = @"Are you sure you want to delete the Protection? Click OK to proceed.";
+            <tr>
+                <td colspan="2" style="text-align: right;background-color: #ffffff; padding-right: 10px">                 
+                   @* <input type="button" id="btnDelete" value="Delete" onclick="this.form.action = '/@ViewBag.ControllerName/DeleteProtection?protectionId=@Model.ActiveProtection.ID.ToString()'; this.form.submit();"*@
+                    <input type="button" id="btnDeleteProt" value="Delete"   onclick="SubmitForm('@urlpath', '@msg', this.form)"   @*//ENOS-Bug fix*@
+                    @((Security.IsInAdminGroup || (Security.IsInSuperUserGroup && Security.IsSuperUserActive)) ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: right;background-color: #ffffff; padding-right: 10px">
+                    <br />
+                </td>
+            </tr>
+            } 
+
+        <tr>
+            <td colspan="2" style="background-color: #ffffff; padding: 10px;">
+                @if (ViewBag.ShowPageError == true)
+                {
+                    <label id="lableDeviceValidationError" runat="server" style="color: Red; text-align: center;">
+                        There are error(s), please check below.
+                    </label>
+                }
+                @if (ViewBag.ShowSaveSucessful == true)
+                {
+                    <label id="lableDeviceSaveSucess" runat="server" style="color: Green; text-align: center;">
+                        Device saved successfully.
+                    </label>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="2" style="background-color: #ffffff; padding: 10px">
+                <table cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f2f2">
+                    <tr>
+                        <td colspan="2">
+                            <table cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f2f2">
+                                <tr>
+                                    <td >@Html.LabelForRequired(model => model.ActiveProtection.ExportkW)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.ExportkW, !Security.IsInAdminGroup && !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveProtection.ExportkW)
+                                        @Html.HiddenFor(model => model.ActiveProtection.ID)
+                                        @Html.HiddenFor(model => model.ActiveProtection.ParentID)
+                                        @Html.HiddenFor(model => model.ActiveProtection.ParentType)
+                                        @Html.HiddenFor(model => model.ActiveProtection.DateCreated)
+                                        @Html.HiddenFor(model => model.ActiveProtection.CreatedBy)
+                                        @Html.HiddenFor(model => model.ActiveProtection.CurrentOrFuture)
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td >@Html.LabelForRequired(model => model.ActiveProtection.NameplateRating)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.NameplateRating, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 250, @class = "form-control" })
+                                        @Html.HiddenFor(model => model.ActiveProtection.NameplateRating)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 185px">@Html.LabelForRequired(model => model.ActiveProtection.ProtectionType)
+                                    </td>
+                                    <td>@Html.DropDownListFor(model => model.ActiveProtection.ProtectionType, Model.ActiveProtection.ProtectionTypeList, !Security.IsInAdminGroup && !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled", @class = "DropDown" } : new { @class = "DropDown", onchange = Model.ActiveProtection.ProtectionTypeDropDownPostbackScript })@Html.ValidationMessageFor(model => model.ActiveProtection.ProtectionType)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 185px">@Html.LabelForRequired(model => model.ActiveProtection.Notes)
+                                    </td>
+                                    <td>@Html.TextAreaFor(model => model.ActiveProtection.Notes, 5, 15, !Security.IsInAdminGroup && !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled" } : new { @class = "form-control", maxlength = 500 })@Html.ValidationMessageFor(model => model.ActiveProtection.Notes)
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    @if (Model.ActiveProtection.ProtectionType == "FUS")
+                    {
+                        <tr>
+                          <td colspan="2" style="padding-right: 0px">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td class="sectionHeader" colspan="2">
+                                        Fuse
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td style="width: 185px">@Html.LabelForRequired(model => model.ActiveProtection.FuseType)
+                                    </td>
+                                    <td>@Html.DropDownListFor(model => model.ActiveProtection.FuseType, Model.ActiveProtection.FuseTypeList, !Security.IsInAdminGroup && !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled", @class = "DropDown" } : new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveProtection.FuseType)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.FuseSize)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.FuseSize, !Security.IsInAdminGroup && !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled" } : new { maxlength = 10 })@Html.ValidationMessageFor(model => model.ActiveProtection.FuseSize)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.Manufacturer)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.Manufacturer, !Security.IsInAdminGroup && !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled" } : new { maxlength = 100 })@Html.ValidationMessageFor(model => model.ActiveProtection.Manufacturer)
+                                    </td>
+                                </tr>
+                            </table>
+                          </td>
+                        </tr>
+                    }
+                    @if (Model.ActiveProtection.ProtectionType == "RECL")
+                    {
+                        <tr>
+                          <td colspan="2" style="padding-right: 0px">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td class="sectionHeader" colspan="2">
+                                        Recloser
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.Manufacturer)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.Manufacturer, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { maxlength = 100 })@Html.ValidationMessageFor(model => model.ActiveProtection.Manufacturer)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.PhaseMinAmpsTrip)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.PhaseMinAmpsTrip, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 6 })@Html.ValidationMessageFor(model => model.ActiveProtection.PhaseMinAmpsTrip)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.PhaseSlowCurve)
+                                    </td>
+                                    <td>@Html.DropDownListFor(model => model.ActiveProtection.PhaseSlowCurve, Model.ActiveProtection.RecloseCurveList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveProtection.PhaseSlowCurve)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.PhaseFastCurve)
+                                    </td>
+                                    <td>@Html.DropDownListFor(model => model.ActiveProtection.PhaseFastCurve, Model.ActiveProtection.RecloseCurveList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveProtection.PhaseFastCurve)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.PhaseTimeDial)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.PhaseTimeDial, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 4 })@Html.ValidationMessageFor(model => model.ActiveProtection.PhaseTimeDial)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.PhaseInst)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.PhaseInst, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 6 })@Html.ValidationMessageFor(model => model.ActiveProtection.PhaseInst)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.GroundMinAmpsTrip)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.GroundMinAmpsTrip, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 6 })@Html.ValidationMessageFor(model => model.ActiveProtection.GroundMinAmpsTrip)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.GroundSlowCurve)
+                                    </td>
+                                    <td>@Html.DropDownListFor(model => model.ActiveProtection.GroundSlowCurve, Model.ActiveProtection.RecloseCurveList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveProtection.GroundSlowCurve)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.GroundFastCurve)
+                                    </td>
+                                    <td>@Html.DropDownListFor(model => model.ActiveProtection.GroundFastCurve, Model.ActiveProtection.RecloseCurveList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveProtection.GroundFastCurve)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.GroundTimeDial)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.GroundTimeDial, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 4 })@Html.ValidationMessageFor(model => model.ActiveProtection.GroundTimeDial)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ActiveProtection.GroundInst)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ActiveProtection.GroundInst, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 6 })@Html.ValidationMessageFor(model => model.ActiveProtection.GroundInst)
+                                    </td>
+                                </tr>
+                            </table>
+                          </td>
+                        </tr>
+                    }
+                    @if (Model.ActiveProtection.ProtectionType == "RELY")
+                    {
+                        <tr style="height:190">
+                            @if (Model.ActivePrimaryPhaseRelay != null)
+                            {
+                                var colspanVal = @Model.ActiveBackupPhaseRelay != null ? 2 : 1; 
+                              <td align="center" colspan="1">
+                                <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 430px; height: 290px; table-layout:fixed">
+                                    <tr>
+                                        <td class="sectionHeader" style="text-align: left;" colspan=@colspanVal>
+                                            Primary Phase Relay
+                                            
+                                                  @Html.HiddenFor(model => model.ActivePrimaryPhaseRelay.ID)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryPhaseRelay.ProtectionId)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryPhaseRelay.DateCreated)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryPhaseRelay.CreatedBy)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryPhaseRelay.RelayCd)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryPhaseRelay.CurrentOrFuture)
+                                        </td>
+                                        @if (Model.ActiveBackupPhaseRelay == null)
+                                        {
+                                            <td class="sectionHeader" style="text-align: right;" colspan="1">
+                                                <input type="button" value="Add Backup" onclick="this.form.action='/Protection/AddBackupRelay?protectionID=@Model.ActiveProtection.ID.ToString()&backupType=BPHA';this.form.submit();"
+                                                @(Security.IsInSuperUserGroup && Security.IsSuperUserActive ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                            </td>
+                                        }
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 185px">@Html.LabelForRequired(model => model.ActivePrimaryPhaseRelay.RelayType)
+                                        </td>
+                                        <td>@Html.DropDownListFor(model => model.ActivePrimaryPhaseRelay.RelayType, Model.ActivePrimaryPhaseRelay.RelayTypeList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActivePrimaryPhaseRelay.RelayType)
+                                        </td>
+                                    </tr>
+                                   <tr>
+                                        <td style="width: 185px">@Html.LabelForRequired(model => model.ActivePrimaryPhaseRelay.CurveType)
+                                        </td>
+                                        <td>@Html.DropDownListFor(model => model.ActivePrimaryPhaseRelay.CurveType, Model.ActivePrimaryPhaseRelay.CurveTypeList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActivePrimaryPhaseRelay.CurveType)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.ActivePrimaryPhaseRelay.MinAmpsTrip)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.ActivePrimaryPhaseRelay.MinAmpsTrip, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 4 })@Html.ValidationMessageFor(model => model.ActivePrimaryPhaseRelay.MinAmpsTrip)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td >@Html.LabelForRequired(model => model.ActivePrimaryPhaseRelay.LeverSettings)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.ActivePrimaryPhaseRelay.LeverSettings, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActivePrimaryPhaseRelay.LeverSettings)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.ActivePrimaryPhaseRelay.InstTrip)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.ActivePrimaryPhaseRelay.InstTrip, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActivePrimaryPhaseRelay.InstTrip)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.ActivePrimaryPhaseRelay.RestraintType)
+                                        </td>
+                                        <td>@Html.DropDownListFor(model => model.ActivePrimaryPhaseRelay.RestraintType, Model.ActivePrimaryPhaseRelay.RestraintList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { })@Html.ValidationMessageFor(model => model.ActivePrimaryPhaseRelay.RestraintType)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.ActivePrimaryPhaseRelay.RestraintPickup)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.ActivePrimaryPhaseRelay.RestraintPickup, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 7 })@Html.ValidationMessageFor(model => model.ActivePrimaryPhaseRelay.RestraintPickup)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.ActivePrimaryPhaseRelay.VoltageSetPoint)
+                                        </td>
+                                        <td>@Html.TextBoxFor(model => model.ActivePrimaryPhaseRelay.VoltageSetPoint, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 7 })@Html.ValidationMessageFor(model => model.ActivePrimaryPhaseRelay.VoltageSetPoint)
+                                        </td>
+                                    </tr>
+                                </table>
+                              </td>
+                            }
+                            @if (Model.ActivePrimaryGroundRelay != null)
+                            {
+                                var colspanVal = @Model.ActiveBackupGroundRelay != null ? 2 : 1; 
+                                <td align="center" colspan="1">
+                                    <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000;width: 430px; height: 290px; table-layout:fixed">
+                                        <tr>
+                                            <td class="sectionHeader" style="text-align: left;"colspan =@colspanVal>
+                                                Primary Ground Relay
+
+                                                  @Html.HiddenFor(model => model.ActivePrimaryGroundRelay.ID)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryGroundRelay.ProtectionId)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryGroundRelay.DateCreated)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryGroundRelay.CreatedBy)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryGroundRelay.RelayCd)
+                                                  @Html.HiddenFor(model => model.ActivePrimaryGroundRelay.CurrentOrFuture)
+                                            </td>
+                                            @if (Model.ActiveBackupGroundRelay == null)
+                                            {
+                                                <td class="sectionHeader" style="text-align: right;" colspan="1">
+                                                    <input type="button" value="Add Backup" onclick="this.form.action='/Protection/AddBackupRelay?protectionID=@Model.ActiveProtection.ID.ToString()&backupType=BGRD';this.form.submit();"
+                                                    @(Security.IsInSuperUserGroup && Security.IsSuperUserActive ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                                </td>
+                                            }
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelForRequired(model => model.ActivePrimaryGroundRelay.RelayType)
+                                            </td>
+                                            <td>@Html.DropDownListFor(model => model.ActivePrimaryGroundRelay.RelayType, Model.ActivePrimaryGroundRelay.RelayTypeList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActivePrimaryGroundRelay.RelayType)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 185px">@Html.LabelForRequired(model => model.ActivePrimaryGroundRelay.CurveType)
+                                            </td>
+                                            <td>@Html.DropDownListFor(model => model.ActivePrimaryGroundRelay.CurveType, Model.ActivePrimaryGroundRelay.CurveTypeList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActivePrimaryGroundRelay.CurveType)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelForRequired(model => model.ActivePrimaryGroundRelay.MinAmpsTrip)
+                                            </td>
+                                            <td>@Html.TextBoxFor(model => model.ActivePrimaryGroundRelay.MinAmpsTrip, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 4 })@Html.ValidationMessageFor(model => model.ActivePrimaryGroundRelay.MinAmpsTrip)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelForRequired(model => model.ActivePrimaryGroundRelay.LeverSettings)
+                                            </td>
+                                            <td>@Html.TextBoxFor(model => model.ActivePrimaryGroundRelay.LeverSettings, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActivePrimaryGroundRelay.LeverSettings)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelForRequired(model => model.ActivePrimaryGroundRelay.InstTrip)
+                                            </td>
+                                            <td>@Html.TextBoxFor(model => model.ActivePrimaryGroundRelay.InstTrip, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActivePrimaryGroundRelay.InstTrip)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><br />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><br />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><br />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            }
+                        </tr>
+                        <tr>
+                            @if (Model.ActiveBackupPhaseRelay != null)
+                            {
+                                var colspanVal = @Model.ActiveBackupPhaseRelay != null ? 1 : 2; 
+                                <td colspan="1" align="center">
+                                    <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 430px; height: 290px; table-layout:fixed">
+                                                <tr>
+                                                    <td class="sectionHeader" style="text-align:left;" colspan=@colspanVal>
+                                                        Backup Phase Relay
+                                                         @Html.HiddenFor(model => model.ActiveBackupPhaseRelay.ID)
+                                                         @Html.HiddenFor(model => model.ActiveBackupPhaseRelay.ProtectionId)
+                                                         @Html.HiddenFor(model => model.ActiveBackupPhaseRelay.DateCreated)
+                                                         @Html.HiddenFor(model => model.ActiveBackupPhaseRelay.CreatedBy)
+                                                         @Html.HiddenFor(model => model.ActiveBackupPhaseRelay.RelayCd)
+                                                         @Html.HiddenFor(model => model.ActiveBackupPhaseRelay.CurrentOrFuture)
+                                                    </td>
+                                                    <td class="sectionHeader" style="text-align: right;" colspan="1">
+                                                        <input type="button" value="Delete Backup" onclick="this.form.action='/Protection/DeleteBackupRelay?protectionID=@Model.ActiveProtection.ID.ToString()&relayID=@Model.ActiveBackupPhaseRelay.ID';this.form.submit();"
+                                                        @(Security.IsInSuperUserGroup && Security.IsSuperUserActive ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 185px">@Html.LabelForRequired(model => model.ActiveBackupPhaseRelay.RelayType)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.ActiveBackupPhaseRelay.RelayType, Model.ActiveBackupPhaseRelay.RelayTypeList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveBackupPhaseRelay.RelayType)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 185px">@Html.LabelForRequired(model => model.ActiveBackupPhaseRelay.CurveType)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.ActiveBackupPhaseRelay.CurveType, Model.ActiveBackupPhaseRelay.CurveTypeList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveBackupPhaseRelay.CurveType)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupPhaseRelay.MinAmpsTrip)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.ActiveBackupPhaseRelay.MinAmpsTrip, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 4 })@Html.ValidationMessageFor(model => model.ActiveBackupPhaseRelay.MinAmpsTrip)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupPhaseRelay.LeverSettings)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.ActiveBackupPhaseRelay.LeverSettings, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActiveBackupPhaseRelay.LeverSettings)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupPhaseRelay.InstTrip)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.ActiveBackupPhaseRelay.InstTrip, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActiveBackupPhaseRelay.InstTrip)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupPhaseRelay.RestraintType)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.ActiveBackupPhaseRelay.RestraintType, Model.ActiveBackupPhaseRelay.RestraintList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveBackupPhaseRelay.RestraintType)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupPhaseRelay.RestraintPickup)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.ActiveBackupPhaseRelay.RestraintPickup, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 7 })@Html.ValidationMessageFor(model => model.ActiveBackupPhaseRelay.RestraintPickup)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupPhaseRelay.VoltageSetPoint)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.ActiveBackupPhaseRelay.VoltageSetPoint, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 7 })@Html.ValidationMessageFor(model => model.ActiveBackupPhaseRelay.VoltageSetPoint)
+                                                    </td>
+                                                </tr>
+                                    </table>
+                                  </td>
+                            }
+                            @if (Model.ActiveBackupGroundRelay != null)
+                            {
+                                var colspanVal = @Model.ActiveBackupGroundRelay != null ? 1 : 2; 
+                                <td colspan="1" align="center">
+                                    <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 430px; height: 290px; table-layout:fixed">
+                                                <tr>
+                                                    <td class="sectionHeader" style="text-align:left;" colspan=@colspanVal>
+                                                        Backup Ground Relay
+                                                         @Html.HiddenFor(model => model.ActiveBackupGroundRelay.ID)
+                                                         @Html.HiddenFor(model => model.ActiveBackupGroundRelay.ProtectionId)
+                                                         @Html.HiddenFor(model => model.ActiveBackupGroundRelay.DateCreated)
+                                                         @Html.HiddenFor(model => model.ActiveBackupGroundRelay.CreatedBy)
+                                                         @Html.HiddenFor(model => model.ActiveBackupGroundRelay.RelayCd)
+                                                         @Html.HiddenFor(model => model.ActiveBackupGroundRelay.CurrentOrFuture)
+                                                    </td>
+                                                    <td class="sectionHeader" style="text-align: right;" colspan="1">
+                                                        <input type="button" value="Delete Backup" onclick="this.form.action='/Protection/DeleteBackupRelay?protectionID=@Model.ActiveProtection.ID.ToString()&relayID=@Model.ActiveBackupGroundRelay.ID';this.form.submit();"
+                                                        @(Security.IsInSuperUserGroup && Security.IsSuperUserActive ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupGroundRelay.RelayType)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.ActiveBackupGroundRelay.RelayType, Model.ActiveBackupGroundRelay.RelayTypeList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled", @class = "DropDown" } : (object)new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveBackupGroundRelay.RelayType)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 185px">@Html.LabelForRequired(model => model.ActiveBackupGroundRelay.CurveType)
+                                                    </td>
+                                                    <td>@Html.DropDownListFor(model => model.ActiveBackupGroundRelay.CurveType, Model.ActiveBackupGroundRelay.CurveTypeList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled", @class = "DropDown" } : new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveBackupGroundRelay.CurveType)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupGroundRelay.MinAmpsTrip)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.ActiveBackupGroundRelay.MinAmpsTrip, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 4 })@Html.ValidationMessageFor(model => model.ActiveBackupGroundRelay.MinAmpsTrip)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupGroundRelay.LeverSettings)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.ActiveBackupGroundRelay.LeverSettings, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActiveBackupGroundRelay.LeverSettings)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.LabelForRequired(model => model.ActiveBackupGroundRelay.InstTrip)
+                                                    </td>
+                                                    <td>@Html.TextBoxFor(model => model.ActiveBackupGroundRelay.InstTrip, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActiveBackupGroundRelay.InstTrip)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><br />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><br />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><br />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                            }
+                         </tr>
+                    }
+                    <tr>
+                        <td colspan="2" style="padding-right: 0px">
+                           <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                    @{var colspanForMoveGen = Model.Protections != null && Model.Protections.Count > 1 ? 1 : 2;}
+                                    <tr style="height:15">
+                                        <td class="sectionHeader" colspan=@colspanForMoveGen>
+                                            Generators
+                                        </td>
+                                          @if (Model.Protections.Count > 1 && (Security.IsInAdminGroup || (Security.IsInSuperUserGroup && Security.IsSuperUserActive)))
+                                          {
+                                       
+                                            <td class="sectionHeader" valign="middle" style="text-align: right;vertical-align : middle;" colspan="1">
+                                               @Ajax.ActionLink("Move Generators", "RelocateGenerators", new { generationID = Model.ActiveProtection.ParentID.ToString(), activeProtectionIndex = Model.ActiveProtectionIndex, currentProtectionId = Model.ActiveProtection.ID.ToString() }, new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "moveGenerator", InsertionMode = InsertionMode.Replace, OnSuccess = "openPopup" }, new { @class = "ui-button", @style = "border-style:solid;border-width: 0.5px;background-color:#d3dce0;padding-right: 5px;padding-left: 5px;" })
+                                            </td>
+                                          }
+                                          else
+                                          {
+                                                <td class="sectionHeader" valign="middle" style="text-align: right;vertical-align : middle;" colspan="1">
+                                                 </td>
+                                          }
+                                        
+                                    </tr>
+                                    @if (Model.Generators != null && Model.Generators.Count > 0)
+                                    {
+                                            <tr>
+                                                <td style="padding: 0px" colspan="2">
+                                                    <div class="float-left">
+                                                        <nav>
+                                                            <ul id="menu">
+                                                                @for (int i = 0; i <= Model.Generators.Count - 1; i++)
+                                                                {
+                                                                    string generatorName = "Generator " + (i + 1).ToString();
+                                                                    var generator = Model.Generators[i];
+                                                                    string url;
+                                                                    //for a new generator SAP Equipment ID will be blank, in that case, query by ID instead of SAPEquipmetnID
+                                                                    if (!string.IsNullOrEmpty(generator.SapEquipmentID))
+                                                                    {
+                                                                        url = "/Protection/GetGeneratorBySapEQuipmetId?protectionId=" + Model.ActiveProtection.ID.ToString() + "&sapEquipmentID=" + generator.SapEquipmentID.ToString();
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        url = "/Protection/GetGeneratorById?protectionId=" + Model.ActiveProtection.ID.ToString() + "&genID=" + generator.ID.ToString();
+                                                                    }
+
+                                                                    if (Model.ActiveGeneratorIndex == i)
+                                                                    {
+                                                                        <li class="selected"><a href=@url> @generatorName  </a>
+                                                                        </li>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <li class="@ViewBag.Generator"><a href=@url> @generatorName  </a>
+                                                                        </li>
+                                                                    }
+                                                                } 
+                                                                 @if (superuser)
+                                                                 {
+                                                                     string url = "/Protection/AddNewGenerator?parentType=Generation&protectionId=" + Model.ActiveProtection.ID.ToString() + "&protectionIndex=" + Model.ActiveProtectionIndex;
+                                                                     <li style="display: inline;list-style: none;padding: 0px 5px 0px 5px;text-align: center;background-color: #FFFF00;color: #000000;"> <a  style="background: none;text-decoration: none; color: #000000;" href=@url onclick="return getPaging();"> New </a></li>
+                                                                 }
+                                                            </ul>
+                                                        </nav>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                                <td colspan="1" class="header" style="padding-top: 15px; padding-bosttom: 0px; padding-left: 10px">
+                                                    @ViewBag.GeneratorTitle
+                                                </td>
+                                                <td colspan="1" class="header" style="text-align:right">
+                                                    @if (Security.IsSuperUserActive)
+                                                    {
+
+
+                                                        var urlpath = @"/Protection/DeleteGenerator?protectionId=" + Model.ActiveProtection.ID.ToString() + "&gensapEquipmentId=" + Model.ActiveGenerator.SapEquipmentID;
+                                                        var msg = @"Deleting Current Generator will delete all attached equipments also (if any). Click OK to proceed.";
+                                                        <input type="button" id="btnDeleteGen" value="Delete"   onclick="PostDetails('@urlpath', '@msg')"   @*//ENOS-Bug fix*@
+                                                        
+                                                        @(Security.IsSuperUserActive ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                                    }
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" style="background-color: #ffffff; padding: 10px;">
+                                                    @if (ViewBag.ShowGeneratorPageError == true)
+                                                    {
+                                                        <label id="lableDeviceValidationErrorGen" runat="server" style="color: Red; text-align: center;">
+                                                            There are error(s), please check below.
+                                                        </label>
+                                                    }
+                                                    @if (ViewBag.ShowGeneratorSaveSucessful == true)
+                                                    {
+                                                        <label id="lableDeviceSaveSucessGen" runat="server" style="color: Green; text-align: center;">
+                                                            Generator saved successfully.
+                                                        </label>
+                                                    }
+                                                </td>
+                                            </tr>
+                                            <tr >
+                                            <td align="center" colspan="2">
+                                                <table cellpadding="0"  cellspacing="0" style="margin:auto;background-color: #f2f2f2;border:0px solid #000; width:100%;">
+                                                    <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.SapQueueNumber)
+                                                        </td>
+                                                        <td>@Html.TextBoxFor(model => model.ActiveGenerator.SapQueueNumber, ViewBag.IsDisabled ? (object)new { disabled = "disabled", maxlength = 8 } : new { maxlength = 8 })@Html.ValidationMessageFor(model => model.ActiveGenerator.SapQueueNumber)
+                                                            @Html.HiddenFor(model => model.ActiveGenerator.ID)
+                                                            @Html.HiddenFor(model => model.ActiveGenerator.ProtectionId)
+                                                            @Html.HiddenFor(model => model.ActiveGenerator.DateCreated)
+                                                            @Html.HiddenFor(model => model.ActiveGenerator.CreatedBy)
+                                                            @Html.HiddenFor(model => model.ActiveGenerator.CurrentOrFuture)
+                                                            @if (!Security.IsSuperUserActive)
+                                                            {
+                                                                @Html.HiddenFor(model => model.ActiveGenerator.SapEquipmentID)
+                                                                @Html.HiddenFor(model => model.ActiveGenerator.SapQueueNumber)
+                                                                @Html.HiddenFor(model => model.ActiveGenerator.SapEgiNotification)
+                                                            }
+                                                           
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.SapEgiNotification)
+                                                        </td>
+                                                        <td>@Html.TextBoxFor(model => model.ActiveGenerator.SapEgiNotification, ViewBag.IsDisabled ? (object)new { disabled = "disabled", maxlength = 12 } : new { maxlength = 12 })@Html.ValidationMessageFor(model => model.ActiveGenerator.SapEgiNotification)
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.ProjectName)
+                                                        </td>
+                                                        <td>@Html.TextBoxFor(model => model.ActiveGenerator.ProjectName, ViewBag.IsDisabled ? (object)new { disabled = "disabled", maxlength = 40 } : new { maxlength = 40 })@Html.ValidationMessageFor(model => model.ActiveGenerator.SapEgiNotification)
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.ProgramType)  
+                                                        </td>
+                                                        <td>@Html.DropDownListFor(model => model.ActiveGenerator.ProgramType, Model.ActiveGenerator.ProgramTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled", @class = "DropDown" } : new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveGenerator.ProgramType)
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.EffectiveRatingkW)
+                                                        </td>
+                                                        <td>@Html.TextBoxFor(model => model.ActiveGenerator.EffectiveRatingkW, ViewBag.IsDisabled ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveGenerator.EffectiveRatingkW)
+                                                        </td>
+                                                    </tr>                                                    
+                                                    
+                                                     <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.NameplateRating)
+                                                        </td>
+                                                        <td>@Html.TextBoxFor(model => model.ActiveGenerator.NameplateRating, ViewBag.IsDisabled ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveGenerator.NameplateRating)
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.EffectiveRatingkVa)
+                                                        </td>
+                                                        <td>@Html.TextBoxFor(model => model.ActiveGenerator.EffectiveRatingkVa, ViewBag.IsDisabled ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveGenerator.EffectiveRatingkVa)
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.RatedVolatge)
+                                                        </td>
+                                                        <td>@Html.TextBoxFor(model => model.ActiveGenerator.RatedVolatge, ViewBag.IsDisabled ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 12 })@Html.ValidationMessageFor(model => model.ActiveGenerator.RatedVolatge)
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.PowerFactor)
+                                                        </td>
+                                                       @*ENOS2EDGIS Start:Class Modified,Maxlength=5*@
+                                                        <td>@Html.TextBoxFor(model => model.ActiveGenerator.PowerFactor, ViewBag.IsDisabled ? (object)new { @class = "neg-decimal-no", disabled = "disabled" } : new { @class = "neg-decimal-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActiveGenerator.PowerFactor)
+                                                       @* ENOS2EDGIS End*@
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.NumberOfPhases)
+                                                        </td>
+                                                        <td>@Html.TextBoxFor(model => model.ActiveGenerator.NumberOfPhases, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActiveGenerator.NumberOfPhases)
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.ConnectionCD)
+                                                        </td>
+                                                        <td>@Html.DropDownListFor(model => model.ActiveGenerator.ConnectionCD, Model.ActiveGenerator.ConnectionTypeList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveGenerator.ConnectionCD)
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.StatusCD)
+                                                        </td>
+                                                        <td>@Html.DropDownListFor(model => model.ActiveGenerator.StatusCD, Model.ActiveGenerator.StatusList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveGenerator.StatusCD)
+                                                        </td>
+                                                    </tr>
+                                                     <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.GenTechCd)
+                                                        </td>
+                                                        <td>@Html.DropDownListFor(model => model.ActiveGenerator.GenTechCd, Model.ActiveGenerator.GenTechCodeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled", id = "dropDownGenTech", @class = "DropDown" } : new { @class = "DropDown", id = "dropDownGenTech", onchange = Model.ActiveGenerator.GenTypeDropDownPostbackScript })@Html.ValidationMessageFor(model => model.ActiveGenerator.GenTechCd)
+                                                        </td>
+                                                    </tr>                                                                                                      
+                                                   
+                                                    <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.PowerSource)
+                                                        </td>
+                                                        <td>@Html.DropDownListFor(model => model.ActiveGenerator.PowerSource, Model.ActiveGenerator.PowerSourceList, ViewBag.IsDisabled ? (object)new { disabled = "disabled", @class = "DropDown" } : new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveGenerator.PowerSource)
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.TechType)
+                                                        </td>
+                                                        <td>@Html.DropDownListFor(model => model.ActiveGenerator.TechType, Model.ActiveGenerator.TechnologyTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled", @class = "DropDown" } : new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveGenerator.PowerSource)
+                                                        </td>
+                                                    </tr>
+                                                     <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.SapEquipmentID)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.SapEquipmentID, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 18 })@Html.ValidationMessageFor(model => model.ActiveGenerator.SapEquipmentID)
+                                                            </td>
+                                                     </tr>
+                                                    @if (Model.ActiveGenerator.GenTechCd == System.Configuration.ConfigurationManager.AppSettings["GENTECHCD_INVEXT"] || Model.ActiveGenerator.GenTechCd == System.Configuration.ConfigurationManager.AppSettings["GENTECHCD_INVINC"])
+                                                    {
+                                                         @Html.HiddenFor(model => model.ActiveGenerator.GenTechEquipment)
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.Certification)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.ActiveGenerator.Certification, Model.ActiveGenerator.CertificationList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled", @class = "DropDown" } : new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveGenerator.Certification)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.ModeOfInverter)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.ActiveGenerator.ModeOfInverter, Model.ActiveGenerator.ModeOfInverterList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled", @class = "DropDown" } : new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveGenerator.ModeOfInverter)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.ControlCD)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.ActiveGenerator.ControlCD, Model.ActiveGenerator.ControlList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "DropDown" } : new { @class = "DropDown" })@Html.ValidationMessageFor(model => model.ActiveGenerator.ControlCD)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.Manufacturer)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.Manufacturer, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled" } : new { maxlength = 100 })@Html.ValidationMessageFor(model => model.ActiveGenerator.Manufacturer)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.Model)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.Model, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled" } : new { maxlength = 100 })@Html.ValidationMessageFor(model => model.ActiveGenerator.Model)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.Quantity)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.Quantity, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActiveGenerator.Quantity)
+                                                            </td>
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.NameplateCapacity)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.NameplateCapacity, new { disabled = "disabled", @class = "decimal-no"})   
+                                                            @*<td>@Html.TextBoxFor(model => model.ActiveGenerator.NameplateCapacity, new {@readonly = "readonly", @Value = string.Format("{0:0.00}", Model.ActiveGenerator.NameplateCapacity) })*@                                                    
+                                                            </td>
+                                                        </tr>                                                                                                                                                                        
+                                                                                                                                                                                                                         
+                                                    }
+                                                     
+                                                    @if (Model.ActiveGenerator.GenTechCd == System.Configuration.ConfigurationManager.AppSettings["GENTECHCD_SYNCH"] || Model.ActiveGenerator.GenTechCd == System.Configuration.ConfigurationManager.AppSettings["GENTECHCD_INDCT"])
+                                                    {
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.Manufacturer)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.Manufacturer, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 100 })@Html.ValidationMessageFor(model => model.ActiveGenerator.Manufacturer)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.Model)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.Model, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 100 })@Html.ValidationMessageFor(model => model.ActiveGenerator.Model)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.Quantity)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.Quantity, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActiveGenerator.Quantity)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.SSReactance)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.SSReactance, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveGenerator.SSReactance)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.SSResistance)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.SSResistance, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveGenerator.SSResistance)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.TransReactance)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.TransReactance, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveGenerator.TransReactance)
+                                                            </td>
+                                                        </tr>                   
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.TransResistance)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.TransResistance, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveGenerator.TransResistance)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.SubTransReactance)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.SubTransReactance, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveGenerator.SubTransReactance)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.SubTransResistance)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.SubTransResistance, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveGenerator.SubTransResistance)
+                                                            </td>
+                                                        </tr> 
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.NegativeReactance)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.NegativeReactance, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveGenerator.NegativeReactance)
+                                                            </td>
+                                                        </tr>                   
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.NegativeResistance)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.NegativeResistance, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveGenerator.NegativeResistance)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.ZeroReactance)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.ZeroReactance, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveGenerator.ZeroReactance)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.ZeroResistance)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.ZeroResistance, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveGenerator.ZeroResistance)
+                                                            </td>
+                                                        </tr>                                   
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.GroundReactance)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.GroundReactance, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveGenerator.GroundReactance)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.GroundResistance)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.GroundResistance, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveGenerator.GroundResistance)
+                                                            </td>
+                                                        </tr>  
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.ControlCD)
+                                                            </td>
+                                                            <td>@Html.DropDownListFor(model => model.ActiveGenerator.ControlCD, Model.ActiveGenerator.ControlList, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ActiveGenerator.ControlCD)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                        </tr>
+                                                    }                                                   
+                                                    @if (Security.IsInSuperUserGroup)
+                                                    {
+                                                         <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.InverterEfficiency)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.InverterEfficiency, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 6 })@Html.ValidationMessageFor(model => model.ActiveGenerator.InverterEfficiency)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveGenerator.PTODate)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveGenerator.PTODate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepicker" })@Html.ValidationMessageFor(model => model.ActiveGenerator.PTODate)
+                                                            </td>
+                                                        </tr>                                                        
+                                                              
+                                                    }
+                                                    else
+                                                    { 
+                                                          @Html.HiddenFor(model => model.ActiveGenerator.InverterEfficiency)
+                                                          @Html.HiddenFor(model => model.ActiveGenerator.PTODate)                                                                                                               
+                                                    
+                                                    }
+                                                    <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.BackupGeneration)
+                                                        </td>
+                                                        <td>
+                                                        @Html.CheckBoxFor(model => model.ActiveGenerator.BackupGeneration, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })
+                                                        </td>
+                                                     </tr>
+                                                    <tr>
+                                                        <td>@Html.LabelForRequired(model => model.ActiveGenerator.Notes)
+                                                        </td>
+                                                        <td>@Html.TextAreaFor(model => model.ActiveGenerator.Notes, 5, 15, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "form-control" } : new { maxlength = 500, @class = "form-control" })@Html.ValidationMessageFor(model => model.ActiveGenerator.Notes)
+                                                        </td>
+                                                    </tr>
+                                            </table>
+                                           </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><br /></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><br /></td>
+                                        </tr>
+ 
+                                                    if (Model.ActiveGenerator != null && (Model.ActiveGenerator.GenTechCd == System.Configuration.ConfigurationManager.AppSettings["GENTECHCD_INVEXT"] || Model.ActiveGenerator.GenTechCd == System.Configuration.ConfigurationManager.AppSettings["GENTECHCD_INVINC"]))
+                                                    {
+                                                        if (Model.ActiveEquipment != null)
+                                                        {
+                                                <tr>
+                                                <td colspan="2" align="center">
+                                                    <table cellpadding="0" class="innertable" cellspacing="0" style="margin:auto;background-color: #f2f2f2; width:100%;">
+                                                     @*<tr>
+                                                        <td class="sectionHeader" colspan="2">
+                                                            Equipments
+                                                        </td>
+                                                    </tr>*@
+                                                    <tr>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding: 0px" colspan="2">
+                                                            <div class="float-left" style="width:auto">
+                                                                <nav>
+                                                                    <ul id="menu">
+                                                                        @if (Model.Equipments != null && Model.Equipments.Count > 0)
+                                                                        {
+                                                                            for (int i = 0; i <= Model.Equipments.Count - 1; i++)
+                                                                            {
+                                                                                string equipName = "Gen Equip " + (i + 1).ToString();
+                                                                                var equipment = Model.Equipments[i];
+                                                                                string url;
+                                                                                if (equipment.SAPEquipmentID != null)
+                                                                                {
+                                                                                    url = "/Protection/GetEquipmentBySapEQuipmetId?protectionId=" + Model.ActiveProtection.ID.ToString() + "&genSapEquipmentID=" + Model.ActiveGenerator.SapEquipmentID + "&sapEquipmentID=" + equipment.SAPEquipmentID.ToString();
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    url = "/Protection/GetEquipmentById?protectionId=" + Model.ActiveProtection.ID.ToString() + "&genSapEquipmentID=" + Model.ActiveGenerator.SapEquipmentID + "&sapID=" + equipment.ID.ToString();
+                                                                                }
+                                                                                if (Model.ActiveEquipmentIndex == i)
+                                                                                {
+                                                                                <li class="selected"><a href=@url> @equipName  </a>
+                                                                                </li>
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                <li class="@ViewBag.Equipment"><a href=@url> @equipName  </a>
+                                                                                </li>
+                                                                                }
+                                                                            }
+                                                                            if (Security.IsSuperUserActive)
+                                                                            {
+                                                                                string url = "/Protection/AddNewEquipment?genId=" + Model.ActiveGenerator.ID + "&protectionId=" + Model.ActiveProtection.ID.ToString() + "&protectionIndex=" + Model.ActiveProtectionIndex + "&generatorIndex=" + Model.ActiveGeneratorIndex;
+                                                                            <li style="display: inline;list-style: none;padding: 0px 5px 0px 5px;text-align: center;background-color: #FFFF00;color: #ffffff;"> <a  style="background: none;text-decoration: none; color: #000000;" href=@url onclick="return getPaging();"> New </a></li>
+                                                                            }
+                                                                        }
+                                                                    </ul>
+                                                                </nav>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" class="header" style="padding-top: 15px; padding-bosttom: 0px; padding-left: 10px">
+                                                                @ViewBag.EquipmentTitle
+                                                        </td>
+                                                        @if (Security.IsSuperUserActive)
+                                                        {
+
+                                                            var urlpath = @"/Protection/DeleteEquipment?protectionId=" + Model.ActiveProtection.ID.ToString() + "&gensapEquipmentId=" + Model.ActiveGenerator.ID.ToString() + "&equipmentSapID=" + Model.ActiveEquipment.SAPEquipmentID.ToString();
+                                                            var msg = @"Are you sure you want to delete the Equipment? Click OK to proceed.";
+                                                            <td class="header" colspan ="1" style="text-align:right">                                              
+                                                               @* <input type="button" id="btnDeleteEquip" value="Delete"   onclick="this.form.action = '/@ViewBag.ControllerName/DeleteEquipment?protectionId=@Model.ActiveProtection.ID.ToString()&gensapEquipmentId=@Model.ActiveGenerator.SapEquipmentID&equipmentSapID=@Model.ActiveEquipment.SAPEquipmentID'; this.form.submit();"*@
+                                                               <input type="button" id="btnDeleteEquip" value="Delete"   onclick="SubmitForm('@urlpath', '@msg', this.form)"    @*//ENOS-Bug fix*@
+                                                                @(Security.IsSuperUserActive ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                                            </td>  
+                                                             
+                                                        }
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="background-color: #ffffff; padding: 10px;">
+                                                            @if (ViewBag.ShowEquipmentPageError == true)
+                                                            {
+                                                                <label id="lableEquipmentValidationError" runat="server" style="color: Red; text-align: center;">
+                                                                    There are error(s), please check below.
+                                                                </label>
+                                                            }
+                                                            @if (ViewBag.ShowEquipmentSaveSucessful == true)
+                                                            {
+                                                                <label id="lableEquipmentSaveSucess" runat="server" style="color: Green; text-align: center;">
+                                                                    Equipment saved successfully.
+                                                                </label>
+                                                            }
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center">
+                                                            <table cellpadding="0"  cellspacing="0" style="margin:auto;background-color: #f2f2f2;border:0px solid #000; width:90%;">
+                                                                       <tr>
+            <td>@Html.LabelForRequired(model => model.ActiveEquipment.ProgramType)
+            </td>
+            <td>@Html.DropDownListFor(model => model.ActiveEquipment.ProgramType, Model.ActiveEquipment.ProgramTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })
+            </td>
+        </tr>
+                                                                    <tr>
+                                                                        <td>@Html.LabelForRequired(model => model.ActiveEquipment.GenTechCD)
+                                                                        </td>
+                                                                        <td>@Html.DropDownListFor(model => model.ActiveEquipment.GenTechCD, Model.ActiveEquipment.GenTechCodeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled", @class = "DropDown", id = "dropDownEquipGenTech", } : new { @class = "DropDown", id = "dropDownEquipGenTech", onchange = Model.ActiveEquipment.GenEquipTypeDropDownPostbackScript })@Html.ValidationMessageFor(model => model.ActiveEquipment.GenTechCD)
+                                                                            @Html.HiddenFor(model => model.ActiveEquipment.ID)
+                                                                            @Html.HiddenFor(model => model.ActiveEquipment.GeneratorID)
+                                                                            @Html.HiddenFor(model => model.ActiveEquipment.DateCreated)
+                                                                            @Html.HiddenFor(model => model.ActiveEquipment.CreatedBy)
+                                                                            @Html.HiddenFor(model => model.ActiveEquipment.CurrentOrFuture)
+                                                                            @Html.HiddenFor(model => model.ActiveEquipment.GenTechCD)
+                                                                            @if (!Security.IsSuperUserActive)
+                                                                            {
+                                                                                @Html.HiddenFor(model => model.ActiveEquipment.SAPEquipmentID)
+                                                                            }
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>@Html.LabelForRequired(model => model.ActiveEquipment.Manufacturer)
+                                                                        </td>
+                                                                        <td>@Html.TextBoxFor(model => model.ActiveEquipment.Manufacturer, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 100 })@Html.ValidationMessageFor(model => model.ActiveEquipment.Manufacturer)
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>@Html.LabelForRequired(model => model.ActiveEquipment.Model)
+                                                                        </td>
+                                                                        <td>@Html.TextBoxFor(model => model.ActiveEquipment.Model, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 100 })@Html.ValidationMessageFor(model => model.ActiveEquipment.Model)
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>@Html.LabelForRequired(model => model.ActiveEquipment.SAPEquipmentID)
+                                                                        </td>
+                                                                        <td>@Html.TextBoxFor(model => model.ActiveEquipment.SAPEquipmentID, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 18 })@Html.ValidationMessageFor(model => model.ActiveEquipment.SAPEquipmentID)
+                                                                            @if (!Security.IsInSuperUserGroup)
+                                                                            {
+                                                                                @Html.HiddenFor(model => model.ActiveEquipment.SAPEquipmentID)
+                                                                            }
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>@Html.LabelForRequired(model => model.ActiveEquipment.Quantity)
+                                                                        </td>
+                                                                        <td>@Html.TextBoxFor(model => model.ActiveEquipment.Quantity, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "int-no", maxlength = 5 })@Html.ValidationMessageFor(model => model.ActiveEquipment.Quantity)
+                                                                        </td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                            <td>@Html.LabelForRequired(model => model.ActiveEquipment.NameplateRating)
+                                                                            </td>
+                                                                            <td>@Html.TextBoxFor(model => model.ActiveEquipment.NameplateRating, ViewBag.IsDisabled ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveEquipment.NameplateRating)
+                                                                            </td>
+                                                                     </tr>
+
+                                                                     <tr>
+                                                            <td>@Html.LabelForRequired(model => model.ActiveEquipment.NameplateCapacity)
+                                                            </td>
+                                                            <td>@Html.TextBoxFor(model => model.ActiveEquipment.NameplateCapacity, new { disabled = "disabled", @class = "decimal-no" })                                                           
+                                                            </td>
+                                                            </tr>
+                                                        
+
+                                                                    @if (Model.ActiveEquipment.GenTechCD == "WNDT")
+                                                                    {
+
+                                                                    }
+                                                                    @if (Model.ActiveEquipment.GenTechCD == "BATT")
+                                                                    {
+                                                                        <tr>
+                                                                            <td>@Html.LabelForRequired(model => model.ActiveEquipment.PTCRatedkW)
+                                                                            </td>
+                                                                            <td>@Html.TextBoxFor(model => model.ActiveEquipment.PTCRatedkW, ViewBag.IsDisabled ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveEquipment.PTCRatedkW)
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>@Html.LabelForRequired(model => model.ActiveEquipment.MaxStorageCapacity)
+                                                                            </td>
+                                                                            <td>@Html.TextBoxFor(model => model.ActiveEquipment.MaxStorageCapacity, ViewBag.IsDisabled ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveEquipment.MaxStorageCapacity)
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>@Html.LabelForRequired(model => model.ActiveEquipment.ChargeDemandkW)
+                                                                            </td>
+                                                                            <td>@Html.TextBoxFor(model => model.ActiveEquipment.ChargeDemandkW, ViewBag.IsDisabled ? (object)new { @class = "decimal-no", disabled = "disabled" } : new { @class = "decimal-no", maxlength = 14 })@Html.ValidationMessageFor(model => model.ActiveEquipment.ChargeDemandkW)
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>@Html.LabelForRequired(model => model.ActiveEquipment.GridCharged)
+                                                                            </td>
+                                                                            <td>@Html.TextBoxFor(model => model.ActiveEquipment.GridCharged, ViewBag.IsDisabled ? (object)new { disabled = "disabled", maxlength = 1 } : new { maxlength = 1 })@Html.ValidationMessageFor(model => model.ActiveEquipment.GridCharged)
+                                                                            </td>
+                                                                        </tr>
+                                                                    }
+                                                                    <tr>
+                                                                        <td>@Html.LabelForRequired(model => model.ActiveEquipment.Notes)
+                                                                        </td>
+                                                                        <td>@Html.TextAreaFor(model => model.ActiveEquipment.Notes, 5, 15, !(Security.IsInSuperUserGroup && Security.IsSuperUserActive) && !Security.IsInAdminGroup ? (object)new { disabled = "disabled", @class = "form-control" } : new { maxlength = 500, @class = "form-control" })@Html.ValidationMessageFor(model => model.ActiveEquipment.Notes)
+                                                                        </td>
+                                                                    </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><br /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><br /></td>
+                                                    </tr>
+                                                </table>
+                                                </td>
+                                                </tr>
+                                                        }
+                                                        else if (superuser)
+                                                        {
+                                                            string url = "/Protection/AddNewEquipment?genId=" + Model.ActiveGenerator.ID + "&protectionId=" + Model.ActiveProtection.ID.ToString() + "&protectionIndex=" + Model.ActiveProtectionIndex + "&generatorIndex=" + Model.ActiveGeneratorIndex;                                      
+                                                <tr>
+                                                    <td style="padding: 0px" colspan="2">
+                                                        <div class="float-left">
+                                                            <nav>
+                                                                <ul id="menu">
+                                                                    <li style="display: inline;list-style: none;padding: 0px 5px 0px 5px;text-align: center;background-color: #FFFF00;color: #ffffff;"> <a  style="background: none;text-decoration: none; color: #000000;" href=@url onclick="return getPaging();"> New </a></li>
+                                                                </ul>
+                                                            </nav>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"><br /></td>
+                                                </tr>
+                                                 <tr colspan="2">
+                                                    <td><br /></td>
+                                                </tr>
+                                                        }
+                                                    }
+                                    }
+                                    else if (superuser)
+                                    {
+                                        string url = "/Protection/AddNewGenerator?parentType=Generation&protectionId=" + Model.ActiveProtection.ID.ToString() + "&protectionIndex=" + Model.ActiveProtectionIndex;                                        
+                                        <tr>
+                                            <td style="padding: 0px" colspan="2">
+                                                <div class="float-left">
+                                                    <nav>
+                                                        <ul id="menu">
+                                                            <li style="display: inline;list-style: none;padding: 0px 5px 0px 5px;text-align: center;background-color: #FFFF00;color: #ffffff;"> <a  style="background: none;text-decoration: none; color: #000000;" href=@url onclick="return getPaging();"> New </a></li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td style="padding: 0px" colspan="2">
+                                                No Generators
+                                            </td>
+                                        </tr>
+                                    }
+
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                   @if (Security.IsInAdminGroup || (Security.IsInSuperUserGroup && Security.IsSuperUserActive))
+                   {
+                        <td colspan="2" style="text-align: right; padding-right: 10px">
+
+
+                         <!--ENOS2EDGIS -ST - issue resolution--> 
+
+                         @*   <input type="button" value="Cancel" onclick="this.form.action='/Protection/IndexByID?parentType=Generation&protectionId=@Model.ActiveProtection.ID.ToString()';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                          *@
+                          
+                          <input type="button" value="Cancel" onclick="this.form.action='/Protection/IndexByID?parentType=Generation&protectionId=@Model.ActiveProtection.ID.ToString()';this.form.submit();"
+                                    @((Security.IsInAdminGroup || Security.IsInSuperUserGroup) ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                          
+
+                           @* <input type="button" value="Save" id="Save" onclick="this.form.action='/Protection/SaveProtection';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />*@
+
+                  
+                                     <input type="button" value="Save" id="Save" onclick="this.form.action='/Protection/SaveProtection';this.form.submit();"
+                                    @((Security.IsInAdminGroup || Security.IsInSuperUserGroup) ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+
+@*                            <input type="button" value="Save" id="Save" onclick="PostDetails()"; 
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />*@
+                        </td>
+                   }
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+}

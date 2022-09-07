@@ -1,0 +1,24 @@
+Prompt drop Function HHCELLSIZE;
+DROP FUNCTION MDSYS.HHCELLSIZE
+/
+
+Prompt Function HHCELLSIZE;
+--
+-- HHCELLSIZE  (Function) 
+--
+CREATE OR REPLACE FUNCTION MDSYS.hhcellsize (
+      l01 IN NUMBER,      u01 IN NUMBER,      lv01 IN BINARY_INTEGER,
+      l02 IN NUMBER:=NULL,u02 IN NUMBER:=NULL,lv02 IN BINARY_INTEGER:=NULL)
+    RETURN NUMBER IS
+begin
+  return md.hhcellsize(l01,u01,lv01,l02,u02,lv02);
+end;
+/
+
+
+Prompt Synonym HHCELLSIZE;
+--
+-- HHCELLSIZE  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM HHCELLSIZE FOR MDSYS.HHCELLSIZE
+/

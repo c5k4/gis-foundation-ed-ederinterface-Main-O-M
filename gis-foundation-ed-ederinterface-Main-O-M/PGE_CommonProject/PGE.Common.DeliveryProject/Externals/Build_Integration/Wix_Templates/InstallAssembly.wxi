@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Template for installing COM and GAC Dlls
+Required Parameters:
+Filename - Defines the name of the file to be installed, does not include the extension.
+FilenameUpper - The name of the file in uppper case to support global variables.
+ClientName - Used to define where the client registry key should reside.
+Directory - Defines where the file will be installed.
+GUID - Guid for the component to be installed.
+
+Template:
+<?define Filename="AssemblyName"?>
+<?define FilenameUpper="UppercaseFilename"?>
+<?define ClientName="CustomerName"?>
+<?define Directory="DirectoryName"?>
+<?define GUID="ComponentGuid"?>
+<?include InstallAssembly.wxi?>
+-->
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="$(var.Filename).dll">
+      <ComponentRef Id="$(var.Filename)"/>
+    </ComponentGroup>
+
+
+    <!--Check for installed versions-->
+    <Property Id="$(var.Filename).Version" Value="!(bind.FileVersion.$(var.Filename).dll)"/>
+    <Property Id="$(var.FilenameUpper)VERSION" Value="!(bind.FileVersion.$(var.Filename).dll)">
+      <RegistrySearch Id="$(var.Filename)Version" Root="HKLM" Key="Software\Miner and Miner\$(var.ClientName)\Shared" Type="raw" Name="$(var.Filename)Version" />
+    </Property>
+    <Condition Message="A differing version of the $(var.Filename).dll was found: this installer contains [$(var.Filename).Version] version [$(var.FilenameUpper)VERSION] is installed.">
+      <![CDATA[$(var.Filename).Version = $(var.FilenameUpper)VERSION]]>
+    </Condition>
+
+    <DirectoryRef Id="$(var.Directory)">
+      <Component Id="$(var.Filename)" SharedDllRefCount="yes" Guid="$(var.GUID)">
+        <File Id="$(var.Filename).pdb"  Source="..\output\Assemblies\$(var.Filename).pdb" />
+        <File Id="$(var.Filename).dll" Source="..\output\Assemblies\$(var.Filename).dll" />
+
+        <!-- Sempra Registry Entries -->
+        <RegistryKey Id="$(var.Filename)Shared"
+            Root="HKLM"
+            Key="Software\Miner and Miner\$(var.ClientName)\Shared"
+            Action="create" >
+
+          <RegistryValue Id="$(var.Filename)Version"
+                  Name="$(var.Filename)Version"
+                  Action="write"
+                  Type="string"
+                  Value="!(bind.FileVersion.$(var.Filename).dll)"/>
+        </RegistryKey>
+
+      </Component>
+    </DirectoryRef>
+
+    <CustomAction Id="Register$(var.Filename)Assemblies.SetProperty"
+            Property="Register$(var.Filename)Assemblies"
+            Value="AssemblyList=[$(var.Directory)]$(var.Filename).dll"
+            Return='check'/>
+
+    <CustomAction Id="Register$(var.Filename)Assemblies"
+                  BinaryKey="COM"
+                  DllEntry="Register"
+                  Execute="deferred"
+                  Return="check"
+                  Impersonate="no"/>
+
+    <CustomAction Id="Unregister$(var.Filename)Assemblies.SetProperty"
+                  Property="Unregister$(var.Filename)Assemblies"
+                  Value="AssemblyList=[$(var.Directory)]$(var.Filename).dll"
+                  Return='check'/>
+
+    <CustomAction Id="Unregister$(var.Filename)Assemblies"
+                  BinaryKey="COM"
+                  DllEntry="Unregister"
+                  Execute="deferred"
+                  Return="check"
+                  Impersonate="no"/>
+
+    <CustomAction Id="Rollback$(var.Filename).SetProperty"
+         Property="Rollback$(var.Filename)"
+         Value="AssemblyList=[$(var.Directory)]$(var.Filename).dll"
+         Return='check'/>
+
+    <CustomAction Id="Rollback$(var.Filename)"
+                  BinaryKey="COM"
+                  DllEntry="Unregister"
+                  Execute="rollback"
+                  Return="check"
+                  Impersonate="no"/>
+
+    <InstallExecuteSequence>
+
+      <Custom Action="Rollback$(var.Filename).SetProperty" After="Register$(var.Filename)Assemblies"></Custom>
+      <Custom Action="Rollback$(var.Filename)" After="Rollback$(var.Filename).SetProperty"></Custom>
+
+      <Custom Action="Register$(var.Filename)Assemblies.SetProperty" After="InstallFiles">(($$$(var.Filename)=3) AND (?$(var.Filename)=2)) OR REINSTALL AND (?$(var.Filename)=3)</Custom>
+      <Custom Action="Register$(var.Filename)Assemblies" After="Register$(var.Filename)Assemblies.SetProperty">(($$$(var.Filename)=3) AND (?$(var.Filename)=2)) OR REINSTALL AND (?$(var.Filename)=3)</Custom>
+
+      <Custom Action="Unregister$(var.Filename)Assemblies.SetProperty" Before="RemoveFiles">($$$(var.Filename)=2) AND (?$(var.Filename)=3)</Custom>
+      <Custom Action="Unregister$(var.Filename)Assemblies" After="Unregister$(var.Filename)Assemblies.SetProperty">($$$(var.Filename)=2) AND (?$(var.Filename)=3)</Custom>
+    </InstallExecuteSequence>
+  </Fragment>
+</Include>

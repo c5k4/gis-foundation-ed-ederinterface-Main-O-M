@@ -1,0 +1,480 @@
+﻿@model SettingsApp.Models.SectionalizerModel
+@using SettingsApp.Common;
+@using (Html.BeginForm("Index", "Sectionalizer"))
+{
+    @Html.ValidationSummary(true)
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" temp_href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.8.3.js" temp_src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js" temp_src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        <script type="text/javascript" src="~/Scripts/SettingsApp.js"></script>
+   <script type="text/javascript">
+
+       function OnScadaChange() {
+           $("#FlisrDeviceDropDown").val("N");
+           if ($("#ScadaDropDown").val() == "Y") {
+               $("#FlisrDeviceDropDown").prop("disabled", false);
+           }
+           else {
+               $("#FlisrDeviceDropDown").prop("disabled", true);
+           }
+       }
+</script>
+    <table cellpadding="0" cellspacing="0" width="90%">
+        <tr>
+            <td style="padding: 0px">
+                <div class="float-left">
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("GIS", "GIS", "Sectionalizer", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                            <li class="@ViewBag.CurrentClass">@Html.ActionLink("Current Settings", "Index", "Sectionalizer", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                            <li class="@ViewBag.FutureClass">@Html.ActionLink("Future Settings", "Future", "Sectionalizer", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                            <li>@Html.ActionLink("Settings Files", "Files", "Sectionalizer", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                            <li>@Html.ActionLink("History", "History", "Sectionalizer", new { globalID = ViewBag.GlobalID, layerName = ViewBag.LayerName, layerType = ViewBag.layerType }, null)</li>
+                        </ul>
+                    </nav>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="header" style="padding-top: 15px; padding-bottom: 0px; padding-left: 10px">
+               @if (ViewBag.layerType == "P")
+               {
+                    <label id="lablelayertype" runat="server" style="color: Red; font-size:16; text-align: Left;">
+                       @ViewBag.Title 
+                    </label>
+                     
+                   
+               }
+               else
+               {
+                @ViewBag.Title 
+               }
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color: #ffffff; padding: 10px;">
+                @if (ViewBag.ShowPageError == true)
+                {
+                    <label id="lableDeviceValidationError" runat="server" style="color: Red; text-align: center;">
+                        There are error(s), please check below.
+                    </label>
+                }
+                @if (ViewBag.ShowSaveSucessful == true)
+                {
+                    <label id="lableDeviceSaveSucess" runat="server" style="color: Green; text-align: center;">
+                        Device saved successfully.
+                    </label>
+                }
+            </td>
+        </tr>
+         @if (ViewBag.PageMode == "CURRENT")
+         {
+                        <tr>
+                            <td colspan="2" style="text-align: right; padding-right: 10px">
+                                <input type="button" value="Copy current to future settings" onclick="this.form.action='/@ViewBag.ControllerName/CopyToFuture/@ViewBag.GlobalID/@ViewBag.LayerName?layerType=@ViewBag.layerType';this.form.submit();" 
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                            </td>
+                        </tr>
+         }
+        <tr>
+            <td style="background-color: #ffffff; padding: 10px">
+                <table cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f2f2">
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.OperatingNumber)
+                        </td>
+                        <td>@Html.TextBox("optNum", (string)ViewBag.OperatingNum, (object)new { disabled = "disabled" })
+                        </td>
+                    </tr>
+                    @*<tr>
+                        <td>@Html.LabelForRequired(model => model.DeviceId)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.DeviceId, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.DeviceId)
+                        </td>
+                    </tr>*@
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.SectionalizerType)
+                        </td>
+                        <td>@Html.DropDownListFor(model => model.SectionalizerType, Model.SectionalizerTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SectionalizerType)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.ControlType)
+                        </td>
+                        <td>@Html.DropDownListFor(model => model.ControlType, Model.ControlTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ControlType)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.ControllerSerialNum)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.ControllerSerialNum, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 18 })@Html.ValidationMessageFor(model => model.ControllerSerialNum)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.OkToBypass)
+                        </td>
+                        <td>@Html.DropDownListFor(model => model.OkToBypass, Model.OkToBypassList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.OkToBypass)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.FirmwareVersion)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.FirmwareVersion, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 12 })@Html.ValidationMessageFor(model => model.FirmwareVersion)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.SoftwareVersion)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.SoftwareVersion, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 12 })@Html.ValidationMessageFor(model => model.SoftwareVersion)
+                        </td>
+                    </tr>
+                    @*<tr>
+                        <td>@Html.LabelForRequired(model => model.EngineeringDocument)
+                        </td>
+                        <td>@Html.DropDownListFor(model => model.EngineeringDocument, Model.EngineeringDocumentList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.EngineeringDocument)
+                        </td>
+                    </tr>*@
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.SpecialConditions)
+                        </td>
+                        <td>@Html.TextAreaFor(model => model.SpecialConditions, 5, 15, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 250 })@Html.ValidationMessageFor(model => model.SpecialConditions)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.PhaMinAcutatingCurrent)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PhaMinAcutatingCurrent, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PhaMinAcutatingCurrent)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.PhaInrushSensingDuration)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PhaInrushSensingDuration, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PhaInrushSensingDuration)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.PhaInrushMult)
+                        </td>
+                        <td>@Html.DropDownListFor(model => model.PhaInrushMult, Model.PhaInrushMultList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PhaInrushMult)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.PhaCurrentInrushTime)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PhaCurrentInrushTime, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PhaCurrentInrushTime)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.TimeFromFirstRecloseTimeToReset)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.TimeFromFirstRecloseTimeToReset, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.TimeFromFirstRecloseTimeToReset)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.FaultRequiredBeforVoltageLoss)
+                        </td>
+                        <td>@Html.DropDownListFor(model => model.FaultRequiredBeforVoltageLoss, Model.FaultRequiredBeforVoltageLossList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.FaultRequiredBeforVoltageLoss)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.GndMinActuatingCurrent)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.GndMinActuatingCurrent, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GndMinActuatingCurrent)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.GndInrushSensingDuration)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.GndInrushSensingDuration, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GndInrushSensingDuration)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.GndInrushMult)
+                        </td>
+                        <td>@Html.DropDownListFor(model => model.GndInrushMult, Model.GndInrushMultList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GndInrushMult)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.GndCurrentInrushTime)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.GndCurrentInrushTime, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GndCurrentInrushTime)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.SuccessfulRecloseResetTime)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.SuccessfulRecloseResetTime, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.SuccessfulRecloseResetTime)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.VoltageThresshold)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.VoltageThresshold, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.VoltageThresshold)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.CountBeforeLockout)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.CountBeforeLockout, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.CountBeforeLockout)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.OneShotToLockoutCount)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.OneShotToLockoutCount, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.OneShotToLockoutCount)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.OneShotToLockoutTime)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.OneShotToLockoutTime, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.OneShotToLockoutTime)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.EngineeringComments)
+                        </td>
+                        <td>@Html.TextAreaFor(model => model.EngineeringComments, 5, 15, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 250, @class = "form-control" })@Html.ValidationMessageFor(model => model.EngineeringComments)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="padding-right: 0px">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td colspan="2" class="sectionHeader">
+                                        FLISR
+                                    </td>
+                                </tr>
+                                @if (Model.Scada == "Y")
+                                {
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.FlisrAutomationDevice)
+                                        </td>
+                                        @if (Model.FlisrAutomationDevice != null && Model.FlisrAutomationDevice != "")
+                                        {
+                                            <td>@Html.DropDownListFor(model => model.FlisrAutomationDevice, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @id = "FlisrDeviceDropDown" })
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>@Html.DropDownListFor(model => model.FlisrAutomationDevice, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @id = "FlisrDeviceDropDown" })@Html.ValidationMessageFor(model => model.FlisrAutomationDevice)
+                                            </td>
+                                        }
+                                    </tr>
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td>@Html.LabelForRequired(model => model.FlisrAutomationDevice)
+                                        </td>
+                                        @if (Model.FlisrAutomationDevice != null && Model.FlisrAutomationDevice != "")
+                                        {
+                                            <td>@Html.DropDownListFor(model => model.FlisrAutomationDevice, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), (object)new { disabled = "disabled", @id = "FlisrDeviceDropDown" })
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>@Html.DropDownListFor(model => model.FlisrAutomationDevice, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), (object)new { disabled = "disabled", @id = "FlisrDeviceDropDown" })@Html.ValidationMessageFor(model => model.FlisrAutomationDevice)
+                                            </td>
+                                        }
+                                    </tr>
+                                }
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.FLISREngineeringComments)
+                                    </td>
+                                    <td>@Html.TextAreaFor(model => model.FLISREngineeringComments, 5, 15, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 250, @class = "form-control" })@Html.ValidationMessageFor(model => model.FLISREngineeringComments)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.OperatingMode)
+                                    </td>
+                                    <td>@Html.DropDownListFor(model => model.OperatingMode, Model.OperatingModeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.OperatingMode)
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="padding: 0px; width: 100%">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; padding: 0px;
+                                width: 100%;">
+                                <tr>
+                                    <td>
+                                        <table cellpadding="0" cellspacing="0" style="margin: 0px; width: 103%;">
+                                            <tr>
+                                                <td colspan="4" class="sectionHeader">
+                                                    SCADA
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.Scada)
+                                                </td>
+                                                <td>@Html.DropDownListFor(model => model.Scada, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { onchange = "OnScadaChange();", @id = "ScadaDropDown" })@Html.ValidationMessageFor(model => model.Scada)
+                                                </td>
+                                                <td>@Html.LabelForRequired(model => model.RTUExists)
+                                                </td>
+                                                <td>@Html.DropDownListFor(model => model.RTUExists, new SelectList(SiteCache.GetYesNoLookUp, "Key", "Value"), ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 1 })@Html.ValidationMessageFor(model => model.RTUExists)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.ScadaType)
+                                                </td>
+                                                <td>@Html.DropDownListFor(model => model.ScadaType, Model.ScadaTypeList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ScadaType)
+                                                </td>
+                                                <td>@Html.LabelForRequired(model => model.RTUManufacture)
+                                                </td>
+                                                <td>@Html.DropDownListFor(model => model.RTUManufacture, Model.RTUManufactureList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.RTUManufacture)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.MasterStation)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.MasterStation, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 4 })@Html.ValidationMessageFor(model => model.MasterStation)
+                                                </td>
+                                                <td>@Html.LabelForRequired(model => model.RTUModelNumber)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.RTUModelNumber, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 25 })@Html.ValidationMessageFor(model => model.RTUModelNumber)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.BaudRate)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.BaudRate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.BaudRate)
+                                                </td>
+                                                <td>@Html.LabelForRequired(model => model.RTUSerialNumber)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.RTUSerialNumber, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 25 })@Html.ValidationMessageFor(model => model.RTUSerialNumber)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.TransmitEnableDelay)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.TransmitEnableDelay, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.TransmitEnableDelay)
+                                                </td>
+                                                <td>@Html.LabelForRequired(model => model.RTUSoftwareVersion)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.RTUSoftwareVersion, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 25 })@Html.ValidationMessageFor(model => model.RTUSoftwareVersion)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.TransmitDisableDelay)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.TransmitDisableDelay, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.TransmitDisableDelay)
+                                                </td>
+                                                <td>@Html.LabelForRequired(model => model.RTUFirmwareVersion)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.RTUFirmwareVersion, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 25 })@Html.ValidationMessageFor(model => model.RTUFirmwareVersion)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.Repeater)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.Repeater, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 25 })@Html.ValidationMessageFor(model => model.Repeater)
+                                                </td>
+                                                <td>@Html.LabelForRequired(model => model.RtuAddress)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.RtuAddress, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 25 })@Html.ValidationMessageFor(model => model.RtuAddress)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.ScadaRadioManufacturer)
+                                                </td>
+                                                <td>@Html.DropDownListFor(model => model.ScadaRadioManufacturer, Model.ScadaRadioManufacturerList, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ScadaRadioManufacturer)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.ScadaRadioModelNum)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.ScadaRadioModelNum, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 25 })@Html.ValidationMessageFor(model => model.ScadaRadioModelNum)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Html.LabelForRequired(model => model.ScadaRadioSerialNum)
+                                                </td>
+                                                <td>@Html.TextBoxFor(model => model.ScadaRadioSerialNum, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 25 })@Html.ValidationMessageFor(model => model.ScadaRadioSerialNum)
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.DateModified)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.DateModified, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @readonly = "true" })@Html.ValidationMessageFor(model => model.DateModified)
+                        </td>
+                    </tr>
+                    @*<tr>
+                        <td>@Html.LabelForRequired(model => model.Notes)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.Notes, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 240 })@Html.ValidationMessageFor(model => model.Notes)
+                        </td>
+                    </tr>*@
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.PreparedBy)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PreparedBy, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 60 })@Html.ValidationMessageFor(model => model.PreparedBy)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.EffectiveDate)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.EffectiveDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepicker" })@Html.ValidationMessageFor(model => model.EffectiveDate)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.PeerReviewer)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PeerReviewer, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 60 })@Html.ValidationMessageFor(model => model.PeerReviewer)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.PeerReviewerDate)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.PeerReviewerDate, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "form-control datepicker" })@Html.ValidationMessageFor(model => model.PeerReviewerDate)
+                        </td>
+                    </tr>
+                    @if (ViewBag.PageMode == "FUTURE")
+                    {
+                        <tr>
+                            <td class="lable">
+                                <label>
+                                    Release</label>
+                            </td>
+                            <td>
+                                @Html.CheckBoxFor(model => model.Release, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })
+                            </td>
+                        </tr>
+                    }
+                    @if (ViewBag.PageMode == "CURRENT")
+                    {
+                        <tr>
+                            <td colspan="2" style="text-align: right; padding-right: 10px">
+                                <input type="button" value="Copy current to future settings" onclick="this.form.action='/@ViewBag.ControllerName/CopyToFuture/@ViewBag.GlobalID/@ViewBag.LayerName?layerType=@ViewBag.layerType';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                            </td>
+                        </tr>
+                    }
+                    @if (ViewBag.PageMode == "FUTURE")
+                    {
+                        <tr>
+                            <td colspan="2" style="text-align: right; padding-right: 10px">
+                                <input type="button" value="Cancel" onclick="this.form.action='/@ViewBag.ControllerName/Future/@ViewBag.GlobalID/@ViewBag.LayerName?layerType=@ViewBag.layerType';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                                <input type="button" value="Save" onclick="this.form.action='/@ViewBag.ControllerName/SaveFuture/@ViewBag.GlobalID/@ViewBag.LayerName?layerType=@ViewBag.layerType';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                            </td>
+                        </tr>
+                    }
+                    @if (ViewBag.PageMode == "HISTORY")
+                    {
+                    }
+                </table>
+            </td>
+        </tr>
+    </table>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

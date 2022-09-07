@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <!--<?define ClientName='PGE'?>
+    <?define Directory='ARCFMBIN'?>
+    
+    <?define Filename='Telvent.PGE.GDBM'?>
+    <?define FilenameUpper='TELVENT.PGE.GDBM'?>
+    <?include ..\Templates\ServerAssembly.wxi?>
+
+    <?define Filename='Telvent.Delivery.Diagnostics'?>
+    <?define FilenameUpper='TELVENT.DELIVERY.DIAGNOSTICS'?>
+    <?include ..\Templates\ServerAssembly.wxi?>
+
+    <?define Filename='Telvent.Delivery.Framework'?>
+    <?define FilenameUpper='TELVENT.DELIVERY.FRAMEWORK'?>
+    <?include ..\Templates\ServerAssembly.wxi?>
+  
+    <?define Filename='Telvent.Delivery.Geodatabase'?>
+    <?define FilenameUpper='TELVENT.DELIVERY.GEODATABASE'?>
+    <?include ..\Templates\ServerAssembly.wxi?>
+
+    <?define Filename='Telvent.Delivery.Systems'?>
+    <?define FilenameUpper='TELVENT.DELIVERY.SYSTEMS'?>
+    <?include ..\Templates\ServerAssembly.wxi?>
+
+    <?define Filename='Telvent.PGE.SAP'?>
+    <?define FilenameUpper='TELVENT.PGE.SAP'?>
+    <?include ..\Templates\ServerAssembly.wxi?>
+
+    <?define Filename='Telvent.PGE.Framework'?>
+    <?define FilenameUpper='TELVENT.PGE.FRAMEWORK'?>
+    <?include ..\Templates\ServerAssembly.wxi?>
+-->
+</Wix>

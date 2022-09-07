@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PGE.Common.ChangeDetectionAPI</name>
+    </assembly>
+    <members>
+        <member name="T:PGE.Common.ChangeDetectionAPI.ChangedFeatures">
+            <summary>
+            (V3SF)
+            Custom Data Structure for Storing Insert/Update/Delete/Replacement of a FeatureClass
+            </summary>
+        </member>
+        <member name="M:PGE.Common.ChangeDetectionAPI.ChangedFeatures.#ctor">
+            <summary>
+            (V3SF)
+            Constructor to initialize Data Members
+            </summary>
+        </member>
+        <member name="T:PGE.Common.ChangeDetectionAPI.ChangedFeatures.ActionClass">
+            <summary>
+            (V3SF)
+            Action Class to store Actions like Insert/Update/Delete/Replacement
+            </summary>
+        </member>
+        <member name="M:PGE.Common.ChangeDetectionAPI.ChangedFeatures.ActionClass.#ctor">
+            <summary>
+            (V3SF)
+            Constructor to Initialize ActionClass Data Members
+            </summary>
+        </member>
+        <member name="T:PGE.Common.ChangeDetectionAPI.BaseActionClass">
+            <summary>
+            (V3SF)
+            Abstract Class for Common Functions/Data Members
+            </summary>
+        </member>
+        <member name="T:PGE.Common.ChangeDetectionAPI.InsertFeat">
+            <summary>
+            (V3SF)
+            Insert Type Feature Class
+            </summary>
+        </member>
+        <member name="T:PGE.Common.ChangeDetectionAPI.UpdateFeat">
+            <summary>
+            (V3SF)
+            Update Type Feature Class
+            </summary>
+        </member>
+        <member name="T:PGE.Common.ChangeDetectionAPI.DeleteFeat">
+            <summary>
+            (V3SF)
+            Delete Type Feature Class
+            </summary>
+        </member>
+        <member name="T:PGE.Common.ChangeDetectionAPI.ReplacementFeat">
+            <summary>
+            (V3SF)
+            Replacement Type Feature Class
+            </summary>
+        </member>
+        <member name="T:PGE.Common.ChangeDetectionAPI.VersionManager">
+            <summary>
+            Class to find Version Difference from given GDBM Table
+            </summary>
+        </member>
+        <member name="M:PGE.Common.ChangeDetectionAPI.VersionManager.#ctor(ESRI.ArcGIS.Geodatabase.IWorkspace,System.String)">
+            <summary>
+            (V3SF)
+            Constructor to initialize Data Members, and
+            Get workspace and GDBM Change Detection Table Name with schema
+            </summary>
+            <param name="workspace">Active IWorkspace for Database</param>
+            <param name="gdbmTable">GDBM Change Detection Table Name with Schema</param>
+        </member>
+        <member name="M:PGE.Common.ChangeDetectionAPI.VersionManager.Finalize">
+            <summary>
+            (V3SF)
+            Destructor to release COM Components from Memory
+            </summary>
+        </member>
+        <member name="M:PGE.Common.ChangeDetectionAPI.VersionManager.VersionDifference(System.Collections.Generic.IList{System.String},PGE.Common.ChangeDetectionAPI.listType,PGE.Common.ChangeDetectionAPI.changeTypes,System.DateTime,System.DateTime,System.String)">
+            <summary>
+            (V3SF)
+            This function returns features from change detection based on given parameters
+            </summary>
+            <param name="TargetFCs"></param>
+            <param name="lstTyp"></param>
+            <param name="cngTyp"></param>
+            <param name="fromDate"></param>
+            <param name="toDate"></param>
+            <param name="whereClause"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PGE.Common.ChangeDetectionAPI.VersionManager.getFeatureClass(System.String)">
+            <summary>
+            (V3SF)
+            Returns Feature Class for given Feature Class Name
+            </summary>
+            <param name="fcName">IN: Feature class Name</param>
+            <returns>IFeatureClass for given Feature Class Name</returns>
+        </member>
+        <member name="M:PGE.Common.ChangeDetectionAPI.VersionManager.populateInsert">
+            <summary>
+            (V3SF)
+            Populate Insert Features
+            </summary>
+        </member>
+        <member name="M:PGE.Common.ChangeDetectionAPI.VersionManager.populateUpdate">
+            <summary>
+            (V3SF)
+            Populate Update Features
+            </summary>
+        </member>
+        <member name="M:PGE.Common.ChangeDetectionAPI.VersionManager.populateDelete">
+            <summary>
+            (V3SF)
+            Populate Delete Features
+            </summary>
+        </member>
+        <member name="M:PGE.Common.ChangeDetectionAPI.VersionManager.populateReplacement">
+            <summary>
+            (V3SF)
+            Populate Replacement Features
+            </summary>
+        </member>
+        <member name="T:PGE.Common.ChangeDetectionAPI.listType">
+            <summary>
+            (V3SF)
+            List Type as FeatureClass/ModelName
+            </summary>
+        </member>
+        <member name="T:PGE.Common.ChangeDetectionAPI.changeTypes">
+            <summary>
+            (V3SF)
+            Change Required
+            </summary>
+        </member>
+    </members>
+</doc>

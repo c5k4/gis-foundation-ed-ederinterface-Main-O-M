@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.BatchApplication.IntExecutionSummary", "PGE.BatchApplication.IntExecutionSummary.csproj", "{C16E4E33-D852-480B-B244-721C12FCC3D8}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PGE.Installer.IntExecutionSummaryTool", "PGE.Installer.IntExecutionSummaryTool\PGE.Installer.IntExecutionSummaryTool.vdproj", "{86561F5F-1877-4AA1-A88C-7E7F17A117F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C16E4E33-D852-480B-B244-721C12FCC3D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C16E4E33-D852-480B-B244-721C12FCC3D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C16E4E33-D852-480B-B244-721C12FCC3D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C16E4E33-D852-480B-B244-721C12FCC3D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86561F5F-1877-4AA1-A88C-7E7F17A117F4}.Debug|Any CPU.ActiveCfg = Debug
+		{86561F5F-1877-4AA1-A88C-7E7F17A117F4}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {051BD806-4485-4A21-92A2-645289DB2607}
+	EndGlobalSection
+EndGlobal

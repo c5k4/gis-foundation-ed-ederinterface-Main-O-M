@@ -1,0 +1,30 @@
+Prompt drop Function HHIDLPART;
+DROP FUNCTION MDSYS.HHIDLPART
+/
+
+Prompt Function HHIDLPART;
+--
+-- HHIDLPART  (Function) 
+--
+CREATE OR REPLACE FUNCTION MDSYS.hhidlpart (type IN VARCHAR2, hhc IN RAW,
+           v001 IN NUMBER,       v002 IN NUMBER,
+           v003 IN NUMBER:=NULL, v004 IN NUMBER:=NULL,
+           v005 IN NUMBER:=NULL, v006 IN NUMBER:=NULL,
+           v007 IN NUMBER:=NULL, v008 IN NUMBER:=NULL,
+           v009 IN NUMBER:=NULL, v010 IN NUMBER:=NULL,
+           v011 IN NUMBER:=NULL, v012 IN NUMBER:=NULL,
+           v013 IN NUMBER:=NULL, v014 IN NUMBER:=NULL)
+    RETURN VARCHAR2 IS
+begin
+ return md.hhidlpart(type,hhc,
+    v001,v002,v003,v004,v005,v006,v007,v008,v009,v010,v011,v012,v013,v014);
+end;
+/
+
+
+Prompt Synonym HHIDLPART;
+--
+-- HHIDLPART  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM HHIDLPART FOR MDSYS.HHIDLPART
+/

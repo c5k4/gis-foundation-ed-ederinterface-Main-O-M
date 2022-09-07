@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AUConveyor.Autoupdaters.AUDisabler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAACAAAAAAAAAABAAAAAACAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Autoupdaters\AUDisabler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AUConveyor.Autoupdaters.AUHelper" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="4.5" Y="1.75" />
+        <Point X="4.5" Y="1.426" />
+        <Point X="7.5" Y="1.426" />
+        <Point X="7.5" Y="1.062" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAIAACAAAAAACEAAAAgAAAAAAQAAAIAAA=</HashCode>
+      <FileName>Autoupdaters\AUHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AUConveyor.Autoupdaters.AUWrapper" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEAAAEACAAAQQAAAAAAAQQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Autoupdaters\AUWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AUConveyor.Conveyor" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAEACAAIIAAAQAAAAQBAAhAAAAABAAQAAAAQAA=</HashCode>
+      <FileName>Conveyor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AUConveyor.Program" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAgAAAAAAQAAAIAAAAAAAABAAAAAABAIAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AUConveyor.Processing.Annotation.AnnotationManipulation" Collapsed="true">
+    <Position X="2.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQBAAEAAgMAACACAAAAAAAAAAIAAAQCAgAA=</HashCode>
+      <FileName>Processing\Annotation\AnnotationManipulation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AUConveyor.Processing.Annotation.AnnotationPlacement" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAgIAEAAAAACAAAAAAAEAAAAAAYAA=</HashCode>
+      <FileName>Processing\Annotation\AnnotationPlacement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AUConveyor.Processing.Annotation.AnnotationStore" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAACAgJAAAgAAAAAAADAAAMABARBACBA=</HashCode>
+      <FileName>Processing\Annotation\AnnotationStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AUConveyor.Processing.ConveyorSpawn" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAQAAAQAACAAAAAAAAAQAAAIAAIAAACAAAAAAAA=</HashCode>
+      <FileName>Processing\ConveyorSpawn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AUConveyor.Processing.GISEditor" Collapsed="true">
+    <Position X="6.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAICAAAIAAAIAAAAAAACAAIAAAAAAAAgAAAABA=</HashCode>
+      <FileName>Processing\GISEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AUConveyor.Processing.ProcessBitgate" Collapsed="true">
+    <Position X="6.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAIAQQEAAMQAAAAAgAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Processing\ProcessBitgate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AUConveyor.Processing.QueuedObjectClass" Collapsed="true">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAKAAAACAQBAABQAABgAQAAAAAAABAEAAAAAAEQI=</HashCode>
+      <FileName>Processing\QueuedObjectClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AUConveyor.Utilities.DBHelper" Collapsed="true">
+    <Position X="4" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\DBHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AUConveyor.Utilities.LicenseInitializer" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="3.75" Y="2.031" />
+        <Point X="2" Y="2.031" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AQAYAnBEgAAAE2AAABAIAigACAAACqAwAAEKCAAAAAA=</HashCode>
+      <FileName>Utilities\LicenseInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AUConveyor.Utilities.LogManager" Collapsed="true">
+    <Position X="0.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAIAARAAAAAAAAACACAAAAAAAEAAAA=</HashCode>
+      <FileName>Utilities\LogManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AUConveyor.Utilities.CustomTextWriterTraceListener" Collapsed="true">
+    <Position X="6.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Utilities\LogManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AUConveyor.Utilities.CustomConsoleTraceListener" Collapsed="true">
+    <Position X="0.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Utilities\LogManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AUConveyor.Utilities.ToolSettings" Collapsed="true">
+    <Position X="5.75" Y="10.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AEAEAAAgAAAAAAAAAAAAAAAAAAAAAAAAQAIAAAAAAAA=</HashCode>
+      <FileName>Utilities\ToolSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Diagnostics.ConsoleTraceListener" Collapsed="true">
+    <Position X="3.75" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Diagnostics.TextWriterTraceListener" Collapsed="true">
+    <Position X="5.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Collections.ObjectModel.KeyedCollection&lt;TKey, TItem&gt;" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Collections.ObjectModel.Collection&lt;T&gt;" Collapsed="true">
+    <Position X="6.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Struct Name="AUConveyor.Processing.ProcessOIDInfo" Collapsed="true">
+    <Position X="0.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Processing\ProcessOIDInfo.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,126 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PGE.BatchApplication.CircuitProtectionZone.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ReloserFieldValue" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="ReloserFieldName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SubtypeCD</Value>
+    </Setting>
+    <Setting Name="GlobalIdFieldName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">GlobalId</Value>
+    </Setting>
+    <Setting Name="OperatingNumberFieldName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">OperatingNumber</Value>
+    </Setting>
+    <Setting Name="CircuitIdFieldName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CIRCUITID</Value>
+    </Setting>
+    <Setting Name="FireTierFieldName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">HFTD</Value>
+    </Setting>
+    <Setting Name="SubstationIdFieldName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SubstationID</Value>
+    </Setting>
+    <Setting Name="SubstationNameFieldName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SubstationName</Value>
+    </Setting>
+    <Setting Name="DynamicProtectiveDeviceFeatureClassName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EDGIS.DynamicProtectiveDevice</Value>
+    </Setting>
+    <Setting Name="ZoneFeatureClassName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EDGIS.PGE_CircuitProtectionZones</Value>
+    </Setting>
+    <Setting Name="FireTierFeatureClassName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">LBGIS.HighFireThreatDist</Value>
+    </Setting>
+    <Setting Name="PrimaryOverheadFeatureClassName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EDGIS.PriOHConductor</Value>
+    </Setting>
+    <Setting Name="PrimaryUndergroundFeatureClassName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EDGIS.PriUGConductor</Value>
+    </Setting>
+    <Setting Name="ElectricStitchPointFeatureClassName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EDGIS.ElectricStitchPoint</Value>
+    </Setting>
+    <Setting Name="FuseFeatureClassName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EDGIS.Fuse</Value>
+    </Setting>
+    <Setting Name="CircuitSourceTableName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EDGIS.CircuitSource</Value>
+    </Setting>
+    <Setting Name="SwitchFeatureClassName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EDGIS.Switch</Value>
+    </Setting>
+    <Setting Name="ServicePointTableName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EDGIS.ServicePoint</Value>
+    </Setting>
+    <Setting Name="ServicePointForiegnKeyFieldName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ServiceLocationGUID</Value>
+    </Setting>
+    <Setting Name="ServiceLocationFeatureClassName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EDGIS.ServiceLocation</Value>
+    </Setting>
+    <Setting Name="FireIndexFeatureClassName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EDGIS.FireIndexAreas_Draft</Value>
+    </Setting>
+    <Setting Name="FireIndexNameField" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Name1_</Value>
+    </Setting>
+    <Setting Name="SubInterruptingDeviceTableName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EDGIS.SUBInterruptingDevice</Value>
+    </Setting>
+    <Setting Name="SubElectricStitchPointTableName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EDGIS.SUBElectricStitchPoint</Value>
+    </Setting>
+    <Setting Name="SubstationNetworkName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EDGIS.SubGeometricNetwork</Value>
+    </Setting>
+    <Setting Name="DistributionNetworkName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EDGIS.ElectricDistNetwork</Value>
+    </Setting>
+    <Setting Name="SubStitchToElecStitchField" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ELECTRICSTITCHPOINTGUID</Value>
+    </Setting>
+    <Setting Name="SubStitchToElecStitchBuffer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">0.03</Value>
+    </Setting>
+    <Setting Name="NormalPositionFieldName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">NormalPosition</Value>
+    </Setting>
+    <Setting Name="StatusFieldName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Status</Value>
+    </Setting>
+    <Setting Name="EssentialCustomerFieldName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ESSENTIALCUSTOMERIDC</Value>
+    </Setting>
+    <Setting Name="SensitiveCustomerFieldName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SENSITIVECUSTOMERIDC</Value>
+    </Setting>
+    <Setting Name="LifeSupportCustomerFieldName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">LIFESUPPORTIDC</Value>
+    </Setting>
+    <Setting Name="CustomerTypeFieldName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CUSTOMERTYPE</Value>
+    </Setting>
+    <Setting Name="CustomerOwnedFieldName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CUSTOMEROWNED</Value>
+    </Setting>
+    <Setting Name="ZoneEnergizedFeatureClassName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EDGIS.PGE_CircuitEnergizedZones</Value>
+    </Setting>
+    <Setting Name="ZoneDetailsFeatureClassName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">EDGIS.PGE_CircuitProtectionDetails</Value>
+    </Setting>
+    <Setting Name="ZoneEnergizedDetailsFeatureClassName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">EDGIS.PGE_CircuitEnergizedDetails</Value>
+    </Setting>
+    <Setting Name="PointDetailsToInclude" Type="System.String" Scope="User">
+      <Value Profile="(Default)">EDGIS.SERVICELOCATION,EDGIS.TRANSFORMER</Value>
+    </Setting>
+    <Setting Name="LineDetailsToInclude" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,27 @@
+--------------------------------------------------------
+--  DDL for Procedure CCBTOGIS_SP_ACTION_NO_ACTION
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "PGEDATA"."CCBTOGIS_SP_ACTION_NO_ACTION" AS
+sqlstmt varchar2(2000);
+rowcnt number;
+BEGIN
+dbms_output.put_line('Populating the no action (NONE) into the Action Table');
+insert into PGEDATA.PGE_CCB_SP_ACTION (ACTION, SERVICEPOINTID, DATEINSERTED)
+select 'NONE', TABLEN.SERVICEPOINTID, TABLEN.DATECREATED /* CCBTOGIS_SP_ACTION_NO_ACTION_V1_NONE*/
+from
+(
+select distinct STG.SERVICEPOINTID, STG.DATECREATED from PGEDATA.PGE_CCBTOEDGIS_STG STG
+where STG.ERROR_DESCRIPTION is null and STG.SERVICEPOINTID in(
+select distinct STAGETABLE.SERVICEPOINTID from PGEDATA.PGE_CCBTOEDGIS_STG STAGETABLE
+where STAGETABLE.SERVICEPOINTID is not NUll and STAGETABLE.DATECREATED =
+(select max(DATECREATED) from PGEDATA.PGE_CCBTOEDGIS_STG where SERVICEPOINTID = STAGETABLE.SERVICEPOINTID)
+and STAGETABLE.SERVICEPOINTID not in
+(select distinct SERVICEPOINTID from PGEDATA.PGE_CCB_SP_ACTION))
+) TABLEN;
+commit;
+EXCEPTION
+WHEN no_data_found THEN
+  dbms_output.put_line('Error');
+END CCBTOGIS_SP_ACTION_NO_ACTION;

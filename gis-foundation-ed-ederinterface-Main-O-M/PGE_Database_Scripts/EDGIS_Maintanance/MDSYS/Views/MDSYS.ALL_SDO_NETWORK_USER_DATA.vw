@@ -1,0 +1,43 @@
+Prompt drop View ALL_SDO_NETWORK_USER_DATA;
+DROP VIEW MDSYS.ALL_SDO_NETWORK_USER_DATA
+/
+
+/* Formatted on 6/27/2019 02:52:02 PM (QP5 v5.313) */
+PROMPT View ALL_SDO_NETWORK_USER_DATA;
+--
+-- ALL_SDO_NETWORK_USER_DATA  (View)
+--
+
+CREATE OR REPLACE FORCE VIEW MDSYS.ALL_SDO_NETWORK_USER_DATA
+(
+    OWNER,
+    NETWORK,
+    TABLE_TYPE,
+    DATA_NAME,
+    DATA_TYPE,
+    DATA_LENGTH,
+    CATEGORY_ID
+)
+AS
+    SELECT sdo_owner owner,
+           network,
+           table_type,
+           data_name,
+           data_type,
+           data_length,
+           category_id
+      FROM sdo_network_user_data
+/
+
+
+Prompt Synonym ALL_SDO_NETWORK_USER_DATA;
+--
+-- ALL_SDO_NETWORK_USER_DATA  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM ALL_SDO_NETWORK_USER_DATA FOR MDSYS.ALL_SDO_NETWORK_USER_DATA
+/
+
+
+Prompt Grants on VIEW ALL_SDO_NETWORK_USER_DATA TO PUBLIC to PUBLIC;
+GRANT SELECT ON MDSYS.ALL_SDO_NETWORK_USER_DATA TO PUBLIC
+/

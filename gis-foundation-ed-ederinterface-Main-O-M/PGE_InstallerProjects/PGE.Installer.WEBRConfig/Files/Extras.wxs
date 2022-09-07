@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="Extras">
+
+      <Component Id="CommandFlagsDll" Directory="WEBRCONFIG" Guid="1824A770-6A52-43E8-8CF3-06B86B79863E" >
+        <File Id="CommandFlagsDll.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\WEBRConfig\CommandFlags.dll"/>
+      </Component>
+
+      <Component Id="WEBRConfigExe" Directory="WEBRCONFIG" Guid="A97DF70C-D0E0-4C9C-99BE-FE615547193A">
+        <File Id="ArcFmWebConfigLimited.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\WEBRConfig\ArcFmWebConfigLimited.exe"/>
+      </Component>
+      
+      <Component Id="WEBRAppConfig" Directory="WEBRCONFIG" Guid="1C75C884-5B58-4ABF-B5F8-C3D1B37260A0" Permanent="yes" NeverOverwrite="yes">
+        <File Id="ArcFmWebConfigLimited.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\WEBRConfig\ArcFmWebConfigLimited.exe.config"/>
+      </Component>
+
+      <Component Id="WEBRConfigCore" Directory="WEBRCONFIG" Guid="2EE72904-BDAC-4C5A-A7A2-A6B994BF67DA">
+        <File Id="ArcFmWebConfigLimited.Core.dll" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\WEBRConfig\ArcFmWebConfigLimited.Core.dll"/>
+      </Component>
+      
+	    <Component Id="PGEDiagnosticsConfig" Directory="LoggingConfiguration" Guid="2EAE66AB-EE57-4D79-BBC3-1DC8C162EB89" Permanent="yes" NeverOverwrite="yes">
+        <File Id="WebConfigLimited.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\WEBRConfig\WebConfigLimited.log4net.config"/>
+      </Component>
+
+    </ComponentGroup>
+
+
+  </Fragment>
+</Wix>

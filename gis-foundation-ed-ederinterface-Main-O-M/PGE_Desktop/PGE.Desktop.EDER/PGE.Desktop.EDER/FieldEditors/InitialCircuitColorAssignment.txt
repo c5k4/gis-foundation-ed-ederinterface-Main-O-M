@@ -1,0 +1,64 @@
+﻿DROP TABLE CIRCUITCOLORTEMP;
+Create table CircuitColorTemp
+(CIRCUITID NVARCHAR2(9),
+MATCHVALUE NUMBER(38),
+COLORNAME NVARCHAR2(15));
+
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Blue', CIRCUITID, min(sqrt(power(redvalue - 31, 2) + power(greenvalue - 120, 2) + power(bluevalue - 180, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Brown', CIRCUITID, min(sqrt(power(redvalue - 177, 2) + power(greenvalue - 89, 2) + power(bluevalue - 40, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Dark Blue', CIRCUITID, min(sqrt(power(redvalue - 5, 2) + power(greenvalue - 47, 2) + power(bluevalue - 227, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Dark Pastel Purple', CIRCUITID, min(sqrt(power(redvalue - 190, 2) + power(greenvalue - 186, 2) + power(bluevalue - 218, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Dark Pastel Red', CIRCUITID, min(sqrt(power(redvalue - 251, 2) + power(greenvalue - 128, 2) + power(bluevalue - 114, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Ginger Pink', CIRCUITID, min(sqrt(power(redvalue - 255, 2) + power(greenvalue - 0, 2) + power(bluevalue - 197, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Green', CIRCUITID, min(sqrt(power(redvalue - 51, 2) + power(greenvalue - 160, 2) + power(bluevalue - 44, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Grey', CIRCUITID, min(sqrt(power(redvalue - 217, 2) + power(greenvalue - 217, 2) + power(bluevalue - 217, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Light Pastel Green', CIRCUITID, min(sqrt(power(redvalue - 204, 2) + power(greenvalue - 235, 2) + power(bluevalue - 197, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Light Purple', CIRCUITID, min(sqrt(power(redvalue - 188, 2) + power(greenvalue - 128, 2) + power(bluevalue - 189, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Lime Green', CIRCUITID, min(sqrt(power(redvalue - 179, 2) + power(greenvalue - 222, 2) + power(bluevalue - 105, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Orange', CIRCUITID, min(sqrt(power(redvalue - 255, 2) + power(greenvalue - 127, 2) + power(bluevalue - 0, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Pastel Blue', CIRCUITID, min(sqrt(power(redvalue - 166, 2) + power(greenvalue - 206, 2) + power(bluevalue - 227, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Pastel Green', CIRCUITID, min(sqrt(power(redvalue - 178, 2) + power(greenvalue - 223, 2) + power(bluevalue - 138, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Pastel Orange',CIRCUITID, min(sqrt(power(redvalue - 253, 2) + power(greenvalue - 191, 2) + power(bluevalue - 111, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Pastel Purple', CIRCUITID, min(sqrt(power(redvalue - 202, 2) + power(greenvalue - 178, 2) + power(bluevalue - 214, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Pastel Red', CIRCUITID, min(sqrt(power(redvalue - 251, 2) + power(greenvalue - 154, 2) + power(bluevalue - 153, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Pink', CIRCUITID, min(sqrt(power(redvalue - 252, 2) + power(greenvalue - 205, 2) + power(bluevalue - 229, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Purple', CIRCUITID, min(sqrt(power(redvalue - 106, 2) + power(greenvalue - 61, 2) + power(bluevalue - 154, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+INSERT INTO CIRCUITCOLORTEMP (COLORNAME,CIRCUITID,MATCHVALUE) (select 'Yellow', CIRCUITID, min(sqrt(power(redvalue - 255, 2) + power(greenvalue - 237, 2) + power(bluevalue - 111, 2))) MATCHVALUE from edgis.pge_circuitcolor GROUP BY CIRCUITID);
+
+DELETE FROM CIRCUITCOLORTEMP WHERE (CIRCUITID,MATCHVALUE) NOT IN (SELECT CIRCUITID,MIN(MATCHVALUE) FROM CIRCUITCOLORTEMP GROUP BY CIRCUITID);
+DELETE FROM CIRCUITCOLORTEMP WHERE (CIRCUITID,COLORNAME) NOT IN (SELECT CIRCUITID,MIN(COLORNAME) FROM CIRCUITCOLORTEMP GROUP BY CIRCUITID);
+
+DECLARE
+  cursor table_ids is select owner,table_name,registration_id from sde.table_registry where table_name in (select table_name from sde.column_registry where column_name='CIRCUITCOLOR');
+sql_stmt varchar2(2000);
+result_count number;
+BEGIN
+    sql_stmt := 'create index circolorname_temp_idx on circuitcolortemp(circuitid,colorname)';
+                dbms_output.put_line(sql_stmt);
+    execute immediate sql_stmt;
+    sql_stmt := 'create index circolor_temp_idx on circuitcolortemp(circuitid)';
+                dbms_output.put_line(sql_stmt);
+    execute immediate sql_stmt;
+    for tabname in table_ids loop
+      sql_stmt := 'update '||tabname.owner||'.'||tabname.table_name||' cs set cs.circuitcolor=(select cct.colorname from edgis.circuitcolortemp cct where cct.circuitid=cs.circuitid group by cct.colorname ) where exists (select 1 from edgis.circuitcolortemp cct1 where  cct1.circuitid=cs.circuitid )';
+      dbms_output.put_line(sql_stmt);
+      execute immediate sql_stmt;
+                  sql_stmt :='select count(*) from '||tabname.owner||'.'||tabname.table_name||' where circuitcolor is null';
+                  dbms_output.put_line(sql_stmt);
+                  result_count :=0;
+      execute immediate sql_stmt into result_count;
+                  dbms_output.put_line(result_count);
+      sql_stmt := 'update '||tabname.owner||'.A'||tabname.registration_id||' cs set cs.circuitcolor=(select cct.colorname from edgis.circuitcolortemp cct where cct.circuitid=cs.circuitid group by cct.colorname ) where exists (select 1 from edgis.circuitcolortemp cct1 where  cct1.circuitid=cs.circuitid )'; 
+      dbms_output.put_line(sql_stmt);
+                  execute immediate sql_stmt;
+                  sql_stmt :='select count(*) from '||tabname.owner||'.A'||tabname.registration_id||' where circuitcolor is null';
+                  dbms_output.put_line(sql_stmt);
+                  result_count :=0;
+      execute immediate sql_stmt into result_count;
+                  dbms_output.put_line(result_count);
+                end loop;
+                commit;
+end;
+/
+drop index circolorname_temp_idx ;
+drop index circolor_temp_idx ;

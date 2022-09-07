@@ -1,0 +1,53 @@
+Prompt drop View JET_VW_EQUIP;
+DROP VIEW WEBR.JET_VW_EQUIP
+/
+
+/* Formatted on 7/2/2019 01:17:59 PM (QP5 v5.313) */
+PROMPT View JET_VW_EQUIP;
+--
+-- JET_VW_EQUIP  (View)
+--
+
+CREATE OR REPLACE FORCE VIEW WEBR.JET_VW_EQUIP
+(
+    OBJECTID,
+    EQUIPTYPEID,
+    JOBNUMBER,
+    OPERATINGNUMBER,
+    CGC12,
+    SKETCHLOC,
+    INSTALLCD,
+    ADDRESS,
+    CITY,
+    LATITUDE,
+    LONGITUDE,
+    ENTRYDATE,
+    LASTMODIFIEDDATE,
+    USERAUDIT,
+    CUSTOWNED,
+    STATUS
+)
+AS
+    SELECT OBJECTID,
+           EQUIPTYPEID,
+           JOBNUMBER,
+           OPERATINGNUMBER,
+           TO_NUMBER (CGC12) AS CGC12,
+           SKETCHLOC,
+           INSTALLCD,
+           ADDRESS,
+           CITY,
+           LATITUDE,
+           LONGITUDE,
+           ENTRYDATE,
+           LASTMODIFIEDDATE,
+           USERAUDIT,
+           CUSTOWNED,
+           STATUS
+      FROM WEBR.JET_EQUIPMENT
+/
+
+
+Prompt Grants on VIEW JET_VW_EQUIP TO BO_USER to BO_USER;
+GRANT SELECT ON WEBR.JET_VW_EQUIP TO BO_USER
+/

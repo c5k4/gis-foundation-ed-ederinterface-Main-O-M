@@ -1,0 +1,46 @@
+Prompt drop Function SDO_AGGR_LRS_CONCAT;
+DROP FUNCTION MDSYS.SDO_AGGR_LRS_CONCAT
+/
+
+Prompt Function SDO_AGGR_LRS_CONCAT;
+--
+-- SDO_AGGR_LRS_CONCAT  (Function) 
+--
+CREATE OR REPLACE FUNCTION MDSYS.SDO_Aggr_LRS_Concat wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+a0 ae
+SlJs1QTKW8lBbWIMVCbJR4O4yuUwg8eZgcfLCNL+XuefCNC/Wa6WGP69nkq//3IM3FazuPW/
+KMAyv3RSMr+B/jKyvRjDjwnKNs9MrO/WganoNyEHojlTJ+GBNr5ARjk6qF0G8zkVzWnnsjPS
+x+qmCDfcuDP+x590LcmmpmrPFhw=
+
+/
+
+
+Prompt Synonym SDO_AGGR_LRS_CONCAT;
+--
+-- SDO_AGGR_LRS_CONCAT  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM SDO_AGGR_LRS_CONCAT FOR MDSYS.SDO_AGGR_LRS_CONCAT
+/
+
+
+Prompt Grants on FUNCTION SDO_AGGR_LRS_CONCAT TO PUBLIC to PUBLIC;
+GRANT EXECUTE ON MDSYS.SDO_AGGR_LRS_CONCAT TO PUBLIC
+/

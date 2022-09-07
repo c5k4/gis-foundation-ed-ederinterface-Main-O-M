@@ -1,0 +1,68 @@
+There are following steps to do the task of Domain update.
+
+
+Prerequisites:
+
+A) Go to ArcCatalog. Right click on EDGIST1D and open properties. Go to General tab.
+
+
+B) Select the Name and copy it. 
+
+example->    C:\Users\H1K3\AppData\Roaming\ESRI\Desktop10.2\ArcCatalog\EDGIST1D.sde
+
+
+C) Open the link in the computer but open till where the file is contained.
+
+example->    C:\Users\H1K3\AppData\Roaming\ESRI\Desktop10.2\ArcCatalog
+
+
+D) copy the ".sde" file to the folder where the python script is. 
+
+example->    "EDGIST1D.sde"
+
+
+C) Rename the file to "ConnectionDB.sde".
+
+
+
+Note: Name of your SDE file should be ConnectionDB.sde and it should be present in same path
+
+
+
+Now, to update the "Conductor Code - OH" domain by using "Conductor Code - OH.xls" file , for this you need to perform following steps:-
+
+
+Note:    TableToDomain.py file. It has two parameters:
+
+           a) Path of the folder where python script is.
+
+           b) Domain name 
+
+
+
+
+
+  
+1) Open cmd with administrator. Type the command in the below mentioned way. Check the example for reference:
+
+
+path of the python script "path of the folder" "Domain name" and click enter.
+
+
+example->     C:\Imp Docs-July-Sept\DomainUpdate\TableToDomain.py "C:\Imp Docs-July-Sept\DomainUpdate" "Conductor Code - OH" and click enter.
+
+
+ 
+2) This will update the domain.
+
+
+
+
+
+
+
+
+
+
+
+

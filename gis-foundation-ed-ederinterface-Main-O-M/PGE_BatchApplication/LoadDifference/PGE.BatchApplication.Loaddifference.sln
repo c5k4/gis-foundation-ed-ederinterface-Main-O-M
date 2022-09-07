@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGE.BatchApplication.LoadDifference", "PGE.BatchApplication.LoadDifference\PGE.BatchApplication.LoadDifference.csproj", "{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PGE.Installer.LoadDifference", "PGE.Installer.LoadDifference\PGE.Installer.LoadDifference.vdproj", "{9B16045F-EE4B-4D80-978F-022789877878}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		NoBuild|Any CPU = NoBuild|Any CPU
+		NoBuild|x86 = NoBuild|x86
+		PGE_EDER_JENKINS|Any CPU = PGE_EDER_JENKINS|Any CPU
+		PGE_EDER_JENKINS|x86 = PGE_EDER_JENKINS|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}.Debug|x86.ActiveCfg = Debug|x86
+		{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}.Debug|x86.Build.0 = Debug|x86
+		{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}.NoBuild|Any CPU.ActiveCfg = Debug|Any CPU
+		{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}.NoBuild|Any CPU.Build.0 = Debug|Any CPU
+		{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}.NoBuild|x86.ActiveCfg = Debug|x86
+		{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}.NoBuild|x86.Build.0 = Debug|x86
+		{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}.PGE_EDER_JENKINS|Any CPU.ActiveCfg = Debug|Any CPU
+		{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}.PGE_EDER_JENKINS|Any CPU.Build.0 = Debug|Any CPU
+		{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}.PGE_EDER_JENKINS|x86.ActiveCfg = Debug|x86
+		{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}.PGE_EDER_JENKINS|x86.Build.0 = Debug|x86
+		{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}.Release|x86.ActiveCfg = Release|x86
+		{21221BB1-3745-4A81-91AD-8B1D63AE9D1C}.Release|x86.Build.0 = Release|x86
+		{9B16045F-EE4B-4D80-978F-022789877878}.Debug|Any CPU.ActiveCfg = Debug
+		{9B16045F-EE4B-4D80-978F-022789877878}.Debug|Any CPU.Build.0 = Debug
+		{9B16045F-EE4B-4D80-978F-022789877878}.Debug|x86.ActiveCfg = Debug
+		{9B16045F-EE4B-4D80-978F-022789877878}.Debug|x86.Build.0 = Debug
+		{9B16045F-EE4B-4D80-978F-022789877878}.NoBuild|Any CPU.ActiveCfg = Debug
+		{9B16045F-EE4B-4D80-978F-022789877878}.NoBuild|x86.ActiveCfg = Debug
+		{9B16045F-EE4B-4D80-978F-022789877878}.PGE_EDER_JENKINS|Any CPU.ActiveCfg = Debug
+		{9B16045F-EE4B-4D80-978F-022789877878}.PGE_EDER_JENKINS|x86.ActiveCfg = Debug
+		{9B16045F-EE4B-4D80-978F-022789877878}.Release|Any CPU.ActiveCfg = Release
+		{9B16045F-EE4B-4D80-978F-022789877878}.Release|x86.ActiveCfg = Release
+		{9B16045F-EE4B-4D80-978F-022789877878}.Release|x86.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7DBDC26-EEE0-4F5B-B139-F2154A29AE47}
+	EndGlobalSection
+EndGlobal

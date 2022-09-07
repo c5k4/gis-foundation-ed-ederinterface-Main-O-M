@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?define ClientName='PGE'?>
+  <?define Directory='PGE'?>
+  <?define ActionKey="Desktop"?>
+
+  <?define Filename='Telvent.Delivery.Framework'?>
+  <?define FilenameUpper='TELVENT.DELIVERY.FRAMEWORK'?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Filename='Telvent.Delivery.Diagnostics'?>
+  <?define FilenameUpper='TELVENT.DELIVERY.DIAGNOSTICS'?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Filename='Telvent.Delivery.Systems'?>
+  <?define FilenameUpper='TELVENT.DELIVERY.SYSTEMS'?>
+  <?define DoNotCOMRegister?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Filename='Telvent.Delivery.Geodatabase'?>
+  <?define FilenameUpper='TELVENT.DELIVERY.GEODATABASE'?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Filename='Telvent.PGE.Framework'?>
+  <?define FilenameUpper='TELVENT.PGE.FRAMEWORK'?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Filename='Telvent.PGE.SAP.PMOrder'?>
+  <?define FilenameUpper='TELVENT.PGE.SAP.PMORDER'?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?define Filename='Telvent.PGE.SAP.WOSynchronization'?>
+  <?define FilenameUpper='TELVENT.PGE.SAP.WOSYNCHRONIZATION'?>
+  <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+  <?include ..\..\Externals\Wix_Templates\ESRIRegAsm10.wxi?>
+</Wix>

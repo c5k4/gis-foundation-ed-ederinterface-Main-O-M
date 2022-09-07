@@ -1,0 +1,31 @@
+Prompt drop Trigger SM_SUBTRF_BANK_LOAD_HIST_INS;
+DROP TRIGGER EDSETT.SM_SUBTRF_BANK_LOAD_HIST_INS
+/
+
+Prompt Trigger SM_SUBTRF_BANK_LOAD_HIST_INS;
+--
+-- SM_SUBTRF_BANK_LOAD_HIST_INS  (Trigger) 
+--
+CREATE OR REPLACE TRIGGER EDSETT.SM_SUBTRF_BANK_LOAD_HIST_INS
+BEFORE INSERT ON EDSETT.SM_SUBTRF_BANK_LOAD_HIST
+FOR EACH ROW
+BEGIN
+  <<COLUMN_SEQUENCES>>
+  DECLARE clid VARCHAR2(30);
+  BEGIN
+    IF INSERTING AND :NEW.ID IS NULL THEN
+      SELECT SM_SUBTRF_BANK_LOAD_HIST_SEQ.NEXTVAL INTO :NEW.ID FROM SYS.DUAL;
+    END IF;
+    SELECT sysdate INTO :new.create_dtm FROM dual;
+    SELECT sysdate INTO :new.update_dtm FROM dual;
+    SELECT sys_context('userenv','client_identifier') INTO clid FROM dual;
+    IF clid IS NULL THEN
+      SELECT USER INTO :new.update_userid FROM dual;
+      SELECT USER INTO :new.create_userid FROM dual;
+    ELSE
+      SELECT clid INTO :new.update_userid FROM dual;
+      SELECT clid INTO :new.create_userid FROM dual;
+    END IF;
+  END COLUMN_SEQUENCES;
+END;
+/

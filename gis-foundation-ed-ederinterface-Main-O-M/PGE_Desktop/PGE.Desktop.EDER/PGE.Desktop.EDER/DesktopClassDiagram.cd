@@ -1,0 +1,1523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="NameAndType">
+  <Class Name="PGE.Desktop.EDER.ArcCatalogCommands.SDPropSync.PG_E_Utilities_Toolbar" Collapsed="true">
+    <Position X="129.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAgAAAAAAACCAgAABAAAA=</HashCode>
+      <FileName>ArcCatalogCommands\UpdateFieldOrder\PGEUtilitiesToolbar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ArcMapCommands.AssignCircuitColorCode" Collapsed="true">
+    <Position X="120.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAEAIAAAAAAAAIAICgBAAAAAAAAgAAAEAA=</HashCode>
+      <FileName>ArcMapCommands\CircuitColorCode\AssignCircuitColorCode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ArcMapCommands.BaseColorCodeClass" Collapsed="true">
+    <Position X="124" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAACAEBIIQAAAGAAAAEAAAABECAAASIQSAAwBAQA=</HashCode>
+      <FileName>ArcMapCommands\CircuitColorCode\BaseColorCodeClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ArcMapCommands.GroupColorCode" Collapsed="true">
+    <Position X="125.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgIAAAgEAIAAAAAAAAAAICgBAAAAAAAAgAAAEAA=</HashCode>
+      <FileName>ArcMapCommands\CircuitColorCode\GroupColorCode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ArcMapCommands.PGEMapUtilitiesToolbar" Collapsed="true">
+    <Position X="120.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAgAAAAAAACCAgAABAAAA=</HashCode>
+      <FileName>ArcMapCommands\MapUtilities\PGEMapUtilitiesToolbar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ArcMapCommands.PGEPrintMapCommand" Collapsed="true">
+    <Position X="124" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAICgBAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>ArcMapCommands\MapUtilities\PGEPrintMapCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ArcMapCommands.PGEPrintMapGrids" Collapsed="true">
+    <Position X="125.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCAYAAAAAGAAAJMAAACQAMACIQAAAFAACAggGAAAAAA=</HashCode>
+      <FileName>ArcMapCommands\MapUtilities\PGEPrintMapGrids.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ArcMapCommands.PGESwizzleMxdCommand" Collapsed="true">
+    <Position X="129.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAACICABAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>ArcMapCommands\PGESwizzleMxdCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ArcMapCommands.PopulateLastJobNumberCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="136.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAIAAAAAAAIAAAAAAQEAAQAEA=</HashCode>
+      <FileName>ArcMapCommands\PopulateLastJobNumber\PopulateLastJobNumberCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ArcMapCommands.PopulateLastJobNumberToolbar" Collapsed="true">
+    <Position X="138" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAgAAAAAAACCAgAABAAAA=</HashCode>
+      <FileName>ArcMapCommands\PopulateLastJobNumber\PopulateLastJobNumberToolbar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ArcMapCommands.PopulateLastJobNumberUC" Collapsed="true">
+    <Position X="139.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGIIAAAIAACACAACUAAAAAAIAABAAQUAACA=</HashCode>
+      <FileName>ArcMapCommands\PopulateLastJobNumber\UC\PopulateLastJobNumberUC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ArcMapCommands.PGE_VersionDifferences" Collapsed="true">
+    <Position X="138" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAIAAAAAAAAACAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>ArcMapCommands\VersionDifference\PGE_VersionDifferences.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ArcMapCommands.VersionDifference.VersionChangesForm" Collapsed="true">
+    <Position X="134.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACgSAAAAGMBBgAACACAFEACAABCAAIABBAQAABAGAA=</HashCode>
+      <FileName>ArcMapCommands\VersionDifference\VersionChangesForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ArcMapCommands.VersionDifference.VersionChangesRow" Collapsed="true">
+    <Position X="136.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>ArcMapCommands\VersionDifference\VersionChangesForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AdjacentGridEastATE">
+    <Position X="15" Y="19" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoTextElements\AdjacentGridATES\AdjacentGridEastATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AdjacentGridNorthATE">
+    <Position X="17.5" Y="19" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoTextElements\AdjacentGridATES\AdjacentGridNorthATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AdjacentGridNorthEastATE">
+    <Position X="20.25" Y="19" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoTextElements\AdjacentGridATES\AdjacentGridNorthEastATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AdjacentGridNorthWestATE">
+    <Position X="23.25" Y="19" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoTextElements\AdjacentGridATES\AdjacentGridNorthWestATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AdjacentGridSouthATE">
+    <Position X="26.25" Y="19" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoTextElements\AdjacentGridATES\AdjacentGridSouthATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AdjacentGridSouthEastATE">
+    <Position X="29" Y="19" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoTextElements\AdjacentGridATES\AdjacentGridSouthEastATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AdjacentGridSouthWestATE">
+    <Position X="32" Y="19" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoTextElements\AdjacentGridATES\AdjacentGridSouthWestATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AdjacentGridWestATE">
+    <Position X="35" Y="19" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoTextElements\AdjacentGridATES\AdjacentGridWestATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.BaseAdjacentGridATE">
+    <Position X="25.75" Y="14.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAASAAAAAAIEAAAAAEQICAAAAAAAAgACAAAgAA=</HashCode>
+      <FileName>AutoTextElements\AdjacentGridATES\BaseAdjacentGridATE.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_configTopLevel" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.CurrentGridDisplayATE">
+    <Position X="37.5" Y="19" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoTextElements\AdjacentGridATES\CurrentGridDisplayATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.BasePointInPolyATE" Collapsed="true">
+    <Position X="4.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAQAAAAQAAAAIAIEgAAEAAQICAhAAAEgAEBAAQAEAA=</HashCode>
+      <FileName>AutoTextElements\BasePointInPolyATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.CountyATE">
+    <Position X="6.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoTextElements\CountyATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.DivisionATE">
+    <Position X="2.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoTextElements\DivisionATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.MapProdHashingATE" Collapsed="true">
+    <Position X="131" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEADAAAAARgAABIMQBCAAEYISABAAAAAEAAAAgAEAA=</HashCode>
+      <FileName>AutoTextElements\MapProdHashingATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ATEConfig" Collapsed="true">
+    <Position X="122.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>AutoTextElements\PGEMapUtilityConfigHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Setting" Collapsed="true">
+    <Position X="131" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>AutoTextElements\PGEMapUtilityConfigHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.PGEMapUtilityConfigHelper" Collapsed="true">
+    <Position X="122.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgCAAAAAAAAAABAEgAAABQAAABA=</HashCode>
+      <FileName>AutoTextElements\PGEMapUtilityConfigHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.XMaxATE" Collapsed="true">
+    <Position X="120.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAIEQBCAAAQICABAAAAAEAAAAAAEAA=</HashCode>
+      <FileName>AutoTextElements\XMaxATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.XMinATE" Collapsed="true">
+    <Position X="122.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAIEQBCAAAQICABAAAAAEAAAAAAEAA=</HashCode>
+      <FileName>AutoTextElements\XMinATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.RecordChangedMaps">
+    <Position X="31.25" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABAJAgAABAEAQARAIAiAEAAQYBARCIAABACAEAAAAIY=</HashCode>
+      <FileName>AutoUpdaters\Special\RecordChangedMaps.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ConductorAttributeFacade" Collapsed="true">
+    <Position X="131" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYBCAAEAAAAAAAAAAASwAJAAICABJAAAAAACAAAgQIA=</HashCode>
+      <FileName>ConductorAttributeFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.DeviceGroupCircuitIDFacade" Collapsed="true">
+    <Position X="139.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAIAAAQQAEABAmAAAAAAQIAIAAAAAAgAAAAAAIAAAA=</HashCode>
+      <FileName>DeviceGroupCircuitIDFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Extensions" Collapsed="true">
+    <Position X="138" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJAAAAA0gAIAABAAAIAiZACAAEAAACAAAAQABQAyAQA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.FieldInstance" Collapsed="true">
+    <Position X="122.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAUAAAMQAAAAAACgAAQAAAAABAAAAAEhAAAEEAA=</HashCode>
+      <FileName>FieldInstance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ModelessDialog" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="139.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>ModelessDialog.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.NeutralPhaseHelper" Collapsed="true">
+    <Position X="122.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAEAAAAYAAAAQAAAAAABBAgIBAAAAAAYAAEAAAAAAA=</HashCode>
+      <FileName>NeutralPhaseHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.PopulateDistMapNo" Collapsed="true">
+    <Position X="134.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAICAAgAAIAAAIABBEAgBGIFAAgTQBYAwACAwAIAQ=</HashCode>
+      <FileName>PopulateDistMapNo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.DistributionMapFeature" Collapsed="true">
+    <Position X="124" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAQAAAIAAEAAAAAAAAAAA=</HashCode>
+      <FileName>PopulateDistMapNo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.SafeNativeMethods" Collapsed="true">
+    <Position X="120.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAACAQAAAAAAAAAAIAgAAAABAAAAAQAAAAAAAEA=</HashCode>
+      <FileName>SafeNativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.StepProgressBar" Collapsed="true">
+    <Position X="136.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAEAAAAAIAAAAEAAAAMAAAAAAAAAA=</HashCode>
+      <FileName>StepProgressBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.TestInfo" Collapsed="true">
+    <Position X="131" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACCAEAEAAAACIAAACAAAAAAAAAAAAAAQAACA=</HashCode>
+      <FileName>TestInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidateClosedDevice" Collapsed="true">
+    <Position X="124" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAIAAAAgAAAAAIAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>ValidateClosedDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoTextElements.YMaxATE" Collapsed="true">
+    <Position X="124" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAIEQBCAAAQICABAAAAAEAAAAAAEAA=</HashCode>
+      <FileName>AutoTextElements\YMaxATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoTextElements.YMinATE" Collapsed="true">
+    <Position X="125.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAIEQBCAAAQICABAAAAAEAAAAAAEAA=</HashCode>
+      <FileName>AutoTextElements\YMinATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoTextElements.ZipATE">
+    <Position X="4.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoTextElements\ZipATE.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.CalculateLatitudeLongitude">
+    <Position X="48.5" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\CalculateLatitudeLongitude.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.ConductorAttributeDecoder">
+    <Position X="103.25" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAABAAAAAAAAAAAAIAIAAEAAAAAAAAABAAI=</HashCode>
+      <FileName>AutoUpdaters\ConductorAttributeDecoder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.GeneratorName" Collapsed="true">
+    <Position X="124" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\GeneratorName.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.NumberOfPhasesFromDesignation">
+    <Position X="61.5" Y="5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\NumberOfPhasesFromDesignation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.PGEPopulateLastJobNumberAU">
+    <Position X="92.5" Y="5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAEAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\PGEPopulateLastJobNumberAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.ProtectionType" Collapsed="true">
+    <Position X="122.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\ProtectionType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.RelatedObjectCount" Collapsed="true">
+    <Position X="129.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAEAAAAAAAIADgAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Relationship\RelatedObjectCount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.BaseSplitAU">
+    <Position X="25.25" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAJAACAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\BaseSplitAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.SplitMeasuredLength">
+    <Position X="25.25" Y="8.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\SplitMeasuredLength.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.EvaluationEngine" Collapsed="true">
+    <Position X="136.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAMBAAAQAQAAAAACAAAAAAAIAAAAAAASAAAAAAAAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\EvaluationEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.RelatedObjectFacade" Collapsed="true">
+    <Position X="131" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAACAAAAAAAgAAAEEAAAAIAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\RelatedObjectFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.SupportStructure_JointOwnerComboRelAU" Collapsed="true">
+    <Position X="122.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAIAAAAAAEAAAAAAAAAAAAAAAAAAAAAAIAAgAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\SupportStructure_JointOwnerComboRelAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.SymbolNumberAU">
+    <Position X="73" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAIAAAAAIAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\SymbolNumberAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.SymbolNumberUpdateParentObject" Collapsed="true">
+    <Position X="129.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\SymbolNumberUpdateParentObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.TransformerComboAU" Collapsed="true">
+    <Position X="132.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAgAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\TransformerComboAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.ChangedCircuitTable" Collapsed="true">
+    <Position X="127.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAQAAAAAAAAAAEAgIAAAAA=</HashCode>
+      <FileName>ChangedCircuitTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.BaseLabelTextAU">
+    <Position X="15.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIgAAgAAEAAAEEAQAAAIEAAAIABAAAAAAAgAAI=</HashCode>
+      <FileName>AutoUpdaters\LabelText\BaseLabelTextAU.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="LabelTextEditEvent" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.ConduitLabel" Collapsed="true">
+    <Position X="23" Y="10" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAABEAAIAAAAAAAIAAEAAEAQoAAQAIAAABYAAAAABAE=</HashCode>
+      <FileName>AutoUpdaters\LabelText\ConduitLabel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.DuctBankInfo" Collapsed="true">
+    <Position X="131" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAEAAAAAAAAAKAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoUpdaters\LabelText\DuckBankInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.DuctInfo" Collapsed="true">
+    <Position X="132.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAEAAAAAABAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>AutoUpdaters\LabelText\DuctInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.LabelTextHelper" Collapsed="true">
+    <Position X="127.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoUpdaters\LabelText\LabelTextHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.PriOHConductorLabel">
+    <Position X="7.5" Y="10" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.PriOHConductorLabel.Subtype" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>AutoUpdaters\LabelText\PriOHConductorLabel.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>QEAAAAAAAAAACAAAAIBIAggAIAAEAIAAAAAAAABAEAA=</HashCode>
+      <FileName>AutoUpdaters\LabelText\PriOHConductorLabel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.PriUGConductorLabel">
+    <Position X="10.5" Y="10" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.PriUGConductorLabel.Subtype" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>AutoUpdaters\LabelText\PriUGConductorLabel.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAACAAAAIAKAIIBIAAADMAACQAAAAAAEMA=</HashCode>
+      <FileName>AutoUpdaters\LabelText\PriUGConductorLabel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.RelationshipLabel" Collapsed="true">
+    <Position X="134.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAQAAAAAAAAAAAAAAACAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\LabelText\RelationshipLabel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.SecOHConductorLabel">
+    <Position X="13.25" Y="10" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.SecOHConductorLabel.Subtype" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>AutoUpdaters\LabelText\SecOHConductorLabel.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAIAIAAACIAACABABAAAEEA=</HashCode>
+      <FileName>AutoUpdaters\LabelText\SecOHConductorLabel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.SecUGConductorLabel">
+    <Position X="15.75" Y="10" Width="1.75" />
+    <NestedTypes>
+      <Enum Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.SecUGConductorLabel.Subtype" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>AutoUpdaters\LabelText\SecUGConductorLabel.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAABAAAAAAAAAAAAIAIAAACMAACABAAAAAEEA=</HashCode>
+      <FileName>AutoUpdaters\LabelText\SecUGConductorLabel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.SupportStructureLabel">
+    <Position X="18.25" Y="10" Width="1.75" />
+    <NestedTypes>
+      <Enum Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.SupportStructureLabel.Subtypes" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>AutoUpdaters\LabelText\SupportStructureLabel.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAIAAAAIAAAQAAAAAgAAA=</HashCode>
+      <FileName>AutoUpdaters\LabelText\SupportStructureLabel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.LabelText.TransformerLabel" Collapsed="true">
+    <Position X="20.75" Y="10" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IAAAAAIAAAACAAAAAIAAAAAAIAAACIAMAABAAIgAEAA=</HashCode>
+      <FileName>AutoUpdaters\LabelText\TransformerLabel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Relationship.ConductorInfoRelComboAU" Collapsed="true">
+    <Position X="132.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAIEAABAAAAAAAAAEgAAI=</HashCode>
+      <FileName>AutoUpdaters\Relationship\ConductorInfoRelComboAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Relationship.PGEAttachedCustomerWarningRelAU" Collapsed="true">
+    <Position X="139.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Relationship\PGEAttachedCustomerWarningRelAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Relationship.PopulateConductorPhaseRelAU" Collapsed="true">
+    <Position X="131" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAgAAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Relationship\PopulateConductorPhaseRelAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Relationship.SumUnitCountsRelAU" Collapsed="true">
+    <Position X="120.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAIAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Relationship\SumUnitCountsRelAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.AnnoHorizontalAlignmentAU">
+    <Position X="28" Y="5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABIAAAAAAAAAIEAAEAAAIAAAAAAAAIAAAAAAAgI=</HashCode>
+      <FileName>AutoUpdaters\Special\AnnoHorizontalAlignmentAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.CapBankUnitKVarAU">
+    <Position X="64.75" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAEAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\CapBankUnitKVarAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.CircuitID">
+    <Position X="95.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAEAAAAAAIAAAAAAAAAAAgAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\CircuitID.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.InstallJobYearAutoupdater">
+    <Position X="86.5" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIACAAAAAAAAEAAQAAAIAAAAAAAAAAAAAAgAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\InstallJobYearAutoupdater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.PGE_Asset_Replacement_AU">
+    <Position X="115" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAEAAAAAAIAAAEAAAAAAABAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\PGE_Asset_Replacement_AU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.PGEAllowableEdits">
+    <Position X="51.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAEAAQAAAIAAAAAAAAAAggAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\PGEAllowableEdits.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.PGEInheritOperatingVoltagerAU">
+    <Position X="67.25" Y="5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAKAAAACgAAAAcAAAECAKAAAAgAAQAAAAAAAEAI=</HashCode>
+      <FileName>AutoUpdaters\Special\PGEInheritOperatingVoltagerAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.PopulateAs_BuiltSourceSideAU">
+    <Position X="33.75" Y="5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAEAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\PopulateAs-BuiltSourceSideAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.PopulateDistMapNoAU">
+    <Position X="58.75" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAEAAAAEAIAAAAAAAAIAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\PopulateDistMapNoAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.PopulateLocalOfficeAU">
+    <Position X="98" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAEAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\PopulateLocalOfficeAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.PreventDeleteofDeviceswithCustomersAU">
+    <Position X="106.25" Y="5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAEAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\PreventDeleteofDeviceswithCustomersAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.RecordDeletedFeeder">
+    <Position X="37" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\RecordDeletedFeeder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.RecordDeletedNetworkFeature">
+    <Position X="39.5" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\RecordDeletedNetworkFeature.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.RecordVersionAU">
+    <Position X="54" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\RecordVersionAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.RelateDeviceGroupAU">
+    <Position X="75.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAIDAAAACQEcAAAQABIEAEgAAQAAAgAAAAAAM=</HashCode>
+      <FileName>AutoUpdaters\Special\RelateDeviceGroupAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.SetNormalPositionAU">
+    <Position X="100.75" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAEAAAAAAEAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\SetNormalPositionAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.SourceSideDevice" BaseTypeListCollapsed="true">
+    <Position X="118" Y="5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="PGE.Desktop.EDER.AutoUpdaters.Special.SourceSideDevice.TraceDirection" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>AutoUpdaters\Special\SourceSideDeviceHelper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>YCABJAMACQhAAAAKEEgIAAAQIASAAABABQhAgrgABgY=</HashCode>
+      <FileName>AutoUpdaters\Special\SourceSideDevice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.SumUnitCountsAU">
+    <Position X="56.25" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAEAAAAIAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\SumUnitCountsAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.UniqueCircuitIdAU">
+    <Position X="70.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAEAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\UniqueCircuitIdAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.UpdateConductorPhaseAU">
+    <Position X="78" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAgAAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\UpdateConductorPhaseAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.UpdateDistributionMapNumberAU">
+    <Position X="89.25" Y="5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>gACAABIQQBIABBAAAEAAAYKAIAAQAAAAEAgQAAAAIKI=</HashCode>
+      <FileName>AutoUpdaters\Special\UpdateDistributionMapNumberAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.UpperCaseAU">
+    <Position X="112.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAEAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\UpperCaseAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.ValidateClosedDeviceAU">
+    <Position X="42.5" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\ValidateClosedDeviceAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.ValidateMapNumberAU">
+    <Position X="80.75" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAIAAAEAAAAAAIAAAAAAACCAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\ValidateMapNumberAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.ValidatePoleSpacingAU">
+    <Position X="110" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAIAAAAAEAAAAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\ValidatePoleSpacingAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.RegionalAttributesAU.InheritRegionalAttributesAU">
+    <Position X="83.5" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAAACAIAAIAAAAIAAEAAAAAIIAAAAoAEABiFiAAAIAI=</HashCode>
+      <FileName>AutoUpdaters\Special\RegionalAttributesAU\InheritRegionalAttributesAU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.RegionalAttributesAU.RegionalAttributeMethod" Collapsed="true">
+    <Position X="125.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAACQAAAAQAAkAAAAAAiKAAAAAAQACAEAAAAAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\RegionalAttributesAU\RegionalAttributeMethod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.SymbolNumber.Schema.AndOperator">
+    <Position X="12.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\Schema\AndOperator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.SymbolNumber.Schema.Count" Collapsed="true">
+    <Position X="134.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAQAAAAAAAgAAIAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\Schema\Count.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.SymbolNumber.Schema.FeatureAttribute" Collapsed="true">
+    <Position X="139.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAABAACAAQAAAAAAEgAAIACAAAAAAAAgAAgAAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\Schema\FeatureAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.SymbolNumber.Schema.FeatureClass" Collapsed="true">
+    <Position X="120.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkAAACgEKRAEAQCACAAgEQABMKAACgAACACACAAgACA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\Schema\FeatureClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.SymbolNumber.Schema.LogicalOperator">
+    <Position X="11" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAEQAAAAAAEgAAIACAAACAAAAAAAIIAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\Schema\LogicalOperator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.SymbolNumber.Schema.OrOperator">
+    <Position X="10" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\Schema\OrOperator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.SymbolNumber.Schema.RelatedObject" Collapsed="true">
+    <Position X="127.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAgAAIAAAAACAAAAAAAIAAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\Schema\RelatedRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.SymbolNumber.Schema.Relationship" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="132.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAACAAQAAAAAAAgQAIAAAAACAAAAAAAQAAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\Schema\Relationship.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.SymbolNumber.Schema.Rule" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="138" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAIAAAAEBARAAAAAAEgAAIAAAAAAAAAAREAAIAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\Schema\Rule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.SymbolNumber.Schema.SchemaErrorList" Collapsed="true">
+    <Position X="125.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgQAAAAAAAAQAIAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\Schema\SchemaErrorList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.SymbolNumber.Schema.SymbolNumberRules" Collapsed="true">
+    <Position X="127.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAABAIEAAAQAAAAAAAEAAIABAAAAACAABAAAAACA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\Schema\SymbolNumberRules.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.SymbolNumber.UI.DatasetListItem" Collapsed="true">
+    <Position X="136.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAIAAAIEAAAAAAQAIAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\UI\DatasetListItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.SymbolNumber.UI.OperatingNumberConfigCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="125.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAIAAAAAABAAAIAgAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\UI\OperatingNumberConfigCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.SymbolNumber.UI.SymbolNumberConfigCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="124" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAIAAAAAABAAAIAgAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\UI\SymbolNumberConfigCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.SymbolNumber.UI.SymbolNumberConfigForm" Collapsed="true">
+    <Position X="125.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAIAAAIECQAgEAJQQCAAQQyIEAOSgAgAQEcQAAADBE=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\UI\SymbolNumberConfigForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.UGConductorEliminateType4.UGConductorEliminateType4AU">
+    <Position X="45.25" Y="5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAIAAAAAAAAAAEAACAAAIAAAAAAAAAIAEgAAAAI=</HashCode>
+      <FileName>AutoUpdaters\Special\UGConductorEliminateType4\UGConductorEliminateType4AU.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.AutoUpdaters.Special.UGConductorEliminateType4.UI.UGConductorEliminateType4Form" Collapsed="true">
+    <Position X="138" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAQAUAACAAICAAAACAAEASAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\UGConductorEliminateType4\UI\UGConductorEliminateType4Form.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.D8TreeTools.PGE_Create_Related_Object" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="132.75" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAQEAAgAAAQAAAAAAAAAAAAAAAABCAA=</HashCode>
+      <FileName>D8TreeTools\CreateRelatedObject\PGE_Create_Related_Object.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.D8TreeTools.PGE_Asset_Replacement" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="131" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABABAABQEAAAAAAQAIAAiAAAAAAAAAAQBCAA=</HashCode>
+      <FileName>D8TreeTools\PGE_Asset_Replacement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.D8TreeTools.CreateRelatedObject.Subtype_Field_Editor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="139.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAkBAeAAQCBFAAAANgCIEAAmAABEAAAACAQAAQAAIAA=</HashCode>
+      <FileName>D8TreeTools\CreateRelatedObject\Subtype_Field_Editor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.DisplayNamers.PGE_DisplayName" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="134.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAQAIAABAAAAAAAAAAABEAA=</HashCode>
+      <FileName>DisplayNamers\PGE_DisplayName.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.LocatorTools.OperatingNumberLocator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="127.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAoAAACAAIBAAgAAwAAARAAIAAIBAQAAEAAAIAAAAQ=</HashCode>
+      <FileName>LocatorTools\OperatingNumberLocator\OperatingNumberLocator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.LocatorTools.PGE_OperatingNumberLocatorUI" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="136.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQYAIAQEAiQgBBAEAAGABUECIAUpAMAAiEFIBAgEGSA=</HashCode>
+      <FileName>LocatorTools\OperatingNumberLocator\PGE_OperatingNumberLocatorUI.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Login.ChangePasswordForm" Collapsed="true">
+    <Position X="129.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAQIIqACAQipkAQEKACEACAIABBIASAQYAAgQAAAA=</HashCode>
+      <FileName>Login\ChangePasswordForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Login.EditBalloon" Collapsed="true">
+    <Position X="134.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQQAAAAAAkAAADQAQBAAAAAEIAAAAAAACAAAAAA=</HashCode>
+      <FileName>Login\EditBalloon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Login.LoginForm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="129.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>2FkWIRIAACAAAlUAQAKICMEOomBACMECRzMA0jBEAgo=</HashCode>
+      <FileName>Login\LoginForm.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Login.MessageTool" Collapsed="true">
+    <Position X="136.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAgAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Login\MessageTool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Login.MessageBalloon" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="134.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEIAgQEQDzgAIkgIUGQgRRAIAIAEogBFiAABGCQggEA=</HashCode>
+      <FileName>Login\MessageTool.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Login.MMRegistrySettings" Collapsed="true">
+    <Position X="138" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAIAgAAgQAEQgAAAAAAAAAEAEAAQACABAACQgAAAAA=</HashCode>
+      <FileName>Login\MMRegistrySettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Login.SessionManager" Collapsed="true">
+    <Position X="129.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABACACAASAMAhEAAASAAMACABAAAkAABQgIAggAAQA=</HashCode>
+      <FileName>Login\SessionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Login.WindowWrapper" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="139.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAIAAAA=</HashCode>
+      <FileName>Login\WindowsWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Model.RecordVersionChange" Collapsed="true">
+    <Position X="124" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Model\RecordVersionChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Subtasks.BaseChangeDetectionSubtask">
+    <Position X="3.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAQAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Subtasks\BaseChangeDetectionSubtask.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Changedetector" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Subtasks.DisplaySAPErrorsSubtask" Collapsed="true">
+    <Position X="122.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAQAAAAAAAAAABAAAAAAAAAAgAAAI=</HashCode>
+      <FileName>Subtasks\DisplaySAPErrorsSubtask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Subtasks.PGEReconcileSession" Collapsed="true">
+    <Position X="127.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAIIAAAAAQAAgAAAAEAABAAAAAAAAAAAAAAAAEI=</HashCode>
+      <FileName>Subtasks\PGEReconcileSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Subtasks.PopulateDeviceGroupCircuitID" Collapsed="true">
+    <Position X="132.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAABQAAAAAAAABAAAAAAAAAAAQwgAAAEAAQAAAAA=</HashCode>
+      <FileName>Subtasks\PopulateDeviceGroupCircuitID.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Subtasks.RecordDMSChanges">
+    <Position X="2.25" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Subtasks\RecordDMSChanges.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Changedetector" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Subtasks.DMSChangeDetector" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="125.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAAAAAAAgABAQEDIBAAABCEAYEAAoABBAAgQoAAAAAI=</HashCode>
+      <FileName>Subtasks\RecordDMSChanges.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Subtasks.DMSData" Collapsed="true">
+    <Position X="127.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAQABAAAAAAAAIAAAQAAAAAAAAA=</HashCode>
+      <FileName>Subtasks\RecordDMSChanges.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Subtasks.RecordEditedMap">
+    <Position X="4.75" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Subtasks\RecordEditedMap.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Changedetector" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Subtasks.MapProductionChange" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="132.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAABAAAAABBAQEBAAACAAAAQYAAAoAAABAgAAAAAAAA=</HashCode>
+      <FileName>Subtasks\RecordEditedMap.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Subtasks.RunQAQC" Collapsed="true">
+    <Position X="139.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAQAAAABAEAAAAAA=</HashCode>
+      <FileName>Subtasks\RunQAQC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.Subtasks.SAPErrorsUI" Collapsed="true">
+    <Position X="122.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAIACAEEAAAAACABAACAAAAQAAAAIAQAAAAAAA=</HashCode>
+      <FileName>Subtasks\SAPErrorsUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.CapacitorAnnotation" Collapsed="true">
+    <Position X="125.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\CapacitorAnnotation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.ValidateFaultIndicatorInstalled" Collapsed="true">
+    <Position X="127.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAACAAAAAIAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\DateValidator\ValidateFaultIndicatorInstalled.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.DeviceGroupRelToStructure" Collapsed="true">
+    <Position X="120.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAACAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\DeviceGroupRelToStructure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.OneXFRPerLineValidationRule" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="124" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEAAQAIAAgAEAAAAAACAAAAAIAAAAAAAAAAAAABAUAA=</HashCode>
+      <FileName>ValidationRules\OneXFRPerLineValidationRule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.ScadaValidator" Collapsed="true">
+    <Position X="124" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIMACAAAAAAAACAAAAAAAgAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\ScadaValidator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.SourceLinePhase" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="132.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQMQAIIBAAASBExAADEAAIUYwDYgAQBACABIAAAIAY=</HashCode>
+      <FileName>ValidationRules\SourceLinePhase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.StepDownValidator" Collapsed="true">
+    <Position X="134.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAQAAgAAAAAAgAAAACAAAAAIAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>ValidationRules\StepDownValidator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.TransformerDetectionScheme" Collapsed="true">
+    <Position X="134.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAACAIAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>ValidationRules\TransformerDetectionScheme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.TransformerPhase" Collapsed="true">
+    <Position X="136.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAACAAAgAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\TransformerPhase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.UniqueCGCNumber" Collapsed="true">
+    <Position X="139.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAQCAIAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>ValidationRules\UniqueCGCNumber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.ValidateCircuitIDFormat" Collapsed="true">
+    <Position X="122.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAACAAABgIAAAAAAEAAAACAAAgAE=</HashCode>
+      <FileName>ValidationRules\ValidateCircuitIDFormat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.StringExtension" Collapsed="true">
+    <Position X="138" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>ValidationRules\ValidateCircuitIDFormat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.ValidateClosedDeviceAction" Collapsed="true">
+    <Position X="125.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAgAAAACAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\ValidateClosedDeviceAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.ValidateFieldsInServiceStatus" Collapsed="true">
+    <Position X="129.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAgAAAACAAAAAIAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>ValidationRules\ValidateFieldsInServiceStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.ValidateOperatingNumber" Collapsed="true">
+    <Position X="132.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAACAAAAAIAAAAAAAAAABAAAgAAA=</HashCode>
+      <FileName>ValidationRules\ValidateOperatingNumber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.ValidatePhaseDesignation" Collapsed="true">
+    <Position X="134.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\ValidatePhaseDesignation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.ValidateProposedChange" Collapsed="true">
+    <Position X="136.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAAIAAAAIAAAIACQggAgKAAAAAAAAAABIAAAUgA=</HashCode>
+      <FileName>ValidationRules\ValidateProposedChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.ValidateProtectionScheme" Collapsed="true">
+    <Position X="138" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\ValidateProtectionScheme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.ValidateRegionalAttributes" Collapsed="true">
+    <Position X="139.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAgACAAAAAIAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>ValidationRules\ValidateRegionalAttributes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.ValidateSerialNumberManufacturer" Collapsed="true">
+    <Position X="120.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAiAAAAQAgAAAACAEACAIAEAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>ValidationRules\ValidateSerialNumberManufacturer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.ValidateSourceConnectivity" Collapsed="true">
+    <Position X="122.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAACAAAAAIAAAAAAAAAABEAAAAAA=</HashCode>
+      <FileName>ValidationRules\ValidateSourceConnectivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.ValidateSumUnitCount" Collapsed="true">
+    <Position X="124" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAIAIAAAAAAAAAABAAAgAAA=</HashCode>
+      <FileName>ValidationRules\ValidateSumUnitCount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.ValidateTransformerUnitSubtype" Collapsed="true">
+    <Position X="125.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAACAAAAAAAAAAAAAIAAAAAAQAAA=</HashCode>
+      <FileName>ValidationRules\ValidateTransformerUnitSubtype.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.ValidateTransformerVoltage" Collapsed="true">
+    <Position X="127.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIgAQAAAAQAAAACAAACiIAAAAAAAAAgEAAAAAAA=</HashCode>
+      <FileName>ValidationRules\ValidateTransformerVoltage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.ValidateXFRServicePointDivision" Collapsed="true">
+    <Position X="131" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAACAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\ValidateXFRServicePointDivision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.DateValidator.DateValidatorRule" Collapsed="true">
+    <Position X="138" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQQAACBBAAAAAAAAAgoAAACAAgEAAABAAAgEA=</HashCode>
+      <FileName>ValidationRules\DateValidator\DateValidatorRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.DateValidator.ValidateCableTestDate" Collapsed="true">
+    <Position X="120.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAIAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\DateValidator\ValidateCableTestDate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.DateValidator.ValidateInstallationDate" Collapsed="true">
+    <Position X="131" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gABAAAAAAAAAAAAAAASAAIAAoAAQACAAQAABAAAAAQA=</HashCode>
+      <FileName>ValidationRules\DateValidator\ValidateInstallationDate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.DateValidator.ValidateWindSpeedRerateYear" Collapsed="true">
+    <Position X="129.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAgAAAACAAAAAIAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\DateValidator\ValidateWindSpeedRerateYear.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.DateValidator.ValidateYearManufactured" Collapsed="true">
+    <Position X="132.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAgAAAACAAAAAIAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\DateValidator\ValidateYearManufactured.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.VoltageValidators.DPDPrimaryVoltageValidator" Collapsed="true">
+    <Position X="129.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAwAAAAAAgAAAACAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\VoltageValidator\DPDPrimaryVoltageValidator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.VoltageValidators.PrimaryVoltageRule" Collapsed="true">
+    <Position X="120.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAoAAAAQACAAAAAIAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\VoltageValidator\PrimaryVoltageRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.VoltageValidators.PriVoltageValidator">
+    <Position X="2" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BAAAAABAAACgEUAgAAABAAAAAQAIFAoQCAAASAAADAE=</HashCode>
+      <FileName>ValidationRules\VoltageValidator\PriVoltageValidator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.VoltageValidators.RelClassResolver" Collapsed="true">
+    <Position X="136.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAABACAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\VoltageValidator\RelationshipClassResolver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.VoltageValidators.SecondaryVoltageRule" Collapsed="true">
+    <Position X="127.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAQACAAAAAIAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>ValidationRules\VoltageValidator\SecondaryVoltageRule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.VoltageValidators.SecVoltageValidator">
+    <Position X="4.5" Y="11.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAQAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\VoltageValidator\SecVoltageValidator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.VoltageValidators.VoltageValidator">
+    <Position X="3.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\VoltageValidator\VoltageValidator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.VoltageValidators.VoltageValidatorFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="138" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEAAQAoAAAAIAAAAAAAAAAAAQAAAAAAAAAAAIAAgABA=</HashCode>
+      <FileName>ValidationRules\VoltageValidator\VoltageValidatorFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Desktop.EDER.ValidationRules.VoltageValidators.MultipleUpstreamFeaturesException" Collapsed="true">
+    <Position X="120.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValidationRules\VoltageValidator\VoltageValidatorFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Common.Delivery.ArcFM.BaseSpecialAU">
+    <Position X="62.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Struct Name="PGE.Desktop.EDER.SchemaInfo" Collapsed="true">
+    <Position X="122.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SchemaInfo.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="PGE.Desktop.EDER.Subtasks.ChangeLookupFields" Collapsed="true">
+    <Position X="120.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAUgAAAAAABAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Subtasks\RecordDMSChanges.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="PGE.Desktop.EDER.IChange">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAEAAAAAAAAAAQAAAoAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IChange.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PGE.Desktop.EDER.AutoUpdaters.IEvaluationCriteria" Collapsed="true">
+    <Position X="120.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\SymbolNumber\IEvaluationCriteria.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Miner.Interop.IMMConfigTopLevel" Collapsed="true">
+    <Position X="26.25" Y="13.25" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="PGE.Desktop.EDER.AdjacentGridDirection" Collapsed="true">
+    <Position X="120.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACCCABABAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAEBAAQ=</HashCode>
+      <FileName>AutoTextElements\AdjacentGridATES\BaseAdjacentGridATE.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Desktop.EDER.AutoUpdaters.Special.EditType" Collapsed="true">
+    <Position X="127.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAEAAAAAAAAAQAAIAAAAAAAAA=</HashCode>
+      <FileName>AutoUpdaters\Special\UpdateDistributionMapNumberAU.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Desktop.EDER.Login.TooltipIcon" Collapsed="true">
+    <Position X="129.25" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAAEEAAAA=</HashCode>
+      <FileName>Login\EditBalloon.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Desktop.EDER.Login.ConnectionType" Collapsed="true">
+    <Position X="125.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAQAAAAAAAAAAAAAAAAAAAAAAAAgCAAA=</HashCode>
+      <FileName>Login\LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Desktop.EDER.Login.BalloonAlignment" Collapsed="true">
+    <Position X="122.25" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QgAAAAAIgAAAABAAAAAAAAAAAAAAAAAACACAAAAAAEA=</HashCode>
+      <FileName>Login\MessageTool.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Desktop.EDER.Login.BalloonPosition" Collapsed="true">
+    <Position X="124" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Login\MessageTool.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Miner.Interop.mmEditEvent">
+    <Position X="18.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Delegate Name="PGE.Desktop.EDER.Login.DeActivateEventHandler" Collapsed="true">
+    <Position X="120.5" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Login\MessageTool.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,47 @@
+Prompt drop Package PRVT_SAM;
+DROP PACKAGE MDSYS.PRVT_SAM
+/
+
+Prompt Package PRVT_SAM;
+--
+-- PRVT_SAM  (Package) 
+--
+CREATE OR REPLACE PACKAGE MDSYS.prvt_sam wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+9
+53e 250
+gIFENeX0FBHEtYop7G7es1i+K9gwg2O310gFfHTGv3lBrMToZ8ygrYrxt2Z/y3+TPFrFTa7m
+LA7dS28S+bOE/NRM/D8IFPeSzBr5w5/5B/YvP3P5TlQsubmvlFXMpg91f95irHTcb7X93WEU
+ZHdstA4RMi5qtFeVq9q7OZ1WPXlmG7FmiqT4kIY9bFb//3AhmpXeMPtkg7g1PSILlAHy1/io
+mEPvWcXNOb5l+VY8BEDWhqRaxDsGg3bQGY8vrKm66lEV1/4xwJWxSvZnCAsm7yPL1rXPSigb
+RpF6+7DThnbeRBOjMlHUgO6cJ9zOmYaIDbis31qW6tNFe1lfPhRNb9eJfwkVS0FK6tZMbZdz
+pTTy85wIi6HTFnLZUyMzStn6oPtQFhtoOYPZUx5J2u6M1qcGD8vxJ402w5sHtPqnQeUNi5S+
+Y6JlLzEtbfMLDbVwT+AAKWmFQEBhc+eWB5X0GiuyR5MOb0p8BSvGipLZQlYS+J1f4ux+Ji0p
+Y6eOFu12GT39QoowbB6j3C2xIN1FC4lMH4RjXb4uxU9NcNDYMPgjHbEfpWyzfESFNLHuT2Sd
+c0Qtp1Y5
+
+/
+
+
+Prompt Synonym PRVT_SAM;
+--
+-- PRVT_SAM  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM PRVT_SAM FOR MDSYS.PRVT_SAM
+/

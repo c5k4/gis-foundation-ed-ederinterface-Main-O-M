@@ -1,0 +1,232 @@
+﻿<!--ENOS2EDGIS-->
+@model SettingsApp.Models.MoveGeneratorModel
+@*<script src="@Url.Content("~/Scripts/jquery-1.7.1.js")" type="text/javascript"></script>*@
+<style type="text/css">
+    td.print-for-trf
+    {
+        display: none;
+    }
+    .desc-text-area
+    {
+        width: 320px;
+        height: 50px;
+    }
+    .admin-checkbox
+    {
+        display: none;
+    }
+    .DropDown { width: 205px; }
+</style>
+<script>
+
+    $.ajaxSetup({ cache: false });
+    function DropDownListId1Changed() {
+        $("#resultText").text("");
+        /* Get the selected value of dropdownlist */
+        var selectedID1 = $("#dropDownListId1").val();
+        if (selectedID1) {
+            $('#dropDownListId2').prop('disabled', false);
+            $('#dropDownListId2').find('option[value="' + selectedID1 + '"]').prop('disabled', true).siblings().removeAttr('disabled');
+            //$('#selectedProtection1').val(selectedID.toString());
+            $.getJSON("/Protection/GetGeneratorNames?protectionID=" + selectedID1, null, function (data) {
+                $("#generatorsList1 option").remove(); // Remove all <option> child tags.
+                $("#resultText").text("");
+                $.each(data.Generators, function (index, item) {
+                    $("#generatorsList1").append(
+	                        $("<option></option>")
+	                            .text(item.Description + index.toString())
+	                            .val(item.ID)
+	                    );
+                });
+                /* little fade in effect */
+                $("#generatorsList1").fadeIn("fast");
+            });
+        } else {
+            $('#dropDownListId2 option').prop('disabled', false);
+            $("#generatorsList1 option").remove();
+        }
+    }
+
+    function DropDownListId2Changed() {
+        $("#resultText").text("");
+            /* Get the selected value of dropdownlist */
+            var selectedID2 = $("#dropDownListId2").val();
+            if (selectedID2) {
+                $('#dropDownListId1').prop('disabled', false);
+                $('#dropDownListId1').find('option[value="' + selectedID2 + '"]').prop('disabled', true).siblings().removeAttr('disabled');
+                //$('#selectedProtection2').val(selectedID.toString());
+                $.getJSON("/Protection/GetGeneratorNames?protectionID=" + selectedID2, null, function (data) {
+                    $("#generatorsList2 option").remove(); // Remove all <option> child tags.
+                    $("#resultText").text("");
+                    $.each(data.Generators, function (index, item) {
+                        $("#generatorsList2").append(
+                            $("<option></option>")
+                                .text(item.Description + index.toString())
+                                .val(item.ID)
+                        );
+                    });
+                    /* little fade in effect */
+                    $("#generatorsList2").fadeIn("fast");
+                });
+            } else {
+                $('#dropDownListId1 option').prop('disabled', false);
+                $("#generatorsList2 option").remove();
+            }
+    }
+
+    function PostDetails(url) {
+//        $("#generatorsList1 option").prop("selected", "selected");
+        //        $("#generatorsList2 option").prop("selected", "selected");
+        var json = "";
+        $("#generatorsList1 option").each(function () {
+            value = $(this).val()
+            if (json.length != 0) json += ",";
+
+            json += value;
+        });
+
+        $('#generatorList1Updated').val(json.toString());
+        var json1 = "";
+        $("#generatorsList2 option").each(function () {
+            value = $(this).val()
+            if (json1.length != 0) json1 += ",";
+
+            json1 += value;
+        });
+
+        $('#generatorList2Updated').val(json1.toString());
+        $.post(url, $("form").serializeArray(), function (result) {
+//            $('#resultText').val(result.message);
+            $("#resultText").text(result.message);
+        });
+    }
+
+
+    $(function () {
+        $('#ShiftRight').click(function (e) {
+            e.preventDefault();
+            var selectedID = $("#dropDownListId2").val();
+            if (selectedID) {
+                $('#generatorsList1 option:selected').appendTo('#generatorsList2');
+                $("#resultText").text("...has Edits");
+            } else {
+                $("#resultText").text("Two Protections should be selected");
+                $("#dropDownListId2").focus();
+            }
+        });
+
+        $('#ShiftLeft').click(function (e) {
+            e.preventDefault();
+            var selectedID = $("#dropDownListId1").val();
+            if (selectedID) {
+                $('#generatorsList2 option:selected').appendTo('#generatorsList1');
+                $("#resultText").text("...has Edits");
+            } else {
+                $("#resultText").text("Two Protections should be selected");
+                $("#dropDownListId1").focus();
+            }
+
+        });
+
+    });
+</script>
+<style>
+
+</style>
+@using (Html.BeginForm("MoveGenerators", "Protection", FormMethod.Post, new { id = "myForm" }))
+{
+   @Html.ValidationSummary(true)
+   <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td style="text-align:left">
+            @Html.Label("Select protection:", new { @style = "text-align:left" })
+        </td>
+        <td>
+        </td>
+        <td style="text-align:left">
+            @Html.Label("Select protection:", new { @style = "text-align:left" })
+        </td>
+   </tr>
+   <tr>
+        <td>
+            @Html.DropDownListFor(model => model.Dropdown1SelectedProtection, Model.ProtectionNamesList,"Select", new { @class = "DropDown", id = "dropDownListId1", onchange = "DropDownListId1Changed()" })
+@*            @Html.Hidden("selectedProtection1")*@
+        </td>
+        <td>
+        </td>
+        <td>
+            @Html.DropDownListFor(model => model.Dropdown2SelectedProtection, Model.ProtectionNamesList, "Select", new { @class = "DropDown", id = "dropDownListId2", onchange = "DropDownListId2Changed()" })
+@*            @Html.Hidden("selectedProtection2")*@
+        </td>
+   </tr>
+   <tr>
+       <td colspan ="3">
+            <br />
+       </td>
+   </tr>
+      <tr>
+       <td colspan ="3">
+            <br />
+       </td>
+   </tr>
+      <tr>
+       <td style="text-align:left">
+            @Html.Label("Available Generators:", new { @style = "text-align:left" })
+       </td>
+       <td>
+       </td>
+       <td style="text-align:left">
+            @Html.Label("Available Generators:", new { @style = "text-align:left" })
+       </td>
+   </tr>
+    <tr>
+        <td>
+            @Html.Hidden("generatorList1Updated")
+            @Html.ListBoxFor(model => model.SelectedValuesInGeneratorLb1, Model.GeneratorListBoxItems1, new { id = "generatorsList1", @style = "width: 200px;height:100px" })
+@*            <select style="width:200px; height:100px;" id="generatorsList1" MULTIPLE>
+            </select>*@
+        </td>
+        <td align="center" valign="middle">
+            <input type="button" id="ShiftRight" value="-->" style="width:50px"  />
+            <br />
+            <br />
+            <input type="button" id="ShiftLeft" value="<--" style="width:50px" />
+        </td>
+        <td>
+            @Html.Hidden("generatorList2Updated")
+            @Html.ListBoxFor(model => model.SelectedValuesInGeneratorLb2, Model.GeneratorListBoxItems2, new { id = "generatorsList2", @style = "width: 200px;height:100px" })
+@*            <select style="width:200px; height:100px;" id="generatorsList2" MULTIPLE>
+            </select>*@
+        </td>
+    </tr>
+    <tr>
+        <td colspan ="3">
+            <br />
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+          <label for="myalue" id="resultText" style="font-style:italic;text-align: left;" />
+        </td>
+        <td colspan="1" style="text-align: right; padding-right: 10px">
+           
+            <input type="button" value="Close" onclick="this.form.action='/Protection/IndexByID?parentType=Generation&protectionId=@Model.CurrentProtectionId';this.form.submit();"
+                    @((SettingsApp.Common.Security.IsInAdminGroup || (SettingsApp.Common.Security.IsInSuperUserGroup && SettingsApp.Common.Security.IsSuperUserActive)) ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+
+@*            <input type="button" value="Save" id="Save" onclick="this.form.action='/Protection/MoveGenerators';this.form.submit();"
+                    @(SettingsApp.Common.Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />*@
+                
+                
+                @*@if ((SettingsApp.Common.Security.IsInAdminGroup || (SettingsApp.Common.Security.IsInSuperUserGroup && SettingsApp.Common.Security.IsSuperUserActive)))*@
+                    
+                    @*ENOS test issues *@
+                    @if (SettingsApp.Common.Security.IsInAdminGroup || (SettingsApp.Common.Security.IsInSuperUserGroup && SettingsApp.Common.Security.IsSuperUserActive))
+                    {
+                        var urlpath = @"/Protection/MoveGenerators";
+                     <input type="button" value="Save" id="Save" onclick="PostDetails('@urlpath')"; 
+                    @(SettingsApp.Common.Security.IsInAdminGroup || (SettingsApp.Common.Security.IsInSuperUserGroup && SettingsApp.Common.Security.IsSuperUserActive) ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                    }
+        </td>
+    </tr>
+</table>
+}

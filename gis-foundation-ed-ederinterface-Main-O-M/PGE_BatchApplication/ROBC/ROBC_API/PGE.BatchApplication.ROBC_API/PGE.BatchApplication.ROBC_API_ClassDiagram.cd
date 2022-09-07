@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ROBC_API.DatabaseRecords.BaseRecord">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAEAAAAAAAAQAAAACyAACAAAgAAAAAEAAAAAAA=</HashCode>
+      <FileName>DatabaseRecords\BaseRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ROBC_API.DatabaseRecords.CircuitSourceRecord">
+    <Position X="1.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAACAAAAAAAAAAAAAAAABAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DatabaseRecords\CircuitSourceRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ROBC_API.DatabaseRecords.DPDRecord">
+    <Position X="6" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DatabaseRecords\DPDRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ROBC_API.DatabaseRecords.PCPRecord">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DatabaseRecords\PCPRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ROBC_API.DatabaseRecords.ROBCRecord">
+    <Position X="1.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DatabaseRecords\ROBCRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ROBC_API.DatabaseRecords.SwitchRecord">
+    <Position X="4.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DatabaseRecords\SwitchRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ROBC_API.ROBCManager">
+    <Position X="9.25" Y="0.5" Width="4.5" />
+    <Members>
+      <Field Name="_ClassIDDCRectifier" Hidden="true" />
+      <Field Name="_ClassIDEDStitchPoint" Hidden="true" />
+      <Field Name="_ClassIDPrimaryMeter" Hidden="true" />
+      <Field Name="_ClassIDTransformer" Hidden="true" />
+      <Field Name="_EDDatabaseUserName" Hidden="true" />
+      <Field Name="_EderDatabaseConnection" Hidden="true" />
+      <Field Name="_EderGeomNetwork" Hidden="true" />
+      <Field Name="_EderOracleConnection" Hidden="true" />
+      <Field Name="_EderSubDatabaseConnection" Hidden="true" />
+      <Field Name="_EDERSubGeomNetwork" Hidden="true" />
+      <Field Name="_EderSubOracleConnection" Hidden="true" />
+      <Field Name="_EDSubstationDatabaseUserName" Hidden="true" />
+      <Field Name="_ListDevicePotentialTables" Hidden="true" />
+      <Field Name="_strEDERGeomNetwork" Hidden="true" />
+      <Field Name="_strSUBGeomNetwork" Hidden="true" />
+      <Method Name="~ROBCManager" Hidden="true" />
+      <Method Name="ArcFMDwnstreamTrace" Hidden="true" />
+      <Method Name="ArcFMDwnstreamTraceFromFeature" Hidden="true" />
+      <Method Name="bGetRelationshipClass" Hidden="true" />
+      <Method Name="bHasEssentialCustomersFromJunctionsList" Hidden="true" />
+      <Method Name="bHasEssentialCustomersFromOIDList" Hidden="true" />
+      <Method Name="CheckOutLicense" Hidden="true" />
+      <Method Name="ConnectToDatabase" Hidden="true" />
+      <Method Name="FilterJunctions" Hidden="true" />
+      <Method Name="filterLoadJunctions" Hidden="true" />
+      <Method Name="FindCircuitByGUID" Hidden="true" />
+      <Method Name="FindPCPByGUID" Hidden="true" />
+      <Method Name="GetChildCircuitsForLoadStitchPoint" Hidden="true" />
+      <Method Name="getFeatureClassID" Hidden="true" />
+      <Method Name="GetFieldName" Hidden="true" />
+      <Method Name="getGeometricNetwork" Hidden="true" />
+      <Method Name="GetInsertStatement" Hidden="true" />
+      <Method Name="getOIDsFromEIDs" Hidden="true" />
+      <Method Name="GetParentChildCircuitsForCircuitID" Hidden="true" />
+      <Method Name="GetQueryFilter" Hidden="true" />
+      <Method Name="GetTable" Hidden="true" />
+      <Method Name="GetUpdateStatement" Hidden="true" />
+      <Method Name="GetWhereClausesforOIDs" Hidden="true" />
+      <Method Name="iCountAllCustomersFromJunctionsList" Hidden="true" />
+      <Method Name="iCountAllCustomersFromOIDList" Hidden="true" />
+      <Method Name="Initialize" Hidden="true" />
+      <Method Name="IsCircuitROBCValid" Hidden="true" />
+      <Method Name="IsPCPROBCValid" Hidden="true" />
+      <Field Name="m_AOLicenseInitializer" Hidden="true" />
+      <Method Name="ObtainBaseRecord" Hidden="true" />
+      <Method Name="ObtainBaseRecordList" Hidden="true" />
+      <Method Name="ObtainBaseRecords" Hidden="true" />
+      <Method Name="procSPOIDs" Hidden="true" />
+      <Method Name="procXFROIDS" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="ROBC_API.ROBCManager.NetworkSourceType">
+        <TypeIdentifier>
+          <NewMemberFileName>ROBCManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="ROBC_API.ROBCManager.TraceType">
+        <TypeIdentifier>
+          <NewMemberFileName>ROBCManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>6uGQhCqaAlK010oCSgzkRkpoNBxlgDGEZGSjEW4BAhQ=</HashCode>
+      <FileName>ROBCManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ROBC_API.DatabaseRecords.ScadaIndicator">
+    <Position X="1.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAACAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>DatabaseRecords\CircuitSourceRecord.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

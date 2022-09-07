@@ -1,0 +1,27 @@
+Prompt drop Function HHMATCH;
+DROP FUNCTION MDSYS.HHMATCH
+/
+
+Prompt Function HHMATCH;
+--
+-- HHMATCH  (Function) 
+--
+CREATE OR REPLACE FUNCTION MDSYS.hhmatch (hh1 IN RAW, hh2 IN RAW)
+    RETURN BINARY_INTEGER IS
+begin
+  return md.hhmatch(hh1,hh2);
+end;
+/
+
+
+Prompt Synonym HHMATCH;
+--
+-- HHMATCH  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM HHMATCH FOR MDSYS.HHMATCH
+/
+
+
+Prompt Grants on FUNCTION HHMATCH TO PUBLIC to PUBLIC;
+GRANT EXECUTE ON MDSYS.HHMATCH TO PUBLIC
+/

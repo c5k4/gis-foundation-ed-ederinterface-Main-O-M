@@ -1,0 +1,162 @@
+﻿<Page x:Class="PGE.BatchApplication.ROBCApp.ManageROBC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Manage ROBC" Background="Transparent" Width="Auto" Height="Auto"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
+    <xctk:BusyIndicator x:Name="_busyIndicator" IsBusy="{Binding IsBusyFlag}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,10">
+                <TextBlock Style="{StaticResource HeaderTextStyle}">Manage ROBC</TextBlock>
+            </Border>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="225"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="1" Grid.Column="0" Content="Circuit Id :"  Name="lblCircuit"  Style="{StaticResource FieldLabelStyle}" />
+                    <Label Grid.Row="1" Grid.Column="1" Content="{Binding Path=CircuitROBC.CircuitId}"   Name="lblCircuitId" Style="{StaticResource FieldValueStyle}"/>
+                    <Label Grid.Row="2" Grid.Column="0" Content="Feeder Name :"  Name="lblFeederName"  Style="{StaticResource FieldLabelStyle}" />
+                    <Label Grid.Row="2" Grid.Column="1" Content="{Binding Path=CircuitROBC.FeederName}"   Name="lblFeederNameVal"  Style="{StaticResource FieldValueStyle}" />
+                    <Label Grid.Row="3" Grid.Column="0" Content="Division :"  Name="lblDivision"   Style="{StaticResource FieldLabelStyle}"/>
+                    <Label Grid.Row="3" Grid.Column="1" Content="{Binding Path=CircuitROBC.Division}"   Name="lblDivisionVal"  Style="{StaticResource FieldValueStyle}"/>
+
+                    <Label Grid.Row="4" Grid.Column="0" Content="Parent Circuit :"  Name="lblParentCircuit" Style="{StaticResource FieldLabelStyle}"  />
+                    <Label Grid.Row="4" Grid.Column="1" Content="{Binding Path=CircuitROBC.ParentCircuitID}"  Name="lblParentCircuitVal" Style="{StaticResource FieldValueStyle}"  />
+                    <Label Grid.Row="5" Grid.Column="0" Content="Child Circuit(s) :"  Name="lblChildrenCircuit" Style="{StaticResource FieldLabelStyle}"  />
+                    <TextBlock Grid.Row="5" Grid.Column="1" TextWrapping="Wrap" Text="{Binding Path=CircuitROBC.ChildCircuitIDs}"  Name="lblChildrenCircuitVal"  />
+                    <Grid Grid.Row="6" Grid.Column="1" Grid.RowSpan="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" CornerRadius="2" BorderThickness="1,1,1,1">
+                        </Border>
+                        <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" CornerRadius="2" BorderThickness="0,1,1,1">
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  BorderBrush="Black" Background="#E4E4E0" BorderThickness="1,0,1,1">
+                        </Border>
+                        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  BorderBrush="Black" Background="#E4E4E0" BorderThickness="1,0,1,1">
+                        </Border>
+                        <Label Grid.Row="0" Grid.Column="0"  Content="Desired" Padding="15,8,15,8" />
+                        <Label Grid.Row="0" Grid.Column="1"  Content="Established" Padding="8"    />
+                        <ComboBox Grid.Row="1" Grid.Column="0"  Name="CmbROBCVal"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8" Padding="5"
+                     Width="50" Style="{StaticResource ComboFieldValueStyle}"
+                      ItemsSource="{Binding RobcCodeValues}"
+                      DisplayMemberPath="RobcDesc"
+                      SelectedValuePath="RobcCode"
+                      SelectedValue="{Binding Path=CircuitROBC.DesiredROBC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      />
+
+                        <Label Grid.Row="1" Grid.Column="1"  Content="{Binding Path=CircuitROBC.EstablishedROBCDesc}" Padding="30,12" BorderBrush="Black" BorderThickness="1,0,0,0" HorizontalAlignment="Stretch" 
+                   VerticalAlignment="Center"  />
+
+                        <ComboBox Grid.Row="2" Grid.Column="0"  Name="CmbSubBlockVal"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8" Padding="5" 
+                      Width="50" Style="{StaticResource ComboFieldValueStyle}"
+                       ItemsSource="{Binding SubBlockCodeValues}"
+                      DisplayMemberPath="SubBlockDesc"
+                      SelectedValuePath="SubBlockCode"
+                      SelectedValue="{Binding Path=CircuitROBC.DesiredSubBlock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      />
+                        <Label Grid.Row="2" Grid.Column="1"  Content="{Binding Path=CircuitROBC.EstablishedSubBlockDesc}" Padding="30,12" BorderBrush="Black" BorderThickness="1,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+
+                    </Grid>
+
+                    <Label Grid.Row="7" Grid.Column="0"  Content="ROBC :"  Name="lblROBC" Margin="0,40,0,7"  Style="{StaticResource FieldLabelStyle}"   />
+                    <Label Grid.Row="8" Grid.Column="0" Content="SubBlock :"  Name="lblSubBlock" Margin="0,9,0,7" Style="{StaticResource FieldLabelStyle}"  />
+
+                    <TextBlock Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2"  
+                    HorizontalAlignment="Left" TextWrapping="Wrap"
+                   VerticalAlignment="Top" FontSize="12" FontStyle="Italic" Margin="0,5,0,0" Text="{Binding ModifiedDateInfo}"/>
+                   
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="350">
+                        <Button Content="Get Scada And Load Information"   Name="BtnLoadInformation"  Style="{StaticResource OperationButtonStyle}" Grid.Row="0"   Grid.Column="0" 
+                            HorizontalAlignment="Right" Command="{Binding CalculateLoadInfoCommand}" />
+                    </Grid>
+                    <Label Grid.Row="1" Grid.Column="0" Content="SCADA :"  Name="lblScada"  Style="{StaticResource FieldLabelStyle}" />
+                    <Label Grid.Row="1" Grid.Column="1" Content="{Binding Path=CircuitROBC.IsScada}"   Name="lblScadaVal" Style="{StaticResource FieldValueStyle}"/>
+                    <Label Grid.Row="2" Grid.Column="0" Content="Customer Count :"  Name="lblCustomerCount"  Style="{StaticResource FieldLabelStyle}" />
+                    <Label Grid.Row="2" Grid.Column="1" Content="{Binding Path=CircuitROBC.TotalCustomer}"   Name="lblCustomerCountVal"  Style="{StaticResource FieldValueStyle}" />
+                    <Label Grid.Row="3" Grid.Column="0" Content="Summer kVA :"  Name="lblSummerKva"   Style="{StaticResource FieldLabelStyle}"/>
+                    <Label Grid.Row="3" Grid.Column="1" Content="{Binding Path=CircuitROBC.SummerKVA}"   Name="lblSummerKvaVal"  Style="{StaticResource FieldValueStyle}"/>
+                    <Label Grid.Row="4" Grid.Column="0" Content="Winter kVA :"  Name="lblWinterKva" Style="{StaticResource FieldLabelStyle}"  />
+                    <Label Grid.Row="4" Grid.Column="1" Content="{Binding Path=CircuitROBC.WinterKVA}"  Name="lblWinterKvaVal" Style="{StaticResource FieldValueStyle}"  />
+                    
+                </Grid>
+            </Grid>
+
+            <Grid Grid.IsSharedSizeScope="True" Height="Auto" HorizontalAlignment="Center" 
+              Name="YesNoGrid" VerticalAlignment="Top"  Grid.Row="2" Grid.Column="1" Margin="10,30" Visibility="{Binding Path=YesNoGridVisibility, Converter={StaticResource ResourceKey=BoolToVisibility}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left"  TextWrapping="Wrap"
+                   VerticalAlignment="Center" FontSize="12" FontStyle="Normal" Margin="0,5,0,0" Text="{Binding AlertMessage}"/>
+                <Button Content="Yes"   Name="BtnYes"  Style="{StaticResource OperationButtonStyle}" Grid.Row="0" Grid.Column="1"  Click="BtnYes_Click" />
+                <Button Content="No"  Name="BtnNo"  Style="{StaticResource OperationButtonStyle}" Grid.Row="0" Grid.Column="2" Click="BtnNo_Click" />
+            </Grid>
+
+            <Grid Grid.IsSharedSizeScope="True" Height="Auto" HorizontalAlignment="Right"
+              Name="SearchPCPButtonsGrid" VerticalAlignment="Top" Grid.Row="3" Grid.Column="1" Margin="0,30" Visibility="{Binding Path=AssignCancelButtonGridVisibility, Converter={StaticResource ResourceKey=BoolToVisibility}}">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button Content="Assign"   Name="BtnAssign"  Style="{StaticResource OperationButtonStyle}" Grid.Column="0" Click="BtnAssign_Click" />
+                <!--Click="BtnAssign_Click"-->
+                <Button Content="Cancel"  Name="BtnCancel"  Style="{StaticResource OperationButtonStyle}" Grid.Column="1" Click="BtnCancel_Click" />
+            </Grid>
+        </Grid>
+
+
+    </xctk:BusyIndicator>
+</Page>

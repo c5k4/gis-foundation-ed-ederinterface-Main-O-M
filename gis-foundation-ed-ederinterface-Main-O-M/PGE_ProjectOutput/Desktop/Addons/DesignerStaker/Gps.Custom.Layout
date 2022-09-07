@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LayoutData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layoutFormat="2">
+	<SystemData>
+	</SystemData>
+	<MainWindow>
+		<CommandManager>
+			<Commands>
+				<Command key="GpsPopupCommand" type="Miner.FrameworkUI.Commands.GpsPopupMenuCommand, Miner.FrameworkUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CommandItems>
+						<CommandItem key="GpsPropertiesCommand" firstInGroup="true" />
+						<CommandItem key="ClearGpsDisplayCommand" firstInGroup="true" />
+						<CommandItem key="GpsAutoPanCommand" />
+            <CommandItem key="GpsDisplayOptionsCommand" firstInGroup="true" />
+          </CommandItems>
+				</Command>
+				<Command key="GpsPropertiesCommand" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="Miner.FrameworkUI.Commands.GpsPropertiesCommand, Miner.FrameworkUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc" />
+						<Param type="System.String" value="GpsPropertiesCommand" />
+					</CreateData>
+				</Command>
+        <Command key="GpsDisplayOptionsCommand" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+          <CreateData>
+            <Param type="System.String" value="Miner.FrameworkUI.Commands.GpsDisplayOptionsCommand, Miner.FrameworkUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc" />
+            <Param type="System.String" value="GpsDisplayOptionsCommand" />
+          </CreateData>
+        </Command>
+        <Command key="GpsStartCommand" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="Miner.FrameworkUI.Commands.GpsStartCommand, Miner.FrameworkUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc" />
+						<Param type="System.String" value="GpsStartCommand" />
+					</CreateData>
+				</Command>
+				<Command key="GpsStopCommand" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="Miner.FrameworkUI.Commands.GpsStopCommand, Miner.FrameworkUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc" />
+						<Param type="System.String" value="GpsStopCommand" />
+					</CreateData>
+				</Command>
+				<Command key="ClearGpsDisplayCommand" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="Miner.FrameworkUI.Commands.ClearGpsDisplayCommand, Miner.FrameworkUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc" />
+						<Param type="System.String" value="ClearGpsDisplayCommand" />
+					</CreateData>
+				</Command>
+				<Command key="GpsAutoPanCommand" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="Miner.FrameworkUI.Commands.GpsAutoPanCommand, Miner.FrameworkUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc" />
+						<Param type="System.String" value="GpsAutoPanCommand" />
+					</CreateData>
+				</Command>
+				<Command key="GpsZoomToLocationCommand" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="Miner.FrameworkUI.Commands.GpsZoomToLocationCommand, Miner.FrameworkUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc" />
+						<Param type="System.String" value="GpsZoomToLocationCommand" />
+					</CreateData>
+				</Command>
+				<Command key="GpsAutoRotateMapCommand" type="Miner.Windows.ArcGIS.MapCommand, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc">
+					<CreateData>
+						<Param type="System.String" value="Miner.FrameworkUI.Commands.GpsAutoRotateMapCommand, Miner.FrameworkUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc" />
+						<Param type="System.String" value="GpsAutoRotateMapCommand" />
+					</CreateData>
+				</Command>
+			</Commands>
+			<CommandBars>
+				<CommandBar key="GPS" type="Miner.Windows.ArcGIS.CommandBars.GpsSupportCommandBar, Miner.Windows.ArcGIS, Version=10.8.0.0, Culture=neutral, PublicKeyToken=196beceb052ed5dc" dockedRow="2" dockedColumn="5" dockedPosition="Top" floatingLocationX="0" floatingLocationY="0" visible="false">
+					<CommandItems>
+						<CommandItem key="GpsPopupCommand" />
+						<CommandItem key="GpsStartCommand" />
+						<CommandItem key="GpsStopCommand" />
+						<CommandItem key="GpsAutoPanCommand" />
+						<CommandItem key="GpsZoomToLocationCommand" />
+						<CommandItem key="GpsAutoRotateMapCommand" />
+					</CommandItems>
+				</CommandBar>
+			</CommandBars>
+		</CommandManager>
+	</MainWindow>
+	<DialogBoxes />
+</LayoutData>

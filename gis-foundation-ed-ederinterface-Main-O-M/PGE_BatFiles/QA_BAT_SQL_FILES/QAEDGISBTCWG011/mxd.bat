@@ -1,0 +1,3 @@
+start ED_GIS_MAINT_MxD_STAT_01.bat
+timeout 20
+start ED_GIS_MAINT_MxD_STAT_01.bat

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:msg="http://xmlns.pge.com/Core/Message" xmlns:getobj="http://xmlns.pge.com/Electric/GetMapCorrection" xmlns:tns="http://xmlns.pge.com/Electric/MapCorrectionMessage" xmlns:obj="http://xmlns.pge.com/Electric/MapCorrection" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.pge.com/Electric/MapCorrectionMessage" version="1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://itapposbd01vip.comp.pge.com:443/ei.electric.edgis/MapCorrection?SCHEMA%2Fei.electric.edgis%2FResources%2FDataStructures%2FXMLSchema%2FMessage" namespace="http://xmlns.pge.com/Core/Message" />
+  <xs:import schemaLocation="https://itapposbd01vip.comp.pge.com:443/ei.electric.edgis/MapCorrection?SCHEMA%2Fei.electric.edgis%2FResources%2FDataStructures%2FXMLSchema%2FMapCorrection" namespace="http://xmlns.pge.com/Electric/MapCorrection" />
+  <xs:import schemaLocation="https://itapposbd01vip.comp.pge.com:443/ei.electric.edgis/MapCorrection?SCHEMA%2Fei.electric.edgis%2FResources%2FDataStructures%2FXMLSchema%2FGetMapCorrection" namespace="http://xmlns.pge.com/Electric/GetMapCorrection" />
+  <xs:complexType name="MapCorrectionPayloadType">
+    <xs:annotation>
+      <xs:documentation>Strongly typed payload</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="obj:MapCorrection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MapCorrectionResponsePayloadType">
+    <xs:annotation>
+      <xs:documentation>Strongly typed payload</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="obj:MapCorrectionResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetMapCorrectionReqestType">
+    <xs:annotation>
+      <xs:documentation>Strongly typed request</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Start time of interest</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>End time of interest</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Option" type="msg:OptionType">
+        <xs:annotation>
+          <xs:documentation>Request type specialization</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Object ID for request</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" ref="getobj:GetMapCorrection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MapCorrectionRequestMessageType">
+    <xs:annotation>
+      <xs:documentation>Request message type common to all operations</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="msg:Header" />
+      <xs:element minOccurs="0" ref="msg:Request" />
+      <xs:element minOccurs="0" name="Payload" type="tns:MapCorrectionPayloadType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetMapCorrectionRequestMessageType">
+    <xs:annotation>
+      <xs:documentation>Request message type specific to Get operation</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="msg:Header" />
+      <xs:element minOccurs="0" name="Request" type="tns:GetMapCorrectionReqestType" />
+      <xs:element minOccurs="0" name="Payload" type="tns:MapCorrectionPayloadType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MapCorrectionEventMessageType">
+    <xs:annotation>
+      <xs:documentation>Event message type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="msg:Header" />
+      <xs:element minOccurs="0" name="Payload" type="tns:MapCorrectionPayloadType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MapCorrectionResponseMessageType">
+    <xs:annotation>
+      <xs:documentation>Response message type</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="msg:Header" />
+      <xs:element ref="msg:Reply" />
+      <xs:element minOccurs="0" name="Payload" type="tns:MapCorrectionResponsePayloadType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetMapCorrectionRequestMessage" type="tns:GetMapCorrectionRequestMessageType">
+    <xs:annotation>
+      <xs:documentation>Request message for Get operation</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CreateMapCorrectionRequestMessage" type="tns:MapCorrectionRequestMessageType">
+    <xs:annotation>
+      <xs:documentation>Request message for Create operation</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ChangeMapCorrectionRequestMessage" type="tns:MapCorrectionRequestMessageType">
+    <xs:annotation>
+      <xs:documentation>Request message for Change operation</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CancelMapCorrectionRequestMessage" type="tns:MapCorrectionRequestMessageType">
+    <xs:annotation>
+      <xs:documentation>Request message for Cancel operation</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CloseMapCorrectionRequestMessage" type="tns:MapCorrectionRequestMessageType">
+    <xs:annotation>
+      <xs:documentation>Request message for Close operation</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DeleteMapCorrectionRequestMessage" type="tns:MapCorrectionRequestMessageType">
+    <xs:annotation>
+      <xs:documentation>Request message for Delete operation</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CreatedMapCorrectionRequestMessage" type="tns:MapCorrectionEventMessageType">
+    <xs:annotation>
+      <xs:documentation>Request message for Created operation</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ChangedMapCorrectionRequestMessage" type="tns:MapCorrectionEventMessageType">
+    <xs:annotation>
+      <xs:documentation>Request message for Changed operation</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CanceledMapCorrectionRequestMessage" type="tns:MapCorrectionEventMessageType">
+    <xs:annotation>
+      <xs:documentation>Request message for Canceled operation</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ClosedMapCorrectionRequestMessage" type="tns:MapCorrectionEventMessageType">
+    <xs:annotation>
+      <xs:documentation>Request message for Closed operation</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DeletedMapCorrectionRequestMessage" type="tns:MapCorrectionEventMessageType">
+    <xs:annotation>
+      <xs:documentation>Request message for Deleted operation</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MapCorrectionResponseMessage" type="tns:MapCorrectionResponseMessageType">
+    <xs:annotation>
+      <xs:documentation>Response message common to all operations</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--PGE.Interfaces.MapProduction.Integration.PSPS-->
+  <Fragment>
+    <ComponentGroup Id="MAPPSPSExtra">
+
+      <Component Id="PGE.BatchApplication.PreProcessor.exe" Directory="PSPSMapProduction" Guid="4EF855CD-6089-4DA6-9EC2-B4295C17FB70" >
+        <File Id="PGE.BatchApplication.PreProcessor.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\PSPSMapProduction\PGE.BatchApplication.PreProcessor.exe"/>
+      </Component>
+      <Component Id="PGE.BatchApplication.PSPSMapProduction.Exporter.exe" Directory="PSPSMapProduction" Guid="6A528EBD-4ADA-47BD-9B62-C088E1DACFA4" >
+        <File Id="PGE.BatchApplication.PSPSMapProduction.Exporter.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\PSPSMapProduction\PGE.BatchApplication.PSPSMapProduction.Exporter.exe"/>
+      </Component>
+      <Component Id="PGE.BatchApplication.PSPSMapProduction.xml" Directory="PSPSMapProduction" Guid="D3E5DB0B-D6D9-4849-970A-8226CC6882DA" >
+        <File Id="PGE.BatchApplication.PSPSMapProduction.xml" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\PSPSMapProduction\PGE.BatchApplication.PSPSMapProduction.xml"/>
+      </Component>
+      <Component Id="PGE.BatchApplication.PreProcessor.exe.config" Directory="PSPSMapProduction" Guid="65315BB0-49CC-45B7-B47B-3C32E86012BA" >
+        <File Id="PGE.BatchApplication.PreProcessor.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\PSPSMapProduction\PGE.BatchApplication.PreProcessor.exe.config"/>
+      </Component>
+ 
+      <Component Id="MergePdfs.py" Directory="PSPSMapProduction" Guid="B2F7EDD7-A8AF-4CEB-909B-4A76C6DB5D19" >
+        <File Id="MergePdfs.py" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\PSPSMapProduction\MergePdfs.py"/>
+      </Component>
+
+      <Component Id="PSPSMapProductionSQL.sql" Directory="PSPSSQL" Guid="285438D6-B588-452D-AF46-3FCE1262C4E1" >
+        <File Id="PSPSMapProductionSQL.sql" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\PSPSMapProduction\PSPSSQL\PSPSMapProductionSQL.sql"/>
+      </Component>
+
+      <Component Id="MapProductionSupport.tbx" Directory="PSPSToolBox" Guid="CCBFE1CD-199D-4E81-98F8-2E6FB97BCCE0" >
+        <File Id="MapProductionSupport.tbx" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\PSPSMapProduction\PSPSToolBox\MapProductionSupport.tbx"/>
+      </Component>
+
+
+      <Component Id="PGECustomTools.tbx" Directory="PSPSToolBox" Guid="71879E49-3FCA-438C-835E-B7591B3B474E">
+        <File Id="PGECustomTools.tbx" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\PSPSMapProduction\PSPSToolBox\PGECustomTools.tbx"/>
+      </Component>
+
+      <Component Id="SaveToPDF.py" Directory="PSPSToolBox" Guid="92C6CA46-8DAD-475F-99C4-AA78031186E6" >
+        <File Id="SaveToPDF.py" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\PSPSMapProduction\PSPSToolBox\SaveToPDF.py"/>
+      </Component>
+
+      <Component Id="SaveToTiff.py" Directory="PSPSToolBox" Guid="077408A4-3440-4815-92C2-14AA4AE6E60E" >
+        <File Id="SaveToTiff.py" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\PSPSMapProduction\PSPSToolBox\SaveToTiff.py"/>
+      </Component>
+      
+      <Component Id="PGE.BatchApplication.PSPSMapProduction1.0.log4net.config" Directory="LoggingConfiguration" Guid="FF3CAD7E-BA72-4D09-A911-79565C3204DD" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.BatchApplication.PSPSMapProduction1.0.log4net.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\PSPSMapProduction\PGE.BatchApplication.PSPSMapProduction1.0.log4net.config"/>
+      </Component>
+
+      
+    </ComponentGroup>
+
+
+  </Fragment>
+</Wix>

@@ -1,0 +1,21 @@
+Prompt drop DB Link "EDGISG1Q.WORLD";
+DROP DATABASE LINK "EDGISG1Q.WORLD"
+/
+
+Prompt Database Link "EDGISG1Q.WORLD";
+--
+-- "EDGISG1Q.WORLD"  (Database Link) 
+--
+CREATE DATABASE LINK "EDGISG1Q.WORLD"
+ CONNECT TO CEDSADATA
+ IDENTIFIED BY <password>
+ USING '(DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = edgisdbpqa01.comp.pge.com)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = EDGISG1Q)
+    )
+  )
+'
+/

@@ -1,0 +1,64 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--  Colors  -->
+    <Color x:Key="LightColor">#FFFFFFFF
+    </Color>
+    <Color x:Key="DarkColor">#FFB6B6B6
+    </Color>
+    <Color x:Key="TextColor">#FF252525
+    </Color>
+    <Color x:Key="SecondaryLightColor">#FFFFD400
+    </Color>
+    <Color x:Key="SecondaryDarkColor">#FFD2AF02
+    </Color>
+    <Color x:Key="BackgroundColor">#FFF2F2F2
+    </Color>
+    <Color x:Key="LightBackgroundColor">#E9E9E9
+	</Color>
+	<Color x:Key="SchneiderLightGreen">#4eb81e
+	</Color>
+	<Color x:Key="SchneiderDarkGreen">#0a9648
+	</Color>
+	<Color x:Key="SchneiderWhite">#FFFFFF
+	</Color>
+
+	<!--  Brushes  -->
+    <SolidColorBrush x:Key="LightBrush" Color="{StaticResource LightColor}" />
+	<SolidColorBrush x:Key="DarkBrush" Color="{StaticResource DarkColor}" />
+	<SolidColorBrush x:Key="SchneiderDarkGreenBrush" Color="{StaticResource SchneiderDarkGreen}" />
+	<SolidColorBrush x:Key="SchneiderLightGreenBrush" Color="{StaticResource SchneiderLightGreen}" />
+	<SolidColorBrush x:Key="SchneiderWhiteBrush" Color="{StaticResource SchneiderWhite}" />
+	<SolidColorBrush x:Key="TextBrush" Color="{StaticResource TextColor}" />
+    <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}" />
+    <SolidColorBrush x:Key="DisabledColor" Color="#8CFFFFFF" />
+    <SolidColorBrush x:Key="SecondaryLightBrush" Color="{StaticResource SecondaryLightColor}" />
+    <SolidColorBrush x:Key="SecondaryDarkBrush" Color="{StaticResource SecondaryDarkColor}" />
+    <SolidColorBrush x:Key="LightBackgroundBrush" Color="{StaticResource LightBackgroundColor}" />
+
+    <!--  Gradient Brushes  -->
+    <RadialGradientBrush x:Key="GradientBackgroundBrush" Center="0.5,1" GradientOrigin="0.5,1" RadiusX="0.5" RadiusY="0.5">
+        <GradientStop Offset="0" Color="#FFD4D4D4" />
+        <GradientStop Offset="1" Color="#FFF3F3F3" />
+    </RadialGradientBrush>
+
+    <LinearGradientBrush x:Key="ToggledBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Offset="0" Color="#FFE7E7E7" />
+        <GradientStop Offset="0.152" Color="White" />
+        <GradientStop Offset="1" Color="White" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="FocusMask" StartPoint="1,.5" EndPoint="0,.5">
+        <GradientStop Offset="0" Color="#44000000" />
+        <GradientStop Offset=".5" Color="#44FFFFFF" />
+        <GradientStop Offset="1" Color="#44000000" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BottomShadowMask" StartPoint="0.5,-.25" EndPoint="0.5,1.75">
+        <GradientStop Offset="0.2" Color="#00000000" />
+        <GradientStop Offset="1" Color="#FFFFFFFF" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BoxBottomShadowMask" StartPoint="0.5,-1" EndPoint="0.5,1">
+        <GradientStop Offset="0" Color="#FFFFFFFF" />
+        <GradientStop Offset=".75" Color="#00000000" />
+    </LinearGradientBrush>
+</ResourceDictionary>

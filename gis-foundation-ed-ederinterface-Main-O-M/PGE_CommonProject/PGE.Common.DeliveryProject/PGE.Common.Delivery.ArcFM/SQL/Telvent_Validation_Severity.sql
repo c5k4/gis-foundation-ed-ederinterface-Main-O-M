@@ -1,0 +1,5 @@
+create table TELVENT_VALIDATION_SEVERITYMAP(
+ObjectID Number(38),
+NAME NVARCHAR2(100),
+SEVERITY Number(5));
+

@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="ArcFMSilverlight.UserBookmarksControl"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:esriSymbols="clr-namespace:ESRI.ArcGIS.Client.Symbols;assembly=ESRI.ArcGIS.Client"
+    xmlns:converters="clr-namespace:ESRI.ArcGIS.Client.Toolkit.ValueConverters;assembly=ESRI.ArcGIS.Client.Toolkit"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    xmlns:local="clr-namespace:ArcFMSilverlight"
+    xmlns:valueConverters="clr-namespace:ArcFMSilverlight.ValueConverters"
+    mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="0" Grid.Column="0">
+            <local:FavoritesControl x:Name="FavoritesControl" />
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="0">
+            <local:BookmarksControl x:Name="BookmarksControl"></local:BookmarksControl>
+        </Border>
+
+    </Grid>
+</UserControl>

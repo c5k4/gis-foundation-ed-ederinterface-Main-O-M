@@ -1,0 +1,10 @@
+
+===== Application Begin =====
+2022-04-25 07:25:08,483 [1] INFO  PGE.BatchApplication.PSPSMapProduction.PreProcessor.Program [(null)] - Sucessfully delete 12 PSPS map rows.
+{LoggingAssemblyFileVersion=10.81.0.335, log4net:Identity=, log4net:UserName=PGE\yxa6, log4net:HostName=VPEG01B004156}
+2022-04-25 07:27:55,854 [1] INFO  PGE.BatchApplication.PSPSMapProduction.PreProcessor.Program [(null)] - Sucessfully build 12 PSPS map rows.
+{LoggingAssemblyFileVersion=10.81.0.335, log4net:Identity=, log4net:UserName=PGE\yxa6, log4net:HostName=VPEG01B004156}
+2022-04-25 07:27:55,960 [1] DEBUG PGE.BatchApplication.PSPSMapProduction.BaseMapPreProcessor [(null)] - Totla number of map records in staging table:12
+{log4net:Identity=, log4net:UserName=PGE\yxa6, log4net:HostName=VPEG01B004156}
+2022-04-25 07:27:55,963 [1] DEBUG PGE.BatchApplication.PSPSMapProduction.BaseMapPreProcessor [(null)] - In Process Data
+{log4net:Identity=, log4net:UserName=PGE\yxa6, log4net:HostName=VPEG01B004156}

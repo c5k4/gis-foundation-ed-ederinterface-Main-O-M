@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{28845FC7-77DC-4BE5-BCA4-893C22569276}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SettingsApp</RootNamespace>
+    <AssemblyName>SettingsApp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DesktopBuildPackageLocation>..\..\..\UAT\SettingsApp.zip</DesktopBuildPackageLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccessDTC, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\DataBinder.cs" />
+    <Compile Include="Common\Documentum.cs" />
+    <Compile Include="Common\GISAttributes.cs" />
+    <Compile Include="Common\GISService.cs" />
+    <Compile Include="Common\History.cs" />
+    <Compile Include="Common\HtmlHelper.cs" />
+    <Compile Include="Common\LoadInfo.cs" />
+    <Compile Include="Common\Security.cs" />
+    <Compile Include="Common\SiteCache.cs" />
+    <Compile Include="Common\SettingsValidatorAttribute.cs" />
+    <Compile Include="Common\SpecialLoadService.cs" />
+    <Compile Include="Common\SystemEnums.cs" />
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="Controllers\CapacitorController.cs" />
+    <Compile Include="Controllers\CircuitBreakerController.cs" />
+    <Compile Include="Controllers\ConductorController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\FuseSaverController.cs" />
+    <Compile Include="Controllers\GenerationSettingsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InterrupterController.cs" />
+    <Compile Include="Controllers\MSOSwitchController.cs" />
+    <Compile Include="Controllers\NetworkProtectorController.cs" />
+    <Compile Include="Controllers\PrimaryGeneratorController.cs" />
+    <Compile Include="Controllers\PrimaryMeterController.cs" />
+    <Compile Include="Controllers\ProtectionController.cs" />
+    <Compile Include="Controllers\RecloserController.cs" />
+    <Compile Include="Controllers\RegulatorController.cs" />
+    <Compile Include="Controllers\SectionalizerController.cs" />
+    <Compile Include="Controllers\SwitchController.cs" />
+    <Compile Include="Controllers\TransformerController.cs" />
+    <Compile Include="Controllers\TripSaverController.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CapacitorModel.cs" />
+    <Compile Include="Models\CircuitPeakModel.cs" />
+    <Compile Include="Models\CommentHistoryModel.cs" />
+    <Compile Include="Models\CircuitLoadModel.cs" />
+    <Compile Include="Models\FuseSaverModel.cs" />
+    <Compile Include="Models\GenEquipmentModel.cs" />
+    <Compile Include="Models\GenerationModel.cs" />
+    <Compile Include="Models\GenerationSettingsModel.cs" />
+    <Compile Include="Models\GeneratorModel.cs" />
+    <Compile Include="Models\MoveGeneratorModel.cs" />
+    <Compile Include="Models\MSOSwitchModel.cs" />
+    <Compile Include="Models\ProtectionModel.cs" />
+    <Compile Include="Models\ProtectionViewModel.cs" />
+    <Compile Include="Models\RelayModel.cs" />
+    <Compile Include="Models\TripSaverModel.cs" />
+    <Compile Include="Models\PrimaryGeneratorModel.cs" />
+    <Compile Include="Models\PrimaryGenerationSettingsModel.cs" />
+    <Compile Include="Models\PrimaryMeterModel.cs" />
+    <Compile Include="Models\SpecialLoadModel.cs" />
+    <Compile Include="Models\TrfBankLoadModel.cs" />
+    <Compile Include="Models\ErrorModel.cs" />
+    <Compile Include="Models\InterrupterModel.cs" />
+    <Compile Include="Models\TrfBankPeakModel.cs" />
+    <Compile Include="Models\NetworkProtectorModel.cs" />
+    <Compile Include="Models\RegulatorModel1.cs" />
+    <Compile Include="Models\CircuitBreakerModel.cs" />
+    <Compile Include="Models\RecloserModel.cs" />
+    <Compile Include="Models\RegulatorModel.cs" />
+    <Compile Include="Models\RegulatorModelList.cs" />
+    <Compile Include="Models\RegulatorUnit.cs" />
+    <Compile Include="Models\SectionalizerModel.cs" />
+    <Compile Include="Models\SwitchModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsAppModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SettingsAppModel.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Components\Oracle.ManagedDataAccess.dll" />
+    <Content Include="Components\Oracle.ManagedDataAccessDTC.dll" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\print.png" />
+    <Content Include="readme.txt" />
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery-ui.css" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\SettingsApp.js" />
+    <Content Include="Views\Sectionalizer\Index.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Data\Logs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Switch\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Switch\GIS.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Sectionalizer\History.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Regulator\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Regulator\GIS.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\NetworkProtector\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\NetworkProtector\GIS.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Sectionalizer\GIS.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Capacitor\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Capacitor\GIS.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Capacitor\History.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Recloser\GIS.cshtml" />
+    <Content Include="Views\Recloser\History.cshtml" />
+    <Content Include="Views\Recloser\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Regulator\History.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Switch\History.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Interrupter\GIS.cshtml" />
+    <Content Include="Views\Interrupter\History.cshtml" />
+    <Content Include="Views\Interrupter\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\NetworkProtector\History.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CircuitBreaker\GIS.cshtml" />
+    <Content Include="Views\CircuitBreaker\History.cshtml" />
+    <Content Include="Views\CircuitBreaker\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Sectionalizer\HistoryData.cshtml" />
+    <Content Include="App_GlobalResources\Messages.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Sectionalizer\Files.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Switch\Files.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Switch\HistoryData.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Regulator\HistoryData.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Interrupter\HistoryData.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\NetworkProtector\HistoryData.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Regulator\Files.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\NetworkProtector\Files.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Interrupter\Files.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CircuitBreaker\HistoryData.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CircuitBreaker\Files.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Capacitor\Files.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Capacitor\HistoryData.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Recloser\Files.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Recloser\HistoryData.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_PopUpLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_FilePartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Error\NotFound.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Regulator\EngineeringInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CircuitBreaker\EngineeringInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Transformer\SpecialLoad.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_SpecialLoadPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Conductor\SpecialLoad.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PrimaryMeter\SpecialLoad.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PrimaryMeter\GIS.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Conductor\GIS.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PrimaryMeter\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PrimaryGenerator\Generator.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PrimaryGenerator\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TripSaver\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TripSaver\GIS.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TripSaver\History.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TripSaver\HistoryData.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TripSaver\Files.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="SettingsAppModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SettingsAppModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PrimaryMeter\Files.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\GenEquipment\Index.cshtml" />
+    <Content Include="Views\GenerationSettings\Generation.cshtml" />
+    <Content Include="Views\Generation\Equipment.cshtml" />
+    <Content Include="Views\Generation\Generator.cshtml" />
+    <Content Include="Views\Generation\Index.cshtml" />
+    <Content Include="Views\Generation\Protection.cshtml" />
+    <Content Include="Views\Generation\Relay.cshtml" />
+    <Content Include="Views\Generation\Relays.cshtml" />
+    <Content Include="Views\Generator\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ProtectionSettings\Protection.cshtml" />
+    <Content Include="Views\Protection\Index.cshtml" />
+    <Content Include="Views\Protection\_MoveGenerators.cshtml" />
+    <Content Include="Views\Relay\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_EquipmentPartial.cshtml" />
+    <Content Include="Views\Shared\_GeneratorPartial.cshtml" />
+    <Content Include="Views\Shared\_GroundRelayPartial.cshtml" />
+    <Content Include="Views\Shared\_PhaseRelayPartial.cshtml" />
+    <Content Include="Views\Shared\_ProtectionPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FuseSaver\HistoryData.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FuseSaver\History.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FuseSaver\GIS.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FuseSaver\Files.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FuseSaver\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MSOSwitch\Files.cshtml" />
+    <Content Include="Views\MSOSwitch\GIS.cshtml" />
+    <Content Include="Views\MSOSwitch\History.cshtml" />
+    <Content Include="Views\MSOSwitch\HistoryData.cshtml" />
+    <Content Include="Views\MSOSwitch\Index.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53101</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

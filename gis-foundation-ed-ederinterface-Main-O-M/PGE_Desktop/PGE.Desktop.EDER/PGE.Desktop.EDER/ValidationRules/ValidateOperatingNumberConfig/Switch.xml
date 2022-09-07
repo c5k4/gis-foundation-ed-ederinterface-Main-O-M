@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<SymbolNumberRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FeatureClass Name="Switch">
+  <Rule BeginsWith="" EndsWith="0" MinLength="4" MaxLength="7" Required="1">
+    <Or>
+		<And><Attribute FieldName="SwitchType"><Value>33</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>11</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>21</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>13</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>12</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>22</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>19</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>1</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value></Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>33</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>11</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>21</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>13</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>12</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>22</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>19</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>1</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value></Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>33</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>11</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>21</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>13</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>12</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>22</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>19</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>1</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value></Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+    </Or>
+  </Rule>
+  <Rule BeginsWith="" EndsWith="1" MinLength="4" MaxLength="7" Required="1">
+    <Or>
+		<And><Attribute FieldName="SwitchType"><Value>10</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>38</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>99</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>14</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>44</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>40</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>4</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>17</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>7</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>18</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>35</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>3</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>1</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value></Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>1</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>10</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>38</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>99</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>14</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>44</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>40</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>4</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>17</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>7</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>18</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>35</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>3</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>1</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>10</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value></Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>2</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>38</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>99</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>14</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>44</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>23</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>30</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>34</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>8</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>40</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>4</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>17</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>87</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>86</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>24</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>7</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>50</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>35</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>3</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>38</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>99</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>14</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>44</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>23</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>30</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>34</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>8</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>40</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>4</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>17</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>87</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>86</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>24</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>7</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>50</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>35</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>4</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>38</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>99</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>14</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>44</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>23</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>30</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>34</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>8</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>40</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>4</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>17</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>87</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>86</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>24</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>7</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>50</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>35</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>5</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>10</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>6</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>38</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>6</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>99</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>6</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>14</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>6</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>44</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>6</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>40</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>6</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>4</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>6</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>17</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>6</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>7</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>6</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>18</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>6</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>35</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>6</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>3</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>6</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value>1</Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>6</Value></Attribute></And>
+		<And><Attribute FieldName="SwitchType"><Value></Value></Attribute> <Attribute FieldName="SubtypeCD"><Value>6</Value></Attribute></And>
+    </Or>
+  </Rule>
+</FeatureClass>
+</SymbolNumberRules>

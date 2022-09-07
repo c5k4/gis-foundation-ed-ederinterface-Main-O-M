@@ -1,0 +1,3 @@
+﻿Create table PGE_QAQC_SessionErrors
+(SESSIONNAME NVARCHAR2(50),
+ERRORSLIST CLOB);

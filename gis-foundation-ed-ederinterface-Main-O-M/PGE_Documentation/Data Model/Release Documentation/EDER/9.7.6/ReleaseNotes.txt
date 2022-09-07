@@ -1,0 +1,9 @@
+DM 9.7.6 resolves the follwing issues:
+
+Bug#23730 - IVARA UAT - Fields Entered in EDER do Not Synchronize to SAP
+Bug#23506 - IVARA UAT - Spot or Grid Attirbute in EDGIS is not the same as it is in SAP
+Bug#24785 - EDER - Arc FM Properties Changes  -- Bus Bar
+Bug#24516 - Pre-Prod Test – Build 26 - 50 scale annotation not getting generated for Neutral Conductor
+Bug#23186 - IVARA UAT - Snapping environment needs to be setup
+Bug#23793 - IVARA UAT - Manufacturer Domain Codes are not Aligned
+Bug#23749 - EDGISTST_ED Mapping (1:50) - Unable to update the switch type

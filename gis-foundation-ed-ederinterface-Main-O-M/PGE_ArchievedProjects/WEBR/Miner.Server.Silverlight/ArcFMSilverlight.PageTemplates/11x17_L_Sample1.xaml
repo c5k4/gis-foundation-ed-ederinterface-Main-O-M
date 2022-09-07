@@ -1,0 +1,55 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit"
+             xmlns:esri="http://schemas.esri.com/arcgis/client/2009" 
+             xmlns:local="clr-namespace:ArcFMSilverlight.PageTemplates"
+             x:Class="ArcFMSilverlight.PageTemplates.MainControl"
+             Width="1632" Height="1056" UseLayoutRounding="True">
+    <UserControl.Resources>
+        <ResourceDictionary Source="/ArcFMSilverlight.PageTemplates;component/Themes/Generic.xaml" />
+    </UserControl.Resources>
+    <Border Margin="10" BorderThickness="2" BorderBrush="Black">
+        <Grid x:Name="LayoutRoot" Background="White" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".05*"/>
+                <RowDefinition Height=".9*"/>
+                <RowDefinition Height=".05*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 5 10 0">
+                <TextBlock x:Name="LoginUserName" MinWidth="150" Text="{Binding PrintedBy}" Margin="0 0 20 0"/>
+                <TextBlock x:Name="TemplateDate" Text="{Binding PrintedOn}" />
+            </StackPanel>
+            <Border Grid.Row="1" Margin="10 5 10 5" BorderBrush="Black" BorderThickness="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".1*"/>
+                        <ColumnDefinition Width=".9*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height=".15*"/>
+                            <RowDefinition Height=".05*"/>
+                            <RowDefinition Height=".1*"/>
+                            <RowDefinition Height=".7*"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="/ArcFMSilverlight.PageTemplates;component/Images/TelventLogo.jpg"  />
+                        <Image Grid.Row="1" Source="/ArcFMSilverlight.PageTemplates;component/Images/NorthArrow.png"  HorizontalAlignment="Center" />
+
+                        <toolkit:LayoutTransformer Grid.Row="3">
+                            <local:Disclaimer FontSize="12.75"/>
+                            <toolkit:LayoutTransformer.LayoutTransform>
+                                <RotateTransform Angle="270"/>
+                            </toolkit:LayoutTransformer.LayoutTransform>
+                        </toolkit:LayoutTransformer>
+                    </Grid>
+                    <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1">
+                        <esri:Map x:Name="TemplateMap" Background="White" IsLogoVisible="False" 
+                                  Layers="{Binding Layers}" Style="{StaticResource MapTickMap2}"/>
+                    </Border>
+                </Grid>
+            </Border>
+            <esri:ScaleLine x:Name="TemplateScaleBar" HorizontalAlignment="Left" Height="23" Margin="20,0,0,0" Grid.Row="2"
+                           Map="{Binding ElementName=TemplateMap}"/>
+        </Grid>
+    </Border>
+</UserControl>

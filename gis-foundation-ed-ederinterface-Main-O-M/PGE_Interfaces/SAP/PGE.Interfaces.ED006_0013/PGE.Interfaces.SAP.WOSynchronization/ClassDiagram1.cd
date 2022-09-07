@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.Interfaces.SAP.WOSynchronization.Config">
+    <Position X="2.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAABAAAAAAAAAAAAAAACAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Config.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.SAP.WOSynchronization.FieldMappingSection">
+    <Position X="4.75" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Config.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.SAP.WOSynchronization.FieldMap">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Config.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.SAP.WOSynchronization.FieldMapping">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAIAAACAAAAAAAAAABAAAAAAIAAAAAAAQ=</HashCode>
+      <FileName>Config.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.SAP.WOSynchronization.CSVFileWriter">
+    <Position X="6.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CSVFileWriter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.SAP.WOSynchronization.LicenseManager">
+    <Position X="5" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAABAAAUAAAAAAQAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LicenseManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.SAP.WOSynchronization.PMOrderFileProcessor">
+    <Position X="6.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAIAAAAAAAAAAAAAAIEAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>PMOrderFileProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.SAP.WOSynchronization.PMOrderTableData">
+    <Position X="0.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAADACEAAgAACIAACACAAAAAAgAAAAABAAAgAAg=</HashCode>
+      <FileName>PMOrderTableData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.SAP.WOSynchronization.ResourceConstants" Collapsed="true">
+    <Position X="5.75" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ResourceConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.SAP.WOSynchronization.RowData2" BaseTypeListCollapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAACAAQAAAAAAIAAAAAABAAAAAQ=</HashCode>
+      <FileName>RowData2.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interfaces.SAP.WOSynchronization.SAPPMOrderSync">
+    <Position X="3" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACAIAAAAIAAAAAAAAAAABAAAIABAAAACgIAAAAAAAAA=</HashCode>
+      <FileName>SAPPMOrderSync.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.SAP.WOSynchronization.TableData">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEAAAAAgACAAAgAAAAAAAAAAIAAAEAABAAAIATAAAIA=</HashCode>
+      <FileName>TableData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PGE.Interfaces.SAP.WOSynchronization.XMLProcessor">
+    <Position X="8.5" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAIAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>XMLProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="PGE.Interfaces.SAP.WOSynchronization.IRowData2">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAQAAAAAAAAAAAAABAAAAAQ=</HashCode>
+      <FileName>IRowData2.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

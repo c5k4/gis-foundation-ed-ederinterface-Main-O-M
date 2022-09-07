@@ -1,0 +1,29 @@
+Prompt drop Function OGC_OVERLAP;
+DROP FUNCTION MDSYS.OGC_OVERLAP
+/
+
+Prompt Function OGC_OVERLAP;
+--
+-- OGC_OVERLAP  (Function) 
+--
+CREATE OR REPLACE FUNCTION MDSYS.OGC_Overlap(
+  g1 ST_Geometry,
+  g2 ST_Geometry)
+    RETURN Integer IS
+BEGIN
+  RETURN g1.ST_Overlap(g2);
+END OGC_Overlap;
+/
+
+
+Prompt Synonym OVERLAP;
+--
+-- OVERLAP  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM OVERLAP FOR MDSYS.OGC_OVERLAP
+/
+
+
+Prompt Grants on FUNCTION OGC_OVERLAP TO PUBLIC to PUBLIC;
+GRANT EXECUTE ON MDSYS.OGC_OVERLAP TO PUBLIC
+/

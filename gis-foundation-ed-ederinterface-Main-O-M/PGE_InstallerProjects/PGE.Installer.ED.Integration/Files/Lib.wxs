@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+    <?define ClientName='PGE'?>
+    <?define Directory='BIN'?>
+    
+    <?define Filename='Telvent.Delivery.Diagnostics'?>
+    <?define FilenameUpper='TELVENT.DELIVERY.DIAGNOSTICS'?>
+    <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+    
+    <?define Filename='Telvent.Delivery.Framework'?>
+    <?define FilenameUpper='TELVENT.DELIVERY.FRAMEWORK'?>
+    <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+    <?define Filename='Telvent.Delivery.Geodatabase'?>
+    <?define FilenameUpper='TELVENT.DELIVERY.GEODATABASE'?>
+    <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+    <?define Filename='Telvent.Delivery.Systems'?>
+    <?define FilenameUpper='TELVENT.DELIVERY.SYSTEMS'?>
+    <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+    <?define Filename='Telvent.PGE.SAP'?>
+    <?define FilenameUpper='TELVENT.PGE.SAP'?>
+    <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+    <?define Filename='Telvent.PGE.Framework'?>
+    <?define FilenameUpper='TELVENT.PGE.FRAMEWORK'?>
+    <?include ..\..\Externals\Wix_Templates\InstallAssembly10.wxi?>
+
+    <?include ..\..\Externals\Wix_Templates\ESRIRegAsm10.wxi?>
+   
+</Wix>

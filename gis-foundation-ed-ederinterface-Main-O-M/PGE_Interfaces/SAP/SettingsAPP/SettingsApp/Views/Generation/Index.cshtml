@@ -1,0 +1,175 @@
+﻿@using SettingsApp.Common;
+@model SettingsApp.Models.GenerationSettingsModel
+<script type="text/javascript" src="~/Scripts/SettingsApp.js"></script>
+@using (Html.BeginForm("Index", "Generation"))
+{
+    ViewBag.CurrentGeneration = Model;
+    @Html.ValidationSummary(true)
+    <table cellpadding="0" cellspacing="0" width="90%">
+        <tr>
+            <td style="padding: 0px">
+                <div class="float-left">
+                    <nav>
+                        <ul id="menu">
+                            <li class="@ViewBag.Generation">@Html.ActionLink("Generation", "Generation", "Generation", new { generationId = ViewBag.GenerationID }, null)</li>  
+                           @* <li class="@ViewBag.Protection">@Html.ActionLink("Protection 1", "Index", "Protection", new { parentType = ViewBag.ParentType, parentID = ViewBag.ParentId }, null)</li>*@
+                            @if (Model.ListOfProtection.Count > 0)
+                            {
+                                for(int i =0; i<= Model.ListOfProtection.Count-1;i++)
+                                {
+                                    string protectionName = "Protection " + (i + 1).ToString();
+                                    var protection = Model.ListOfProtection[i];
+                                    TempData[protectionName] = protection.ID;
+                                    string url = "/Generation/Protection?parentType=Generation&parentID=" + protection.ID.ToString();
+                                    <li class="@ViewBag.Protection"> <a href=@url> @protectionName  </a> 
+@*                                        @Html.ActionLink(protectionName, "IndexByID", "Protection", new { parentType = "Generation", ID = TempData[protectionName] }, null)*@
+                                    </li>
+                                }
+                                if(@Session["SuperuserOn"] != null && (bool)Session["SuperuserOn"] == true)
+                                {
+                                    string url = "/Generation/AddNewProtection?parentType=Generation&generationID=" + ViewBag.GenerationID;
+                                    <li style="display: inline;list-style: none;padding: 0px 5px 0px 5px;text-align: center;background-color: #FFFF00;color: #ffffff;"> <a  style="background: none;text-decoration:none; color: #000000;" href=@url> New </a></li>
+                                }
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </td>
+        </tr>
+         <tr>
+            <td class="header" style="padding-top: 15px; padding-bottom: 0px; padding-left: 10px">
+                @ViewBag.Title
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: right; padding-right: 10px">
+                <input type="button" id="btnActivate" value="@Session["SuperUserButtonText"]" onclick="this.form.action='/Generation/ToggleSuperUser?type=Generation&ID=@Model.ID.ToString()';this.form.submit();"
+                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color: #ffffff; padding: 10px;">
+                @if (ViewBag.ShowPageError == true)
+                {
+                    <label id="lableDeviceValidationError" runat="server" style="color: Red; text-align: center;">
+                        There are error(s), please check below.
+                    </label>
+                }
+                @if (ViewBag.ShowSaveSucessful == true)
+                {
+                    <label id="lableDeviceSaveSucess" runat="server" style="color: Green; text-align: center;">
+                        Device saved successfully.
+                    </label>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color: #ffffff; padding: 10px">
+                <table cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f2f2">
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.SAPEGINotification)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.SAPEGINotification, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new object { })
+                            @Html.HiddenFor(model => model.SAPEGINotification)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelForRequired(model => model.ProgramType)
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.ProgramType, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 250, @class = "form-control" })@Html.ValidationMessageFor(model => model.ProgramType)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="padding-right: 0px">
+                            <table cellpadding="0" cellspacing="0" style="border: 1px solid #000000; width: 100%">
+                                <tr>
+                                    <td class="sectionHeader" colspan="2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ExportkW)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ExportkW, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { @class = "decimal-no", maxlength = 10 })@Html.ValidationMessageFor(model => model.ExportkW)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.EffRatingMachkW)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.EffRatingMachkW, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.EffRatingMachkW)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.EffRatingInvkW)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.EffRatingInvkW, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.EffRatingInvkW)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.EffRatingMachkVA)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.EffRatingMachkVA, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.EffRatingMachkVA)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.EffRatingInvkVA)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.EffRatingInvkVA, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.EffRatingInvkVA)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.MaxStorageCapacity)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.MaxStorageCapacity, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.MaxStorageCapacity)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.ChargeDemandkW)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.ChargeDemandkW, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.ChargeDemandkW)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.DirectTransferTrip)
+                                    </td>
+                                    <td>@Html.CheckBoxFor(model => model.DirectTransferTrip, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.DirectTransferTrip)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.GrdFaultDetectionCd)
+                                    </td>
+                                    <td>@Html.CheckBoxFor(model => model.GrdFaultDetectionCd, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.GrdFaultDetectionCd)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.PowerSource)
+                                    </td>
+                                    <td>@Html.TextBoxFor(model => model.PowerSource, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { })@Html.ValidationMessageFor(model => model.PowerSource)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelForRequired(model => model.Notes)
+                                    </td>
+                                    <td>@Html.TextAreaFor(model => model.Notes, 5, 15, ViewBag.IsDisabled ? (object)new { disabled = "disabled" } : new { maxlength = 240, @class = "form-control" })@Html.ValidationMessageFor(model => model.Notes)
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: right; padding-right: 10px">
+                            @Html.HiddenFor(model => model.ID, new { @class = "deviceid-hide-box" })
+                            @Html.HiddenFor(model => model.GlobalID, new { @class = "deviceid-hide-box" })
+                            @Html.HiddenFor(model => model.CurrentOrFuture, new { @class = "deviceid-hide-box" })
+                            <input type="button" value="Cancel" onclick="this.form.action='/@ViewBag.ControllerName/Generation/@ViewBag.GenerationID/@ViewBag.ParentType';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                            <input type="button" value="Save" onclick="this.form.action='/@ViewBag.ControllerName/SaveGeneration/@ViewBag.GenerationID/@ViewBag.ParentType';this.form.submit();"
+                                    @(Security.IsInAdminGroup ? Html.Raw("") : Html.Raw("disabled='disabled'")) />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+}
+
+

@@ -1,0 +1,373 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Configuration;
+using System.Data;
+using Version_report.Email;
+
+using Version_report.DBHelper;
+namespace Version_report.Email
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+           GetData( );
+
+        }
+        public static void GetData( )
+        {
+             string strquery = "SELECT state_id, lineage_name FROM sde.states WHERE state_id = (SELECT state_id FROM sde.versions WHERE name = 'DEFAULT' AND owner = 'SDE') ";
+
+            DataTable DT = cls_DBHelper_For_EDER.GetDataTableByQuery(strquery);
+            string q_outstanding_Versions = "select count(*) from sde.versions";
+            DataTable DT1 = cls_DBHelper_For_EDER.GetDataTableByQuery(q_outstanding_Versions);
+            string count_versions = DT1.Rows[0]["COUNT(*)"].ToString();
+
+            string q_delta_Table = "select round(sum(a_d),2) as round from (select sum(num_rows)/1000000 a_d from dba_tables where " +
+            "table_name in (select 'A'||registration_id from sde.table_registry) union all select sum(num_rows)/1000000 a_d from dba_tables where table_name in (select 'D'||registration_id from sde.table_registry))";
+
+            DataTable DT2 = cls_DBHelper_For_EDER.GetDataTableByQuery(q_delta_Table);
+            string count_versions1 = DT2.Rows[0]["round"].ToString();
+
+
+            string q_state_Lineage_Tree = "select round(count(*)/1000000,2) from sde.state_lineages";
+
+            DataTable DT3 = cls_DBHelper_For_EDER.GetDataTableByQuery(q_state_Lineage_Tree);
+            string count_versions2 = DT3.Rows[0]["ROUND(COUNT(*)/1000000,2)"].ToString();
+
+            //Table 2 input
+
+
+            // string q_blocker_Version = "select SESSIONID, Current_Owner, session_Name, Created from (select v.OWNER|| '.'||v.name as SESSIONID, "+
+            // "p.current_owner as Current_Owner, trim(p.session_name) as session_Name,p.create_date as Created  from "+
+// "process.mm_session p, sde.version_order v where to_number(regexp_replace(substr(v.name, 4), '[^0-9]+', '')) = p.session_id and length(v.OWNER)=4 order by v.ca_state_id asc, v.state_id asc) where rownum < 11 ";
+     
+
+
+            string html = "<div align='center'>";
+            html += "<p>Electric Distribution Version Statistics Report</p>";
+            html += "</div>";
+            html += "<p>SUMMARY</p>";
+            html += "<table style=border: 1px solid #ccc;font-size: 9pt;font-family:arial'>";
+
+            //Adding HeaderRow.
+
+            html += "<tr>";
+            html += "<th>Item	</th>";
+            html += "<th>Healthy Value</th>";
+            html += "<th>Alert Value</th>";
+            html += "<th >Max Value</th>";
+            html += "<th >Current Condition</th>";
+            html += "<th >Action Item</th>";
+            html += "</tr>";
+
+
+            //Adding DataRow.
+            html += "<tr>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + "GDB – Outstanding Versions" + "</td>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + "<800	" + "</td>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + ">1000	" + "</td>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + "1200" + "</td>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + count_versions + "</td>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + "Orphaned Sessions and Versions should be deleted daily " + "</td>";
+
+
+            html += "</tr>";
+            html += "<tr>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + "GDB Delta Table (A/D) Size" + "</td>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + "<1M" + "</td>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + ">1.5M	" + "</td>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + ">2M" + "</td>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + count_versions1 + "M" +"</td>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + "Top Blocking versions should be targeted for posting " + "</td>";
+
+
+            html += "</tr>";
+            html += "</tr>";
+            html += "<tr>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + "GDB – State Lineage Tree" + "</td>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + "<700k" + "</td>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + ">1M	" + "</td>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + ">1.5M	" + "</td>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + count_versions2 +"M"+ "</td>";
+            html += "<td style='width:120px;border: 1px solid #ccc'>" + "- " + "</td>";
+
+
+            html += "</tr>";
+
+            //Table end.
+            html += "</table>";
+
+
+            //Table 2
+
+            string q_blocker_Version = "select SESSION_ID, SESSION_OWNER, session_Name, CREATION_DATE,OCCURRENCE  from SDE.PGE_BLOCKER_OCC";
+
+           
+           // string Blocker_version = DT4.Rows[0][" "].ToString();
+
+            html += "<p>Top 10 blocker versions from Users:</p>";
+            html += "<table  style='border: 1px solid #ccc;font-size: 9pt;font-family:arial'>";
+            //Adding HeaderRow.
+
+            html += "<tr>";
+            html += "<th > Blocker Versions </th>";
+            html += "<th>Session Owner </th>";
+            html += "<th >Session Name</th>";
+            html += "<th >Creation Date</th>";
+            html += "<th >OCCURRENCE</th>";
+            html += "</tr>";
+
+
+            DataTable DT4 = cls_DBHelper_For_EDER.GetDataTableByQuery(q_blocker_Version);
+            foreach (DataRow row in DT4.Rows)
+            {
+                html += "<tr>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["SESSION_ID"].ToString() + "</td>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["SESSION_OWNER"].ToString() + "</td>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["session_Name"].ToString() + "</td>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["CREATION_DATE"].ToString() + "</td>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["OCCURRENCE"].ToString()+ "</td>";
+
+                html += "</tr>";
+
+                
+            }
+
+       
+            //Table end
+            html += "</table>";
+
+
+            html += "<p>" + " Note: Blocking Versions may prevent effective compress of other versions resulting into poor application performance." +
+                 "</br>" + "Session Id: 514950+" + "</br>" + "Session Creator:J7R6 " + "</br>" + "Sessions reconciled in the past 1 day that resulted into Conflicts:" + "</p>";
+           
+            
+            //Table 3
+
+            string q_sessions_Reconciled = " select SESSIONID, Current_Owner, session_Name, Created from (" +
+" Select g.version_name as SESSIONID, s.CURRENT_OWNER as Current_Owner,s.SESSION_NAME as session_Name,  s.CREATE_DATE  Created" +
+"from  (  select substr(REGEXP_SUBSTR(VERSION_NAME, '[^.]+', 1, 2), 4) as SESSION_NUM, version_name from SDE.GDBM_RECONCILE_HISTORY" +
+"where  SERVICE_NAME like 'GDBMReconcileOnly%' and RECONCILE_START_DT > sysdate - 1 and RECONCILE_RESULT = 'Conflicts'" +
+"group by VERSION_NAME) g inner join (" +
+"select to_char(SESSION_ID) as SESSION_NUM, substr(SESSION_NAME, 1, 40) as SESSION_NAME, CREATE_USER, CURRENT_OWNER, CREATE_DATE, " +
+"substr(regexp_replace(DESCRIPTION, '[[:space:]]', ' '), 1, 80) as DESCRIPTION " +
+"from PROCESS.MM_SESSION where length(CREATE_USER)=4) s " +
+"on g.SESSION_NUM = s.SESSION_NUM order by g.SESSION_NUM )";
+  
+            html += "<table style='border: 1px solid #ccc;font-size: 9pt;font-family:arial'>";
+
+            html += "<tr>";
+            html += "<th >Session	</th>";
+            html += "<th >Owner</th>";
+            html += "<th >Session Name</th>";
+            html += "<th >Creation Date</th>";
+
+            html += "</tr>";
+
+            
+            DataTable DT5 = cls_DBHelper_For_EDER.GetDataTableByQuery(q_sessions_Reconciled);
+            foreach (DataRow row in DT5.Rows)
+            {
+                html += "<tr>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["SESSIONID"].ToString() + "</td>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["Current_Owner"].ToString() + "</td>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["session_Name"].ToString() + "</td>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["Created"].ToString() + "</td>";
+              
+
+                html += "</tr>";
+
+               
+            }
+            html += "</table>";
+
+            //Table 4
+
+            
+
+            html += "<p>" + "Note: Conflicts should be resolved for effective reconcile and compress" + "</br>"
+                + "Open User Sessions older than 30 days:1359" + "</br>" + "Open User Sessions older than 30 days => oldest 10 sessions details:" + "</p>";
+
+            string q_user_Sessions = "  select  SESSIONID,Current_owner,Session_name,create_date  from (" +
+                "select p.CREATE_USER||'.SN_'||p.Session_ID AS SESSIONID, p.current_owner," +
+"trim(p.session_name) as session_name, p.create_date" +
+  "from  process.mm_session p where" +
+           " p.create_date < sysdate-30  and length(p.CREATE_USER)=4 Order by p.create_date ASC) where rownum<11";
+
+            DataTable DT6 = cls_DBHelper_For_EDER.GetDataTableByQuery(q_user_Sessions);
+            html += "<table style='border: 1px solid #ccc;font-size: 9pt;font-family:arial'>";
+
+            html += "<tr>";
+            html += "<th >Session	</th>";
+            html += "<th >Owner</th>";
+            html += "<th >Session Name</th>";
+            html += "<th >Creation Date</th>";
+
+            html += "</tr>";
+
+         
+            
+            foreach (DataRow row in DT6.Rows)
+            {
+                html += "<tr>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["SESSIONID"].ToString() + "</td>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["Current_Owner"].ToString() + "</td>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["Session_Name"].ToString() + "</td>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["create_date"].ToString() + "</td>";
+
+
+                html += "</tr>";
+
+
+            }
+
+           
+            //Table end
+            html += "</table>";
+
+            html += "<p>Note: Older user sessions may block effective compress resulting into poor application performance.</p>";
+
+            html += "<p>Orphan Versions(Versions without sessions)</p>";
+
+
+       //Table 5
+
+            string q_orphan_Versions = "  select Owner , creation_time  from (" +
+"select owner||'.'||name  as owner ,creation_time from sde.versions" +
+"where OWNER not in ('EDGIS','RELEDITOR','GIS_I_WRITE','GIS_I','EDGIS_RO','IGPCITEDITOR') and length(OWNER)=4 and" +
+
+"name not in (select to_char('SN_'||SESSION_ID) from PROCESS.MM_SESSION)" +
+"order by owner||'.'||name)";
+            DataTable DT7 = cls_DBHelper_For_EDER.GetDataTableByQuery(q_orphan_Versions);
+
+            html += "<table style='border: 1px solid #ccc;font-size: 9pt;font-family:arial'>";
+
+            html += "<tr>";
+            html += "<th >Orphan Versions</th>";
+            html += "<th >Creation time</th>";
+            html += "</tr>";
+
+           
+            foreach (DataRow row in DT7.Rows)
+            {
+                html += "<tr>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["Owner"].ToString() + "</td>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["creation_time"].ToString() + "</td>";
+               
+
+
+                html += "</tr>";
+
+
+            }
+            html += "</table>";
+
+
+
+            
+
+            html += "<p>" + "Note: Orphan Versions should be deleted after business verification" + "</br>" + "Orphan Sessions(Sessions without versions)" + "</p>";
+            //Table 6
+
+
+            string q_orphan_Sessions = "select Owner , creation_time  from ( " +
+"select current_owner||to_char('.SN_'||SESSION_ID) as owner ,create_date as creation_time " +
+"from PROCESS.MM_SESSION" +
+"where current_owner not in ('SDE', 'EDGIS', 'GIS_I', 'EDGIS_RO') and length(current_owner)=4 and " +
+"to_char('SN_'||SESSION_ID) not in (select name from sde.versions)" + "order by current_owner||to_char('.SN_'||SESSION_ID))";
+           
+            DataTable DT8 = cls_DBHelper_For_EDER.GetDataTableByQuery(q_orphan_Sessions);
+           
+            html += "<table style='border: 1px solid #ccc;font-size: 9pt;font-family:arial'>";
+            html += "<tr>";
+            html += "<th >Orphan Sessions</th>";
+            html += "<th >Creation time</th>";
+            html += "</tr>";
+
+           
+
+
+
+          
+            foreach (DataRow row in DT8.Rows)
+            {
+                html += "<tr>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["Owner"].ToString() + "</td>";
+                html += "<td style='width:120px;border: 1px solid #ccc'>" + row["creation_time"].ToString() + "</td>";
+
+                html += "</tr>";
+
+
+            }
+            html += "</table>";
+
+
+            
+            
+            
+            html += "<p>" + "Note: Orphan Sessions should be deleted after business verification." + "</br>" + "A Table Row Count: 9052355" + "</br>" + "Note: High aggregated  A table row count indicates bad state of version tree. It should be less than 1000000. Reconciling and Posting older versions followed by compress may reduce this count" + "</p>";
+
+
+
+            SendMail(html, "Electric Distribution Version Statistics Report");
+
+        }
+
+
+
+        public static void SendMail(string strbodyText, string mail_subject)
+        {
+            try
+            {
+                // tstring strquery = "SELECT * FROM PGEDATA.APPLICATIONCONFIG where BATCH_NAME='ED15' ";
+
+                //DataTable DT = cls_DBHelper_For_EDER.GetDaaTableByQuery(strquery);
+                // if (DT != null)
+                // {
+                // if (DT.Rows.Count > 0)
+                //{
+                // DataRow[] Row_lanIDs = DT.Select("CONFIG_KEY='" + ConfigurationManager.AppSettings["LANIDS"] + "'");
+                //foreach (DataRow rw in Row_lanIDs)
+                // {
+                //List<string> LanIDsList = rw["CONFIG_VALUE"].ToString().Split(';').ToList();
+                string lanID = string.Empty;
+                string fromDisplayName = ConfigurationManager.AppSettings["MAIL_FROM_DISPLAY_NAME"];
+                string fromAddress = ConfigurationManager.AppSettings["MAIL_FROM_ADDRESS"];
+                string subject = mail_subject;
+                string bodyText = strbodyText;
+                // string lanIDs = ConfigurationManager.AppSettings["LANIDS"];
+
+
+                // for (int i = 0; i < LanIDsList.Count; i++)
+                // {
+                //lanID = LanIDsList[i];
+                EmailService.Send(mail =>
+                {
+                    mail.From = "P3P1@pge.com";
+                    mail.FromDisplayName = "PriyaPallavi";
+                    mail.To = "P3P1@pge.com" + ";";
+                    mail.Subject = mail_subject;
+                    mail.BodyText = bodyText;
+
+
+                });
+
+            }
+
+
+
+            catch (Exception ex)
+            {
+                //_log.Error("Error in Sending Mail: ", ex);
+            }
+        }
+
+
+    }
+}
+        
+    

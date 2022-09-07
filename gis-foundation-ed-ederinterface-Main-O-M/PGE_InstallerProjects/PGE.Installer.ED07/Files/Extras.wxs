@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!--PGE.MapProduction.Integration-->
+  <Fragment>
+    <ComponentGroup Id="Extras">
+
+      <Component Id="PGE.Interfaces.LoadingDataInOracle.exe" Directory="ED07" Guid="8F642104-CC98-4689-80A3-957430344365" >
+        <File Id="PGE.Interfaces.LoadingDataInOracle.exe" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ED07\PGE.Interfaces.LoadingDataInOracle.exe"/>
+      </Component>
+      
+      <Component Id="PGE.Interfaces.LoadingDataInOracle.exe.config" Directory="ED07" Guid="8D1D2C80-610E-4BDF-A973-AB5EC5A0F473" Permanent="yes" NeverOverwrite="yes">
+        <File Id="PGE.Interfaces.LoadingDataInOracle.exe.config" KeyPath="yes" Source="..\..\..\..\..\PGE_ProjectOutput\ED07\PGE.Interfaces.LoadingDataInOracle.exe.config"/>
+      </Component>
+    </ComponentGroup>
+
+
+  </Fragment>
+</Wix>

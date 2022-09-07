@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <Fragment>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="ARCFMINSTALLLOCATION">
+          <Directory Id="PGE" Name="PG&amp;E Custom Components">
+            <Directory Id="LoggingConfiguration" Name="Logging Configuration"/>
+            <Directory Id="CircuitProtectionZone" Name="Circuit Protection Zones"/>
+            <Directory Id="WEBRCONFIG" Name="WEBR Field Properties Loader"/>
+            <Directory Id="CCB" Name="CCB"/>
+            <Directory Id="CDHFTD" Name="CDHFTD"/>
+            <Directory Id="ED08" Name="ED08 Tax Report"/>
+            <Directory Id="TRACINGCACHE" Name="Tracing Cache"/>
+            <Directory Id="RECONCILEVERSIONS" Name="Reconcile Versions"/>
+            <Directory Id="SETTINGSNOTIFICATION" Name="Settings Notification"/>
+            <Directory Id="CWOSL" Name="CWOSL"/>
+            <Directory Id="DELETEANNO" Name="DELETEANNO"/>
+            <Directory Id="PSPSMapProduction" Name="PSPSMapProduction">
+              <Directory Id="PSPSToolBox" Name="PSPSToolBox"/>
+              <Directory Id="PSPSSQL" Name="PSPSSQL"/>
+            </Directory>
+            
+            <Directory Id="GDBMBatchJob" Name="GDBMBatchJob"/>            
+            <Directory Id="CHANGEDETECTION" Name="Change Detection">
+            <Directory Id="CHANGEDECTIONDOCS" Name="Change Detection Docs"/>
+            <Directory Id="CHANGEDECTIONPYTHON" Name="Python Files"/>
+            </Directory>
+            <Directory Id="DESKTOPFOLDER" Name="Desktop">
+              <Directory Id="CONFIG" Name="Config"/>
+              <Directory Id="DesktopSQL" Name="SQL"/>
+              <Directory Id="SCHEMAS" Name="Schemas"/>
+            </Directory>
+            <Directory Id="ED07" Name="ED07"/>
+            <Directory Id="ED11_12" Name="ED11_12"/>
+            <Directory Id="FAISessionProcessor" Name="FAISessionProcessor"/>
+            <Directory Id="COMMON" Name="Common"/>
+            <Directory Id="SAPAssetSynch" Name="SAP Asset Synch">
+              <Directory Id="SAPAssetSynchConfig" Name="Config"/>
+              <Directory Id="SQL" Name="Sql"/>
+            </Directory>
+            <Directory Id="SAPPMOrdersynch" Name="SAP PMOrder synch"/>
+            <Directory Id="DMS" Name="DMS"/>
+            <Directory Id="WEB" Name="Web"/>
+            <Directory Id="MAPProduction" Name="Map Production 1.0">
+              <Directory Id="MapProductionSQL" Name="SQL"/>
+            </Directory>
+            <Directory Id="MAPProduction20" Name="Map Production 2.0">
+              <Directory Id="MapProduction20Logs" Name="Map Production Log Files"/>
+              <Directory Id="MapProduction20Mxds" Name="Map Production Mxds"/>
+              <Directory Id="MapProduction20Docs" Name="Map Production Docs"/>
+            </Directory>
+            <Directory Id="ToolBox" Name="ToolBox"/>
+          </Directory>
+          <Directory Id="ArcFMSolution" Name="ArcFM Solution">
+            <Directory Id="ArcFMBin" Name="Bin">
+              <Directory Id="ArcFMBinConfig" Name="Config" />
+            </Directory>
+          </Directory>
+        </Directory>
+        <Directory Id="GAC" Name="GAC"/>
+      </Directory>
+      <Directory Id ="ESRIDESKTOP" Name="ESRIDesktop">
+        <Directory Id="ESRIBin" Name="Bin"/>
+      </Directory>
+    </Directory>
+  </Fragment>
+</Wix>

@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PGE.Interfaces.Integration.Framework.Data.AttributeMap">
+    <Position X="14.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAgAAAAAAAAAAAAAAABEAAAAAAAAAAA=</HashCode>
+      <FileName>Data\AttributeMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.Data.Enums" Collapsed="true">
+    <Position X="31.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.Data.NamespaceDoc" Collapsed="true">
+    <Position X="33" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\NamespaceDoc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.Data.RowData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAgAACAAQAAAAAAIAAAAAABAAAAAQ=</HashCode>
+      <FileName>Data\RowData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.Data.SubtypeDomainMap">
+    <Position X="5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAgAAAQAAA=</HashCode>
+      <FileName>Data\SubtypeDomainMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.Exceptions.InvalidConfigurationException" Collapsed="true">
+    <Position X="26" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\InvalidConfigurationException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.Exceptions.InvalidFieldTranformationException" Collapsed="true">
+    <Position X="27.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\InvalidFieldTranformationException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.Exceptions.NamespaceDoc" Collapsed="true">
+    <Position X="26" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\NamespaceDoc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.FieldTransformers.AlternateDateTimeTransformer">
+    <Position X="7.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAQAAABAAAAAAQAAAIAAAAAABAAAEBAA=</HashCode>
+      <FileName>FieldTransformers\AlternateDateTimeTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.FieldTransformers.AlternateFieldTransformer">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAQAAABAAAAAAQAAAAAAAAAABAAAABAA=</HashCode>
+      <FileName>FieldTransformers\AlternateFieldTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.FieldTransformers.AlternateNumberTransformer">
+    <Position X="11.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAhAAAKAAAAQAAABAAAAAAQAAAAQAAAAEBAAAABAE=</HashCode>
+      <FileName>FieldTransformers\AlternateNumberTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.FieldTransformers.AttributeMappingTransformer">
+    <Position X="14" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAQACAAAAAAIQAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>FieldTransformers\AttributeMappingTransformer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_attributeMap" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.FieldTransformers.BaseFieldTransformer">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAgAQAAAAAAAAAAAABAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>FieldTransformers\BaseFieldTransformer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.FieldTransformers.DateTimeTransformer">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAQAAAAAAAAAAAAAAIAAAAAAAAAAEAAA=</HashCode>
+      <FileName>FieldTransformers\DateTimeTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.FieldTransformers.DomainTransformer">
+    <Position X="2.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAQAAAAAAAAAIAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>FieldTransformers\DomainTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.FieldTransformers.FieldValueTransformer">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQIAAAAQAAAAAAAAAAAACCAAAAAAAhAAAAAAA=</HashCode>
+      <FileName>FieldTransformers\FieldValueTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.FieldTransformers.MultiRelationshipFieldTransformer">
+    <Position X="16.25" Y="2.5" Width="1.5" />
+    <AssociationLine Name="_fieldMapper" Type="PGE.Interfaces.Integration.Framework.FieldMapper" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.75" Y="5.408" />
+        <Point X="19.417" Y="5.408" Type="JumpStart" />
+        <Point X="19.583" Y="5.408" Type="JumpEnd" />
+        <Point X="23.308" Y="5.408" Type="JumpStart" />
+        <Point X="23.475" Y="5.408" Type="JumpEnd" />
+        <Point X="25.873" Y="5.408" />
+        <Point X="25.873" Y="3.062" />
+        <Point X="25.75" Y="3.062" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="FieldMapper" Type="PGE.Interfaces.Integration.Framework.FieldMapper" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.75" Y="5.282" />
+        <Point X="19.417" Y="5.282" Type="JumpStart" />
+        <Point X="19.583" Y="5.282" Type="JumpEnd" />
+        <Point X="23.308" Y="5.282" Type="JumpStart" />
+        <Point X="23.475" Y="5.282" Type="JumpEnd" />
+        <Point X="25.375" Y="5.282" />
+        <Point X="25.375" Y="3.084" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAOAAQAQAAAAAAAAAAAAAAAAAAAAAAIAIgAAY=</HashCode>
+      <FileName>FieldTransformers\MultiRelationshipFieldTransformer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_fieldMapper" />
+      <Field Name="_relationshipName" />
+      <Property Name="FieldMapper" />
+      <Property Name="Relationships" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.FieldTransformers.NamespaceDoc" Collapsed="true">
+    <Position X="26" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FieldTransformers\NamespaceDoc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.FieldTransformers.RelationshipFieldTransformer">
+    <Position X="20.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAOAAAAQAAAAAAAAAAAAAAAAAAAAAAIAAAAAI=</HashCode>
+      <FileName>FieldTransformers\RelationshipFieldTransformer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_fieldMapper" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.FieldTransformers.SpatialIndexTransformer">
+    <Position X="18.25" Y="2.25" Width="2" />
+    <AssociationLine Name="_fieldMapper" Type="PGE.Interfaces.Integration.Framework.FieldMapper" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.25" Y="4.994" />
+        <Point X="23.308" Y="4.994" Type="JumpStart" />
+        <Point X="23.475" Y="4.994" Type="JumpEnd" />
+        <Point X="24.062" Y="4.994" />
+        <Point X="24.062" Y="3.084" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAIRAAAAAAAAAAAAAAAAAAAAAAIAAAIBI=</HashCode>
+      <FileName>FieldTransformers\SpatialIndexTransformer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_spatialRelation" />
+      <Field Name="_fieldMapper" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.FieldTransformers.StaticValueTransformer">
+    <Position X="7" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAKAAAAQAAgAAAAAAgAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>FieldTransformers\StaticValueTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.FieldTransformers.SubtypeDomainTransformer">
+    <Position X="5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAACQAAEAAAAAAIAAAAAAAAAAggAAAAAAA=</HashCode>
+      <FileName>FieldTransformers\SubtypeDomainTransformer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_subtypeMap" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.FieldTransformers.XYTransformer">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAQIAAAAQAAAAAAAEQAAACCAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>FieldTransformers\XYTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.FieldMapper">
+    <Position X="23.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAQEAAAAAAAAEABAACAAACAAAAAAAAAA=</HashCode>
+      <FileName>IntegrationFramework\FieldMapper.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_fieldTransformer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.MappedField" Collapsed="true">
+    <Position X="31.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAEAAIAAAAAAAAAAAAAAAAAAAIAEAAAI=</HashCode>
+      <FileName>IntegrationFramework\MappedField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.Settings" Collapsed="true">
+    <Position X="31.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAACAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IntegrationFramework\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.Setting" Collapsed="true">
+    <Position X="29.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAIAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>IntegrationFramework\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.SystemMapper" Collapsed="true">
+    <Position X="27.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAASCAAAAACAQAAiEBgAAAIIAAgAQAAgCAAAAEIBAA=</HashCode>
+      <FileName>IntegrationFramework\SystemMapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.TrackedClass" Collapsed="true">
+    <Position X="29.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAIQACGAABAWMIiACARgAAIAIlAEAAjCogAAIAwBs=</HashCode>
+      <FileName>IntegrationFramework\TrackedClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.NamespaceDoc" Collapsed="true">
+    <Position X="31.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NamespaceDoc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.BaseRowTransformer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAUAAABAAQAAAIAAEcAAABAIAAAIAgAA=</HashCode>
+      <FileName>RowTransformers\BaseRowTransformer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.StaticUtilities" Collapsed="true">
+    <Position X="26" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StaticUtilities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.Interfaces.NamespaceDoc" Collapsed="true">
+    <Position X="27.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\NamespaceDoc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.RowTransformers.NamespaceDoc" Collapsed="true">
+    <Position X="29.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RowTransformers\NamespaceDoc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.Utilities.AppConfiguration" Collapsed="true">
+    <Position X="26" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAA0gAgAAoCgEIAAAgAmACAAABQABAABAwCAIIAAAA=</HashCode>
+      <FileName>Utilities\AppConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.Utilities.DomainManager" Collapsed="true">
+    <Position X="29.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAEAAAAIAAAAQAAAAAAAAAAAAAAAAAEQEACAAAAAAA=</HashCode>
+      <FileName>Utilities\DomainManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.Utilities.FeatureClassIndex" Collapsed="true">
+    <Position X="33" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAEAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\FeatureClassIndex.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.Utilities.Logger" Collapsed="true">
+    <Position X="29.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAABAAbAAAAgAQAAAYCAAAAEAAAAAAEAEAAA=</HashCode>
+      <FileName>Utilities\Logger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.Utilities.NamespaceDoc" Collapsed="true">
+    <Position X="33" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\NamespaceDoc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PGE.Interfaces.Integration.Framework.Utilities.SpatialIndexManager" Collapsed="true">
+    <Position X="33" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\SpatialIndexManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.String" Collapsed="true">
+    <Position X="16.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="PGE.Interfaces.Integration.Framework.IConfigurable" Collapsed="true">
+    <Position X="26" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IConfigurable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PGE.Interfaces.Integration.Framework.IDataWriter" Collapsed="true">
+    <Position X="27.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IDataWriter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PGE.Interfaces.Integration.Framework.IFieldTransformer&lt;T&gt;" Collapsed="true">
+    <Position X="23" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IFieldTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PGE.Interfaces.Integration.Framework.IGISIntegration&lt;T&gt;" Collapsed="true">
+    <Position X="31.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAQAAAgAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IGISIntegration.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PGE.Interfaces.Integration.Framework.IRowData" Collapsed="true">
+    <Position X="33" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAACAAQAAAAAAAAAAAAABAAAAAQ=</HashCode>
+      <FileName>Interfaces\IRowData.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PGE.Interfaces.Integration.Framework.IRowTransformer&lt;T&gt;" Collapsed="true">
+    <Position X="26" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAUAAAAAAAAAAAAAEQAAABAIAAAAAgAA=</HashCode>
+      <FileName>Interfaces\IRowTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="PGE.Interfaces.Integration.Framework.Data.ChangeType" Collapsed="true">
+    <Position X="26" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Interfaces.Integration.Framework.Data.FieldTransformerType" Collapsed="true">
+    <Position X="27.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAgAIAA=</HashCode>
+      <FileName>Data\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PGE.Interfaces.Integration.Framework.Utilities.SpatialIndexRelation" Collapsed="true">
+    <Position X="18.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAEAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\FeatureClassIndex.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

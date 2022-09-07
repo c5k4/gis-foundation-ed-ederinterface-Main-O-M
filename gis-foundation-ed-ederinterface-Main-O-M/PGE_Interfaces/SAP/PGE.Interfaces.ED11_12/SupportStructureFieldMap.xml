@@ -1,0 +1,68 @@
+<FieldMapping>
+	<Field SAPFieldName="LocDesc2" GISFieldName="LocDesc1"/>
+	<Field SAPFieldName="Barcode" GISFieldName="Barcode"/>
+	<Field SAPFieldName="PoleClass" GISFieldName="Class"/>
+  <Field SAPFieldName="Class" GISFieldName="Class"/>
+	<Field SAPFieldName="Material" GISFieldName="Material"/>
+	<Field SAPFieldName="Species" GISFieldName="Species"/>
+	<Field SAPFieldName="Height" GISFieldName="Height"/>
+	<Field SAPFieldName="JPNumber" GISFieldName="JPNumber"/>
+	<Field SAPFieldName="CustomerOwned" GISFieldName="CustomerOwned"/>
+	<Field SAPFieldName="OriginalCircumference" GISFieldName="OriginalCircumference"/>
+	<Field SAPFieldName="OriginalTreatmentType" GISFieldName="OriginalTreatmentType"/>
+	<Field SAPFieldName="SAPEquipID" GISFieldName="SAPEquipID"/>
+	<Field SAPFieldName="InstallationDate" GISFieldName="InstallationDate"/>
+  <Field SAPFieldName="StartupDate" GISFieldName="InstallationDate"/>
+	<Field SAPFieldName="InstallJobNumber" GISFieldName="InstallJobNumber"/>
+	<Field SAPFieldName="Manufacturer" GISFieldName="Manufacturer"/>
+	<Field SAPFieldName="ManufacturedYear" GISFieldName="ManufacturedYear"/>
+	<Field SAPFieldName="LocDesc1" GISFieldName="LocDesc1"/>
+	<Field SAPFieldName="LocalOfficeID" GISFieldName="LocalOfficeID"/>
+	<Field SAPFieldName="y" GISFieldName="y"/>
+	<Field SAPFieldName="x" GISFieldName="x"/>
+	<Field SAPFieldName="MapNumber" GISFieldName="DistMap"/>
+	<Field SAPFieldName="CircuitMapNumber" GISFieldName="CircuitMapNumber"/>
+	<Field SAPFieldName="City" GISFieldName="City"/>
+  <Field SAPFieldName="PlantSection" GISFieldName="County"/>
+  <Field SAPFieldName="County" GISFieldName="County"/>
+	<Field SAPFieldName="Zip" GISFieldName="Zip"/>
+	<Field SAPFieldName="GUID" GISFieldName="GlobalID"/>
+	<Field SAPFieldName="ParentGUID" GISFieldName="ReplaceGUID"/>
+	<Field SAPFieldName="LastUser" GISFieldName="LastUser"/>
+	<Field SAPFieldName="LastModified" GISFieldName="DateModified"/>
+	<Field SAPFieldName="GemsMapOffice" GISFieldName="MapOffice"/>
+	<Field SAPFieldName="SubtypeCD" GISFieldName="SubtypeCD"/>
+	<Field SAPFieldName="PoleUse" GISFieldName="PoleUse"/>
+  <Field SAPFieldName="Division" GISFieldName="Division"/>
+  <Field SAPFieldName="District" GISFieldName="District"/>
+  <Field SAPFieldName="DistMap" GISFieldName="DistMap"/>
+  <Field SAPFieldName="Symbol Rotation" GISFieldName="SYMBOLROTATION"/>
+
+  <Field SAPFieldName="District" GISFieldName="District"/>
+  <Field SAPFieldName="EQUIPMENTNUMBER_I" GISFieldName="SAPEquipID"/>
+  <Field SAPFieldName="GUID_I" GISFieldName="GlobalID"/>
+  <Field SAPFieldName="POLECLASS" GISFieldName="Class"/>
+  <Field SAPFieldName="MATERIAL" GISFieldName="Material"/>
+  <Field SAPFieldName="HEIGHT" GISFieldName="Height"/>
+  <Field SAPFieldName="POLECNTYNAME" GISFieldName="County"/>
+  <Field SAPFieldName="STARTUPDATE_I" GISFieldName="InstallationDate"/>
+  <Field SAPFieldName="POLETYPE" GISFieldName="Poletype"/>
+  <Field SAPFieldName="DIVISION" GISFieldName="Division"/>
+  <Field SAPFieldName="LOCDESC2" GISFieldName="LocDesc1"/>
+  <Field SAPFieldName="CITY" GISFieldName="City"/>
+  <Field SAPFieldName="ZIP" GISFieldName="Zip"/>
+  <Field SAPFieldName="BARCODE" GISFieldName="Barcode"/>
+  <Field SAPFieldName="MAPOFFICE" GISFieldName="MapOffice"/>
+  <Field SAPFieldName="JOINTPOLENBR" GISFieldName="JPNumber"/>
+  <Field SAPFieldName="MAPNAME" GISFieldName="DistMap"/>
+  <Field SAPFieldName="LATITUDE_I" GISFieldName="GPSLATITUDE"/>
+  <Field SAPFieldName="LONGITUDE_I" GISFieldName="GPSLONGITUDE"/>
+  
+  <Field SAPFieldName="EQUIPMENTNUMBER_U" GISFieldName="SAPEquipID"/>
+  <Field SAPFieldName="GUID_U" GISFieldName="GlobalID"/>
+  <Field SAPFieldName="EQUIPMENTNUMBER_D" GISFieldName="SAPEquipID"/>
+  <Field SAPFieldName="GUID_D" GISFieldName="GlobalID"/>
+  <Field SAPFieldName="STARTUPDATE_D" GISFieldName="InstallationDate"/>
+  
+ 
+</FieldMapping>

@@ -1,0 +1,10 @@
+start "Version Name:Anchor_0" UpdateFeatues.exe 0 /nointerupt >NuL &
+start "Version Name:Anchor_1" UpdateFeatues.exe 1 /nointerupt >NuL &
+start "Version Name:Anchor_2" UpdateFeatues.exe 2 /nointerupt >NuL &
+start "Version Name:Anchor_3" UpdateFeatues.exe 3 /nointerupt >NuL &
+start "Version Name:Anchor_4" UpdateFeatues.exe 4 /nointerupt >NuL &
+start "Version Name:Anchor_5" UpdateFeatues.exe 5 /nointerupt >NuL &
+start "Version Name:Anchor_6" UpdateFeatues.exe 6 /nointerupt >NuL &
+start "Version Name:Anchor_7" UpdateFeatues.exe 7 /nointerupt >NuL &
+start "Version Name:Anchor_8" UpdateFeatues.exe 8 /nointerupt >NuL &
+start "Version Name:Anchor_9" UpdateFeatues.exe 9 /nointerupt >NuL &

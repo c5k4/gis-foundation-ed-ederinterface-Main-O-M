@@ -1,0 +1,281 @@
+﻿<DomainMappings>
+  <DomainMapping name="PointInPolygon">
+    <Domain name="District Name">
+      <add fromValue="bay" toValue="28"/>
+      <add fromValue="burney" toValue="88"/>
+      <add fromValue="central" toValue="26"/>
+      <add fromValue="chico" toValue="16"/>
+      <add fromValue="coast" toValue="76"/>
+      <add fromValue="colusa" toValue="9"/>
+      <add fromValue="de anza" toValue="80"/>
+      <add fromValue="delta" toValue="93"/>
+      <add fromValue="diablo" toValue="30"/>
+      <add fromValue="el dorado" toValue="21"/>
+      <add fromValue="eureka" toValue="35"/>
+      <add fromValue="fortuna" toValue="36"/>
+      <add fromValue="fresno" toValue="70"/>
+      <add fromValue="garberville" toValue="34"/>
+      <add fromValue="hollister" toValue="8"/>
+      <add fromValue="kern" toValue="66"/>
+      <add fromValue="king city" toValue="4"/>
+      <add fromValue="marysville" toValue="11"/>
+      <add fromValue="mission" toValue="24"/>
+      <add fromValue="monterey" toValue="7"/>
+      <add fromValue="mother lode" toValue="95"/>
+      <add fromValue="nevada" toValue="22"/>
+      <add fromValue="north bay" toValue="40"/>
+      <add fromValue="oroville" toValue="13"/>
+      <add fromValue="paradise" toValue="17"/>
+      <add fromValue="paso robles" toValue="3"/>
+      <add fromValue="peninsula" toValue="58"/>
+      <add fromValue="placer" toValue="20"/>
+      <add fromValue="quincy" toValue="18"/>
+      <add fromValue="red bluff" toValue="85"/>
+      <add fromValue="redding" toValue="87"/>
+      <add fromValue="sacramento" toValue="52"/>
+      <add fromValue="salinas" toValue="5"/>
+      <add fromValue="san francisco" toValue="60"/>
+      <add fromValue="san jose" toValue="78"/>
+      <add fromValue="san luis obispo" toValue="2"/>
+      <add fromValue="santa maria" toValue="1"/>
+      <add fromValue="santa rosa" toValue="44"/>
+      <add fromValue="skyline" toValue="56"/>
+      <add fromValue="solano" toValue="48"/>
+      <add fromValue="stanislaus" toValue="91"/>
+      <add fromValue="ukiah" toValue="46"/>
+      <add fromValue="vallejo-napa" toValue="42"/>
+      <add fromValue="willow" toValue="14"/>
+      <add fromValue="willow creek" toValue="38"/>
+      <add fromValue="yolo" toValue="50"/>
+      <add fromValue="yosemite" toValue="72"/>
+      <add fromValue="{default}" toValue=""/>
+    </Domain>
+    <Domain name="Division Name">
+      <add fromValue="division boundary" toValue="0"/>
+      <add fromValue="sonoma" toValue="1"/>
+      <add fromValue="north valley" toValue="2"/>
+      <add fromValue="sacramento" toValue="3"/>
+      <add fromValue="sierra" toValue="4"/>
+      <add fromValue="north bay" toValue="5"/>
+      <add fromValue="east bay" toValue="6"/>
+      <add fromValue="san francisco" toValue="7"/>
+      <add fromValue="peninsula" toValue="8"/>
+      <add fromValue="diablo" toValue="9"/>
+      <add fromValue="stockton" toValue="10"/>
+      <add fromValue="yosemite" toValue="11"/>
+      <add fromValue="fresno" toValue="12"/>
+      <add fromValue="kern" toValue="13"/>
+      <add fromValue="mission" toValue="14"/>
+      <add fromValue="san jose" toValue="15"/>
+      <add fromValue="de anza" toValue="16"/>
+      <add fromValue="central coast" toValue="17"/>
+      <add fromValue="los padres" toValue="18"/>
+      <add fromValue="skyline" toValue="19"/>
+      <add fromValue="humboldt" toValue="20"/>
+      <add fromValue="{default}" toValue=""/>
+    </Domain>
+    <Domain name="County Name">
+      <add fromValue="alameda" toValue="1"/>
+      <add fromValue="alpine" toValue="2"/>
+      <add fromValue="amador" toValue="3"/>
+      <add fromValue="butte" toValue="4"/>
+      <add fromValue="calaveras" toValue="5"/>
+      <add fromValue="colusa" toValue="6"/>
+      <add fromValue="contra costa" toValue="7"/>
+      <add fromValue="del norte" toValue="8"/>
+      <add fromValue="el dorado" toValue="9"/>
+      <add fromValue="fresno" toValue="10"/>
+      <add fromValue="glenn" toValue="11"/>
+      <add fromValue="humboldt" toValue="12"/>
+      <add fromValue="imperial" toValue="13"/>
+      <add fromValue="inyo" toValue="14"/>
+      <add fromValue="kern" toValue="15"/>
+      <add fromValue="kings" toValue="16"/>
+      <add fromValue="lake" toValue="17"/>
+      <add fromValue="lassen" toValue="18"/>
+      <add fromValue="los angeles" toValue="19"/>
+      <add fromValue="madera" toValue="20"/>
+      <add fromValue="marin" toValue="21"/>
+      <add fromValue="mariposa" toValue="22"/>
+      <add fromValue="mendocino" toValue="23"/>
+      <add fromValue="merced" toValue="24"/>
+      <add fromValue="modoc" toValue="25"/>
+      <add fromValue="mono" toValue="26"/>
+      <add fromValue="monterey" toValue="27"/>
+      <add fromValue="napa" toValue="28"/>
+      <add fromValue="nevada" toValue="29"/>
+      <add fromValue="orange" toValue="30"/>
+      <add fromValue="placer" toValue="31"/>
+      <add fromValue="plumas" toValue="32"/>
+      <add fromValue="riverside" toValue="33"/>
+      <add fromValue="sacramento" toValue="34"/>
+      <add fromValue="san benito" toValue="35"/>
+      <add fromValue="san bernardino" toValue="36"/>
+      <add fromValue="san diego" toValue="37"/>
+      <add fromValue="san francisco" toValue="38"/>
+      <add fromValue="san joaquin" toValue="39"/>
+      <add fromValue="san luis obispo" toValue="40"/>
+      <add fromValue="san mateo" toValue="41"/>
+      <add fromValue="santa barbara" toValue="42"/>
+      <add fromValue="santa clara" toValue="43"/>
+      <add fromValue="santa cruz" toValue="44"/>
+      <add fromValue="shasta" toValue="45"/>
+      <add fromValue="sierra" toValue="46"/>
+      <add fromValue="siskiyou" toValue="47"/>
+      <add fromValue="solano" toValue="48"/>
+      <add fromValue="sonoma" toValue="49"/>
+      <add fromValue="stanislaus" toValue="50"/>
+      <add fromValue="sutter" toValue="51"/>
+      <add fromValue="tehama" toValue="52"/>
+      <add fromValue="trinity" toValue="53"/>
+      <add fromValue="tulare" toValue="54"/>
+      <add fromValue="tuolumne" toValue="55"/>
+      <add fromValue="ventura" toValue="56"/>
+      <add fromValue="yolo" toValue="57"/>
+      <add fromValue="yuba" toValue="58"/>
+      <add fromValue="{default}" toValue=""/>
+    </Domain>
+    <Domain name="Region">
+      <add fromValue="bay area" toValue="R1-BA"/>
+      <add fromValue="central coast" toValue="R2-CC"/>
+      <add fromValue="central valley" toValue="R4-CV"/>
+      <add fromValue="northern" toValue="R3-NO"/>
+      <add fromValue="{default}" toValue=""/>
+    </Domain>
+    <Domain name="Zip">
+      <add fromValue="{default}" toValue=""/>
+      <add fromValue="80" toValue="80"/>
+      <add fromValue="93301" toValue="1"/>
+      <add fromValue="93304" toValue="2"/>
+      <add fromValue="93305" toValue="3"/>
+      <add fromValue="93307" toValue="4"/>
+      <add fromValue="93308" toValue="5"/>
+      <add fromValue="93309" toValue="6"/>
+      <add fromValue="93313" toValue="7"/>
+      <add fromValue="933132134" toValue="8"/>
+      <add fromValue="93306" toValue="9"/>
+      <add fromValue="93243" toValue="10"/>
+      <add fromValue="93225" toValue="11"/>
+      <add fromValue="933041464" toValue="12"/>
+      <add fromValue="93268" toValue="13"/>
+      <add fromValue="93241" toValue="14"/>
+      <add fromValue="93203" toValue="15"/>
+      <add fromValue="933079627" toValue="16"/>
+      <add fromValue="93561" toValue="17"/>
+      <add fromValue="933139331" toValue="18"/>
+      <add fromValue="933075818" toValue="19"/>
+      <add fromValue="933055137" toValue="20"/>
+      <add fromValue="933014234" toValue="21"/>
+      <add fromValue="933079137" toValue="22"/>
+      <add fromValue="933072732" toValue="23"/>
+      <add fromValue="933078431" toValue="24"/>
+      <add fromValue="933074561" toValue="25"/>
+      <add fromValue="93560" toValue="26"/>
+      <add fromValue="93518" toValue="27"/>
+      <add fromValue="0" toValue="0"/>
+    </Domain>
+    <Domain name="Local Offices">
+      <add fromValue="{default}" toValue=""/>
+      <add fromValue="bay" toValue="NY"/>
+      <add fromValue="central" toValue="W30"/>
+      <add fromValue="chico" toValue="TX"/>
+      <add fromValue="colusa" toValue="X76"/>
+      <add fromValue="de anza" toValue="PS"/>
+      <add fromValue="delta" toValue="V9"/>
+      <add fromValue="diablo" toValue="Z46"/>
+      <add fromValue="el dorado" toValue="LW"/>
+      <add fromValue="eureka" toValue="X50"/>
+      <add fromValue="fortuna" toValue="Z50"/>
+      <add fromValue="fresno" toValue="PK"/>
+      <add fromValue="garberville" toValue="P26"/>
+      <add fromValue="glenn" toValue="XB"/>
+      <add fromValue="hollister" toValue="JC"/>
+      <add fromValue="kern" toValue="HB"/>
+      <add fromValue="king city" toValue="TC"/>
+      <add fromValue="las plumas" toValue="JR"/>
+      <add fromValue="marysville" toValue="FF"/>
+      <add fromValue="mission" toValue="FB"/>
+      <add fromValue="monterey" toValue="P72"/>
+      <add fromValue="mother lode" toValue="TF"/>
+      <add fromValue="nevada" toValue="F20"/>
+      <add fromValue="north bay" toValue="JG"/>
+      <add fromValue="oroville" toValue="TG"/>
+      <add fromValue="paradise" toValue="VV"/>
+      <add fromValue="paso robles" toValue="RB"/>
+      <add fromValue="peninsula" toValue="PY"/>
+      <add fromValue="placer" toValue="TJ"/>
+      <add fromValue="sacramento" toValue="F9"/>
+      <add fromValue="salinas" toValue="JL"/>
+      <add fromValue="san francisco" toValue="LF"/>
+      <add fromValue="solano" toValue="NC"/>
+    </Domain>
+    <Domain name="City_2">
+      <add fromValue="{default}" toValue=""/>
+      <add fromValue="ashland" toValue="1"/>
+      <add fromValue="atascadero" toValue="2"/>
+      <add fromValue="atwater" toValue="3"/>
+      <add fromValue="auberry" toValue="4"/>
+      <add fromValue="auburn" toValue="5"/>
+      <add fromValue="august" toValue="6"/>
+      <add fromValue="avenal" toValue="7"/>
+      <add fromValue="avery" toValue="8"/>
+      <add fromValue="bakersfield" toValue="9"/>
+      <add fromValue="bay point" toValue="10"/>
+      <add fromValue="bayview" toValue="11"/>
+      <add fromValue="bayview-montalvin" toValue="12"/>
+      <add fromValue="baywood-los osos" toValue="13"/>
+      <add fromValue="beale afb" toValue="14"/>
+      <add fromValue="bear valley" toValue="15"/>
+      <add fromValue="bear valley Springs" toValue="16"/>
+      <add fromValue="belden" toValue="17"/>
+      <add fromValue="belmont" toValue="18"/>
+      <add fromValue="belvedere" toValue="19"/>
+      <add fromValue="ben lomond" toValue="20"/>
+      <add fromValue="benicia" toValue="21"/>
+      <add fromValue="berkeley" toValue="22"/>
+      <add fromValue="bethel island" toValue="23"/>
+      <add fromValue="big bend" toValue="24"/>
+      <add fromValue="biggs" toValue="25"/>
+      <add fromValue="black point-green point" toValue="26"/>
+      <add fromValue="blackhawk-camino tassajara" toValue="27"/>
+      <add fromValue="blue lake" toValue="28"/>
+      <add fromValue="bodega bay" toValue="29"/>
+      <add fromValue="bolinas" toValue="30"/>
+    </Domain>
+    <Domain name="Map Offices">
+      <add fromValue="{default}" toValue=""/>
+      <add fromValue="bay" toValue="ACP"/>
+      <add fromValue="central" toValue="AUB"/>
+      <add fromValue="chico" toValue="BAK"/>
+      <add fromValue="colusa" toValue="BEL"/>
+      <add fromValue="de anza" toValue="CHI"/>
+      <add fromValue="delta" toValue="COL"/>
+      <add fromValue="diablo" toValue="CON"/>
+      <add fromValue="el dorado" toValue="CUP"/>
+      <add fromValue="eureka" toValue="EDN"/>
+      <add fromValue="fortuna" toValue="FRS"/>
+      <add fromValue="fresno" toValue="HAY"/>
+      <add fromValue="garberville" toValue="HUM"/>
+      <add fromValue="glenn" toValue="MER"/>
+      <add fromValue="hollister" toValue="MRY"/>
+      <add fromValue="kern" toValue="MOD"/>
+      <add fromValue="king city" toValue="MLD"/>
+      <add fromValue="las plumas" toValue="NAP"/>
+      <add fromValue="marysville" toValue="OAK"/>
+      <add fromValue="mission" toValue="PLA"/>
+      <add fromValue="monterey" toValue="RCH"/>
+      <add fromValue="mother lode" toValue="RED"/>
+      <add fromValue="nevada" toValue="SAC"/>
+      <add fromValue="north bay" toValue="SAL"/>
+      <add fromValue="oroville" toValue="SCL"/>
+      <add fromValue="paradise" toValue="SFO"/>
+      <add fromValue="paso robles" toValue="SLO"/>
+      <add fromValue="peninsula" toValue="SRF"/>
+      <add fromValue="placer" toValue="SRO"/>
+      <add fromValue="sacramento" toValue="STO"/>
+      <add fromValue="salinas" toValue="UKH"/>
+      <add fromValue="san francisco" toValue="VAL"/>
+      <add fromValue="solano" toValue="WNC"/>
+    </Domain>
+  </DomainMapping>
+</DomainMappings>

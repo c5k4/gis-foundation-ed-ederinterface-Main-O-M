@@ -1,0 +1,22 @@
+Prompt drop Function HHPRECISION;
+DROP FUNCTION MDSYS.HHPRECISION
+/
+
+Prompt Function HHPRECISION;
+--
+-- HHPRECISION  (Function) 
+--
+CREATE OR REPLACE FUNCTION MDSYS.hhprecision (lb IN NUMBER, ub IN NUMBER, lv IN BINARY_INTEGER)
+    RETURN BINARY_INTEGER IS
+begin
+  return md.hhprecision(lb,ub,lv);
+end;
+/
+
+
+Prompt Synonym HHPRECISION;
+--
+-- HHPRECISION  (Synonym) 
+--
+CREATE OR REPLACE PUBLIC SYNONYM HHPRECISION FOR MDSYS.HHPRECISION
+/

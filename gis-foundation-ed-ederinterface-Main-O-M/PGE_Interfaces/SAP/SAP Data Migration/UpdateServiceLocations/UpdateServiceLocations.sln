@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateServiceLocations", "UpdateServiceLocations\UpdateServiceLocations.csproj", "{BC22982D-7B02-4F70-A313-230C25690B78}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://edappgistfsprd1:8080/tfs/electricdistcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = UpdateServiceLocations\\UpdateServiceLocations.csproj
+		SccProjectName1 = UpdateServiceLocations
+		SccLocalPath1 = UpdateServiceLocations
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		NoBuild|Any CPU = NoBuild|Any CPU
+		NoBuild|x86 = NoBuild|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC22982D-7B02-4F70-A313-230C25690B78}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{BC22982D-7B02-4F70-A313-230C25690B78}.Debug|x86.ActiveCfg = Debug|x86
+		{BC22982D-7B02-4F70-A313-230C25690B78}.Debug|x86.Build.0 = Debug|x86
+		{BC22982D-7B02-4F70-A313-230C25690B78}.NoBuild|Any CPU.ActiveCfg = Release|x86
+		{BC22982D-7B02-4F70-A313-230C25690B78}.NoBuild|x86.ActiveCfg = Release|x86
+		{BC22982D-7B02-4F70-A313-230C25690B78}.NoBuild|x86.Build.0 = Release|x86
+		{BC22982D-7B02-4F70-A313-230C25690B78}.Release|Any CPU.ActiveCfg = Release|x86
+		{BC22982D-7B02-4F70-A313-230C25690B78}.Release|x86.ActiveCfg = Release|x86
+		{BC22982D-7B02-4F70-A313-230C25690B78}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
