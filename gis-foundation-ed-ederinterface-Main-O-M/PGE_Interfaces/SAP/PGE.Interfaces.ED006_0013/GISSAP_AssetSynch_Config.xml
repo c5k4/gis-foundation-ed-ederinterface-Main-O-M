@@ -1794,12 +1794,15 @@
           </FieldMapper>
         </Field>
         <Field OutName="OperatingNumber" Sequence="24">
-          <!--<FieldMapper TransformerType="PGE.Interface.Integration.Framework.FieldTransformers.FieldValueTransformer, PGE.Interface.Integration.Framework, Version=10.8.1.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7, processorArchitecture=x86">
+          <FieldMapper TransformerType="PGE.Interface.Integration.Framework.FieldTransformers.FieldValueTransformer, PGE.Interface.Integration.Framework, Version=10.8.1.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7, processorArchitecture=x86">
             <FieldValueTransformer FieldName="OperatingNumber"/>
-          </FieldMapper>-->
+          </FieldMapper>
+          <!--  c5k4-20220906 : The FieldMapper definition above was commented out and was swapped with
+                with this definition of StaticValue, in an attempt to fix the EGIS-1314 issue with lost
+                Voltage Regulator Operating Number when submitting the Features
           <FieldMapper TransformerType="PGE.Interface.Integration.Framework.FieldTransformers.StaticValueTransformer, PGE.Interface.Integration.Framework, Version=10.8.1.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7, processorArchitecture=x86">
             <StaticValueTransformer StaticValue=""/>
-          </FieldMapper>
+          </FieldMapper>-->
         </Field>
         <Field OutName="ModelNumber" Sequence="30">
           <FieldMapper TransformerType="PGE.Interface.Integration.Framework.FieldTransformers.StaticValueTransformer, PGE.Interface.Integration.Framework, Version=10.8.1.0, Culture=neutral, PublicKeyToken=d01347ab6ada58e7, processorArchitecture=x86">
